@@ -1,0 +1,27 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-stakeholder-entries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate YAML entries against stakeholder schema
+        uses: ajvdotpy/ajv-py-action@v1
+        with:
+          schema: schemas/entity.schema.json
+          glob: 'entities/**/*.yaml'
+          fail-on-error: true
+
+      - name: Validate JSON entries against stakeholder schema
+        uses: ajvdotpy/ajv-py-action@v1
+        with:
+          schema: schemas/entity.schema.json
+          glob: 'entities/**/*.json'
+          fail-on-error: true
