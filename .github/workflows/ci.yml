@@ -7,21 +7,21 @@ on:
     branches: [main]
 
 jobs:
-  validate-stakeholder-entries:
+  validate-process-entries:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate YAML entries against stakeholder schema
-        uses: ajvdotpy/ajv-py-action@v1
+      # Validate YAML + JSON catalog entries against entity.schema.json.
+      # Replaces the previously-pinned ajvdotpy/ajv-py-action@v1 — that
+      # action repository does not exist on GitHub, so the workflow was
+      # failing on action-resolution before any validation could run.
+      # See the companion PRs in dea-catalog-business-objects and
+      # dea-catalog-organizational-units for the full diagnostic.
+      - name: Validate catalog entries against Process schema
+        uses: dsanders11/json-schema-validate-action@v1
         with:
           schema: schemas/entity.schema.json
-          glob: 'entities/**/*.yaml'
-          fail-on-error: true
-
-      - name: Validate JSON entries against stakeholder schema
-        uses: ajvdotpy/ajv-py-action@v1
-        with:
-          schema: schemas/entity.schema.json
-          glob: 'entities/**/*.json'
-          fail-on-error: true
+          files: |
+            entities/**/*.yaml
+            entities/**/*.json
