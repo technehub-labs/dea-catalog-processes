@@ -13,7 +13,7 @@ metamodel:
   viewer_url: "https://technehub-labs.github.io/metamodel/?entity=BusinessProcess"
 
 catalog:
-  name: Business Processs
+  name: Business Process
   repo: technehub-labs/dea-catalog-processes
   status: scaffold
 
@@ -24,3 +24,4 @@ links:
   metamodel_repo: https://github.com/technehub-labs/dea-metamodel
   viewer: "https://technehub-labs.github.io/metamodel/?entity=BusinessProcess"
   github: https://github.com/technehub-labs/dea-catalog-processes
+
