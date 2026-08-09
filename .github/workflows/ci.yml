@@ -12,13 +12,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Validate YAML + JSON catalog entries against entity.schema.json.
-      # Replaces the previously-pinned ajvdotpy/ajv-py-action@v1 — that
-      # action repository does not exist on GitHub, so the workflow was
-      # failing on action-resolution before any validation could run.
-      # See the companion PRs in dea-catalog-business-objects and
-      # dea-catalog-organizational-units for the full diagnostic.
+      # Phase 2 deferred-population scaffold: the entities/ tree is empty
+      # by design (only README.md placeholders). Skip validation cleanly
+      # when there are no catalog entries yet. When Phase 2 starts adding
+      # entries, drop the early-exit and let the action validate them.
+      - name: Check for catalog entries
+        id: check
+        run: |
+          shopt -s nullglob globstar
+          count=0
+          for f in entities/**/*.yaml entities/**/*.json; do
+            [ -f "$f" ] && count=$((count + 1))
+          done
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          if [ "$count" -eq 0 ]; then
+            echo "No catalog entries to validate (Phase 2 not started). Skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Validate catalog entries against Process schema
+        if: steps.check.outputs.skip != 'true'
         uses: dsanders11/json-schema-validate-action@v2.1.0
         with:
           schema: schemas/entity.schema.json
