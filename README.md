@@ -28,7 +28,7 @@ The Business Process Catalog uses this structure as its contextual foundation.
 Enterprise Domain × Lifecycle Stage
                 │
                 ▼
-          Process Context
+          Process Scope / Context
                 │
                 ▼
        Process Architecture
@@ -146,7 +146,7 @@ The precise normative semantics of these levels will be aligned with the OpenDEA
 
 The current architecture treats the levels as follows.
 
-## L0 — Process Scope
+## L0: Process Scope / Process Context
 
 L0 establishes the highest-level scope within which a coherent set of related process concerns is organized.
 
@@ -166,7 +166,7 @@ An L0 element is not assumed to be synonymous with an ECF Domain or Lifecycle St
 
 ---
 
-## L1 — Process Group
+## L1: Process Group
 
 L1 represents a coherent grouping of related processes within an L0 Process Scope.
 
@@ -185,7 +185,7 @@ The Business Process Catalog must not independently redefine Business Function.
 
 ---
 
-## L2 — Business Process
+## L2: Business Process
 
 L2 represents the first level at which an element is treated as an independently meaningful Business Process.
 
@@ -218,7 +218,7 @@ It may instead represent:
 
 ---
 
-## L3 — Activity
+## L3: Activity
 
 L3 represents a cohesive grouping of work that contributes to an L2 Business Process but does not independently satisfy the criteria required for an L2 Business Process.
 
@@ -236,7 +236,7 @@ The formal cohesion model and scoring criteria will be defined as part of the re
 
 ---
 
-## L4 — Task
+## L4: Task
 
 L4 represents the lowest defined level of business process decomposition within the catalog.
 
