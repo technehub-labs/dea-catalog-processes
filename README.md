@@ -832,6 +832,16 @@ The intended outcome is an authoritative OpenDEA Business Process Architecture a
 * cross-repository referential integrity; and
 * a durable foundation for process modelling, workflow derivation, automation, autonomous operations, AI and agentic systems.
 
+# ECF Conformance
+
+The catalog declares its ECF conformance posture through the `ecfConformance` block on each canonical entry (when populated; Phase 2 deferred) and through this repository-level declaration.
+
+**Profile**: `dea:ecf@1.0.0`. **Status**: CONFORMANT-WITH-EXTENSION (CG-001 §4). The catalog specializes ECF semantics for its own methodology (the Process Context interpretation of an ECF Coordinate; the L0-L4 decomposition rules; the `process_audience` single-axis audience classification). The extensions do not redefine any ECF Domain, Stage, or Coordinate.
+
+**Governance decision (CG-004 §10)**: the existing `process_audience` field is a single-axis audience classification; it is **not** an ECF Domain. Both use the same kebab-case vocabulary by coincidence of display labelling. The conformance gate (`scripts/check_ecf_conformance.py`) rejects any canonical reference that uses a kebab-case value in the Domain slot; canonical references must use PascalCase enum values (`GovernanceAndExistence` etc.). See `docs/governance/process-audience-vs-ecf-domain.md` for the full decision record.
+
+**Conformance gate**: `scripts/check_ecf_conformance.py`. The script reports PASS when `entities/` is empty (Phase 2 deferred); when entries appear, it validates each block against the canonical contract.
+
 The Business Process Catalog is therefore intended to become a foundational component of the OpenDEA ecosystem through which business process knowledge can be consistently defined, validated, reused and evolved.
 
 > **The objective is not to create the largest catalog of processes.**

@@ -33,6 +33,20 @@
     "kpis": { "type": "array", "items": { "type": "string" } },
     "stakeholders": { "type": "array", "items": { "type": "string" } },
     "actors": { "type": "array", "items": { "type": "string" } },
-    "metadata": { "type": "object" }
+    "metadata": { "type": "object" },
+    "ecfConformance": {
+      "type": "object",
+      "description": "ECF Conformance Gate manifest (CR-ECF-CG-001..004). Declares the catalog's CONFORMANT-WITH-EXTENSION status and the canonical ECF references that resolve. Optional at schema level; scripts/check_ecf_conformance.py enforces presence on every canonical process entry. Note: process_audience is NOT an ECF Coordinate; it is a single-axis audience classification (CG-004 §10). The canonical ECF reference (when present) lives in this ecfConformance block.",
+      "properties": {
+        "framework": { "type": "string", "const": "EnterpriseConceptFramework" },
+        "contractVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "profile": { "type": "string", "pattern": "^dea:ecf@\\d+\\.\\d+\\.\\d+$" },
+        "status": { "type": "string", "enum": ["conformant", "conformant-with-extension", "non-conformant", "not-yet-assessed"] },
+        "affiliation": { "type": "string", "enum": ["mapped", "held-unmapped", "inherits-catalog"] },
+        "rationaleRef": { "type": "string" },
+        "canonicalReferences": { "type": "array" },
+        "extensions": { "type": "array" }
+      }
+    }
   }
 }
