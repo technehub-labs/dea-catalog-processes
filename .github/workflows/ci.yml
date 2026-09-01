@@ -38,3 +38,9 @@ jobs:
           files: |
             entities/**/*.yaml
             entities/**/*.json
+
+      - name: Install ECF conformance gate dependencies
+        run: pip install pyyaml
+
+      - name: Run ECF conformance gate (CR-ECF-CG-004)
+        run: python scripts/check_ecf_conformance.py
