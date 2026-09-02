@@ -20,7 +20,7 @@ The governing principle is:
 
 The Business Process Catalog is grounded in the OpenDEA conceptual architecture.
 
-The OpenDEA Enterprise Concepts Framework (ECF) provides the primary organizing structure for understanding the enterprise. The ECF establishes a matrix formed by the intersection of Enterprise Domains and Lifecycle Stages.
+The OpenDEA Enterprise Concept Framework (ECF) provides the primary organizing structure for understanding the enterprise. The ECF establishes a matrix formed by the intersection of Enterprise Domains and Lifecycle Stages.
 
 The Business Process Catalog uses this structure as its contextual foundation.
 
@@ -47,9 +47,9 @@ This distinction is fundamental to the architecture of the catalog.
 
 ---
 
-# Enterprise Concepts Framework
+# Enterprise Concept Framework
 
-The Enterprise Concepts Framework provides a holistic and structured representation of the enterprise through the intersection of:
+The Enterprise Concept Framework provides a holistic and structured representation of the enterprise through the intersection of:
 
 * Enterprise Domains
 * Lifecycle Stages
@@ -623,7 +623,7 @@ The evolution sequence is:
 Establish the current state of:
 
 * the OpenDEA Metaframework;
-* the Enterprise Concepts Framework;
+* the Enterprise Concept Framework;
 * the OpenDEA Metamodel;
 * the Business Process Catalog;
 * existing process definitions;
