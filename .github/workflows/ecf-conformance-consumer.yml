@@ -1,0 +1,85 @@
+name: ecf-conformance-consumer
+
+# CR-ECF-CG-006 (consumer side): the ECF Conformance Gate runs against this
+# repo on every PR and push to main. Clones the metamodel + metaframework,
+# then runs the cross-repo drift detector against THIS repo as the consumer
+# under test.
+#
+# Companion to:
+#   dea-metamodel/.github/workflows/ecf-conformance.yml (canonical enforcer;
+#     builds the consolidated report and uploads it as an artifact)
+#   dea-catalog-business-capabilities/.github/workflows/ecf-conformance-consumer.yml
+#     (sibling hook with the same shape)
+#
+# The consolidated conformance report lives in the metamodel-side workflow.
+# This hook's job is the per-consumer drift verdict: hard failures (non-
+# conformant invariant, missing coordinate, invalid identifier) block the PR;
+# soft warnings log only. Escalate to --strict via the workflow_dispatch
+# "strict" input when you want warnings to block too.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: 'Run the drift detector in --strict mode (any warning fails the gate).'
+        required: false
+        default: 'false'
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: consumer
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Clone ECF framework (canonical Domain/Stage enums)
+        run: |
+          git clone --depth 1 https://github.com/technehub-labs/dea-metaframework.git /tmp/dea-metaframework
+
+      - name: Clone dea-metamodel (drift detector source)
+        run: |
+          git clone --depth 1 https://github.com/technehub-labs/dea-metamodel.git /tmp/dea-metamodel
+
+      - name: Install conformance dependencies
+        run: pip install pyyaml
+
+      - name: Determine strict mode
+        id: mode
+        run: |
+          # Promote to strict only when explicitly dispatched with the input set.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.strict }}" = "true" ]; then
+            echo "strict=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "strict=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run the drift detector (consumer side)
+        id: drift
+        env:
+          ECF_FRAMEWORK_ROOT: /tmp/dea-metaframework
+          ECF_CATALOG_ROOTS: ${{ github.workspace }}/consumer
+        run: |
+          set +e
+          if [ "${{ steps.mode.outputs.strict }}" = "true" ]; then
+            python3 /tmp/dea-metamodel/scripts/detect_drift.py --strict
+          else
+            python3 /tmp/dea-metamodel/scripts/detect_drift.py
+          fi
+          echo "drift_exit=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Fail on hard drift
+        if: steps.drift.outputs.drift_exit != '0'
+        run: |
+          echo "::error::ECF drift detector failed (exit ${{ steps.drift.outputs.drift_exit }}). See job log for findings."
+          exit 1

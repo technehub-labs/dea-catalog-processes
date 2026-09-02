@@ -842,6 +842,8 @@ The catalog declares its ECF conformance posture through the `ecfConformance` bl
 
 **Conformance gate**: `scripts/check_ecf_conformance.py`. The script reports PASS when `entities/` is empty (Phase 2 deferred); when entries appear, it validates each block against the canonical contract.
 
+**ECF Conformance CI (consumer side)**: `.github/workflows/ecf-conformance-consumer.yml` (CR-ECF-CG-006). On every PR and push to `main`, the workflow clones `dea-metamodel` and `dea-metaframework`, then runs `scripts/detect_drift.py` from the metamodel against this catalog. The metamodel-side workflow owns the consolidated conformance report; this hook owns the per-consumer drift verdict.
+
 The Business Process Catalog is therefore intended to become a foundational component of the OpenDEA ecosystem through which business process knowledge can be consistently defined, validated, reused and evolved.
 
 > **The objective is not to create the largest catalog of processes.**
