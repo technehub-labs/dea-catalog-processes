@@ -44,3 +44,6 @@ jobs:
 
       - name: Run ECF conformance gate (CR-ECF-CG-004)
         run: python scripts/check_ecf_conformance.py
+
+      - name: Run Business Process specialization gate (CR-BP-SPEC-BP-01)
+        run: python scripts/check_process_specialization.py
