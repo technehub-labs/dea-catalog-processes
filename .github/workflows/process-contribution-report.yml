@@ -96,7 +96,8 @@ jobs:
               pe = contrib.get('proposed_entry', {})
 
               # Run identity checker on the proposed_entry (in-memory).
-              errors, suggestions = identity_check(pe)
+              errors, suggestions = [], []
+              _check_one(pe, errors, suggestions)
 
               pe_id = pe.get('id', '<unknown>')
               report_path = path.replace('.yaml', '.report.md')

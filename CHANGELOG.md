@@ -28,7 +28,7 @@ the machinery:
     CustomerAndDemand × Operate cell at
     `dea:pc-cd-op`).
   - ECF Conformance Gate (inherits-catalog; canonical
-    references resolve to `ecf:customerAndDemand.operate`;
+    references resolve to `ecf:customerDemand.operate`;
     extensions declare `doesNotRedefine: true`).
   - Process Identity validator: case-insensitive + doubled-
     parentheses-tolerant fuzzy match (`_fuzzy_name_match`).

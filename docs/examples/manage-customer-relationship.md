@@ -129,7 +129,7 @@ ecfConformance:
     - kind: coordinate
       domain: CustomerAndDemand
       stage: Operate
-      identifier: ecf:customerAndDemand.operate
+      identifier: ecf:customerDemand.operate
   extensions:
     - name: process_intent
       doesNotRedefine: true
