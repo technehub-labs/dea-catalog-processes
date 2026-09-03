@@ -1,0 +1,76 @@
+# Process Contribution Template (v1)
+# CR-BP-03 §9
+#
+# To add or re-classify a process, copy this file to
+# contributions/processes/<your-id>.yaml and fill in the sections.
+# Then open a PR; the CI process-contribution-report workflow
+# (`.github/workflows/process-contribution-report.yml`) will:
+#   1. validate the contribution against schemas/contribution.schema.json;
+#   2. run scripts/check_process_identity.py on the proposed_entry;
+#   3. emit a reclassification recommendation in
+#      contributions/processes/<your-id>.report.md;
+#   4. post the report as a PR comment.
+#
+# A catalog maintainer reviews the report before the entry lands
+# in entities/v1-alpha/. The contribution does NOT auto-land.
+#
+# See docs/relandscape.md for the full lifecycle.
+
+schema: dea-catalog-processes/contribution/v1
+contributor: <github-handle>
+contribution_date: <YYYY-MM-DD>
+
+# === Process to add / re-classify ===
+proposed_entry:
+  id: dea:bp:example-process
+  name: Manage Example Process
+  description: |
+    A description of the process. Should reference the outcome
+    (not the activity) and align with the process_type
+    (see classifications/process-types.yaml).
+  process_intent: management  # operational | support | management
+  process_type: management   # strategic | management | core | support | standardization
+  process_audience: customer-demand  # ecf-domain
+  process_specialization:    # optional; list of parent process ids
+    - dea:bp:parent-process
+  specialization_pattern: by-customer-segment  # optional free-text
+  identity:
+    verb: Manage
+    object: Example Process
+    scope: <optional; e.g. (Enterprise)>
+    outcome_statement: |
+      The outcome statement describes what the process achieves,
+      not what it does. Should be 1-2 sentences that name the
+      state change / outcome. E.g. "Customer relationships are
+      maintained, escalated where required, and renewed or
+      terminated per policy."
+    evidence_links:
+      - type: documentation
+        ref: docs/processes/example-process.md
+      - type: governance
+        ref: governance/example-process.md
+
+# === Evidence supporting the contribution ===
+evidence:
+  - type: documentation
+    ref: <link to internal documentation>
+  - type: interview
+    ref: <SME name + interview date>
+  - type: artifact
+    ref: <link to operational artifact>
+
+# === Reviewer assignment ===
+reviewer: <github-handle>   # unassigned → catalog maintainers team
+status: pending
+
+# === Re-landscape report (filled by CI) ===
+# Contributors do NOT write this section. The CI contribution
+# report workflow fills it.
+report:
+  generated_at: <YYYY-MM-DDTHH:MM:SSZ>
+  report_path: contributions/processes/example-process.report.md
+  recommendation: pending
+  current_state: {}
+  suggested_state: {}
+  confidence: 0.0
+  rationale: pending
