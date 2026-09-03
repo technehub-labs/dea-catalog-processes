@@ -56,6 +56,216 @@ This distinction is fundamental to the architecture of the catalog.
 
 ---
 
+# Process Architecture (CR-BP-03)
+
+CR-BP-03 establishes the **Business Process architecture** within the
+enterprise process landscape. The architecture rests on **three
+pillars**: a 4-axis classification, a process-identity contract, and
+a contribution-driven re-landscape mechanism.
+
+## 1. Enterprise Process Landscape
+
+The enterprise process landscape is organized through five process
+types (per Mintzberg's five-component model), each associated with a
+primary organizational component:
+
+| Process Type | Primary Organizational Component | Primary Purpose |
+|---|---|---|
+| **Strategic** Process | Strategic Apex | Enterprise direction, vision, goals, and strategic decisions |
+| **Management** Process | Middle Line | Plan, monitor, and control resource allocation to achieve strategic goals |
+| **Core** Process | Operating Core | Direct value creation; products and services delivered to external customers |
+| **Support** Process | Support Staff | Internal-to-enterprise services that keep the organization running |
+| **Standardization** Process | Technostructure | Cross-cutting overlay for compliance, consistency, continuous improvement, and quality |
+
+These five process types describe **the character and primary
+organizational locus of enterprise work**. They do **not** constitute
+competing foundational OpenDEA process entities.
+
+> **`dea:BusinessProcess` remains the canonical OpenDEA semantic
+> entity** for Business Processes regardless of `process_type`. The
+> classification is a catalog-controlled vocabulary at
+> `classifications/process-types.yaml`, not a new ontology.
+
+The vocabulary is enforced by
+`scripts/check_process_identity.py` (BP-ARC-ID-004) when a
+contribution is submitted.
+
+## 2. Four Distinct Process Axes
+
+CR-BP-03 introduces a **4-axis classification** that separates four
+distinct concerns. Each axis answers a different question;
+conflating them is the historical source of much process-catalog
+confusion.
+
+| Axis | Field | Vocabulary | Question it answers |
+|---|---|---|---|
+| **Intent** | `process_intent` (existing; preserved) | operational / support / management | **What is the process doing?** Describes the nature of the work. |
+| **Type** | `process_type` (new; CR-BP-03) | strategic / management / core / support / standardization | **Where does the process sit in the enterprise process landscape?** The 5-component classification (Mintzberg). |
+| **Specialization** | `process_specialization` (new; CR-BP-03) | list of parent process ids | **What is this process a specialization of?** Inheritance / pattern-based refinement (e.g. `Manage Customer` → `Manage Enterprise Customer`, `Manage VIO Customer`, etc.). |
+| **Audience** | `process_audience` (existing; preserved; confirmed to be the ECF domain) | governance-existence / supply-resources / people-organization / customer-demand / product-offering / operations-delivery / finance-value | **Which ECF domain does the process serve?** |
+
+The four axes are **additive** and **optional individually**; entries
+can declare any subset. `process_type` defaults to `core` when the
+entry is a Business Process. See [`docs/classification.md`](docs/classification.md)
+for the full classification narrative.
+
+## 3. Process Decomposition (L0 / L1 / L2 — conceptual)
+
+The Business Process catalog decomposes the enterprise process
+landscape through a conceptual L0 / L1 / L2 hierarchy. **L0 and L1
+are catalog topology constructs; L2 is the canonical semantic
+level** (`dea:BusinessProcess`).
+
+```text
+ECF Domain × Lifecycle Stage
+         │
+         ▼
+   Process Context          (CR-BP-02; contexts/v1/)
+         │   conceptual L0 (Process Scope)
+         ▼
+   Process Group            (conceptual L1; documented; not
+         │       a separate directory)
+         ▼
+   Business Process         (L2; entities/v1/; dea:BusinessProcess)
+         │
+         ▼
+   Activity                 (CR-BP-04; future)
+         │
+         ▼
+   Workflow / Task          (CR-BP-05; future; authoritative
+                             metamodel)
+```
+
+**Process Group is NOT equivalent to Business Function.** A Business
+Function is an OpenDEA semantic concept concerned with organizational
+grouping of capabilities and ownership. Process Group is concerned
+with organizing processes. They answer different questions and live
+at different modeling concerns.
+
+**No separate top-level directories** for L0 / L1 / L2. L0 / L1 are
+**conceptual constructs** documented here + [`docs/architecture.md`](docs/architecture.md).
+The L2 entries live at `entities/v1/` (currently `v1-alpha/`).
+
+## 4. Structural Composition
+
+Process decomposition uses the authoritative OpenDEA relationship
+`dea:composes`. Structural composition means:
+
+- part-of structure;
+- containment within the process architecture;
+- hierarchical decomposition;
+- **no implied sequence**;
+- **no implied execution**;
+- **no implied organizational ownership**.
+
+In the schema, structural composition is captured in
+`relationships.composes` (canonical). The legacy `parent_process` /
+`child_processes` fields are preserved as migration aliases and are
+not authoritative.
+
+## 5. Capability Realization
+
+Capability realization is captured in `relationships.realizes`
+(canonical). The legacy `capabilities_delivered` field is preserved
+as a migration alias.
+
+```text
+              ┌───────────────┐
+              │ Business      │
+              │ Capability    │
+              └───────▲───────┘
+                      │
+                   realizes
+                      │
+              ┌───────┴───────┐
+              │ Business      │
+              │ Process       │
+              └───────┬───────┘
+                      │
+                   composes
+                      │
+                      ▼
+              Business Process
+```
+
+## 6. Process Identity
+
+A process is tested by **name + description + trigger + outcome +
+evidence, not by name alone**. The identity sub-block
+(`schemas/identity.schema.json`) is the contract:
+
+```yaml
+identity:
+  verb: Manage           # action verb (imperative; singular)
+  object: Customer       # the noun being acted on
+  scope: <optional>      # optional scope qualifier
+  outcome_statement: |
+    Customer relationships are maintained, escalated where
+    required, and renewed or terminated per policy.
+  evidence_links:
+    - type: documentation
+      ref: docs/processes/manage-customer.md
+    - type: governance
+      ref: governance/process-manage-customer.md
+```
+
+The validator `scripts/check_process_identity.py` enforces
+**BP-ARC-ID-001..BP-ARC-ID-005**:
+
+- BP-ARC-ID-001: name matches identity verb + object (+ optional scope).
+- BP-ARC-ID-002: trigger is non-empty.
+- BP-ARC-ID-003: outcome is non-empty and consistent with `outcome_statement`.
+- BP-ARC-ID-004: `process_type` is consistent with `outcome_statement`.
+- BP-ARC-ID-005: `evidence_links` is non-empty.
+
+A process that violates one or more of these rules is **flagged
+for review** by the contribution report (see §7). The catalog does
+**not** auto-rewrite. See [`docs/identity.md`](docs/identity.md).
+
+## 7. Re-landscape (Contribution-Driven)
+
+A new process is **not** added directly to `entities/v1/`; the
+contributor submits a **Process Contribution** to
+`contributions/processes/`, and the **CI contribution report
+workflow** generates a reclassification recommendation.
+
+```text
+contribution submitted
+   │  (PR to contributions/processes/<id>.yaml)
+   ▼
+CI report generated
+   │  (artifact: contributions/processes/<id>.report.md)
+   │  (PR comment)
+   ▼
+Reviewer reviews
+   │
+   ├── accept  → land in entities/v1-alpha/<id>.yaml
+   │
+   ├── re-classify → contributor updates proposed_entry
+   │                and re-runs CI
+   │
+   └── reject → PR closed; contribution archived
+```
+
+The re-landscape mechanism is **contribution-driven** (not in-tree)
+and **CI-piped** (the report is generated as a PR artifact). The
+catalog does not auto-rewrite; a catalog maintainer reviews the
+recommendation. See [`docs/relandscape.md`](docs/relandscape.md).
+
+## 8. No Breaking Changes
+
+CR-BP-03 introduces new fields additively. The existing fields
+(`process_intent`, `process_audience`, `parent_process`,
+`child_processes`, `capabilities_delivered`) are all preserved.
+Existing catalog entries continue to validate.
+
+The legacy fields are documented as **migration aliases**; a
+follow-on migration validator (CR-BP-03A or later) will surface
+entries that have only the old fields. New entries should declare
+`relationships.{composes, realizes}` in canonical OpenDEA form.
+
+---
+
 # Enterprise Concept Framework
 
 The Enterprise Concept Framework provides a holistic and structured representation of the enterprise through the intersection of:
@@ -771,6 +981,56 @@ Examples include:
 Where a decision affects the normative OpenDEA semantic model, it must be progressed through the appropriate OpenDEA Change Request process.
 
 The catalog must remain aligned with the normative model as it evolves.
+
+---
+
+# Current Change Programme
+
+The Business Process catalog is governed by a sequence of Change
+Requests (CRs). Each CR lands verbatim and is reviewed before
+merge.
+
+| CR | Title | Status | Scope |
+|---|---|---|---|
+| [CR-BP-01](change-requests/CR-BP-01.md) | Process Semantic Baseline | **Superseded** by CR-BP-SPEC-BP-01 | Original (wrong-premise) implementation; assumed `dea:BusinessProcess` was the sole canonical Process identity. Reverted. |
+| [CR-BP-SPEC-BP-01](change-requests/CR-BP-SPEC-BP-01.md) | Business Process Specialization Catalog | **Merged** (PR #12) | Re-anchors the catalog on the **kernel + specializations** discipline (CR-MM-PROC-01; CR-AR-FMWK-01; WSF). Pointer declares both `dea:BusinessProcess` (specialization) and `dea:entity-process` (kernel). New validator enforces `BP-SPEC-01-001..007`. |
+| [CR-BP-02](change-requests/CR-BP-02.md) | Establish Process Context | **Merged** (PR #14) | Establishes the **Process Context register + Cell Charter schema** on top of the kernel + specialization tranche. Each context is `Domain x Lifecycle Stage` with a Cell Charter. PC-001..PC-008 validator. Matrix empty by design (CR-BP-02 §22). |
+| [CR-BP-03](change-requests/CR-BP-03-business-process-architecture.md) | Business Process Architecture | **Proposed (this PR)** | Establishes the **4-axis classification** (intent / type / specialization / audience) with no breaking changes. Introduces `process_type` (5-value Mintzberg vocabulary) + `process_specialization` (inheritance / pattern-based refinement). Refines the L0/L1/L2 hierarchy as a **conceptual model** (not separate top-level directories). Introduces the **process-identity contract** (verb + object + outcome_statement + evidence_links) and **contribution-driven re-landscape** (a new process contribution is submitted to `contributions/processes/`, a report is generated, the report is piped through CI). |
+| CR-BP-04 | Activity Model | **Future** | Defines the next level of Business Process decomposition. |
+| CR-BP-05 | Execution Boundary | **Future** | Establishes the boundary between business process architecture and execution/workflow concerns. |
+
+---
+
+# Conformance Principle
+
+The process catalog does **not** create a parallel enterprise
+ontology. It profiles and catalogs canonical OpenDEA entities
+within an explicit process architecture while preserving the
+separation between:
+
+- enterprise context;
+- process structure;
+- process semantics;
+- capability realization;
+- organizational responsibility;
+- process behaviour;
+- execution.
+
+A Business Process catalog entry is a **catalog profile of
+`dea:BusinessProcess`**, not a new foundational entity. The
+catalog can classify a process by `process_type` (the 5-value
+Mintzberg vocabulary), but the classification does not promote
+to a new metamodel entity.
+
+The four axes (intent / type / specialization / audience) operate
+independently: each captures a distinct concern, and a single
+Business Process can have any combination of values across the
+four axes.
+
+The re-landscape mechanism is **contribution-driven** and
+**human-reviewed**: the catalog does not auto-rewrite. The CI
+contribution report workflow surfaces a reclassification
+recommendation, and a catalog maintainer decides.
 
 ---
 

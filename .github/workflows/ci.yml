@@ -50,3 +50,6 @@ jobs:
 
       - name: Run Process Context gate (CR-BP-02)
         run: python scripts/check_process_context.py
+
+      - name: Run Process Identity gate (CR-BP-03)
+        run: python scripts/check_process_identity.py

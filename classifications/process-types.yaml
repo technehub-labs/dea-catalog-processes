@@ -1,0 +1,148 @@
+# Process Types — controlled catalog vocabulary
+# CR-BP-03 §2.1, §8 (refined)
+#
+# These are the five Process Type values used in the `process_type`
+# field of L2 Business Process entries. They are a CATALOG
+# CLASSIFICATION (per CR-BP-03 §3), not a new ontology.
+#
+# The canonical L2 semantic entity is `dea:BusinessProcess` regardless
+# of process_type. The classification describes WHERE the process
+# sits in the enterprise process landscape (per Mintzberg's
+# five-component model), not a new class of OpenDEAM entity.
+#
+# Vocabulary source: Mintzberg's five organizational components
+# (Strategic Apex, Middle Line, Operating Core, Support Staff,
+# Technostructure), refined per the user's clarification to use
+# "core" for the value-creation axis (per CR-BP-03 §2.1).
+
+version: v1
+refines: CR-BP-03 §2.1, §8
+
+process_types:
+  - id: strategic
+    name: Strategic Process
+    primary_organizational_component: Strategic Apex
+    primary_purpose: >
+      Enterprise direction, vision, goals, and strategic decisions.
+      Strategic processes set the long-term direction of the
+      organization and define the strategic objectives against
+      which other processes are aligned.
+    examples:
+      - Define enterprise strategy
+      - Set strategic objectives
+      - Govern enterprise portfolio
+    characteristics:
+      - long time horizon (multi-year)
+      - low transaction volume
+      - high judgment
+      - high organizational impact
+    notes: >
+      The Strategic Apex establishes direction; the Strategic
+      processes are the work the Apex performs. Strategic
+      processes typically realize Enterprise-level capabilities
+      and are driven by the Board / Executive level.
+
+  - id: management
+    name: Management Process
+    primary_organizational_component: Middle Line
+    primary_purpose: >
+      Plan, monitor, and control the allocation of resources to
+      achieve strategic goals. Management processes translate
+      strategic direction into operational plans and coordinate
+      execution across the Operating Core.
+    examples:
+      - Plan enterprise resource allocation
+      - Monitor and control performance
+      - Coordinate cross-functional execution
+    characteristics:
+      - medium time horizon (quarterly to annual)
+      - medium transaction volume
+      - coordination and supervision
+      - medium organizational impact
+    notes: >
+      The Middle Line bridges Strategy (Strategic Apex) and
+      Operation (Operating Core). Management processes consume
+      the outputs of Strategic processes and produce plans
+      consumed by Core and Support processes.
+
+  - id: core
+    name: Core Process
+    primary_organizational_component: Operating Core
+    primary_purpose: >
+      Direct value creation; products and services delivered to
+      external customers. Core processes produce the goods and
+      services that the enterprise exists to deliver.
+    examples:
+      - Manage customer relationships
+      - Deliver products to customers
+      - Operate the supply chain
+    characteristics:
+      - short time horizon (daily to monthly)
+      - high transaction volume
+      - direct value production
+      - high external customer impact
+    notes: >
+      This is the canonical classification for L2 Business Process
+      entries in this catalog (CR-BP-03 §3). The dea:BusinessProcess
+      semantic entity represents Core processes by default. Entries
+      with process_type == core are the principal subject of this
+      catalog; entries with other process_type values are admitted
+      but flagged for review (see docs/relandscape.md).
+
+  - id: support
+    name: Support Process
+    primary_organizational_component: Support Staff
+    primary_purpose: >
+      Internal-to-enterprise services that keep the organization
+      running. Support processes do not directly produce external
+      value but enable the Core processes to operate.
+    examples:
+      - Manage internal tooling
+      - Operate internal IT
+      - Provide internal services
+    characteristics:
+      - medium time horizon (operational to annual)
+      - medium transaction volume
+      - internal customers only
+      - indirect external impact
+    notes: >
+      Support processes are L2-eligible in this catalog when they
+      have a Business Process shape (realize a Business Capability,
+      compose other Business Processes, have a trigger + outcome).
+      Pure administrative tasks belong to CR-BP-04 (Activity) or
+      CR-BP-05 (Execution Boundary), not here.
+
+  - id: standardization
+    name: Standardization Process
+    primary_organizational_component: Technostructure
+    primary_purpose: >
+      Cross-cutting overlay that ensures compliance, consistency,
+      continuous improvement, and quality. Standardization
+      processes establish the rules, standards, and measurement
+      frameworks that other processes must follow.
+    examples:
+      - Design process standards
+      - Measure process performance
+      - Drive continuous improvement
+    characteristics:
+      - long time horizon (annual to multi-year)
+      - low transaction volume
+      - cross-cutting scope
+      - indirect customer impact
+    notes: >
+      Standardization processes are a critical part of the
+      enterprise process landscape but are typically NOT the
+      principal subject of a Business Process catalog (which is
+      Core-focused). Entries with process_type == standardization
+      are admitted to the catalog when they have a Business
+      Process shape and are flagged for re-landscape review.
+
+stability:
+  - "The five process_type values (strategic, management, core, support, standardization) are STABLE for the lifetime of CR-BP-03. New values require a follow-on CR (CR-BP-03A or later)."
+  - "The id field is the canonical value used in entries (e.g. process_type: core)."
+  - "The name field is a display label; entries may use either the id or the name in human-readable output."
+
+see_also:
+  - docs/architecture.md
+  - docs/classification.md
+  - change-requests/CR-BP-03-business-process-architecture.md

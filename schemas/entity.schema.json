@@ -2,32 +2,113 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://technehub-labs.github.io/dea-catalog-processes/schemas/entity.schema.json",
   "title": "Business Process",
-  "description": "Schema for Business Process entries in technehub-labs/dea-catalog-processes. Mirrors technehub-labs/dea-metamodel/schemas/entities/process.json (v3.0.0-alpha). The Business Process is the specialization of the OpenDEAM Process kernel (dea:Process in dea-metamodel Core; dea:entity-process in the OpenDEAM root model) for the Business Architecture and Business Operations use cases (CR-MM-PROC-01; CR-AR-FMWK-01; CR-BP-SPEC-BP-01). Sub-classifications (operational / support / management; carried by process_intent) are catalog-internal and do not promote to root-model entities.",
+  "description": "Schema for Business Process entries in technehub-labs/dea-catalog-processes. Mirrors technehub-labs/dea-metamodel/schemas/entities/process.json (v3.0.0-alpha). The Business Process is the specialization of the OpenDEAM Process kernel (dea:Process in dea-metamodel Core; dea:entity-process in the OpenDEAM root model) for the Business Architecture and Business Operations use cases (CR-MM-PROC-01; CR-AR-FMWK-01; CR-BP-SPEC-BP-01). Sub-classifications (operational / support / management; carried by process_intent) are catalog-internal and do not promote to root-model entities. CR-BP-03 ADDS the process_type (5-value Mintzberg), process_specialization (inheritance), relationships (canonical OpenDEA dea:composes + dea:realizes), and identity sub-block fields ADDITIVELY; existing fields are preserved and existing entries continue to validate.",
   "type": "object",
   "required": ["id", "name", "type", "version", "process_intent", "process_audience"],
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*:[a-z0-9-]+$" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
     "type": { "type": "string", "const": "Process" },
     "name": { "type": "string", "minLength": 1, "maxLength": 200 },
     "description": { "type": "string", "maxLength": 2000 },
     "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
     "process_intent": {
       "type": "string",
-      "enum": ["operational", "support", "management"]
+      "enum": ["operational", "support", "management"],
+      "description": "Work-character axis. Preserved from CR-BP-01 (operational / support / management). Describes what the process is doing."
     },
     "process_audience": {
       "type": "string",
       "enum": [
         "governance-existence", "supply-resources", "people-organization",
         "customer-demand", "product-offering", "operations-delivery", "finance-value"
-      ]
+      ],
+      "description": "ECF domain the process serves. Preserved from CR-BP-01. process_audience is a single-axis audience classification (CG-004 §10); it is NOT a full ECF coordinate (Domain x Lifecycle Stage) — that lives in Process Context (CR-BP-02)."
+    },
+    "process_type": {
+      "type": "string",
+      "enum": ["strategic", "management", "core", "support", "standardization"],
+      "default": "core",
+      "description": "5-component classification (Mintzberg). NEW in CR-BP-03. Where the process sits in the enterprise process landscape. Default: 'core' (the canonical classification for L2 Business Process entries). This is a CATALOG CLASSIFICATION (per CR-BP-03 §3), not a new ontology; the semantic entity remains dea:BusinessProcess regardless of process_type. See classifications/process-types.yaml for the controlled vocabulary."
+    },
+    "process_specialization": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^dea:bp:[a-z0-9-]+$" },
+      "description": "Optional: list of parent process ids this entry specializes (inheritance / pattern-based refinement). NEW in CR-BP-03. Multi-inheritance is permitted. The authoritative dea:specializes relationship in the metamodel continues to govern the kernel + specialization discipline (CR-MM-PROC-01); this field is a catalog-level annotation for navigation and governance. See classifications/process-specializations.yaml for the controlled vocabulary of patterns."
+    },
+    "specialization_pattern": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Optional: free-text pattern label (e.g. 'by-customer-segment', 'by-region', 'by-product-line', 'by-tier', 'by-compliance-regime'). NEW in CR-BP-03. See classifications/process-specializations.yaml for the controlled vocabulary."
+    },
+    "relationships": {
+      "type": "object",
+      "description": "Canonical OpenDEA relationships (NEW in CR-BP-03). The relationship shape uses dea:composes for structural decomposition and dea:realizes for capability realization. This is the AUTHORITATIVE form; the legacy parent_process / child_processes / capabilities_delivered fields below are preserved as migration aliases and shall not remain authoritative (a follow-on migration validator CR-BP-03A will surface entries that have only the old fields).",
+      "properties": {
+        "composes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^dea:bp:[a-z0-9-]+$" },
+          "description": "Canonical OpenDEA dea:composes: the L2 Business Process structurally composes other L2 Business Processes. Structural composition means part-of structure; containment; hierarchical decomposition; no implied sequence, execution, or organizational ownership."
+        },
+        "realizes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^dea:capability:[a-z0-9-]+$" },
+          "description": "Canonical OpenDEA dea:realizes: the L2 Business Process realizes one or more Business Capabilities. The realizes relationship is orthogonal to composes; a process may realize a capability without composing it, and compose another process without realizing any capability directly."
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "description": "Process identity sub-block (NEW in CR-BP-03; mirrors schemas/identity.schema.json inline to avoid a remote $ref). Tests a process by name + description + trigger + outcome + evidence, not by name alone. Optional at the schema level (entries without identity are admitted but flagged for review in the contribution report).",
+      "required": ["verb", "object", "outcome_statement"],
+      "properties": {
+        "verb": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 50,
+          "pattern": "^[A-Z][a-z]+$",
+          "description": "Action verb (imperative; singular; TitleCase). E.g. Manage, Deliver, Onboard, Operate, Design, Govern. The verb should match the verb in the process name (the name is typically '<verb> <object>')."
+        },
+        "object": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200,
+          "pattern": "^[A-Z]",
+          "description": "The noun being acted on (TitleCase). E.g. Customer, Service, Order, Portfolio, Data, Risk. The object should match the noun in the process name."
+        },
+        "scope": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Optional scope qualifier. E.g. (Enterprise), (Tier-1), (Cloud), (GDPR)."
+        },
+        "outcome_statement": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 2000,
+          "description": "Outcome statement (the description-of-record). Describes what the process achieves — not what it does."
+        },
+        "evidence_links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["type", "ref"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["documentation", "governance", "interview", "artifact", "standard", "regulation"]
+              },
+              "ref": { "type": "string", "minLength": 5 }
+            }
+          }
+        }
+      }
     },
     "owner": { "type": "string" },
-    "trigger": { "type": "string", "maxLength": 500 },
-    "outcome": { "type": "string", "maxLength": 500 },
-    "parent_process": { "type": "string" },
-    "child_processes": { "type": "array", "items": { "type": "string" } },
-    "capabilities_delivered": { "type": "array", "items": { "type": "string" } },
+    "trigger": { "type": "string", "maxLength": 500, "description": "What initiates the process. Used by the contribution report to cross-check the identity (BP-ARC-ID-002)." },
+    "outcome": { "type": "string", "maxLength": 500, "description": "What the process produces. Used by the contribution report to cross-check the identity (BP-ARC-ID-003)." },
+    "parent_process": { "type": "string", "description": "Migration alias (preserved). Use relationships.composes instead in new entries." },
+    "child_processes": { "type": "array", "items": { "type": "string" }, "description": "Migration alias (preserved). Use relationships.composes instead in new entries." },
+    "capabilities_delivered": { "type": "array", "items": { "type": "string" }, "description": "Migration alias (preserved). Use relationships.realizes instead in new entries." },
     "services_provided": { "type": "array", "items": { "type": "string" } },
     "components_involved": { "type": "array", "items": { "type": "string" } },
     "kpis": { "type": "array", "items": { "type": "string" } },

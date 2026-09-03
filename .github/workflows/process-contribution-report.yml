@@ -1,0 +1,133 @@
+name: Process Contribution Report
+
+# CR-BP-03 §9.3 — Contribution-driven re-landscape mechanism.
+#
+# This workflow runs on PRs that touch `contributions/processes/`.
+# It validates the contribution, runs the identity checker on the
+# proposed_entry, and emits a reclassification report.
+#
+# The PR is not auto-merged; a catalog maintainer reviews the
+# report and decides.
+
+on:
+  pull_request:
+    paths:
+      - "contributions/processes/**"
+  push:
+    branches: [main]
+    paths:
+      - "contributions/processes/**"
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml jsonschema
+
+      - name: Detect changed contributions
+        id: detect
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED=$(git diff --name-only origin/main...HEAD -- 'contributions/processes/*.yaml' | grep -v 'PROCESS-CONTRIBUTION-TEMPLATE.yaml' || true)
+          else
+            CHANGED=$(git diff --name-only HEAD~1...HEAD -- 'contributions/processes/*.yaml' | grep -v 'PROCESS-CONTRIBUTION-TEMPLATE.yaml' || true)
+          fi
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          if [ -z "$CHANGED" ]; then
+            echo "No contributions to process."
+            exit 0
+          fi
+
+      - name: Validate each contribution against the schema
+        run: |
+          python -c "
+          import json, sys, glob, yaml
+          import jsonschema
+          schema = json.load(open('schemas/contribution.schema.json'))
+          for path in glob.glob('contributions/processes/*.yaml'):
+              if 'PROCESS-CONTRIBUTION-TEMPLATE' in path:
+                  continue
+              with open(path) as f:
+                  contrib = yaml.safe_load(f)
+              try:
+                  jsonschema.validate(contrib, schema)
+                  print(f'PASS: {path}')
+              except jsonschema.ValidationError as e:
+                  print(f'FAIL: {path}: {e.message}')
+                  sys.exit(1)
+          "
+
+      - name: Run identity checker on each proposed_entry
+        run: |
+          python scripts/check_process_identity.py
+
+      - name: Emit contribution report
+        run: |
+          # Generate a report for each contribution. The report
+          # captures the current state + suggested reclassification.
+          # This is a stub: a follow-on PR will replace this with
+          # a richer report generator.
+          python -c "
+          import glob, yaml, json
+          from pathlib import Path
+          for path in glob.glob('contributions/processes/*.yaml'):
+              if 'PROCESS-CONTRIBUTION-TEMPLATE' in path:
+                  continue
+              with open(path) as f:
+                  contrib = yaml.safe_load(f)
+              pe = contrib.get('proposed_entry', {})
+              report_path = path.replace('.yaml', '.report.md')
+              report = f'''# Contribution Report: {pe.get(\"id\", \"<unknown>\")}
+
+              ## Status
+              {contrib.get(\"status\", \"pending\")}
+
+              ## Current state
+              - name: {pe.get(\"name\")}
+              - process_type: {pe.get(\"process_type\")}
+              - process_intent: {pe.get(\"process_intent\")}
+              - process_audience: {pe.get(\"process_audience\")}
+
+              ## Recommendation
+              The CI report generator is a stub in this CR. A follow-on
+              PR (CR-BP-03A or later) will replace this with a richer
+              reclassification recommendation based on the
+              outcome_statement and evidence_links cross-check.
+
+              ## Reviewer next-steps
+              - Review the proposed_entry against the identity
+                contract (docs/identity.md).
+              - Run scripts/check_process_identity.py locally.
+              - Either accept, request re-landscape, or reject.
+              '''
+              Path(report_path).write_text(report)
+              print(f'Generated: {report_path}')
+          "
+
+      - name: Post report as PR comment
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: contribution-report
+          message: |
+            ## Process Contribution Report
+
+            Each changed contribution in `contributions/processes/`
+            has been validated and a report has been emitted.
+
+            See the report files (e.g.
+            `contributions/processes/<id>.report.md`) for the
+            detailed reclassification recommendations.
+
+            **Action required**: a catalog maintainer must review
+            and either accept, request re-landscape, or reject the
+            contribution.

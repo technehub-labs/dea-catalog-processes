@@ -1,0 +1,112 @@
+# Process Specializations — catalog-level vocabulary
+# CR-BP-03 §7.1
+#
+# This is the catalog-level vocabulary for the `process_specialization`
+# axis (inheritance / pattern-based refinement). It is NOT a new
+# metamodel relationship; it is a catalog-level annotation that
+# records the specialization hierarchy for navigation and governance.
+#
+# The authoritative `dea:specializes` relationship in the metamodel
+# continues to govern the kernel + specialization discipline
+# (CR-MM-PROC-01). This file is a controlled-vocabulary reference
+# for catalog-level patterns.
+
+version: v1
+refines: CR-BP-03 §7.1
+
+# A "specialization pattern" is a free-text label that groups
+# related specializations for analytics and governance review.
+# E.g. "by-customer-segment" groups Manage Enterprise Customer,
+# Manage VIO Customer, Manage Retail Customer, etc.
+specialization_patterns:
+  - id: by-customer-segment
+    description: >
+      The process is specialized by customer segment
+      (e.g. Enterprise, VIO, Retail, Shop). Each specialization
+      realizes the parent process for a specific customer segment
+      with segment-specific policies, SLAs, and outcomes.
+    examples:
+      - Manage Customer  →  Manage Enterprise Customer
+      - Manage Customer  →  Manage VIO Customer
+      - Manage Customer  →  Manage Retail Customer
+    typical_process_type: management | core
+  - id: by-region
+    description: >
+      The process is specialized by geographic region
+      (e.g. NA, EMEA, APAC). Each specialization realizes the
+      parent process for a specific region with region-specific
+      regulatory and operational considerations.
+    examples:
+      - Manage Customer  →  Manage Customer (NA)
+      - Manage Customer  →  Manage Customer (EMEA)
+    typical_process_type: management | core
+  - id: by-product-line
+    description: >
+      The process is specialized by product line
+      (e.g. Mobile, Fixed, Cloud). Each specialization realizes
+      the parent process for a specific product line with
+      product-specific workflows.
+    examples:
+      - Deliver Service  →  Deliver Mobile Service
+      - Deliver Service  →  Deliver Cloud Service
+    typical_process_type: core
+  - id: by-channel
+    description: >
+      The process is specialized by delivery channel
+      (e.g. Self-service, Assisted, Automated). Each
+      specialization realizes the parent process for a
+      specific channel with channel-specific UI / UX.
+    examples:
+      - Onboard Customer  →  Onboard Customer (Self-service)
+      - Onboard Customer  →  Onboard Customer (Assisted)
+    typical_process_type: core
+  - id: by-tier
+    description: >
+      The process is specialized by service tier
+      (e.g. Bronze, Silver, Gold, Platinum). Each
+      specialization realizes the parent process for a
+      specific tier with tier-specific SLAs.
+    examples:
+      - Support Customer  →  Support Customer (Gold Tier)
+      - Support Customer  →  Support Customer (Platinum Tier)
+    typical_process_type: support
+  - id: by-compliance-regime
+    description: >
+      The process is specialized by compliance regime
+      (e.g. GDPR, HIPAA, SOX). Each specialization realizes
+      the parent process under a specific regulatory
+      framework.
+    examples:
+      - Process Personal Data  →  Process Personal Data (GDPR)
+      - Process Personal Data  →  Process Personal Data (HIPAA)
+    typical_process_type: core | standardization
+
+# Specialization hierarchy: a parent-child graph for the most
+# common process specializations in the catalog. Entries that
+# declare `process_specialization: [...]` should be findable
+# through this graph.
+#
+# Note: this is illustrative; the authoritative specialization
+# graph is the actual entries in entities/v1-alpha/ (or future
+# entities/v1/) with their `process_specialization` lists.
+hierarchy_examples:
+  - root: dea:bp-manage-customer
+    specializations:
+      - dea:bp-manage-enterprise-customer
+      - dea:bp-manage-vip-customer
+      - dea:bp-manage-retail-customer
+    pattern: by-customer-segment
+  - root: dea:bp-deliver-service
+    specializations:
+      - dea:bp-deliver-mobile-service
+      - dea:bp-deliver-fixed-service
+      - dea:bp-deliver-cloud-service
+    pattern: by-product-line
+
+stability:
+  - "Patterns are added by extending the specialization_patterns list; existing patterns are stable for the lifetime of CR-BP-03."
+
+see_also:
+  - classifications/process-types.yaml
+  - docs/classification.md
+  - change-requests/CR-BP-03-business-process-architecture.md §7.1
