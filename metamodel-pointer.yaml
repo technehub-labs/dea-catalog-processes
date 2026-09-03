@@ -1,10 +1,26 @@
-# Metamodel Pointer — Business Process
-# Auto-generated from OpenDEAM v0.2.1 (dea-architecture-framework, ADR-0002).
-# Do not edit manually — allocation changes go through the root model
-# (structural: ADR + minor bump; additive: PR + patch bump).
+# Metamodel Pointer: Business Process
+# CR-BP-01 alignment (proposal PR #9, implementation PR #10).
+#
+# Canonical identity: dea:BusinessProcess (sole canonical OpenDEA semantic
+# identity for the Business Process concept).
+# Legacy identifier: dea:entity-process (explicit compatibility mapping,
+# not a parallel canonical entity).
+#
+# The pointer now carries the legacy_identifiers block so downstream
+# consumers can resolve the legacy id without re-deriving it from
+# upstream metamodel internals. Source of authority for both identifiers
+# is dea-metamodel/metamodel/dea-metamodel.yaml (lines 562-565 on
+# origin/main at the time of this commit).
+#
+# Do not edit the canonical entity_id by hand; allocation changes go
+# through the root model (structural: ADR + minor bump; additive: PR +
+# patch bump) per CR-BP-01 AC-04.
+
 metamodel:
-  version: v0.2.1
-  entity_id: dea:entity-process
+  version: v0.6.0
+  entity_id: dea:BusinessProcess
+  legacy_identifiers:
+    - dea:entity-process
   class_alias: BP
   layer: L3
   building_block: L3-value-delivery
@@ -13,13 +29,21 @@ metamodel:
 catalog:
   name: Business Process
   repo: technehub-labs/dea-catalog-processes
-  status: scaffold
+  status: semantic-baseline (CR-BP-01)
 
 description: |
   A structured set of activities that produces a defined outcome.
+
+  CR-BP-01 establishes that the canonical OpenDEA semantic identity
+  for this concept is `dea:BusinessProcess`. The legacy identifier
+  `dea:entity-process` is preserved as an explicit compatibility
+  mapping under `metamodel.legacy_identifiers` and must not be used
+  as a canonical entity in new artifacts (CR-BP-01 AC-01, BP-01-001).
 
 links:
   metamodel_repo: https://github.com/technehub-labs/dea-metamodel
   root_model: https://github.com/technehub-labs/dea-architecture-framework
   viewer: "https://technehub-labs.github.io/metamodel/?entity=BP"
   github: https://github.com/technehub-labs/dea-catalog-processes
+  change_request: change-requests/CR-BP-01.md
+  governance_decision: docs/governance/canonical-identity-business-process.md
