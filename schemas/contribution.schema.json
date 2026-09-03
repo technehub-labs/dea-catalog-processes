@@ -80,6 +80,43 @@
         "identity": {
           "type": "object",
           "description": "Process identity sub-block. Must conform to schemas/identity.schema.json."
+        },
+        "relationships": {
+          "type": "array",
+          "description": "Canonical OpenDEA relationships (CR-BP-03 §6; CR-BP-03A §3.1). Array of relationship instances conforming to the metamodel's relationship-instance.json. The catalog primarily uses 'composes' (structural composition) and 'realizes' (capability realization). The legacy parent_process / child_processes / capabilities_delivered fields are NOT part of the contribution schema (they have been removed or soft-deprecated in the entity schema).",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "target_id", "relationship_type"],
+            "properties": {
+              "source_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
+              "target_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
+              "relationship_type": {
+                "type": "string",
+                "enum": [
+                  "composes", "realizes", "specializes", "aggregates",
+                  "depends-on", "produces", "consumes", "flows-to",
+                  "governs", "owns", "responsible-for", "supports",
+                  "triggers", "executes", "orchestrates"
+                ]
+              },
+              "direction": { "type": "string", "enum": ["source-to-target"], "default": "source-to-target" },
+              "status": { "type": "string", "enum": ["proposed", "planned", "active", "deprecated", "retired"], "default": "active" },
+              "effective_from": { "type": "string", "format": "date" },
+              "effective_to": { "type": "string", "format": "date" },
+              "asserted_by": { "type": "string" },
+              "rationale": { "type": "string", "maxLength": 1000 },
+              "evidence": { "type": "string", "maxLength": 1000 },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "type": { "type": "string", "enum": ["architecture-review", "discovery", "assessment", "inference", "migration", "manual"] },
+                  "reference": { "type": "string" },
+                  "asserted_by": { "type": "string" },
+                  "asserted_at": { "type": "string", "format": "date" }
+                }
+              }
+            }
+          }
         }
       }
     },

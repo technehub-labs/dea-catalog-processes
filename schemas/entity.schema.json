@@ -41,18 +41,57 @@
       "description": "Optional: free-text pattern label (e.g. 'by-customer-segment', 'by-region', 'by-product-line', 'by-tier', 'by-compliance-regime'). NEW in CR-BP-03. See classifications/process-specializations.yaml for the controlled vocabulary."
     },
     "relationships": {
-      "type": "object",
-      "description": "Canonical OpenDEA relationships (NEW in CR-BP-03). The relationship shape uses dea:composes for structural decomposition and dea:realizes for capability realization. This is the AUTHORITATIVE form; the legacy parent_process / child_processes / capabilities_delivered fields below are preserved as migration aliases and shall not remain authoritative (a follow-on migration validator CR-BP-03A will surface entries that have only the old fields).",
-      "properties": {
-        "composes": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^dea:bp:[a-z0-9-]+$" },
-          "description": "Canonical OpenDEA dea:composes: the L2 Business Process structurally composes other L2 Business Processes. Structural composition means part-of structure; containment; hierarchical decomposition; no implied sequence, execution, or organizational ownership."
-        },
-        "realizes": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^dea:capability:[a-z0-9-]+$" },
-          "description": "Canonical OpenDEA dea:realizes: the L2 Business Process realizes one or more Business Capabilities. The realizes relationship is orthogonal to composes; a process may realize a capability without composing it, and compose another process without realizing any capability directly."
+      "type": "array",
+      "description": "Canonical OpenDEA relationships (CR-BP-03 §6; CR-BP-03A §3.1). The relationship shape is an array of relationship instances (NOT a structured object), conforming to the metamodel's relationship-instance.json (technehub-labs/dea-metamodel/schemas/relationships/relationship-instance.json). Each entry is a typed relationship with CR-002 provenance, CR-6 lifecycle, and effective_from/to temporal validity. The catalog primarily uses 'composes' (structural composition) and 'realizes' (capability realization). The legacy parent_process / child_processes fields (CR-BP-01 inventions; NOT metamodel fields) have been REMOVED; the legacy capabilities_delivered is retained as a soft-deprecated backward-compat shim (CR-BP-03A §3.3).",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "target_id", "relationship_type"],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$",
+            "description": "Source entity ID. For an L2 Business Process entry, source_id is the entry's own id."
+          },
+          "target_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$",
+            "description": "Target entity ID. For composes, target_id is the composed process; for realizes, target_id is the realized capability."
+          },
+          "relationship_type": {
+            "type": "string",
+            "enum": [
+              "composes", "realizes", "specializes", "aggregates",
+              "depends-on", "produces", "consumes", "flows-to",
+              "governs", "owns", "responsible-for", "supports",
+              "triggers", "executes", "orchestrates"
+            ],
+            "description": "Canonical relationship type (registry id without dea: prefix; per metamodel relationship-instance.json). The catalog primarily uses 'composes' and 'realizes'. Other types are admitted when the contributor can defend the choice."
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["source-to-target"],
+            "default": "source-to-target"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["proposed", "planned", "active", "deprecated", "retired"],
+            "default": "active"
+          },
+          "effective_from": { "type": "string", "format": "date" },
+          "effective_to": { "type": "string", "format": "date" },
+          "asserted_by": { "type": "string", "description": "Person, team, or agent asserting this relationship (CR-002 §21/§22)." },
+          "rationale": { "type": "string", "maxLength": 1000 },
+          "evidence": { "type": "string", "maxLength": 1000, "description": "Reference to supporting evidence." },
+          "provenance": {
+            "type": "object",
+            "description": "Structured provenance (CR-002 §21).",
+            "properties": {
+              "type": { "type": "string", "enum": ["architecture-review", "discovery", "assessment", "inference", "migration", "manual"] },
+              "reference": { "type": "string" },
+              "asserted_by": { "type": "string" },
+              "asserted_at": { "type": "string", "format": "date" }
+            }
+          }
         }
       }
     },
@@ -106,9 +145,11 @@
     "owner": { "type": "string" },
     "trigger": { "type": "string", "maxLength": 500, "description": "What initiates the process. Used by the contribution report to cross-check the identity (BP-ARC-ID-002)." },
     "outcome": { "type": "string", "maxLength": 500, "description": "What the process produces. Used by the contribution report to cross-check the identity (BP-ARC-ID-003)." },
-    "parent_process": { "type": "string", "description": "Migration alias (preserved). Use relationships.composes instead in new entries." },
-    "child_processes": { "type": "array", "items": { "type": "string" }, "description": "Migration alias (preserved). Use relationships.composes instead in new entries." },
-    "capabilities_delivered": { "type": "array", "items": { "type": "string" }, "description": "Migration alias (preserved). Use relationships.realizes instead in new entries." },
+    "capabilities_delivered": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Soft-deprecated (CR-BP-03A §3.3). Retained for backward-compat with the metamodel's process.json (which declares this as a simple array of strings). The canonical form is relationships[relationship_type=realizes] with full provenance. The migration validator BP-MIG-002 surfaces entries that declare this field."
+    },
     "services_provided": { "type": "array", "items": { "type": "string" } },
     "components_involved": { "type": "array", "items": { "type": "string" } },
     "kpis": { "type": "array", "items": { "type": "string" } },
