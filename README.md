@@ -2,17 +2,26 @@
 
 ## Purpose
 
-The OpenDEA Business Process Catalog establishes the canonical, structured and machine-consumable foundation for representing, organizing and evolving business processes within the OpenDEA ecosystem.
+The **OpenDEA Business Process Catalog** establishes the canonical,
+structured and machine-consumable foundation for the **Business Process
+specialization** of the OpenDEA Process kernel.
 
-The repository is not intended to be a simple collection of process names or a conventional process reference library. It provides the foundation for a rigorous **Business Process Architecture** that enables the systematic identification, classification, decomposition, validation and reuse of business process knowledge.
+The catalog supports the **Business Architecture** and **Business
+Operations** use cases (CR-MM-PROC-01; CR-AR-FMWK-01; CR-BP-SPEC-BP-01).
+It is **one of potentially several** Process-specialization catalogs in
+the OpenDEA ecosystem. Other specializations (Operational, Engineering,
+etc.) will have their own catalogs when their use cases emerge.
 
-The catalog is designed to support enterprise transformation, digital transformation, operational transformation, process modelling, workflow design, automation, autonomous operations and AI-enabled or agentic operations.
-
-The Business Process Catalog is a foundational OpenDEA repository. Process elements defined here are expected to establish canonical references that can be used by other OpenDEA repositories and models rather than independently recreating or redefining the same business process concepts.
+The Process discipline is a **kernel + specializations** model: WSF is
+authoritative on the Process concept; DEA inherits via specialization;
+`dea:BusinessProcess` is the first specialization context (Business
+Architecture + Business Operations). The catalog itself covers only
+the Business Process specialization; it does not redefine the kernel.
 
 The governing principle is:
 
-> **One canonical definition. One stable identity. Many valid relationships.**
+> **One kernel. Many valid specializations. One canonical home per
+> specialization.**
 
 ---
 

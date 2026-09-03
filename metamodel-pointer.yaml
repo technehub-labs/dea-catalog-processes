@@ -1,25 +1,71 @@
-# Metamodel Pointer — Business Process
-# Auto-generated from OpenDEAM v0.2.1 (dea-architecture-framework, ADR-0002).
-# Do not edit manually — allocation changes go through the root model
-# (structural: ADR + minor bump; additive: PR + patch bump).
+# Metamodel Pointer: Business Process Catalog
+# CR-BP-SPEC-BP-01 alignment (refines + supersedes CR-BP-01 PR #10).
+#
+# Authority chain:
+#   - WSF (org): wsf:Process (Tier-3 derived; structural activity organization).
+#   - dea-metamodel (Core authority): dea:Process (abstract kernel) +
+#     dea:BusinessProcess (Core specialization); CR-MM-PROC-01; PR #163.
+#   - dea-architecture-framework (root model v0.6.0): dea:entity-process
+#     (abstract kernel; class_alias PRC; discriminator process-kernel) +
+#     dea:entity-business-process (specialization; class_alias BP);
+#     CR-AR-FMWK-01; PR #10 + tag v0.6.0.
+#   - dea-catalog-processes (catalog authority): this pointer declares
+#     both ids in the multi-entity form so the consumer-validator
+#     (scripts/validate_consumer.py; v0.6.0 abstract-kernel branch)
+#     recognizes the kernel + specialization contract.
+#
+# Federation mapping (1:1; EXACT; LOSSLESS):
+#   dea:Process (metamodel Core kernel) <-> dea:entity-process (root model kernel)
+#   dea:BusinessProcess (metamodel Core specialization) <-> dea:entity-business-process (root model specialization)
+
 metamodel:
-  version: v0.2.1
-  entity_id: dea:entity-process
-  class_alias: BP
+  version: v0.6.0
+  entity_id: dea:entity-business-process   # this catalog's primary subject (specialization; OpenDEAM root-model id)
+  class_alias: BP                         # specialization alias (preserved from v0.5.0 for backward compat)
   layer: L3
   building_block: L3-value-delivery
   viewer_url: "https://technehub-labs.github.io/metamodel/?entity=BP"
+  # Kernel entry (CR-MM-PROC-01; CR-AR-FMWK-01; the catalog's contract
+  # with the root model). The validator verifies the kernel's
+  # class_alias (PRC) and discriminator (process-kernel). The kernel
+  # entry must NOT declare layer or dimension per the v0.6.0
+  # abstract-kernel branch in scripts/validate_consumer.py.
+  #
+  # Note: The primary subject's entity_id uses the OpenDEAM root-model
+  # id (`dea:entity-business-process`) rather than the metamodel Core
+  # id (`dea:BusinessProcess`) because the consumer-validator
+  # (scripts/validate_consumer.py in dea-architecture-framework)
+  # resolves consumer declarations against the root model 1:1.
+  # The metamodel-side id (`dea:BusinessProcess`) and the root-model-side
+  # id (`dea:entity-business-process`) are mapped 1:1 (LOSSLESS) via the
+  # federation mapping recorded in docs/governance/process-specialization.md
+  # and in dea-metamodel/metamodel/dea-metamodel.yaml (CR-MM-PROC-01 §4).
+  entities:
+    - entity_id: dea:entity-process
+      class_alias: PRC
+      discriminator: process-kernel
+    # future Process specializations (dea:entity-operational-process;
+    # dea:entity-engineering-process; ...) land here as additional
+    # entries with their own class_alias + discriminator.
 
 catalog:
   name: Business Process
   repo: technehub-labs/dea-catalog-processes
-  status: scaffold
-
-description: |
-  A structured set of activities that produces a defined outcome.
+  status: semantic-baseline (CR-BP-SPEC-BP-01)
+  specialization:
+    specializes_root_model_entity: dea:entity-process
+    class_alias: BP
+    description: |
+      The Business Process specialization of the OpenDEAM Process
+      kernel. Supports Business Architecture and Business Operations
+      use cases. Sub-classifications (operational / support /
+      management) are catalog-internal via the process_intent field
+      and do not promote to root-model entities.
 
 links:
   metamodel_repo: https://github.com/technehub-labs/dea-metamodel
   root_model: https://github.com/technehub-labs/dea-architecture-framework
   viewer: "https://technehub-labs.github.io/metamodel/?entity=BP"
   github: https://github.com/technehub-labs/dea-catalog-processes
+  change_request: change-requests/CR-BP-SPEC-BP-01.md
+  governance_decision: docs/governance/process-specialization.md

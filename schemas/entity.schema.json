@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://technehub-labs.github.io/dea-catalog-processes/schemas/entity.schema.json",
-  "title": "Process Catalog Entry",
-  "description": "Schema for entries in technehub-labs/dea-catalog-processes. Mirrors technehub-labs/dea-metamodel/schemas/entities/process.json (v3.0.0-alpha).",
+  "title": "Business Process",
+  "description": "Schema for Business Process entries in technehub-labs/dea-catalog-processes. Mirrors technehub-labs/dea-metamodel/schemas/entities/process.json (v3.0.0-alpha). The Business Process is the specialization of the OpenDEAM Process kernel (dea:Process in dea-metamodel Core; dea:entity-process in the OpenDEAM root model) for the Business Architecture and Business Operations use cases (CR-MM-PROC-01; CR-AR-FMWK-01; CR-BP-SPEC-BP-01). Sub-classifications (operational / support / management; carried by process_intent) are catalog-internal and do not promote to root-model entities.",
   "type": "object",
   "required": ["id", "name", "type", "version", "process_intent", "process_audience"],
   "properties": {
