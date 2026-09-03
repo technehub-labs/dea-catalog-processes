@@ -12,7 +12,7 @@ on:
 
 jobs:
   allocation:
-    uses: technehub-labs/dea-architecture-framework/.github/workflows/validate-against-model.yml@v0.2.1
+    uses: technehub-labs/dea-architecture-framework/.github/workflows/validate-against-model.yml@v0.6.0
     with:
-      model_ref: v0.2.1
+      model_ref: v0.6.0
       pointer_file: metamodel-pointer.yaml
