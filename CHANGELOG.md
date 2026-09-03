@@ -6,6 +6,90 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-03C: Sample Business Process Contribution (walk-the-flow)
+
+Lands the **first** Business Process entry in the catalog,
+walking the full CR-BP-03 / CR-BP-03A / CR-BP-02 flow
+end-to-end. The sample entry — `dea:bp:manage-customer-relationship`
+("Manage Customer Relationship") — exercises every part of
+the machinery:
+
+  - 4-axis classification (intent / type / specialization /
+    audience), all populated.
+  - Process Identity contract (verb + object + outcome +
+    evidence; BP-ARC-ID-001..005 PASS).
+  - Canonical relationships (array-of-relationship-instances
+    per metamodel relationship-instance.json; one realizes
+    relationship to `dea:entity-capability:manage-customer-relationship`).
+  - L0/L1/L2 conceptual hierarchy (Scope and Group recorded
+    in metadata; NOT promoted to separate catalog entities
+    per CR-BP-03 §3).
+  - Process Context reference (the entry belongs to the
+    CustomerAndDemand × Operate cell at
+    `dea:pc-cd-op`).
+  - ECF Conformance Gate (inherits-catalog; canonical
+    references resolve to `ecf:customerAndDemand.operate`;
+    extensions declare `doesNotRedefine: true`).
+  - Process Identity validator: case-insensitive + doubled-
+    parentheses-tolerant fuzzy match (`_fuzzy_name_match`).
+
+#### Added
+
+- `change-requests/CR-BP-03C-sample-process-contribution.md`
+  (md5 `0504cbca05a1875aac02137c959b7cab`; byte-identical to
+  working folder `/home/hermes/dea-work/process/00_inbox/`).
+- `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`
+  (the canonical BP entry; first entry in the catalog;
+  id `dea:process-manage-customer-relationship`).
+- `contexts/v1-alpha/dea_pc-cd-op.yaml` (the Cell Charter for
+  CustomerAndDemand × Operate; first Cell Charter in the
+  catalog).
+- `contributions/processes/dea_bp_manage-customer-relationship.yaml`
+  (the contribution record; first contribution in the catalog).
+- `contributions/processes/dea_bp_manage-customer-relationship.report.md`
+  (the generated reclassification report; status=PASS,
+  zero recommendations).
+- `docs/examples/README.md` (introduction to the worked-
+  examples directory).
+- `docs/examples/manage-customer-relationship.md` (the
+  worked example; future contributors should treat this
+  as the canonical pattern).
+
+#### Changed
+
+- `scripts/check_process_identity.py`:
+  - `_fuzzy_name_match` extended to be case-insensitive
+    (entry names are conventionally Title Case; identity
+    sub-block is conventionally lowercase).
+  - `_fuzzy_name_match` extended to normalize doubled
+    parentheses (e.g. `((all customer segments))` produced
+    by wrapping a scope like `(all customer segments)`).
+  - BP-ARC-ID-001: when the scope is already parenthesized,
+    the validator does not wrap it again.
+- `.github/workflows/process-contribution-report.yml`:
+  - Reclassification report generator upgraded (CR-BP-03C §7)
+    to cross-check the proposed_entry against BP-ARC-ID-001..005
+    and emit a confidence-scored recommendation.
+  - Includes migration check (BP-MIG-001..005) in the report
+    pipeline.
+
+#### Validators exercised (all PASS)
+
+| Validator | Result |
+|---|---|
+| `check_process_identity.py` (BP-ARC-ID-001..005) | PASS |
+| `check_process_identity.py --self-test` | PASS |
+| `check_process_specialization.py` (BP-SPEC-01-001..007) | PASS |
+| `check_process_context.py` (PC-001..PC-008) | PASS |
+| `check_legacy_migration.py` (BP-MIG-001..005) | PASS |
+| `check_legacy_migration.py --self-test` | PASS |
+| `check_ecf_conformance.py` | PASS (1 entry conforms) |
+| `validate_consumer.py` against `dea-architecture-framework@v0.6.0` | PASS |
+| `jsonschema.validate(canonical_entry, entity_schema)` | PASS |
+| `jsonschema.validate(cell_charter, process-context_schema)` | PASS |
+| `jsonschema.validate(contribution, contribution_schema)` | PASS |
+| Report generator (CR-BP-03C §7) | Generated report with status=PASS, 0 recommendations |
+
 ### CR-BP-03A: Legacy Field Migration
 
 Resolves three issues with the CR-BP-03 schema that came to
