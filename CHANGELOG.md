@@ -6,6 +6,40 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-02: Establish Process Context
+
+Lands the **Process Context register + Cell Charter schema** on top of
+the kernel + specialization discipline established by CR-MM-PROC-01 +
+CR-AR-FMWK-01 + CR-BP-SPEC-BP-01.
+
+**Authority chain (CR-BP-02 depends on the kernel + specialization
+tranche):**
+
+- `1665209` — CR-MM-PROC-01 merged on `dea-metamodel` (kernel + specialization).
+- `76463b2` — CR-AR-FMWK-01 merged on `dea-architecture-framework` (root model v0.5.0 → v0.6.0).
+- `1e4b916` — CR-BP-SPEC-BP-01 merged on `dea-catalog-processes` (Business Process specialization).
+- `cb1a410` — CI hotfix (validate-allocation pin v0.2.1 → v0.6.0).
+- `v0.6.0` — OpenDEAM root model tag published.
+
+#### Added
+
+- `change-requests/CR-BP-02.md` (md5 `9a56f5b0fc351c23416c51d216d805ef`; byte-identical to working folder `/home/hermes/dea-work/process/00_inbox/CR-BP-02.md`; refined to depend on the kernel + specialization tranche and to re-anchor PC-007/008/AC-07 to the corrected canonical ids).
+- `schemas/entities/process-context.schema.json` — the canonical Process Context + Cell Charter schema. References the authoritative ECF vocabulary (CR-ECF-003/004/005) without redefining it.
+- `scripts/check_process_context.py` — Process Context validator enforcing PC-001..PC-008 (with built-in `--self-test`).
+- `contexts/v1-alpha/README.md` — placeholder documenting that the 49-cell matrix is **empty by design** per CR-BP-02 §22.
+
+#### Changed
+
+- `.github/workflows/ci.yml` — adds the Process Context gate step (after the Business Process specialization gate).
+- `README.md` — "Canonical Process Context" section updated to reference the new Process Context Register at `contexts/v1-alpha/`, the schema, and the validator; adds an explicit "Process Context ≠ Business Process" callout.
+- `change-requests/README.md` — CR-BP-02 row added.
+
+**Out of scope (gated on its merge):** CR-BP-03 (L0/L1 decomposition
+semantics); CR-BP-04 (Activity); CR-BP-05 (Workflow/Task); CR-BP-06
+(Business Process criteria); CR-BP-07 (cross-context relationships);
+CR-BP-08 (MECE within contexts); CR-BP-09 (Process Discovery
+execution); CR-BP-10 (49-cell matrix population).
+
 ### CR-BP-SPEC-BP-01: Business Process Specialization Catalog
 
 Re-anchors the catalog on the **kernel + specializations** discipline for

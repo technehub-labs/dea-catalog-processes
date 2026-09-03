@@ -7,7 +7,8 @@ the CR, not by rewriting the CR document.
 | CR | Title | Status | Notes |
 |----|-------|--------|-------|
 | [CR-ECF-CG-004](CR-ECF-CG-004.md) | Business Process Catalog Conformance | **Merged** (PRs #5 + #6) | The Process Catalog has already developed the correct conceptual distinction (Process Context ≠ Business Process; L0-L4 decomposition catalog-governed). Mandates governance ratification of the **`process_audience` ≠ ECF Domain** decision (§10). |
-| [CR-BP-SPEC-BP-01](CR-BP-SPEC-BP-01.md) | Business Process Specialization Catalog | **Proposed (this PR)** | Re-anchors the catalog on the **kernel + specializations** discipline (CR-MM-PROC-01; CR-AR-FMWK-01; WSF). Refines + supersedes CR-BP-01's wrong premise (that `dea:BusinessProcess` is the sole canonical Process identity). Pointer declares both `dea:BusinessProcess` (specialization) and `dea:entity-process` (kernel; `discriminator: process-kernel`). New validator `scripts/check_process_specialization.py` enforces `BP-SPEC-01-001..007`. |
+| [CR-BP-SPEC-BP-01](CR-BP-SPEC-BP-01.md) | Business Process Specialization Catalog | **Merged** (PR #12) | Re-anchors the catalog on the **kernel + specializations** discipline (CR-MM-PROC-01; CR-AR-FMWK-01; WSF). Refines + supersedes CR-BP-01's wrong premise (that `dea:BusinessProcess` is the sole canonical Process identity). Pointer declares both `dea:BusinessProcess` (specialization) and `dea:entity-process` (kernel; `discriminator: process-kernel`). New validator `scripts/check_process_specialization.py` enforces `BP-SPEC-01-001..007`. |
+| [CR-BP-02](CR-BP-02.md) | Establish Process Context | **Proposed (this PR)** | Establishes the **Process Context register + Cell Charter schema** on top of the kernel + specialization tranche. Each context is `Domain x Lifecycle Stage` with a Cell Charter. PC-001..PC-008 validator. Matrix empty by design (CR-BP-02 §22). |
 
 ## Cross-repo context
 

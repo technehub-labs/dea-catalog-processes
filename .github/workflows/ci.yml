@@ -47,3 +47,6 @@ jobs:
 
       - name: Run Business Process specialization gate (CR-BP-SPEC-BP-01)
         run: python scripts/check_process_specialization.py
+
+      - name: Run Process Context gate (CR-BP-02)
+        run: python scripts/check_process_context.py
