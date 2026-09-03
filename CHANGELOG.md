@@ -6,6 +6,73 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-03A: Legacy Field Migration
+
+Resolves three issues with the CR-BP-03 schema that came to
+light during implementation:
+
+1. **`relationships` shape corrected** to array-of-relationship-
+   instances (per the metamodel's `relationship-instance.json`).
+   The CR-BP-03 shape was a structured object with
+   `composes` / `realizes` keys; the authoritative metamodel
+   shape is a flat array of typed relationship instances with
+   full CR-002 provenance, CR-6 lifecycle, and effective_from/to
+   temporal validity.
+2. **`parent_process` / `child_processes` REMOVED** from the
+   catalog schema. These were catalog inventions from CR-BP-01
+   (the wrong-premise implementation, since reverted); the
+   metamodel's `process.json` does not declare them.
+3. **`capabilities_delivered` soft-deprecated**. The metamodel
+   still declares this as a simple array of strings (a
+   backward-compat shim). CR-BP-03A keeps the field in the
+   catalog schema but marks it as soft-deprecated; the canonical
+   form is `relationships[relationship_type=realizes]` with
+   full provenance.
+
+#### Added
+
+- `change-requests/CR-BP-03A-legacy-migration.md` (md5
+  `3e4a951008bf28e0b7d3bd325bcc2949`; byte-identical to working
+  folder `/home/hermes/dea-work/process/00_inbox/`).
+- `scripts/check_legacy_migration.py` — the migration validator
+  enforcing BP-MIG-001..005 (with built-in `--self-test`).
+
+#### Changed
+
+- `schemas/entity.schema.json`:
+  - `relationships` shape corrected to array-of-relationship-
+    instances; each entry has `source_id`, `target_id`,
+    `relationship_type`, plus optional `direction`, `status`,
+    `effective_from`/`to`, `asserted_by`, `rationale`, `evidence`,
+    and `provenance`.
+  - `parent_process` and `child_processes` REMOVED.
+  - `capabilities_delivered` retained but documented as
+    soft-deprecated; the canonical form is
+    `relationships[relationship_type=realizes]`.
+- `schemas/contribution.schema.json` — `proposed_entry.relationships`
+  shape updated to match the metamodel relationship-instance
+  shape (array of instances).
+- `contributions/processes/PROCESS-CONTRIBUTION-TEMPLATE.yaml` —
+  template updated with the relationship-instance shape.
+- `docs/architecture.md` — "Structural composition" and
+  "Capability realization" sections updated to reflect the
+  metamodel-aligned shape; new "The `relationships` shape"
+  and "Legacy field migration" sections added.
+- `docs/relandscape.md` — "The `relationships` field" and
+  "The legacy fields" subsections added.
+- `.github/workflows/ci.yml` — adds the Legacy Migration gate
+  step (after the Process Identity gate).
+- `change-requests/README.md` — CR-BP-03A row added.
+
+#### Architecture-only (no file changes)
+
+- The catalog now aligns with the metamodel's relationship-
+  instance shape. Each relationship carries full provenance,
+  lifecycle, and temporal validity.
+- The catalog's `entities/v1-alpha/` is empty by design
+  (CR-BP-02 §22), so the migration validator is forward-looking
+  on future entries.
+
 ### CR-BP-03: Business Process Architecture
 
 Lands the **4-axis classification**, **process-identity contract**,

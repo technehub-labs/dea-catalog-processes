@@ -65,6 +65,50 @@ The contribution captures:
   `re-landscaped` / `rejected`.
 - `report` — filled by the CI workflow (not by the contributor).
 
+### The `relationships` field (CR-BP-03 §6; CR-BP-03A §3.1)
+
+The `proposed_entry.relationships` field is an **array of
+relationship instances** (NOT a structured object), conforming
+to the metamodel's `relationship-instance.json`. Each entry is a
+typed relationship with CR-002 provenance, CR-6 lifecycle, and
+effective_from/to temporal validity:
+
+```yaml
+relationships:
+  - source_id: dea:bp:example-process
+    target_id: dea:bp:parent-process
+    relationship_type: composes
+    status: active
+    rationale: "Example process composes the parent process."
+    provenance:
+      type: manual
+      asserted_by: <github-handle>
+      asserted_at: <YYYY-MM-DD>
+  - source_id: dea:bp:example-process
+    target_id: dea:capability:example-capability
+    relationship_type: realizes
+    status: active
+    rationale: "Example process realizes the example capability."
+    provenance:
+      type: manual
+      asserted_by: <github-handle>
+      asserted_at: <YYYY-MM-DD>
+```
+
+The catalog primarily uses `composes` (structural composition)
+and `realizes` (capability realization). Other types
+(`specializes`, `aggregates`, `depends-on`, etc.) are admitted
+when the contributor can defend the choice.
+
+### The legacy fields (CR-BP-03A)
+
+The legacy `parent_process` / `child_processes` / `capabilities_delivered`
+fields are **not part of the contribution schema**. The migration
+validator (`scripts/check_legacy_migration.py`; BP-MIG-001..005)
+surfaces any entry that declares them with a migration
+recommendation. See [`docs/architecture.md`](architecture.md) §6
+for the migration discipline.
+
 ## CI Contribution Report Workflow
 
 The workflow at
