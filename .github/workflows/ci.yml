@@ -53,3 +53,6 @@ jobs:
 
       - name: Run Process Identity gate (CR-BP-03)
         run: python scripts/check_process_identity.py
+
+      - name: Run Legacy Migration gate (CR-BP-03A)
+        run: python scripts/check_legacy_migration.py

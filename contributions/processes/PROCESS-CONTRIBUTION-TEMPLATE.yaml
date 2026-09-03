@@ -49,6 +49,25 @@ proposed_entry:
         ref: docs/processes/example-process.md
       - type: governance
         ref: governance/example-process.md
+  relationships:                # CR-BP-03 §6; CR-BP-03A §3.1
+    - source_id: dea:bp:example-process
+      target_id: dea:bp:parent-process
+      relationship_type: composes
+      status: active
+      rationale: "Example process composes the parent process."
+      provenance:
+        type: manual
+        asserted_by: <github-handle>
+        asserted_at: <YYYY-MM-DD>
+    - source_id: dea:bp:example-process
+      target_id: dea:capability:example-capability
+      relationship_type: realizes
+      status: active
+      rationale: "Example process realizes the example capability."
+      provenance:
+        type: manual
+        asserted_by: <github-handle>
+        asserted_at: <YYYY-MM-DD>
 
 # === Evidence supporting the contribution ===
 evidence:

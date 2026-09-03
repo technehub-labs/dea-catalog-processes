@@ -95,18 +95,16 @@ L2 Business Process
        └── dea:composes ──► L2 Business Process
 ```
 
-In the schema, structural composition is captured in
-`relationships.composes` (canonical). The legacy
-`parent_process` / `child_processes` fields are preserved as
-migration aliases and are not authoritative.
+In the schema, structural composition is captured in the
+`relationships` array (canonical; CR-BP-03 §6; CR-BP-03A §3.1).
+Each relationship entry conforms to the metamodel's
+`relationship-instance.json` shape with full provenance.
 
 ## Capability realization
 
-Decomposition and realization are orthogonal. A Business Process
-realizes one or more Business Capabilities via `dea:realizes`,
-which lives in the schema's `relationships.realizes` (canonical).
-The legacy `capabilities_delivered` field is preserved as a
-migration alias.
+Capability realization is captured in the `relationships` array
+as relationship instances of type `realizes`. Each entry
+conforms to the metamodel's `relationship-instance.json` shape.
 
 ```text
               ┌───────────────┐
@@ -149,6 +147,73 @@ reinvented by the process catalog.
 - **CR-BP-04** → Activity Model
 - **CR-BP-05** → Execution Boundary
 
+## The `relationships` shape (CR-BP-03A §3.1)
+
+The `relationships` field is an **array of relationship
+instances**, NOT a structured object. Each entry is a typed
+relationship with full CR-002 provenance, CR-6 lifecycle, and
+effective_from/to temporal validity:
+
+```yaml
+relationships:
+  - source_id: dea:bp:manage-customer
+    target_id: dea:bp:manage-enterprise-customer
+    relationship_type: composes
+    status: active
+    rationale: "L2 Business Process structurally composes another L2."
+    provenance:
+      type: manual
+      asserted_by: <contributor>
+      asserted_at: <YYYY-MM-DD>
+  - source_id: dea:bp:manage-customer
+    target_id: dea:capability:manage-customer
+    relationship_type: realizes
+    status: active
+    rationale: "Business Process realizes Business Capability."
+    provenance:
+      type: manual
+      asserted_by: <contributor>
+      asserted_at: <YYYY-MM-DD>
+```
+
+The catalog primarily uses `composes` (structural composition)
+and `realizes` (capability realization). Other types
+(`specializes`, `aggregates`, `depends-on`, etc.) are admitted
+when the contributor can defend the choice.
+
+The metamodel's `relationship-instance.json` is authoritative
+on the relationship shape. The catalog profiles the source_id
+and target_id to the catalog's process id namespace
+(`dea:bp:...`).
+
+## Legacy field migration (CR-BP-03A §3.2, §3.3)
+
+Three legacy fields are addressed by CR-BP-03A:
+
+1. **`parent_process`** — REMOVED. This was a catalog invention
+   from CR-BP-01 (the wrong-premise implementation, since
+   reverted). The metamodel's `process.json` does not declare
+   it. The migration validator
+   (`scripts/check_legacy_migration.py`; BP-MIG-001) surfaces
+   any entry that declares it and emits a migration
+   recommendation.
+2. **`child_processes`** — REMOVED. Same as `parent_process`.
+   The migration validator (BP-MIG-002) surfaces any entry that
+   declares it.
+3. **`capabilities_delivered`** — Soft-deprecated. The metamodel
+   still declares this as a simple array of strings (a
+   backward-compat shim). CR-BP-03A keeps the field in the
+   schema but marks it as soft-deprecated. The canonical form
+   is `relationships[relationship_type=realizes]` with full
+   provenance. The migration validator (BP-MIG-003) surfaces
+   any entry that declares it and emits a migration
+   recommendation.
+
+The migration is **contribution-driven**: the contributor
+updates the proposed_entry to use the canonical form, re-runs
+CI, and the reviewer approves. The catalog does not
+auto-rewrite.
+
 ## See also
 
 - [`README.md`](../../README.md) — the architectural statement
@@ -156,3 +221,4 @@ reinvented by the process catalog.
 - [`docs/identity.md`](identity.md) — the process-identity contract
 - [`docs/relandscape.md`](relandscape.md) — the contribution-driven re-landscape mechanism
 - [`change-requests/CR-BP-03-business-process-architecture.md`](../../change-requests/CR-BP-03-business-process-architecture.md)
+- [`change-requests/CR-BP-03A-legacy-migration.md`](../../change-requests/CR-BP-03A-legacy-migration.md)
