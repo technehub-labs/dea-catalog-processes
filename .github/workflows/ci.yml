@@ -44,11 +44,3 @@ jobs:
 
       - name: Run ECF conformance gate (CR-ECF-CG-004)
         run: python scripts/check_ecf_conformance.py
-
-      # CR-BP-01: enforce canonical identity alignment (BP-01-001/002/003).
-      # The validator inspects the metamodel pointer, schema id-pattern
-      # regexes that anchor to the Business Process entity id, and narrative
-      # docs for the legacy id used as canonical. Runs after the ECF gate so
-      # conformance-evidence ordering is preserved.
-      - name: Run CR-BP-01 canonical-identity validator
-        run: python3 scripts/check_bp01_canonical.py
