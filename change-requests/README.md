@@ -4,7 +4,10 @@ Change requests for the Business Process catalog under the ECF Conformance Gate 
 
 | CR | Title | Status | Notes |
 |----|-------|--------|-------|
-| [CR-ECF-CG-004](CR-ECF-CG-004.md) | Business Process Catalog Conformance | Proposed (this PR) | The Process Catalog has already developed the correct conceptual distinction (Process Context ≠ Business Process; L0-L4 decomposition catalog-governed). Mandates governance ratification of the **`process_audience` ≠ ECF Domain** decision (§10). Implementation PR (post-merge) adds optional `ecfConformance` block to schema, conformance gate, README profile declaration. |
+| [CR-ECF-CG-004](CR-ECF-CG-004.md) | Business Process Catalog Conformance | Implemented (PR #5 + PR #6 merged 2026-09-01) | The Process Catalog has already developed the correct conceptual distinction (Process Context ≠ Business Process; L0-L4 decomposition catalog-governed). Mandates governance ratification of the **`process_audience` ≠ ECF Domain** decision (§10). Implementation PR (post-merge) adds optional `ecfConformance` block to schema, conformance gate, README profile declaration. |
+| [CR-ECF-CG-005](CR-ECF-CG-005.md) | (cross-repo reference; landed in `dea-metamodel` per CG-005/006) | See `dea-metamodel` | Cross-Repository Conformance (matrix, drift detector, manifest). |
+| [CR-ECF-CG-006](CR-ECF-CG-006.md) | (cross-repo reference; landed in `dea-metamodel` per CG-005/006) | See `dea-metamodel` | Automated Conformance Enforcement (CI wiring). |
+| [CR-BP-01](CR-BP-01.md) | Business Process Semantic Baseline | Proposed (this PR) | First CR of the OpenDEA Business Process Architecture Evolution programme. Reconciles canonical identity: `dea:BusinessProcess` (canonical); `dea:entity-process` (legacy). Aligns `metamodel-pointer.yaml`, README, and schemas; introduces BP-01-001/002/003 validation rules. Implementation PR (post-merge) carries the alignment work. Blocks CR-BP-02..CR-BP-10. |
 
 ## Cross-repo context
 
