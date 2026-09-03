@@ -816,6 +816,13 @@ Current work includes:
 
 No substantial process population should be considered authoritative until the foundational architecture and normative alignment have been established.
 
+**Canonical identity**: `dea:BusinessProcess` (sole canonical OpenDEA
+semantic identity for the Business Process concept). Legacy identifier
+`dea:entity-process` is preserved under `metamodel.legacy_identifiers`
+in `metamodel-pointer.yaml`; see
+[`docs/governance/canonical-identity-business-process.md`](docs/governance/canonical-identity-business-process.md)
+and CR-BP-01.
+
 ---
 
 # Intended Outcome
