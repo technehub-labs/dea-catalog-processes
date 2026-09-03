@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://technehub-labs.github.io/dea-catalog-processes/schemas/entities/process-context.schema.json",
+  "title": "Process Context",
+  "description": "Schema for Process Context entries in technehub-labs/dea-catalog-processes. CR-BP-02. A Process Context is the bounded enterprise context established by the intersection of an ECF Domain and a Lifecycle Stage, within which Business Process responsibilities are identified, organized, and validated. The Process Context is NOT itself a Business Process; it is a contextual construct that scopes process discovery. Sub-classifications of Business Process (operational / support / management) remain catalog-internal via the catalog's process_intent field; sub-classifications do NOT promote to root-model entities (BP-SPEC-01-007 in CR-BP-SPEC-BP-01).",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "lifecycle_stage",
+    "name",
+    "definition",
+    "scope",
+    "outcomes",
+    "adjacent_contexts",
+    "cell_charter",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^dea:pc-[a-z0-9-]+$",
+      "description": "Stable identity. Convention: dea:pc-<domain-abbrev>-<stage-abbrev> (e.g. dea:pc-cd-op = CustomerAndDemand x Operate). The id must be stable across renames of name/definition; renames go through the CR-programme."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Canonical ECF Domain. Must resolve to one of seven values (GovernanceAndExistence, SupplyAndResources, PeopleAndOrganization, CustomerAndDemand, ProductAndOffering, OperationsAndDelivery, FinanceAndValue). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-domain.schema.json (CR-ECF-003, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-001).",
+      "enum": [
+        "GovernanceAndExistence",
+        "SupplyAndResources",
+        "PeopleAndOrganization",
+        "CustomerAndDemand",
+        "ProductAndOffering",
+        "OperationsAndDelivery",
+        "FinanceAndValue"
+      ]
+    },
+    "lifecycle_stage": {
+      "type": "string",
+      "description": "Canonical ECF Lifecycle Stage. Must resolve to one of seven values (Conceive, Design, Build, Activate, Operate, Improve, Retire). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-stage.schema.json (CR-ECF-004, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-002).",
+      "enum": [
+        "Conceive",
+        "Design",
+        "Build",
+        "Activate",
+        "Operate",
+        "Improve",
+        "Retire"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "Normative semantic meaning of this Domain x Lifecycle intersection. Not a description; a definition. PC-006 enforces charter completeness."
+    },
+    "scope": {
+      "type": "object",
+      "required": ["includes", "excludes"],
+      "properties": {
+        "includes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Explicitly included enterprise responsibilities."
+        },
+        "excludes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Explicitly excluded responsibilities (belong in adjacent contexts)."
+        }
+      },
+      "description": "Inclusion / Exclusion boundaries (PC-005, AC-05)."
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Intended enterprise outcomes for this context."
+    },
+    "adjacent_contexts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^dea:pc-[a-z0-9-]+$"
+      },
+      "description": "References to other Process Context ids (dea:pc-...) that have legitimate relationships with this one. Relationships do NOT imply duplicated ownership (CR-BP-02 §11)."
+    },
+    "processes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^dea:process-[a-z0-9-]+$"
+      },
+      "description": "References to canonical Business Process specialization entries belonging to this context. Must resolve to dea:BusinessProcess specialization ids (PC-008 / BP-SPEC-01-002). CR-BP-02 explicitly does NOT populate this list — process discovery is gated on the context being established first."
+    },
+    "cell_charter": {
+      "type": "object",
+      "required": [
+        "enterprise_concern",
+        "lifecycle_concern",
+        "combined_semantic_meaning",
+        "expected_outcomes",
+        "inclusions",
+        "exclusions",
+        "adjacent_boundaries"
+      ],
+      "properties": {
+        "enterprise_concern": {"type": "string"},
+        "lifecycle_concern": {"type": "string"},
+        "combined_semantic_meaning": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required semantic confluence of domain + lifecycle. PC-006 enforces."
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "inclusions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "adjacent_boundaries": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "description": "Cell Charter (CR-BP-02 §7): the discovery and validation instrument for this context. PC-006 / AC-04 / AC-05 enforce."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "interpreted",
+        "defined",
+        "validated",
+        "established",
+        "revised",
+        "deprecated"
+      ],
+      "description": "Process Context lifecycle status (CR-BP-02 §17). Defaults: 'defined' once the cell charter is complete; 'established' once the validation gate has confirmed it."
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
