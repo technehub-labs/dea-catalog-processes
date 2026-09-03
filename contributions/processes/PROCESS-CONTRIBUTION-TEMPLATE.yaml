@@ -15,6 +15,11 @@
 # in entities/v1-alpha/. The contribution does NOT auto-land.
 #
 # See docs/relandscape.md for the full lifecycle.
+#
+# ID convention: the proposed_entry id must follow
+# `dea:process-<kebab-case-process-name>` (per CR-BP-02 PC-008
+# + CR-BP-03C §2). This matches the entity-schema pattern and
+# the Cell Charter's `processes` array pattern.
 
 schema: dea-catalog-processes/contribution/v1
 contributor: <github-handle>
@@ -22,7 +27,7 @@ contribution_date: <YYYY-MM-DD>
 
 # === Process to add / re-classify ===
 proposed_entry:
-  id: dea:bp:example-process
+  id: dea:process-example-process
   name: Manage Example Process
   description: |
     A description of the process. Should reference the outcome
@@ -32,8 +37,16 @@ proposed_entry:
   process_type: management   # strategic | management | core | support | standardization
   process_audience: customer-demand  # ecf-domain
   process_specialization:    # optional; list of parent process ids
-    - dea:bp:parent-process
+    - dea:process-parent-process
   specialization_pattern: by-customer-segment  # optional free-text
+  # Trigger (BP-ARC-ID-002): what initiates the process.
+  trigger: |
+    <what initiates this process>
+  # Outcome (BP-ARC-ID-003): what the process produces.
+  outcome: |
+    <what the process produces — align with outcome_statement below>
+  # Process Context (CR-BP-02): the bounded enterprise context.
+  process_context: dea:pc-<domain-abbrev>-<stage-abbrev>
   identity:
     verb: Manage
     object: Example Process
@@ -50,24 +63,55 @@ proposed_entry:
       - type: governance
         ref: governance/example-process.md
   relationships:                # CR-BP-03 §6; CR-BP-03A §3.1
-    - source_id: dea:bp:example-process
-      target_id: dea:bp:parent-process
+    - source_id: dea:process-example-process
+      target_id: dea:process-parent-process
       relationship_type: composes
       status: active
+      direction: source-to-target
       rationale: "Example process composes the parent process."
+      asserted_by: <github-handle>
+      asserted_at: <YYYY-MM-DD>
       provenance:
         type: manual
         asserted_by: <github-handle>
         asserted_at: <YYYY-MM-DD>
-    - source_id: dea:bp:example-process
-      target_id: dea:capability:example-capability
+    - source_id: dea:process-example-process
+      target_id: dea:entity-capability:example-capability
       relationship_type: realizes
       status: active
+      direction: source-to-target
       rationale: "Example process realizes the example capability."
+      asserted_by: <github-handle>
+      asserted_at: <YYYY-MM-DD>
       provenance:
         type: manual
         asserted_by: <github-handle>
         asserted_at: <YYYY-MM-DD>
+  # ECF Conformance Gate (CR-ECF-CG-001..004).
+  ecfConformance:
+    framework: EnterpriseConceptFramework
+    contractVersion: '1.0.0'
+    profile: dea:ecf@1.0.0
+    status: conformant-with-extension
+    affiliation: inherits-catalog
+    canonicalReferences:
+      - kind: coordinate
+        domain: <PascalCase Domain>  # GovernanceAndExistence | SupplyAndResources | PeopleAndOrganization | CustomerAndDemand | ProductAndOffering | OperationsAndDelivery | FinanceAndValue
+        stage: <PascalCase Stage>     # Conceive | Design | Build | Activate | Operate | Improve | Retire
+        identifier: ecf:<lowerCamelDomain>.<lowerCamelStage>
+    extensions:
+      - name: process_intent
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-SPEC-BP-01.md
+      - name: process_type
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-03-business-process-architecture.md
+      - name: process_specialization
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-03-business-process-architecture.md
+      - name: process_audience
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-ECF-CG-004.md
 
 # === Evidence supporting the contribution ===
 evidence:
@@ -88,8 +132,8 @@ status: pending
 report:
   generated_at: <YYYY-MM-DDTHH:MM:SSZ>
   report_path: contributions/processes/example-process.report.md
-  recommendation: pending
+  recommendation: accept  # placeholder; CI will overwrite. accept | re-classify | reject
   current_state: {}
   suggested_state: {}
   confidence: 0.0
-  rationale: pending
+  rationale: <placeholder; CI will overwrite>
