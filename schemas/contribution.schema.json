@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://technehub-labs.github.io/dea-catalog-processes/schemas/contribution.schema.json",
+  "title": "Process Contribution",
+  "description": "Schema for process contributions submitted to contributions/processes/. CR-BP-03 §9. A contribution is the human-in-the-loop entry point for new processes: the contributor submits a YAML file conforming to this schema, the CI contribution report workflow generates a reclassification recommendation, and a catalog maintainer reviews the recommendation before the entry lands in entities/v1-alpha/.",
+  "type": "object",
+  "required": [
+    "schema",
+    "contributor",
+    "contribution_date",
+    "proposed_entry",
+    "evidence",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "dea-catalog-processes/contribution/v1",
+      "description": "Schema discriminator. Locks the file to CR-BP-03 contribution shape."
+    },
+    "contributor": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "description": "GitHub handle of the contributor."
+    },
+    "contribution_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of contribution (YYYY-MM-DD)."
+    },
+    "proposed_entry": {
+      "type": "object",
+      "required": ["id", "name", "description", "process_intent", "process_type", "process_audience"],
+      "description": "The proposed L2 Business Process entry. Must conform to schemas/entity.schema.json (with the new CR-BP-03 fields). The CI contribution report cross-checks this against the identity sub-block + classification vocabulary.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^dea:bp:[a-z0-9-]+$",
+          "description": "Proposed canonical id. Must follow the dea:bp:... convention."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 200,
+          "description": "Proposed name. Should be `<verb> <object>` (matching identity.verb + identity.object)."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 2000,
+          "description": "Proposed description."
+        },
+        "process_intent": {
+          "type": "string",
+          "enum": ["operational", "support", "management"],
+          "description": "Work-character axis. Preserved from CR-BP-01."
+        },
+        "process_type": {
+          "type": "string",
+          "enum": ["strategic", "management", "core", "support", "standardization"],
+          "description": "5-component classification (Mintzberg). NEW in CR-BP-03."
+        },
+        "process_audience": {
+          "type": "string",
+          "enum": [
+            "governance-existence", "supply-resources", "people-organization",
+            "customer-demand", "product-offering", "operations-delivery", "finance-value"
+          ],
+          "description": "ECF domain the process serves. Preserved from CR-BP-01."
+        },
+        "process_specialization": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^dea:bp:[a-z0-9-]+$" },
+          "description": "Optional: list of parent process ids this entry specializes. Multi-inheritance permitted."
+        },
+        "specialization_pattern": {
+          "type": "string",
+          "description": "Optional: free-text pattern label (e.g. 'by-customer-segment'). See classifications/process-specializations.yaml."
+        },
+        "identity": {
+          "type": "object",
+          "description": "Process identity sub-block. Must conform to schemas/identity.schema.json."
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "ref"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["documentation", "governance", "interview", "artifact", "standard", "regulation"]
+          },
+          "ref": { "type": "string", "minLength": 5 }
+        }
+      },
+      "description": "Evidence supporting the contribution. The contribution report cross-references this evidence."
+    },
+    "reviewer": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "description": "GitHub handle of the assigned reviewer. If empty, the catalog maintainers team is the implicit reviewer."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "accepted", "rejected", "re-landscaped"],
+      "description": "Current status of the contribution. 'pending' on submission; updated by the reviewer (or by the contributor after a re-landscape request)."
+    },
+    "report": {
+      "type": "object",
+      "description": "Filled by the CI contribution report workflow. Contributors do not write this section.",
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "report_path": { "type": "string" },
+        "recommendation": {
+          "type": "string",
+          "enum": ["accept", "re-classify", "reject"]
+        },
+        "current_state": { "type": "object" },
+        "suggested_state": { "type": "object" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "rationale": { "type": "string" }
+      }
+    }
+  }
+}
