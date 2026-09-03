@@ -114,6 +114,15 @@ Process Context
 └── Process Elements
 ```
 
+The catalog carries a **Process Context Register** at
+`contexts/v1-alpha/` (CR-BP-02). Each entry conforms to
+`schemas/entities/process-context.schema.json` and is validated by
+`scripts/check_process_context.py` (rules PC-001..PC-008).
+
+**The matrix is empty by design.** CR-BP-02 explicitly defers
+population until the architecture is established; populating the
+49-cell matrix belongs to subsequent CRs (CR-BP-10 and onwards).
+
 Every Process Context should establish:
 
 * what enterprise concerns belong within the context;
@@ -123,6 +132,12 @@ Every Process Context should establish:
 * the criteria used to determine the placement of process elements.
 
 This provides the basis for maintaining clear boundaries throughout the catalog.
+
+> **Important:** A Process Context is **NOT** a Business Process. The
+> Context provides the semantic boundary for process discovery; the
+> Business Process (this catalog's specialization of the OpenDEA
+> Process kernel) provides the structured process elements.
+> CR-BP-02 / PC-007 enforces this distinction.
 
 ---
 
