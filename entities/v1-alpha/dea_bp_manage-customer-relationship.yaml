@@ -98,6 +98,16 @@ relationships:
   - source_id: dea:process-manage-customer-relationship
     target_id: dea:entity-capability:manage-customer-relationship
     relationship_type: realizes
+
+  # NOTE: an L2 process's membership in an L1 Process Group is NOT
+  # recorded here as a stored relationship; the canonical direction
+  # is L1 --composes--> L2 (PG-004 / PG-005). The inverse `part-of`
+  # view is generated at query time per CR-002 §8 (Inverse views
+  # are generated, never stored). The metamodel's
+  # relationship-instance.json does not admit a `part-of` type, so
+  # any stored relationship would fail the metamodel validator.
+  # Membership is queried by walking L1 --composes--> L2 in reverse.
+
     status: active
     direction: source-to-target
     rationale: |
@@ -155,13 +165,11 @@ metadata:
       All enterprise work that involves direct interaction
       with the customer base (demand, fulfilment, support,
       relationship management).
-  group:
-    id: dea:group-customer-lifecycle-management
-    name: Customer Lifecycle Management
-    description: |
-      Loose grouping of business processes that participate
-      in the customer lifecycle (acquisition → retention →
-      win-back). Group ≠ Business Function.
+  # group: REMOVED in CR-BP-12. The Process Group label is
+  # now a first-class record at entities/v1-alpha/dea_group-customer-lifecycle-management.yaml.
+  # The L2 entity carries the inverse `part_of` reference for
+  # navigation (canonical direction is L1 --composes--> L2;
+  # CR-BP-12 §5.2).
   change_history:
     - cr: CR-BP-03C
       date: '2026-09-03'

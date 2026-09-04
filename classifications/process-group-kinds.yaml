@@ -1,0 +1,102 @@
+# Process Group Kinds (controlled vocabulary)
+#
+# CR-BP-12 §6. Six values; PG-007 enforces. The vocabulary is
+# closed; new kinds require a CR-BP-12 minor revision that documents
+# the addition (definition, example, MECE boundary against existing
+# kinds). Renames go through the CR-programme.
+#
+# Authoritative source for the catalog: this file.
+# The validator (scripts/check_process_group.py) loads this file
+# and uses the `id` values verbatim as the controlled vocabulary.
+
+vocabulary:
+  - id: end-to-end
+    name: End-to-End
+    definition: |
+      A Process Group that captures a value-stream-spanning flow across
+      multiple lifecycle stages. End-to-end groups are the principal
+      containers for value-stream analysis and for cross-functional
+      governance.
+    example: Customer Lifecycle Management
+    scope_notes: |
+      End-to-end groups typically span two or more lifecycle stages and
+      include both customer-facing and back-office processes.
+
+  - id: functional
+    name: Functional
+    definition: |
+      A Process Group that captures processes supporting a single
+      organizational function. Functional groups are bounded by
+      organizational ownership rather than by value-stream span.
+    example: Account Management
+    scope_notes: |
+      Functional groups typically reside within a single lifecycle
+      stage and align with an organizational unit (a team, a
+      department, a directorate).
+
+  - id: support
+    name: Support
+    definition: |
+      A Process Group that captures processes supporting the core
+      without direct value-stream participation. Support groups
+      provide internal services to functional and end-to-end groups.
+    example: Customer Data Quality
+    scope_notes: |
+      Support groups are non-customer-facing in most cases; they
+      deliver internal capabilities (data quality, tooling, training,
+      vendor management) that the value-stream groups depend on.
+
+  - id: cross-cutting
+    name: Cross-Cutting
+    definition: |
+      A Process Group that captures processes participating in
+      multiple value streams. Cross-cutting groups are typically
+      declared once at their primary Process Context and referenced
+      from peer coordinates where they have legitimate participation.
+    example: Change Management
+    scope_notes: |
+      Cross-cutting groups must declare their cross-context
+      participation explicitly via the `metadata.cross_context_overlap`
+      field (PG-006 §3 exception path).
+
+  - id: governance
+    name: Governance
+    definition: |
+      A Process Group that captures processes enforcing governance
+      obligations (regulatory, contractual, internal-policy). Governance
+      groups typically run in parallel to value-stream groups and
+      may interrupt or constrain them.
+    example: Risk and Compliance
+    scope_notes: |
+      Governance groups often reside in governance-and-existence
+      domains but may legitimately have participation in any
+      domain where regulatory or contractual obligations apply.
+
+  - id: innovation
+    name: Innovation
+    definition: |
+      A Process Group that captures processes generating new
+      value-stream candidates. Innovation groups are typically
+      anchored in conceive/design lifecycle stages and produce
+      candidate Business Processes for downstream admission.
+    example: Product Innovation
+    scope_notes: |
+      Innovation groups produce candidate L2 processes that are
+      admitted to the catalog via the standard contribution flow
+      (CR-BP-03 §9; contribution-driven re-landscape).
+
+# MECE note (informative):
+#
+# The six kinds are pairwise MECE within a single Process Context.
+# In practice a value-stream-spanning group (end-to-end) and a
+# function-specific group (functional) can coexist in the same
+# context only when the function-specific group's scope is a
+# strict subset of the end-to-end group's scope. The validator
+# does not enforce this subset relationship; contributors must
+# document the relationship in the group's `definition` and
+# `scope.excludes` fields.
+
+# Provenance and maintenance:
+# - Established: 2026-09-04 by CR-BP-12.
+# - Owner: Business Process Catalog maintainer.
+# - Update mechanism: CR-BP-12 minor revision.

@@ -56,3 +56,6 @@ jobs:
 
       - name: Run Legacy Migration gate (CR-BP-03A)
         run: python scripts/check_legacy_migration.py
+
+      - name: Run Process Group gate (CR-BP-12)
+        run: python scripts/check_process_group.py
