@@ -1133,3 +1133,44 @@ The Business Process Catalog is therefore intended to become a foundational comp
 > **The objective is not to create the largest catalog of processes.**
 >
 > **The objective is to establish the most coherent, grounded and structurally reliable process architecture from which the enterprise process landscape can be systematically derived.**
+
+# Sample entry
+
+The catalog's **first** Business Process entry —
+`dea:process-manage-customer-relationship` ("Manage Customer
+Relationship") — lands with this tranche (CR-BP-03C). It
+exercises every part of the machinery: 4-axis
+classification, identity contract, canonical relationships,
+L0/L1/L2 conceptual hierarchy, Process Context reference,
+and ECF Conformance Gate. Future contributors should
+**pattern-match against this entry**.
+
+See [`docs/examples/manage-customer-relationship.md`](docs/examples/manage-customer-relationship.md)
+for the full walk-through.
+
+# Contributing a new Business Process entry
+
+To contribute a new Business Process entry:
+
+1. Read [`docs/architecture.md`](docs/architecture.md),
+   [`docs/classification.md`](docs/classification.md),
+   [`docs/identity.md`](docs/identity.md),
+   [`docs/relandscape.md`](docs/relandscape.md).
+2. **Pattern-match against
+   [`docs/examples/manage-customer-relationship.md`](docs/examples/manage-customer-relationship.md)**.
+3. Copy
+   [`contributions/processes/PROCESS-CONTRIBUTION-TEMPLATE.yaml`](contributions/processes/PROCESS-CONTRIBUTION-TEMPLATE.yaml)
+   to `contributions/processes/<your-id>.yaml` and fill in
+   the proposed_entry.
+4. Run the validators locally:
+   `python scripts/check_process_identity.py`,
+   `python scripts/check_legacy_migration.py`,
+   `python scripts/check_ecf_conformance.py`.
+5. Open a PR. The Process Contribution Report workflow will
+   generate a reclassification recommendation and post it
+   as a PR comment.
+6. A catalog maintainer reviews the contribution and either
+   accepts, requests re-landscape, or rejects.
+
+See [`docs/examples/README.md`](docs/examples/README.md)
+for the full contributor guide.

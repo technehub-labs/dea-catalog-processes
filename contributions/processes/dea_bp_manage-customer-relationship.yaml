@@ -1,0 +1,178 @@
+# Process Contribution record for `dea:process-manage-customer-relationship`.
+#
+# This is the FIRST Process Contribution to the catalog,
+# landing as part of CR-BP-03C. It walks the full CR-BP-03
+# contribution flow end-to-end (CR-BP-03 §9).
+#
+# The Process Contribution Report workflow
+# (.github/workflows/process-contribution-report.yml) will
+# pick this up on PR and generate a reclassification
+# recommendation.
+
+id: dea:contrib-bp-manage-customer-relationship
+schema: dea-catalog-processes/contribution/v1
+contribution_type: new-entry
+contribution_date: '2026-09-03'
+contributor: dea-team
+status: pending
+
+# Reference to the canonical BP entry being contributed.
+target_entry: dea:process-manage-customer-relationship
+target_path: entities/v1-alpha/dea_bp_manage-customer-relationship.yaml
+
+# Reference to the Process Context the entry belongs to.
+context_reference:
+  context_id: dea:pc-cd-op
+  domain: CustomerAndDemand
+  lifecycle_stage: Operate
+
+# The proposed entry as it stands in this contribution.
+# The CI reclassification workflow will read this and emit
+# a recommendation.
+proposed_entry:
+  id: dea:process-manage-customer-relationship
+  name: Manage Customer Relationship
+  type: Process
+  version: 1.0.0
+  lifecycle_status: candidate
+  status: candidate
+
+  # 4-axis classification
+  process_intent: management
+  process_audience: customer-demand
+  process_type: management
+  process_specialization: []
+
+  description: |
+    Manage the day-to-day operation of an active customer
+    relationship across its lifecycle (acquisition → onboarding
+    → active use → renewal or win-back). The principal
+    organizational locus is the Middle Line (sales / account
+    management leadership); the work coordinates customer-
+    facing resources, monitors the customer's value exchange
+    with the enterprise, and allocates attention and effort
+    across the customer portfolio.
+
+  # Trigger (BP-ARC-ID-002): what initiates the process.
+  trigger: |
+    A customer enters the active relationship lifecycle
+    (post-onboarding handoff from the Activate stage) or an
+    existing active customer signals a change in their
+    relationship status (escalation, churn risk, renewal
+    approaching, win-back opportunity).
+
+  # Outcome (BP-ARC-ID-003): what the process produces.
+  outcome: |
+    An active customer relationship is sustained across its
+    lifecycle through allocation of attention, escalation
+    handling, and renewal coordination.
+
+  # Process Context
+  process_context: dea:pc-cd-op
+
+  # Identity contract
+  identity:
+    verb: Manage
+    object: Customer Relationship
+    scope: (all customer segments)
+    outcome_statement: |
+      An active customer relationship is sustained across its
+      lifecycle (acquisition → onboarding → active use → renewal
+      or win-back) through allocation of attention, escalation
+      handling, and renewal coordination.
+    evidence_links:
+      - type: standard
+        ref: https://www.apqc.org/resource-library/resource-collections/56391
+      - type: documentation
+        ref: docs/examples/manage-customer-relationship.md
+
+  # Canonical relationships
+  relationships:
+    - source_id: dea:process-manage-customer-relationship
+      target_id: dea:entity-capability:manage-customer-relationship
+      relationship_type: realizes
+      status: active
+      direction: source-to-target
+      rationale: |
+        The Business Process realizes the Business Capability
+        `Manage Customer Relationship`. The capability is the
+        abstract "what the enterprise can do"; the process is
+        the structured "how it does it".
+      asserted_by: dea-team
+      asserted_at: '2026-09-03'
+      provenance:
+        type: manual
+        asserted_by: dea-team
+        asserted_at: '2026-09-03'
+        evidence: https://www.apqc.org/resource-library/resource-collections/56391
+
+  # L0/L1/L2 conceptual hierarchy (metadata-only; per CR-BP-03 §5).
+  metadata:
+    scope:
+      id: dea:scope-customer-facing-operations
+      name: Customer-facing operations
+    group:
+      id: dea:group-customer-lifecycle-management
+      name: Customer Lifecycle Management
+
+  # ECF Conformance Gate
+  ecfConformance:
+    framework: EnterpriseConceptFramework
+    contractVersion: '1.0.0'
+    profile: dea:ecf@1.0.0
+    status: conformant-with-extension
+    affiliation: inherits-catalog
+    canonicalReferences:
+      - kind: coordinate
+        domain: CustomerAndDemand
+        stage: Operate
+        identifier: ecf:customerDemand.operate
+    extensions:
+      - name: process_intent
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-SPEC-BP-01.md
+      - name: process_type
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-03-business-process-architecture.md
+      - name: process_specialization
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-BP-03-business-process-architecture.md
+      - name: process_audience
+        doesNotRedefine: true
+        rationaleRef: change-requests/CR-ECF-CG-004.md
+
+# Justification (CR-BP-03 §9.2).
+justification: |
+  This is the FIRST Business Process entry in the catalog,
+  landing as part of CR-BP-03C. It exercises every part of
+  the CR-BP-03 / CR-BP-03A / CR-BP-02 machinery:
+
+    - 4-axis classification (intent / type / specialization / audience)
+    - Process Identity contract (verb + object + outcome + evidence)
+    - Canonical relationships (array-of-relationship-instances,
+      per metamodel relationship-instance.json)
+    - L0/L1/L2 conceptual hierarchy (Scope + Group recorded in
+      metadata; not promoted to entities)
+    - Process Context reference (the entry belongs to the
+      CustomerAndDemand x Operate cell)
+
+  Future contributors should treat this entry as the
+  CANONICAL PATTERN for new BPs.
+
+# Evidence (CR-BP-03 §9.4; identity contract §5.4).
+evidence:
+  - type: standard
+    ref: https://www.apqc.org/resource-library/resource-collections/56391
+  - type: documentation
+    ref: change-requests/CR-BP-03C-sample-process-contribution.md
+
+# Reviewer (CR-BP-03 §9.5). GitHub handle.
+reviewer: DEA-curator
+
+# Re-landscape suggestion (CR-BP-03 §9.6).
+# This contribution does NOT propose any re-landscape;
+# it is a new entry, not a modification of an existing one.
+relandscape:
+  proposes_modification: false
+  modification_target: null
+  modification_rationale: null

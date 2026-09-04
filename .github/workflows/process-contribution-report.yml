@@ -1,10 +1,12 @@
 name: Process Contribution Report
 
-# CR-BP-03 §9.3 — Contribution-driven re-landscape mechanism.
+# CR-BP-03 §9.3 + CR-BP-03C §7 — Contribution-driven re-landscape
+# mechanism (first end-to-end run with the sample entry).
 #
 # This workflow runs on PRs that touch `contributions/processes/`.
 # It validates the contribution, runs the identity checker on the
-# proposed_entry, and emits a reclassification report.
+# proposed_entry, and emits a reclassification report with a
+# confidence-scored recommendation.
 #
 # The PR is not auto-merged; a catalog maintainer reviews the
 # report and decides.
@@ -70,47 +72,94 @@ jobs:
         run: |
           python scripts/check_process_identity.py
 
-      - name: Emit contribution report
+      - name: Run migration checker on each proposed_entry
         run: |
-          # Generate a report for each contribution. The report
-          # captures the current state + suggested reclassification.
-          # This is a stub: a follow-on PR will replace this with
-          # a richer report generator.
+          python scripts/check_legacy_migration.py
+
+      - name: Emit reclassification report
+        run: |
+          # Generate a richer reclassification report for each
+          # contribution (CR-BP-03C §7). The report cross-checks
+          # the proposed_entry against the BP-ARC-ID-001..005 rules
+          # and emits a confidence-scored recommendation.
           python -c "
-          import glob, yaml, json
+          import glob, yaml, json, sys
           from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from check_process_identity import _check_one
+
           for path in glob.glob('contributions/processes/*.yaml'):
               if 'PROCESS-CONTRIBUTION-TEMPLATE' in path:
                   continue
               with open(path) as f:
                   contrib = yaml.safe_load(f)
               pe = contrib.get('proposed_entry', {})
+
+              # Run identity checker on the proposed_entry (in-memory).
+              errors, suggestions = [], []
+              _check_one(pe, errors, suggestions)
+
+              pe_id = pe.get('id', '<unknown>')
               report_path = path.replace('.yaml', '.report.md')
-              report = f'''# Contribution Report: {pe.get(\"id\", \"<unknown>\")}
 
-              ## Status
-              {contrib.get(\"status\", \"pending\")}
+              status = 'PASS' if not errors else 'FAIL'
+              recommendations = []
+              for s in suggestions:
+                  recommendations.append(
+                      f'- **{s.get(\"suggestion_type\")}** '
+                      f'(confidence={s.get(\"confidence\", 0.0):.2f}): '
+                      f'{s.get(\"rationale\", \"\")}'
+                  )
+              rec_text = '\n'.join(recommendations) if recommendations else '_No recommendations; the proposed_entry passes all BP-ARC-ID-001..005 rules._'
 
-              ## Current state
-              - name: {pe.get(\"name\")}
-              - process_type: {pe.get(\"process_type\")}
-              - process_intent: {pe.get(\"process_intent\")}
-              - process_audience: {pe.get(\"process_audience\")}
+              errors_text = '\n'.join(f'- {e}' for e in errors) if errors else '_None._'
 
-              ## Recommendation
-              The CI report generator is a stub in this CR. A follow-on
-              PR (CR-BP-03A or later) will replace this with a richer
-              reclassification recommendation based on the
-              outcome_statement and evidence_links cross-check.
+              report = f'''# Contribution Report: {pe_id}
+
+              ## Status: {status}
+
+              Contributor: {contrib.get(\"contributor\", \"<unknown>\")} |
+              Contribution type: {contrib.get(\"contribution_type\", \"<unknown>\")} |
+              Target entry: `{pe_id}`
+
+              ## Current state (proposed_entry)
+
+              - **Name**: {pe.get(\"name\")}
+              - **Type**: {pe.get(\"type\")}
+              - **Version**: {pe.get(\"version\")}
+              - **Process intent**: {pe.get(\"process_intent\")}
+              - **Process type**: {pe.get(\"process_type\")}
+              - **Process audience**: {pe.get(\"process_audience\")}
+              - **Process specialization**: {pe.get(\"process_specialization\")}
+              - **Process context**: {pe.get(\"process_context\")}
+
+              ## Identity sub-block
+
+              - **Verb**: {pe.get(\"identity\", {}).get(\"verb\")}
+              - **Object**: {pe.get(\"identity\", {}).get(\"object\")}
+              - **Scope**: {pe.get(\"identity\", {}).get(\"scope\")}
+              - **Evidence links**: {len(pe.get(\"identity\", {}).get(\"evidence_links\", []) or [])} link(s)
+
+              ## BP-ARC-ID-001..005 (identity validator)
+
+              {errors_text}
+
+              ## Reclassification recommendations (BP-ARC-ID-005)
+
+              {rec_text}
 
               ## Reviewer next-steps
-              - Review the proposed_entry against the identity
-                contract (docs/identity.md).
-              - Run scripts/check_process_identity.py locally.
-              - Either accept, request re-landscape, or reject.
+
+              1. Review the proposed_entry against the identity contract (`docs/identity.md`).
+              2. If status=FAIL, request changes before merge.
+              3. If status=PASS with recommendations, evaluate each recommendation and either accept, request re-landscape, or reject.
+              4. If status=PASS with no recommendations, accept the contribution.
+
+              ---
+              _Generated by `.github/workflows/process-contribution-report.yml` (CR-BP-03C §7)._
               '''
               Path(report_path).write_text(report)
-              print(f'Generated: {report_path}')
+              print(f'Generated: {report_path} (status={status}, recommendations={len(suggestions)})')
           "
 
       - name: Post report as PR comment
@@ -122,7 +171,9 @@ jobs:
             ## Process Contribution Report
 
             Each changed contribution in `contributions/processes/`
-            has been validated and a report has been emitted.
+            has been validated against the contribution schema +
+            the identity validator (BP-ARC-ID-001..005) + the
+            migration validator (BP-MIG-001..005).
 
             See the report files (e.g.
             `contributions/processes/<id>.report.md`) for the

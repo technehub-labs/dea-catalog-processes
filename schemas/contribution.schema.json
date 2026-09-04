@@ -35,8 +35,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^dea:bp:[a-z0-9-]+$",
-          "description": "Proposed canonical id. Must follow the dea:bp:... convention."
+          "pattern": "^dea:process-[a-z0-9-]+$",
+          "description": "Proposed canonical id. Must follow the dea:process-... convention (per CR-BP-02 PC-008 + CR-BP-03C §2)."
         },
         "name": {
           "type": "string",

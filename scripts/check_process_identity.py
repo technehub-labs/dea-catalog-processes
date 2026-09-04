@@ -98,10 +98,16 @@ def _check_one(entry: dict, errors: list[str], suggestions: list[dict]) -> None:
     outcome_stmt = identity.get("outcome_statement", "")
     evidence = identity.get("evidence_links", []) or []
 
-    # BP-ARC-ID-001: name matches identity.verb + identity.object
+    # BP-ARC-ID-001: name matches identity.verb + identity.object (+ optional scope)
     expected = f"{verb} {obj}"
     if scope:
-        expected = f"{expected} ({scope})"
+        # If the scope is already parenthesized ("(all customer segments)"),
+        # don't wrap it again. If not, wrap it ("Enterprise" → "(Enterprise)").
+        s = str(scope).strip()
+        if s.startswith("(") and s.endswith(")"):
+            expected = f"{expected} {s}"
+        else:
+            expected = f"{expected} ({s})"
     if name != expected and not _fuzzy_name_match(name, expected):
         errors.append(
             f"BP-ARC-ID-001 ({eid}): name {name!r} does not match identity verb+object+scope "
@@ -182,11 +188,42 @@ def _check_one(entry: dict, errors: list[str], suggestions: list[dict]) -> None:
 
 
 def _fuzzy_name_match(name: str, expected: str) -> bool:
-    """Allow trailing scope in parentheses to be flexible."""
-    # Strip trailing parenthesized scope
+    """Allow case differences + trailing scope in parentheses to be flexible.
+
+    Rationale (CR-BP-03C §5 / CR-BP-03A §3.1):
+      - Entry names are conventionally Title Case ("Manage Customer Relationship").
+      - The identity sub-block is conventionally lowercase
+        (verb: "manage", object: "customer relationship").
+      - The case-insensitive comparison prevents false positives
+        where the contributor followed both conventions.
+      - Trailing parenthesized scope ("(all customer segments)") is
+        preserved in the identity and tolerated in the name match;
+        the wrapping may produce doubled parentheses ("((all customer
+        segments))"), which this function normalizes.
+    """
+    # Exact match (case-sensitive) — covers when both sides agree
+    if name == expected:
+        return True
+
+    # Strip trailing parenthesized scope from expected
     m = re.match(r"^(.*?)(\s*\([^)]+\))?$", expected)
     if m and name == m.group(1).strip():
         return True
+
+    # Case-insensitive comparison (with or without trailing scope)
+    if m and name.lower() == m.group(1).strip().lower():
+        return True
+    if name.lower() == expected.lower():
+        return True
+
+    # Normalize doubled parentheses in expected (e.g. "((all customer segments))"
+    # produced by wrapping a scope like "(all customer segments)") and retry.
+    normalized = expected.replace("((", "(").replace("))", ")")
+    if name == normalized:
+        return True
+    if name.lower() == normalized.lower():
+        return True
+
     return False
 
 
