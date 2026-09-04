@@ -6,6 +6,38 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-04: Business Process Identity & ID-Family Reconciliation
+
+Documentation-first CR. Locks the four canonical ID families used by the
+catalog (`dea:process-*`, `dea:pc-*`, `dea:group-*`, `dea:scope-*`) and the
+legacy-migration `dea:bp:*` colon-separated family. Resolves the apparent
+`dea:bp-*` versus `dea:process-*` drift by collapsing it to three intentional
+roles: (1) legacy-migration reference inside `legacy_ids` arrays; (2) canonical
+Business Process id on live entities and Process Context references;
+(3) validator self-test fixture, used only to exercise failure paths inside
+`scripts/check_legacy_migration.py` and `scripts/check_process_identity.py`.
+
+#### Added
+
+- `change-requests/CR-BP-04-id-family-reconciliation.md` (the CR; 13 sections;
+  Design Specification tone; no en/em dashes; locks the colon-vs-dash
+  distinction for the legacy family).
+- New section **Canonical ID families (CR-BP-04 §4)** in `docs/identity.md`,
+  restating the four-family contract verbatim.
+
+#### Not changed
+
+- No schema change. `schemas/entity.schema.json`, `schemas/contribution.schema.json`,
+  and `schemas/entities/process-context.schema.json` already conform to the
+  rule this CR documents.
+- No validator change. `check_process_identity.py`, `check_process_context.py`,
+  `check_legacy_migration.py`, and `check_ecf_conformance.py` already enforce
+  the rule this CR documents.
+- No entity change. No live catalog content uses the `dea:bp-*` dash form as
+  a canonical identifier.
+- No migration script. The `dea:bp-bad-*`, `dea:bp-parent`, and `dea:bp-child-*`
+  validator fixtures remain as synthetic broken-input examples.
+
 ### CR-BP-11: L1 Process Group Discovery Across the 49 ECF Coordinates
 
 Research-only register. Establishes a comprehensive L1 Process Group

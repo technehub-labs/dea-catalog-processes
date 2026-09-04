@@ -1,10 +1,26 @@
 # Process Identity
 
-**CR-BP-03 §8.**
+**CR-BP-03 §8; CR-BP-04 §4.**
 
 This document captures the **process-identity contract**: a
 process is tested by name + description + trigger + outcome +
 evidence, not by name alone.
+
+## Canonical ID families (CR-BP-04 §4)
+
+Every identifier in this catalog belongs to one of five families. The prefix, separator, and purpose of each family are fixed by CR-BP-04.
+
+| Family | Prefix | Separator | Purpose | Lives in |
+|---|---|---|---|---|
+| Business Process | `dea:process` | `-` | Canonical L2 Business Process entries (and specializations) | `entities/v1-alpha/` |
+| Process Context | `dea:pc` | `-` | Canonical Process Context entries (Domain x Lifecycle Stage cells) | `contexts/v1-alpha/` |
+| Process Group | `dea:group` | `-` | Catalog-owned L1 labels and (BP-12) first-class records | `metadata.group` (now); `entities/v1-alpha/` (after BP-12) |
+| Process Scope | `dea:scope` | `-` | Catalog-owned L0 labels (metadata only; never a first-class entity) | `metadata.scope` |
+| Legacy Business Process | `dea:bp` | `:` (colon) | Legacy-migration reference only; appears in `legacy_ids` arrays and in validator self-test fixtures | `legacy_ids[]` only |
+
+The colon-vs-dash distinction is intentional. `dea:bp:*` is a deliberately alien-looking identifier that signals "this is a foreign legacy reference" to any reader; contributors cannot confuse it with `dea:process-*`. The dash-separated `dea:bp-*` form is reserved for validator self-test fixtures and is not a valid production identifier under any schema.
+
+A new contribution must use `dea:process-*` for canonical Business Process ids. The `dea:bp-*` (dash) form must not appear in any catalog content file.
 
 ## Why identity?
 
