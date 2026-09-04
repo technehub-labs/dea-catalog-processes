@@ -6,6 +6,51 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-11: L1 Process Group Discovery Across the 49 ECF Coordinates
+
+Research-only register. Establishes a comprehensive L1 Process Group
+discovery across the 7x7 ECF matrix (49 coordinates). Records an explicit
+disposition per coordinate: 38 `accepted`, 11 `deferred`. Five cross-domain
+findings are recorded once at their primary coordinate and referenced from
+peer coordinates (Technology Management held unmapped; Change Management
+cross-cutting at governance-existence x improve; Partner Management
+dual-home at customer-demand x conceive; Resilience/Innovation/Analytics
+at their primary coordinates; Marketing distinct from Customer Management).
+
+The register is the input gate for CR-BP-12 (L1 Process Group profile +
+schema + validator) and CR-BP-13..BP-19 (seven-domain admission tranches).
+No canonical L1 records, no new schema, no new validator, no new CI
+surface are added in this CR. The existing canonical L2 entry
+(`dea:process-manage-customer-relationship`) remains the only canonical
+Process entity in the catalog.
+
+Process Group remains a catalog-owned record type, not an OpenDEA Core
+metamodel entity. The canonical containment direction is
+`L1 group --composes--> L2 process`; the inverse `part-of` is a derived
+query view. Process Group and Business Function are explicit distinct
+catalog-topology constructs (not synonyms, not subtypes, not aliases).
+
+#### Added
+
+- `change-requests/CR-BP-11-l1-process-group-discovery.md` (the CR;
+  19 sections; Design Specification tone; no en/em dashes).
+- `docs/research/l1-register.yaml` (the 49-coordinate disposition
+  register; machine-readable; each coordinate carries process_context,
+  l1_candidates, l2_candidates, in_scope, out_of_scope, evidence,
+  disposition, deferral_reason).
+- `docs/research/l1-candidate-universe.yaml` (the L1 candidate
+  universe; 102 candidates across 49 coordinates; five cross-domain
+  findings).
+- `docs/research/L1-REGISTER-v0.1.md` (persona-readable summary).
+
+#### Not changed
+
+- Existing canonical entries under `entities/v1-alpha/`, `contexts/v1-alpha/`,
+  `contributions/processes/`, `docs/examples/`, `schemas/`, `scripts/`,
+  `classifications/`, `.github/workflows/` remain as PR #17 landed them.
+- No `dea:bp-*` versus `dea:process-*` ID-family reconciliation happens
+  here; that is a separate CR-BP-04.
+
 ### CR-BP-03C: Sample Business Process Contribution (walk-the-flow)
 
 Lands the **first** Business Process entry in the catalog,
