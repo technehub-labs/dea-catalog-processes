@@ -30,14 +30,56 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Validate catalog entries against Process schema
+      - name: Validate catalog entries against the right schema
         if: steps.check.outputs.skip != 'true'
-        uses: dsanders11/json-schema-validate-action@v2.1.0
-        with:
-          schema: schemas/entity.schema.json
-          files: |
-            entities/**/*.yaml
-            entities/**/*.json
+        run: |
+          pip install pyyaml jsonschema
+          python - <<'PY'
+          """Per-file schema dispatch (CR-BP-12).
+
+          Validates every entity in entities/v1-alpha/ against the schema that
+          matches its `type` discriminator:
+
+            type: Process       -> schemas/entity.schema.json (L2 Business Process)
+            type: ProcessGroup  -> schemas/entities/process-group.schema.json (L1)
+
+          This dispatch replaces the previous single-schema action which
+          required every entry to declare L2 fields like `process_intent`.
+          Entries without a recognized `type` (or with type 'Process') are
+          validated against the L2 schema.
+          """
+          import glob, json, sys
+          import yaml
+          from jsonschema import Draft7Validator
+
+          SCHEMAS = {
+              "Process": "schemas/entity.schema.json",
+              "ProcessGroup": "schemas/entities/process-group.schema.json",
+          }
+          FALLBACK = "schemas/entity.schema.json"
+
+          all_errors = []
+          for path in sorted(glob.glob("entities/v1-alpha/*.yaml", recursive=True)):
+              with open(path) as f:
+                  data = yaml.safe_load(f) or {}
+              if not isinstance(data, dict):
+                  continue
+              t = data.get("type", "Process")
+              schema_path = SCHEMAS.get(t, FALLBACK)
+              with open(schema_path) as f:
+                  schema = json.load(f)
+              v = Draft7Validator(schema)
+              errors = list(v.iter_errors(data))
+              if errors:
+                  for e in errors:
+                      all_errors.append(f"{path}: {e.message} ({'/'.join(str(x) for x in e.absolute_path)})")
+          if all_errors:
+              print("Validation FAILED:")
+              for e in all_errors:
+                  print("  ✗", e)
+              sys.exit(1)
+          print("Validation PASS (per-file schema dispatch)")
+          PY
 
       - name: Install ECF conformance gate dependencies
         run: pip install pyyaml
