@@ -6,6 +6,28 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-12: L1 Process Group Profile, Schema, and Validator
+
+Lands the first-class Process Group record type. Process Group remains a catalog-owned record (NOT a metamodel entity). The canonical containment direction is `L1 group --composes--> L2 process`; the inverse `part-of` view is generated at query time per CR-002 §8 because the metamodel relationship-type enum does not currently admit `part-of`.
+
+#### Added
+
+- `schemas/entities/process-group.schema.json` — JSON Schema for Process Group entries. ID family: `dea:group-*` (CR-BP-04 §4).
+- `classifications/process-group-kinds.yaml` — six-value controlled vocabulary (`end-to-end`, `functional`, `support`, `cross-cutting`, `governance`, `innovation`).
+- `scripts/check_process_group.py` — validator enforcing PG-001..PG-008; includes `--self-test` mode.
+- `entities/v1-alpha/dea_group-customer-lifecycle-management.yaml` — the first canonical Process Group record; promotes the `metadata.group` label that lived on `dea:process-manage-customer-relationship` into a governed first-class record with `process_group_kind: end-to-end`.
+- New CI step in `.github/workflows/ci.yml` that runs `scripts/check_process_group.py` on every PR.
+
+#### Changed
+
+- `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml` loses the `metadata.group` block; the Process Group is now an external first-class record referenced via the Process Group's `composes` array.
+
+#### Not changed
+
+- Existing Process Context (`dea:pc-cd-op`), classifications, contribution template, and contribution report workflow remain as PR #17 + #18 + #19 landed them.
+- No Process Group promotion to the OpenDEA Core metamodel (CR-BP-14, future, conditional).
+- Process Group kinds vocabulary is closed; additions require a CR-BP-12 minor revision.
+
 ### CR-BP-04: Business Process Identity & ID-Family Reconciliation
 
 Documentation-first CR. Locks the four canonical ID families used by the

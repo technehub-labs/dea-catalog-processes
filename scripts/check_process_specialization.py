@@ -179,6 +179,10 @@ def check_catalog_entries(catalog_root: Path, errors: list[str]) -> None:
     for yml in entries_dir.rglob("*.yaml"):
         data = _load_yaml(yml)
         eid = data.get("id")
+        # CR-BP-12: Process Group entries are not L2 Business Process
+        # entries; the specialization rule applies to L2 only.
+        if data.get("type") == "ProcessGroup":
+            continue
         if eid in forbidden:
             errors.append(
                 f"BP-SPEC-01-007: {yml} declares entity_id {eid!r} which "

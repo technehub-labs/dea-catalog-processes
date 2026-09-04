@@ -251,6 +251,11 @@ def run_checks(catalog_root: Path) -> tuple[list[str], list[dict]]:
         entry = yaml.safe_load(yml.read_text())
         if not isinstance(entry, dict):
             continue
+        # CR-BP-12: Process Group entries (type: ProcessGroup) are not
+        # Business Process entries; skip them. The Process Group
+        # validator (check_process_group.py) handles Process Groups.
+        if entry.get("type") == "ProcessGroup":
+            continue
         _check_one(entry, errors, suggestions)
     return errors, suggestions
 
