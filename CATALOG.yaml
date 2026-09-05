@@ -4,7 +4,7 @@ catalog:
     candidates: 0
     canonical: 2
     entities: 2
-    open_change_requests: 10
+    open_change_requests: 11
     research_files: 5
     retired: 0
   cross_cutting:

@@ -1,11 +1,20 @@
 # L1 Process Group Discovery Register v0.1
 
-Status: candidate-not-canonical; subject to review
-Programme: CR-BP-11
+Status: ratified-canonical-2026-09-05 (CR-BP-13)
+Programme: CR-BP-11 (research) -> CR-BP-13 (ratification)
 Repository: `technehub-labs/dea-catalog-processes`
-Date: 2026-09-04
+Date: 2026-09-04 (research); 2026-09-05 (ratification)
 Scope: 49 ECF coordinates (7 domains x 7 lifecycle stages)
-Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `01_plan/research-register/l1-register.yaml`; `01_plan/research-register/l1-candidate-universe.yaml`.
+Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `change-requests/CR-BP-13-research-ratification.md`; `01_plan/research-register/l1-register.yaml`; `01_plan/research-register/l1-candidate-universe.yaml`.
+
+Ratification summary:
+- 38 coordinates ratified-accepted (disposition: ratified-accepted)
+- 11 coordinates backlog-deferred (Activate/Retire stages)
+- 86 L1 candidates ratified; 16 L1 candidates backlog-deferred
+
+See CR-BP-13 §4 for the rationale on the 11 backlog-deferred
+coordinates (lifecycle transition stages; not stable Process
+Group scopes).
 
 ---
 

@@ -20,6 +20,30 @@ Process Group's first-class canonical record.
   promotion that first established this entity as a catalog-owned
   first-class record (rather than a metadata label on
   `dea:process-manage-customer-relationship`).
+- **CR-BP-13** (proposed, this PR): research ratification. Promotes the
+  38 accepted dispositions to `ratified-accepted` and the 11 deferred
+  dispositions to `backlog-deferred` with rationale (Activate/Retire
+  are transition stages, not stable Process Group operating scopes).
+  Adds a top-level `ratification: { version: 1, cr: CR-BP-13,
+  ratified_at: '2026-09-05' }` block to `l1-register.yaml` and
+  `l1-candidate-universe.yaml`. Idempotent (re-running the ratification
+  tool is a no-op).
+
+## Ratification evidence
+
+The research register was ratified on 2026-09-05. Disposition counts:
+
+| Disposition | Coordinates | L1 candidates |
+|---|---:|---:|
+| `ratified-accepted` | 38 | 86 |
+| `backlog-deferred` | 11 | 16 |
+| **Total** | **49** | **102** |
+
+The 11 backlog-deferred coordinates all sit on the Activate or Retire
+lifecycle stages. They are transition stages, not stable Process Group
+operating scopes; CR-BP-13 §4 records the rationale. The backlog can be
+revisited if a discrete Activate/Retire process identity is later
+identified (separate CR).
 
 ## Why this entity owns this research
 
