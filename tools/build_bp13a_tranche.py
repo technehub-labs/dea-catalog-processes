@@ -34,13 +34,32 @@ STAGE_NAMES = {
     "im": "Improve",
 }
 
-# ECF identifier per Process Context id (CustomerAndDemand domain only).
+# ECF identifier per Process Context id. Maps `<domain>-<stage>`
+# suffix to ECF identifier string.
 ECF_IDENTIFIERS = {
+    # CustomerAndDemand (CR-BP-13a)
     "dea:pc-cd-c": "ecf:customerDemand.conceive",
     "dea:pc-cd-d": "ecf:customerDemand.design",
     "dea:pc-cd-b": "ecf:customerDemand.build",
     "dea:pc-cd-op": "ecf:customerDemand.operate",
     "dea:pc-cd-im": "ecf:customerDemand.improve",
+    # GovernanceAndExistence (CR-BP-13b)
+    "dea:pc-ge-c": "ecf:governanceExistence.conceive",
+    "dea:pc-ge-d": "ecf:governanceExistence.design",
+    "dea:pc-ge-b": "ecf:governanceExistence.build",
+    "dea:pc-ge-op": "ecf:governanceExistence.operate",
+    "dea:pc-ge-im": "ecf:governanceExistence.improve",
+}
+
+# Domain name lookup by Process Context id (mid-segment).
+DOMAIN_NAMES = {
+    "cd": "CustomerAndDemand",
+    "ge": "GovernanceAndExistence",
+    "sr": "SupplyAndResources",
+    "po": "PeopleAndOrganization",
+    "pd": "ProductAndOffering",
+    "od": "OperationsAndDelivery",
+    "fv": "FinanceAndValue",
 }
 
 
@@ -714,7 +733,7 @@ def render_process_group(g: dict) -> str:
         "  affiliation: inherits-catalog",
         "  canonicalReferences:",
         "    - kind: coordinate",
-        "      domain: CustomerAndDemand",
+        f"      domain: {DOMAIN_NAMES[g['context'].split('-')[1]]}",
         f"      stage: {STAGE_NAMES[g['context'].split('-')[-1]]}",
         f"      identifier: {ECF_IDENTIFIERS[g['context']]}",
         "",
@@ -1136,7 +1155,7 @@ def render_l2_process(p: dict) -> str:
         "  affiliation: inherits-catalog",
         "  canonicalReferences:",
         "    - kind: coordinate",
-        "      domain: CustomerAndDemand",
+        f"      domain: {DOMAIN_NAMES[p['process_context'].split('-')[1]]}",
         f"      stage: {STAGE_NAMES[p['process_context'].split('-')[-1]]}",
         f"      identifier: {ECF_IDENTIFIERS[p['process_context']]}",
         "",

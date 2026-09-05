@@ -1,0 +1,99 @@
+# Canonical Business Process entry: `dea:process-design-policies-and-controls`.
+#
+# Lands as part of CR-BP-13a (CustomerAndDemand admission tranche).
+# This L2 process composes into `dea:group-governance-system-design`.
+#
+# Shape (CR-BP-03 / CR-BP-03A / CR-BP-SPEC-BP-01):
+#   - 4-axis classification (intent / type / specialization / audience)
+#   - Process Identity contract (verb + object + outcome + evidence)
+#   - Canonical relationships (array-of-relationship-instances)
+#   - Process Context reference (Cell Charter cell)
+#   - ECF Conformance Gate (inherits-catalog with doesNotRedefine)
+
+id: dea:process-design-policies-and-controls
+name: Design Policies and Controls
+type: Process
+version: 1.0.0
+lifecycle_status: candidate
+status: candidate
+
+# Classification (CR-BP-03 §2.1)
+process_intent: management
+process_audience: customer-demand
+
+# Classification: 5-value Mintzberg vocabulary (CR-BP-03 §2.1).
+process_type: standardization
+
+# Classification: inheritance / pattern-based refinement (CR-BP-03 §2.1).
+# No parent specialization at admission time; future specializations
+# may declare this id in their process_specialization list.
+process_specialization: []
+
+description: |
+  Operate the Design Policies and Controls L2 process within the
+  dea:pc-ge-d Cell Charter. See trigger and outcome for
+  the bounded work this process owns; see identity.outcome_statement
+  for the testable outcome the process produces.
+
+# Trigger (BP-ARC-ID-002): what initiates the process.
+trigger: |
+  A governance system has been designed; the policies and controls (policy artefacts, control objectives, compliance regime) must now be designed to instantiate the system.
+
+# Outcome (BP-ARC-ID-003): what the process produces.
+outcome: |
+  A policy and control design with articulated policy artefacts, control objectives, and compliance regime is committed.
+
+# Process Context (CR-BP-02).
+process_context: dea:pc-ge-d
+
+# Process Identity (CR-BP-03 §5.4).
+identity:
+  verb: Design
+  object: Policies and Controls
+  scope: (all customer segments)
+  outcome_statement: |
+    A policy and control design with articulated policy artefacts, control objectives, and compliance regime is committed and ready to drive Build and Operate contexts.
+  evidence_links:
+    - type: standard
+      ref: https://www.coso.org/Pages/default.aspx
+    - type: documentation
+      ref: docs/examples/design-policies-and-controls.md
+
+# Canonical relationships (CR-BP-03 §6; CR-BP-03A §3.1).
+# The L1 Process Group's `composes` array is the canonical
+# containment direction (PG-004). The inverse `part-of` is
+# generated at query time (CR-BP-12 §8); it is NOT a
+# first-class relationship-type in the metamodel's allowed
+# set, so this L2 entry does not declare it here. Only
+# realizes and other metamodel-allowed types appear.
+relationships: []
+
+# ECF Conformance Gate (CR-ECF-CG-001..004).
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: '1.0.0'
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+    - kind: coordinate
+      domain: GovernanceAndExistence
+      stage: Design
+      identifier: ecf:governanceExistence.design
+
+# Change history.
+metadata:
+  established_by: CR-BP-13a
+  established_at: '2026-09-05'
+  change_history:
+    - cr: CR-BP-13a
+      date: '2026-09-05'
+      change: |
+        Initial L2 Process entry; lands as part of the CR-BP-13a
+        CustomerAndDemand admission tranche.
+
+links:
+  - rel: change-request
+    href: change-requests/cr-bp-13a-customer-and-demand-admission.md
+  - rel: process-context
+    href: contexts/v1-alpha/dea-pc-ge-d.yaml
