@@ -2,10 +2,10 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 14
-    entities: 14
-    open_change_requests: 12
-    research_files: 29
+    canonical: 28
+    entities: 28
+    open_change_requests: 13
+    research_files: 57
     retired: 0
   cross_cutting:
     change_requests: change-requests/
@@ -73,6 +73,83 @@ catalog:
     retired_count: 1
     state: canonical
     type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-governance-body-establishment
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-governance-oversight
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-governance-review-and-learning
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-governance-review-and-learning/dea:group-governance-review-and-learning.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-governance-system-design
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-strategy-and-governance-conception
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-audit-policy-compliance
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-codify-charters-and-policies
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
     version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
@@ -153,6 +230,61 @@ catalog:
     version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
+    id: dea:process-design-governance-system
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-design-policies-and-controls
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-policies-and-controls/dea:process-design-policies-and-controls.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-develop-governance-strategy
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-establish-governance-bodies
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-initiate-policy-and-charter
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
     id: dea:process-manage-customer-relationship
     last_modified: '2026-09-05'
     lifecycle_status: candidate
@@ -168,6 +300,28 @@ catalog:
     last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-operate-governance-oversight
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-review-governance-effectiveness
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
     research_count: 2
     retired_count: 1
     state: canonical
@@ -206,6 +360,41 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-customer-strategy-conception/research/
+  - entity_id: dea:group-governance-body-establishment
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-governance-body-establishment/research/
+  - entity_id: dea:group-governance-oversight
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-governance-oversight/research/
+  - entity_id: dea:group-governance-review-and-learning
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-governance-review-and-learning/research/
+  - entity_id: dea:group-governance-system-design
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-governance-system-design/research/
+  - entity_id: dea:group-strategy-and-governance-conception
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-strategy-and-governance-conception/research/
+  - entity_id: dea:process-audit-policy-compliance
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-audit-policy-compliance/research/
+  - entity_id: dea:process-codify-charters-and-policies
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-codify-charters-and-policies/research/
   - entity_id: dea:process-customer-channel-and-acquisition-build
     files:
     - .gitkeep
@@ -241,6 +430,31 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-demand-generation-build/research/
+  - entity_id: dea:process-design-governance-system
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-design-governance-system/research/
+  - entity_id: dea:process-design-policies-and-controls
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-design-policies-and-controls/research/
+  - entity_id: dea:process-develop-governance-strategy
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-develop-governance-strategy/research/
+  - entity_id: dea:process-establish-governance-bodies
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-establish-governance-bodies/research/
+  - entity_id: dea:process-initiate-policy-and-charter
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-initiate-policy-and-charter/research/
   - entity_id: dea:process-manage-customer-relationship
     files:
     - README.md
@@ -250,5 +464,15 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-market-and-demand-conception/research/
+  - entity_id: dea:process-operate-governance-oversight
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-operate-governance-oversight/research/
+  - entity_id: dea:process-review-governance-effectiveness
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-review-governance-effectiveness/research/
   status: active
   version: 1.0.0
