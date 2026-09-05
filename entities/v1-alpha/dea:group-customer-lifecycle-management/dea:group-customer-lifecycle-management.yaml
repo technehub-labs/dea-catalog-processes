@@ -144,6 +144,15 @@ metadata:
         Initial Process Group record; promoted from
         metadata.group label on dea:process-manage-customer-relationship
         (CR-BP-03C) into a governed first-class record.
+    - cr: CR-BP-13
+      date: '2026-09-05'
+      change: |
+        Research ratification. The CR-BP-11 49-coordinate register
+        that produced this Process Group was ratified on 2026-09-05:
+        38 coordinates ratified-accepted; 11 backlog-deferred
+        (Activate/Retire transition stages). The ratified register
+        lives at this entity's research/l1-register.yaml and
+        research/l1-candidate-universe.yaml.
 
 links:
   - rel: documentation
