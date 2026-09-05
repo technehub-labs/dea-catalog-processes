@@ -1,5 +1,18 @@
 name: validate
 
+# CR-CATALOG-STRUCT-02 brings this catalog into conformance with the
+# catalog repository standard (CR-CATALOG-STRUCT-01). The workflow
+# fetches the standard's tooling from dea-metaframework and runs:
+#   1. CATALOG.yaml regeneration + freshness check
+#   2. CATALOG.yaml validation (gate)
+#   3. Per-entity schema validation (legacy; uses local schemas/)
+#   4. The seven existing catalog-specific validators
+#   5. Cross-repo conformance suite (CST-001..CST-016)
+#
+# The schema-validation phase-2 early-exit is preserved for catalogs
+# in deferred-population mode (empty entities/); once Phase 2 entries
+# land, drop the early-exit.
+
 on:
   push:
     branches: [main]
@@ -12,16 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Phase 2 deferred-population scaffold: the entities/ tree is empty
-      # by design (only README.md placeholders). Skip validation cleanly
-      # when there are no catalog entries yet. When Phase 2 starts adding
-      # entries, drop the early-exit and let the action validate them.
       - name: Check for catalog entries
         id: check
         run: |
           shopt -s nullglob globstar
           count=0
-          for f in entities/**/*.yaml entities/**/*.json; do
+          for f in entities/v1-alpha/**/*.yaml; do
             [ -f "$f" ] && count=$((count + 1))
           done
           echo "count=$count" >> "$GITHUB_OUTPUT"
@@ -30,25 +39,66 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Install dependencies
+        if: steps.check.outputs.skip != 'true'
+        run: pip install pyyaml jsonschema pytest
+
+      - name: Fetch catalog index machinery from dea-metaframework (if not vendored)
+        if: steps.check.outputs.skip != 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: technehub-labs/dea-metaframework
+          path: .metaframework
+
+      - name: Install regenerator + gate + schema (prefer vendored copies)
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          mkdir -p scripts catalog-index-schema
+          # Prefer vendored copies (per CST-013/CST-014). Fall back to
+          # dea-metaframework checkout only if the vendored copy is
+          # missing; this avoids CI drift when dea-metaframework main
+          # advances past the vendored version.
+          if [ ! -f scripts/regenerate_catalog.py ]; then
+            cp .metaframework/tools/regenerate_catalog.py scripts/
+          fi
+          if [ ! -f scripts/check_catalog_index.py ]; then
+            cp .metaframework/tools/check_catalog_index.py scripts/
+          fi
+          if [ ! -f catalog-index-schema/catalog-index-schema.json ]; then
+            cp .metaframework/tools/catalog-index-schema.json catalog-index-schema/
+          fi
+
+      - name: Set canonical git origin URL (regenerator reads it)
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          # actions/checkout@v4 sets the origin without a .git suffix.
+          # The committed CATALOG.yaml carries the .git suffix (matching
+          # what `git clone` produces locally). Normalize here so the
+          # regenerator's --check produces byte-identical output.
+          git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
+
+      - name: CATALOG.yaml must match regenerator output
+        if: steps.check.outputs.skip != 'true'
+        run: python scripts/regenerate_catalog.py --check --schema catalog-index-schema/catalog-index-schema.json
+
+      - name: Validate CATALOG.yaml (CR-CATALOG-STRUCT-01 §8 gate)
+        if: steps.check.outputs.skip != 'true'
+        run: python scripts/check_catalog_index.py --strict --schema catalog-index-schema/catalog-index-schema.json
+
       - name: Validate catalog entries against the right schema
         if: steps.check.outputs.skip != 'true'
         run: |
-          pip install pyyaml jsonschema
           python - <<'PY'
           """Per-file schema dispatch (CR-BP-12).
 
-          Validates every entity in entities/v1-alpha/ against the schema that
-          matches its `type` discriminator:
+          Validates every entity under entities/v1-alpha/ against the
+          schema that matches its `type` discriminator:
 
             type: Process       -> schemas/entity.schema.json (L2 Business Process)
             type: ProcessGroup  -> schemas/entities/process-group.schema.json (L1)
-
-          This dispatch replaces the previous single-schema action which
-          required every entry to declare L2 fields like `process_intent`.
-          Entries without a recognized `type` (or with type 'Process') are
-          validated against the L2 schema.
           """
           import glob, json, sys
+          from pathlib import Path
           import yaml
           from jsonschema import Draft7Validator
 
@@ -59,7 +109,17 @@ jobs:
           FALLBACK = "schemas/entity.schema.json"
 
           all_errors = []
-          for path in sorted(glob.glob("entities/v1-alpha/*.yaml", recursive=True)):
+          files = sorted(glob.glob("entities/v1-alpha/**/*.yaml", recursive=True))
+          # Filter out state-directory files (research/, candidates/,
+          # retired/) per CR-CATALOG-STRUCT-01 §5: only the canonical
+          # file at the subtree root is a catalog entry. State-directory
+          # files are research/candidate/retired artifacts; they are not
+          # validated against the entity schema here.
+          files = [
+              f for f in files
+              if not any(p in ("research", "candidates", "retired") for p in Path(f).parts)
+          ]
+          for path in files:
               with open(path) as f:
                   data = yaml.safe_load(f) or {}
               if not isinstance(data, dict):
@@ -76,28 +136,39 @@ jobs:
           if all_errors:
               print("Validation FAILED:")
               for e in all_errors:
-                  print("  ✗", e)
+                  print("  X", e)
               sys.exit(1)
-          print("Validation PASS (per-file schema dispatch)")
+          print(f"Validation PASS ({len(files)} entries; per-file schema dispatch)")
           PY
 
-      - name: Install ECF conformance gate dependencies
-        run: pip install pyyaml
-
       - name: Run ECF conformance gate (CR-ECF-CG-004)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_ecf_conformance.py
 
       - name: Run Business Process specialization gate (CR-BP-SPEC-BP-01)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_specialization.py
 
       - name: Run Process Context gate (CR-BP-02)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_context.py
 
       - name: Run Process Identity gate (CR-BP-03)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_identity.py
 
       - name: Run Legacy Migration gate (CR-BP-03A)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_legacy_migration.py
 
       - name: Run Process Group gate (CR-BP-12)
+        if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_group.py
+
+      - name: Run cross-repo conformance suite (CR-CATALOG-STRUCT-01 §11)
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          python .metaframework/tools/conformance_test_catalog_structure.py \
+              --catalog-root . \
+              --template-root .metaframework/tools/catalog-repo-template \
+              --strict

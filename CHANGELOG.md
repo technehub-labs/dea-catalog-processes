@@ -6,6 +6,52 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-CATALOG-STRUCT-02: Process Catalog Adoption (Three-Step Migration)
+
+Brings `dea-catalog-processes` into conformance with the catalog repository
+standard (CR-CATALOG-STRUCT-01).
+
+Step 1 (layout):
+- `entities/v1-alpha/dea:process-manage-customer-relationship/{research,candidates,retired}/`
+  subtree created; canonical file moved from `dea_bp_manage-customer-relationship.yaml`
+  and renamed to canonical `dea:process-*` form (CR-BP-04).
+- `entities/v1-alpha/dea:group-customer-lifecycle-management/{research,candidates,retired}/`
+  subtree created; canonical file moved from `dea_group-customer-lifecycle-management.yaml`.
+
+Step 2 (research distribution):
+- `docs/research/l1-register.yaml`, `l1-candidate-universe.yaml`, `L1-REGISTER-v0.1.md`
+  moved into `entities/v1-alpha/dea:group-customer-lifecycle-management/research/`
+  (research is about L1 Process Groups; L1 entities own L1 evidence).
+- `docs/research/` removed (empty after the move).
+- Provenance `research/README.md` per subtree.
+
+Step 3 (contribution flow):
+- `contributions/processes/` intake queue and template kept as-is (catalog
+  hosts one entity type; renaming is a future concern).
+
+Catalog index + CI:
+- `CATALOG.yaml` (machine-generated, 1.9 KB) committed.
+- `TEMPLATE_VERSION` (`0.1.0`) written; matches the canonical template.
+- `metamodel-pointer.yaml` extended with additive top-level metadata block
+  (id/name/abbreviation/version/status/metamodel_version/description/owner);
+  existing nested `metamodel:` and `catalog:` blocks unchanged.
+- `scripts/regenerate_catalog.py`, `scripts/check_catalog_index.py`, and
+  `catalog-index-schema/catalog-index-schema.json` vendored from
+  `dea-metaframework/tools/` (CST-013/CST-014).
+- `.github/workflows/ci.yml` updated to run the regenerator check, the
+  gate, the per-file schema dispatch (with state-directory filter), the
+  six existing catalog validators, and the cross-repo conformance suite.
+- `scripts/check_ecf_conformance.py` fixed: skip files under
+  `research/`, `candidates/`, `retired/` (state-directory files are not
+  catalog entries and do not carry `ecfConformance`).
+
+Verification:
+- All 6 catalog validators PASS.
+- Regenerator --check exits 0.
+- Gate --strict exits 0.
+- Conformance --strict: 16/16 CSTs passed, 0 warnings.
+- Cross-repo contract satisfied; STRUCT-03..05 can adopt the same pattern.
+
 ### CR-BP-12: L1 Process Group Profile, Schema, and Validator
 
 Lands the first-class Process Group record type. Process Group remains a catalog-owned record (NOT a metamodel entity). The canonical containment direction is `L1 group --composes--> L2 process`; the inverse `part-of` view is generated at query time per CR-002 §8 because the metamodel relationship-type enum does not currently admit `part-of`.

@@ -18,6 +18,26 @@
 #   dea:Process (metamodel Core kernel) <-> dea:entity-process (root model kernel)
 #   dea:BusinessProcess (metamodel Core specialization) <-> dea:entity-business-process (root model specialization)
 
+# Catalog Repository Standard (CR-CATALOG-STRUCT-01) requires the
+# regenerator (CR-CATALOG-STRUCT-06a) to read top-level catalog metadata
+# from this file. The values below mirror the catalog: block at the
+# bottom of this file; they are duplicated here in the canonical top-level
+# form the regenerator expects. The duplicated values are the
+# authoritative catalog identity (id/name/abbreviation/version) and
+# MUST stay in sync with the catalog: block. The metamodel: and
+# catalog: blocks retain their existing semantic content; this addition
+# is purely additive (no field renamed, no value changed semantically).
+id: dea:catalog-processes
+name: Business Process
+abbreviation: BP
+version: "1.0.0"
+status: active
+metamodel_version: "1.0.0"
+description: |
+  Reference catalog for Business Process (L2) and Process Group (L1)
+  entities. Authority: CR-BP-SPEC-BP-01 (refines CR-BP-01).
+owner: TechNeHub Labs
+
 metamodel:
   version: v0.6.0
   entity_id: dea:entity-business-process   # this catalog's primary subject (specialization; OpenDEAM root-model id)

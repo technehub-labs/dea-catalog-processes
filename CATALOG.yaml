@@ -1,0 +1,62 @@
+catalog:
+  abbreviation: BP
+  counts:
+    candidates: 0
+    canonical: 2
+    entities: 2
+    open_change_requests: 10
+    research_files: 5
+    retired: 0
+  cross_cutting:
+    change_requests: change-requests/
+    classifications: classifications/
+    contributions_queue: contributions/
+    schemas: schemas/
+    validators: scripts/
+  description: 'Reference catalog for Business Process (L2) and Process Group (L1)
+
+    entities. Authority: CR-BP-SPEC-BP-01 (refines CR-BP-01).
+
+    '
+  entities:
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-customer-lifecycle-management
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-customer-lifecycle-management/dea:group-customer-lifecycle-management.yaml
+    research_count: 4
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-manage-customer-relationship
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
+    research_count: 1
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  id: dea:catalog-processes
+  metamodel_version: 1.0.0
+  name: Business Process
+  owner: TechNeHub Labs
+  repository: https://github.com/technehub-labs/dea-catalog-processes.git
+  research_registers:
+  - entity_id: dea:group-customer-lifecycle-management
+    files:
+    - L1-REGISTER-v0.1.md
+    - README.md
+    - l1-candidate-universe.yaml
+    - l1-register.yaml
+    path: entities/v1-alpha/dea:group-customer-lifecycle-management/research/
+  - entity_id: dea:process-manage-customer-relationship
+    files:
+    - README.md
+    path: entities/v1-alpha/dea:process-manage-customer-relationship/research/
+  status: active
+  version: 1.0.0
