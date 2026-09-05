@@ -2,10 +2,10 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 2
-    entities: 2
-    open_change_requests: 11
-    research_files: 5
+    canonical: 14
+    entities: 14
+    open_change_requests: 12
+    research_files: 29
     retired: 0
   cross_cutting:
     change_requests: change-requests/
@@ -21,6 +21,39 @@ catalog:
   entities:
   - candidate_count: 1
     canonical_count: 1
+    id: dea:group-customer-channel-and-acquisition-build
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/dea:group-customer-channel-and-acquisition-build.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-customer-experience-design
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-customer-experience-design/dea:group-customer-experience-design.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-customer-insight-and-retention
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-customer-insight-and-retention/dea:group-customer-insight-and-retention.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
     id: dea:group-customer-lifecycle-management
     last_modified: '2026-09-05'
     lifecycle_status: candidate
@@ -29,6 +62,94 @@ catalog:
     retired_count: 1
     state: canonical
     type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:group-customer-strategy-conception
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-customer-strategy-conception/dea:group-customer-strategy-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-customer-channel-and-acquisition-build
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-customer-experience-design
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-customer-insight-and-retention
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-customer-insight-and-retention/dea:process-customer-insight-and-retention.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-customer-journey-design
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-customer-journey-design/dea:process-customer-journey-design.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-customer-strategy-conception
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-customer-strategy-conception/dea:process-customer-strategy-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-demand-design
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-demand-generation-build
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
     version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
@@ -41,12 +162,38 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 1
+    canonical_count: 1
+    id: dea:process-market-and-demand-conception
+    last_modified: '2026-09-05'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
   id: dea:catalog-processes
   metamodel_version: 1.0.0
   name: Business Process
   owner: TechNeHub Labs
   repository: https://github.com/technehub-labs/dea-catalog-processes.git
   research_registers:
+  - entity_id: dea:group-customer-channel-and-acquisition-build
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/research/
+  - entity_id: dea:group-customer-experience-design
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-customer-experience-design/research/
+  - entity_id: dea:group-customer-insight-and-retention
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-customer-insight-and-retention/research/
   - entity_id: dea:group-customer-lifecycle-management
     files:
     - L1-REGISTER-v0.1.md
@@ -54,9 +201,54 @@ catalog:
     - l1-candidate-universe.yaml
     - l1-register.yaml
     path: entities/v1-alpha/dea:group-customer-lifecycle-management/research/
+  - entity_id: dea:group-customer-strategy-conception
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-customer-strategy-conception/research/
+  - entity_id: dea:process-customer-channel-and-acquisition-build
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/research/
+  - entity_id: dea:process-customer-experience-design
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-customer-experience-design/research/
+  - entity_id: dea:process-customer-insight-and-retention
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-customer-insight-and-retention/research/
+  - entity_id: dea:process-customer-journey-design
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-customer-journey-design/research/
+  - entity_id: dea:process-customer-strategy-conception
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-customer-strategy-conception/research/
+  - entity_id: dea:process-demand-design
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-demand-design/research/
+  - entity_id: dea:process-demand-generation-build
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-demand-generation-build/research/
   - entity_id: dea:process-manage-customer-relationship
     files:
     - README.md
     path: entities/v1-alpha/dea:process-manage-customer-relationship/research/
+  - entity_id: dea:process-market-and-demand-conception
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:process-market-and-demand-conception/research/
   status: active
   version: 1.0.0

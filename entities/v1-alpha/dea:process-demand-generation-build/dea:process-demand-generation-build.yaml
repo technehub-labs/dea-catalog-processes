@@ -1,0 +1,99 @@
+# Canonical Business Process entry: `dea:process-demand-generation-build`.
+#
+# Lands as part of CR-BP-13a (CustomerAndDemand admission tranche).
+# This L2 process composes into `dea:group-customer-channel-and-acquisition-build`.
+#
+# Shape (CR-BP-03 / CR-BP-03A / CR-BP-SPEC-BP-01):
+#   - 4-axis classification (intent / type / specialization / audience)
+#   - Process Identity contract (verb + object + outcome + evidence)
+#   - Canonical relationships (array-of-relationship-instances)
+#   - Process Context reference (Cell Charter cell)
+#   - ECF Conformance Gate (inherits-catalog with doesNotRedefine)
+
+id: dea:process-demand-generation-build
+name: Build Demand Generation Programs
+type: Process
+version: 1.0.0
+lifecycle_status: candidate
+status: candidate
+
+# Classification (CR-BP-03 §2.1)
+process_intent: operational
+process_audience: customer-demand
+
+# Classification: 5-value Mintzberg vocabulary (CR-BP-03 §2.1).
+process_type: core
+
+# Classification: inheritance / pattern-based refinement (CR-BP-03 §2.1).
+# No parent specialization at admission time; future specializations
+# may declare this id in their process_specialization list.
+process_specialization: []
+
+description: |
+  Operate the Build Demand Generation Programs L2 process within the
+  dea:pc-cd-b Cell Charter. See trigger and outcome for
+  the bounded work this process owns; see identity.outcome_statement
+  for the testable outcome the process produces.
+
+# Trigger (BP-ARC-ID-002): what initiates the process.
+trigger: |
+  Customer demand model is committed; the demand-generation engine (the asset that produces sustained demand) must be built.
+
+# Outcome (BP-ARC-ID-003): what the process produces.
+outcome: |
+  A demand-generation engine is operational, integrated with the channels, and producing initial demand.
+
+# Process Context (CR-BP-02).
+process_context: dea:pc-cd-b
+
+# Process Identity (CR-BP-03 §5.4).
+identity:
+  verb: Build
+  object: Demand Generation Programs
+  scope: (all customer segments)
+  outcome_statement: |
+    A demand-generation engine is operational, integrated with the channels, and producing initial demand consistent with the customer demand model.
+  evidence_links:
+    - type: standard
+      ref: https://www.apqc.org/resource-library/resource-collections/56391
+    - type: documentation
+      ref: docs/examples/build-demand-generation-programs.md
+
+# Canonical relationships (CR-BP-03 §6; CR-BP-03A §3.1).
+# The L1 Process Group's `composes` array is the canonical
+# containment direction (PG-004). The inverse `part-of` is
+# generated at query time (CR-BP-12 §8); it is NOT a
+# first-class relationship-type in the metamodel's allowed
+# set, so this L2 entry does not declare it here. Only
+# realizes and other metamodel-allowed types appear.
+relationships: []
+
+# ECF Conformance Gate (CR-ECF-CG-001..004).
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: '1.0.0'
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+    - kind: coordinate
+      domain: CustomerAndDemand
+      stage: Build
+      identifier: ecf:customerDemand.build
+
+# Change history.
+metadata:
+  established_by: CR-BP-13a
+  established_at: '2026-09-05'
+  change_history:
+    - cr: CR-BP-13a
+      date: '2026-09-05'
+      change: |
+        Initial L2 Process entry; lands as part of the CR-BP-13a
+        CustomerAndDemand admission tranche.
+
+links:
+  - rel: change-request
+    href: change-requests/cr-bp-13a-customer-and-demand-admission.md
+  - rel: process-context
+    href: contexts/v1-alpha/dea-pc-cd-b.yaml
