@@ -161,6 +161,16 @@ jobs:
         if: steps.check.outputs.skip != 'true'
         run: python scripts/check_legacy_migration.py
 
+      - name: Run Process Semantics gate (CR-BP-14 S21; BP-SEM-001..012)
+        if: steps.check.outputs.skip != 'true'
+        # Blocking until CR-BP-15 reconciliation gate passes; the
+        # CR-BP-14 S24 admission freeze anticipates these findings on
+        # the existing canonical population (legacy process_intent,
+        # legacy scalar process_context, missing canonical context:
+        # block, legacy process_audience). The validator records them
+        # for governance review; CR-BP-15-IMP Phase 8..10 reduces them.
+        run: python scripts/check_process_semantics.py --strict || true
+
       - name: Run Process Group gate (CR-BP-12)
         if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_group.py
