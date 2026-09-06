@@ -6,6 +6,42 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 1-2: Inventory + immutable baseline
+
+CR-BP-15 §6 / §7 (existing-population reconciliation) is now
+seeded. The Phase 1 inventory enumerates every canonical record at
+the moment CR-BP-14 was declared Implemented; the Phase 2 baseline
+freezes each record's SHA-256 so future tranches can diff exactly
+which bytes were touched.
+
+- `reconciliation/inventory.yaml` (new): 18 Business Processes +
+  10 Process Groups + 10 Process Contexts + 4 Change Requests
+  (CR-BP-14, CR-BP-15, CR-BP-15-IMP, CR-BP-16); per-record
+  metadata + `legacy_findings` (BP-SEM raw findings on each
+  record).
+- `reconciliation/baseline/v1.yaml` (new): immutable SHA-256
+  snapshot of every record's file contents; baseline_version = v1;
+  baseline_commit = 816c63b (CR-BP-14 Implemented); baseline_at =
+  2026-09-06.
+- `reconciliation/README.md` (new): orientation for visitors;
+  layout, phase progression, STRUCT conformance reference.
+- `scripts/build_inventory.py` (new): reproducible generator;
+  `--self-test --strict` asserts byte-identity with committed
+  files; supports `--out` for diff scenarios.
+- `scripts/check_struct.py` (new, decision D6): STRUCT conformance
+  check that flags unknown top-level entries; intentionally
+  permissive (the catalogue's contracts own schema integrity);
+  wired into CI as an advisory step.
+- `tests/test_reconciliation_baseline.py` (new): 9 tests covering
+  inventory regeneration, baseline SHA-256 integrity, and STRUCT
+  typo detection.
+- `.github/workflows/ci.yml`: STRUCT conformance step added
+  between Legacy Migration gate and Process Semantics gate.
+
+Programme position: CR-BP-14 still **Implemented**; CR-BP-15 +
+CR-BP-15-IMP still **Proposed**; this PR is the first CR-BP-15-IMP
+delivery.
+
 ### CR-BP-14 Phase 4: Documentation reconciliation (Implemented)
 
 CR-BP-14 §22 is now satisfied. The repository prose reflects the
