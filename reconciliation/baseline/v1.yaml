@@ -137,7 +137,7 @@ records:
   - id: dea:process-customer-channel-and-acquisition-build
     type: Process
     path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
-    sha256: 4b1a32aa698b0782c70c597f77f869f4d4db1a018e338954d80b3cb66944fe30
+    sha256: 7b4395a07f8d2bc14f82dd1570d946202a93007e8effc58cf5661a4ebc4b691c
   - id: dea:process-customer-experience-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
@@ -153,7 +153,7 @@ records:
   - id: dea:process-customer-strategy-conception
     type: Process
     path: entities/v1-alpha/dea:process-customer-strategy-conception/dea:process-customer-strategy-conception.yaml
-    sha256: 1f197b5a26e490f1536a5429df2f790e1395dbbd4ee1eabebea280bcf0fbbf42
+    sha256: 26213b4a3caa98da122a52fab7bedd8c33a345a5d091426edf91703c93796fd8
   - id: dea:process-demand-design
     type: Process
     path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
@@ -161,7 +161,7 @@ records:
   - id: dea:process-demand-generation-build
     type: Process
     path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
-    sha256: cc48505d210d0cae7b2d65f6c97b4a1b0acca3e0614ae8431148cade506fd085
+    sha256: b82474755701dc183455c3992e86d39eb349b14a18ef198789060adde53b38b3
   - id: dea:process-design-governance-system
     type: Process
     path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
@@ -189,7 +189,7 @@ records:
   - id: dea:process-market-and-demand-conception
     type: Process
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
-    sha256: abbb0884fde497076b07b4bb936a5049894997ec2581a5b3137ab40e6fcb0314
+    sha256: b7f6eeb5a43dff27cb5f4c9371de7186bef68ec678970d4b436aaa5f047c1ac9
   - id: dea:process-operate-governance-oversight
     type: Process
     path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
