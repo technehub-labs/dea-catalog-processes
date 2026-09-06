@@ -112,15 +112,17 @@ def test_migration_is_idempotent() -> None:
     assert before == after, "migration is not idempotent"
 
 
-def test_register_lock_progress_records_cd_b_cd_c() -> None:
-    """The disposition register reflects the Phase 5 lock progress."""
+def test_register_lock_progress_records_customer_demand_tranches() -> None:
+    """The disposition register reflects the Phase 5 lock progress
+    for the customer-demand tranches (cd-b, cd-c, cd-d, cd-im, cd-op)."""
     reg = yaml.safe_load(
         (REPO_ROOT / "reconciliation/dispositions/register.yaml").read_text()
     )
     progress = reg.get("register_lock_progress", {})
-    assert "cd-b" in progress.get("locked_tranches", [])
-    assert "cd-c" in progress.get("locked_tranches", [])
-    assert progress.get("locked_records") == 4
+    expected_tranches = {"cd-b", "cd-c", "cd-d", "cd-im", "cd-op"}
+    assert expected_tranches.issubset(set(progress.get("locked_tranches", [])))
+    assert progress.get("locked_records") == 9
+    assert progress.get("remaining_records") == 9
 
 
 def test_baseline_v1_remains_immutable() -> None:

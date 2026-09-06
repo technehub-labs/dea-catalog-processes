@@ -6,6 +6,43 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 5 second tranche (cd-d + cd-im + cd-op)
+
+Five additional customer-demand records have been reconciled to
+the CR-BP-14 canonical contract. The disposition register is now
+9-of-18 locked.
+
+- `entities/v1-alpha/dea:process-customer-experience-design/`:
+  legacy `management` intent -> canonical `develop`; cd-d context
+  block; serves toward `ecf:customerAndDemand.design`.
+- `entities/v1-alpha/dea:process-customer-journey-design/`:
+  legacy `support` intent -> canonical `develop`; same cd-d
+  migration pattern.
+- `entities/v1-alpha/dea:process-demand-design/`: legacy
+  `management` intent -> canonical `develop`; same cd-d
+  pattern.
+- `entities/v1-alpha/dea:process-customer-insight-and-retention/`:
+  legacy `management` intent -> canonical `operate` (Improve
+  context work is operational); cd-im block; serves toward
+  `ecf:customerAndDemand.improve`.
+- `entities/v1-alpha/dea:process-manage-customer-relationship/`:
+  legacy `management` intent -> canonical `manage`; cd-op block;
+  serves toward `ecf:customerAndDemand.operate`. The existing
+  `realizes` capability relationship is preserved.
+- `reconciliation/diffs/phase-5-cd-d-cd-im-cd-op.yaml` (new):
+  per-tranche audit trail; 5 records touched; cross-tranche
+  observations on cd-d density and the management-vs-manage
+  intent disambiguation.
+- `reconciliation/dispositions/register.yaml`: register_lock
+  progress updated to 9 locked records (cd-b, cd-c, cd-d,
+  cd-im, cd-op) and 9 remaining.
+- `tests/test_reconciliation_baseline.py`: legacy_findings_present
+  test updated to reflect the second tranche lock (9 remaining,
+  not 14).
+
+BP-SEM live verdict: 9 errors (down from 14). Half of the
+customer-demand records now conform to the canonical contract.
+
 ### CR-BP-15-IMP Phase 5 first tranche (cd-b + cd-c)
 
 The first two customer-demand tranches (4 records: 2 build + 2

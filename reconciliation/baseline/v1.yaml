@@ -141,15 +141,15 @@ records:
   - id: dea:process-customer-experience-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
-    sha256: 0b6367196532b8a7a9b43562e5928cbb305b18af6a3cdd81cedf148a32b288a4
+    sha256: 80257da6a543e83d11fdf32712c06ded3e93b6234683c8435e2c3d403c9c1fa7
   - id: dea:process-customer-insight-and-retention
     type: Process
     path: entities/v1-alpha/dea:process-customer-insight-and-retention/dea:process-customer-insight-and-retention.yaml
-    sha256: 36f28499f6024a3899f4ccaa5f14a80bfe57aecb6c1cbab3a7b48b572cb4f84b
+    sha256: c5aef784441daae9156eaa3defd013f8597bc7c2aa8deadd4008431d0222d92c
   - id: dea:process-customer-journey-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-journey-design/dea:process-customer-journey-design.yaml
-    sha256: c34c50e682036d403df4cb4b33a75cd28b174dc4c2735546dd24e4fa8a43387a
+    sha256: 3f42ca7e35f007544f7c8a7059e6110ab001d803e38c973736b61eda2aaea33a
   - id: dea:process-customer-strategy-conception
     type: Process
     path: entities/v1-alpha/dea:process-customer-strategy-conception/dea:process-customer-strategy-conception.yaml
@@ -157,7 +157,7 @@ records:
   - id: dea:process-demand-design
     type: Process
     path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
-    sha256: 464a793ebe7976b0ecbaf77585f9cb528e3686400d594af3b8ed7b7bc625b061
+    sha256: ec6c9f1436b82eba44c4963dc12bbc79df7108dcf4cf09c0c541d50aa09f3346
   - id: dea:process-demand-generation-build
     type: Process
     path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
@@ -185,7 +185,7 @@ records:
   - id: dea:process-manage-customer-relationship
     type: Process
     path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
-    sha256: 6a572ac45b405a2ef84a2d2c82f2f4091167516cb0065e03b43e0647ba271f4f
+    sha256: b8df1cd7864766872182ba7957d35ad8033591a9596898faaf76bdab4532f244
   - id: dea:process-market-and-demand-conception
     type: Process
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml

@@ -57,37 +57,25 @@ records:
       name: "Design Customer Experience"
       type: Process
       path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: standardization
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-customer-insight-and-retention
       name: "Operate Customer Retention Programs"
       type: Process
       path: entities/v1-alpha/dea:process-customer-insight-and-retention/dea:process-customer-insight-and-retention.yaml
-      process_intent: management
+      process_intent: operate
       process_classification: core
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-customer-journey-design
       name: "Design Customer Journey"
       type: Process
       path: entities/v1-alpha/dea:process-customer-journey-design/dea:process-customer-journey-design.yaml
-      process_intent: support
+      process_intent: develop
       process_classification: core
       legacy_findings:
-        - intent:support
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-customer-strategy-conception
       name: "Develop Customer Strategy"
@@ -101,13 +89,9 @@ records:
       name: "Design Demand Model"
       type: Process
       path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: management
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-demand-generation-build
       name: "Build Demand Generation Programs"
@@ -181,13 +165,9 @@ records:
       name: "Manage Customer Relationship"
       type: Process
       path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
-      process_intent: management
+      process_intent: manage
       process_classification: management
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-market-and-demand-conception
       name: "Develop Market Intelligence"

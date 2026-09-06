@@ -22,9 +22,9 @@ register_at: 2026-09-06
 register_status: PARTIALLY_LOCKED
 register_lock_target: CR-BP-15-IMP Phase 5 (PR-6 onward)
 register_lock_progress:
-  locked_tranches: [cd-b, cd-c]
-  locked_records: 4
-  remaining_records: 14
+  locked_tranches: [cd-b, cd-c, cd-d, cd-im, cd-op]
+  locked_records: 9
+  remaining_records: 9
 
 # Disposition summary by axis. Computed at register generation time.
 summary:
@@ -40,8 +40,8 @@ summary:
     DEFER: 0
     RETIRE: 0
   by_lock_status:
-    LOCKED: 4
-    PRELIMINARY: 14
+    LOCKED: 9
+    PRELIMINARY: 9
 
 dispositions:
 
