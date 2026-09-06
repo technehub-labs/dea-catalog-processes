@@ -58,6 +58,9 @@ KNOWN_TOP_LEVEL: frozenset[str] = frozenset({
     "TEMPLATE_VERSION",
     "docs.governance.md",
     "metamodel-pointer.yaml",
+    # PR plan workspace (dev only; PR body files live here
+    # between `git add -A -- ':!01_plan'` and the merge).
+    "01_plan",
 })
 
 

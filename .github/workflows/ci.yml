@@ -24,6 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history is required so that CR-META's cutoff
+          # probe (git log -1 --format=%ct on each CR file) can
+          # resolve to a real last-commit timestamp. Default
+          # fetch-depth: 1 is a shallow clone, which makes every
+          # CR appear 'new' (mtime == now) and blocks merges.
+          fetch-depth: 0
 
       - name: Check for catalog entries
         id: check
