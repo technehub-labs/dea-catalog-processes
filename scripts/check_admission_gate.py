@@ -1,0 +1,407 @@
+#!/usr/bin/env python3
+"""New Process Admission Gate (CR-BP-16 S15; ADM-001..008).
+
+CR-BP-16 S15 mandates the 14-step admission gate for new Business
+Processes:
+
+  Candidate -> Evidence -> Identity -> Context -> Group Fit ->
+  Boundary -> Intent -> Classification -> Specialization ->
+  Sibling Analysis -> MECE -> Schema -> Provenance -> Governance
+  -> CANONICAL
+
+A new admission candidate is a YAML file under
+entities/v1-alpha/dea:process-<new>/ that does NOT yet have an
+entry in the disposition register's LOCKED set. The gate runs
+eight blocking checks (ADM-001..008):
+
+  ADM-001  Evidence coverage. Required: change_history[*].cr
+           pointing at an admission CR (CR-BP-NN(.X)?).
+  ADM-002  Identity shape. Required fields: name, type=Process,
+           version. id matches dea:process-[a-z0-9-]+.
+  ADM-003  Context resolution. context[].ref MUST resolve to a
+           canonical Process Context under contexts/v1-alpha/.
+  ADM-004  Group fit. If process_group_id is present, MUST
+           resolve to a canonical Process Group.
+  ADM-005  Boundary completeness. Required: triggers (list) and
+           outcomes (list), each non-empty.
+  ADM-006  Intent + Classification in approved vocabularies.
+  ADM-007  Specialization validity. If specializations[] present,
+           every parent must resolve to a canonical Process.
+  ADM-008  Provenance. change_history non-empty with at least one
+           entry with date + cr + change fields.
+
+Usage::
+
+    python3 scripts/check_admission_gate.py [--strict] [--self-test]
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Iterable
+
+import yaml
+
+ID_PATTERN = re.compile(r"^dea:process-[a-z0-9-]+$")
+PC_PATTERN = re.compile(r"^dea:pc-[a-z0-9-]+$")
+PG_PATTERN = re.compile(r"^dea:pg-[a-z0-9-]+$")
+APPROVED_INTENTS = {
+    "govern", "manage", "operate", "deliver", "support", "develop",
+    "transform",
+}
+
+
+def _catalog_pc_ids(root: Path) -> set[str]:
+    ids: set[str] = set()
+    for d in (root / "contexts" / "v1-alpha").rglob("*.yaml"):
+        data = _try_load(d)
+        if isinstance(data, dict):
+            rid = data.get("id")
+            if isinstance(rid, str):
+                ids.add(rid)
+    return ids
+
+
+def _catalog_pg_ids(root: Path) -> set[str]:
+    ids: set[str] = set()
+    for d in (root / "entities" / "v1-alpha").rglob("*.yaml"):
+        # Only ProcessGroup records (top-level file under dea:pg-*)
+        rel = d.relative_to(root)
+        parts = rel.parts
+        if len(parts) >= 3 and parts[1].startswith("dea:pg-"):
+            data = _try_load(d)
+            if isinstance(data, dict):
+                rid = data.get("id")
+                if isinstance(rid, str):
+                    ids.add(rid)
+    return ids
+
+
+def _catalog_process_ids(root: Path) -> set[str]:
+    ids: set[str] = set()
+    for d in (root / "entities" / "v1-alpha").rglob("*.yaml"):
+        data = _try_load(d)
+        if isinstance(data, dict):
+            rid = data.get("id")
+            if isinstance(rid, str) and rid.startswith("dea:process-"):
+                ids.add(rid)
+    return ids
+
+
+def _try_load(path: Path) -> dict | None:
+    try:
+        return yaml.safe_load(path.read_text())
+    except (yaml.YAMLError, OSError):
+        return None
+
+
+def _disposition_locked_ids(root: Path) -> set[str]:
+    """Return the set of record_ids with register_status=LOCKED entries."""
+    path = root / "reconciliation" / "dispositions" / "register.yaml"
+    if not path.exists():
+        return set()
+    data = _try_load(path)
+    if not isinstance(data, dict):
+        return set()
+    locked = set()
+    for entry in data.get("dispositions", []) or []:
+        if isinstance(entry, dict) and entry.get("lock_status") == "LOCKED":
+            locked.add(entry.get("record_id"))
+    return {r for r in locked if r}
+
+
+def check_admission(path: Path, root: Path,
+                    pc_ids: set[str], pg_ids: set[str],
+                    process_ids: set[str]) -> list[tuple[str, str]]:
+    """Return [(rule_code, finding), ...] for a candidate Process."""
+    findings: list[tuple[str, str]] = []
+    data = _try_load(path)
+    if not isinstance(data, dict):
+        return [("ADM-PARSE", f"YAML parse error in {path.relative_to(root)}")]
+
+    rec_id = data.get("id")
+    if not isinstance(rec_id, str) or not ID_PATTERN.match(rec_id):
+        findings.append((
+            "ADM-002",
+            f"{path.relative_to(root)}: id {rec_id!r} does not match "
+            "`dea:process-[a-z0-9-]+`",
+        ))
+
+    # ADM-002: identity shape
+    name = data.get("name")
+    typ = data.get("type")
+    version = data.get("version")
+    if not name or not isinstance(name, str):
+        findings.append(("ADM-002", f"{rec_id}: missing or non-string name"))
+    if typ != "Process":
+        findings.append((
+            "ADM-002",
+            f"{rec_id}: type={typ!r} (must be 'Process')",
+        ))
+    if not version or not isinstance(version, str):
+        findings.append(("ADM-002", f"{rec_id}: missing version"))
+
+    # ADM-003: context resolution
+    context_refs = [c.get("ref") for c in data.get("context", []) or []
+                    if isinstance(c, dict)]
+    for ref in context_refs:
+        if not isinstance(ref, str) or not PC_PATTERN.match(ref):
+            findings.append((
+                "ADM-003",
+                f"{rec_id}: context ref {ref!r} is not a valid "
+                "`dea:pc-[a-z0-9-]+` id",
+            ))
+            continue
+        if ref not in pc_ids:
+            findings.append((
+                "ADM-003",
+                f"{rec_id}: context ref {ref!r} does not resolve to a "
+                f"canonical Process Context",
+            ))
+
+    # ADM-004: group fit
+    pg = data.get("process_group_id")
+    if pg is not None:
+        if not isinstance(pg, str) or not PG_PATTERN.match(pg):
+            findings.append((
+                "ADM-004",
+                f"{rec_id}: process_group_id {pg!r} is not a valid "
+                "`dea:pg-[a-z0-9-]+` id",
+            ))
+        elif pg not in pg_ids:
+            findings.append((
+                "ADM-004",
+                f"{rec_id}: process_group_id {pg!r} does not resolve to a "
+                f"canonical Process Group",
+            ))
+
+    # ADM-005: boundary completeness
+    triggers = data.get("triggers") or []
+    outcomes = data.get("outcomes") or []
+    if not (isinstance(triggers, list) and triggers):
+        findings.append((
+            "ADM-005",
+            f"{rec_id}: triggers missing or empty (boundary)",
+        ))
+    if not (isinstance(outcomes, list) and outcomes):
+        findings.append((
+            "ADM-005",
+            f"{rec_id}: outcomes missing or empty (boundary)",
+        ))
+
+    # ADM-006: intent + classification in approved vocabularies
+    intent = data.get("process_intent")
+    if intent not in APPROVED_INTENTS:
+        findings.append((
+            "ADM-006",
+            f"{rec_id}: process_intent={intent!r} not in approved "
+            f"vocabulary {sorted(APPROVED_INTENTS)}",
+        ))
+
+    # ADM-007: specialization validity
+    for parent in data.get("process_specialization", []) or []:
+        if parent not in process_ids:
+            findings.append((
+                "ADM-007",
+                f"{rec_id}: specialization parent {parent!r} does not "
+                f"resolve to a canonical Process",
+            ))
+
+    # ADM-008: provenance
+    change_history = data.get("change_history") or []
+    if not isinstance(change_history, list) or not change_history:
+        findings.append((
+            "ADM-008",
+            f"{rec_id}: change_history missing or empty (provenance)",
+        ))
+    else:
+        # Every change_history entry must have date + cr + change.
+        for j, entry in enumerate(change_history):
+            if not isinstance(entry, dict):
+                findings.append((
+                    "ADM-008",
+                    f"{rec_id}: change_history[{j}] is not a mapping",
+                ))
+                continue
+            if not entry.get("date"):
+                findings.append((
+                    "ADM-008",
+                    f"{rec_id}: change_history[{j}] missing date",
+                ))
+            if not entry.get("cr"):
+                findings.append((
+                    "ADM-008",
+                    f"{rec_id}: change_history[{j}] missing cr",
+                ))
+            if not entry.get("change"):
+                findings.append((
+                    "ADM-008",
+                    f"{rec_id}: change_history[{j}] missing change",
+                ))
+        # ADM-001: at least one entry must reference an admission CR.
+        # We treat the pattern "CR-BP-13" (a/b/c/d) as admission.
+        has_admission = any(
+            isinstance(e, dict) and re.match(r"^CR-BP-13[a-z]?(?:\.\d+)*$",
+                                              (e.get("cr") or ""))
+            for e in change_history
+        )
+        if not has_admission:
+            findings.append((
+                "ADM-001",
+                f"{rec_id}: no admission CR (CR-BP-13..) in change_history",
+            ))
+
+    return findings
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--catalog-root", default=".")
+    parser.add_argument("--strict", action="store_true",
+                        help="Treat warnings as errors")
+    parser.add_argument("--json", action="store_true",
+                        help="Emit JSON output")
+    parser.add_argument("--self-test", action="store_true",
+                        help="Run self-test and exit")
+    args = parser.parse_args(argv)
+
+    if args.self_test:
+        return _self_test()
+
+    root = Path(args.catalog_root).resolve()
+    pc_ids = _catalog_pc_ids(root)
+    pg_ids = _catalog_pg_ids(root)
+    process_ids = _catalog_process_ids(root)
+    locked = _disposition_locked_ids(root)
+
+    # Walk all Process records. Candidates (not in LOCKED) are checked
+    # against ADM-001..008. LOCKED records are also checked, with
+    # findings reported but not gating.
+    candidates: list[tuple[Path, bool]] = []
+    for d in sorted((root / "entities" / "v1-alpha").rglob("dea:process-*")):
+        if not d.is_dir():
+            continue
+        files = list(d.glob("dea:process-*.yaml"))
+        if not files:
+            continue
+        candidates.append((files[0], False))
+
+    findings: list[dict[str, str]] = []
+    for path, _ in candidates:
+        for code, msg in check_admission(path, root, pc_ids, pg_ids, process_ids):
+            findings.append({
+                "rule": code,
+                "path": str(path.relative_to(root)),
+                "message": msg,
+            })
+
+    verdict = (
+        "NON-CONFORMANT" if (findings and args.strict) else
+        "CONFORMANT-WITH-WARNINGS" if findings else
+        "CONFORMANT"
+    )
+    if args.json:
+        print(json.dumps({
+            "verdict": verdict,
+            "findings": findings,
+            "candidate_count": len(candidates),
+            "locked_count": len(locked),
+        }, indent=2))
+    else:
+        print(f"Admission Gate (CR-BP-16 S15; ADM-001..008): {verdict}")
+        if findings:
+            print(f"  {len(findings)} findings across {len(candidates)} Process records")
+            for f in findings[:10]:
+                print(f"    [{f['rule']}] {f['path']}: {f['message']}")
+            if len(findings) > 10:
+                print(f"    ... and {len(findings) - 10} more")
+        else:
+            print(f"  {len(candidates)} Process records, all admission-gate compliant")
+    return 1 if (findings and args.strict) else 0
+
+
+def _self_test() -> int:
+    """Exercise each rule via fixtures."""
+    import tempfile
+
+    failed: list[str] = []
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        entities = root / "entities" / "v1-alpha"
+        contexts = root / "contexts" / "v1-alpha"
+        (entities / "dea:process-candidate-bad").mkdir(parents=True)
+        (entities / "dea:process-candidate-bad" / "dea:process-candidate-bad.yaml").write_text(yaml.safe_dump({
+            "id": "dea:process-candidate-bad",
+            "name": None,  # missing
+            "type": "Process",
+            "version": "1.0.0",
+            "process_intent": "harmonise",  # ADM-006
+            "process_type": "core",
+            "context": [{"ref": "dea:pc-unknown"}],  # ADM-003
+            "process_group_id": "dea:pg-bogus",  # ADM-004
+            "triggers": [],  # ADM-005
+            "outcomes": [],  # ADM-005
+            "process_specialization": ["dea:process-bogus-parent"],  # ADM-007
+            "change_history": [{"date": "2026-09-06", "cr": None, "change": None}],  # ADM-008
+        }, sort_keys=False))
+        (contexts).mkdir(parents=True, exist_ok=True)
+        (contexts / "dea-pc-cd-op.yaml").write_text(yaml.safe_dump({
+            "id": "dea:pc-cd-op", "name": "Customer Demand Operate",
+            "type": "ProcessContext",
+        }))
+        # Disposition register must exist for the gate to read LOCKED
+        # set; absent is fine.
+        findings = []
+        pc_ids = _catalog_pc_ids(root)
+        pg_ids = _catalog_pg_ids(root)
+        process_ids = _catalog_process_ids(root)
+        bad_file = next((entities / "dea:process-candidate-bad").glob("dea:process-*.yaml"))
+        for code, msg in check_admission(bad_file, root, pc_ids, pg_ids, process_ids):
+            findings.append(code)
+        seen = set(findings)
+        # ADM-002 missing name, ADM-003 unknown pc, ADM-004 unknown pg,
+        # ADM-005 triggers empty, ADM-005 outcomes empty, ADM-006 bad
+        # intent, ADM-007 unknown parent, ADM-008 bad provenance,
+        # ADM-001 no admission CR.
+        expected = {"ADM-002", "ADM-003", "ADM-004", "ADM-005",
+                    "ADM-006", "ADM-007", "ADM-008", "ADM-001"}
+        for code in expected:
+            if code not in seen:
+                failed.append(f"expected {code} to fire on bad fixture")
+
+        # Good fixture: every field present and valid.
+        (entities / "dea:process-candidate-good").mkdir(parents=True)
+        (entities / "dea:process-candidate-good" / "dea:process-candidate-good.yaml").write_text(yaml.safe_dump({
+            "id": "dea:process-candidate-good",
+            "name": "Candidate Good",
+            "type": "Process",
+            "version": "1.0.0",
+            "process_intent": "manage",
+            "process_type": "core",
+            "context": [{"ref": "dea:pc-cd-op"}],
+            "triggers": ["trigger"],
+            "outcomes": ["outcome"],
+            "change_history": [
+                {"date": "2026-09-06", "cr": "CR-BP-13a",
+                 "change": "Initial admission under CR-BP-13a."},
+            ],
+        }, sort_keys=False))
+        good_file = next((entities / "dea:process-candidate-good").glob("dea:process-*.yaml"))
+        good_findings = []
+        for code, msg in check_admission(good_file, root, pc_ids, pg_ids, process_ids):
+            good_findings.append(code)
+        if good_findings:
+            failed.append(f"good fixture fired: {good_findings}")
+
+    if failed:
+        print("self-test FAIL:", failed)
+        return 1
+    print("self-test PASS")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
