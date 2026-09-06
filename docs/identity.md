@@ -1,10 +1,17 @@
 # Process Identity
 
-**CR-BP-03 §8; CR-BP-04 §4.**
+**CR-BP-03 §8; CR-BP-04 §4; CR-BP-14 §15.**
 
-This document captures the **process-identity contract**: a
-process is tested by name + description + trigger + outcome +
-evidence, not by name alone.
+This document captures the **process-identity contract**: a process is
+tested by name + description + trigger + outcome + evidence, not by
+name alone.
+
+Identity is independent of Process Intent, Process Classification,
+Process Audience, Process Context and organizational ownership
+(CR-BP-14 §15). Classification and contextual information may change
+without necessarily creating a new process identity. A semantic
+change to the process itself may require a new identity or
+specialization.
 
 ## Canonical ID families (CR-BP-04 §4)
 
@@ -33,7 +40,7 @@ A process may be:
 - **Correctly named but mis-classified.** E.g. a process named
   "Manage Customer" might be declared as `process_type: core` but
   the description and outcome_statement talk about
-  direction-setting — in which case the correct classification
+  direction-setting: in which case the correct classification
   is `process_type: management` or even `strategic`.
 - **Poorly described.** E.g. a process with a generic name and a
   vague description cannot be reliably classified.
@@ -77,6 +84,13 @@ BP-ARC-ID-001..BP-ARC-ID-005:
 | BP-ARC-ID-002 | Trigger required: the entry must declare `trigger` (a non-empty string). |
 | BP-ARC-ID-003 | Outcome required: the entry must declare `outcome` (a non-empty string) consistent with `identity.outcome_statement`. |
 | BP-ARC-ID-004 | Type / description cross-check: `process_type` is cross-checked against `identity.outcome_statement` for consistency. E.g. a `core` process whose outcome_statement talks about direction-setting is flagged. |
+
+> Cross-check note: BP-ARC-ID-004 cross-checks `process_type` against
+> the `outcome_statement`; CR-BP-14 §11 / BP-SEM-003 / BP-SEM-004 forbid
+> inferring Process Intent from Process Classification, which is a
+> different concern. The identity validator operates on the
+> classification narrative; the semantics validator operates on the
+> vocabulary alignment. They are independent and complementary.
 | BP-ARC-ID-005 | Evidence required: `identity.evidence_links` is required (minItems: 1) when the identity sub-block is present. |
 
 The validator is **non-blocking on auto-classification**: it
@@ -118,9 +132,13 @@ human-in-the-loop process by design.
 
 ## See also
 
-- [`docs/architecture.md`](architecture.md) — the structural architecture
-- [`docs/classification.md`](classification.md) — the 4-axis classification
-- [`docs/relandscape.md`](relandscape.md) — how the identity contract is enforced via contribution-driven review
-- [`schemas/identity.schema.json`](../identity.schema.json) — the schema
-- [`scripts/check_process_identity.py`](../scripts/check_process_identity.py) — the validator
-- [`change-requests/CR-BP-03-business-process-architecture.md`](../../change-requests/CR-BP-03-business-process-architecture.md) §8
+- [`docs/semantic-contract.md`](semantic-contract.md): the CR-BP-14
+  semantic constitution (dimensions, separations)
+- [`docs/architecture.md`](architecture.md): the structural architecture
+- [`docs/classification.md`](classification.md): the 4-axis classification
+- [`docs/relandscape.md`](relandscape.md): how the identity contract is enforced via contribution-driven review
+- [`schemas/identity.schema.json`](../schemas/identity.schema.json): the schema
+- [`scripts/check_process_identity.py`](../scripts/check_process_identity.py): the validator
+- [`scripts/check_process_semantics.py`](../scripts/check_process_semantics.py): the CR-BP-14 §21 validator (BP-SEM-001..012)
+- [`change-requests/CR-BP-03-business-process-architecture.md`](../change-requests/CR-BP-03-business-process-architecture.md) §8
+- [`change-requests/CR-BP-14-process-semantic-reconciliation.md`](../change-requests/CR-BP-14-process-semantic-reconciliation.md) §15

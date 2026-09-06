@@ -69,12 +69,16 @@ This distinction is fundamental to the architecture of the catalog.
 
 ---
 
-# Process Architecture (CR-BP-03)
+# Process Architecture (CR-BP-03; reconciled by CR-BP-14)
 
 CR-BP-03 establishes the **Business Process architecture** within the
 enterprise process landscape. The architecture rests on **three
 pillars**: a 4-axis classification, a process-identity contract, and
-a contribution-driven re-landscape mechanism.
+a contribution-driven re-landscape mechanism. CR-BP-14 reconciles
+the architecture by separating Process Intent and Process
+Classification as formally distinct dimensions (CR-BP-14 §10, §11);
+see `docs/semantic-contract.md` for the normative constitution and
+`docs/classification.md` for the current narrative.
 
 ## 1. Enterprise Process Landscape
 
@@ -108,21 +112,25 @@ contribution is submitted.
 CR-BP-03 introduces a **4-axis classification** that separates four
 distinct concerns. Each axis answers a different question;
 conflating them is the historical source of much process-catalog
-confusion.
+confusion. CR-BP-14 §11 formalizes the Intent vs Classification
+distinction: the two vocabularies are independent; neither dimension
+may be inferred from the other; identical tokens across the two
+(`support`; legacy `management` vs canonical `manage`) are a lexical
+coincidence, not a semantic equivalence (BP-SEM-011).
 
 | Axis | Field | Vocabulary | Question it answers |
 |---|---|---|---|
-| **Intent** | `process_intent` (existing; preserved) | operational / support / management | **What is the process doing?** Describes the nature of the work. |
-| **Type** | `process_type` (new; CR-BP-03) | strategic / management / core / support / standardization | **Where does the process sit in the enterprise process landscape?** The 5-component classification (Mintzberg). |
-| **Specialization** | `process_specialization` (new; CR-BP-03) | list of parent process ids | **What is this process a specialization of?** Inheritance / pattern-based refinement (e.g. `Manage Customer` → `Manage Enterprise Customer`, `Manage VIO Customer`, etc.). |
-| **Audience** | `process_audience` (existing; preserved; confirmed to be the ECF domain) | governance-existence / supply-resources / people-organization / customer-demand / product-offering / operations-delivery / finance-value | **Which ECF domain does the process serve?** |
+| **Intent** | `process_intent` (canonical CR-BP-14 vocabulary; legacy aliases readable) | govern / manage / operate / deliver / support / develop / transform | **Why does this work exist?** The purposeful nature of the work. |
+| **Classification** | `process_type` (canonical block form `process_classification`) | strategic / management / core / support / standardization | **Where is this process positioned in the process landscape?** The 5-component classification (Mintzberg). |
+| **Specialization** | `process_specialization` | list of parent process ids | **What is this process a specialization of?** Semantic refinement (CR-BP-14 §12). |
+| **Context** | `context` (canonical CR-BP-14 block; legacy `process_audience` is a migration alias) | array of `{ref: dea:pc-*}` + `serves` / `contributes-to` relationships toward ECF coordinates | **Where is the responsibility examined?** ECF Domain × Lifecycle Stage. |
 
 The four axes are **additive** and **optional individually**; entries
 can declare any subset. `process_type` defaults to `core` when the
 entry is a Business Process. See [`docs/classification.md`](docs/classification.md)
 for the full classification narrative.
 
-## 3. Process Decomposition (L0 / L1 / L2 — conceptual)
+## 3. Process Decomposition (L0 / L1 / L2: conceptual)
 
 The Business Process catalog decomposes the enterprise process
 landscape through a conceptual L0 / L1 / L2 hierarchy. **L0 and L1
@@ -267,15 +275,19 @@ recommendation. See [`docs/relandscape.md`](docs/relandscape.md).
 
 ## 8. No Breaking Changes
 
-CR-BP-03 introduces new fields additively. The existing fields
-(`process_intent`, `process_audience`, `parent_process`,
-`child_processes`, `capabilities_delivered`) are all preserved.
-Existing catalog entries continue to validate.
+CR-BP-03 introduces new fields additively. CR-BP-14 reconciles the
+semantic contract while keeping all canonical and legacy fields
+readable throughout the migration period: the three-value
+`process_intent` vocabulary (operational / support / management) is
+retained as deprecated migration aliases alongside the canonical
+seven-value vocabulary; `process_type` is retained unchanged; the
+legacy scalar `process_context` and the `process_audience` field
+are both retained as migration aliases superseded by the canonical
+`context:` block (CR-BP-14 §20).
 
-The legacy fields are documented as **migration aliases**; a
-follow-on migration validator (CR-BP-03A or later) will surface
-entries that have only the old fields. New entries should declare
-`relationships.{composes, realizes}` in canonical OpenDEA form.
+Existing canonical entries continue to validate; the BP-SEM-001..012
+validator (CR-BP-14 §21) records legacy findings as warnings until
+CR-BP-15 reconciliation closes the migration.
 
 ---
 
@@ -865,7 +877,7 @@ The initial priority is the establishment of a sound conceptual, architectural a
 
 The evolution sequence is:
 
-## Phase 0 — Structural Reconnaissance
+## Phase 0: Structural Reconnaissance
 
 Establish the current state of:
 
@@ -881,7 +893,7 @@ Identify structural inconsistencies, semantic gaps and required architectural de
 
 ---
 
-## Phase 1 — Canonical Process Foundation
+## Phase 1: Canonical Process Foundation
 
 Establish:
 
@@ -896,7 +908,7 @@ Establish:
 
 ---
 
-## Phase 2 — Foundational Alignment
+## Phase 2: Foundational Alignment
 
 Assess the Process Architecture against the normative OpenDEA Metamodel.
 
@@ -910,7 +922,7 @@ Where necessary:
 
 ---
 
-## Phase 3 — ECF Process Matrix
+## Phase 3: ECF Process Matrix
 
 Establish the authoritative Process Context matrix.
 
@@ -926,7 +938,7 @@ For every Domain × Lifecycle intersection, define:
 
 ---
 
-## Phase 4 — L0 Discovery
+## Phase 4: L0 Discovery
 
 Identify the canonical L0 process scopes for each Process Context.
 
@@ -942,7 +954,7 @@ Process discovery proceeds systematically through the ECF matrix.
 
 ---
 
-## Phase 5 — Controlled Decomposition
+## Phase 5: Controlled Decomposition
 
 Once the L0 architecture is stable:
 
@@ -962,7 +974,7 @@ Each decomposition is validated before subsequent levels are introduced.
 
 ---
 
-## Phase 6 — Programmatic Validation
+## Phase 6: Programmatic Validation
 
 Implement machine-readable validation for:
 
@@ -1017,7 +1029,7 @@ merge.
 | [CR-BP-13](change-requests/CR-BP-13-research-ratification.md) | L1 Process Group Research Ratification | **Merged** (PR #22) | Ratifies the 49-coordinate register: 38 `ratified-accepted`, 11 `backlog-deferred`. Idempotent ratification tool `tools/ratify_research_register.py`. |
 | [CR-BP-13a](change-requests/CR-BP-13a-customer-and-demand-admission.md) | CustomerAndDemand Admission Tranche | **Merged** (PR #23) | 16 canonical entries across 4 CustomerAndDemand coordinates (Process Context cells, Process Groups, L2 Processes). |
 | [CR-BP-13b](change-requests/CR-BP-13b-governance-and-existence-admission.md) | GovernanceAndExistence Admission Tranche | **Merged** (PR #24) | 19 canonical entries across 5 GovernanceAndExistence coordinates (Process Context cells, Process Groups, L2 Processes). |
-| [CR-BP-14](change-requests/CR-BP-14-process-semantic-reconciliation.md) | Process Semantic Reconciliation | **Accepted** (implementation in progress; landing PR #25; Phase 1 PR #26) | Semantic reconciliation gate: separates Context / Scope / Group / Process / Intent / Classification / Specialization / Relationships; replaces the three-value `process_intent` vocabulary with the seven-value purpose-oriented vocabulary (govern / manage / operate / deliver / support / develop / transform); `process_audience` becomes a legacy migration alias; validators BP-SEM-001..012; canonical admission freeze until implemented. Precedes CR-BP-15 (catalog reconciliation). |
+| [CR-BP-14](change-requests/CR-BP-14-process-semantic-reconciliation.md) | Process Semantic Reconciliation | **Implemented** (landing PR #25; Phase 1 PR #26; Phase 2 PR #28; Phase 3 PR #29; Phase 4 PR #30) | Semantic reconciliation gate: separates Context / Scope / Group / Process / Intent / Classification / Specialization / Relationships; replaces the three-value `process_intent` vocabulary with the seven-value purpose-oriented vocabulary (govern / manage / operate / deliver / support / develop / transform); `process_audience` becomes a legacy migration alias; validators BP-SEM-001..012; canonical admission freeze until implemented. Precedes CR-BP-15 (catalog reconciliation). |
 | [CR-BP-15](change-requests/CR-BP-15-process-catalog-reconciliation.md) | Process Catalog Reconciliation | **Proposed** | Reconciles all existing canonical records against the CR-BP-14 contract; one primary disposition per record (RETAIN / RENAME / RECLASSIFY / RECONTEXTUALIZE / RESPECIALIZE / MERGE / SPLIT / MOVE / DEFER / RETIRE) with full provenance. Reconciliation register + matrix + BP-REC-001..015 gate + repository status model + standard admission gate. |
 | [CR-BP-16](change-requests/CR-BP-16-process-catalog-conformance-gate.md) | Process Catalog Conformance Gate (with CR-BP-15-IMP) | **Proposed** | CR-BP-15-IMP: 20-phase implementation programme for CR-BP-15. CR-BP-16: the permanent conformance gate (five conformance dimensions, change-type gates, admission gate, CI pipeline, conformance levels L0-L4, regression detection, quality dashboard). Canonical status = conformance + governance approval. |
 | (future) | Activity Model | **Future** | Defines the L3 Activity level of Business Process decomposition. Formerly listed as placeholder CR-BP-04; that number was consumed by the landed ID-Family Reconciliation CR. |
@@ -1162,7 +1174,7 @@ The Business Process Catalog is therefore intended to become a foundational comp
 
 The catalog's **first** Business Process entry —
 `dea:process-manage-customer-relationship` ("Manage Customer
-Relationship") — lands with this tranche (CR-BP-03C). It
+Relationship"): lands with this tranche (CR-BP-03C). It
 exercises every part of the machinery: 4-axis
 classification, identity contract, canonical relationships,
 L0/L1/L2 conceptual hierarchy, Process Context reference,

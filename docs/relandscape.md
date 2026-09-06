@@ -53,17 +53,17 @@ The template is at
 
 The contribution captures:
 
-- `contributor` — the contributor's GitHub handle.
-- `contribution_date` — the date of contribution.
-- `proposed_entry` — the proposed L2 Business Process entry
+- `contributor`: the contributor's GitHub handle.
+- `contribution_date`: the date of contribution.
+- `proposed_entry`: the proposed L2 Business Process entry
   (must conform to `schemas/entity.schema.json` +
   `schemas/identity.schema.json`).
-- `evidence` — supporting evidence (documentation, governance,
+- `evidence`: supporting evidence (documentation, governance,
   interview, artifact, standard, regulation).
-- `reviewer` — the assigned catalog maintainer.
-- `status` — `pending` (initial) → `accepted` /
+- `reviewer`: the assigned catalog maintainer.
+- `status`: `pending` (initial) → `accepted` /
   `re-landscaped` / `rejected`.
-- `report` — filled by the CI workflow (not by the contributor).
+- `report`: filled by the CI workflow (not by the contributor).
 
 ### The `relationships` field (CR-BP-03 §6; CR-BP-03A §3.1)
 
@@ -187,7 +187,7 @@ proposed_entry:
 
 The CI contribution report detects that `process_type: core` is
 inconsistent with the `outcome_statement` (which talks about
-"strategic direction" and "portfolio governance" — keywords
+"strategic direction" and "portfolio governance": keywords
 associated with `strategic`). The report emits:
 
 ```markdown
@@ -234,8 +234,14 @@ reviewer approves and the entry lands.
 
 ## See also
 
-- [`docs/identity.md`](identity.md) — the identity contract
+- [`docs/identity.md`](identity.md): the identity contract
+- [`docs/semantic-contract.md`](semantic-contract.md): the CR-BP-14
+  semantic constitution (dimensions, separations)
 - [`contributions/processes/PROCESS-CONTRIBUTION-TEMPLATE.yaml`](../contributions/processes/PROCESS-CONTRIBUTION-TEMPLATE.yaml)
 - [`schemas/contribution.schema.json`](../schemas/contribution.schema.json)
 - [`scripts/check_process_identity.py`](../scripts/check_process_identity.py)
-- [`change-requests/CR-BP-03-business-process-architecture.md`](../../change-requests/CR-BP-03-business-process-architecture.md) §9
+- [`scripts/check_process_semantics.py`](../scripts/check_process_semantics.py):
+  the CR-BP-14 §21 validator; future contributions must satisfy
+  BP-SEM-001..012 before admission is considered final
+- [`change-requests/CR-BP-03-business-process-architecture.md`](../change-requests/CR-BP-03-business-process-architecture.md) §9
+- [`change-requests/CR-BP-14-process-semantic-reconciliation.md`](../change-requests/CR-BP-14-process-semantic-reconciliation.md) §24
