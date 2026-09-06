@@ -1,0 +1,149 @@
+# CR-BP-15-IMP Phase 5: Per-Tranche Diff (ge-b + ge-c + ge-d + ge-im)
+
+# This file records exactly which bytes the Phase 5 third
+# tranche migration touched and how the SHA-256 baseline
+# evolved. The diff is the audit trail for the
+# reconciliation gate (CR-BP-15 /7).
+
+# Authoritative reference: CR-BP-15-IMP /5; CR-BP-15 /7.
+
+schema_version: 1
+diff_at: 2026-09-06
+phase: phase-5
+tranches:
+  - ge-b
+  - ge-c
+  - ge-d
+  - ge-im
+
+# Summary
+summary:
+  records_touched: 7
+  sha256_changed: 7
+  new_intent_vocabulary_tokens: 7
+  legacy_fields_removed:
+    process_audience: 7
+    process_context_scalar: 7
+  canonical_blocks_added:
+    context: 7
+    serves_relationship: 7
+
+# Per-record diff
+diffs:
+  - record_id: dea:process-codify-charters-and-policies
+    tranche: ge-b
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: operational -> operate"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-b' REMOVED"
+      - "context: [{ref: dea:pc-ge-b}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.build ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-establish-governance-bodies
+    tranche: ge-b
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: operational -> operate"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-b' REMOVED"
+      - "context: [{ref: dea:pc-ge-b}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.build ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-develop-governance-strategy
+    tranche: ge-c
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> develop"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-c' REMOVED"
+      - "context: [{ref: dea:pc-ge-c}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.conceive ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-initiate-policy-and-charter
+    tranche: ge-c
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> manage"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-c' REMOVED"
+      - "context: [{ref: dea:pc-ge-c}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.conceive ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-design-governance-system
+    tranche: ge-d
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> develop"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-d' REMOVED"
+      - "context: [{ref: dea:pc-ge-d}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.design ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-design-policies-and-controls
+    tranche: ge-d
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> develop"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-d' REMOVED"
+      - "context: [{ref: dea:pc-ge-d}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.design ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-review-governance-effectiveness
+    tranche: ge-im
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> govern"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-im' REMOVED"
+      - "context: [{ref: dea:pc-ge-im}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.improve ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+# Cross-tranche observations
+observations:
+  - |
+    The 7 migrated records no longer trigger BP-SEM-007
+    (canonical context: block required). Phase 5 third
+    tranche reduces the BP-SEM error count from 9 to 2.
+    The remaining 2 records (operate-governance-oversight
+    and audit-policy-compliance) are addressed in Phase 5
+    fourth tranche (ge-op; PR-9).
+  - |
+    The ge-im tranche holds a single record
+    (`review-governance-effectiveness`). Its intent
+    migration from `management` to `govern` reflects the
+    ECF Improve context semantics: review-and-correction
+    work is governance activity, not project-management
+    activity. The disposition register records the
+    rationale explicitly.
+  - |
+    The ge-c tranche demonstrates the most semantically
+    diverse intent pair:
+    `develop-governance-strategy` (-> develop) and
+    `initiate-policy-and-charter` (-> manage). The two
+    records share the same context (conceive) but
+    different intent: strategy development is creative
+    (develop); charter initiation is operational
+    governance (manage). The disposition register's
+    per-record rationale captures the distinction.
+  - |
+    The ge-d tranche holds 2 records both mapped to
+    `develop` intent, consistent with the Design context
+    semantics. Together with ge-c, ge-d forms the L2
+    conceptual foundation of the governance landscape.
+  - |
+    No records in this tranche triggered the
+    high-risk audience-vs-context flag raised in the
+    Phase 4 tranche plan. The legacy `process_audience`
+    value `governance-existence` mapped cleanly to
+    the `dea:pc-ge-*` context scalars. PR-9 (ge-op)
+    remains the high-risk migration due to the
+    cross-tranche audit-policy record.

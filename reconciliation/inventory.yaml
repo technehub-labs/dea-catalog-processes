@@ -37,13 +37,9 @@ records:
       name: "Codify Charters and Policies"
       type: Process
       path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
-      process_intent: operational
+      process_intent: operate
       process_classification: core
       legacy_findings:
-        - intent:operational
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-customer-channel-and-acquisition-build
       name: "Build Customer Acquisition Channels"
@@ -105,61 +101,41 @@ records:
       name: "Design Governance System"
       type: Process
       path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: strategic
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-design-policies-and-controls
       name: "Design Policies and Controls"
       type: Process
       path: entities/v1-alpha/dea:process-design-policies-and-controls/dea:process-design-policies-and-controls.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: standardization
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-develop-governance-strategy
       name: "Develop Governance Strategy"
       type: Process
       path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: strategic
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-establish-governance-bodies
       name: "Establish Governance Bodies"
       type: Process
       path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
-      process_intent: operational
+      process_intent: operate
       process_classification: core
       legacy_findings:
-        - intent:operational
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-initiate-policy-and-charter
       name: "Initiate Policy and Charter"
       type: Process
       path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
-      process_intent: management
+      process_intent: manage
       process_classification: strategic
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-manage-customer-relationship
       name: "Manage Customer Relationship"
@@ -193,13 +169,9 @@ records:
       name: "Review Governance Effectiveness"
       type: Process
       path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
-      process_intent: management
+      process_intent: govern
       process_classification: core
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
 
   process_groups:

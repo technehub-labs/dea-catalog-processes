@@ -133,7 +133,7 @@ records:
   - id: dea:process-codify-charters-and-policies
     type: Process
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
-    sha256: ec995152363b4fa242ff5394923f6b19ad4958438dda415d4c00bc2ef85121cf
+    sha256: 617ecc353b5b1a20c3d040bb08f1d1d2a7c6758d4828323bbd9df00cc179ef9d
   - id: dea:process-customer-channel-and-acquisition-build
     type: Process
     path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
@@ -165,23 +165,23 @@ records:
   - id: dea:process-design-governance-system
     type: Process
     path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
-    sha256: 9368534d7a5f958ecb069efbc91675da518415f8bda6c803022f54557bc22b34
+    sha256: 1bc95f70360712b13b44667c5624972136d0fcfd2d9d806db38fc3fdaa8aafa6
   - id: dea:process-design-policies-and-controls
     type: Process
     path: entities/v1-alpha/dea:process-design-policies-and-controls/dea:process-design-policies-and-controls.yaml
-    sha256: e3d2105ec1b1c4434f87ced65c9aa95489fec51b8f1c7f167db657f2c793abcf
+    sha256: 57dcc5763ddc523b09b6e656f1afd74b95dd129aa7249288ef047df7f86af23c
   - id: dea:process-develop-governance-strategy
     type: Process
     path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
-    sha256: f263efbc7a047f79270e67e0ad63740cf4ec7ad861d24f5e47b2d9dc2bfac2bb
+    sha256: 91d12029d2d7f32cc552a6ac86a6694984bd1221a11220388c6ef4776c482aa4
   - id: dea:process-establish-governance-bodies
     type: Process
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
-    sha256: d4d704ec83cf14ac8ba8a92da0a2175811a90f8a47f6b36bb3894a3796fc1537
+    sha256: b56d7d93f128d98302c75f24a777056a5621845cd9b3805c9a975dd58f283adf
   - id: dea:process-initiate-policy-and-charter
     type: Process
     path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
-    sha256: 3ff966cebed92acbd258e400a7860387ec8b51be4028e0d76f93fd887787c727
+    sha256: 2157e80262c5841fc57b99ce9fb1f5886e73a7fd329fe39b938fe5ea4ad4bafa
   - id: dea:process-manage-customer-relationship
     type: Process
     path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
@@ -197,5 +197,5 @@ records:
   - id: dea:process-review-governance-effectiveness
     type: Process
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
-    sha256: 605a6b329e665c2faaa1a3a97e4f88d8f989193acf72b3a568cd1d30ad732405
+    sha256: 14f2d7cab527bb46c8feb413bff3110d8efde3679d35440a6974e49af4961312
 
