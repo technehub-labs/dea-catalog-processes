@@ -36,6 +36,9 @@ deterministic and run in CI.
 
 ## See also
 
+- [`docs/conformance-pipeline.md`](conformance-pipeline.md): the
+  10-step CI pipeline (CR-BP-16 §17) and the unified Conformance
+  Result verdict (§18).
 - [`docs/architecture.md`](architecture.md)
 - [`docs/classification.md`](classification.md)
 - [`docs/identity.md`](identity.md)
