@@ -50,6 +50,7 @@ KNOWN_TOP_LEVEL: frozenset[str] = frozenset({
     # Repo plumbing
     ".github",
     "CHANGELOG.md",
+    "NOTICE",
     "CATALOG.yaml",
     "CONTRIBUTING.md",
     "LICENSE",
