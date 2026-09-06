@@ -6,6 +6,75 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-16 §16 enforcement promotion (CR-META strict mode)
+
+The CR-META-001..006 gate is now **blocking** in CI for new
+and modified CRs. Legacy CRs (mtime < 2026-09-06) remain
+advisory. Five CRs were retro-fitted to the §21 metadata
+format: CR-BP-03C, CR-BP-12, CR-BP-14, CR-BP-15, and
+CR-BP-16. The 16th (CR-BP-13A) was already §21-compliant
+and was used as the canonical reference.
+
+- `scripts/check_cr_metadata.py` (extended):
+  - **New `--cutoff-date` flag** (default 2026-09-06 = CR-BP-16
+    acceptance). CRs last modified on or after the cutoff are
+    classified as "new"; CRs modified earlier are "legacy".
+  - **New `--strict` mode**: blocks the gate when any NEW CR
+    fails any rule. Legacy CRs are reported as advisory and
+    do not block.
+  - **CR-META-001 normalisation**: `Proposed (2026-09-03)` is
+    accepted as a valid `Proposed` Status (parens stripped).
+  - **CR-META-002 normalisation**: `L1 (Process Catalog)` is
+    accepted as a valid `L1` Layer (parens stripped).
+  - **Filename pattern** extended to admit `CR-BP-NN` with
+    uppercase letter suffix (legacy `CR-BP-03C`).
+  - **Metadata line pattern** admits both `**Key**: value`
+    (canonical) and `**Key:** value` (legacy / GitHub-issues).
+  - **JSON output** includes `new_findings` and
+    `legacy_findings` arrays + `cutoff_date`.
+  - Self-test extended with cutoff-aware good and bad fixtures.
+- `change-requests/CR-BP-03C-sample-process-contribution.md`:
+  added `**Layer**: L1` + `**Owner**: TechNeHub Labs`.
+- `change-requests/CR-BP-12-process-group-profile.md`:
+  bolded existing metadata + added Layer/Owner.
+- `change-requests/CR-BP-14-process-semantic-reconciliation.md`:
+  added full §21 metadata block (Status, Layer, Owner, Type,
+  Scope, Depends On).
+- `change-requests/CR-BP-15-process-catalog-reconciliation.md`:
+  added full §21 metadata block.
+- `change-requests/CR-BP-16-process-catalog-conformance-gate.md`:
+  added §21 metadata for both CR-BP-16 and CR-BP-15-IMP
+  blocks.
+- `reconciliation/baseline/v1.yaml`: refreshed SHA-256 for
+  the 3 CRs whose content changed.
+- `reconciliation/inventory.yaml`: regenerated to reflect the
+  touched CRs.
+- `.github/workflows/ci.yml`: CR-META step now runs
+  `python scripts/check_cr_metadata.py --strict`.
+- `docs/conformance-pipeline.md`: new "CR Validation (Step 9)
+  cutoff policy" subsection documents the policy.
+- `tests/test_cr_bp16_gates.py` (extended, 5 new tests):
+  - `test_cr_meta_strict_passes_when_no_new_failures`:
+    --strict returns 0 when no NEW CR fails.
+  - `test_cr_meta_strict_fails_on_new_bad_fixture`: --strict
+    fails on a future-dated bad fixture.
+  - `test_cr_meta_strict_passes_on_legacy_bad_fixture`:
+    --strict passes on a past-dated bad fixture.
+  - `test_cr_meta_accepts_layer_with_parenthetical_qualifier`:
+    `L1 (Process Catalog)` normalised to `L1`.
+  - `test_cr_meta_accepts_status_with_date_qualifier`:
+    `Proposed (2026-09-03)` normalised to `Proposed`.
+
+CR-BP-16 §29 acceptance criteria: **11 fully met** (up from 10);
+1 partial (provenance schema validation only); 0 unmet.
+
+Conformance Result on the new branch: **CONFORMANT**
+BP-SEM live: 0 errors, 0 warnings: CONFORMANT
+BP-AR live: 0 findings: CONFORMANT
+Conformance Levels: 38/38 at Level 4
+CR-META on the new branch: ADVISORY-LEGACY (24 legacy findings,
+0 new findings); --strict returns 0.
+
 ### CR-BP-16 conformance pipeline (S17/S18/S19/S25) + unified Conformance Result
 
 The CR-BP-16 §17 CI Conformance Pipeline, §18 unified

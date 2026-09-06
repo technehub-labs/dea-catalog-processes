@@ -2,12 +2,14 @@ Agreed. The recon shows that the repository is architecturally mature enough tha
 
 I would therefore establish the following as CR-BP-14, with the CR itself becoming the normative bridge between the existing CR lineage and the subsequent catalog-reconciliation work.
 
-CR-BP-14 — Process Semantic Reconciliation
+# CR-BP-14 — Process Semantic Reconciliation
 
-Status: Proposed
-Type: Architectural Reconciliation
-Scope: dea-catalog-processes
-Depends On: CR-BP-SPEC-BP-01, CR-BP-02, CR-BP-03, CR-BP-03A, CR-BP-03C, CR-BP-11, CR-BP-12, CR-BP-13
+**Status**: Accepted
+**Layer**: L1
+**Owner**: TechNeHub Labs
+**Type**: Architectural Reconciliation
+**Scope**: dea-catalog-processes
+**Depends On**: CR-BP-SPEC-BP-01, CR-BP-02, CR-BP-03, CR-BP-03A, CR-BP-03C, CR-BP-11, CR-BP-12, CR-BP-13
 Precedes: CR-BP-15, CR-BP-13A and subsequent Process Admission CRs
 
 ⸻

@@ -2,11 +2,13 @@ Yes. The right sequence is to make CR-BP-15 implementable and then immediately e
 
 CR-BP-15-IMP — Process Catalog Reconciliation Implementation
 
-Status: Proposed
-Type: Implementation CR
-Parent: CR-BP-15 — Process Catalog Reconciliation
-Depends On: CR-BP-14 — Process Semantic Reconciliation
-Blocks: CR-BP-13A canonical admission until reconciliation gate passes
+**Status**: Accepted
+**Layer**: L1
+**Owner**: TechNeHub Labs
+**Type**: Implementation CR
+**Parent**: CR-BP-15 — Process Catalog Reconciliation
+**Depends On**: CR-BP-14 — Process Semantic Reconciliation
+**Blocks**: CR-BP-13A canonical admission until reconciliation gate passes
 
 ⸻
 
@@ -569,11 +571,13 @@ Then the permanent guard should follow immediately:
 
 CR-BP-16 — Process Catalog Conformance Gate
 
-Status: Proposed
-Type: Governance / Conformance Architecture
-Depends On: CR-BP-14, CR-BP-15
-Applies To: All future Process Catalog changes
-Supersedes: Ad-hoc architectural review as the sole catalog-quality mechanism
+**Status**: Accepted
+**Layer**: L1
+**Owner**: TechNeHub Labs
+**Type**: Governance / Conformance Architecture
+**Depends On**: CR-BP-14, CR-BP-15
+**Applies To**: All future Process Catalog changes
+**Supersedes**: Ad-hoc architectural review as the sole catalog-quality mechanism
 
 ⸻
 

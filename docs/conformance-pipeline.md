@@ -73,8 +73,30 @@ Pull Request
 | [6] Specialization Graph | yes | BP-SEM-013 + BP-SEM-014 + BP-SPEC-01-001..007 |
 | [7] MECE Findings | yes (BP-AR-007 only) | BP-AR-007 + PC-001..008 + PG-001..008 |
 | [8] Provenance | advisory | ADM-008 (recommendation, not requirement) |
-| [9] CR Validation | mixed | CR-META-001..006 (blocking for new CRs; advisory for legacy CRs) |
+| [9] CR Validation | yes (new CRs only) | CR-META-001..006 (legacy CRs: advisory) |
 | [10] Conformance Result | yes | conformance_report.yaml Levels 1-4 |
+
+### CR Validation (Step 9): cutoff policy
+
+CR Validation (CR-META-001..006) runs in `--strict` mode in CI
+as of PR-13. The cutoff is **2026-09-06** (CR-BP-16 acceptance
+date), passed via `--cutoff-date`.
+
+- **Legacy CRs** (mtime before the cutoff): reported as advisory
+  findings. They pre-date the §21 metadata schema. They SHOULD
+  be retro-fitted as a separate programme (the `CR-META-LEGACY`
+  backlog); they do not block the gate.
+- **New CRs** (mtime on or after the cutoff): MUST comply. Any
+  new or modified CR that fails any of CR-META-001..006 blocks
+  the merge.
+
+The conformance gate accepts two conventions for the metadata
+line: `**Key**: value` (canonical; colon outside bold) and
+`**Key:** value` (legacy / GitHub-issues style; colon inside
+bold). Both are valid; the validator normalises the key by
+stripping a trailing colon. Parenthetical qualifiers on `Layer`
+(e.g. `L1 (Process Catalog)`) and `Status` (e.g. `Proposed
+(2026-09-03)`) are also normalised.
 
 ## Continuous conformance (CR-BP-16 §25)
 

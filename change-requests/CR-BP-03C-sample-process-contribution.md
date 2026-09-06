@@ -1,6 +1,8 @@
 # CR-BP-03C — Sample Business Process Contribution (walk-the-flow)
 
 **Status:** Proposed (2026-09-03)
+**Layer:** L1
+**Owner:** TechNeHub Labs
 **Type:** Sample Entry / Worked Example / End-to-End Validation
 **Priority:** High
 **Repository:** `technehub-labs/dea-catalog-processes`

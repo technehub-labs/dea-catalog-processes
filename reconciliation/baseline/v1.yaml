@@ -37,15 +37,15 @@ records:
   - id: <cr:CR-BP-14-process-semantic-reconciliation.md>
     type: ChangeRequest
     path: change-requests/CR-BP-14-process-semantic-reconciliation.md
-    sha256: cd7607503c75efcddb867b7beda038efec41e22d030396a3fb176f9aa689803b
+    sha256: cea7fb33e5bba84be0c1e200570952b89d26c31b1f5a72434370084df20fe9eb
   - id: <cr:CR-BP-15-process-catalog-reconciliation.md>
     type: ChangeRequest
     path: change-requests/CR-BP-15-process-catalog-reconciliation.md
-    sha256: 953df9ed8105b786a4de24e645ff4dc5e6835725000119d2520e7ed951e2aeb3
+    sha256: be76b1aa3b5b20cb860b7c90880c20dbc27c6e34daec86e1f7f2ffc1adb4411e
   - id: <cr:CR-BP-16-process-catalog-conformance-gate.md>
     type: ChangeRequest
     path: change-requests/CR-BP-16-process-catalog-conformance-gate.md
-    sha256: cb5c8ae68f9c67eee83a6cf4819eb1eafa0ef3bcfbf7c6821d0b38a6fbc35ab3
+    sha256: 6d43bb15122c3043343b8a0cd2c663d43e92a35492708ee22ba08df547c495eb
   - id: dea:group-customer-channel-and-acquisition-build
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/dea:group-customer-channel-and-acquisition-build.yaml

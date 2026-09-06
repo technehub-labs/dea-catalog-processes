@@ -2,11 +2,13 @@ The next CR should now operationalize CR-BP-14 rather than introduce another sem
 
 CR-BP-15 — Process Catalog Reconciliation
 
-Status: Proposed
-Type: Architectural Reconciliation / Catalog Governance
-Scope: dea-catalog-processes
-Depends On: CR-BP-14 — Process Semantic Reconciliation
-Precedes: CR-BP-13A and subsequent Process Admission CRs
+**Status**: Accepted
+**Layer**: L1
+**Owner**: TechNeHub Labs
+**Type**: Architectural Reconciliation / Catalog Governance
+**Scope**: dea-catalog-processes
+**Depends On**: CR-BP-14 — Process Semantic Reconciliation
+**Precedes**: CR-BP-13A and subsequent Process Admission CRs
 
 ⸻
 
