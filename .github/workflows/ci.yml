@@ -201,6 +201,30 @@ jobs:
         # is the pre-admission readiness artefact (CR-BP-16 S24).
         run: python scripts/build_conformance_report.py
 
+      - name: Run CR metadata gate (CR-BP-16 S16; CR-META-001..006)
+        if: steps.check.outputs.skip != 'true'
+        # Advisory as of PR-12 (CR-BP-16 full gate). Legacy CRs
+        # lack S21 metadata; new CRs SHOULD include Status, Layer,
+        # Owner, Depends on, Companion to. CR-BP-13A will be the
+        # first CR to demonstrate full S21 compliance.
+        run: python scripts/check_cr_metadata.py
+
+      - name: Run documentation conformance gate (CR-BP-16 S22; DOC-001..003)
+        if: steps.check.outputs.skip != 'true'
+        # Advisory as of PR-12. Normative terminology consistency
+        # across documentation; reports legacy synonym usage,
+        # unresolvable id references, and standalone 'Process'.
+        run: python scripts/check_documentation_conformance.py
+
+      - name: Run admission gate (CR-BP-16 S15; ADM-001..008)
+        if: steps.check.outputs.skip != 'true'
+        # Advisory as of PR-12. New-process admission mandatory
+        # conformance path: Evidence -> Identity -> Context ->
+        # Group Fit -> Boundary -> Intent -> Classification ->
+        # Specialization -> Sibling Analysis -> MECE -> Schema ->
+        # Provenance -> Governance -> CANONICAL.
+        run: python scripts/check_admission_gate.py
+
       - name: Run Process Group gate (CR-BP-12)
         if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_group.py

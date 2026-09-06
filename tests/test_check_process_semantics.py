@@ -4,6 +4,7 @@ Locks behaviour for BP-SEM-001..012 by exercising both the validator
 end-to-end (run_checks) and the in-process self-test entry point.
 """
 
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -57,6 +58,7 @@ def test_self_test_exits_2_on_failure():
     ("BP-SEM-011", "lexically"),
     ("BP-SEM-012", "context references"),
     ("BP-SEM-013", "specialization"),
+    ("BP-SEM-014", "cycle"),
 ])
 def test_module_docstring_documents_every_rule(rule, expected_substring):
     src = SCRIPT.read_text()
@@ -157,6 +159,80 @@ def test_bp_sem_013_rejects_unresolved_specializes_target(tmp_path):
         + result.stdout + result.stderr
     )
     assert "BP-SEM-013" in result.stdout
+
+
+def test_bp_sem_014_detects_cycle(tmp_path):
+    """BP-SEM-014: a cycle in the specializes graph (A->B->A)
+    must produce a BP-SEM-014 error."""
+    import shutil
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    # Pick two unrelated records and create a cycle between them.
+    a_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-journey-design/dea:process-*.yaml"
+        )
+    )
+    b_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-experience-design/dea:process-*.yaml"
+        )
+    )
+    a_data = yaml.safe_load(a_file.read_text())
+    b_data = yaml.safe_load(b_file.read_text())
+    a_data["relationships"] = [{
+        "source_id": a_data["id"],
+        "relationship_type": "specializes",
+        "target_id": b_data["id"],
+        "specialization_pattern": "by-customer-segment",
+    }]
+    b_data["relationships"] = [{
+        "source_id": b_data["id"],
+        "relationship_type": "specializes",
+        "target_id": a_data["id"],
+        "specialization_pattern": "by-customer-segment",
+    }]
+    a_file.write_text(yaml.safe_dump(a_data, sort_keys=False))
+    b_file.write_text(yaml.safe_dump(b_data, sort_keys=False))
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
+        capture_output=True, text=True, cwd=str(ROOT),
+    )
+    assert result.returncode != 0, (
+        "BP-SEM-014 should fail on a specialization cycle: "
+        + result.stdout + result.stderr
+    )
+    assert "BP-SEM-014" in result.stdout
+
+
+def test_bp_sem_014_rejects_self_specialization(tmp_path):
+    """BP-SEM-014: a record that specializes itself must fail."""
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    target_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-journey-design/dea:process-*.yaml"
+        )
+    )
+    data = yaml.safe_load(target_file.read_text())
+    data["relationships"] = [{
+        "source_id": data["id"],
+        "relationship_type": "specializes",
+        "target_id": data["id"],
+        "specialization_pattern": "by-customer-segment",
+    }]
+    target_file.write_text(yaml.safe_dump(data, sort_keys=False))
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
+        capture_output=True, text=True, cwd=str(ROOT),
+    )
+    assert result.returncode != 0, (
+        "BP-SEM-014 should fail on self-specialization: "
+        + result.stdout + result.stderr
+    )
+    assert "BP-SEM-014" in result.stdout
 
 
 def test_bp_sem_013_accepts_valid_specializes(tmp_path):

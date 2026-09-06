@@ -74,10 +74,16 @@ Rules:
               'specializes' MUST target a canonical Process entry;
               the target_id MUST match the dea:process-<id> pattern;
               the entry MUST declare specialization_pattern (from the
-              approved basis vocabulary) OR a non-empty
+              approved basis vocabulary) or a non-empty
               specialization_basis field. Specialization is
               intra-context (CR-BP-14 S23); cross-context
               specialization is decomposition, not specialization.
+  BP-SEM-014  Specialization Cycle Detection (CR-BP-16 S10).
+              The specializes graph MUST be acyclic. A cycle (A
+              specializes B, B specializes A; or A -> B -> C -> A)
+              is an architectural regression and SHALL block
+              canonical admission. Identical parent/child semantics
+              (same id specializing itself) are forbidden.
               A Business Process MAY participate in multiple Process
               Contexts where evidence establishes legitimate
               cross-context responsibility. The rule never treats
@@ -133,6 +139,15 @@ APPROVED_SPECIALIZATION_BASES = {
 
 PC_PATTERN = re.compile(r"^dea:pc-[a-z0-9-]+$")
 PROCESS_PATTERN = re.compile(r"^dea:process-[a-z0-9-]+$")
+
+
+def _make_emit(prefix: str):
+    """Return an `emit(messages, rule, msg)` closure with the
+    given prefix baked in. Module-level so other helpers can use it.
+    """
+    def emit(messages: list[str], rule: str, msg: str) -> None:
+        messages.append(f"rule:{rule} {prefix}: {msg}")
+    return emit
 
 
 def _load_yaml(path: Path) -> dict | None:
@@ -233,8 +248,7 @@ def run_checks(
 
         # Emit a `rule:<code> prefix so callers (and the self-test) can
         # extract the rule deterministically without parsing prose.
-        def emit(messages: list[str], rule: str, msg: str) -> None:
-            messages.append(f"rule:{rule} {prefix}: {msg}")
+        emit = _make_emit(f"BP-SEM ({eid})")
 
         intent = _intent_value(data)
         classification = _classification_value(data)
@@ -417,7 +431,86 @@ def run_checks(
                 f"permitted where evidence justifies cross-context responsibility"
             )
 
+    # BP-SEM-014: Specialization cycle detection. After per-record
+    # checks, build the specializes graph and run a DFS to detect
+    # cycles (CR-BP-16 S10).
+    _check_specialization_cycles(catalog_root, errors, warnings)
+
     return errors, warnings
+
+
+def _check_specialization_cycles(
+    catalog_root: Path, errors: list[str], warnings: list[str],
+) -> None:
+    """Build the specializes graph from canonical entries and detect cycles.
+
+    A cycle is any path A -> B -> ... -> A in the specializes graph.
+    Self-specialization (A specializes A) is also a cycle. Each
+    cycle emits a single BP-SEM-014 error citing the participating ids.
+    """
+    emit = _make_emit("BP-SEM (cycle)")
+    adj: dict[str, set[str]] = {}
+    for path in sorted((catalog_root / "entities" / "v1-alpha").rglob("*.yaml")):
+        try:
+            data = yaml.safe_load(path.read_text())
+        except yaml.YAMLError:
+            continue
+        if not isinstance(data, dict):
+            continue
+        if data.get("type") != "Process":
+            continue
+        rec_id = data.get("id")
+        if not isinstance(rec_id, str):
+            continue
+        targets: set[str] = set()
+        for rel in data.get("relationships", []) or []:
+            if rel.get("relationship_type") != "specializes":
+                continue
+            tgt = rel.get("target_id")
+            if isinstance(tgt, str):
+                targets.add(tgt)
+        adj[rec_id] = targets
+
+    # Self-loops are cycles.
+    for rec_id, targets in list(adj.items()):
+        if rec_id in targets:
+            emit(
+                errors, "BP-SEM-014",
+                f"self-specialization: {rec_id} specializes itself "
+                "(identical parent/child semantics; CR-BP-16 S10)"
+            )
+            # Remove the self-loop from the adjacency to avoid
+            # re-reporting the cycle in the DFS pass below.
+            adj[rec_id] = targets - {rec_id}
+
+    # DFS cycle detection (Tarjan would be overkill for our graph sizes).
+    WHITE, GRAY, BLACK = 0, 1, 2
+    color: dict[str, int] = {n: WHITE for n in adj}
+    cycle_emitted: set[frozenset[str]] = set()
+
+    def dfs(u: str, stack: list[str]) -> None:
+        color[u] = GRAY
+        stack.append(u)
+        for v in adj.get(u, ()):
+            if color.get(v) == GRAY:
+                # Found a back-edge: cycle from v to u via stack.
+                idx = stack.index(v)
+                cycle = stack[idx:]
+                key = frozenset(cycle)
+                if key not in cycle_emitted:
+                    cycle_emitted.add(key)
+                    emit(
+                        errors, "BP-SEM-014",
+                        f"specialization cycle: {' -> '.join(cycle + [v])}"
+                    )
+            elif color.get(v, WHITE) == WHITE:
+                dfs(v, stack)
+        stack.pop()
+        color[u] = BLACK
+
+    for node in list(adj):
+        if color.get(node, WHITE) == WHITE:
+            dfs(node, [])
 
 
 def _self_test(catalog_root: Path) -> tuple[bool, str]:
@@ -425,12 +518,35 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
     broken_errors: list[str] = []
     fixed_errors: list[str] = []
     pc_ids = {"dea:pc-cd-op", "dea:pc-cd-im"}
-    process_ids = {"dea:process-parent-process"}
+    process_ids = {"dea:process-parent-process", "dea:process-cycle-parent"}
 
     # Broken catalog fixture
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
+        (tmp_path / "entities" / "v1-alpha" / "dea:process-cycle-parent").mkdir(parents=True)
         (tmp_path / "entities" / "v1-alpha" / "dea:process-bad").mkdir(parents=True)
+        # BP-SEM-014 fixture: a parent that specializes back to its
+        # child, forming a cycle. Created before `bad` so the bad
+        # record's specializes edge points at a real id.
+        cycle_parent = {
+            "id": "dea:process-cycle-parent",
+            "name": "Cycle Parent",
+            "type": "Process",
+            "version": "1.0.0",
+            "process_intent": "manage",
+            "process_type": "core",
+            "context": [{"ref": "dea:pc-cd-op"}],
+            # Reverse-edge back to `dea:process-bad` forms a cycle.
+            "relationships": [{
+                "source_id": "dea:process-cycle-parent",
+                "relationship_type": "specializes",
+                "target_id": "dea:process-bad",
+                "specialization_pattern": "by-customer-segment",
+            }],
+        }
+        (tmp_path / "entities" / "v1-alpha" / "dea:process-cycle-parent" / "dea:process-cycle-parent.yaml").write_text(
+            yaml.safe_dump(cycle_parent, sort_keys=False)
+        )
         broken = {
             "id": "dea:process-bad",
             "name": "Bad",
@@ -444,11 +560,21 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "specialization_pattern": "by-magic",  # no basis -> BP-SEM-006
             # BP-SEM-013: specializes to an unknown target with no
             # specialization_pattern / specialization_basis.
-            "relationships": [{
-                "source_id": "dea:process-bad",
-                "relationship_type": "specializes",
-                "target_id": "dea:process-nonexistent",
-            }],
+            # Plus a cycle-forming edge to dea:process-cycle-parent
+            # for BP-SEM-014.
+            "relationships": [
+                {
+                    "source_id": "dea:process-bad",
+                    "relationship_type": "specializes",
+                    "target_id": "dea:process-nonexistent",
+                },
+                {
+                    "source_id": "dea:process-bad",
+                    "relationship_type": "specializes",
+                    "target_id": "dea:process-cycle-parent",
+                    "specialization_pattern": "by-customer-segment",
+                },
+            ],
         }
         (tmp_path / "entities" / "v1-alpha" / "dea:process-bad" / "dea:process-bad.yaml").write_text(
             yaml.safe_dump(broken, sort_keys=False)
@@ -513,7 +639,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
     }
     seen = blocking_seen | warning_seen
     missing = {"BP-SEM-001", "BP-SEM-002", "BP-SEM-005", "BP-SEM-006",
-               "BP-SEM-008", "BP-SEM-013"} - seen
+               "BP-SEM-008", "BP-SEM-013", "BP-SEM-014"} - seen
     extra_blocking = fixed_errors
     summary = (
         f"broken-blocking={len(broken_errors)} "

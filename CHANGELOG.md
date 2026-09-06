@@ -6,6 +6,84 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-16 full conformance gate: S10/S15/S16/S22 machinery
+
+The remaining CR-BP-16 sections called out in §29 acceptance
+criteria are now live as CI machinery (advisory). The catalogue
+remains **38/38 Level 4 (Canonically Conformant)** and **0
+BP-SEM / BP-AR findings**.
+
+- `scripts/check_process_semantics.py` (extended):
+  - New rule **BP-SEM-014 Specialization Cycle Detection**
+    (CR-BP-16 S10). The specializes graph MUST be acyclic;
+    self-specialization and any cycle (A -> B -> ... -> A) are
+    architectural regressions. Module docstring updated to
+    document BP-SEM-014 alongside BP-SEM-001..013. Self-test
+    extended with a cycle fixture.
+- `scripts/check_cr_metadata.py` (new): CR-BP-16 S16 metadata
+  validator. Six rules (CR-META-001..006) check that every
+  architectural CR carries **Status**, **Layer**, **Owner**,
+  **Depends on** (with CR-BP-NN refs), **Companion to**, and a
+  filename matching the CR-BP-NN pattern. **Advisory** mode:
+  legacy CRs lack S21 metadata; CR-BP-13A is the planned first
+  CR to demonstrate full S21 compliance.
+- `scripts/check_documentation_conformance.py` (new): CR-BP-16
+  S22 normative terminology consistency checker. Three rules
+  (DOC-001..003) flag legacy synonym usage without the preferred
+  term, unresolvable canonical id references, and standalone
+  'Process' usage outside compound forms. **Advisory** mode.
+- `scripts/check_admission_gate.py` (new): CR-BP-16 S15 new-
+  process admission gate. Eight rules (ADM-001..008) check
+  Evidence coverage (admission CR in change_history), Identity
+  shape, Context resolution, Group fit, Boundary completeness
+  (triggers, outcomes), Intent+Classification in approved
+  vocabularies, Specialization validity, and Provenance shape.
+  **Advisory** mode: surfaces findings on the locked population
+  for review.
+- `.github/workflows/ci.yml`: new "Run CR metadata gate" step
+  (advisory); new "Run documentation conformance gate" step
+  (advisory); new "Run admission gate" step (advisory).
+- `tests/test_check_process_semantics.py`:
+  - New `test_bp_sem_014_detects_cycle`: confirms BP-SEM-014
+    fires on a 2-record cycle.
+  - New `test_bp_sem_014_rejects_self_specialization`: confirms
+    BP-SEM-014 fires on self-specialization.
+  - Parametrized rule-coverage test extended for BP-SEM-014.
+- `tests/test_cr_bp16_gates.py` (new, 11 tests): CR metadata,
+  documentation conformance, and admission gate tests.
+
+BP-SEM live verdict: 0 errors, 0 warnings: CONFORMANT
+BP-AR live verdict: 0 findings: CONFORMANT
+CR-META live verdict: 46 findings across 16 CR files (advisory;
+legacy CRs lack S21 metadata)
+DOC live verdict: 436 findings across many docs files (advisory;
+docs cleanup is a separate programme item)
+ADM live verdict: 54 findings across 18 Process records (advisory;
+boundary + provenance fields are recommended, not required)
+Conformance Levels: 38/38 at Level 4
+
+**CR-BP-16 §29 acceptance criteria update:**
+- [x] CI executes structural validation (was already PASS in PR-31)
+- [x] CI executes semantic validation (BP-SEM; PR-29 + PR-36)
+- [x] CI validates specialization graphs (BP-SEM-013 + BP-SEM-014;
+  PR-37 + this PR)
+- [x] CI validates references (BP-SEM-008; PR-31)
+- [x] Architectural regression patterns are detected (BP-AR-001..007;
+  PR-38)
+- [x] CI validates CR metadata (CR-META-001..006; this PR)
+- [x] Conformance results reproducible (--check modes; PR-38)
+- [x] Canonical status tied to conformance + governance (Level 4;
+  PR-38)
+- [x] Gate does not equate ECF coverage with process completeness
+  (BP-SEM-008; PR-31)
+- [partial] CI validates provenance (gate machinery live; full
+  change_history schema validation is a separate item)
+- [partial] New-process admission has mandatory conformance path
+  (gate machinery live; mandatory enforcement requires CR-BP-13A
+  to land first as the pilot)
+- [partial] Documentation describes the gate (gate machinery live;
+  docs walkthrough is a separate programme item)
+
 ### CR-BP-15-IMP Phase 7: Pre-admission readiness
 
 The permanent CR-BP-16 conformance gate machinery is now live:
