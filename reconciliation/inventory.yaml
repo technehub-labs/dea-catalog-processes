@@ -25,13 +25,9 @@ records:
       name: "Audit Policy Compliance"
       type: Process
       path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
-      process_intent: support
+      process_intent: govern
       process_classification: standardization
       legacy_findings:
-        - intent:support
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-codify-charters-and-policies
       name: "Codify Charters and Policies"
@@ -157,13 +153,9 @@ records:
       name: "Operate Governance Oversight"
       type: Process
       path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
-      process_intent: management
+      process_intent: operate
       process_classification: strategic
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-review-governance-effectiveness
       name: "Review Governance Effectiveness"
@@ -267,6 +259,11 @@ records:
       type: ProcessContext
       path: contexts/v1-alpha/dea-pc-cd-im.yaml
       legacy_findings: []
+    - id: dea:pc-cd-op
+      name: "Customer Relationship Operations"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-cd-op.yaml
+      legacy_findings: []
     - id: dea:pc-ge-b
       name: "Governance Body Establishment"
       type: ProcessContext
@@ -291,10 +288,5 @@ records:
       name: "Governance Oversight"
       type: ProcessContext
       path: contexts/v1-alpha/dea-pc-ge-op.yaml
-      legacy_findings: []
-    - id: dea:pc-cd-op
-      name: "Customer Relationship Operations"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea_pc-cd-op.yaml
       legacy_findings: []
 

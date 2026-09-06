@@ -130,7 +130,7 @@ ontology).
 ```
 change-requests/CR-BP-03C-sample-process-contribution.md  [NEW] (this file)
 entities/v1-alpha/dea_bp_manage-customer-relationship.yaml  [NEW] (canonical entry)
-contexts/v1-alpha/dea_pc-cd-op.yaml                        [NEW] (cell charter)
+contexts/v1-alpha/dea-pc-cd-op.yaml                        [NEW] (cell charter)
 contributions/processes/dea_bp_manage-customer-relationship.yaml  [NEW] (contribution record)
 docs/examples/manage-customer-relationship.md              [NEW] (worked example)
 ```
@@ -196,7 +196,7 @@ md5:  d6a3c1f8...  (refined during implementation)
 - [ ] Canonical entry lands at
       `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`.
 - [ ] Cell charter lands at
-      `contexts/v1-alpha/dea_pc-cd-op.yaml`.
+      `contexts/v1-alpha/dea-pc-cd-op.yaml`.
 - [ ] Contribution record lands at
       `contributions/processes/dea_bp_manage-customer-relationship.yaml`.
 - [ ] Worked example lands at
