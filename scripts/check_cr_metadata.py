@@ -173,6 +173,31 @@ def _walk(repo_root: Path) -> Iterable[Path]:
     return sorted(cr_dir.glob("CR-*.md"))
 
 
+def _git_last_commit_date(path: Path) -> float | None:
+    """Return the unix timestamp of the last commit touching `path`,
+    or None if the file is untracked / not in git history.
+
+    This is more reliable than filesystem mtime, which is
+    destroyed on fresh-clone checkouts and `git checkout` events.
+    """
+    import subprocess
+    # Resolve to absolute path so git can find it regardless of
+    # the current working directory. We invoke `git log` from the
+    # path's parent (or any directory in the same git repo) but
+    # always pass the absolute path.
+    abs_path = path.resolve()
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%ct", "--", str(abs_path)],
+            capture_output=True, text=True, cwd=str(abs_path.parent),
+        )
+        if result.returncode != 0 or not result.stdout.strip():
+            return None
+        return float(result.stdout.strip())
+    except (OSError, ValueError):
+        return None
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--catalog-root", default=".")
@@ -207,6 +232,13 @@ def main(argv: list[str] | None = None) -> int:
         tzinfo=timezone.utc,
     ).timestamp()
     for path in _walk(root):
+        # Prefer git's last-commit timestamp over filesystem mtime:
+        # fresh clones and `git checkout` events reset mtime, but
+        # the last commit date is preserved. Fall back to mtime
+        # if the file is not in git history (untracked).
+        last_modified = _git_last_commit_date(path)
+        if last_modified is None:
+            last_modified = path.stat().st_mtime
         for code, msg in check_cr(path):
             entry = {
                 "rule": code,
@@ -214,7 +246,7 @@ def main(argv: list[str] | None = None) -> int:
                 "message": msg,
             }
             findings.append(entry)
-            if path.stat().st_mtime >= cutoff:
+            if last_modified >= cutoff:
                 new_findings.append(entry)
             else:
                 legacy_findings.append(entry)
