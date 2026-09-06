@@ -6,6 +6,41 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-14: Process Semantic Reconciliation (landing + Phase 1)
+
+Landing (PR #25):
+- CR landed verbatim at
+  `change-requests/CR-BP-14-process-semantic-reconciliation.md`.
+- CR register synchronized with actual status (CR-BP-14 §23): CR-BP-13b
+  corrected to Merged (PR #24); README change programme rows synced for
+  CR-BP-03/03A/03C/04/11/12/13/13a/13b; stale Activity Model / Execution
+  Boundary placeholders renumbered as unnumbered future rows.
+
+Phase 1 (semantic vocabularies + schema; CR-BP-14 §9, §10, §11, §17, §18, §20):
+- New controlled vocabulary `classifications/process-intents.yaml`: the
+  seven-value purpose-oriented Process Intent vocabulary (govern / manage /
+  operate / deliver / support / develop / transform) with the §17 legacy
+  migration mapping (operational -> operate or deliver; support -> support;
+  management -> manage or govern; evidence-based, never mechanical).
+- `schemas/entity.schema.json`: `process_intent` enum extended to the
+  canonical seven values with legacy `operational` / `management` retained
+  as deprecated migration aliases; new optional `process_classification`
+  block (canonical form per §20); `process_type` retained unchanged as the
+  landscape classification and backward-compatible alias (§18);
+  `process_audience` marked as legacy migration alias (§13, §19).
+- `schemas/contribution.schema.json` mirrors the same extensions.
+- `classifications/process-types.yaml` header records the CR-BP-14 §10
+  Process Classification semantics and the Intent != Classification rule
+  (§11; BP-SEM-011).
+- `scripts/check_process_specialization.py` BP-SPEC-01-007 text updated to
+  quote the extended intent vocabulary; non-promotion rule unchanged.
+- `docs/classification.md` gains a CR-BP-14 Phase 1 status section; the
+  pre-CR-BP-14 prose is marked historical pending Phase 4 reconciliation.
+- Contribution template updated to the canonical intent vocabulary with the
+  optional `process_classification` block shown.
+- New `tests/test_process_intents.py` locks vocabulary / schema mirror
+  integrity.
+
 ### CR-CATALOG-STRUCT-02: Process Catalog Adoption (Three-Step Migration)
 
 Brings `dea-catalog-processes` into conformance with the catalog repository

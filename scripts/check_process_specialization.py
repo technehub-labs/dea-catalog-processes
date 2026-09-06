@@ -23,8 +23,11 @@ Rules:
                    references the WSF / Process-kernel lineage.
   BP-SPEC-01-006 — Governance doc docs/governance/process-specialization.md
                    exists and references both CR-MM-PROC-01 and CR-AR-FMWK-01.
-  BP-SPEC-01-007 — The catalog's process_intent enum (operational / support /
-                   management) remains catalog-internal: it must NOT appear
+  BP-SPEC-01-007: The catalog's process_intent enum (canonical:
+                   govern / manage / operate / deliver / support /
+                   develop / transform; legacy aliases: operational /
+                   management; CR-BP-14 §9, §17) remains
+                   catalog-internal: it must NOT appear
                    as a root-model entity_id in any catalog YAML file.
 
 Exit: 0 = all rules pass; 1 = at least one rule failed; 2 = self-test.

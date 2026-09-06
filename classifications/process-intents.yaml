@@ -1,0 +1,108 @@
+# Process Intents: controlled catalog vocabulary
+# CR-BP-14 §9 (Process Intent), §11 (Intent ≠ Classification), §17 (migration)
+#
+# Process Intent describes the PURPOSEFUL NATURE of the work performed
+# by the process: why the work exists in terms of the kind of enterprise
+# work it performs. It is purpose-oriented and SHALL NOT be derived from
+# organizational position (CR-BP-14 §9.1, §9.2).
+#
+# Process Intent is formally distinct from Process Classification
+# (the `process_type` / `process_classification` landscape position;
+# classifications/process-types.yaml). Identical tokens appearing in
+# both vocabularies (e.g. `support`) are NOT a semantic equivalence
+# (CR-BP-14 §11; BP-SEM-011).
+#
+# This is a CATALOG CLASSIFICATION. It does not create corresponding
+# OpenDEA ontology entities (CR-BP-14 §10.2 applies equally here;
+# BP-SPEC-01-007 enforces non-promotion).
+
+version: v1
+established_by: CR-BP-14 §9.2
+supersedes: CR-BP-01 three-value vocabulary (operational / support / management)
+
+process_intents:
+  - id: govern
+    name: Govern
+    definition: >
+      Establish, direct, assure or enforce enterprise direction, policy,
+      authority or compliance.
+    examples:
+      - Govern Enterprise Risk
+      - Govern Enterprise Portfolio
+
+  - id: manage
+    name: Manage
+    definition: >
+      Plan, coordinate, monitor, control or optimize an enterprise
+      responsibility.
+    examples:
+      - Manage Customer Relationship
+      - Manage Workforce
+
+  - id: operate
+    name: Operate
+    definition: >
+      Perform recurring enterprise work that produces or maintains an
+      operational result.
+    examples:
+      - Operate Service Platform
+      - Operate Customer Retention Programs
+
+  - id: deliver
+    name: Deliver
+    definition: >
+      Produce, provision or transfer an intended product, service,
+      experience or outcome.
+    examples:
+      - Deliver Customer Service
+
+  - id: support
+    name: Support
+    definition: >
+      Enable other enterprise responsibilities through internal services
+      or resources.
+    examples:
+      - Support Workforce
+    notes: >
+      The token `support` also exists in the landscape classification
+      vocabulary. Per CR-BP-14 §11 this is a lexical coincidence, not a
+      semantic equivalence: an intent of `support` does not imply a
+      classification of `support`, and vice versa.
+
+  - id: develop
+    name: Develop
+    definition: >
+      Create, improve or evolve an enterprise asset, offering, capability
+      or outcome.
+    examples:
+      - Develop Product Offering
+      - Develop Customer Strategy
+
+  - id: transform
+    name: Transform
+    definition: >
+      Change an existing enterprise state, capability, model or operating
+      condition.
+
+# Legacy migration (CR-BP-14 §17). The mapping is evidence-based and
+# MUST NOT be applied mechanically where the process meaning indicates
+# another intent (e.g. Govern Enterprise Risk migrates to `govern`,
+# not `manage`, when governance is the defining purpose).
+legacy_migration:
+  operational:
+    candidates: [operate, deliver]
+    note: Direct-work intent splits by whether the work maintains an
+      operational result (operate) or transfers an outcome (deliver).
+  support:
+    candidates: [support]
+    note: Token and meaning carry over unchanged.
+  management:
+    candidates: [manage, govern]
+    note: Coordination and control migrates to `manage`; direction,
+      authority and assurance migrates to `govern`.
+
+legacy_values:
+  - operational
+  - management
+# `support` is both a legacy value and a canonical value; it is not
+# listed as legacy-only.

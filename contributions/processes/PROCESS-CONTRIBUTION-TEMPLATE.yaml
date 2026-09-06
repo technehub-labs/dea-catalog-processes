@@ -33,8 +33,11 @@ proposed_entry:
     A description of the process. Should reference the outcome
     (not the activity) and align with the process_type
     (see classifications/process-types.yaml).
-  process_intent: management  # operational | support | management
+  process_intent: manage  # govern | manage | operate | deliver | support | develop | transform (CR-BP-14 §9; legacy aliases operational | management remain readable during migration)
   process_type: management   # strategic | management | core | support | standardization
+  # Canonical classification block form (CR-BP-14 §20); optional during migration:
+  # process_classification:
+  #   type: management
   process_audience: customer-demand  # ecf-domain
   process_specialization:    # optional; list of parent process ids
     - dea:process-parent-process
