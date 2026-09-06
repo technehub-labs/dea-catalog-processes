@@ -52,13 +52,25 @@
         },
         "process_intent": {
           "type": "string",
-          "enum": ["operational", "support", "management"],
-          "description": "Work-character axis. Preserved from CR-BP-01."
+          "enum": ["govern", "manage", "operate", "deliver", "support", "develop", "transform", "operational", "management"],
+          "description": "Process Intent (CR-BP-14 §9). Canonical vocabulary: govern / manage / operate / deliver / support / develop / transform (classifications/process-intents.yaml). Legacy values `operational` / `management` remain readable as deprecated migration aliases (§17). Mirrors schemas/entity.schema.json."
         },
         "process_type": {
           "type": "string",
           "enum": ["strategic", "management", "core", "support", "standardization"],
-          "description": "5-component classification (Mintzberg). NEW in CR-BP-03."
+          "description": "Process Classification: 5-component landscape position (Mintzberg). NEW in CR-BP-03; retained by CR-BP-14 §10.2. NOT a synonym for process_intent (§11, §18)."
+        },
+        "process_classification": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["strategic", "management", "core", "support", "standardization"]
+            }
+          },
+          "required": ["type"],
+          "additionalProperties": false,
+          "description": "Canonical Process Classification block (CR-BP-14 §10, §20). Mirrors schemas/entity.schema.json."
         },
         "process_audience": {
           "type": "string",
@@ -66,7 +78,7 @@
             "governance-existence", "supply-resources", "people-organization",
             "customer-demand", "product-offering", "operations-delivery", "finance-value"
           ],
-          "description": "ECF domain the process serves. Preserved from CR-BP-01."
+          "description": "Legacy migration alias (CR-BP-14 §13, §19). New contributions should prefer contextual relationships over this single-axis audience value."
         },
         "process_specialization": {
           "type": "array",

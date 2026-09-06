@@ -7,6 +7,57 @@ CR-BP-03 introduces. Each axis answers a different question;
 conflating them is the historical source of much process-catalog
 confusion.
 
+## CR-BP-14 semantic reconciliation (Phase 1 status)
+
+CR-BP-14 supersedes the Intent axis vocabulary below. The normative
+contract is now:
+
+- **Process Intent** (`process_intent`) describes the **purposeful
+  nature of the work**: why the work exists in terms of the kind of
+  enterprise work it performs. The canonical controlled vocabulary is
+  seven values at
+  [`classifications/process-intents.yaml`](../classifications/process-intents.yaml):
+
+  | Intent | Definition |
+  |---|---|
+  | `govern` | Establish, direct, assure or enforce enterprise direction, policy, authority or compliance |
+  | `manage` | Plan, coordinate, monitor, control or optimize an enterprise responsibility |
+  | `operate` | Perform recurring enterprise work that produces or maintains an operational result |
+  | `deliver` | Produce, provision or transfer an intended product, service, experience or outcome |
+  | `support` | Enable other enterprise responsibilities through internal services or resources |
+  | `develop` | Create, improve or evolve an enterprise asset, offering, capability or outcome |
+  | `transform` | Change an existing enterprise state, capability, model or operating condition |
+
+  The legacy values `operational` and `management` remain readable as
+  deprecated migration aliases (CR-BP-14 §17); the mapping to the new
+  vocabulary is evidence-based, never mechanical.
+
+- **Process Classification** (`process_type`, canonical block form
+  `process_classification.type` per CR-BP-14 §20) describes the
+  **position of the process in the enterprise process landscape**.
+  The five-value vocabulary below is retained unchanged
+  (CR-BP-14 §10.2).
+
+- **Intent is not Classification** (CR-BP-14 §11). Intent is the
+  nature and purpose of the work; Classification is the architectural
+  position of the process. Neither dimension may be inferred from the
+  other (CR-BP-14 §18). Identical tokens across the two vocabularies
+  (`support`; `management` vs `manage`) are a lexical coincidence, not
+  a semantic equivalence (BP-SEM-011). Valid combinations cross the
+  axes freely: `Manage Customer Relationship` (intent `manage`,
+  classification `core`), `Govern Enterprise Risk` (intent `govern`,
+  classification `strategic`), `Manage Service Quality` (intent
+  `manage`, classification `standardization`).
+
+- **Audience is a legacy migration alias** (CR-BP-14 §13, §19).
+  `process_audience` is not a Process Context and SHALL NOT be used as
+  a substitute for one; contextual relationships are preferred for new
+  canonical entries.
+
+The pre-CR-BP-14 prose below is retained for historical context and is
+reconciled fully in Phase 4 (CR-BP-14 §22). Where it conflicts with
+this section, this section and the CR govern.
+
 ## The four axes
 
 | Axis | Field | Vocabulary | Question it answers |

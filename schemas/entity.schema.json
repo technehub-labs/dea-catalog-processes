@@ -13,8 +13,8 @@
     "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
     "process_intent": {
       "type": "string",
-      "enum": ["operational", "support", "management"],
-      "description": "Work-character axis. Preserved from CR-BP-01 (operational / support / management). Describes what the process is doing."
+      "enum": ["govern", "manage", "operate", "deliver", "support", "develop", "transform", "operational", "management"],
+      "description": "Process Intent: the purposeful nature of the work performed (CR-BP-14 §9). Canonical controlled vocabulary at classifications/process-intents.yaml: govern / manage / operate / deliver / support / develop / transform. The legacy CR-BP-01 values `operational` and `management` remain readable as deprecated migration aliases during the CR-BP-14 migration period (§17, §20); `support` is both a legacy and a canonical value. Intent is purpose-oriented (not organizational position) and is formally distinct from Process Classification (§11); neither dimension may be inferred from the other (§18; BP-SEM-003/004)."
     },
     "process_audience": {
       "type": "string",
@@ -22,13 +22,26 @@
         "governance-existence", "supply-resources", "people-organization",
         "customer-demand", "product-offering", "operations-delivery", "finance-value"
       ],
-      "description": "ECF domain the process serves. Preserved from CR-BP-01. process_audience is a single-axis audience classification (CG-004 §10); it is NOT a full ECF coordinate (Domain x Lifecycle Stage) — that lives in Process Context (CR-BP-02)."
+      "description": "Legacy catalog classification pending migration (CR-BP-14 §13, §19). Single-axis audience value (CG-004 §10); it is NOT a Process Context (Domain x Lifecycle Stage; CR-BP-02) and SHALL NOT be used as a substitute for one. For new canonical entries, contextual relationships are preferred (CR-BP-14 §13); this field remains readable as a migration alias and is removed only after all canonical entries have migrated (§19)."
     },
     "process_type": {
       "type": "string",
       "enum": ["strategic", "management", "core", "support", "standardization"],
       "default": "core",
-      "description": "5-component classification (Mintzberg). NEW in CR-BP-03. Where the process sits in the enterprise process landscape. Default: 'core' (the canonical classification for L2 Business Process entries). This is a CATALOG CLASSIFICATION (per CR-BP-03 §3), not a new ontology; the semantic entity remains dea:BusinessProcess regardless of process_type. See classifications/process-types.yaml for the controlled vocabulary."
+      "description": "Process Classification: where the process sits in the enterprise process landscape. 5-component classification (Mintzberg). NEW in CR-BP-03; retained unchanged by CR-BP-14 §10.2, §18. NOT a synonym for Process Intent (CR-BP-14 §11, §18): neither dimension may be inferred from the other. Default: 'core' (review scheduled under CR-BP-15 per CR-BP-14 §18). This is a CATALOG CLASSIFICATION (per CR-BP-03 §3), not a new ontology; the semantic entity remains dea:BusinessProcess regardless of process_type. See classifications/process-types.yaml for the controlled vocabulary. Canonical block form: `process_classification` (CR-BP-14 §20); this field is retained as a backward-compatible alias until a separately governed schema migration."
+    },
+    "process_classification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["strategic", "management", "core", "support", "standardization"],
+          "description": "Landscape classification value; same controlled vocabulary as process_type (classifications/process-types.yaml)."
+        }
+      },
+      "required": ["type"],
+      "additionalProperties": false,
+      "description": "Canonical Process Classification block (CR-BP-14 §10, §20): the position of the Business Process in the enterprise process landscape. Classification describes architectural position, never the work's intrinsic purpose (§10.1). Optional during the migration period; `process_type` remains the backward-compatible alias."
     },
     "process_specialization": {
       "type": "array",

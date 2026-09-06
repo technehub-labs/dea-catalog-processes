@@ -1,9 +1,18 @@
 # Process Types — controlled catalog vocabulary
-# CR-BP-03 §2.1, §8 (refined)
+# CR-BP-03 §2.1, §8 (refined); CR-BP-14 §10 (Process Classification)
 #
 # These are the five Process Type values used in the `process_type`
-# field of L2 Business Process entries. They are a CATALOG
+# field of L2 Business Process entries (canonical block form:
+# `process_classification.type`, CR-BP-14 §20). They are a CATALOG
 # CLASSIFICATION (per CR-BP-03 §3), not a new ontology.
+#
+# CR-BP-14 §10 names this vocabulary the Process Classification: it
+# describes the position of a Business Process in the enterprise
+# process landscape, never the work's intrinsic purpose. It is
+# formally distinct from Process Intent
+# (classifications/process-intents.yaml); identical tokens appearing
+# in both vocabularies (e.g. `support`, `management` vs `manage`)
+# are NOT a semantic equivalence (CR-BP-14 §11; BP-SEM-011).
 #
 # The canonical L2 semantic entity is `dea:BusinessProcess` regardless
 # of process_type. The classification describes WHERE the process
