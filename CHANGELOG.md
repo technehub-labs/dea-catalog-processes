@@ -6,6 +6,55 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 5 third tranche (ge-b + ge-c + ge-d + ge-im)
+
+Seven governance records have been reconciled to the CR-BP-14
+canonical contract. The disposition register is now 16-of-18
+locked.
+
+- `entities/v1-alpha/dea:process-codify-charters-and-policies/`
+  (ge-b): legacy `operational` intent -> canonical `operate`;
+  ge-b context block; serves toward
+  `ecf:governanceAndExistence.build`.
+- `entities/v1-alpha/dea:process-establish-governance-bodies/`
+  (ge-b): legacy `operational` intent -> canonical `operate`;
+  same ge-b migration pattern.
+- `entities/v1-alpha/dea:process-develop-governance-strategy/`
+  (ge-c): legacy `management` intent -> canonical `develop`;
+  ge-c block; serves toward `ecf:governanceAndExistence.conceive`.
+- `entities/v1-alpha/dea:process-initiate-policy-and-charter/`
+  (ge-c): legacy `management` intent -> canonical `manage`;
+  same ge-c pattern; serves toward
+  `ecf:governanceAndExistence.conceive`.
+- `entities/v1-alpha/dea:process-design-governance-system/`
+  (ge-d): legacy `management` intent -> canonical `develop`;
+  ge-d block; serves toward `ecf:governanceAndExistence.design`.
+- `entities/v1-alpha/dea:process-design-policies-and-controls/`
+  (ge-d): legacy `management` intent -> canonical `develop`;
+  same ge-d pattern.
+- `entities/v1-alpha/dea:process-review-governance-effectiveness/`
+  (ge-im): legacy `management` intent -> canonical `govern`
+  (review-and-correction is governance activity per the
+  disposition register rationale); ge-im block; serves toward
+  `ecf:governanceAndExistence.improve`.
+- `reconciliation/diffs/phase-5-ge-b-ge-c-ge-d-ge-im.yaml`
+  (new): per-tranche audit trail; 7 records touched;
+  cross-tranche observations on ge-c intent diversity,
+  ge-d as L2 conceptual foundation, ge-im as single-record
+  Improve context work.
+- `reconciliation/dispositions/register.yaml`: register_lock
+  progress updated to 16 locked records (cd-b, cd-c, cd-d,
+  cd-im, cd-op, ge-b, ge-c, ge-d, ge-im) and 2 remaining
+  (the ge-op records; PR-9 next).
+- `tests/test_reconciliation_baseline.py`: legacy_findings_present
+  test updated to reflect the third tranche lock (2 remaining,
+  not 9).
+- `tests/test_apply_phase_5_tranche.py`: register_lock_progress
+  test expanded to cover the four governance tranches.
+
+BP-SEM live verdict: 2 errors (down from 9). Only the two
+ge-op records remain.
+
 ### CR-BP-15-IMP Phase 5 second tranche (cd-d + cd-im + cd-op)
 
 Five additional customer-demand records have been reconciled to
