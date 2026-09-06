@@ -104,7 +104,7 @@ records:
     sha256: ca2bc054aef193d877d9a0a2909da0597ed79d2b57f66136455433ed7f73b9e6
   - id: dea:pc-cd-op
     type: ProcessContext
-    path: contexts/v1-alpha/dea_pc-cd-op.yaml
+    path: contexts/v1-alpha/dea-pc-cd-op.yaml
     sha256: 5a0d900fa3a552565115c06fd39871743005a58ba6086eacf696f1d68ec29414
   - id: dea:pc-ge-b
     type: ProcessContext
@@ -129,7 +129,7 @@ records:
   - id: dea:process-audit-policy-compliance
     type: Process
     path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
-    sha256: e6b6b0299cd2dbb2f97ef93d6a790209506bf5c5acc0dacc31c2d99ac121cc68
+    sha256: fcd29853c637f6de9927bece7fdc53de86c3bcf4ed51901f25f281749125274e
   - id: dea:process-codify-charters-and-policies
     type: Process
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
@@ -193,7 +193,7 @@ records:
   - id: dea:process-operate-governance-oversight
     type: Process
     path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
-    sha256: 944263b07bfc26da86fa558abed7ca1b3bbd823b5803ffff4cec25cf0b23749d
+    sha256: 60b9cb5905b9a1bd61dd293c243021e7424dc67a70594484afdae7ec5c31a326
   - id: dea:process-review-governance-effectiveness
     type: Process
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml

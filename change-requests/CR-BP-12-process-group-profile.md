@@ -168,7 +168,7 @@ Rollback is a single `git revert <merge-commit>` per artifact group. The cleanup
 - `technehub-labs/dea-catalog-processes/change-requests/CR-BP-03C-sample-process-contribution.md`
 - `technehub-labs/dea-catalog-processes/change-requests/CR-BP-04-id-family-reconciliation.md`
 - `technehub-labs/dea-catalog-processes/entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`
-- `technehub-labs/dea-catalog-processes/contexts/v1-alpha/dea_pc-cd-op.yaml`
+- `technehub-labs/dea-catalog-processes/contexts/v1-alpha/dea-pc-cd-op.yaml`
 - `technehub-labs/dea-catalog-processes/schemas/entity.schema.json`
 - `technehub-labs/dea-catalog-processes/schemas/entities/process-context.schema.json`
 - `technehub-labs/dea-catalog-processes/schemas/identity.schema.json`

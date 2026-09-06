@@ -1,0 +1,84 @@
+# CR-BP-15-IMP Phase 5: Per-Tranche Diff (ge-op)
+
+# This file records the final two records of the Phase 5
+# tranche migration and the closure of the CR-BP-15-IMP
+# Phase 5 loop. The diff is the audit trail for the
+# reconciliation gate (CR-BP-15 /7).
+
+# Authoritative reference: CR-BP-15-IMP /5; CR-BP-15 /7.
+
+schema_version: 1
+diff_at: 2026-09-06
+phase: phase-5
+tranches:
+  - ge-op
+
+# Summary
+summary:
+  records_touched: 2
+  sha256_changed: 2
+  new_intent_vocabulary_tokens: 2
+  legacy_fields_removed:
+    process_audience: 2
+    process_context_scalar: 2
+  canonical_blocks_added:
+    context: 2
+    serves_relationship: 2
+  data_corrections:
+    - "contexts/v1-alpha/dea_pc-cd-op.yaml renamed to dea-pc-cd-op.yaml (filename typo fixed; canonical id was dea:pc-cd-op)"
+
+# Per-record diff
+diffs:
+  - record_id: dea:process-audit-policy-compliance
+    tranche: ge-op
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: support -> govern (audit-and-oversight is governance activity)"
+      - "process_audience: customer-demand REMOVED (audience-vs-context high-risk flag resolved)"
+      - "process_context: scalar 'dea:pc-ge-op' REMOVED"
+      - "context: [{ref: dea:pc-ge-op}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.operate ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-operate-governance-oversight
+    tranche: ge-op
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> operate"
+      - "process_audience: governance-existence REMOVED"
+      - "process_context: scalar 'dea:pc-ge-op' REMOVED"
+      - "context: [{ref: dea:pc-ge-op}] ADDED"
+      - "relationships[0]: serves -> ecf:governanceAndExistence.operate ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+# Cross-tranche observations
+observations:
+  - |
+    The 2 migrated records no longer trigger BP-SEM-007
+    (canonical context: block required). Phase 5 fourth
+    tranche reduces the BP-SEM error count from 2 to 0.
+    The catalogue is now fully CONFORMANT.
+  - |
+    The audit-policy-compliance record carried the
+    audience-vs-context conflict flagged as high-risk
+    in the Phase 4 tranche plan: process_audience =
+    customer-demand AND process_context = dea:pc-ge-op.
+    The migration resolves the conflict by removing
+    process_audience entirely (the canonical context:
+    block replaces it as the authoritative placement).
+    The disposition register records this resolution.
+  - |
+    The contexts/v1-alpha/dea_pc-cd-op.yaml filename
+    had an underscore typo (dea_pc vs dea-pc). The
+    canonical id inside the file (dea:pc-cd-op) was
+    always correct. PR-9 renames the file to
+    dea-pc-cd-op.yaml and updates four documentation
+    references (3 CR docs + CHANGELOG). The BP-SEM-008
+    context-reference-integrity check now passes.
+  - |
+    Closure: with ge-op locked, the disposition
+    register flips from PARTIALLY_LOCKED to LOCKED.
+    All 18 canonical Business Process records are now
+    on the canonical CR-BP-14 contract. Phase 5
+    reconciliation is complete. Phase 6 (specializations)
+    may now begin against the locked baseline.

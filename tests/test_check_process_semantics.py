@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "scripts" / "check_process_semantics.py"
@@ -77,8 +78,46 @@ def test_live_run_reports_conformance_status():
 
 
 def test_strict_mode_promotes_warnings_to_errors():
-    """--strict must return a non-zero exit when warnings exist."""
+    """--strict must return a non-zero exit when warnings exist.
+
+    The live catalog (post PR-9) is fully CONFORMANT with 0 errors
+    and 0 warnings, so --strict returns 0. The contract --strict
+    fails on non-conformant input -- is locked by the synthetic
+    fixture test below.
+    """
     result = _run(["--strict"])
-    # The current catalog carries legacy findings; --strict should fail.
-    assert result.returncode == 1, result.stdout + result.stderr
-    assert "warning" not in result.stdout.lower().split("conformant")[0]
+    # The live catalog is now CONFORMANT.
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "CONFORMANT" in result.stdout
+
+
+def test_strict_mode_fails_on_legacy_fixture(tmp_path):
+    """--strict must return non-zero when applied to a fixture
+    catalogue that still carries legacy findings (advisory
+    warnings), confirming the strict-mode machinery works."""
+    import shutil
+    # Copy the canonical catalog into a sandbox so we can mutate it
+    # without polluting the live tree.
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    # Pick one migrated record and reintroduce the legacy scalar
+    # `process_context` so --strict has something to flag.
+    legacy_file = next(
+        (sandbox / "entities/v1-alpha").glob("dea:process-customer-channel-*/dea:process-*.yaml")
+    )
+    data = yaml.safe_load(legacy_file.read_text())
+    # Drop the canonical context: block and reinstate the legacy
+    # scalar alongside a legacy process_audience to manufacture
+    # findings.
+    data.pop("context", None)
+    data["process_context"] = "dea:pc-cd-b"
+    data["process_audience"] = "customer-demand"
+    legacy_file.write_text(yaml.safe_dump(data, sort_keys=False))
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--strict", "--root", str(sandbox)],
+        capture_output=True, text=True, cwd=str(ROOT),
+    )
+    assert result.returncode != 0, (
+        "strict mode should fail on a legacy-bearing fixture: "
+        + result.stdout + result.stderr
+    )

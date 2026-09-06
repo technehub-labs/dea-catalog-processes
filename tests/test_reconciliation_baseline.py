@@ -75,13 +75,13 @@ def test_build_inventory_legacy_findings_present() -> None:
     with_no_context = sum(1 for p in procs
                           if "no-context-block" in p["legacy_findings"])
     # Phase 5 first tranche (cd-b + cd-c, PR-33): -4 records
-    # Phase 5 second tranche (cd-d + cd-im + cd-op, PR-7): -5 records
-    # Phase 5 third tranche (ge-b + ge-c + ge-d + ge-im, PR-8): -7 records
-    # 18 - 4 - 5 - 7 = 2 records still carry the legacy fields
-    # (the ge-op records; PR-9 next).
-    assert with_audience == 2
-    assert with_ctx_scalar == 2
-    assert with_no_context == 2
+    # Phase 5 second tranche (cd-d + cd-im + cd-op, PR-34): -5 records
+    # Phase 5 third tranche (ge-b + ge-c + ge-d + ge-im, PR-35): -7 records
+    # Phase 5 fourth tranche (ge-op, PR-9): -2 records
+    # All 18 records are now on the canonical contract.
+    assert with_audience == 0
+    assert with_ctx_scalar == 0
+    assert with_no_context == 0
 
 
 def test_baseline_has_sha256_for_every_record() -> None:

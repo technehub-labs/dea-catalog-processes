@@ -108,7 +108,7 @@ catalog entities (per CR-BP-03 §3: classification ≠ ontology).
 ## The Process Context reference
 
 The entry's `process_context` field references the Cell
-Charter at `contexts/v1-alpha/dea_pc-cd-op.yaml`. The Cell
+Charter at `contexts/v1-alpha/dea-pc-cd-op.yaml`. The Cell
 Charter's `processes` array references this entry back,
 forming a bidirectional reference (PC-008).
 
@@ -161,7 +161,7 @@ vocabulary.
 | Path | Purpose |
 |---|---|
 | [`entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`](../../entities/v1-alpha/dea_bp_manage-customer-relationship.yaml) | The canonical BP entry |
-| [`contexts/v1-alpha/dea_pc-cd-op.yaml`](../../contexts/v1-alpha/dea_pc-cd-op.yaml) | The Cell Charter (Process Context) |
+| [`contexts/v1-alpha/dea-pc-cd-op.yaml`](../../contexts/v1-alpha/dea-pc-cd-op.yaml) | The Cell Charter (Process Context) |
 | [`contributions/processes/dea_bp_manage-customer-relationship.yaml`](../../contributions/processes/dea_bp_manage-customer-relationship.yaml) | The contribution record |
 | [`change-requests/CR-BP-03C-sample-process-contribution.md`](../../change-requests/CR-BP-03C-sample-process-contribution.md) | The CR that landed the entry |
 

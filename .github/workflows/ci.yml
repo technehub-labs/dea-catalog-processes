@@ -179,13 +179,12 @@ jobs:
 
       - name: Run Process Semantics gate (CR-BP-14 S21; BP-SEM-001..012)
         if: steps.check.outputs.skip != 'true'
-        # Blocking until CR-BP-15 reconciliation gate passes; the
-        # CR-BP-14 S24 admission freeze anticipates these findings on
-        # the existing canonical population (legacy process_intent,
-        # legacy scalar process_context, missing canonical context:
-        # block, legacy process_audience). The validator records them
-        # for governance review; CR-BP-15-IMP Phase 8..10 reduces them.
-        run: python scripts/check_process_semantics.py --strict || true
+        # Blocking as of PR-9 (CR-BP-15-IMP Phase 5 closure). All 18
+        # canonical Business Process records now conform to the
+        # CR-BP-14 canonical contract; the disposition register is
+        # LOCKED. The validator is promoted from advisory to
+        # blocking so any future regression is caught at PR time.
+        run: python scripts/check_process_semantics.py --strict
 
       - name: Run Process Group gate (CR-BP-12)
         if: steps.check.outputs.skip != 'true'

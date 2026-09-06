@@ -6,6 +6,53 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 5 fourth tranche (ge-op) + Phase 5 closure
+
+The final two governance-existence operate records have been
+reconciled to the CR-BP-14 canonical contract. The disposition
+register is now LOCKED (18/18). **The CR-BP-15-IMP Phase 5 loop
+is complete.**
+
+- `entities/v1-alpha/dea:process-audit-policy-compliance/`
+  (ge-op): legacy `support` intent -> canonical `govern`
+  (audit-and-oversight is governance activity); audience-vs-context
+  high-risk flag resolved by removing `process_audience`
+  (canonical `context: [{ref: dea:pc-ge-op}]` replaces it);
+  serves toward `ecf:governanceAndExistence.operate`.
+- `entities/v1-alpha/dea:process-operate-governance-oversight/`
+  (ge-op): legacy `management` intent -> canonical `operate`;
+  same ge-op migration pattern.
+- `contexts/v1-alpha/dea_pc-cd-op.yaml` -> `dea-pc-cd-op.yaml`
+  (filename typo fixed; canonical id `dea:pc-cd-op` was always
+  correct inside the file). Updated 4 documentation references
+  (CR-BP-03C + CR-BP-12 + manage-customer-relationship.md +
+  CHANGELOG). The BP-SEM-008 context-reference-integrity check
+  now passes.
+- `reconciliation/diffs/phase-5-ge-op.yaml` (new): per-tranche
+  audit trail; 2 records touched; closure observations on the
+  audience-vs-context resolution and the filename correction.
+- `reconciliation/dispositions/register.yaml`: register_status
+  -> LOCKED; register_lock_progress records all 10 tranches and
+  18 locked records; 0 remaining.
+- `.github/workflows/ci.yml`: Process Semantics gate promoted
+  from advisory (`--strict || true`) to **blocking** (`--strict`).
+  Any future regression on the canonical CR-BP-14 contract is
+  caught at PR time.
+- `tests/test_reconciliation_baseline.py`: legacy_findings_present
+  test updated to reflect the all-locked state (0 remaining,
+  not 2).
+- `tests/test_apply_phase_5_tranche.py`: register_lock_progress
+  test now asserts the LOCKED status of the disposition register
+  and the 18-of-18 lock progress.
+- `tests/test_check_process_semantics.py`: live --strict test
+  updated to assert CONFORMANT (0 errors, 0 warnings) on the
+  post-Phase-5 catalogue. Added `test_strict_mode_fails_on_
+  legacy_fixture` to lock the strict-mode machinery against a
+  synthetic legacy-bearing sandbox.
+
+BP-SEM live verdict: **0 errors, 0 warnings: CONFORMANT**
+for the first time since CR-BP-14 S21 was introduced.
+
 ### CR-BP-15-IMP Phase 5 third tranche (ge-b + ge-c + ge-d + ge-im)
 
 Seven governance records have been reconciled to the CR-BP-14
@@ -549,7 +596,7 @@ the machinery:
 - `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`
   (the canonical BP entry; first entry in the catalog;
   id `dea:process-manage-customer-relationship`).
-- `contexts/v1-alpha/dea_pc-cd-op.yaml` (the Cell Charter for
+- `contexts/v1-alpha/dea-pc-cd-op.yaml` (the Cell Charter for
   CustomerAndDemand × Operate; first Cell Charter in the
   catalog).
 - `contributions/processes/dea_bp_manage-customer-relationship.yaml`
