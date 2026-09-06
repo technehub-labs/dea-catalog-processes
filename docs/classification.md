@@ -1,11 +1,12 @@
 # Process Classification
 
-**CR-BP-03 §2.2, §7.**
+**CR-BP-03 §2.2, §7; CR-BP-14 §10, §11, §17.**
 
-This document captures the **4-axis classification** that
-CR-BP-03 introduces. Each axis answers a different question;
-conflating them is the historical source of much process-catalog
-confusion.
+This document captures the **classification narrative** that CR-BP-03
+introduces and that CR-BP-14 §10 / §11 formalizes: Process Intent and
+Process Classification are **formally distinct dimensions**, and
+identical tokens across the two vocabularies are a lexical
+coincidence, not a semantic equivalence (BP-SEM-011).
 
 ## CR-BP-14 semantic reconciliation (Phase 1 status)
 
@@ -69,20 +70,20 @@ this section, this section and the CR govern.
 
 ## Axis 1: Intent (existing; preserved)
 
-`process_intent` describes **what the process is doing** — the
+`process_intent` describes **what the process is doing**: the
 nature of the work. The vocabulary is preserved from CR-BP-01:
 
-- `operational` — the process performs direct work (delivers a
+- `operational`: the process performs direct work (delivers a
   service, processes a transaction, runs an operation).
-- `support` — the process provides internal support (HR, IT,
+- `support`: the process provides internal support (HR, IT,
   facilities) to enable other processes.
-- `management` — the process plans, monitors, or controls other
+- `management`: the process plans, monitors, or controls other
   processes or resources.
 
 ## Axis 2: Type (new; CR-BP-03)
 
 `process_type` describes **where the process sits in the
-enterprise process landscape** — the 5-component classification
+enterprise process landscape**: the 5-component classification
 (Mintzberg). The vocabulary is at
 [`classifications/process-types.yaml`](../../classifications/process-types.yaml):
 
@@ -102,7 +103,7 @@ entity remains `dea:BusinessProcess` regardless of `process_type`.
 ## Axis 3: Specialization (new; CR-BP-03)
 
 `process_specialization` describes **what this process is a
-specialization of** — the inheritance / pattern-based refinement
+specialization of**: the inheritance / pattern-based refinement
 hierarchy. The vocabulary is at
 [`classifications/process-specializations.yaml`](../../classifications/process-specializations.yaml).
 
@@ -175,9 +176,15 @@ the semantic entity remains `dea:BusinessProcess`.
 
 ## See also
 
-- [`docs/architecture.md`](architecture.md) — the structural architecture
-- [`docs/identity.md`](identity.md) — how a process is identified
-- [`docs/relandscape.md`](relandscape.md) — how reclassification is surfaced
-- [`classifications/process-types.yaml`](../../classifications/process-types.yaml)
-- [`classifications/process-specializations.yaml`](../../classifications/process-specializations.yaml)
-- [`change-requests/CR-BP-03-business-process-architecture.md`](../../change-requests/CR-BP-03-business-process-architecture.md) §2.2, §7
+- [`docs/semantic-contract.md`](semantic-contract.md): the CR-BP-14
+  semantic constitution; the Intent vs Classification separation is
+  normative there
+- [`docs/architecture.md`](architecture.md): the structural architecture
+- [`docs/identity.md`](identity.md): the process-identity contract
+- [`docs/relandscape.md`](relandscape.md): the contribution-driven re-landscape mechanism
+- [`classifications/process-types.yaml`](../classifications/process-types.yaml)
+- [`classifications/process-intents.yaml`](../classifications/process-intents.yaml):
+  canonical Process Intent vocabulary (CR-BP-14 §9.2)
+- [`classifications/process-specializations.yaml`](../classifications/process-specializations.yaml)
+- [`change-requests/CR-BP-03-business-process-architecture.md`](../change-requests/CR-BP-03-business-process-architecture.md) §2.2, §7
+- [`change-requests/CR-BP-14-process-semantic-reconciliation.md`](../change-requests/CR-BP-14-process-semantic-reconciliation.md) §9, §10, §11

@@ -1,12 +1,27 @@
 # Process Architecture
 
-**CR-BP-03 §1, §4, §5, §6, §7, §8, §10.**
+**CR-BP-03 §1, §4, §5, §6, §7, §8, §10; CR-BP-14 §4, §5, §6, §7, §8, §13.**
 
-This document captures the Business Process architecture
-established by CR-BP-03. The catalog's primary subject is the
-**L2 Business Process** (`dea:BusinessProcess`); the L0/L1 levels
-are conceptual and live in this document + `README.md` (they are
-**not** separate top-level directories).
+This document captures the Business Process architecture established by
+CR-BP-03 and reconciled by CR-BP-14. The catalog's primary subject is
+the **L2 Business Process** (`dea:BusinessProcess`), a Core
+specialization of the abstract OpenDEA Process kernel `dea:Process`
+(CR-MM-PROC-01). The L0/L1 levels are conceptual and live in this
+document + `README.md`; they are **not** separate top-level directories.
+
+## Orientation
+
+Two documents orient the reader before this detailed narrative:
+
+- [`docs/semantic-contract.md`](semantic-contract.md): what a Business
+  Process record means; the six characterization dimensions and the
+  separations that are always true (the CR-BP-14 constitution).
+- [`docs/governance/reconciliation-programme.md`](governance/reconciliation-programme.md):
+  the closed governance loop; the CR lineage; the reconciliation
+  dispositions; the conformance levels.
+
+The CR-BP-14 semantic contract governs this document. Where earlier
+prose conflicts with CR-BP-14, the CR governs.
 
 ## Decomposition
 
@@ -35,37 +50,50 @@ ECF Domain × Lifecycle Stage
 
 ## Process Context
 
-Established by CR-BP-02. Represents `ECF Domain × Lifecycle Stage`
-and provides the semantic boundary in which processes are
-discovered, organized, and validated. It is **not** itself a
-Business Process. The catalog carries Process Context entries at
-`contexts/v1/` (currently `v1-alpha/` until the matrix is
-populated per CR-BP-02 §22).
+Established by CR-BP-02 and formalized by CR-BP-14 §5: represents
+`ECF Domain × Lifecycle Stage` and provides the semantic boundary in
+which processes are discovered, organized, and validated. It is
+**not** itself a Business Process. The catalog carries Process Context
+entries at `contexts/v1-alpha/` (currently `v1-alpha/` until the matrix
+is populated per CR-BP-02 §22).
+
+A Process Context is not itself: a Business Process, a Process Group,
+a Business Function, a Business Capability, a process classification
+or a process intent. An ECF intersection does not automatically
+represent a business process. The catalog enforces:
+
+> ECF provides context; Process Architecture provides process structure.
 
 ## L0 Process Scope
 
-The highest process-architecture scope beneath Process Context.
-Establishes the bounded area of process coverage. It is a
-**catalog topology construct** — not currently a new normative
-metamodel entity. L0 captures "the area of work" within a context.
+The highest catalog topology construct within a Process Context. It
+answers: what coherent enterprise responsibility is being organized
+within this context (CR-BP-14 §6)? Process Scope SHALL establish a
+stable semantic boundary, organize related process responsibilities,
+avoid sibling overlap, and provide a basis for Process Group
+decomposition. Process Scope is not itself a Business Process.
 
-Example (illustrative): within the Process Context
-`dea:pc-cd-op` (CustomerAndDemand × Operate), an L0 Process Scope
-might be "Customer Onboarding" (covering the area of bringing new
-customers into the operating relationship).
+Example (illustrative): within the Process Context `dea:pc-cd-op`
+(CustomerAndDemand × Operate), an L0 Process Scope might be "Customer
+Onboarding" (covering the area of bringing new customers into the
+operating relationship).
 
 ## L1 Process Group
 
-A coherent grouping of Business Processes within a Process Scope.
-A catalog topology construct. L1 captures "a coherent set of
-processes that work together to deliver a coherent chunk of
-value."
+A coherent grouping of Business Processes within a Process Scope
+(CR-BP-14 §7). A Process Group organizes related process
+responsibilities that share a meaningful functional or operational
+relationship. It SHALL have a coherent grouping rationale, a distinct
+boundary, one or more lower-level process responsibilities, and
+support for systematic decomposition. Process Group is NOT
+equivalent to Business Function, Business Capability, Process Intent,
+Process Classification or Business Process. The catalog maintains
+Process Group as a catalog construct; it is not an OpenDEA metamodel
+entity.
 
-**Process Group is NOT equivalent to Business Function.** A
-Business Function is an OpenDEA semantic concept concerned with
-organizational grouping of capabilities and ownership. Process
-Group is concerned with organizing processes. They answer
-different questions and live at different modeling concerns.
+The containment direction is `L1 group --composes--> L2 process`; the
+inverse `part-of` view is generated at query time (see CR-BP-12
+PG-004/PG-005).
 
 ## L2 Business Process
 
@@ -190,17 +218,17 @@ and target_id to the catalog's process id namespace
 
 Three legacy fields are addressed by CR-BP-03A:
 
-1. **`parent_process`** — REMOVED. This was a catalog invention
+1. **`parent_process`**: REMOVED. This was a catalog invention
    from CR-BP-01 (the wrong-premise implementation, since
    reverted). The metamodel's `process.json` does not declare
    it. The migration validator
    (`scripts/check_legacy_migration.py`; BP-MIG-001) surfaces
    any entry that declares it and emits a migration
    recommendation.
-2. **`child_processes`** — REMOVED. Same as `parent_process`.
+2. **`child_processes`**: REMOVED. Same as `parent_process`.
    The migration validator (BP-MIG-002) surfaces any entry that
    declares it.
-3. **`capabilities_delivered`** — Soft-deprecated. The metamodel
+3. **`capabilities_delivered`**: Soft-deprecated. The metamodel
    still declares this as a simple array of strings (a
    backward-compat shim). CR-BP-03A keeps the field in the
    schema but marks it as soft-deprecated. The canonical form
@@ -216,9 +244,19 @@ auto-rewrite.
 
 ## See also
 
-- [`README.md`](../../README.md) — the architectural statement
-- [`docs/classification.md`](classification.md) — the 4-axis classification
-- [`docs/identity.md`](identity.md) — the process-identity contract
-- [`docs/relandscape.md`](relandscape.md) — the contribution-driven re-landscape mechanism
-- [`change-requests/CR-BP-03-business-process-architecture.md`](../../change-requests/CR-BP-03-business-process-architecture.md)
-- [`change-requests/CR-BP-03A-legacy-migration.md`](../../change-requests/CR-BP-03A-legacy-migration.md)
+- [`README.md`](../README.md): the architectural statement
+- [`docs/semantic-contract.md`](semantic-contract.md): the CR-BP-14
+  semantic constitution
+- [`docs/classification.md`](classification.md): the classification
+  narrative (4 axes; CR-BP-14 §11 Intent != Classification)
+- [`docs/context.md`](context.md): Process Context as canonical
+  placement (CR-BP-14 §13)
+- [`docs/specialization.md`](specialization.md): specialization as
+  semantic refinement (CR-BP-14 §12)
+- [`docs/identity.md`](identity.md): the process-identity contract
+- [`docs/relandscape.md`](relandscape.md): the contribution-driven re-landscape mechanism
+- [`docs/governance/reconciliation-programme.md`](governance/reconciliation-programme.md)
+ : the closed governance loop (CR-BP-15, CR-BP-16)
+- [`change-requests/CR-BP-03-business-process-architecture.md`](../change-requests/CR-BP-03-business-process-architecture.md)
+- [`change-requests/CR-BP-03A-legacy-migration.md`](../change-requests/CR-BP-03A-legacy-migration.md)
+- [`change-requests/CR-BP-14-process-semantic-reconciliation.md`](../change-requests/CR-BP-14-process-semantic-reconciliation.md)

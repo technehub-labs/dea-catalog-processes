@@ -6,6 +6,47 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-14 Phase 4: Documentation reconciliation (Implemented)
+
+CR-BP-14 §22 is now satisfied. The repository prose reflects the
+CR-BP-14 semantic contract; legacy vocabulary references are
+reconciled to the canonical forms or marked historical; no
+superseded semantic contract remains presented as normative.
+
+- `docs/architecture.md`: oriented (links to the semantic-contract
+  and governance documents); L0/L1/L2 narratives rewritten to the
+  CR-BP-14 §6 / §7 definitions; Process Group confirmed as catalog-
+  owned, not a metamodel entity; See-also expanded.
+- `docs/identity.md`: identity-independence clause added (CR-BP-14
+  §15); BP-ARC-ID-004 cross-check note clarifies its distinction from
+  BP-SEM-003/004; See-also expanded; broken `../../` link defect
+  swept.
+- `docs/classification.md`: front matter records the CR-BP-14 §10 /
+  §11 formal separation; the canonical `classifications/process-intents.yaml`
+  link is now correct (the pre-existing `../../classifications` link
+  defect is swept); See-also expanded.
+- `docs/relandscape.md`: See-also expanded with the semantic-
+  contract document and the BP-SEM validator; CR-BP-14 §24
+  admission-freeze reference added; broken `../../` link defect
+  swept.
+- `docs/context.md` (new): Process Context as canonical placement
+  (CR-BP-14 §5, §13, §20); the canonical `context:` block;
+  multiplicity rule; the Process Context register at
+  `contexts/v1-alpha/`; relationship to BP-SEM-007 and BP-SEM-008.
+- `docs/specialization.md` (new): specialization as semantic
+  refinement (CR-BP-14 §12); approved specialization bases;
+  specialization vs decomposition; canonical form; identity
+  independence (BP-SEM-009).
+- `README.md` §2 (Process Architecture): the four-axes table is
+  replaced with the CR-BP-14 axes (Intent / Classification /
+  Specialization / Context); the obsolete `Audience` axis is replaced
+  by the canonical `context:` block; §8 No Breaking Changes explains
+  the migration-period field aliasing.
+
+Register close-out: **CR-BP-14 -> Implemented** (the constitutional
+phase is complete; CR-BP-15-IMP owns the existing-population
+migration; CR-BP-16 owns the permanent gate).
+
 ### CR-BP-14 Phase 3: BP-SEM-001..012 Process Semantics gate
 
 - `scripts/check_process_semantics.py` (new): implements BP-SEM-001
