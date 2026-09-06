@@ -1,0 +1,193 @@
+# Disposition Schema v1 (CR-BP-15-IMP Phase 3)
+#
+# This file is the canonical schema for the reconciliation disposition
+# register (reconciliation/dispositions/register.yaml). Every per-record
+# disposition decision MUST conform to one of the entries below.
+#
+# Authoritative reference: CR-BP-15 /28 (the ten dispositions);
+# CR-BP-15-IMP /3.
+#
+# Schema is intentionally simple so the validator (scripts/check_dispositions.py)
+# can lock the shape without a full JSON Schema dependency.
+
+schema_version: 1
+schema_at: 2026-09-06
+
+# The nine canonical dispositions from CR-BP-15 /28. The schema
+# mirrors the disposition tree:
+#
+#     Existing Process Entries
+#             |
+#             v
+#     Semantic Assessment
+#             |
+#     +-------+-------+--------+-----------+-------+-------+------+------+
+#     |       |       |        |           |       |       |      |      |
+#   RETAIN  RECLAS-  RENAME  SPECIALIZE  MERGE   SPLIT   MOVE  DEFER  RETIRE
+#                    SIFY
+#
+# Where each leaf specifies what happens to the record during the
+# tranche that owns the disposition.
+
+dispositions:
+  - id: RETAIN
+    summary: The entry is kept as-is; no semantic change.
+    fields_required: [record_id]
+    fields_optional: [note, evidence]
+    target_id_required: false
+    rationale_default: |
+      The record's current semantic shape (identity, intent,
+      classification, context, specialization) is consistent with
+      CR-BP-14. The legacy fields remain readable during the
+      migration period but the canonical form is already
+      conformant.
+
+  - id: RECLASSIFY
+    summary: |
+      The record keeps its identity but its intent, classification,
+      context or specialization is reassigned under the CR-BP-14
+      canonical vocabularies.
+    fields_required: [record_id, changes]
+    fields_optional: [note, evidence]
+    target_id_required: false
+    rationale_default: |
+      The record's identity is sound, but one or more semantic
+      axes (intent / classification / context / specialization)
+      need to migrate from a legacy vocabulary to the canonical
+      one. RECLASSIFY does not change the record's id or name.
+
+  - id: RENAME
+    summary: |
+      The record's `name` and `identity.outcome_statement` are
+      updated to align with the naming contract (CR-BP-14 /16)
+      or to remove a lexical collision.
+    fields_required: [record_id, new_name]
+    fields_optional: [new_outcome_statement, note, evidence]
+    target_id_required: false
+    rationale_default: |
+      The record's semantic shape is sound, but the name (or the
+      outcome statement) does not conform to the
+      <Verb> <Object> [<Scope>] contract or otherwise carries
+      semantic debt. RENAME does not change the record's id.
+
+  - id: SPECIALIZE
+    summary: |
+      The record becomes a specialization of another (more general)
+      record. The parent reference is recorded; the parent record
+      must itself be RETAIN'd or RECLASSIFY'd into the canonical
+      vocabulary.
+    fields_required: [record_id, parent_id, specialization_basis]
+    fields_optional: [note, evidence]
+    target_id_required: true
+    rationale_default: |
+      The record refines a more general process along an approved
+      basis (by-customer-segment, by-geography, etc.). The
+      canonical form introduces the `process_specialization`
+      relationship and the `specialization_pattern`.
+
+  - id: MERGE
+    summary: |
+      The record is merged into another record; its semantic
+      coverage is folded into the target record's coverage and the
+      record is then retired.
+    fields_required: [record_id, target_id]
+    fields_optional: [note, evidence]
+    target_id_required: true
+    rationale_default: |
+      Two records overlap semantically; the catalogue keeps one
+      and folds the other's coverage into it. The merged record's
+      id and content are folded into the target; the original is
+      marked RETIRED (see disposition RETIRE).
+
+  - id: SPLIT
+    summary: |
+      The record is decomposed into two or more records; each
+      target record receives a coherent subset of the original
+      record's semantic coverage.
+    fields_required: [record_id, target_ids]
+    fields_optional: [note, evidence]
+    target_id_required: true
+    rationale_default: |
+      The record's coverage crosses the MECE boundary; the
+      catalogue introduces one or more coherent successor records
+      and retires the original. Each target_id corresponds to a
+      new or existing record.
+
+  - id: MOVE
+    summary: |
+      The record moves to a different Process Context (L0 boundary
+      or ECF cell). The `context:` block is updated; the record's
+      id, name and semantic shape remain.
+    fields_required: [record_id, target_context_ref]
+    fields_optional: [note, evidence]
+    target_id_required: false
+    rationale_default: |
+      The record's enterprise responsibility belongs in a
+      different ECF Domain x Lifecycle Stage than where it was
+      initially placed. MOVE updates the canonical `context:`
+      block (CR-BP-14 /13).
+
+  - id: DEFER
+    summary: |
+      The disposition cannot be determined from current evidence;
+      the record remains in the catalogue untouched, but its
+      reconciliation is recorded as outstanding.
+    fields_required: [record_id]
+    fields_optional: [reason, evidence, review_after]
+    target_id_required: false
+    rationale_default: |
+      The reconciliation needs additional evidence, sign-off from
+      a domain stakeholder, or the resolution of a dependent
+      disposition before it can proceed. DEFER is never a
+      permanent state; every DEFER record carries a `review_after`
+      date or a `reason` that names the gating dependency.
+
+  - id: RETIRE
+    summary: |
+      The record is removed from the canonical catalogue; its
+      semantic coverage is absorbed by another record (via MERGE
+      or SPECIALIZE) or is judged redundant (out of scope, off-
+      strategy, or superseded by a more general record).
+    fields_required: [record_id, reason]
+    fields_optional: [note, evidence, absorbed_into]
+    target_id_required: false
+    rationale_default: |
+      The record no longer represents a coherent unit of
+      enterprise work; its identity is judged redundant with the
+      coverage of another record (named in `absorbed_into`) or
+      outside the catalogue's scope.
+
+# Allowed values for the `changes` field on RECLASSIFY dispositions.
+# Each entry names a CR-BP-14 semantic axis and the canonical target
+# value (the legacy value is recorded in `from` for the audit trail).
+reclassify_axes:
+  - axis: process_intent
+    legacy_values: [operational, support, management]
+    canonical_values: [govern, manage, operate, deliver, support, develop, transform]
+  - axis: process_type
+    legacy_values: [core, management, support, strategic, standardization]
+    canonical_values: [core, management, support, strategic, standardization]
+  - axis: process_context
+    legacy_form: scalar_process_context_string
+    canonical_form: context_block_array
+  - axis: process_specialization
+    legacy_form: absent
+    canonical_form: list_of_parent_ids
+
+# Approved specialization bases (mirror of scripts/check_process_semantics.py).
+approved_specialization_bases:
+  - by-customer-segment
+  - by-geography
+  - by-product
+  - by-service
+  - by-channel
+  - by-regulatory-regime
+  - by-operating-model
+  - by-lifecycle-condition
+  - by-organizational-context
+
+# Per-axis canonical vocabulary reference (single source of truth).
+vocabulary_refs:
+  process_intent: classifications/process-intents.yaml
+  process_type: classifications/process-types.yaml
+  specialization_pattern: classifications/process-specializations.yaml
