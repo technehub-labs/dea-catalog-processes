@@ -1,0 +1,490 @@
+# Process Catalog Reconciliation Disposition Register (CR-BP-15-IMP Phase 3)
+#
+# This file records the per-record disposition decision for every
+# record in the canonical catalogue. The disposition schema lives at
+# reconciliation/dispositions/schema.yaml and is enforced by
+# scripts/check_dispositions.py.
+#
+# Authoritative reference: CR-BP-15 /28 (the ten dispositions);
+# CR-BP-15-IMP /3 (the disposition register); CR-BP-14 /17 (the
+# intent migration mapping).
+#
+# Status: PRELIMINARY. Dispositions recorded here are evidence-based
+# preliminary decisions. They will be LOCKED during CR-BP-15-IMP
+# Phases 5-7 (PR-6..9), at which point the dispositions become
+# authoritative for the per-tranche migrations.
+#
+# Records: 18 (Business Processes); 18 disposition entries.
+
+schema_version: 1
+schema_ref: reconciliation/dispositions/schema.yaml
+register_at: 2026-09-06
+register_status: PRELIMINARY
+register_lock_target: CR-BP-15-IMP Phase 5 (PR-6 onward)
+
+# Disposition summary by axis. Computed at register generation time.
+summary:
+  total_records: 18
+  by_disposition:
+    RETAIN: 0
+    RECLASSIFY: 18
+    RENAME: 0
+    SPECIALIZE: 0
+    MERGE: 0
+    SPLIT: 0
+    MOVE: 0
+    DEFER: 0
+    RETIRE: 0
+
+dispositions:
+
+  # ----- dea:pc-cd-b: customer-demand / build -----
+
+  - record_id: dea:process-customer-channel-and-acquisition-build
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: operational
+        to: operate
+      - axis: process_context
+        from: dea:pc-cd-b
+        to: dea:pc-cd-b   # unchanged context, migrate scalar -> block
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE        # legacy alias no longer needed once context: block in place
+    tranche: cd-b
+    rationale: |
+      The record's identity, name and process_type are sound. The
+      legacy `process_intent: operational` maps to the canonical
+      `operate` vocabulary (CR-BP-14 /17). The legacy scalar
+      `process_context` migrates to the canonical `context:` block
+      (CR-BP-14 /13, BP-SEM-007). The `process_audience` legacy
+      alias is removed because the canonical `context:` block
+      already declares the ECF Domain x Lifecycle placement.
+    evidence: |
+      CR-BP-14 /17 mapping table; CR-BP-14 /13 audience vs context
+      separation; the record's name ("Build Customer Acquisition
+      Channels") and outcome statement establish that the work is
+      operational in nature (operate).
+    note: null
+
+  - record_id: dea:process-demand-generation-build
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: operational
+        to: operate
+      - axis: process_context
+        from: dea:pc-cd-b
+        to: dea:pc-cd-b
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-b
+    rationale: |
+      Same disposition as dea:process-customer-channel-and-acquisition-build.
+      The record's identity, name ("Build Demand Generation
+      Programs") and outcome establish operational nature (operate).
+      The legacy scalar and audience migrate to the canonical
+      `context:` block.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement establishes that
+      the work performs recurring demand-generation activities.
+    note: null
+
+  # ----- dea:pc-cd-c: customer-demand / conceive -----
+
+  - record_id: dea:process-customer-strategy-conception
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-cd-c
+        to: dea:pc-cd-c
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-c
+    rationale: |
+      The record's name is "Develop Customer Strategy" (its display
+      name diverges from the slug but the record's outcome statement
+      describes strategy conception). Legacy intent "management"
+      maps to canonical `develop` because strategy conception is
+      purpose-oriented development (CR-BP-14 /17). The legacy
+      scalar and audience migrate to the canonical `context:` block.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement establishes that
+      the work creates and evolves the customer strategy.
+    note: |
+      The record's `name` field still reads "Develop Customer
+      Strategy"; the slug "customer-strategy-conception" is a
+      legacy artifact and is NOT a RENAME target (Phase 4).
+
+  - record_id: dea:process-market-and-demand-conception
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-cd-c
+        to: dea:pc-cd-c
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-c
+    rationale: |
+      The record's display name "Develop Market Intelligence" and
+      its outcome statement establish that the work creates market
+      and demand intelligence (develop). Legacy "management" maps
+      to `develop`. Legacy scalar and audience migrate to the
+      canonical `context:` block.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement.
+    note: null
+
+  # ----- dea:pc-cd-d: customer-demand / design -----
+
+  - record_id: dea:process-customer-experience-design
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-d-cd-d
+        to: dea:pc-cd-d
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-d
+    rationale: |
+      The record's name is "Design Customer Experience" and the
+      outcome statement establishes that the work creates the
+      customer experience (develop). Legacy "management" maps to
+      `develop`. The legacy scalar and audience migrate to the
+      canonical `context:` block.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement.
+    note: null
+
+  - record_id: dea:process-customer-journey-design
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: support
+        to: develop
+      - axis: process_context
+        from: dea:pc-cd-d
+        to: dea:pc-cd-d
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-d
+    rationale: |
+      The record's name "Design Customer Journey" and outcome
+      statement establish that the work creates the customer
+      journey (develop). Legacy "support" maps to `develop` here
+      because "support" was misapplied; the work is purpose-
+      oriented development. Legacy scalar and audience migrate to
+      the canonical `context:` block.
+    evidence: |
+      CR-BP-14 /17 mapping; the record's outcome statement
+      establishes that the work creates and evolves the customer
+      journey artifacts.
+    note: null
+
+  - record_id: dea:process-demand-design
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-cd-d
+        to: dea:pc-cd-d
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-d
+    rationale: |
+      The record's name "Design Demand Model" and outcome
+      statement establish that the work creates the demand model
+      (develop). Legacy "management" maps to `develop`.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement.
+    note: null
+
+  # ----- dea:pc-cd-im: customer-demand / improve -----
+
+  - record_id: dea:process-customer-insight-and-retention
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: operate
+      - axis: process_context
+        from: dea:pc-cd-im
+        to: dea:pc-cd-im
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-im
+    rationale: |
+      The record's display name "Operate Customer Retention
+      Programs" and outcome statement establish that the work
+      performs recurring customer retention activities (operate).
+      Legacy "management" maps to `operate` here.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement.
+    note: null
+
+  # ----- dea:pc-cd-op: customer-demand / operate -----
+
+  - record_id: dea:process-manage-customer-relationship
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: manage
+      - axis: process_context
+        from: dea:pc-cd-op
+        to: dea:pc-cd-op
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: cd-op
+    rationale: |
+      The record's name "Manage Customer Relationship" and outcome
+      statement establish that the work plans, coordinates and
+      controls customer relationships (manage). Legacy "management"
+      maps to canonical `manage` (no actual change in token, but
+      the canonical vocabulary is recorded).
+    evidence: |
+      CR-BP-14 /9.2; CR-BP-14 /17.
+    note: null
+
+  # ----- dea:pc-ge-b: governance / build -----
+
+  - record_id: dea:process-codify-charters-and-policies
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: operational
+        to: operate
+      - axis: process_context
+        from: dea:pc-ge-b
+        to: dea:pc-ge-b
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-b
+    rationale: |
+      The record's name "Codify Charters and Policies" and
+      outcome statement establish that the work performs
+      recurring charter and policy codification activities
+      (operate). Legacy "operational" maps to `operate`. Note:
+      the record's `process_audience` was originally
+      `customer-demand` (a 13b generator artifact); the
+      canonical `context:` block is `dea:pc-ge-b` (governance /
+      build), so the legacy audience is replaced by the
+      canonical context.
+    evidence: |
+      CR-BP-14 /17; the canonical context is governance /
+      build (CR-BP-02 register); the record's outcome statement
+      establishes that the work codifies governance artefacts.
+    note: |
+      Audience-vs-context mismatch resolved by the canonical
+      `context:` block (CR-BP-14 /13).
+
+  - record_id: dea:process-establish-governance-bodies
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: operational
+        to: operate
+      - axis: process_context
+        from: dea:pc-ge-b
+        to: dea:pc-ge-b
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-b
+    rationale: |
+      The record's name "Establish Governance Bodies" and
+      outcome statement establish that the work performs
+      recurring governance-body establishment activities
+      (operate). Legacy "operational" maps to `operate`. Same
+      audience-vs-context mismatch as dea:process-codify-charters-and-policies.
+    evidence: |
+      CR-BP-14 /17; CR-BP-02 governance / build register.
+    note: null
+
+  # ----- dea:pc-ge-c: governance / conceive -----
+
+  - record_id: dea:process-develop-governance-strategy
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-ge-c
+        to: dea:pc-ge-c
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-c
+    rationale: |
+      The record's name "Develop Governance Strategy" and
+      outcome statement establish that the work creates and
+      evolves the governance strategy (develop). Legacy
+      "management" maps to `develop`.
+    evidence: |
+      CR-BP-14 /17.
+    note: null
+
+  - record_id: dea:process-initiate-policy-and-charter
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: manage
+      - axis: process_context
+        from: dea:pc-ge-c
+        to: dea:pc-ge-c
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-c
+    rationale: |
+      The record's name "Initiate Policy and Charter" and
+      outcome statement establish that the work initiates
+      (plans, coordinates) policies and charters (manage).
+      Legacy "management" maps to `manage`.
+    evidence: |
+      CR-BP-14 /17.
+    note: null
+
+  # ----- dea:pc-ge-d: governance / design -----
+
+  - record_id: dea:process-design-governance-system
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-ge-d
+        to: dea:pc-ge-d
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-d
+    rationale: |
+      The record's name "Design Governance System" and outcome
+      statement establish that the work creates the governance
+      system (develop). Legacy "management" maps to `develop`.
+    evidence: |
+      CR-BP-14 /17.
+    note: null
+
+  - record_id: dea:process-design-policies-and-controls
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: develop
+      - axis: process_context
+        from: dea:pc-ge-d
+        to: dea:pc-ge-d
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-d
+    rationale: |
+      The record's name "Design Policies and Controls" and
+      outcome statement establish that the work creates
+      policies and controls (develop). Legacy "management" maps
+      to `develop`.
+    evidence: |
+      CR-BP-14 /17.
+    note: null
+
+  # ----- dea:pc-ge-im: governance / improve -----
+
+  - record_id: dea:process-review-governance-effectiveness
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: govern
+      - axis: process_context
+        from: dea:pc-ge-im
+        to: dea:pc-ge-im
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-im
+    rationale: |
+      The record's name "Review Governance Effectiveness" and
+      outcome statement establish that the work governs
+      (assures, evaluates) governance effectiveness (govern).
+      Legacy "management" maps to `govern` per CR-BP-14 /17
+      (governance is the defining purpose, not management).
+    evidence: |
+      CR-BP-14 /17 example: "Govern Enterprise Risk" should be
+      `govern`, not `manage`, when governance is the defining
+      purpose.
+    note: null
+
+  # ----- dea:pc-ge-op: governance / operate -----
+
+  - record_id: dea:process-audit-policy-compliance
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: support
+        to: govern
+      - axis: process_context
+        from: dea:pc-ge-op
+        to: dea:pc-ge-op
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-op
+    rationale: |
+      The record's name "Audit Policy Compliance" and outcome
+      statement establish that the work governs (assures,
+      enforces) policy compliance (govern). Legacy "support"
+      maps to `govern` per CR-BP-14 /17 (audit is a governing
+      activity). Same audience-vs-context mismatch as the ge-b
+      records.
+    evidence: |
+      CR-BP-14 /17; the record's outcome statement establishes
+      audit, compliance and assurance responsibilities.
+    note: null
+
+  - record_id: dea:process-operate-governance-oversight
+    disposition: RECLASSIFY
+    changes:
+      - axis: process_intent
+        from: management
+        to: operate
+      - axis: process_context
+        from: dea:pc-ge-op
+        to: dea:pc-ge-op
+      - axis: process_audience
+        from: customer-demand
+        to: REMOVE
+    tranche: ge-op
+    rationale: |
+      The record's name "Operate Governance Oversight" and
+      outcome statement establish that the work performs
+      recurring governance oversight activities (operate).
+      Legacy "management" maps to `operate` here.
+    evidence: |
+      CR-BP-14 /17.
+    note: null

@@ -170,6 +170,13 @@ jobs:
         # entries.
         run: python scripts/check_struct.py --strict || true
 
+      - name: Disposition register (CR-BP-15-IMP Phase 3-4)
+        if: steps.check.outputs.skip != 'true'
+        # Validates reconciliation/dispositions/register.yaml +
+        # reconciliation/tranches/plan.yaml against the inventory.
+        # Advisory until the register is LOCKED in Phase 5.
+        run: python scripts/check_dispositions.py --strict || true
+
       - name: Run Process Semantics gate (CR-BP-14 S21; BP-SEM-001..012)
         if: steps.check.outputs.skip != 'true'
         # Blocking until CR-BP-15 reconciliation gate passes; the

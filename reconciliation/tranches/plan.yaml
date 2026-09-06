@@ -1,0 +1,236 @@
+# Process Catalog Reconciliation Tranche Plan (CR-BP-15-IMP Phase 4)
+#
+# This file maps every record in the canonical catalogue to a
+# reconciliation tranche. Each tranche is a Process Context (ECF
+# Domain x Lifecycle Stage); tranches are independent and may be
+# executed in any order. The plan is the sequencing input for
+# CR-BP-15-IMP Phases 5-7 (PR-6..9).
+#
+# Authoritative reference: CR-BP-15-IMP /4; CR-BP-15 /28; CR-BP-02
+# (Process Context register).
+#
+# Status: PRELIMINARY. The plan will be locked when the disposition
+# register is locked (CR-BP-15-IMP Phase 5 / PR-6 onward).
+
+schema_version: 1
+plan_at: 2026-09-06
+plan_status: PRELIMINARY
+plan_lock_target: CR-BP-15-IMP Phase 5 (PR-6 onward)
+
+# Ordering rationale: tranches are ordered by (ECF Domain,
+# Lifecycle Stage) lexicographically. cd-* runs first (5 tranches),
+# then ge-* (5 tranches). Independent; any order is acceptable.
+ordering_rationale: |
+  The 10 Process Contexts map to the ECF matrix
+  (CR-ECF-CG-004). Tranches are independent; the canonical order
+  groups by ECF Domain (cd = customer-demand; ge = governance)
+  and within domain by Lifecycle Stage (b < c < d < im < op).
+  This ordering is a presentation convention; the per-tranche
+  migrations (CR-BP-15-IMP Phases 5-7) MAY be executed in any
+  order or in parallel.
+
+# Summary table (computed at plan generation).
+summary:
+  total_tranches: 10
+  total_records: 18
+  records_per_tranche:
+    cd-b: 2
+    cd-c: 2
+    cd-d: 3
+    cd-im: 1
+    cd-op: 1
+    ge-b: 2
+    ge-c: 2
+    ge-d: 2
+    ge-im: 1
+    ge-op: 2
+
+tranches:
+
+  - tranche_id: cd-b
+    context_ref: dea:pc-cd-b
+    context_name: customer-demand / build
+    owner: TBD (CR-BP-15-IMP Phase 5 sign-off)
+    risk: low
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-6 (first CR-BP-15-IMP Phase 5 PR)
+    records:
+      - dea:process-customer-channel-and-acquisition-build
+      - dea:process-demand-generation-build
+    rationale: |
+      The two records in this tranche share a clean RECLASSIFY
+      pattern: legacy "operational" intent -> canonical "operate";
+      legacy scalar `process_context` -> canonical `context:` block;
+      legacy `process_audience` removed (CR-BP-14 /13). No identity
+      changes; no renames; no specialization. The migration is
+      text-only and self-contained.
+
+  - tranche_id: cd-c
+    context_ref: dea:pc-cd-c
+    context_name: customer-demand / conceive
+    owner: TBD
+    risk: medium
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-6
+    records:
+      - dea:process-customer-strategy-conception
+      - dea:process-market-and-demand-conception
+    rationale: |
+      The two records' display names already use "Develop" / market-
+      intelligence verbs, so RECLASSIFY primarily changes the intent
+      vocabulary (management -> develop) and the context block.
+      No identity changes; the slug "customer-strategy-conception"
+      is a legacy artifact NOT a RENAME target (Phase 4).
+
+  - tranche_id: cd-d
+    context_ref: dea:pc-cd-d
+    context_name: customer-demand / design
+    owner: TBD
+    risk: medium
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-7
+    records:
+      - dea:process-customer-experience-design
+      - dea:process-customer-journey-design
+      - dea:process-demand-design
+    rationale: |
+      Three design records; all RECLASSIFY. One record
+      (dea:process-customer-experience-design) carries a typo in
+      its `process_context` scalar ("dea:pc-d-cd-d" instead of
+      "dea:pc-cd-d"); the disposition register records the
+      correction. The RECLASSIFY pattern is identical to cd-b.
+
+  - tranche_id: cd-im
+    context_ref: dea:pc-cd-im
+    context_name: customer-demand / improve
+    owner: TBD
+    risk: low
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-7
+    records:
+      - dea:process-customer-insight-and-retention
+    rationale: |
+      Single record; clean RECLASSIFY. Legacy "management" intent
+      -> canonical "operate" (the record's display name is
+      "Operate Customer Retention Programs").
+
+  - tranche_id: cd-op
+    context_ref: dea:pc-cd-op
+    context_name: customer-demand / operate
+    owner: TBD
+    risk: low
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-7
+    records:
+      - dea:process-manage-customer-relationship
+    rationale: |
+      Single record; clean RECLASSIFY. The record's identity
+      ("Manage Customer Relationship") and intent ("manage") are
+      already canonical; the migration is the `context:` block
+      and the legacy `process_audience` removal.
+
+  - tranche_id: ge-b
+    context_ref: dea:pc-ge-b
+    context_name: governance / build
+    owner: TBD
+    risk: high
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-8
+    records:
+      - dea:process-codify-charters-and-policies
+      - dea:process-establish-governance-bodies
+    rationale: |
+      The two records carry a 13b-generator artifact
+      (`process_audience: customer-demand`) that contradicts their
+      canonical context (`dea:pc-ge-b` = governance / build). The
+      RECLASSIFY migrates the legacy audience to the canonical
+      `context:` block and resolves the contradiction.
+      High-risk tranche: this is the first tranche that changes
+      the audience-vs-context relationship in a visible way; it
+      MUST be reviewed against the canonical governance register
+      before merge (CR-BP-15 /7 governance gate).
+
+  - tranche_id: ge-c
+    context_ref: dea:pc-ge-c
+    context_name: governance / conceive
+    owner: TBD
+    risk: medium
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-8
+    records:
+      - dea:process-develop-governance-strategy
+      - dea:process-initiate-policy-and-charter
+    rationale: |
+      Two records; both RECLASSIFY. Same audience-vs-context
+      contradiction as ge-b; the canonical context block
+      resolves it. No identity changes.
+
+  - tranche_id: ge-d
+    context_ref: dea:pc-ge-d
+    context_name: governance / design
+    owner: TBD
+    risk: medium
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-8
+    records:
+      - dea:process-design-governance-system
+      - dea:process-design-policies-and-controls
+    rationale: |
+      Two records; both RECLASSIFY. Same audience-vs-context
+      contradiction as ge-b; the canonical context block
+      resolves it. No identity changes.
+
+  - tranche_id: ge-im
+    context_ref: dea:pc-ge-im
+    context_name: governance / improve
+    owner: TBD
+    risk: low
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-8
+    records:
+      - dea:process-review-governance-effectiveness
+    rationale: |
+      Single record; clean RECLASSIFY. Legacy "management" intent
+      -> canonical "govern" (the record's name is "Review
+      Governance Effectiveness", review is a governing activity
+      per CR-BP-14 /17).
+
+  - tranche_id: ge-op
+    context_ref: dea:pc-ge-op
+    context_name: governance / operate
+    owner: TBD
+    risk: high
+    expected_dispositions: [RECLASSIFY]
+    pr_target: PR-9
+    records:
+      - dea:process-audit-policy-compliance
+      - dea:process-operate-governance-oversight
+    rationale: |
+      Two records; both RECLASSIFY. dea:process-audit-policy-compliance
+      carries legacy "support" intent that maps to canonical
+      "govern" (audit is a governing activity per CR-BP-14 /17).
+      Same audience-vs-context contradiction as the other ge-*
+      tranches. High-risk tranche because the audit-policy
+      process is referenced by the governance / build and
+      governance / conceive records; the audience-vs-context
+      resolution must be reviewed against the governance
+      register before merge.
+
+# Cross-tranche dependencies: NONE. Tranches are independent;
+# the migration order may be interleaved or parallelised. The
+# CR-BP-15 /7 governance gate is a per-PR review and does not
+# impose cross-tranche sequencing.
+cross_tranche_dependencies: none
+
+# Per-tranche review checkpoints (CR-BP-15 /7 governance gate).
+review_checkpoints:
+  cd-b: 1
+  cd-c: 1
+  cd-d: 1
+  cd-im: 1
+  cd-op: 1
+  ge-b: 2   # audience-vs-context; high-risk review
+  ge-c: 1
+  ge-d: 1
+  ge-im: 1
+  ge-op: 2  # cross-tranche reference to ge-b / ge-c

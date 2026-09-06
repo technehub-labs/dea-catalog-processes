@@ -6,6 +6,49 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 3-4: Disposition register + tranche plan
+
+CR-BP-15 §28 (the ten dispositions) is now formalised; the 18
+Business Processes in the canonical catalogue each receive a
+preliminary RECLASSIFY disposition. The 18 records are grouped
+into 10 tranches (one per Process Context) so future CR-BP-15-IMP
+Phases 5-7 migrations are sequenced.
+
+- `reconciliation/dispositions/schema.yaml` (new): the canonical
+  disposition schema; 9 dispositions (RETAIN, RECLASSIFY, RENAME,
+  SPECIALIZE, MERGE, SPLIT, MOVE, DEFER, RETIRE) each with
+  required/optional fields, target_id requirement, and a
+  rationale pattern; the reclassify_axes block documents the
+  CR-BP-14 §17 migration mapping.
+- `reconciliation/dispositions/register.yaml` (new, PRELIMINARY):
+  18 disposition entries (one per Business Process); every
+  entry is RECLASSIFY at this stage because every record carries
+  the documented legacy fields; rationale + evidence recorded
+  per entry; the register will be LOCKED in CR-BP-15-IMP
+  Phase 5 (PR-6 onward).
+- `reconciliation/tranches/plan.yaml` (new): 10 tranches (cd-b,
+  cd-c, cd-d, cd-im, cd-op, ge-b, ge-c, ge-d, ge-im, ge-op); two
+  are flagged high-risk (ge-b: audience-vs-context; ge-op:
+  cross-tranche references); per-tranche PR target, owner
+  placeholder, and review checkpoints recorded.
+- `reconciliation/README.md`: orientation block extended to
+  describe Phases 3-4 layout and Phase 5-7 roadmap.
+- `scripts/check_dispositions.py` (new): disposition validator
+  with --self-test; checks that every record has exactly one
+  disposition entry, that every disposition id is canonical,
+  that RECLASSIFY changes conform to the CR-BP-14 axes and
+  vocabularies, that context targets resolve to the Process
+  Context register, and that the tranche plan covers every
+  disposition entry.
+- `tests/test_dispositions.py` (new): 9 tests covering the
+  disposition validator + register + tranche plan.
+- `.github/workflows/ci.yml`: Disposition register step added
+  (advisory until the register is LOCKED).
+
+Programme position: CR-BP-14 still **Implemented**; CR-BP-15 +
+CR-BP-15-IMP still **Proposed**; this PR is the third
+CR-BP-15-IMP delivery.
+
 ### CR-BP-15-IMP Phase 1-2: Inventory + immutable baseline
 
 CR-BP-15 §6 / §7 (existing-population reconciliation) is now
