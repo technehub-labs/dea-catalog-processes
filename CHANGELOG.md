@@ -6,6 +6,22 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15 + CR-BP-16 landing and knowledge harvest
+
+- CR-BP-15 (Process Catalog Reconciliation) and CR-BP-16 (Process
+  Catalog Conformance Gate, carrying CR-BP-15-IMP) landed verbatim at
+  `change-requests/CR-BP-15-process-catalog-reconciliation.md` and
+  `change-requests/CR-BP-16-process-catalog-conformance-gate.md`.
+- New visitor-facing documentation distilled from the CR lineage:
+  `docs/semantic-contract.md` (the semantic constitution: six
+  characterization dimensions, controlled vocabularies, the normative
+  separations) and `docs/governance/reconciliation-programme.md` (the
+  closed governance loop, CR lineage, reconciliation dispositions,
+  conformance levels, repository status model).
+- README gains a "Reading This Repository" orientation block.
+- CR register + README change programme: CR-BP-15 and CR-BP-16 rows
+  added as Proposed; CR-BP-14 row updated to reflect Phase 1 (PR #26).
+
 ### CR-BP-14: Process Semantic Reconciliation (landing + Phase 1)
 
 Landing (PR #25):

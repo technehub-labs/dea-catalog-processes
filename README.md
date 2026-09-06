@@ -25,6 +25,19 @@ The governing principle is:
 
 ---
 
+# Reading This Repository
+
+Two documents orient a new reader before the detailed architecture:
+
+* [`docs/semantic-contract.md`](docs/semantic-contract.md): what a
+  Business Process record in this catalog means; the six
+  characterization dimensions and the separations that are always true.
+* [`docs/governance/reconciliation-programme.md`](docs/governance/reconciliation-programme.md):
+  how the catalog is governed over time; the research-to-canonical
+  loop, the reconciliation dispositions, and the conformance gate.
+
+---
+
 # Architectural Position
 
 The Business Process Catalog is grounded in the OpenDEA conceptual architecture.
@@ -1004,7 +1017,9 @@ merge.
 | [CR-BP-13](change-requests/CR-BP-13-research-ratification.md) | L1 Process Group Research Ratification | **Merged** (PR #22) | Ratifies the 49-coordinate register: 38 `ratified-accepted`, 11 `backlog-deferred`. Idempotent ratification tool `tools/ratify_research_register.py`. |
 | [CR-BP-13a](change-requests/CR-BP-13a-customer-and-demand-admission.md) | CustomerAndDemand Admission Tranche | **Merged** (PR #23) | 16 canonical entries across 4 CustomerAndDemand coordinates (Process Context cells, Process Groups, L2 Processes). |
 | [CR-BP-13b](change-requests/CR-BP-13b-governance-and-existence-admission.md) | GovernanceAndExistence Admission Tranche | **Merged** (PR #24) | 19 canonical entries across 5 GovernanceAndExistence coordinates (Process Context cells, Process Groups, L2 Processes). |
-| [CR-BP-14](change-requests/CR-BP-14-process-semantic-reconciliation.md) | Process Semantic Reconciliation | **Accepted** (implementation in progress; landing PR #25) | Semantic reconciliation gate: separates Context / Scope / Group / Process / Intent / Classification / Specialization / Relationships; replaces the three-value `process_intent` vocabulary with the seven-value purpose-oriented vocabulary (govern / manage / operate / deliver / support / develop / transform); `process_audience` becomes a legacy migration alias; validators BP-SEM-001..012; canonical admission freeze until implemented. Precedes CR-BP-15 (catalog reconciliation). |
+| [CR-BP-14](change-requests/CR-BP-14-process-semantic-reconciliation.md) | Process Semantic Reconciliation | **Accepted** (implementation in progress; landing PR #25; Phase 1 PR #26) | Semantic reconciliation gate: separates Context / Scope / Group / Process / Intent / Classification / Specialization / Relationships; replaces the three-value `process_intent` vocabulary with the seven-value purpose-oriented vocabulary (govern / manage / operate / deliver / support / develop / transform); `process_audience` becomes a legacy migration alias; validators BP-SEM-001..012; canonical admission freeze until implemented. Precedes CR-BP-15 (catalog reconciliation). |
+| [CR-BP-15](change-requests/CR-BP-15-process-catalog-reconciliation.md) | Process Catalog Reconciliation | **Proposed** | Reconciles all existing canonical records against the CR-BP-14 contract; one primary disposition per record (RETAIN / RENAME / RECLASSIFY / RECONTEXTUALIZE / RESPECIALIZE / MERGE / SPLIT / MOVE / DEFER / RETIRE) with full provenance. Reconciliation register + matrix + BP-REC-001..015 gate + repository status model + standard admission gate. |
+| [CR-BP-16](change-requests/CR-BP-16-process-catalog-conformance-gate.md) | Process Catalog Conformance Gate (with CR-BP-15-IMP) | **Proposed** | CR-BP-15-IMP: 20-phase implementation programme for CR-BP-15. CR-BP-16: the permanent conformance gate (five conformance dimensions, change-type gates, admission gate, CI pipeline, conformance levels L0-L4, regression detection, quality dashboard). Canonical status = conformance + governance approval. |
 | (future) | Activity Model | **Future** | Defines the L3 Activity level of Business Process decomposition. Formerly listed as placeholder CR-BP-04; that number was consumed by the landed ID-Family Reconciliation CR. |
 | (future) | Execution Boundary | **Future** | Establishes the boundary between business process architecture and execution/workflow concerns. Formerly listed as placeholder CR-BP-05. |
 
