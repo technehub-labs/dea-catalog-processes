@@ -186,6 +186,21 @@ jobs:
         # blocking so any future regression is caught at PR time.
         run: python scripts/check_process_semantics.py --strict
 
+      - name: Run architectural regression gate (CR-BP-16 S21; BP-AR-001..007)
+        if: steps.check.outputs.skip != 'true'
+        # Blocking as of PR-11 (CR-BP-15-IMP Phase 7 readiness).
+        # Seven architectural regression patterns guard against
+        # conflation of Business Process vs Process Kernel,
+        # ECF Coordinate vs Business Process, etc. (CR-BP-16 S21).
+        run: python scripts/check_architectural_regression.py --strict
+
+      - name: Refresh conformance report (CR-BP-16 S23)
+        if: steps.check.outputs.skip != 'true'
+        # Generates reconciliation/conformance_report.yaml with
+        # per-record conformance Levels 1-4. Advisory; the report
+        # is the pre-admission readiness artefact (CR-BP-16 S24).
+        run: python scripts/build_conformance_report.py
+
       - name: Run Process Group gate (CR-BP-12)
         if: steps.check.outputs.skip != 'true'
         run: python scripts/check_process_group.py

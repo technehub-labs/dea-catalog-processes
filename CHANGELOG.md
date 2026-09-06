@@ -6,6 +6,60 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 7: Pre-admission readiness
+
+The permanent CR-BP-16 conformance gate machinery is now live:
+the seven architectural regression patterns (BP-AR-001..007)
+and the per-record conformance report (CR-BP-16 S23/24 Levels
+1-4) are both running in CI. The catalogue is **38/38 Level 4
+(Canonically Conformant)**.
+
+- `scripts/check_architectural_regression.py` (new): the seven
+  architectural regression patterns from CR-BP-16 S21 are now a
+  blocking CI gate. Each pattern forbids conflation of two
+  semantic concepts:
+  - BP-AR-001: Business Process != Process Kernel
+  - BP-AR-002: ECF Coordinate != Business Process
+  - BP-AR-003: Process Group != Business Function
+  - BP-AR-004: Capability != Process
+  - BP-AR-005: Audience != Context (also catches reintroduction
+    of legacy `process_audience` scalar)
+  - BP-AR-006: Intent != Classification (also scans
+    specialization_pattern / specialization_basis)
+  - BP-AR-007: Specialization != Decomposition (catches
+    same-context `specializes` relationships)
+  Supports `--strict`, `--json`, `--self-test` (5 of 7 patterns
+  are unit-tested via fixtures; the Process Group / Capability
+  patterns are field-level and don't surface in the canonical
+  data structure).
+- `scripts/build_conformance_report.py` (new): generates
+  `reconciliation/conformance_report.yaml` from the live
+  catalogue. Each record is assigned a Conformance Level:
+  - Level 0: Unassessed
+  - Level 1: Structurally Conformant (schema + references)
+  - Level 2: Semantically Conformant (BP-SEM clean)
+  - Level 3: Architecturally Conformant (BP-AR clean)
+  - Level 4: Canonically Conformant (evidence + governance)
+  Supports `--check` to assert the report is up to date.
+- `reconciliation/conformance_report.yaml` (new, generated):
+  38 records, all Level 4 (Canonically Conformant).
+- `.github/workflows/ci.yml`: new "Run architectural regression
+  gate" step (blocking); new "Refresh conformance report" step
+  (advisory). CI now runs BP-AR + report refresh on every PR.
+- `tests/test_architectural_regression.py` (new): 7 tests
+  covering the self-test, live conformance, JSON shape,
+  canonical-bad fixture rejection, and report invariants.
+
+BP-SEM live verdict: 0 errors, 0 warnings: CONFORMANT
+BP-AR live verdict: 0 findings: CONFORMANT
+Conformance Levels: {0: 0, 1: 0, 2: 0, 3: 0, 4: 38}
+
+**Pre-admission readiness:** the §24 admission freeze can now
+be lifted as soon as CR-BP-13A / CR-BP-13B admission tranches
+are ready, because the BP-AR-001..007 gate will catch
+architectural regressions at PR time. Phase 7 closes the
+readiness loop opened by Phase 1-6.
+
 ### CR-BP-15-IMP Phase 6: Specialization machinery (machinery-only)
 
 The BP-SEM-013 specialization-relationship validation rule is now
