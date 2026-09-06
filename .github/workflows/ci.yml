@@ -205,9 +205,20 @@ jobs:
         if: steps.check.outputs.skip != 'true'
         # Advisory as of PR-12 (CR-BP-16 full gate). Legacy CRs
         # lack S21 metadata; new CRs SHOULD include Status, Layer,
-        # Owner, Depends on, Companion to. CR-BP-13A will be the
-        # first CR to demonstrate full S21 compliance.
+        # Owner, Depends on, Companion to. CR-BP-13A is the planned
+        # first CR to demonstrate full S21 compliance. Promotion to
+        # --strict blocking is a follow-on item gated on the pilot
+        # admission of a new CR.
         run: python scripts/check_cr_metadata.py
+
+      - name: Aggregate Conformance Result (CR-BP-16 S17/S18)
+        if: steps.check.outputs.skip != 'true'
+        # The single CONFORMANCE RESULT verdict (CR-BP-16 S18) that
+        # aggregates the 10-step pipeline (S17). This is the
+        # pre-merge verdict source. Blocking + advisory gates are
+        # both reported; the verdict is one of CONFORMANT,
+        # CONFORMANT-WITH-WARNINGS, or NON-CONFORMANT.
+        run: python scripts/conformance_result.py
 
       - name: Run documentation conformance gate (CR-BP-16 S22; DOC-001..003)
         if: steps.check.outputs.skip != 'true'

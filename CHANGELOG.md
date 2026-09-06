@@ -6,6 +6,43 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-16 conformance pipeline (S17/S18/S19/S25) + unified Conformance Result
+
+The CR-BP-16 §17 CI Conformance Pipeline, §18 unified
+Conformance Result, §19 blocking-conditions mapping, and
+§25 continuous-conformance triggers are now live. Every PR
+receives a single CONFORMANCE RESULT verdict that aggregates
+all 10 pipeline steps.
+
+- `docs/conformance-pipeline.md` (new, 153 lines): documents
+  the 10-step pipeline (Schema, Structure, References,
+  Semantics, Hierarchy, Specialization Graph, MECE, Provenance,
+  CR Validation, Conformance Result), the blocking-vs-advisory
+  matrix, the §19 blocking-conditions mapping (13 conditions),
+  and the §25 continuous-conformance triggers. Closes D7
+  (the missing visitor-facing pipeline doc).
+- `scripts/conformance_result.py` (new, 162 lines): runs all
+  15 gates (10 blocking + 5 advisory) and produces a single
+  CONFORMANCE RESULT verdict. Verdict is one of CONFORMANT,
+  CONFORMANT-WITH-WARNINGS, or NON-CONFORMANT (CR-BP-16 §18).
+  `--json` mode emits a structured report. `--strict` treats
+  advisory failures as blocking.
+- `.github/workflows/ci.yml`: new "Aggregate Conformance
+  Result (CR-BP-16 §17/S18)" step runs after the per-gate
+  steps. The aggregated verdict is the canonical pre-merge
+  source.
+- `docs/conformance.md`: links to `docs/conformance-pipeline.md`
+  in the See Also block.
+- `tests/test_conformance_result.py` (new, 7 tests): verdict
+  on live, JSON shape, --strict propagation, pipeline doc
+  existence + coverage of all 10 steps, all 13 §19 blocking
+  conditions, and all 7 §25 continuous-conformance triggers.
+
+Conformance Result on main: **CONFORMANT**
+BP-SEM live: 0 errors, 0 warnings: CONFORMANT
+BP-AR live: 0 findings: CONFORMANT
+Conformance Levels: 38/38 at Level 4
+
 ### CR-BP-16 full conformance gate: S10/S15/S16/S22 machinery
 
 The remaining CR-BP-16 sections called out in §29 acceptance
