@@ -56,6 +56,7 @@ def test_self_test_exits_2_on_failure():
     ("BP-SEM-010", "legacy"),
     ("BP-SEM-011", "lexically"),
     ("BP-SEM-012", "context references"),
+    ("BP-SEM-013", "specialization"),
 ])
 def test_module_docstring_documents_every_rule(rule, expected_substring):
     src = SCRIPT.read_text()
@@ -114,10 +115,81 @@ def test_strict_mode_fails_on_legacy_fixture(tmp_path):
     data["process_audience"] = "customer-demand"
     legacy_file.write_text(yaml.safe_dump(data, sort_keys=False))
     result = subprocess.run(
-        [sys.executable, str(SCRIPT), "--strict", "--root", str(sandbox)],
+        [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
         capture_output=True, text=True, cwd=str(ROOT),
     )
     assert result.returncode != 0, (
         "strict mode should fail on a legacy-bearing fixture: "
+        + result.stdout + result.stderr
+    )
+
+
+def test_bp_sem_013_rejects_unresolved_specializes_target(tmp_path):
+    """BP-SEM-013: a `specializes` relationship that targets an
+    unknown Process must produce a BP-SEM-013 error."""
+    import shutil
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    # Pick a migrated record and add a specializes relationship
+    # toward an unknown target, with no specialization_pattern /
+    # specialization_basis.
+    target_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-journey-design/dea:process-*.yaml"
+        )
+    )
+    data = yaml.safe_load(target_file.read_text())
+    rels = data.get("relationships", []) or []
+    rels.append({
+        "source_id": data["id"],
+        "relationship_type": "specializes",
+        "target_id": "dea:process-nonexistent-parent",
+    })
+    data["relationships"] = rels
+    target_file.write_text(yaml.safe_dump(data, sort_keys=False))
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
+        capture_output=True, text=True, cwd=str(ROOT),
+    )
+    assert result.returncode != 0, (
+        "BP-SEM-013 should fail on an unresolved specializes target: "
+        + result.stdout + result.stderr
+    )
+    assert "BP-SEM-013" in result.stdout
+
+
+def test_bp_sem_013_accepts_valid_specializes(tmp_path):
+    """BP-SEM-013: a `specializes` relationship that targets a
+    canonical Process WITH a specialization_basis must NOT fail."""
+    import shutil
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    target_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-journey-design/dea:process-*.yaml"
+        )
+    )
+    parent_file = next(
+        (sandbox / "entities/v1-alpha").glob(
+            "dea:process-customer-experience-design/dea:process-*.yaml"
+        )
+    )
+    data = yaml.safe_load(target_file.read_text())
+    parent_data = yaml.safe_load(parent_file.read_text())
+    data["relationships"] = [{
+        "source_id": data["id"],
+        "relationship_type": "specializes",
+        "target_id": parent_data["id"],
+    }]
+    data["specialization_pattern"] = "by-customer-segment"
+    target_file.write_text(yaml.safe_dump(data, sort_keys=False))
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
+        capture_output=True, text=True, cwd=str(ROOT),
+    )
+    assert result.returncode == 0, (
+        "BP-SEM-013 should accept a valid specializes relationship: "
         + result.stdout + result.stderr
     )

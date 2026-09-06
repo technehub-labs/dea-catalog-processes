@@ -69,6 +69,15 @@ Rules:
               can confirm the choice is intentional.
 
   BP-SEM-012  Context Multiplicity (CR-BP-14 S13).
+  BP-SEM-013  Specialization Relationship (CR-BP-14 S12, S23).
+              Every `relationships[]` entry with relationship_type
+              'specializes' MUST target a canonical Process entry;
+              the target_id MUST match the dea:process-<id> pattern;
+              the entry MUST declare specialization_pattern (from the
+              approved basis vocabulary) OR a non-empty
+              specialization_basis field. Specialization is
+              intra-context (CR-BP-14 S23); cross-context
+              specialization is decomposition, not specialization.
               A Business Process MAY participate in multiple Process
               Contexts where evidence establishes legitimate
               cross-context responsibility. The rule never treats
@@ -323,6 +332,48 @@ def run_checks(
                     f"and no specialization_basis is provided"
                 )
 
+        # BP-SEM-013: Specialization relationship validation. When an
+        # entry declares a `specializes` relationship, the target
+        # must be a canonical Process (not a Process Group, not a
+        # Process Context, not an ECF coordinate); the entry must
+        # carry a specialization_pattern from the approved basis
+        # vocabulary or a non-empty specialization_basis.
+        for rel in data.get("relationships", []) or []:
+            if rel.get("relationship_type") != "specializes":
+                continue
+            target_id = rel.get("target_id")
+            if not target_id or not PROCESS_PATTERN.match(target_id):
+                emit(
+                    errors, "BP-SEM-013",
+                    f"specializes target_id {target_id!r} does not match "
+                    f"`dea:process-[a-z0-9-]+`"
+                )
+                continue
+            if target_id not in process_ids:
+                emit(
+                    errors, "BP-SEM-013",
+                    f"specializes target {target_id!r} does not resolve to "
+                    f"a canonical Process entry"
+                )
+            if not specialization_pattern and not specialization_basis:
+                emit(
+                    errors, "BP-SEM-013",
+                    "specializes relationship requires specialization_pattern "
+                    "(approved basis) or non-empty specialization_basis "
+                    "(CR-BP-14 S12)"
+                )
+            elif (
+                specialization_pattern
+                and specialization_pattern not in APPROVED_SPECIALIZATION_BASES
+                and not specialization_basis
+            ):
+                emit(
+                    errors, "BP-SEM-013",
+                    f"specialization_pattern={specialization_pattern!r} is "
+                    f"not in the approved basis vocabulary "
+                    f"({sorted(APPROVED_SPECIALIZATION_BASES)})"
+                )
+
         # BP-SEM-011: Classification collision (advisory)
         if (
             intent is not None
@@ -391,6 +442,13 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "context": [{"ref": "dea:pc-unknown"}],  # BP-SEM-008
             "process_specialization": ["dea:process-nope"],  # BP-SEM-005
             "specialization_pattern": "by-magic",  # no basis -> BP-SEM-006
+            # BP-SEM-013: specializes to an unknown target with no
+            # specialization_pattern / specialization_basis.
+            "relationships": [{
+                "source_id": "dea:process-bad",
+                "relationship_type": "specializes",
+                "target_id": "dea:process-nonexistent",
+            }],
         }
         (tmp_path / "entities" / "v1-alpha" / "dea:process-bad" / "dea:process-bad.yaml").write_text(
             yaml.safe_dump(broken, sort_keys=False)
@@ -424,6 +482,12 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "context": [{"ref": "dea:pc-cd-op"}, {"ref": "dea:pc-cd-im"}],
             "process_specialization": ["dea:process-not-yet-canonical"],
             "specialization_basis": "by-customer-segment",
+            # BP-SEM-013 valid specializes: approved basis + valid target.
+            "relationships": [{
+                "source_id": "dea:process-good-2",
+                "relationship_type": "specializes",
+                "target_id": "dea:process-parent-process",
+            }],
         }
         (tmp_path / "entities" / "v1-alpha" / "dea:process-good" / "dea:process-good.yaml").write_text(
             yaml.safe_dump(good, sort_keys=False)
@@ -449,7 +513,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
     }
     seen = blocking_seen | warning_seen
     missing = {"BP-SEM-001", "BP-SEM-002", "BP-SEM-005", "BP-SEM-006",
-               "BP-SEM-008"} - seen
+               "BP-SEM-008", "BP-SEM-013"} - seen
     extra_blocking = fixed_errors
     summary = (
         f"broken-blocking={len(broken_errors)} "
