@@ -235,14 +235,20 @@ jobs:
         # unresolvable id references, and standalone 'Process'.
         run: python scripts/check_documentation_conformance.py
 
-      - name: Run admission gate (CR-BP-16 S15; ADM-001..008)
+      - name: Run admission gate (CR-BP-16 S15 + S17 Step 8; ADM-001..008)
         if: steps.check.outputs.skip != 'true'
-        # Advisory as of PR-12. New-process admission mandatory
-        # conformance path: Evidence -> Identity -> Context ->
-        # Group Fit -> Boundary -> Intent -> Classification ->
-        # Specialization -> Sibling Analysis -> MECE -> Schema ->
-        # Provenance -> Governance -> CANONICAL.
-        run: python scripts/check_admission_gate.py
+        # CR-BP-16 S15 advisory mode for the full ADM-001..008 set;
+        # CR-BP-16 S17 Step 8 (Provenance) is BLOCKING for ADM-001 +
+        # ADM-008 via --strict-provenance. Boundary (ADM-005),
+        # identity (ADM-002), context (ADM-003), group fit (ADM-004),
+        # intent (ADM-006), specialization (ADM-007) stay advisory
+        # until the corresponding §15 subsections are promoted.
+        # New-process admission mandatory conformance path:
+        # Evidence -> Identity -> Context -> Group Fit -> Boundary ->
+        # Intent -> Classification -> Specialization -> Sibling
+        # Analysis -> MECE -> Schema -> Provenance -> Governance ->
+        # CANONICAL.
+        run: python scripts/check_admission_gate.py --strict-provenance
 
       - name: Run Process Group gate (CR-BP-12)
         if: steps.check.outputs.skip != 'true'
