@@ -48,8 +48,11 @@ proposed_entry:
   # Outcome (BP-ARC-ID-003): what the process produces.
   outcome: |
     <what the process produces — align with outcome_statement below>
-  # Process Context (CR-BP-02): the bounded enterprise context.
-  process_context: dea:pc-<domain-abbrev>-<stage-abbrev>
+  # Process Context (CR-BP-14 §13): the Domain x Lifecycle Stage
+  # contexts within which this process is defined or used. Multiple
+  # contexts are permitted where evidence justifies them (BP-SEM-012).
+  context:
+    - ref: dea:pc-<domain-abbrev>-<stage-abbrev>
   identity:
     verb: Manage
     object: Example Process
@@ -66,6 +69,18 @@ proposed_entry:
       - type: governance
         ref: governance/example-process.md
   relationships:                # CR-BP-03 §6; CR-BP-03A §3.1
+    - source_id: dea:process-example-process
+      target_id: ecf:customerAndDemand.operate   # canonical ECF identifier (CG-003 form)
+      relationship_type: serves   # contextual participation (CR-BP-14 §13)
+      status: active
+      direction: source-to-target
+      rationale: "Example process serves the CustomerAndDemand Operate coordinate."
+      asserted_by: <github-handle>
+      asserted_at: <YYYY-MM-DD>
+      provenance:
+        type: manual
+        asserted_by: <github-handle>
+        asserted_at: <YYYY-MM-DD>
     - source_id: dea:process-example-process
       target_id: dea:process-parent-process
       relationship_type: composes

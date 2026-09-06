@@ -6,6 +6,31 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-14 Phase 2: Process Context block and contextual relationships
+
+- `context:` block added to `schemas/entity.schema.json` and
+  `schemas/contribution.schema.json` (CR-BP-14 §13, §20): an array of
+  `{ref: dea:pc-*}` Process Context references; multiple contexts are
+  permitted where evidence justifies them (BP-SEM-012).
+- `relationship_type` enum extended with `serves` and `contributes-to`
+  (both admitted by the metamodel relationship registry; catalog-governed
+  extension, no metamodel CR required). `operates-within` is deliberately
+  absent: its semantics are carried by the `context:` block.
+- `target_id` now admits canonical ECF identifiers
+  (`ecf:<lowerCamelDomain>[.<lowerCamelStage>]`, the CG-003 form)
+  alongside entity ids; the entity-id branch excludes the `ecf:` prefix
+  so the kebab-case label form is rejected (consistent with CG-004 §10).
+- Contribution template updated: the canonical `context:` block replaces
+  the pre-CR-BP-14 `process_context` scalar; a `serves` relationship
+  example toward an ECF coordinate is included.
+- New `tests/test_process_context_relationships.py` (16 tests) locks the
+  block shape, enum extension, target patterns, and backward
+  compatibility of all existing canonical entries.
+- Recorded for CR-BP-15-IMP Phase 10: existing entries carry a legacy
+  scalar `process_context` field that predates the canonical block; the
+  schema remains permissive toward it until the audience/context
+  migration.
+
 ### CR-BP-15 + CR-BP-16 landing and knowledge harvest
 
 - CR-BP-15 (Process Catalog Reconciliation) and CR-BP-16 (Process
