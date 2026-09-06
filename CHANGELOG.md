@@ -6,6 +6,36 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-14 Phase 3: BP-SEM-001..012 Process Semantics gate
+
+- `scripts/check_process_semantics.py` (new): implements BP-SEM-001
+  (Intent Vocabulary), BP-SEM-002 (Classification Vocabulary),
+  BP-SEM-003/004 (Intent/Classification Independence by construction),
+  BP-SEM-005 (Specialization Validity), BP-SEM-006 (Specialization
+  Differentiation), BP-SEM-007 (Context Distinction), BP-SEM-008
+  (Context Reference Integrity), BP-SEM-009 (Identity Independence by
+  construction), BP-SEM-010 (Legacy Detection), BP-SEM-011
+  (Classification Collision, advisory), BP-SEM-012 (Context
+  Multiplicity, advisory). Each finding carries a deterministic
+  `rule:<code>` prefix; warnings never block unless `--strict`.
+- `--self-test` exercises every BP-SEM rule on a broken fixture and
+  asserts the fixed fixture is blocking-free with the expected advisory
+  findings.
+- Wired into CI as an advisory step between the legacy migration gate
+  and the process group gate (`--strict || true`): the current
+  canonical population carries CR-BP-14 S24 admission-freeze findings
+  (legacy process_intent, legacy scalar process_context, missing
+  canonical `context:` block, legacy process_audience); the validator
+  surfaces them and CR-BP-15-IMP Phases 8..10 reduces them.
+- New `tests/test_check_process_semantics.py` (16 tests) locks the
+  self-test, docstring coverage of every code, and the live/strict
+  verdict contract.
+- The live run finds: 18 entries missing the canonical `context:`
+  block (BP-SEM-007); all 18 carry legacy `process_intent` or legacy
+  `process_audience` (BP-SEM-010); all 18 carry the legacy scalar
+  `process_context` (BP-SEM-010). These are exactly the seed findings
+  already documented in the CR-BP-14/15/16 programme plan.
+
 ### CR-BP-14 Phase 2: Process Context block and contextual relationships
 
 - `context:` block added to `schemas/entity.schema.json` and
