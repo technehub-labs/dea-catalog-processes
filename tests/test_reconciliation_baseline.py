@@ -74,11 +74,12 @@ def test_build_inventory_legacy_findings_present() -> None:
                           if "ctx-scalar" in p["legacy_findings"])
     with_no_context = sum(1 for p in procs
                           if "no-context-block" in p["legacy_findings"])
-    # cd-b + cd-c (4 records) have been migrated in Phase 5.
-    # 18 - 4 = 14 records still carry the legacy fields.
-    assert with_audience == 14
-    assert with_ctx_scalar == 14
-    assert with_no_context == 14
+    # Phase 5 first tranche (cd-b + cd-c, PR-33): -4 records
+    # Phase 5 second tranche (cd-d + cd-im + cd-op, PR-7): -5 records
+    # 18 - 4 - 5 = 9 records still carry the legacy fields.
+    assert with_audience == 9
+    assert with_ctx_scalar == 9
+    assert with_no_context == 9
 
 
 def test_baseline_has_sha256_for_every_record() -> None:

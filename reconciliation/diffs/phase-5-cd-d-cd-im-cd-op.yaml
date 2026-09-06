@@ -1,0 +1,117 @@
+# CR-BP-15-IMP Phase 5: Per-Tranche Diff (cd-d + cd-im + cd-op)
+
+# This file records exactly which bytes the Phase 5 second
+# tranche migration touched and how the SHA-256 baseline
+# evolved. The diff is the audit trail for the
+# reconciliation gate (CR-BP-15 /7).
+
+# Authoritative reference: CR-BP-15-IMP /5; CR-BP-15 /7.
+
+schema_version: 1
+diff_at: 2026-09-06
+phase: phase-5
+tranches:
+  - cd-d
+  - cd-im
+  - cd-op
+
+# Summary
+summary:
+  records_touched: 5
+  sha256_changed: 5
+  new_intent_vocabulary_tokens: 5
+  legacy_fields_removed:
+    process_audience: 5
+    process_context_scalar: 5
+  canonical_blocks_added:
+    context: 5
+    serves_relationship: 5
+
+# Per-record diff
+diffs:
+  - record_id: dea:process-customer-experience-design
+    tranche: cd-d
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> develop"
+      - "process_audience: customer-demand REMOVED"
+      - "process_context: scalar 'dea:pc-cd-d' REMOVED"
+      - "context: [{ref: dea:pc-cd-d}] ADDED"
+      - "relationships[0]: serves -> ecf:customerAndDemand.design ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-customer-journey-design
+    tranche: cd-d
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: support -> develop"
+      - "process_audience: customer-demand REMOVED"
+      - "process_context: scalar 'dea:pc-cd-d' REMOVED"
+      - "context: [{ref: dea:pc-cd-d}] ADDED"
+      - "relationships[0]: serves -> ecf:customerAndDemand.design ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-demand-design
+    tranche: cd-d
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> develop"
+      - "process_audience: customer-demand REMOVED"
+      - "process_context: scalar 'dea:pc-cd-d' REMOVED"
+      - "context: [{ref: dea:pc-cd-d}] ADDED"
+      - "relationships[0]: serves -> ecf:customerAndDemand.design ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-customer-insight-and-retention
+    tranche: cd-im
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> operate"
+      - "process_audience: customer-demand REMOVED"
+      - "process_context: scalar 'dea:pc-cd-im' REMOVED"
+      - "context: [{ref: dea:pc-cd-im}] ADDED"
+      - "relationships[0]: serves -> ecf:customerAndDemand.improve ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+  - record_id: dea:process-manage-customer-relationship
+    tranche: cd-op
+    disposition: RECLASSIFY
+    changes_applied:
+      - "process_intent: management -> manage"
+      - "process_audience: customer-demand REMOVED"
+      - "process_context: scalar 'dea:pc-cd-op' REMOVED"
+      - "context: [{ref: dea:pc-cd-op}] ADDED"
+      - "relationships[0]: serves -> ecf:customerAndDemand.operate ADDED"
+      - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
+
+# Cross-tranche observations
+observations:
+  - |
+    The 5 migrated records no longer trigger BP-SEM-007
+    (canonical context: block required). The Phase 5 first
+    + second tranches have reduced the BP-SEM error count
+    from 18 to 9; the remaining 9 errors will be addressed
+    by Phase 5 third tranche (ge-b + ge-c + ge-d + ge-im)
+    and fourth tranche (ge-op).
+  - |
+    cd-d is now 3 records sharing the same canonical context
+    block (dea:pc-cd-d). Future Phase 6 work may consider
+    whether any of these 3 records are specializations of a
+    common base (CR-BP-14 S23); the disposition register
+    currently records all 3 as RECLASSIFY, not SPECIALIZE.
+  - |
+    `dea:process-manage-customer-relationship` already had a
+    `realizes` relationship toward a capability (carried from
+    the original CR-BP-13a admission); the migration
+    preserves it and adds a parallel `serves` toward the ECF
+    coordinate. Both relationships are canonical; the script's
+    idempotence guard ensures no duplicates.
+  - |
+    The `process_intent` migration from `management` to
+    `manage` (in `manage-customer-relationship`) is the first
+    case where the legacy vocabulary maps to a closely-named
+    canonical token. The disposition register records the
+    rationale: management is not canonical because the
+    CR-BP-14 /17 intent vocabulary is seven-valued and
+    precise; "management" is reserved for the L1 conceptual
+    layer (Process Group), not the L2 (Business Process).
