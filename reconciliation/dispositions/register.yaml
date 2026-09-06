@@ -26,6 +26,28 @@ register_lock_progress:
   locked_records: 18
   remaining_records: 0
 
+# Phase 6 specialization status (CR-BP-15-IMP).
+# Phase 6 introduces the BP-SEM-013 specialization-relationship
+# validation rule but does NOT introduce new `specializes`
+# relationships on the canonical 18 records. Rationale: every
+# candidate pair examined in Phase 6 planning
+# (cd-d journey-vs-experience; ge-d policies-vs-system;
+# cd-c market-vs-strategy) is sequential work within a single
+# bounded context (uses `composes`), not pattern-based
+# refinement (uses `specializes`). The CR-BP-14 S24 admission
+# freeze prevents new admission tranches that would introduce
+# clean fan-out candidates.
+phase6_status:
+  specializations_introduced: 0
+  bp_sem_013_rule_added: true
+  validation_mode: machinery-only
+  decision_basis: >
+    No canonical record pair exhibits the cardinality fan-out
+    that distinguishes specialization (CR-BP-14 S23) from
+    decomposition. Every same-context pair is sequential work
+    within a single bounded context (uses composes), not
+    pattern-based refinement (uses specializes).
+
 # Disposition summary by axis. Computed at register generation time.
 summary:
   total_records: 18

@@ -6,6 +6,61 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 6: Specialization machinery (machinery-only)
+
+The BP-SEM-013 specialization-relationship validation rule is now
+live, but **zero `specializes` relationships are introduced** on
+the canonical 18 records. Phase 6 is machinery-only.
+
+- `scripts/check_process_semantics.py` (modified):
+  - New rule **BP-SEM-013** validates `relationships[]` entries
+    with `relationship_type: specializes`. A valid specializes
+    relationship MUST: target a canonical Process entry; carry a
+    `specialization_pattern` from the approved basis vocabulary
+    or a non-empty `specialization_basis` field; resolve to an
+    existing Process entry.
+  - Module docstring updated to document BP-SEM-013 alongside
+    BP-SEM-001..012.
+  - Self-test extended: broken fixture carries an unresolved
+    specializes target (must fail); fixed fixture carries a
+    valid specializes with approved basis (must pass).
+- `tests/test_check_process_semantics.py`:
+  - New `test_bp_sem_013_rejects_unresolved_specializes_target`:
+    confirms BP-SEM-013 fires on an unknown target.
+  - New `test_bp_sem_013_accepts_valid_specializes`: confirms
+    BP-SEM-013 passes on a valid canonical-fan-out.
+  - Parametrized rule-coverage test extended for BP-SEM-013.
+- `reconciliation/dispositions/register.yaml`: `phase6_status`
+  section added; `specializations_introduced: 0`,
+  `validation_mode: machinery-only`, `bp_sem_013_rule_added:
+  true`, with rationale documented inline.
+
+**Why no specializations introduced:** CR-BP-14 S23 semantics
+distinguish specialization (cardinality fan-out under a
+controlled pattern like `by-customer-segment`) from
+decomposition (sequential work within a single context, using
+`composes`). Every candidate pair examined in Phase 6 planning
+- `customer-journey-design` + `customer-experience-design`
+  (cd-d);
+- `design-policies-and-controls` + `design-governance-system`
+  (ge-d);
+- `market-and-demand-conception` + `customer-strategy-conception`
+  (cd-c);
+- is sequential decomposition, not cardinality fan-out. The
+  CR-BP-14 S24 admission freeze prevents new admission
+  tranches that would introduce clean fan-out candidates
+  (e.g., `manage-enterprise-customer` specializing
+  `manage-customer-relationship` under `by-customer-segment`).
+
+**Future work:** Phase 7 (or the first post-freeze admission
+tranche) will exercise BP-SEM-013 against a real fan-out
+candidate. The machinery is in place; the canonical evidence
+  will arrive when admission resumes.
+
+BP-SEM live verdict: **0 errors, 0 warnings: CONFORMANT**
+(no live records have `specializes` relationships, so BP-SEM-013
+has no input to flag).
+
 ### CR-BP-15-IMP Phase 5 fourth tranche (ge-op) + Phase 5 closure
 
 The final two governance-existence operate records have been
