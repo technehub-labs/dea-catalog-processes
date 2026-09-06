@@ -6,6 +6,57 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-15-IMP Phase 5 first tranche (cd-b + cd-c)
+
+The first two customer-demand tranches (4 records: 2 build + 2
+conceive) have been reconciled to the CR-BP-14 canonical contract.
+The disposition register is now PARTIALLY_LOCKED with 4 records
+locked.
+
+- `entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/`:
+  legacy `operational` intent -> canonical `operate`; legacy
+  scalar `process_context: dea:pc-cd-b` -> canonical
+  `context: [{ref: dea:pc-cd-b}]` block; legacy
+  `process_audience: customer-demand` removed; canonical `serves`
+  relationship toward `ecf:customerAndDemand.build` added;
+  change_history entry appended.
+- `entities/v1-alpha/dea:process-demand-generation-build/`: same
+  migration as the cd-b peer (operate + dea:pc-cd-b + serves).
+- `entities/v1-alpha/dea:process-customer-strategy-conception/`:
+  legacy `management` intent -> canonical `develop`; cd-c
+  context; serves toward `ecf:customerAndDemand.conceive`.
+- `entities/v1-alpha/dea:process-market-and-demand-conception/`:
+  same migration as the cd-c peer.
+- `reconciliation/diffs/phase-5-cd-b-cd-c.yaml` (new): per-tranche
+  audit trail; 4 records touched; SHA-256 evolution recorded;
+  cross-tranche observations.
+- `reconciliation/dispositions/register.yaml`: register_status
+  -> PARTIALLY_LOCKED; register_lock_progress records 4 locked
+  records and 14 remaining.
+- `schemas/entity.schema.json`: `process_audience` removed from
+  the `required` list; the legacy field remains readable as a
+  backward-compat alias (CR-BP-14 /19) but is no longer
+  required for canonical entries.
+- `scripts/apply_phase_5_tranche.py` (new): reproducible tranche
+  migration script; supports `--self-test` (idempotence contract)
+  and `--tranche <id>` for any of the 10 tranches; applies the
+  full migration pattern (intent, audience removal, context
+  block, serves relationship, change_history append).
+- `tests/test_apply_phase_5_tranche.py` (new): 8 tests covering
+  the migration script + per-record shape + idempotence + lock
+  progress.
+- `tests/test_reconciliation_baseline.py`: legacy_findings_present
+  test updated to reflect the Phase 5 first-tranche lock (14
+  remaining, not 18).
+
+Programme position: CR-BP-14 still **Implemented**; CR-BP-15 +
+CR-BP-15-IMP still **Proposed**; this PR is the fourth
+CR-BP-15-IMP delivery and the first Phase 5 tranche migration.
+
+BP-SEM live verdict: 14 errors (down from 18). The 4 migrated
+records no longer trigger BP-SEM-007 (canonical context: block
+required).
+
 ### CR-BP-15-IMP Phase 3-4: Disposition register + tranche plan
 
 CR-BP-15 §28 (the ten dispositions) is now formalised; the 18

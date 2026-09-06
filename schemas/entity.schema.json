@@ -4,7 +4,7 @@
   "title": "Business Process",
   "description": "Schema for Business Process entries in technehub-labs/dea-catalog-processes. Mirrors technehub-labs/dea-metamodel/schemas/entities/process.json (v3.0.0-alpha). The Business Process is the specialization of the OpenDEAM Process kernel (dea:Process in dea-metamodel Core; dea:entity-process in the OpenDEAM root model) for the Business Architecture and Business Operations use cases (CR-MM-PROC-01; CR-AR-FMWK-01; CR-BP-SPEC-BP-01). Sub-classifications (operational / support / management; carried by process_intent) are catalog-internal and do not promote to root-model entities. CR-BP-03 ADDS the process_type (5-value Mintzberg), process_specialization (inheritance), relationships (canonical OpenDEA dea:composes + dea:realizes), and identity sub-block fields ADDITIVELY; existing fields are preserved and existing entries continue to validate.",
   "type": "object",
-  "required": ["id", "name", "type", "version", "process_intent", "process_audience"],
+  "required": ["id", "name", "type", "version", "process_intent"],
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
     "type": { "type": "string", "const": "Process" },

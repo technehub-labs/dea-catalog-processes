@@ -49,13 +49,9 @@ records:
       name: "Build Customer Acquisition Channels"
       type: Process
       path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
-      process_intent: operational
+      process_intent: operate
       process_classification: core
       legacy_findings:
-        - intent:operational
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-customer-experience-design
       name: "Design Customer Experience"
@@ -97,13 +93,9 @@ records:
       name: "Develop Customer Strategy"
       type: Process
       path: entities/v1-alpha/dea:process-customer-strategy-conception/dea:process-customer-strategy-conception.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: management
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-demand-design
       name: "Design Demand Model"
@@ -121,13 +113,9 @@ records:
       name: "Build Demand Generation Programs"
       type: Process
       path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
-      process_intent: operational
+      process_intent: operate
       process_classification: core
       legacy_findings:
-        - intent:operational
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-design-governance-system
       name: "Design Governance System"
@@ -205,13 +193,9 @@ records:
       name: "Develop Market Intelligence"
       type: Process
       path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
-      process_intent: management
+      process_intent: develop
       process_classification: management
       legacy_findings:
-        - intent:management
-        - audience:customer-demand
-        - ctx-scalar
-        - no-context-block
         - no-specialization
     - id: dea:process-operate-governance-oversight
       name: "Operate Governance Oversight"

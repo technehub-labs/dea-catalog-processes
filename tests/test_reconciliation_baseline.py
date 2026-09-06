@@ -57,7 +57,12 @@ def test_build_inventory_records_match_canonical_population() -> None:
 
 
 def test_build_inventory_legacy_findings_present() -> None:
-    """All 18 processes carry the documented legacy findings."""
+    """The 14 unmigrated records carry the documented legacy findings;
+    the 4 records migrated in CR-BP-15-IMP Phase 5 (cd-b + cd-c) do not.
+
+    This test reflects the current reconciliation state and will be
+    progressively relaxed as further tranches land (Phase 5 -> Phase 7).
+    """
     import yaml
     inv = yaml.safe_load(
         (REPO_ROOT / "reconciliation/inventory.yaml").read_text()
@@ -69,9 +74,11 @@ def test_build_inventory_legacy_findings_present() -> None:
                           if "ctx-scalar" in p["legacy_findings"])
     with_no_context = sum(1 for p in procs
                           if "no-context-block" in p["legacy_findings"])
-    assert with_audience == 18
-    assert with_ctx_scalar == 18
-    assert with_no_context == 18
+    # cd-b + cd-c (4 records) have been migrated in Phase 5.
+    # 18 - 4 = 14 records still carry the legacy fields.
+    assert with_audience == 14
+    assert with_ctx_scalar == 14
+    assert with_no_context == 14
 
 
 def test_baseline_has_sha256_for_every_record() -> None:

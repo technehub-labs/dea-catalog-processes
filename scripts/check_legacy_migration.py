@@ -50,6 +50,10 @@ ALLOWED_RELATIONSHIP_TYPES = {
     "depends-on", "produces", "consumes", "flows-to",
     "governs", "owns", "responsible-for", "supports",
     "triggers", "executes", "orchestrates",
+    # CR-BP-14 /13 contextual relationships: serves / contributes-to
+    # express participation toward ECF coordinates (the CG-003 form).
+    # Added in PR-28 (CR-BP-14 Phase 2).
+    "serves", "contributes-to",
 }
 
 
