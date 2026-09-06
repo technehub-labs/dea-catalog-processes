@@ -53,6 +53,22 @@
       "maxLength": 200,
       "description": "Optional: free-text pattern label (e.g. 'by-customer-segment', 'by-region', 'by-product-line', 'by-tier', 'by-compliance-regime'). NEW in CR-BP-03. See classifications/process-specializations.yaml for the controlled vocabulary."
     },
+    "context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ref"],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "pattern": "^dea:pc-[a-z0-9-]+$",
+            "description": "Process Context canonical id (CR-BP-02; contexts/v1-alpha/). Reference integrity is enforced by BP-SEM-008 (CR-BP-14 Phase 3)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Process Context placement (CR-BP-14 §13, §20): the Domain x Lifecycle Stage contexts within which this process is defined or used. Multiple contexts are permitted where evidence establishes legitimate cross-context responsibility (BP-SEM-012). This is the canonical replacement for the legacy process_audience single-axis classification; it is never generated mechanically from the ECF matrix."
+    },
     "relationships": {
       "type": "array",
       "description": "Canonical OpenDEA relationships (CR-BP-03 §6; CR-BP-03A §3.1). The relationship shape is an array of relationship instances (NOT a structured object), conforming to the metamodel's relationship-instance.json (technehub-labs/dea-metamodel/schemas/relationships/relationship-instance.json). Each entry is a typed relationship with CR-002 provenance, CR-6 lifecycle, and effective_from/to temporal validity. The catalog primarily uses 'composes' (structural composition) and 'realizes' (capability realization). The legacy parent_process / child_processes fields (CR-BP-01 inventions; NOT metamodel fields) have been REMOVED; the legacy capabilities_delivered is retained as a soft-deprecated backward-compat shim (CR-BP-03A §3.3).",
@@ -66,9 +82,11 @@
             "description": "Source entity ID. For an L2 Business Process entry, source_id is the entry's own id."
           },
           "target_id": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$",
-            "description": "Target entity ID. For composes, target_id is the composed process; for realizes, target_id is the realized capability."
+            "anyOf": [
+              { "type": "string", "pattern": "^(?!ecf:)[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
+              { "type": "string", "pattern": "^ecf:[a-z][a-zA-Z0-9]*(\\.[a-z][a-zA-Z0-9]*)?$" }
+            ],
+            "description": "Target identifier. Entity ids use the colon-separated canonical form (for composes, the composed process; for realizes, the realized capability). ECF identifiers use the canonical CG-003 form (ecf:<lowerCamelDomain> or ecf:<lowerCamelDomain>.<lowerCamelStage>) for contextual relationships such as serves / contributes-to (CR-BP-14 §13)."
           },
           "relationship_type": {
             "type": "string",
@@ -76,9 +94,10 @@
               "composes", "realizes", "specializes", "aggregates",
               "depends-on", "produces", "consumes", "flows-to",
               "governs", "owns", "responsible-for", "supports",
-              "triggers", "executes", "orchestrates"
+              "triggers", "executes", "orchestrates",
+              "serves", "contributes-to"
             ],
-            "description": "Canonical relationship type (registry id without dea: prefix; per metamodel relationship-instance.json). The catalog primarily uses 'composes' and 'realizes'. Other types are admitted when the contributor can defend the choice."
+            "description": "Canonical relationship type (registry id without dea: prefix; per metamodel relationship-instance.json). The catalog primarily uses 'composes' and 'realizes'; 'serves' and 'contributes-to' express contextual participation toward ECF coordinates (CR-BP-14 §13). Other types are admitted when the contributor can defend the choice."
           },
           "direction": {
             "type": "string",

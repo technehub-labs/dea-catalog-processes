@@ -93,6 +93,18 @@
           "type": "object",
           "description": "Process identity sub-block. Must conform to schemas/identity.schema.json."
         },
+        "context": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["ref"],
+            "properties": {
+              "ref": { "type": "string", "pattern": "^dea:pc-[a-z0-9-]+$" }
+            },
+            "additionalProperties": false
+          },
+          "description": "Process Context placement (CR-BP-14 §13, §20). Preferred over the legacy process_audience value for new contributions. Mirrors schemas/entity.schema.json."
+        },
         "relationships": {
           "type": "array",
           "description": "Canonical OpenDEA relationships (CR-BP-03 §6; CR-BP-03A §3.1). Array of relationship instances conforming to the metamodel's relationship-instance.json. The catalog primarily uses 'composes' (structural composition) and 'realizes' (capability realization). The legacy parent_process / child_processes / capabilities_delivered fields are NOT part of the contribution schema (they have been removed or soft-deprecated in the entity schema).",
@@ -101,14 +113,20 @@
             "required": ["source_id", "target_id", "relationship_type"],
             "properties": {
               "source_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
-              "target_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
+              "target_id": {
+                "anyOf": [
+                  { "type": "string", "pattern": "^(?!ecf:)[a-z][a-z0-9-]*(:[a-z0-9-]+)+$" },
+                  { "type": "string", "pattern": "^ecf:[a-z][a-zA-Z0-9]*(\\.[a-z][a-zA-Z0-9]*)?$" }
+                ]
+              },
               "relationship_type": {
                 "type": "string",
                 "enum": [
                   "composes", "realizes", "specializes", "aggregates",
                   "depends-on", "produces", "consumes", "flows-to",
                   "governs", "owns", "responsible-for", "supports",
-                  "triggers", "executes", "orchestrates"
+                  "triggers", "executes", "orchestrates",
+                  "serves", "contributes-to"
                 ]
               },
               "direction": { "type": "string", "enum": ["source-to-target"], "default": "source-to-target" },
