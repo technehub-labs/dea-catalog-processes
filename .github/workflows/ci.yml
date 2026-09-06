@@ -203,13 +203,14 @@ jobs:
 
       - name: Run CR metadata gate (CR-BP-16 S16; CR-META-001..006)
         if: steps.check.outputs.skip != 'true'
-        # Advisory as of PR-12 (CR-BP-16 full gate). Legacy CRs
-        # lack S21 metadata; new CRs SHOULD include Status, Layer,
-        # Owner, Depends on, Companion to. CR-BP-13A is the planned
-        # first CR to demonstrate full S21 compliance. Promotion to
-        # --strict blocking is a follow-on item gated on the pilot
-        # admission of a new CR.
-        run: python scripts/check_cr_metadata.py
+        # Blocking as of PR-13 (CR-BP-16 §16 enforcement promotion).
+        # Legacy CRs (mtime < 2026-09-06) are reported as advisory;
+        # NEW CRs (mtime >= 2026-09-06) MUST comply with the S21
+        # metadata schema (Status, Layer, Owner, Depends on,
+        # Companion to, filename pattern). The cutoff is set via
+        # --cutoff-date and the policy is documented in
+        # docs/conformance-pipeline.md S16.
+        run: python scripts/check_cr_metadata.py --strict
 
       - name: Aggregate Conformance Result (CR-BP-16 S17/S18)
         if: steps.check.outputs.skip != 'true'

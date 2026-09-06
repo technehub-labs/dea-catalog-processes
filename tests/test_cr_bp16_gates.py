@@ -41,6 +41,88 @@ def test_cr_meta_runs_advisory_on_live():
     assert "CR-BP-13a" not in r.stdout or "0 findings" in r.stdout
 
 
+def test_cr_meta_strict_passes_when_no_new_failures():
+    """--strict returns 0 when no NEW CR (mtime >= cutoff) fails."""
+    r = _run([str(SCRIPT_CR_META), "--strict"])
+    # After PR-13, all touched-in-this-session CRs have S21 metadata
+    # and pass. Legacy CRs are advisory. So returncode MUST be 0.
+    assert r.returncode == 0, r.stdout + r.stderr
+    # The verdict should be ADVISORY-LEGACY or CONFORMANT
+    assert any(s in r.stdout for s in ("ADVISORY-LEGACY", "CONFORMANT"))
+
+
+def test_cr_meta_strict_fails_on_new_bad_fixture(tmp_path):
+    """A new CR file (touch -d "now") without S21 metadata must
+    fail --strict."""
+    import os
+    from datetime import datetime, timezone
+    sandbox = tmp_path / "sandbox"
+    cr_dir = sandbox / "change-requests"
+    cr_dir.mkdir(parents=True)
+    bad = (
+        "# CR-BP-XX-bad\n\n"
+        "Some prose, no metadata.\n"
+    )
+    p = cr_dir / "CR-XX-bad.md"
+    p.write_text(bad)
+    # Set mtime to 2099-01-01 to ensure the file is "new" by the cutoff
+    future = datetime(2099, 1, 1, tzinfo=timezone.utc).timestamp()
+    os.utime(p, (future, future))
+    r = _run([str(SCRIPT_CR_META), "--strict", "--catalog-root", str(sandbox)])
+    assert r.returncode != 0, r.stdout + r.stderr
+    assert "NON-CONFORMANT" in r.stdout
+
+
+def test_cr_meta_strict_passes_on_legacy_bad_fixture(tmp_path):
+    """A legacy CR file (mtime < cutoff) without S21 metadata must
+    pass --strict (advisory only)."""
+    import os
+    from datetime import datetime, timezone
+    sandbox = tmp_path / "sandbox"
+    cr_dir = sandbox / "change-requests"
+    cr_dir.mkdir(parents=True)
+    bad = (
+        "# CR-BP-YY-bad\n\n"
+        "Some prose, no metadata.\n"
+    )
+    p = cr_dir / "CR-YY-bad.md"
+    p.write_text(bad)
+    # Set mtime to 2000-01-01 (way before any cutoff)
+    past = datetime(2000, 1, 1, tzinfo=timezone.utc).timestamp()
+    os.utime(p, (past, past))
+    r = _run([str(SCRIPT_CR_META), "--strict", "--catalog-root", str(sandbox)])
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "ADVISORY-LEGACY" in r.stdout
+
+
+def test_cr_meta_accepts_layer_with_parenthetical_qualifier():
+    """`L1 (Process Catalog)` MUST be accepted as a valid Layer."""
+    r = _run([str(SCRIPT_CR_META), "--json"])
+    import json
+    data = json.loads(r.stdout)
+    # CR-BP-13A uses L1 (Process Catalog). Should NOT have CR-META-002.
+    rule_002_new = [f for f in data["new_findings"]
+                    if f["rule"] == "CR-META-002" and "13a" in f["path"]]
+    assert not rule_002_new, (
+        "Layer 'L1 (Process Catalog)' should be accepted (normalized to L1)"
+    )
+
+
+def test_cr_meta_accepts_status_with_date_qualifier():
+    """`Proposed (2026-09-03)` MUST be accepted as a valid Status."""
+    r = _run([str(SCRIPT_CR_META), "--json"])
+    import json
+    data = json.loads(r.stdout)
+    # CR-BP-03C uses Proposed (2026-09-03). Should NOT have CR-META-001
+    # due to status (only due to legacy or some other rule).
+    rule_001_new = [f for f in data["new_findings"]
+                    if f["rule"] == "CR-META-001" and "03C" in f["path"]]
+    assert not rule_001_new, (
+        "Status 'Proposed (2026-09-03)' should be accepted "
+        "(normalized to Proposed)"
+    )
+
+
 def test_cr_meta_json_shape():
     r = _run([str(SCRIPT_CR_META), "--json"])
     assert r.returncode == 0, r.stdout + r.stderr

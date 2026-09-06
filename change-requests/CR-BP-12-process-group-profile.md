@@ -1,13 +1,15 @@
 # CR-BP-12: L1 Process Group Profile, Schema, and Validator
 
-Status: Baseline
-Program: Business Process Catalog
-Parent: CR-BP-11-l1-process-group-discovery
-Related: CR-BP-03-business-process-architecture, CR-BP-03A-legacy-migration,
+**Status**: Accepted
+**Layer**: L1
+**Owner**: TechNeHub Labs
+**Program**: Business Process Catalog
+**Parent**: CR-BP-11-l1-process-group-discovery
+**Related**: CR-BP-03-business-process-architecture, CR-BP-03A-legacy-migration,
          CR-BP-03C-sample-process-contribution, CR-BP-02, CR-BP-04,
          CR-BP-SPEC-BP-01
-Date: 2026-09-04
-Author: Coder
+**Date**: 2026-09-04
+**Author**: Coder
 
 ## 1. Summary
 

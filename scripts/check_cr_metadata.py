@@ -29,12 +29,49 @@ from pathlib import Path
 from typing import Iterable
 
 APPROVED_STATUSES = {"Proposed", "Accepted", "Rejected", "Superseded", "Draft"}
+# CR-META-002 accepts the canonical L0..L3 layer values, the
+# Process Catalog / Metamodel / Cross-cutting domain values, OR
+# a compound form of L0..L3 with a parenthetical qualifier
+# (e.g. "L1 (Process Catalog)"). The compound form is normalized
+# against the unqualified value during comparison.
 APPROVED_LAYERS = {
-    "L0", "L1", "L2", "L3", "Process Catalog", "Metamodel", "Cross-cutting",
+    "L0", "L1", "L2", "L3",
+    "Process Catalog", "Metamodel", "Cross-cutting",
 }
-CR_NUMBER_PATTERN = re.compile(r"^CR-BP-(\d+)([a-z]?(?:\.\d+)*)?(?:[-_a-z0-9]+)?$")
-CR_REF_PATTERN = re.compile(r"CR-BP-\d+[a-z]?(?:\.\d+)*")
-META_LINE = re.compile(r"^\*\*([^*]+)\*\*:\s*(.+?)\s*$")
+
+
+def _normalize_layer(value: str) -> str:
+    """Strip a parenthetical qualifier from a layer value.
+
+    "L1 (Process Catalog)" -> "L1"
+    "L1" -> "L1"
+    """
+    return value.split("(", 1)[0].strip() if value else value
+
+
+def _normalize_status(value: str) -> str:
+    """Strip a parenthetical date qualifier from a status value.
+
+    "Proposed (2026-09-03)" -> "Proposed"
+    "Accepted" -> "Accepted"
+    """
+    return value.split("(", 1)[0].strip() if value else value
+# CR number pattern admits:
+#   CR-BP-NN                  (canonical: CR-BP-12)
+#   CR-BP-NN.x                (canonical sub-letter: CR-BP-13a)
+#   CR-BP-NNx                 (legacy: CR-BP-03C uppercase; equivalent
+#                             semantic to CR-BP-03c but pre-dates the
+#                             convention change)
+#   CR-BP-NN-slug             (descriptive: CR-BP-12-process-group-profile)
+#   CR-BP-NN.x-slug           (descriptive + sub-letter: CR-BP-13a-...)
+CR_NUMBER_PATTERN = re.compile(
+    r"^CR-BP-(\d+)([a-zA-Z]?(?:\.\d+)*)?(?:[-_a-z0-9]+)?$"
+)
+CR_REF_PATTERN = re.compile(r"CR-BP-\d+[a-zA-Z]?(?:\.\d+)*")
+# Match the metadata line. Two conventions are admitted:
+#   1. "**Key**: value" (canonical; colon outside bold)
+#   2. "**Key:** value" (legacy / Github-issues style; colon inside)
+META_LINE = re.compile(r"^\*\*([^*]+?)\*\*:?\s+(.+?)\s*$")
 
 
 def _extract_meta(text: str) -> dict[str, str]:
@@ -43,7 +80,10 @@ def _extract_meta(text: str) -> dict[str, str]:
     for line in text.splitlines()[:30]:
         m = META_LINE.match(line)
         if m:
-            meta[m.group(1).strip()] = m.group(2).strip()
+            # Strip a trailing colon from the key (admit both
+            # "**Key**: value" and "**Key:** value" conventions).
+            key = m.group(1).rstrip(":").strip()
+            meta[key] = m.group(2).strip()
     return meta
 
 
@@ -67,7 +107,7 @@ def check_cr(path: Path) -> list[tuple[str, str]]:
     status = meta.get("Status")
     if not status:
         findings.append(("CR-META-001", f"{path.name}: missing **Status**"))
-    elif status not in APPROVED_STATUSES:
+    elif (_normalize_status(status) not in APPROVED_STATUSES):
         findings.append((
             "CR-META-001",
             f"{path.name}: status {status!r} not in approved set "
@@ -78,7 +118,8 @@ def check_cr(path: Path) -> list[tuple[str, str]]:
     layer = meta.get("Layer")
     if not layer:
         findings.append(("CR-META-002", f"{path.name}: missing **Layer**"))
-    elif layer not in APPROVED_LAYERS:
+    elif (layer not in APPROVED_LAYERS
+          and _normalize_layer(layer) not in APPROVED_LAYERS):
         findings.append((
             "CR-META-002",
             f"{path.name}: layer {layer!r} not in approved set "
@@ -136,14 +177,22 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--catalog-root", default=".")
     parser.add_argument("--strict", action="store_true",
-                        help="Treat warnings as errors. Note: --strict on "
-                        "the live CR set will fail until legacy CRs are "
-                        "retroactively brought into S21 metadata "
-                        "compliance; current run mode is advisory.")
+                        help="Blocking mode: failures in NEW CRs (last "
+                             "modified on or after the cutoff date) fail; "
+                             "legacy CRs are reported as advisory. The "
+                             "policy is set in `docs/conformance-pipeline.md` "
+                             "S16: legacy CRs predate the S21 metadata "
+                             "schema and SHOULD be retro-fitted as a "
+                             "separate programme; new CRs MUST comply.")
     parser.add_argument("--json", action="store_true",
                         help="Emit JSON output")
     parser.add_argument("--self-test", action="store_true",
                         help="Run self-test and exit")
+    parser.add_argument("--cutoff-date", default="2026-09-06",
+                        help="ISO date; CRs last modified on or after this "
+                             "date are considered 'new' and blocking under "
+                             "--strict. Default 2026-09-06 (CR-BP-16 "
+                             "acceptance).")
     args = parser.parse_args(argv)
 
     if args.self_test:
@@ -151,37 +200,66 @@ def main(argv: list[str] | None = None) -> int:
 
     root = Path(args.catalog_root).resolve()
     findings: list[dict[str, str]] = []
+    new_findings: list[dict[str, str]] = []
+    legacy_findings: list[dict[str, str]] = []
+    from datetime import datetime, timezone
+    cutoff = datetime.fromisoformat(args.cutoff_date).replace(
+        tzinfo=timezone.utc,
+    ).timestamp()
     for path in _walk(root):
         for code, msg in check_cr(path):
-            findings.append({
+            entry = {
                 "rule": code,
                 "path": str(path.relative_to(root)),
                 "message": msg,
-            })
+            }
+            findings.append(entry)
+            if path.stat().st_mtime >= cutoff:
+                new_findings.append(entry)
+            else:
+                legacy_findings.append(entry)
 
-    # CR-META runs as advisory by default. Legacy CRs predate the
-    # §16 metadata schema and would fail --strict; new CRs written
-    # under CR-BP-16 SHOULD include the metadata. CR-BP-13A is the
-    # first CR planned to demonstrate full S21 compliance.
-    verdict = (
-        "ADVISORY-NON-CONFORMANT" if findings else
-        "CONFORMANT"
-    )
+    # CR-META runs as advisory for legacy CRs (those last modified
+    # before --cutoff-date, default 2026-09-06 = CR-BP-16 acceptance)
+    # and BLOCKING for new CRs. --strict enables the blocking
+    # enforcement: new CRs that fail any rule fail the gate.
+    # This implements CR-BP-16 S16: the S21 metadata schema is the
+    # canonical form for any CR that has been touched since the
+    # CR-BP-16 acceptance date.
+    blocking_failures = new_findings if args.strict else []
+    if findings:
+        if args.strict and blocking_failures:
+            verdict = "NON-CONFORMANT"
+        elif new_findings:
+            verdict = "CONFORMANT-WITH-WARNINGS"
+        else:
+            verdict = "ADVISORY-LEGACY"
+    else:
+        verdict = "CONFORMANT"
     if args.json:
-        print(json.dumps({"verdict": verdict, "findings": findings}, indent=2))
+        print(json.dumps({
+            "verdict": verdict,
+            "findings": findings,
+            "new_findings": new_findings,
+            "legacy_findings": legacy_findings,
+            "cutoff_date": args.cutoff_date,
+        }, indent=2))
     else:
         print(f"CR Metadata (CR-BP-16 S16; CR-META-001..006): {verdict}")
         if findings:
             cr_count = len(list(_walk(root)))
+            new_count = len(new_findings)
+            legacy_count = len(legacy_findings)
             print(f"  {len(findings)} findings across {cr_count} CR files "
-                  f"(advisory; legacy CRs lack S21 metadata)")
+                  f"({new_count} new, {legacy_count} legacy)")
             for f in findings[:10]:
-                print(f"    [{f['rule']}] {f['path']}: {f['message']}")
+                tag = "NEW" if f in new_findings else "LEGACY"
+                print(f"    [{tag}/{f['rule']}] {f['path']}: {f['message']}")
             if len(findings) > 10:
                 print(f"    ... and {len(findings) - 10} more")
         else:
             print(f"  checked {len(list(_walk(root)))} CR files")
-    return 0  # advisory only; do not gate CI
+    return 1 if blocking_failures else 0
 
 
 def _self_test() -> int:
