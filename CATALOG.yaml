@@ -22,7 +22,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-channel-and-acquisition-build
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/dea:group-customer-channel-and-acquisition-build.yaml
     research_count: 2
@@ -33,7 +33,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-experience-design
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-experience-design/dea:group-customer-experience-design.yaml
     research_count: 2
@@ -44,7 +44,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-insight-and-retention
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-insight-and-retention/dea:group-customer-insight-and-retention.yaml
     research_count: 2
@@ -55,7 +55,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-lifecycle-management
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-lifecycle-management/dea:group-customer-lifecycle-management.yaml
     research_count: 4
@@ -66,7 +66,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-strategy-conception
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-strategy-conception/dea:group-customer-strategy-conception.yaml
     research_count: 2
@@ -77,7 +77,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-body-establishment
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
     research_count: 2
@@ -88,7 +88,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-oversight
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
     research_count: 2
@@ -99,7 +99,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-review-and-learning
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-review-and-learning/dea:group-governance-review-and-learning.yaml
     research_count: 2
@@ -110,7 +110,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-system-design
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
     research_count: 2
@@ -121,7 +121,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-strategy-and-governance-conception
-    last_modified: '2026-09-06'
+    last_modified: '2026-09-05'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
     research_count: 2

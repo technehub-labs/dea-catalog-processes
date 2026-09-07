@@ -314,7 +314,13 @@ def list_research_files(subtree: Path) -> list[str]:
 
 
 def max_mtime_date(subtree: Path) -> str:
-    """Max mtime across the subtree's regular files, formatted YYYY-MM-DD (UTC)."""
+    """Max mtime across the subtree's regular files, formatted YYYY-MM-DD (UTC).
+
+    Filesystem mtime is reset to checkout time on every `git checkout`,
+    so on fresh-clone runs the returned date is the clone date, not the
+    real last-edit date. Prefer :func:`git_last_commit_date` whenever
+    the subtree is inside a git working tree.
+    """
     from datetime import datetime, timezone
 
     latest = 0.0
@@ -327,6 +333,45 @@ def max_mtime_date(subtree: Path) -> str:
     if latest == 0.0:
         return "1970-01-01"
     return datetime.fromtimestamp(latest, tz=timezone.utc).strftime("%Y-%m-%d")
+
+
+def git_last_commit_date(subtree: Path, repo_root: Path) -> str:
+    """Last git commit date affecting any file under the subtree.
+
+    Returns YYYY-MM-DD (UTC). Falls back to filesystem mtime when git
+    is unavailable or the subtree is not under version control. Falls
+    back to 1970-01-01 when neither path yields a value (defensive
+    default for empty subtrees).
+
+    This is the canonical source of truth for `last_modified`; it is
+    stable across fresh clones (where filesystem mtime is reset to
+    checkout time) and across long-running local checkouts (where
+    filesystem mtime accumulates spurious updates). The same approach
+    is used by `scripts/check_cr_metadata.py` for the §21 metadata
+    cutoff probe (see PR-13 and docs/conformance-pipeline.md §9).
+    """
+    from datetime import datetime, timezone
+    import subprocess
+
+    if not (repo_root / ".git").exists():
+        return max_mtime_date(subtree)
+
+    try:
+        out = subprocess.check_output(
+            [
+                "git", "-C", str(repo_root),
+                "log", "-1", "--format=%ct",
+                "--", str(subtree.relative_to(repo_root)),
+            ],
+            stderr=subprocess.DEVNULL,
+            timeout=5,
+        ).decode("utf-8", errors="replace").strip()
+    except (subprocess.SubprocessError, OSError):
+        return max_mtime_date(subtree)
+
+    if not out.isdigit():
+        return max_mtime_date(subtree)
+    return datetime.fromtimestamp(int(out), tz=timezone.utc).strftime("%Y-%m-%d")
 
 
 def entity_path_for(subtree: Path, state: str) -> str | None:
@@ -348,8 +393,15 @@ def entity_path_for(subtree: Path, state: str) -> str | None:
     return f"entities/v1-alpha/{entity_id}/"
 
 
-def build_entity_entry(subtree: Path, verbose: bool) -> tuple[dict[str, Any], list[str]]:
-    """Build one entities[] entry. Returns (entry, warnings)."""
+def build_entity_entry(
+    subtree: Path, catalog_root: Path, verbose: bool
+) -> tuple[dict[str, Any], list[str]]:
+    """Build one entities[] entry. Returns (entry, warnings).
+
+    `last_modified` is read from the git last-commit date for the
+    subtree (stable across fresh clones); falls back to filesystem
+    mtime if git is unavailable. See `git_last_commit_date`.
+    """
     warnings: list[str] = []
     entity_id = entity_id_from_subtree(subtree)
     canonical = read_canonical_yaml(subtree, entity_id)
@@ -379,7 +431,7 @@ def build_entity_entry(subtree: Path, verbose: bool) -> tuple[dict[str, Any], li
         "candidate_count": count_regular_files(subtree / "candidates"),
         "canonical_count": 1 if (subtree / f"{entity_id}.yaml").exists() else 0,
         "retired_count": count_regular_files(subtree / "retired"),
-        "last_modified": max_mtime_date(subtree),
+        "last_modified": git_last_commit_date(subtree, catalog_root),
         "version": version,
         "lifecycle_status": lifecycle_status,
     }
@@ -464,7 +516,9 @@ def build_payload(
                 f"subtree name {entity_id!r} does not match the canonical entity id pattern; skipping"
             )
             continue
-        entry, entry_warnings = build_entity_entry(subtree, verbose)
+        entry, entry_warnings = build_entity_entry(
+            subtree, catalog_root, verbose
+        )
         entities.append(entry)
         all_warnings.extend(entry_warnings)
 
