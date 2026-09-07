@@ -2,8 +2,8 @@ id: dea:process-develop-governance-strategy
 name: Develop Governance Strategy
 type: Process
 version: 1.0.0
-lifecycle_status: candidate
-status: candidate
+lifecycle_status: deprecated
+status: deprecated
 process_intent: develop
 process_type: strategic
 process_specialization: []
@@ -80,9 +80,35 @@ metadata:
       (dea:pc-sd-conceive) in CR-BP-21a (planned landing tranche). Until that
       cell lands, this process remains affiliated with GE × Conceive and composed
       by dea:group-governance-conception (formerly dea:group-strategy-and-governance-conception).'
+  - cr: CR-BP-21a
+    date: '2026-09-07'
+    change: |
+      L2 migration executed. This entry is now DEPRECATED; the active
+      process lives at dea:process-develop-corporate-strategy in
+      StrategyAndDirection x Conceive (CR-BP-21a). The migration follows
+      the user-approved Option A split in CR-BP-20 grounded in
+      domain-grounding.md §3.1: GE authorises but does not direct;
+      Strategy & Direction directs within the authorised frame.
+      External links should update to the new id. A redirect README
+      is in place.
+  - cr: CR-BP-21a
+    date: '2026-09-07'
+    change: |
+      L2 migration executed. This entry is now DEPRECATED; the active
+      process lives at dea:process-develop-corporate-strategy in
+      StrategyAndDirection x Conceive (CR-BP-21a). The migration follows
+      the user-approved Option A split in CR-BP-20 grounded in
+      domain-grounding.md §3.1: GE authorises but does not direct;
+      Strategy & Direction directs within the authorised frame.
+      External links should update to the new id. A redirect README
+      is in place.
 links:
 - rel: change-request
   href: change-requests/cr-bp-13a-customer-and-demand-admission.md
+- rel: migration-target
+  href: entities/v1-alpha/dea:process-develop-corporate-strategy/dea:process-develop-corporate-strategy.yaml
+- rel: migration-target
+  href: entities/v1-alpha/dea:process-develop-corporate-strategy/dea:process-develop-corporate-strategy.yaml
 - rel: process-context
   href: contexts/v1-alpha/dea-pc-ge-c.yaml
 context:

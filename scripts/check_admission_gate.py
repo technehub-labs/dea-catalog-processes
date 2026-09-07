@@ -263,8 +263,12 @@ def check_admission(path: Path, root: Path,
         # CR-BP-13 admission programme but is functionally equivalent
         # (it admitted the first canonical sample process, see
         # change-requests/CR-BP-03C-sample-process-contribution.md).
+        # CR-BP-19/20/21a..e (StrategyAndDirection landing) are the
+        # rediscovery / alignment / landing tranches under the v2.4.0
+        # admission programme, and are accepted as admission
+        # authorities for new L1/L2 entries landed under them.
         _ADMISSION_CR_RE = re.compile(
-            r"^(?:CR-BP-13[a-z]?|CR-BP-03C)(?:\.\d+)*$"
+            r"^(?:CR-BP-13[a-z]?|CR-BP-19|CR-BP-20|CR-BP-21[a-z]?|CR-BP-03C)(?:\.\d+)*$"
         )
         has_admission = any(
             isinstance(e, dict) and _ADMISSION_CR_RE.match(

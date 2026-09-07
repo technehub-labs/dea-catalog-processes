@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 38
+total_records: 49
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 38
+  4: 49
 records:
 - id: dea:group-customer-channel-and-acquisition-build
   kind: Entity
@@ -110,9 +110,39 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-strategy-direction-conception
+  kind: Entity
+  path: entities/v1-alpha/dea:group-strategy-direction-conception/dea:group-strategy-direction-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-adapt-strategic-direction
+  kind: Entity
+  path: entities/v1-alpha/dea:process-adapt-strategic-direction/dea:process-adapt-strategic-direction.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-audit-policy-compliance
   kind: Entity
   path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-build-strategic-plan
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-strategic-plan/dea:process-build-strategic-plan.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -220,6 +250,26 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-strategic-options
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-strategic-options/dea:process-design-strategic-options.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-develop-corporate-strategy
+  kind: Entity
+  path: entities/v1-alpha/dea:process-develop-corporate-strategy/dea:process-develop-corporate-strategy.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-develop-governance-strategy
   kind: Entity
   path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
@@ -263,6 +313,16 @@ records:
 - id: dea:process-market-and-demand-conception
   kind: Entity
   path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-monitor-strategic-performance
+  kind: Entity
+  path: entities/v1-alpha/dea:process-monitor-strategic-performance/dea:process-monitor-strategic-performance.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -383,6 +443,56 @@ records:
 - id: dea:pc-pr-op
   kind: Unknown
   path: contexts/v1-alpha/dea-pc-pr-op.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-sd-build
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-sd-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-sd-conceive
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-sd-conceive.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-sd-design
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-sd-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-sd-improve
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-sd-improve.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-sd-operate
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-sd-operate.yaml
   level: 4
   level_breakdown:
     L1_structural: true

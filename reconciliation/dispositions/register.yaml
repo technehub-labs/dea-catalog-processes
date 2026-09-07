@@ -517,3 +517,85 @@ dispositions:
     evidence: |
       CR-BP-14 /17.
     note: null
+
+  # ----- CR-BP-21a: StrategyAndDirection landing -----
+  # 4 fresh L2 landings on SD cells (Design/Build/Operate/Improve)
+  # and 1 L2 migration (MOVE) from governance-existence x conceive to
+  # strategy-direction x conceive (CR-BP-20 Option A split).
+
+  - record_id: dea:process-design-strategic-options
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a
+    rationale: |
+      Fresh L2 landing for the StrategyAndDirection x Design cell,
+      per CR-BP-21a and CR-BP-19 register v2. No prior record
+      existed at this coordinate under v2.4.0.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyAndDirection.design;
+      CR-BP-21a-strategy-direction-landing.md.
+    note: null
+
+  - record_id: dea:process-build-strategic-plan
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a
+    rationale: |
+      Fresh L2 landing for the StrategyAndDirection x Build cell,
+      per CR-BP-21a and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyAndDirection.build;
+      CR-BP-21a-strategy-direction-landing.md.
+    note: null
+
+  - record_id: dea:process-monitor-strategic-performance
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a
+    rationale: |
+      Fresh L2 landing for the StrategyAndDirection x Operate cell,
+      per CR-BP-21a and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyAndDirection.operate;
+      CR-BP-21a-strategy-direction-landing.md.
+    note: null
+
+  - record_id: dea:process-adapt-strategic-direction
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a
+    rationale: |
+      Fresh L2 landing for the StrategyAndDirection x Improve cell,
+      per CR-BP-21a and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyAndDirection.improve;
+      CR-BP-21a-strategy-direction-landing.md.
+    note: null
+
+  - record_id: dea:process-develop-corporate-strategy
+    disposition: MOVE
+    changes:
+      - axis: process_context
+        from: dea:pc-ge-conceive
+        to: dea:pc-sd-conceive
+      - axis: process_audience
+        from: governance-existence
+        to: strategy-direction
+    tranche: cr-bp-21a
+    rationale: |
+      L2 migration per CR-BP-20 Option A split (user-approved
+      2026-09-07) and CR-BP-21a execution. Develop corporate
+      strategy is excluded from GovernanceAndExistence per v2.4.0
+      (domain-grounding.md §3.1: GE authorises but does not direct;
+      Strategy & Direction directs within the authorised frame).
+      The previous record dea:process-develop-governance-strategy
+      is deprecated and remains in the tree with lifecycle_status:
+      deprecated for traceability.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyAndDirection.conceive;
+      CR-BP-20-l1-l2-alignment-ecf-v240.md;
+      CR-BP-21a-strategy-direction-landing.md.
+    note: |
+      The previous record id (dea:process-develop-governance-strategy)
+      is deprecated; new canonical id is
+      dea:process-develop-corporate-strategy.
