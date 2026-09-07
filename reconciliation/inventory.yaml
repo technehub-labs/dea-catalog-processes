@@ -209,6 +209,13 @@ records:
       legacy_findings:
         - ctx-scalar
         - no-context-block
+    - id: dea:group-governance-conception
+      name: "Governance Conception"
+      type: ProcessGroup
+      path: entities/v1-alpha/dea:group-governance-conception/dea:group-governance-conception.yaml
+      legacy_findings:
+        - ctx-scalar
+        - no-context-block
     - id: dea:group-governance-oversight
       name: "Governance Oversight"
       type: ProcessGroup
@@ -227,13 +234,6 @@ records:
       name: "Governance System Design"
       type: ProcessGroup
       path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
-      legacy_findings:
-        - ctx-scalar
-        - no-context-block
-    - id: dea:group-strategy-and-governance-conception
-      name: "Strategy and Governance Conception"
-      type: ProcessGroup
-      path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
       legacy_findings:
         - ctx-scalar
         - no-context-block

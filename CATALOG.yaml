@@ -4,7 +4,7 @@ catalog:
     candidates: 0
     canonical: 28
     entities: 28
-    open_change_requests: 19
+    open_change_requests: 20
     research_files: 57
     retired: 0
   cross_cutting:
@@ -87,6 +87,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
+    id: dea:group-governance-conception
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-governance-conception/dea:group-governance-conception.yaml
+    research_count: 2
+    retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.1.0
+  - candidate_count: 1
+    canonical_count: 1
     id: dea:group-governance-oversight
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -113,17 +124,6 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
-    research_count: 2
-    retired_count: 1
-    state: canonical
-    type: ProcessGroup
-    version: 1.0.0
-  - candidate_count: 1
-    canonical_count: 1
-    id: dea:group-strategy-and-governance-conception
-    last_modified: '2026-09-07'
-    lifecycle_status: candidate
-    path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
     research_count: 2
     retired_count: 1
     state: canonical
@@ -365,6 +365,11 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-governance-body-establishment/research/
+  - entity_id: dea:group-governance-conception
+    files:
+    - .gitkeep
+    - README.md
+    path: entities/v1-alpha/dea:group-governance-conception/research/
   - entity_id: dea:group-governance-oversight
     files:
     - .gitkeep
@@ -380,11 +385,6 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-governance-system-design/research/
-  - entity_id: dea:group-strategy-and-governance-conception
-    files:
-    - .gitkeep
-    - README.md
-    path: entities/v1-alpha/dea:group-strategy-and-governance-conception/research/
   - entity_id: dea:process-audit-policy-compliance
     files:
     - .gitkeep

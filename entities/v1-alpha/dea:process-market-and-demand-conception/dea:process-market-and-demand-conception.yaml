@@ -20,8 +20,8 @@ trigger: 'A new market entry, an existing segment''s drift, or a demand-side hyp
   needs to be tested before strategy commitment.
 
   '
-outcome: 'A market and demand thesis with testable hypotheses and initial segment
-  targets is committed.
+outcome: 'A market and demand thesis with testable hypotheses, initial segment
+  targets, and a test plan is committed and ready to be designed.
 
   '
 identity:
