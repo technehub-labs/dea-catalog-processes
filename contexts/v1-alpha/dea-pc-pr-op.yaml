@@ -1,4 +1,4 @@
-# Process Context Cell Charter: CustomerAndDemand x Operate.
+# Process Context Cell Charter: PartyAndRelationship x Operate.
 #
 # This is the FIRST Process Context entry in the catalog,
 # landing as part of CR-BP-03C. It exercises the CR-BP-02
@@ -16,8 +16,8 @@
 #   - adjacent_boundaries: How this context relates to
 #     adjacent cells.
 
-id: dea:pc-cd-op
-domain: CustomerAndDemand
+id: dea:pc-pr-op
+domain: PartyAndRelationship
 lifecycle_stage: Operate
 name: Customer Relationship Operations
 
@@ -53,10 +53,10 @@ outcomes:
 # Adjacent contexts (dea:pc-...). Relationships do NOT imply
 # duplicated ownership (CR-BP-02 §11).
 adjacent_contexts:
-  - dea:pc-cd-c
-  - dea:pc-cd-d
-  - dea:pc-cd-b
-  - dea:pc-cd-ac
+  - dea:pc-pr-c
+  - dea:pc-pr-d
+  - dea:pc-pr-b
+  - dea:pc-pr-ac
 
 # Business Processes belonging to this context (PC-008).
 # Must resolve to canonical BP specialization ids.
@@ -86,10 +86,10 @@ cell_charter:
     - Onboarding implementation (Build)
     - Customer support tickets (Support Staff BP)
   adjacent_boundaries:
-    - "dea:pc-cd-c (Conceive): the prior lifecycle stage; transition from new customer to active customer."
-    - "dea:pc-cd-d (Design): the design context; may inform renewal design."
-    - "dea:pc-cd-b (Build): the build context; may inform onboarding handoff to Operate."
-    - "dea:pc-cd-ac (Activate): the activate context; transition into active operation."
+    - "dea:pc-pr-c (Conceive): the prior lifecycle stage; transition from new customer to active customer."
+    - "dea:pc-pr-d (Design): the design context; may inform renewal design."
+    - "dea:pc-pr-b (Build): the build context; may inform onboarding handoff to Operate."
+    - "dea:pc-pr-ac (Activate): the activate context; transition into active operation."
 
 # Lifecycle status (CR-BP-02 §17).
 status: defined

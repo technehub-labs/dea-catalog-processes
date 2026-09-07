@@ -53,7 +53,7 @@ EVOLVE, never RESEARCH → ADD → ADD → REPAIR.
 | Discovery | CR-BP-11 | Research across all 49 ECF coordinates |
 | Group profile | CR-BP-12 | First-class catalog-owned Process Group record |
 | Ratification | CR-BP-13 | The 49-coordinate register ratified (38 accepted, 11 backlog-deferred) |
-| Admission | CR-BP-13a / 13b | CustomerAndDemand and GovernanceAndExistence tranches |
+| Admission | CR-BP-13a / 13b | PartyAndRelationship and GovernanceAndExistence tranches |
 | Constitution | CR-BP-14 | The semantic contract: distinct Intent, Classification, Specialization, Context, Relationships |
 | Reconciliation | CR-BP-15 (+ CR-BP-15-IMP) | Every existing record assessed and dispositioned against the contract |
 | Conformance | CR-BP-16 | The permanent gate that keeps the baseline true |

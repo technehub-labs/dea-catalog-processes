@@ -26,176 +26,176 @@ records:
     type: ChangeRequest
     path: change-requests/CR-BP-13-research-ratification.md
     sha256: 200dd1f82d43471dd346bf84f86bd7ce1de0827660bf710bb369393dfb39c5aa
-  - id: <cr:CR-BP-13a-customer-and-demand-admission.md>
+  - id: <cr:CR-BP-13a-party-and-relationship-admission.md>
     type: ChangeRequest
-    path: change-requests/CR-BP-13a-customer-and-demand-admission.md
-    sha256: 55d77a63ec09159c08723843680aac0d851c7cb502a3ea79bb231f2aae2ec953
+    path: change-requests/CR-BP-13a-party-and-relationship-admission.md
+    sha256: 7724125c09772db01e2385f46f58eaf8d931e1c0e0eb39e539f2498bbc4e12c2
   - id: <cr:CR-BP-13b-governance-and-existence-admission.md>
     type: ChangeRequest
     path: change-requests/CR-BP-13b-governance-and-existence-admission.md
-    sha256: b0602e110a93d6c48d5cf98f868099084122a5a5033e28ced9e33732631f2316
+    sha256: 6b5ff41f64bb5f6dab854d48f79d835be47faee6e7b001b54f9aec2e159985c3
   - id: <cr:CR-BP-14-process-semantic-reconciliation.md>
     type: ChangeRequest
     path: change-requests/CR-BP-14-process-semantic-reconciliation.md
-    sha256: cea7fb33e5bba84be0c1e200570952b89d26c31b1f5a72434370084df20fe9eb
+    sha256: b48a9b48c4914cfce1fda622ccab1f12b4d9f256d67428eb4abd73d9fbb69967
   - id: <cr:CR-BP-15-process-catalog-reconciliation.md>
     type: ChangeRequest
     path: change-requests/CR-BP-15-process-catalog-reconciliation.md
-    sha256: be76b1aa3b5b20cb860b7c90880c20dbc27c6e34daec86e1f7f2ffc1adb4411e
+    sha256: 3668d65f0f17f5194c4e8646130302e3bbeb7436174a41550adf9393f455d4e7
   - id: <cr:CR-BP-16-process-catalog-conformance-gate.md>
     type: ChangeRequest
     path: change-requests/CR-BP-16-process-catalog-conformance-gate.md
-    sha256: 6d43bb15122c3043343b8a0cd2c663d43e92a35492708ee22ba08df547c495eb
+    sha256: 1b9d84dccc8c868aa476baa208f6597bb96af1d7404e2bf127aec5a102991c89
   - id: dea:group-customer-channel-and-acquisition-build
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/dea:group-customer-channel-and-acquisition-build.yaml
-    sha256: 4c531529c1b48b7e8794a8122feb0248153bfaf5657dbb212b51017e1dcb9d74
+    sha256: 30c35ec276df7a5cbf86b8be1036af0067c7267a5f35a436ef76cfc37d2b2c7f
   - id: dea:group-customer-experience-design
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-experience-design/dea:group-customer-experience-design.yaml
-    sha256: ba384189656297ae12f8716f085160eddb12eeafa381a578685d49d6380c400f
+    sha256: db0cd5f4d8b21e67c2c48226806da1da511753be0f58dda328ce22d08e03508b
   - id: dea:group-customer-insight-and-retention
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-insight-and-retention/dea:group-customer-insight-and-retention.yaml
-    sha256: c4cb7eb32cd4dcbbe695a3b536852c88aaa7b68f81fc2d2f2aeb0dbccec062ad
+    sha256: 90011008e1c569e0abeebbb882f92f8c40891b6b85c112e864623fbac8945a74
   - id: dea:group-customer-lifecycle-management
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-lifecycle-management/dea:group-customer-lifecycle-management.yaml
-    sha256: aacb63d67561fd03e7c408a1dbbc789f1ef1499282eef32d10c9c282c9caf07d
+    sha256: d8dcd2fb97eddcbc14f62f6525ba965f285e702e22493606ea859c5494345a76
   - id: dea:group-customer-strategy-conception
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-customer-strategy-conception/dea:group-customer-strategy-conception.yaml
-    sha256: d8be75d1ba53781b15e56fe30968e0a203aac21fb407f1636172fc8482f7ce93
+    sha256: ec85ad5673cac5b29afcaa9356bbb2c76b8ecee4a98175168fa9d8844ae5813c
   - id: dea:group-governance-body-establishment
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
-    sha256: 16d28993b6e8d56dde73eb6a8a30d57ebbceee272a42e21114f6cef58d7fd1ad
+    sha256: e7abe062666588fd7cd13bb7dd748516f49420a34acbcad82a8809b60fdac380
   - id: dea:group-governance-oversight
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
-    sha256: d892c6a980c0e3c68bf0c8c274e1156c0d589d036221e4e6361850ef0ca2d8c4
+    sha256: 32af515bd9f67c7109844bf38f378a96ae333abed1851a1813027b5c2b8b733f
   - id: dea:group-governance-review-and-learning
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-review-and-learning/dea:group-governance-review-and-learning.yaml
-    sha256: 1404a0b9259f983ba93a204ef2540227adf349ab232efccd1fd0d6ec669d4c38
+    sha256: 92ae866ef0a3ca05f5f04eac54f1e8e1417d5c2b0ca4b551fdbaa1b1d0801c69
   - id: dea:group-governance-system-design
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
-    sha256: 34608c6496eb2b197972ec9a8f813e9e7a857caeb2768f5dd2299b5d3d1ba90d
+    sha256: 73182025ca25cae490b0993b1dcf4eb63dff8a9449209e65f1645f7c2c7d3d26
   - id: dea:group-strategy-and-governance-conception
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
-    sha256: 467bd82007fc29404f449b86335f449cc6fa0b2809507a4f2ede5642a4264f55
-  - id: dea:pc-cd-b
-    type: ProcessContext
-    path: contexts/v1-alpha/dea-pc-cd-b.yaml
-    sha256: 18c17581caa96f16301ef81a57ea0ae48b17939802aeb4695db0c652f2e8e555
-  - id: dea:pc-cd-c
-    type: ProcessContext
-    path: contexts/v1-alpha/dea-pc-cd-c.yaml
-    sha256: 72851c3b37231ea9b5737bc424e11bb6b9df83e69bbcd9e71552072e0b992354
-  - id: dea:pc-cd-d
-    type: ProcessContext
-    path: contexts/v1-alpha/dea-pc-cd-d.yaml
-    sha256: 6cf59c1429a10fa177241b0b63921ae853d4213703f8eb31ceea4a6c04d1ba71
-  - id: dea:pc-cd-im
-    type: ProcessContext
-    path: contexts/v1-alpha/dea-pc-cd-im.yaml
-    sha256: ca2bc054aef193d877d9a0a2909da0597ed79d2b57f66136455433ed7f73b9e6
-  - id: dea:pc-cd-op
-    type: ProcessContext
-    path: contexts/v1-alpha/dea-pc-cd-op.yaml
-    sha256: 5a0d900fa3a552565115c06fd39871743005a58ba6086eacf696f1d68ec29414
+    sha256: 29016b402ed147b451ecd1974a2f1a428151e5ec0b7f5d3af3b708bbc294229d
   - id: dea:pc-ge-b
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-b.yaml
-    sha256: 06f98f6a2986e449e9df6f26a6e9c15ad1bb79882822b11a35c2224a114ab8f4
+    sha256: 4159be0650a5d224f85997a29020ef699bcfaa251825655d205b288acf4a8f58
   - id: dea:pc-ge-c
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-c.yaml
-    sha256: f30a0c4155d47acd4ddbdd1e2a5e0fa64c20d75c78da384aa9f2169d815d3d5b
+    sha256: 20ea2aa3dcad8132bae4f27af8f16e70b28daece4a0cd2b31b7206c5f5f18371
   - id: dea:pc-ge-d
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-d.yaml
-    sha256: 47a9a5f5bceb38c3a619f723e2a4134df14c2c53e7549a6082365ad1ab09b15d
+    sha256: 3711c9aef9389036b7de4883d3c8512f93aff30096275524466c47a2466a6944
   - id: dea:pc-ge-im
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-im.yaml
-    sha256: aa59e1714aa2e99a17c8c48e5806a25acb5d11295eaf04bff2b6dc0acc42d834
+    sha256: ffb35459f0d6d7b33007c5c9912bbfc423b3a8312b0e1b8f755036ac40712260
   - id: dea:pc-ge-op
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-op.yaml
-    sha256: 2dde1613924cdad987053235072fbe6cd7e782de34f7ee3bb49de3c8fa1231a5
+    sha256: 24e155e98e5c578571f8a637fd1040eabd0ad8c192c46976cac3aaa129ca2489
+  - id: dea:pc-pr-b
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-pr-b.yaml
+    sha256: 3652e8b6ec43074abf96439553210be90f6bdcec8757f23e60438a517535ecf6
+  - id: dea:pc-pr-c
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-pr-c.yaml
+    sha256: 99036373a2fd76c74d003e6bcb4ec5f02a3bed12654852b2f9af8bdf03232c3c
+  - id: dea:pc-pr-d
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-pr-d.yaml
+    sha256: ab6addcf524cd8767c19dc7b9075f8542c41482f37ef4e37cc2e00f7354abc12
+  - id: dea:pc-pr-im
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-pr-im.yaml
+    sha256: 45e012520d286ae9bad5a5b469846da9e8986bf7f1108fd0642be6096eb45f97
+  - id: dea:pc-pr-op
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-pr-op.yaml
+    sha256: 4a73edc167d57eac7002160afc3810896d8b8e97bf7a41f0c37179dbcbf84be0
   - id: dea:process-audit-policy-compliance
     type: Process
     path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
-    sha256: fcd29853c637f6de9927bece7fdc53de86c3bcf4ed51901f25f281749125274e
+    sha256: 659c016f3e2b75ec4cf24d64d194e8b7652e850e3aa649ec09c4440e1c0eabff
   - id: dea:process-codify-charters-and-policies
     type: Process
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
-    sha256: 617ecc353b5b1a20c3d040bb08f1d1d2a7c6758d4828323bbd9df00cc179ef9d
+    sha256: ae4a29404aa08a356e8376eefb2b620526a18fdfa747550113bc94bc4b7d91df
   - id: dea:process-customer-channel-and-acquisition-build
     type: Process
     path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
-    sha256: 7b4395a07f8d2bc14f82dd1570d946202a93007e8effc58cf5661a4ebc4b691c
+    sha256: 22430a5a82a0dd7838ade45ad7c5961bde43b389618b89a46d32cc64e792eab2
   - id: dea:process-customer-experience-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
-    sha256: 80257da6a543e83d11fdf32712c06ded3e93b6234683c8435e2c3d403c9c1fa7
+    sha256: 2a0a7ebdca284c44bc4d72484e9cba468dbbdbe5c3391f6387e9bd99852e8433
   - id: dea:process-customer-insight-and-retention
     type: Process
     path: entities/v1-alpha/dea:process-customer-insight-and-retention/dea:process-customer-insight-and-retention.yaml
-    sha256: c5aef784441daae9156eaa3defd013f8597bc7c2aa8deadd4008431d0222d92c
+    sha256: fe5870fb001a1a476b9aa881a9be6875cd9ba62d0baee341aac34406b5f7a8ff
   - id: dea:process-customer-journey-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-journey-design/dea:process-customer-journey-design.yaml
-    sha256: 3f42ca7e35f007544f7c8a7059e6110ab001d803e38c973736b61eda2aaea33a
+    sha256: f8be7d478176f49fd43afe299ed4c6488092cea357236c688d92ad0e13413542
   - id: dea:process-customer-strategy-conception
     type: Process
     path: entities/v1-alpha/dea:process-customer-strategy-conception/dea:process-customer-strategy-conception.yaml
-    sha256: 26213b4a3caa98da122a52fab7bedd8c33a345a5d091426edf91703c93796fd8
+    sha256: 1477642203874e337f31ed17a9d4150b993e1a48cf458c8cccba600f33f9b785
   - id: dea:process-demand-design
     type: Process
     path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
-    sha256: ec6c9f1436b82eba44c4963dc12bbc79df7108dcf4cf09c0c541d50aa09f3346
+    sha256: 29ddba1e5d2212b6dffd76ba4d55428aa61540236b83388da0d5bc68bf5f315c
   - id: dea:process-demand-generation-build
     type: Process
     path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
-    sha256: b82474755701dc183455c3992e86d39eb349b14a18ef198789060adde53b38b3
+    sha256: 13f214ca0b1f35f511cc7c3f9c31f7f2b83988b2be9a3f9897d3208e95c3cf9c
   - id: dea:process-design-governance-system
     type: Process
     path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
-    sha256: 1bc95f70360712b13b44667c5624972136d0fcfd2d9d806db38fc3fdaa8aafa6
+    sha256: fbde918776f3b26ac4967faaaf765322e2fe81c5e8f2aee6f7a873276711c858
   - id: dea:process-design-policies-and-controls
     type: Process
     path: entities/v1-alpha/dea:process-design-policies-and-controls/dea:process-design-policies-and-controls.yaml
-    sha256: 57dcc5763ddc523b09b6e656f1afd74b95dd129aa7249288ef047df7f86af23c
+    sha256: 76ef41d5660d3e8844351194c382d212cfe58b2bf504448657f76b7856c832b6
   - id: dea:process-develop-governance-strategy
     type: Process
     path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
-    sha256: 91d12029d2d7f32cc552a6ac86a6694984bd1221a11220388c6ef4776c482aa4
+    sha256: d09e3fad5e7acfaedb58d9d67baf6ecb8efd116c88a1d11ec026805297299e6b
   - id: dea:process-establish-governance-bodies
     type: Process
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
-    sha256: b56d7d93f128d98302c75f24a777056a5621845cd9b3805c9a975dd58f283adf
+    sha256: 4b15a2b05c4dca7e4097b6fc69e2d848a591370ab41a246f70fb6d7ae1519712
   - id: dea:process-initiate-policy-and-charter
     type: Process
     path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
-    sha256: 2157e80262c5841fc57b99ce9fb1f5886e73a7fd329fe39b938fe5ea4ad4bafa
+    sha256: c40af2ae1b73028a666a6032025ea3036282065bdb3c66f24e5e3126b8b59720
   - id: dea:process-manage-customer-relationship
     type: Process
     path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
-    sha256: b8df1cd7864766872182ba7957d35ad8033591a9596898faaf76bdab4532f244
+    sha256: 60d84ced4c09378f715f4970298d45b40cb15600c16990b65b299a06930aedcf
   - id: dea:process-market-and-demand-conception
     type: Process
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
-    sha256: b7f6eeb5a43dff27cb5f4c9371de7186bef68ec678970d4b436aaa5f047c1ac9
+    sha256: 051403b710d8305cf5f559634c8de21251f3b9cafe41847d48eb0ecc122a90f9
   - id: dea:process-operate-governance-oversight
     type: Process
     path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
-    sha256: 60b9cb5905b9a1bd61dd293c243021e7424dc67a70594484afdae7ec5c31a326
+    sha256: 3ddbc84d86f24fe1eac679b10bfb8234ebb7ee2db68e50d78931035fd000d645
   - id: dea:process-review-governance-effectiveness
     type: Process
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
-    sha256: 14f2d7cab527bb46c8feb413bff3110d8efde3679d35440a6974e49af4961312
+    sha256: e1c68a55d48ef084a709deebf9f93f63a19827e1d053449d529b4e0a3ced16bf
 

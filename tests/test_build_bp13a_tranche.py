@@ -120,9 +120,9 @@ def test_render_process_group_ecf_conformance() -> None:
         doc = yaml.safe_load(text)
         ref = doc["ecfConformance"]["canonicalReferences"][0]
         assert ref["kind"] == "coordinate"
-        assert ref["domain"] == "CustomerAndDemand"
+        assert ref["domain"] == "PartyAndRelationship"
         assert ref["stage"] in {"Conceive", "Design", "Build", "Operate", "Improve"}
-        assert ref["identifier"].startswith("ecf:customerDemand.")
+        assert ref["identifier"].startswith("ecf:partyRelationship.")
 
 
 def test_render_l2_process_ecf_conformance() -> None:
@@ -131,7 +131,7 @@ def test_render_l2_process_ecf_conformance() -> None:
         doc = yaml.safe_load(text)
         ref = doc["ecfConformance"]["canonicalReferences"][0]
         assert ref["kind"] == "coordinate"
-        assert ref["identifier"].startswith("ecf:customerDemand.")
+        assert ref["identifier"].startswith("ecf:partyRelationship.")
 
 
 def test_render_process_group_composes_count_matches_l2s() -> None:

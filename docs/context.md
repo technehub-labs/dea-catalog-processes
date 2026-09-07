@@ -42,8 +42,8 @@ Business Process is the `context:` block:
 
 ```yaml
 context:
-  - ref: dea:pc-cd-op            # Process Context reference
-  - ref: dea:pc-cd-im            # multiplicity is permitted where evidence justifies
+  - ref: dea:pc-pr-op            # Process Context reference
+  - ref: dea:pc-pr-im            # multiplicity is permitted where evidence justifies
 ```
 
 CR-BP-14 §13 / BP-SEM-008 enforce that every declared reference

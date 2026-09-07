@@ -103,7 +103,7 @@ def _ecf_target_id(domain: str, stage: str) -> str:
     """Build the CG-003 canonical ECF target identifier.
 
     The form is `ecf:<lowerCamelDomain>.<lowerCamelStage>`,
-    e.g. `ecf:customerDemand.build`.
+    e.g. `ecf:partyRelationship.build`.
     """
     return f"ecf:{domain[:1].lower()}{domain[1:]}.{stage[:1].lower()}{stage[1:]}"
 
@@ -250,13 +250,13 @@ def main(argv: list[str] | None = None) -> int:
                 "name": "Build Test",
                 "type": "Process",
                 "process_intent": "operational",
-                "process_audience": "customer-demand",
-                "process_context": "dea:pc-cd-b",
+                "process_audience": "party-relationship",
+                "process_context": "dea:pc-pr-b",
                 "process_specialization": [],
                 "relationships": [],
                 "metadata": {"change_history": []},
                 "ecfConformance": {"canonicalReferences": [
-                    {"kind": "coordinate", "domain": "CustomerAndDemand", "stage": "Build"}
+                    {"kind": "coordinate", "domain": "PartyAndRelationship", "stage": "Build"}
                 ]},
             }, sort_keys=False))
             # Patch REPO_ROOT for the helper.
@@ -274,19 +274,19 @@ def main(argv: list[str] | None = None) -> int:
                     "record_id": "dea:process-test",
                     "changes": [
                         {"axis": "process_intent", "from": "operational", "to": "operate"},
-                        {"axis": "process_context", "from": "dea:pc-cd-b", "to": "dea:pc-cd-b"},
-                        {"axis": "process_audience", "from": "customer-demand", "to": "REMOVE"},
+                        {"axis": "process_context", "from": "dea:pc-pr-b", "to": "dea:pc-pr-b"},
+                        {"axis": "process_audience", "from": "party-relationship", "to": "REMOVE"},
                     ],
                 }
                 migrated, changes = mod.migrate_record("dea:process-test", disposition)
                 # Assert migration is correct.
                 assert migrated["process_intent"] == "operate", "intent not migrated"
                 assert "process_audience" not in migrated, "audience not removed"
-                assert migrated["context"] == [{"ref": "dea:pc-cd-b"}], "context block wrong"
+                assert migrated["context"] == [{"ref": "dea:pc-pr-b"}], "context block wrong"
                 # The canonical form is ecf:<lowerCamelDomain>.<lowerCamelStage>;
                 # we preserve the rest of the domain name as-is. So
-                # `CustomerAndDemand` -> `customerAndDemand` (NOT `customeranddemand`).
-                domain_sample = "CustomerAndDemand"
+                # `PartyAndRelationship` -> `customerAndDemand` (NOT `customeranddemand`).
+                domain_sample = "PartyAndRelationship"
                 expected_ecf = f"ecf:{domain_sample[:1].lower()}{domain_sample[1:]}.build"
                 assert any(r.get("relationship_type") == "serves"
                            and r.get("target_id") == expected_ecf

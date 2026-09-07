@@ -47,7 +47,7 @@ def test_bpar_rejects_canonical_bad(tmp_path):
     # Introduce forbidden tokens in name + description.
     data["name"] = "Process Kernel Design"
     data["description"] = (data.get("description") or "") + " Decomposed specialization example."
-    data["process_audience"] = "customer-demand"  # BP-AR-005
+    data["process_audience"] = "party-relationship"  # BP-AR-005
     bad_file.write_text(yaml.safe_dump(data, sort_keys=False))
     r = _run([str(SCRIPT_BPAR), "--strict", "--catalog-root", str(sandbox)])
     assert r.returncode != 0, (

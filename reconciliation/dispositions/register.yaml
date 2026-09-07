@@ -67,7 +67,7 @@ summary:
 
 dispositions:
 
-  # ----- dea:pc-cd-b: customer-demand / build -----
+  # ----- dea:pc-pr-b: party-relationship / build -----
 
   - record_id: dea:process-customer-channel-and-acquisition-build
     disposition: RECLASSIFY
@@ -76,10 +76,10 @@ dispositions:
         from: operational
         to: operate
       - axis: process_context
-        from: dea:pc-cd-b
-        to: dea:pc-cd-b   # unchanged context, migrate scalar -> block
+        from: dea:pc-pr-b
+        to: dea:pc-pr-b   # unchanged context, migrate scalar -> block
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE        # legacy alias no longer needed once context: block in place
     tranche: cd-b
     rationale: |
@@ -104,10 +104,10 @@ dispositions:
         from: operational
         to: operate
       - axis: process_context
-        from: dea:pc-cd-b
-        to: dea:pc-cd-b
+        from: dea:pc-pr-b
+        to: dea:pc-pr-b
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-b
     rationale: |
@@ -121,7 +121,7 @@ dispositions:
       the work performs recurring demand-generation activities.
     note: null
 
-  # ----- dea:pc-cd-c: customer-demand / conceive -----
+  # ----- dea:pc-pr-c: party-relationship / conceive -----
 
   - record_id: dea:process-customer-strategy-conception
     disposition: RECLASSIFY
@@ -130,10 +130,10 @@ dispositions:
         from: management
         to: develop
       - axis: process_context
-        from: dea:pc-cd-c
-        to: dea:pc-cd-c
+        from: dea:pc-pr-c
+        to: dea:pc-pr-c
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-c
     rationale: |
@@ -158,10 +158,10 @@ dispositions:
         from: management
         to: develop
       - axis: process_context
-        from: dea:pc-cd-c
-        to: dea:pc-cd-c
+        from: dea:pc-pr-c
+        to: dea:pc-pr-c
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-c
     rationale: |
@@ -174,7 +174,7 @@ dispositions:
       CR-BP-14 /17; the record's outcome statement.
     note: null
 
-  # ----- dea:pc-cd-d: customer-demand / design -----
+  # ----- dea:pc-pr-d: party-relationship / design -----
 
   - record_id: dea:process-customer-experience-design
     disposition: RECLASSIFY
@@ -184,9 +184,9 @@ dispositions:
         to: develop
       - axis: process_context
         from: dea:pc-d-cd-d
-        to: dea:pc-cd-d
+        to: dea:pc-pr-d
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-d
     rationale: |
@@ -206,10 +206,10 @@ dispositions:
         from: support
         to: develop
       - axis: process_context
-        from: dea:pc-cd-d
-        to: dea:pc-cd-d
+        from: dea:pc-pr-d
+        to: dea:pc-pr-d
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-d
     rationale: |
@@ -232,10 +232,10 @@ dispositions:
         from: management
         to: develop
       - axis: process_context
-        from: dea:pc-cd-d
-        to: dea:pc-cd-d
+        from: dea:pc-pr-d
+        to: dea:pc-pr-d
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-d
     rationale: |
@@ -246,7 +246,7 @@ dispositions:
       CR-BP-14 /17; the record's outcome statement.
     note: null
 
-  # ----- dea:pc-cd-im: customer-demand / improve -----
+  # ----- dea:pc-pr-im: party-relationship / improve -----
 
   - record_id: dea:process-customer-insight-and-retention
     disposition: RECLASSIFY
@@ -255,10 +255,10 @@ dispositions:
         from: management
         to: operate
       - axis: process_context
-        from: dea:pc-cd-im
-        to: dea:pc-cd-im
+        from: dea:pc-pr-im
+        to: dea:pc-pr-im
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-im
     rationale: |
@@ -270,7 +270,7 @@ dispositions:
       CR-BP-14 /17; the record's outcome statement.
     note: null
 
-  # ----- dea:pc-cd-op: customer-demand / operate -----
+  # ----- dea:pc-pr-op: party-relationship / operate -----
 
   - record_id: dea:process-manage-customer-relationship
     disposition: RECLASSIFY
@@ -279,10 +279,10 @@ dispositions:
         from: management
         to: manage
       - axis: process_context
-        from: dea:pc-cd-op
-        to: dea:pc-cd-op
+        from: dea:pc-pr-op
+        to: dea:pc-pr-op
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: cd-op
     rationale: |
@@ -307,7 +307,7 @@ dispositions:
         from: dea:pc-ge-b
         to: dea:pc-ge-b
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-b
     rationale: |
@@ -316,7 +316,7 @@ dispositions:
       recurring charter and policy codification activities
       (operate). Legacy "operational" maps to `operate`. Note:
       the record's `process_audience` was originally
-      `customer-demand` (a 13b generator artifact); the
+      `party-relationship` (a 13b generator artifact); the
       canonical `context:` block is `dea:pc-ge-b` (governance /
       build), so the legacy audience is replaced by the
       canonical context.
@@ -338,7 +338,7 @@ dispositions:
         from: dea:pc-ge-b
         to: dea:pc-ge-b
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-b
     rationale: |
@@ -363,7 +363,7 @@ dispositions:
         from: dea:pc-ge-c
         to: dea:pc-ge-c
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-c
     rationale: |
@@ -385,7 +385,7 @@ dispositions:
         from: dea:pc-ge-c
         to: dea:pc-ge-c
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-c
     rationale: |
@@ -409,7 +409,7 @@ dispositions:
         from: dea:pc-ge-d
         to: dea:pc-ge-d
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-d
     rationale: |
@@ -430,7 +430,7 @@ dispositions:
         from: dea:pc-ge-d
         to: dea:pc-ge-d
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-d
     rationale: |
@@ -454,7 +454,7 @@ dispositions:
         from: dea:pc-ge-im
         to: dea:pc-ge-im
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-im
     rationale: |
@@ -481,7 +481,7 @@ dispositions:
         from: dea:pc-ge-op
         to: dea:pc-ge-op
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-op
     rationale: |
@@ -506,7 +506,7 @@ dispositions:
         from: dea:pc-ge-op
         to: dea:pc-ge-op
       - axis: process_audience
-        from: customer-demand
+        from: party-relationship
         to: REMOVE
     tranche: ge-op
     rationale: |

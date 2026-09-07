@@ -16,4 +16,4 @@ Established by CR-BP-13a on 2026-09-05.
 ## Governing CR
 
 - **CR-BP-13a**: initial admission as part of the
-  CustomerAndDemand admission tranche.
+  PartyAndRelationship admission tranche.

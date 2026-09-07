@@ -141,7 +141,7 @@
         "id": {
           "type": "string",
           "pattern": "^dea:[a-z0-9-]+(:[a-z0-9-]+)*$",
-        "description": "Canonical entity id; colons preserved as part of the directory name. Accepts single-segment (dea:process-foo) and multi-segment (dea:pc-cd-op) ids."
+        "description": "Canonical entity id; colons preserved as part of the directory name. Accepts single-segment (dea:process-foo) and multi-segment (dea:pc-pr-op) ids."
         },
         "type": {
           "type": "string",

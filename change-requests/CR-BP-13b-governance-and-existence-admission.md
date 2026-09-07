@@ -5,7 +5,7 @@
 **Owner**: TechNeHub Labs
 **Depends on**: CR-BP-11 (research register; merged), CR-BP-12 (L1
 Process Group profile/schema; merged), CR-BP-13 (research ratification;
-merged), CR-BP-13a (CustomerAndDemand admission tranche; merged)
+merged), CR-BP-13a (PartyAndRelationship admission tranche; merged)
 
 ## What this CR is
 
@@ -101,12 +101,12 @@ This CR does NOT:
 | CR-BP-11 | Merged (research register) |
 | CR-BP-12 | Merged (L1 Process Group profile) |
 | CR-BP-13 | Merged (research ratification; PR #22) |
-| CR-BP-13a | Merged (CustomerAndDemand admission; PR #23) |
+| CR-BP-13a | Merged (PartyAndRelationship admission; PR #23) |
 | **CR-BP-13b (this PR)** | **Proposed** |
 | CR-BP-13c..BP-13g (other 5 domains) | future |
 
 After this CR lands, **2 of the 7 ECF domains are fully populated**
-(CustomerAndDemand + GovernanceAndExistence). The 5 remaining
-domains (SupplyAndResources, PeopleAndOrganization,
-ProductAndOffering, OperationsAndDelivery, FinanceAndValue) follow
+(PartyAndRelationship + GovernanceAndExistence). The 5 remaining
+domains (StrategyAndDirection, PeopleAndOrganization,
+ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) follow
 in CR-BP-13c..BP-13g.

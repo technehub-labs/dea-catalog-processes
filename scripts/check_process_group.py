@@ -302,7 +302,7 @@ def self_test() -> int:
         # Fixed context
         (ctx_dir / "dea_pc-test-op.yaml").write_text(
             "id: dea:pc-test-op\n"
-            "domain: CustomerAndDemand\n"
+            "domain: PartyAndRelationship\n"
             "lifecycle_stage: Operate\n"
             "name: Test Context\n"
             "definition: Test\n"
@@ -326,7 +326,7 @@ def self_test() -> int:
             "name: Test Process\n"
             "version: 1.0.0\n"
             "process_intent: operational\n"
-            "process_audience: customer-demand\n"
+            "process_audience: party-relationship\n"
             "process_type: core\n"
             "process_specialization: []\n"
             "description: Test description.\n"

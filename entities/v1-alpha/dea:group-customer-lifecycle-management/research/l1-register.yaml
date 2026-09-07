@@ -1,11 +1,11 @@
 domains:
 - GovernanceAndExistence
-- SupplyAndResources
+- StrategyAndDirection
 - PeopleAndOrganization
-- CustomerAndDemand
-- ProductAndOffering
-- OperationsAndDelivery
-- FinanceAndValue
+- PartyAndRelationship
+- ProductAndValue
+- OperationsAndEnablement
+- FinanceAndAccounting
 stages:
 - Conceive
 - Design
@@ -97,7 +97,7 @@ register:
       ratified_by: CR-BP-13
       deferral_reason: |
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-      deferral_reason: Activation is operational and is typically modelled under operations-delivery x
+      deferral_reason: Activation is operational and is typically modelled under operations-enablement x
         activate; governance activation is an attribute of governance operate, not a standalone group.
     Operate:
       process_context: dea:pc-ge-operate
@@ -152,7 +152,7 @@ register:
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
       deferral_reason: Retirement of governance is rare and largely an attribute of operating-model retirement;
         defer until a sector example (e.g. regulator-mandated unwind) requires it.
-  SupplyAndResources:
+  StrategyAndDirection:
     Conceive:
       process_context: dea:pc-sr-conceive
       l1_candidates:
@@ -246,7 +246,7 @@ register:
       in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
       out_of_scope:
       - Workforce execution (people-organization)
-      - Manufacturing line operation (operations-delivery)
+      - Manufacturing line operation (operations-enablement)
       evidence:
       - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management,
         capability-asset-management
@@ -293,7 +293,7 @@ register:
       ratified_by: CR-BP-13
       deferral_reason: |
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-      deferral_reason: Retirement of supply and asset base is typically modelled under operations-delivery
+      deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement
         x retire with cross-reference; defer a standalone group until at least one L2 process has stabilized.
   PeopleAndOrganization:
     Conceive:
@@ -343,7 +343,7 @@ register:
       - Build contractor pool
       in_scope: Sourcing, recruiting, onboarding, contractor pool
       out_of_scope:
-      - Supplier onboarding (supply-resources)
+      - Supplier onboarding (strategy-direction)
       evidence:
       - dea-catalog-business-capabilities/capability-workforce-management
       - APQC PCF Talent Acquisition
@@ -417,7 +417,7 @@ register:
       - Decommission organizational unit
       in_scope: Redundancy, offboarding, unit decommission
       out_of_scope:
-      - Asset retirement (supply-resources)
+      - Asset retirement (strategy-direction)
       evidence:
       - dea-catalog-business-capabilities/capability-workforce-management
       - APQC PCF Workforce退出
@@ -428,9 +428,9 @@ register:
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
       deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated
         wind-down (e.g. mass layoff) requires a dedicated L1 group.
-  CustomerAndDemand:
+  PartyAndRelationship:
     Conceive:
-      process_context: dea:pc-cd-conceive
+      process_context: dea:pc-pr-conceive
       l1_candidates:
       - Customer Strategy Conception
       - Market and Demand Conception
@@ -440,7 +440,7 @@ register:
       - Frame demand thesis
       in_scope: Customer strategy, market segmentation, demand thesis
       out_of_scope:
-      - Offering strategy (product-offering)
+      - Offering strategy (product-value)
       evidence:
       - CR-DEA-BC-04 R-002 Marketing placement
       - dea-catalog-business-capabilities/capability-marketing
@@ -449,7 +449,7 @@ register:
       ratified_at: '2026-09-05'
       ratified_by: CR-BP-13
     Design:
-      process_context: dea:pc-cd-design
+      process_context: dea:pc-pr-design
       l1_candidates:
       - Customer Experience Design
       - Demand Design
@@ -460,7 +460,7 @@ register:
       - Design customer experience blueprint
       in_scope: CX, journey, segmentation design
       out_of_scope:
-      - Offering design (product-offering)
+      - Offering design (product-value)
       evidence:
       - CR-DEA-BC-04 N-002 Marketing distinct
       - TM Forum eTOM Customer Journey Management
@@ -468,7 +468,7 @@ register:
       ratified_at: '2026-09-05'
       ratified_by: CR-BP-13
     Build:
-      process_context: dea:pc-cd-build
+      process_context: dea:pc-pr-build
       l1_candidates:
       - Customer Channel and Acquisition Build
       - Demand Generation Build
@@ -485,7 +485,7 @@ register:
       ratified_at: '2026-09-05'
       ratified_by: CR-BP-13
     Activate:
-      process_context: dea:pc-cd-activate
+      process_context: dea:pc-pr-activate
       l1_candidates:
       - Customer Activation
       l2_candidates:
@@ -504,7 +504,7 @@ register:
       deferral_reason: First-time activation is mostly handled inside the L1 group Operate in practice;
         defer until a regulated onboarding (e.g. KYC for financial services) requires a distinct group.
     Operate:
-      process_context: dea:pc-cd-operate
+      process_context: dea:pc-pr-operate
       l1_candidates:
       - Customer Relationship Management
       - Customer Service Operation
@@ -526,7 +526,7 @@ register:
       canonical_l2_present:
       - dea:process-manage-customer-relationship
     Improve:
-      process_context: dea:pc-cd-improve
+      process_context: dea:pc-pr-improve
       l1_candidates:
       - Customer Insight and Retention
       l2_candidates:
@@ -543,7 +543,7 @@ register:
       ratified_at: '2026-09-05'
       ratified_by: CR-BP-13
     Retire:
-      process_context: dea:pc-cd-retire
+      process_context: dea:pc-pr-retire
       l1_candidates:
       - Customer Exit
       l2_candidates:
@@ -551,7 +551,7 @@ register:
       - Manage contract termination
       in_scope: Offboarding, contract termination
       out_of_scope:
-      - Asset retirement (supply-resources)
+      - Asset retirement (strategy-direction)
       evidence:
       - TM Forum eTOM Service Retirement
       disposition: backlog-deferred
@@ -561,7 +561,7 @@ register:
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
       deferral_reason: Customer exit is often handled within customer-relationship operations; defer until
         a regulated offboarding (e.g. GDPR-driven erasure) requires a distinct group.
-  ProductAndOffering:
+  ProductAndValue:
     Conceive:
       process_context: dea:pc-po2-conceive
       l1_candidates:
@@ -627,7 +627,7 @@ register:
       - Activate service offering
       in_scope: Market launch and service activation
       out_of_scope:
-      - Customer onboarding (customer-demand)
+      - Customer onboarding (party-relationship)
       evidence:
       - TM Forum eTOM Service Activation
       - APQC PCF Market and Sell Launch
@@ -690,7 +690,7 @@ register:
         until an L2 example (e.g. product end-of-life) requires a standalone group.
       out_of_scope:
       - Capability retirement (their domain)
-  OperationsAndDelivery:
+  OperationsAndEnablement:
     Conceive:
       process_context: dea:pc-od-conceive
       l1_candidates:
@@ -701,7 +701,7 @@ register:
       - Frame delivery strategy
       in_scope: Operations and delivery strategy
       out_of_scope:
-      - Customer strategy (customer-demand)
+      - Customer strategy (party-relationship)
       evidence:
       - dea-catalog-business-capabilities/capability-operations
       - SCOR Plan
@@ -755,7 +755,7 @@ register:
       - Activate delivery routes
       in_scope: Cutover of operations and delivery
       out_of_scope:
-      - Customer onboarding (customer-demand)
+      - Customer onboarding (party-relationship)
       evidence:
       - ITIL 4 Service Transition
       - SCOR Plan
@@ -777,7 +777,7 @@ register:
       - Operate quality control
       in_scope: Day-to-day operations, delivery, and production
       out_of_scope:
-      - Customer relationship (customer-demand)
+      - Customer relationship (party-relationship)
       evidence:
       - SCOR Make/Deliver
       - ITIL 4 Service Operation
@@ -817,7 +817,7 @@ register:
       - Retire logistics node
       in_scope: Decommission operations and delivery
       out_of_scope:
-      - Asset disposal (supply-resources)
+      - Asset disposal (strategy-direction)
       evidence:
       - SCOR Return end-of-life
       - ITIL 4 Service退役
@@ -828,7 +828,7 @@ register:
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
       deferral_reason: Operations retirement is often handled within the operate group with a winding-down
         workflow; defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
-  FinanceAndValue:
+  FinanceAndAccounting:
     Conceive:
       process_context: dea:pc-fv-conceive
       l1_candidates:
@@ -976,4 +976,4 @@ register:
       deferral_reason: Financial wind-down is often handled within financial stewardship; defer until
         a regulated unwind (e.g. mutual insurer run-off) requires a standalone group.
       out_of_scope:
-      - Asset retirement (supply-resources)
+      - Asset retirement (strategy-direction)

@@ -1268,7 +1268,7 @@ Permanent Conformance Gate
       │
       ▼
 CR-BP-13A
-Customer & Demand Admission
+Party & Relationship Admission
       │
       ▼
 CR-BP-13B+

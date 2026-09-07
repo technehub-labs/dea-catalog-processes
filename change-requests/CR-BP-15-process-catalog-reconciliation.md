@@ -1004,7 +1004,7 @@ Adopt CR-BP-15 as the mandatory reconciliation gate for the existing Business Pr
 
 CR-BP-15 shall be completed before further canonical process admission.
 
-Following completion, the catalog may resume the CR-BP-13A Customer & Demand admission programme under the reconciled semantic contract.
+Following completion, the catalog may resume the CR-BP-13A Party & Relationship admission programme under the reconciled semantic contract.
 
 The resulting architecture establishes a controlled progression:
 

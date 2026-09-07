@@ -76,9 +76,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
   - kind: coordinate
-    domain: CustomerAndDemand
+    domain: PartyAndRelationship
     stage: Operate
-    identifier: ecf:customerDemand.operate
+    identifier: ecf:partyRelationship.operate
   extensions:
   - name: process_intent
     doesNotRedefine: true
@@ -126,4 +126,4 @@ links:
 - rel: change-request
   href: change-requests/CR-BP-03C-sample-process-contribution.md
 context:
-- ref: dea:pc-cd-op
+- ref: dea:pc-pr-op

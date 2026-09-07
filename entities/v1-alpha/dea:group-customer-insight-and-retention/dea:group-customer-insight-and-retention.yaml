@@ -1,9 +1,9 @@
 # Canonical Process Group entry: dea:group-customer-insight-and-retention.
 #
-# Lands as part of CR-BP-13a (CustomerAndDemand admission tranche).
+# Lands as part of CR-BP-13a (PartyAndRelationship admission tranche).
 # One of four new Process Group records that, together with the
 # existing dea:group-customer-lifecycle-management (Operate;
-# CR-BP-12), populates the CustomerAndDemand value stream across
+# CR-BP-12), populates the PartyAndRelationship value stream across
 # the 5 accepted lifecycle stages (Conceive / Design / Build /
 # Operate / Improve).
 #
@@ -22,10 +22,10 @@ name: Customer Insight and Retention
 
 # Normative definition (PG-006 / MECE).
 definition: |
-  The bounded Process Group that organizes the Business Process responsibilities of monitoring customer insight and operating retention programs in the CustomerAndDemand x Improve context. This group captures the work of closing the loop between customer insight (satisfaction, churn risk, win-back opportunities) and the Conceive/Design/Build/Operate cycles that follow from it. The group is the canonical Process Group for the customer-improvement value stream.
+  The bounded Process Group that organizes the Business Process responsibilities of monitoring customer insight and operating retention programs in the PartyAndRelationship x Improve context. This group captures the work of closing the loop between customer insight (satisfaction, churn risk, win-back opportunities) and the Conceive/Design/Build/Operate cycles that follow from it. The group is the canonical Process Group for the customer-improvement value stream.
 
 # Process Context reference (PG-003 enforces resolution).
-process_context: dea:pc-cd-im
+process_context: dea:pc-pr-im
 
 # Scope (MECE boundary; PG-006 depends on excludes).
 scope:
@@ -58,7 +58,7 @@ composes:
     asserted_by: dea-team
     rationale: |
       The L2 process is a principal responsibility of the
-      Customer Insight and Retention value stream within CustomerAndDemand.
+      Customer Insight and Retention value stream within PartyAndRelationship.
       This composition is canonical per CR-BP-13a.
     evidence: docs/examples/dea-group-customer-insight-and-retention.md
     provenance:
@@ -90,9 +90,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: CustomerAndDemand
+      domain: PartyAndRelationship
       stage: Improve
-      identifier: ecf:customerDemand.improve
+      identifier: ecf:partyRelationship.improve
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:

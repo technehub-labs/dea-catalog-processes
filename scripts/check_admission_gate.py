@@ -398,8 +398,8 @@ def _self_test() -> int:
             "change_history": [{"date": "2026-09-06", "cr": None, "change": None}],  # ADM-008
         }, sort_keys=False))
         (contexts).mkdir(parents=True, exist_ok=True)
-        (contexts / "dea-pc-cd-op.yaml").write_text(yaml.safe_dump({
-            "id": "dea:pc-cd-op", "name": "Customer Demand Operate",
+        (contexts / "dea-pc-pr-op.yaml").write_text(yaml.safe_dump({
+            "id": "dea:pc-pr-op", "name": "Customer Demand Operate",
             "type": "ProcessContext",
         }))
         # Disposition register must exist for the gate to read LOCKED
@@ -431,7 +431,7 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
             "triggers": ["trigger"],
             "outcomes": ["outcome"],
             "change_history": [
@@ -457,7 +457,7 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
             "metadata": {
                 "change_history": [
                     {"date": "2026-09-03", "cr": "CR-BP-03C",
@@ -487,7 +487,7 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
             "metadata": {
                 "change_history": [
                     {"date": "2026-09-06", "cr": "CR-BP-15-IMP",

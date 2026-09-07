@@ -240,8 +240,8 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
-            "process_audience": "customer-demand",  # BP-AR-005
+            "context": [{"ref": "dea:pc-pr-op"}],
+            "process_audience": "party-relationship",  # BP-AR-005
             "specialization_pattern": "intent-classification",  # BP-AR-006
         }
         # Also include a decomposition-label in description for BP-AR-007.
@@ -254,7 +254,7 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
         }
         bad_record["relationships"] = [{
             "source_id": bad_record["id"],
@@ -293,7 +293,7 @@ def _self_test() -> int:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
         }
         (root / "entities" / "v1-alpha" / "dea:process-bp-ar-ok").mkdir(parents=True)
         (root / "entities" / "v1-alpha" / "dea:process-bp-ar-ok" / "dea:process-bp-ar-ok.yaml").write_text(

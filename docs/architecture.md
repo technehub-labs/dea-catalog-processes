@@ -73,8 +73,8 @@ stable semantic boundary, organize related process responsibilities,
 avoid sibling overlap, and provide a basis for Process Group
 decomposition. Process Scope is not itself a Business Process.
 
-Example (illustrative): within the Process Context `dea:pc-cd-op`
-(CustomerAndDemand × Operate), an L0 Process Scope might be "Customer
+Example (illustrative): within the Process Context `dea:pc-pr-op`
+(PartyAndRelationship × Operate), an L0 Process Scope might be "Customer
 Onboarding" (covering the area of bringing new customers into the
 operating relationship).
 

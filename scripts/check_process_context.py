@@ -51,12 +51,12 @@ BASE = Path(__file__).parent.parent
 # and ecf-stage.schema.json). The catalog must not redefine this.
 ECF_DOMAINS = {
     "GovernanceAndExistence",
-    "SupplyAndResources",
+    "StrategyAndDirection",
     "PeopleAndOrganization",
-    "CustomerAndDemand",
-    "ProductAndOffering",
-    "OperationsAndDelivery",
-    "FinanceAndValue",
+    "PartyAndRelationship",
+    "ProductAndValue",
+    "OperationsAndEnablement",
+    "FinanceAndAccounting",
 }
 ECF_STAGES = {
     "Conceive",
@@ -229,10 +229,10 @@ def self_test() -> int:
         (ctx_dir / "broken.yaml").write_text(yaml.safe_dump(broken_ctx, sort_keys=False))
 
         # Add a second context with the SAME valid coordinate to trigger PC-003.
-        # Two contexts both at CustomerAndDemand x Operate -> PC-003 collision.
+        # Two contexts both at PartyAndRelationship x Operate -> PC-003 collision.
         broken_ctx_2 = {
-            "id": "dea:pc-cd-op-dup-1",
-            "domain": "CustomerAndDemand",
+            "id": "dea:pc-pr-op-dup-1",
+            "domain": "PartyAndRelationship",
             "lifecycle_stage": "Operate",
             "name": "Customer Demand x Operate (DUPLICATE-1)",
             "definition": "x",
@@ -251,8 +251,8 @@ def self_test() -> int:
             "status": "candidate",
         }
         broken_ctx_2b = {
-            "id": "dea:pc-cd-op-dup-2",
-            "domain": "CustomerAndDemand",
+            "id": "dea:pc-pr-op-dup-2",
+            "domain": "PartyAndRelationship",
             "lifecycle_stage": "Operate",
             "name": "Customer Demand x Operate (DUPLICATE-2)",
             "definition": "x",
@@ -276,7 +276,7 @@ def self_test() -> int:
         # Promote process_intent to root-model entity (PC-008 / BP-SPEC-01-007).
         broken_ctx_3 = {
             "id": "dea:pc-bad-03",
-            "domain": "CustomerAndDemand",
+            "domain": "PartyAndRelationship",
             "lifecycle_stage": "Build",
             "name": "Promotes Intent",
             "definition": "x",
@@ -310,8 +310,8 @@ def self_test() -> int:
         for f in ctx_dir.iterdir():
             f.unlink()
         fixed_ctx = {
-            "id": "dea:pc-cd-op",
-            "domain": "CustomerAndDemand",
+            "id": "dea:pc-pr-op",
+            "domain": "PartyAndRelationship",
             "lifecycle_stage": "Operate",
             "name": "Customer Demand x Operate",
             "definition": (
@@ -332,7 +332,7 @@ def self_test() -> int:
                 "Customer demand satisfied within committed SLAs",
                 "Demand signals propagated upstream for planning",
             ],
-            "adjacent_contexts": ["dea:pc-cd-dsgn"],
+            "adjacent_contexts": ["dea:pc-pr-dsgn"],
             "cell_charter": {
                 "enterprise_concern": "Customer-facing value delivery.",
                 "lifecycle_concern": "Steady-state operation of customer demand.",
@@ -354,8 +354,8 @@ def self_test() -> int:
                     "Capacity planning (covered in: Design)",
                 ],
                 "adjacent_boundaries": [
-                    "dea:pc-cd-dsgn (Design context for capacity planning)",
-                    "dea:pc-cd-impr (Improve context for demand-signal feedback)",
+                    "dea:pc-pr-dsgn (Design context for capacity planning)",
+                    "dea:pc-pr-impr (Improve context for demand-signal feedback)",
                 ],
             },
             "status": "established",

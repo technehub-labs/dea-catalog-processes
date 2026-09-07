@@ -813,7 +813,7 @@ The catalog SHALL remain architecturally open to further specialization and cont
 
 Next CR: CR-BP-15 — Process Catalog Reconciliation
 
-This is deliberately not CR-BP-15 yet. CR-BP-14 establishes the semantic constitution; CR-BP-15 should then be an evidence-driven reconciliation of every existing canonical entry against that constitution. That sequencing avoids baking today’s ambiguities into the Customer & Demand admission tranche. The current repository’s own architecture already gives us the necessary L0–L4 and contribution machinery to execute that cleanly.  
+This is deliberately not CR-BP-15 yet. CR-BP-14 establishes the semantic constitution; CR-BP-15 should then be an evidence-driven reconciliation of every existing canonical entry against that constitution. That sequencing avoids baking today’s ambiguities into the Party & Relationship admission tranche. The current repository’s own architecture already gives us the necessary L0–L4 and contribution machinery to execute that cleanly.  
 
 The one change I would treat as particularly important is the shift from the current three-value operational/support/management intent vocabulary to the more orthogonal govern/manage/operate/deliver/support/develop/transform vocabulary. It removes the direct lexical collision with the existing five-value process-landscape classification while preserving the information that the old intent field was trying to express. 
 

@@ -38,7 +38,7 @@ proposed_entry:
   # Canonical classification block form (CR-BP-14 §20); optional during migration:
   # process_classification:
   #   type: management
-  process_audience: customer-demand  # ecf-domain
+  process_audience: party-relationship  # ecf-domain
   process_specialization:    # optional; list of parent process ids
     - dea:process-parent-process
   specialization_pattern: by-customer-segment  # optional free-text
@@ -74,7 +74,7 @@ proposed_entry:
       relationship_type: serves   # contextual participation (CR-BP-14 §13)
       status: active
       direction: source-to-target
-      rationale: "Example process serves the CustomerAndDemand Operate coordinate."
+      rationale: "Example process serves the PartyAndRelationship Operate coordinate."
       asserted_by: <github-handle>
       asserted_at: <YYYY-MM-DD>
       provenance:
@@ -114,7 +114,7 @@ proposed_entry:
     affiliation: inherits-catalog
     canonicalReferences:
       - kind: coordinate
-        domain: <PascalCase Domain>  # GovernanceAndExistence | SupplyAndResources | PeopleAndOrganization | CustomerAndDemand | ProductAndOffering | OperationsAndDelivery | FinanceAndValue
+        domain: <PascalCase Domain>  # GovernanceAndExistence | StrategyAndDirection | PeopleAndOrganization | PartyAndRelationship | ProductAndValue | OperationsAndEnablement | FinanceAndAccounting
         stage: <PascalCase Stage>     # Conceive | Design | Build | Activate | Operate | Improve | Retire
         identifier: ecf:<lowerCamelDomain>.<lowerCamelStage>
     extensions:

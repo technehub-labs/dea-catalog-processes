@@ -1,4 +1,4 @@
-"""Generate CR-BP-13a tranche files (CustomerAndDemand).
+"""Generate CR-BP-13a tranche files (PartyAndRelationship).
 
 Produces 4 Process Context cells + 4 Process Group records + 8 L2
 Process entries + 4 context README files + 4 process README files +
@@ -37,12 +37,12 @@ STAGE_NAMES = {
 # ECF identifier per Process Context id. Maps `<domain>-<stage>`
 # suffix to ECF identifier string.
 ECF_IDENTIFIERS = {
-    # CustomerAndDemand (CR-BP-13a)
-    "dea:pc-cd-c": "ecf:customerDemand.conceive",
-    "dea:pc-cd-d": "ecf:customerDemand.design",
-    "dea:pc-cd-b": "ecf:customerDemand.build",
-    "dea:pc-cd-op": "ecf:customerDemand.operate",
-    "dea:pc-cd-im": "ecf:customerDemand.improve",
+    # PartyAndRelationship (CR-BP-13a)
+    "dea:pc-pr-c": "ecf:partyRelationship.conceive",
+    "dea:pc-pr-d": "ecf:partyRelationship.design",
+    "dea:pc-pr-b": "ecf:partyRelationship.build",
+    "dea:pc-pr-op": "ecf:partyRelationship.operate",
+    "dea:pc-pr-im": "ecf:partyRelationship.improve",
     # GovernanceAndExistence (CR-BP-13b)
     "dea:pc-ge-c": "ecf:governanceExistence.conceive",
     "dea:pc-ge-d": "ecf:governanceExistence.design",
@@ -53,24 +53,24 @@ ECF_IDENTIFIERS = {
 
 # Domain name lookup by Process Context id (mid-segment).
 DOMAIN_NAMES = {
-    "cd": "CustomerAndDemand",
+    "pr": "PartyAndRelationship",
     "ge": "GovernanceAndExistence",
-    "sr": "SupplyAndResources",
+    "sd": "StrategyAndDirection",
     "po": "PeopleAndOrganization",
-    "pd": "ProductAndOffering",
-    "od": "OperationsAndDelivery",
-    "fv": "FinanceAndValue",
+    "pv": "ProductAndValue",
+    "oe": "OperationsAndEnablement",
+    "fa": "FinanceAndAccounting",
 }
 
 
 # ---------------------------------------------------------------------------
-# Process Context cells (Conceive, Design, Build, Improve for CustomerAndDemand)
+# Process Context cells (Conceive, Design, Build, Improve for PartyAndRelationship)
 # ---------------------------------------------------------------------------
 
 PROCESS_CONTEXTS = [
     {
-        "id": "dea:pc-cd-c",
-        "domain": "CustomerAndDemand",
+        "id": "dea:pc-pr-c",
+        "domain": "PartyAndRelationship",
         "stage": "Conceive",
         "name": "Customer Strategy Conception",
         "definition": (
@@ -98,10 +98,10 @@ PROCESS_CONTEXTS = [
             "Demand thesis is testable and bounded.",
         ],
         "adjacent": [
-            ("dea:pc-cd-d", "Design"),
-            ("dea:pc-cd-b", "Build"),
-            ("dea:pc-cd-op", "Operate"),
-            ("dea:pc-cd-ac", "Activate"),
+            ("dea:pc-pr-d", "Design"),
+            ("dea:pc-pr-b", "Build"),
+            ("dea:pc-pr-op", "Operate"),
+            ("dea:pc-pr-ac", "Activate"),
         ],
         "l2_processes": [
             "dea:process-customer-strategy-conception",
@@ -135,15 +135,15 @@ PROCESS_CONTEXTS = [
             "Active relationship operation (Operate stage)",
         ],
         "adjacent_boundaries": [
-            "dea:pc-cd-d (Design): translates strategy into experience, journey, and demand designs.",
-            "dea:pc-cd-b (Build): builds the channels and acquisition engines.",
-            "dea:pc-cd-op (Operate): runs the active customer relationships framed here.",
-            "dea:pc-cd-ac (Activate): transition from strategy to first active customer.",
+            "dea:pc-pr-d (Design): translates strategy into experience, journey, and demand designs.",
+            "dea:pc-pr-b (Build): builds the channels and acquisition engines.",
+            "dea:pc-pr-op (Operate): runs the active customer relationships framed here.",
+            "dea:pc-pr-ac (Activate): transition from strategy to first active customer.",
         ],
     },
     {
-        "id": "dea:pc-cd-d",
-        "domain": "CustomerAndDemand",
+        "id": "dea:pc-pr-d",
+        "domain": "PartyAndRelationship",
         "stage": "Design",
         "name": "Customer Experience Design",
         "definition": (
@@ -171,10 +171,10 @@ PROCESS_CONTEXTS = [
             "Demand model grounds Build and Operate contexts.",
         ],
         "adjacent": [
-            ("dea:pc-cd-c", "Conceive"),
-            ("dea:pc-cd-b", "Build"),
-            ("dea:pc-cd-op", "Operate"),
-            ("dea:pc-cd-ac", "Activate"),
+            ("dea:pc-pr-c", "Conceive"),
+            ("dea:pc-pr-b", "Build"),
+            ("dea:pc-pr-op", "Operate"),
+            ("dea:pc-pr-ac", "Activate"),
         ],
         "l2_processes": [
             "dea:process-customer-experience-design",
@@ -208,15 +208,15 @@ PROCESS_CONTEXTS = [
             "Live customer operation (Operate stage)",
         ],
         "adjacent_boundaries": [
-            "dea:pc-cd-c (Conceive): the prior lifecycle stage; strategy flows into design.",
-            "dea:pc-cd-b (Build): designs flow into channel and acquisition build.",
-            "dea:pc-cd-op (Operate): designed experience is realised in operation.",
-            "dea:pc-cd-ac (Activate): designs activate at first-customer onboarding.",
+            "dea:pc-pr-c (Conceive): the prior lifecycle stage; strategy flows into design.",
+            "dea:pc-pr-b (Build): designs flow into channel and acquisition build.",
+            "dea:pc-pr-op (Operate): designed experience is realised in operation.",
+            "dea:pc-pr-ac (Activate): designs activate at first-customer onboarding.",
         ],
     },
     {
-        "id": "dea:pc-cd-b",
-        "domain": "CustomerAndDemand",
+        "id": "dea:pc-pr-b",
+        "domain": "PartyAndRelationship",
         "stage": "Build",
         "name": "Customer Channel and Acquisition Build",
         "definition": (
@@ -245,10 +245,10 @@ PROCESS_CONTEXTS = [
             "Demand-generation engine produces sustained demand.",
         ],
         "adjacent": [
-            ("dea:pc-cd-c", "Conceive"),
-            ("dea:pc-cd-d", "Design"),
-            ("dea:pc-cd-op", "Operate"),
-            ("dea:pc-cd-ac", "Activate"),
+            ("dea:pc-pr-c", "Conceive"),
+            ("dea:pc-pr-d", "Design"),
+            ("dea:pc-pr-op", "Operate"),
+            ("dea:pc-pr-ac", "Activate"),
         ],
         "l2_processes": [
             "dea:process-customer-channel-and-acquisition-build",
@@ -283,15 +283,15 @@ PROCESS_CONTEXTS = [
             "Live customer operation (Operate stage)",
         ],
         "adjacent_boundaries": [
-            "dea:pc-cd-c (Conceive): strategy is the build's input.",
-            "dea:pc-cd-d (Design): experience/journey/demand designs guide the build.",
-            "dea:pc-cd-op (Operate): built channels and engines operate on active customers.",
-            "dea:pc-cd-ac (Activate): built assets activate at first-customer onboarding.",
+            "dea:pc-pr-c (Conceive): strategy is the build's input.",
+            "dea:pc-pr-d (Design): experience/journey/demand designs guide the build.",
+            "dea:pc-pr-op (Operate): built channels and engines operate on active customers.",
+            "dea:pc-pr-ac (Activate): built assets activate at first-customer onboarding.",
         ],
     },
     {
-        "id": "dea:pc-cd-im",
-        "domain": "CustomerAndDemand",
+        "id": "dea:pc-pr-im",
+        "domain": "PartyAndRelationship",
         "stage": "Improve",
         "name": "Customer Insight and Retention",
         "definition": (
@@ -319,10 +319,10 @@ PROCESS_CONTEXTS = [
             "Win-back programs re-engage lapsed customers.",
         ],
         "adjacent": [
-            ("dea:pc-cd-c", "Conceive"),
-            ("dea:pc-cd-d", "Design"),
-            ("dea:pc-cd-b", "Build"),
-            ("dea:pc-cd-op", "Operate"),
+            ("dea:pc-pr-c", "Conceive"),
+            ("dea:pc-pr-d", "Design"),
+            ("dea:pc-pr-b", "Build"),
+            ("dea:pc-pr-op", "Operate"),
         ],
         "l2_processes": [
             "dea:process-customer-insight-and-retention",
@@ -356,10 +356,10 @@ PROCESS_CONTEXTS = [
             "Customer experience design (Design stage)",
         ],
         "adjacent_boundaries": [
-            "dea:pc-cd-c (Conceive): insights shape strategy framing.",
-            "dea:pc-cd-d (Design): insights sharpen experience design.",
-            "dea:pc-cd-b (Build): insights reveal channel gaps.",
-            "dea:pc-cd-op (Operate): insights refine day-to-day relationship operation.",
+            "dea:pc-pr-c (Conceive): insights shape strategy framing.",
+            "dea:pc-pr-d (Design): insights sharpen experience design.",
+            "dea:pc-pr-b (Build): insights reveal channel gaps.",
+            "dea:pc-pr-op (Operate): insights refine day-to-day relationship operation.",
         ],
     },
 ]
@@ -370,9 +370,9 @@ def render_process_context(c: dict) -> str:
     lines = [
         f"# Process Context Cell Charter: {c['domain']} x {c['stage']}.",
         "#",
-        f"# Lands as part of {CR} (CustomerAndDemand admission tranche).",
+        f"# Lands as part of {CR} (PartyAndRelationship admission tranche).",
         "# This is the N-th Process Context cell in the catalog; the first",
-        f"# was dea:pc-cd-op (CustomerAndDemand x Operate; CR-BP-03C).",
+        f"# was dea:pc-pr-op (PartyAndRelationship x Operate; CR-BP-03C).",
         "#",
         "# Each cell carries the full Cell Charter (CR-BP-02 §7):",
         "#   enterprise_concern, lifecycle_concern, combined_semantic_meaning,",
@@ -479,11 +479,11 @@ PROCESS_GROUPS = [
     {
         "id": "dea:group-customer-strategy-conception",
         "name": "Customer Strategy Conception",
-        "context": "dea:pc-cd-c",
+        "context": "dea:pc-pr-c",
         "definition": (
             "The bounded Process Group that organizes the Business "
             "Process responsibilities of conceiving customer strategy in "
-            "the CustomerAndDemand x Conceive context. This group "
+            "the PartyAndRelationship x Conceive context. This group "
             "captures the front-end work of framing which customer "
             "segments the enterprise will serve, what value exchange to "
             "offer, and which demand thesis to commit to. The group is "
@@ -512,16 +512,16 @@ PROCESS_GROUPS = [
             "dea:process-market-and-demand-conception",
         ],
         "process_group_kind": "value-stream",
-        "coordinate": "ecf:customerDemand.conceive",
+        "coordinate": "ecf:partyRelationship.conceive",
     },
     {
         "id": "dea:group-customer-experience-design",
         "name": "Customer Experience Design",
-        "context": "dea:pc-cd-d",
+        "context": "dea:pc-pr-d",
         "definition": (
             "The bounded Process Group that organizes the Business "
             "Process responsibilities of designing customer experience, "
-            "journey, and demand models in the CustomerAndDemand x "
+            "journey, and demand models in the PartyAndRelationship x "
             "Design context. This group captures the work of translating "
             "customer strategy into a designed experience, an articulated "
             "customer journey, and a model of how demand is shaped by "
@@ -550,17 +550,17 @@ PROCESS_GROUPS = [
             "dea:process-customer-journey-design",
         ],
         "process_group_kind": "value-stream",
-        "coordinate": "ecf:customerDemand.design",
+        "coordinate": "ecf:partyRelationship.design",
     },
     {
         "id": "dea:group-customer-channel-and-acquisition-build",
         "name": "Customer Channel and Acquisition Build",
-        "context": "dea:pc-cd-b",
+        "context": "dea:pc-pr-b",
         "definition": (
             "The bounded Process Group that organizes the Business "
             "Process responsibilities of building customer channels, "
             "acquisition engines, and demand-generation infrastructure "
-            "in the CustomerAndDemand x Build context. This group "
+            "in the PartyAndRelationship x Build context. This group "
             "captures the work of standing up the operational assets "
             "that will acquire customers and generate demand: channel "
             "infrastructure, marketing automation, and demand-generation "
@@ -588,16 +588,16 @@ PROCESS_GROUPS = [
             "dea:process-demand-generation-build",
         ],
         "process_group_kind": "value-stream",
-        "coordinate": "ecf:customerDemand.build",
+        "coordinate": "ecf:partyRelationship.build",
     },
     {
         "id": "dea:group-customer-insight-and-retention",
         "name": "Customer Insight and Retention",
-        "context": "dea:pc-cd-im",
+        "context": "dea:pc-pr-im",
         "definition": (
             "The bounded Process Group that organizes the Business "
             "Process responsibilities of monitoring customer insight "
-            "and operating retention programs in the CustomerAndDemand x "
+            "and operating retention programs in the PartyAndRelationship x "
             "Improve context. This group captures the work of closing "
             "the loop between customer insight (satisfaction, churn "
             "risk, win-back opportunities) and the Conceive/Design/"
@@ -625,7 +625,7 @@ PROCESS_GROUPS = [
             "dea:process-customer-insight-and-retention",
         ],
         "process_group_kind": "value-stream",
-        "coordinate": "ecf:customerDemand.improve",
+        "coordinate": "ecf:partyRelationship.improve",
     },
 ]
 
@@ -635,10 +635,10 @@ def render_process_group(g: dict) -> str:
     lines = [
         f"# Canonical Process Group entry: {g['id']}.",
         "#",
-        f"# Lands as part of {CR} (CustomerAndDemand admission tranche).",
+        f"# Lands as part of {CR} (PartyAndRelationship admission tranche).",
         "# One of four new Process Group records that, together with the",
         "# existing dea:group-customer-lifecycle-management (Operate;",
-        "# CR-BP-12), populates the CustomerAndDemand value stream across",
+        "# CR-BP-12), populates the PartyAndRelationship value stream across",
         "# the 5 accepted lifecycle stages (Conceive / Design / Build /",
         "# Operate / Improve).",
         "#",
@@ -699,7 +699,7 @@ def render_process_group(g: dict) -> str:
             "    asserted_by: dea-team",
             "    rationale: |",
             "      The L2 process is a principal responsibility of the",
-            f"      {g['name']} value stream within CustomerAndDemand.",
+            f"      {g['name']} value stream within PartyAndRelationship.",
             f"      This composition is canonical per CR-BP-13a.",
             f"    evidence: docs/examples/{g['id'].replace(':', '-')}.md",
             "    provenance:",
@@ -779,7 +779,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-customer-strategy-conception",
         "name": "Develop Customer Strategy",
-        "process_context": "dea:pc-cd-c",
+        "process_context": "dea:pc-pr-c",
         "process_group": "dea:group-customer-strategy-conception",
         "process_intent": "management",
         "process_type": "management",
@@ -814,7 +814,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-market-and-demand-conception",
         "name": "Develop Market Intelligence",
-        "process_context": "dea:pc-cd-c",
+        "process_context": "dea:pc-pr-c",
         "process_group": "dea:group-customer-strategy-conception",
         "process_intent": "management",
         "process_type": "management",
@@ -850,7 +850,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-customer-experience-design",
         "name": "Design Customer Experience",
-        "process_context": "dea:pc-cd-d",
+        "process_context": "dea:pc-pr-d",
         "process_group": "dea:group-customer-experience-design",
         "process_intent": "management",
         "process_type": "standardization",
@@ -885,7 +885,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-demand-design",
         "name": "Design Demand Model",
-        "process_context": "dea:pc-cd-d",
+        "process_context": "dea:pc-pr-d",
         "process_group": "dea:group-customer-experience-design",
         "process_intent": "management",
         "process_type": "management",
@@ -920,7 +920,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-customer-journey-design",
         "name": "Design Customer Journey",
-        "process_context": "dea:pc-cd-d",
+        "process_context": "dea:pc-pr-d",
         "process_group": "dea:group-customer-experience-design",
         "process_intent": "support",
         "process_type": "core",
@@ -956,7 +956,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-customer-channel-and-acquisition-build",
         "name": "Build Customer Acquisition Channels",
-        "process_context": "dea:pc-cd-b",
+        "process_context": "dea:pc-pr-b",
         "process_group": "dea:group-customer-channel-and-acquisition-build",
         "process_intent": "operational",
         "process_type": "core",
@@ -991,7 +991,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-demand-generation-build",
         "name": "Build Demand Generation Programs",
-        "process_context": "dea:pc-cd-b",
+        "process_context": "dea:pc-pr-b",
         "process_group": "dea:group-customer-channel-and-acquisition-build",
         "process_intent": "operational",
         "process_type": "core",
@@ -1027,7 +1027,7 @@ L2_PROCESSES = [
     {
         "id": "dea:process-customer-insight-and-retention",
         "name": "Operate Customer Retention Programs",
-        "process_context": "dea:pc-cd-im",
+        "process_context": "dea:pc-pr-im",
         "process_group": "dea:group-customer-insight-and-retention",
         "process_intent": "management",
         "process_type": "core",
@@ -1068,7 +1068,7 @@ def render_l2_process(p: dict) -> str:
     lines = [
         f"# Canonical Business Process entry: `{p['id']}`.",
         "#",
-        f"# Lands as part of {CR} (CustomerAndDemand admission tranche).",
+        f"# Lands as part of {CR} (PartyAndRelationship admission tranche).",
         f"# This L2 process composes into `{p['process_group']}`.",
         "#",
         "# Shape (CR-BP-03 / CR-BP-03A / CR-BP-SPEC-BP-01):",
@@ -1087,7 +1087,7 @@ def render_l2_process(p: dict) -> str:
         "",
         "# Classification (CR-BP-03 §2.1)",
         f"process_intent: {p['process_intent']}",
-        "process_audience: customer-demand",
+        "process_audience: party-relationship",
         "",
         "# Classification: 5-value Mintzberg vocabulary (CR-BP-03 §2.1).",
         f"process_type: {p['process_type']}",
@@ -1168,7 +1168,7 @@ def render_l2_process(p: dict) -> str:
         f"      date: '{CRATED_AT}'",
         "      change: |",
         f"        Initial L2 Process entry; lands as part of the {CR}",
-        "        CustomerAndDemand admission tranche.",
+        "        PartyAndRelationship admission tranche.",
         "",
         "links:",
         "  - rel: change-request",
@@ -1243,7 +1243,7 @@ def main(argv: list[str] | None = None) -> int:
                     f"for the per-CR history.\n\n"
                     "## Governing CR\n\n"
                     f"- **{CR}** (this tranche): admission of the "
-                    f"Process Group into the CustomerAndDemand value "
+                    f"Process Group into the PartyAndRelationship value "
                     "stream.\n"
                 )
         # Research README placeholder (CR-CATALOG-STRUCT-01 §5 requires
@@ -1268,7 +1268,7 @@ def main(argv: list[str] | None = None) -> int:
                 f"Established by {CR} on {CRATED_AT}.\n\n"
                 "## Governing CR\n\n"
                 f"- **{CR}**: admission of the Process Group into\n"
-                "  the CustomerAndDemand value stream.\n"
+                "  the PartyAndRelationship value stream.\n"
             ),
             args.dry_run,
         )
@@ -1297,7 +1297,7 @@ def main(argv: list[str] | None = None) -> int:
                 f"the {p_obj['process_context']} Process Context.\n\n"
                 "## Governing CR\n\n"
                 f"- **{CR}**: initial admission as part of the\n"
-                f"  CustomerAndDemand admission tranche.\n"
+                f"  PartyAndRelationship admission tranche.\n"
             ),
             args.dry_run,
         )
@@ -1321,7 +1321,7 @@ def main(argv: list[str] | None = None) -> int:
                 f"Established by {CR} on {CRATED_AT}.\n\n"
                 "## Governing CR\n\n"
                 f"- **{CR}**: initial admission as part of the\n"
-                "  CustomerAndDemand admission tranche.\n"
+                "  PartyAndRelationship admission tranche.\n"
             ),
             args.dry_run,
         )

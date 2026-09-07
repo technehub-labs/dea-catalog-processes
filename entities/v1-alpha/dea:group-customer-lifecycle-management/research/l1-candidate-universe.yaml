@@ -25,22 +25,22 @@ disposition_counts_per_domain:
   GovernanceAndExistence:
     accepted: 5
     deferred: 2
-  SupplyAndResources:
+  StrategyAndDirection:
     accepted: 6
     deferred: 1
   PeopleAndOrganization:
     accepted: 5
     deferred: 2
-  CustomerAndDemand:
+  PartyAndRelationship:
     accepted: 5
     deferred: 2
-  ProductAndOffering:
+  ProductAndValue:
     accepted: 6
     deferred: 1
-  OperationsAndDelivery:
+  OperationsAndEnablement:
     accepted: 6
     deferred: 1
-  FinanceAndValue:
+  FinanceAndAccounting:
     accepted: 5
     deferred: 2
 l1_candidate_count: 102
@@ -136,7 +136,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: |
     Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Activation is operational and is typically modelled under operations-delivery x activate;
+  deferral_reason: Activation is operational and is typically modelled under operations-enablement x activate;
     governance activation is an attribute of governance operate, not a standalone group.
 - name: Governance Oversight
   domain: GovernanceAndExistence
@@ -194,7 +194,7 @@ l1_candidates:
   deferral_reason: Retirement of governance is rare and largely an attribute of operating-model retirement;
     defer until a sector example (e.g. regulator-mandated unwind) requires it.
 - name: Sourcing Strategy Conception
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Conceive
   process_context: dea:pc-sr-conceive
   in_scope: Strategy-level sourcing, supply-base, and asset conception
@@ -210,7 +210,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Resource Strategy Conception
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Conceive
   process_context: dea:pc-sr-conceive
   in_scope: Strategy-level sourcing, supply-base, and asset conception
@@ -221,7 +221,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Sourcing and Supply Design
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Design
   process_context: dea:pc-sr-design
   in_scope: Sourcing policy design, supplier qualification, asset blueprint, resource architecture
@@ -236,7 +236,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Asset and Property Design
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Design
   process_context: dea:pc-sr-design
   in_scope: Sourcing policy design, supplier qualification, asset blueprint, resource architecture
@@ -247,7 +247,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Resource Architecture Design
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Design
   process_context: dea:pc-sr-design
   in_scope: Sourcing policy design, supplier qualification, asset blueprint, resource architecture
@@ -258,7 +258,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Supply Base Build
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Build
   process_context: dea:pc-sr-build
   in_scope: Onboarding, acquisition, provisioning
@@ -272,7 +272,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Asset Acquisition
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Build
   process_context: dea:pc-sr-build
   in_scope: Onboarding, acquisition, provisioning
@@ -283,7 +283,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Resource Stand-up
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Build
   process_context: dea:pc-sr-build
   in_scope: Onboarding, acquisition, provisioning
@@ -294,7 +294,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Sourcing Activation
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Activate
   process_context: dea:pc-sr-activate
   in_scope: Cutting over supplier and asset lifecycles
@@ -308,7 +308,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Asset Activation
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Activate
   process_context: dea:pc-sr-activate
   in_scope: Cutting over supplier and asset lifecycles
@@ -319,13 +319,13 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Sourcing and Procurement Operation
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Operate
   process_context: dea:pc-sr-operate
   in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
   out_of_scope: &id017
   - Workforce execution (people-organization)
-  - Manufacturing line operation (operations-delivery)
+  - Manufacturing line operation (operations-enablement)
   evidence: &id018
   - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management,
     capability-asset-management
@@ -336,7 +336,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Asset and Facility Operation
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Operate
   process_context: dea:pc-sr-operate
   in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
@@ -347,7 +347,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Supplier Management Operation
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Operate
   process_context: dea:pc-sr-operate
   in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
@@ -358,7 +358,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Supply Base Improvement
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Improve
   process_context: dea:pc-sr-improve
   in_scope: Performance, utilization, supplier rationalization
@@ -372,7 +372,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Asset Performance Improvement
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Improve
   process_context: dea:pc-sr-improve
   in_scope: Performance, utilization, supplier rationalization
@@ -383,7 +383,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Supply and Asset Retirement
-  domain: SupplyAndResources
+  domain: StrategyAndDirection
   stage: Retire
   process_context: dea:pc-sr-retire
   in_scope: Decommission, dispose, divest, transition
@@ -398,7 +398,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: |
     Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Retirement of supply and asset base is typically modelled under operations-delivery
+  deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement
     x retire with cross-reference; defer a standalone group until at least one L2 process has stabilized.
 - name: Workforce Strategy Conception
   domain: PeopleAndOrganization
@@ -456,7 +456,7 @@ l1_candidates:
   process_context: dea:pc-po-build
   in_scope: Sourcing, recruiting, onboarding, contractor pool
   out_of_scope: &id025
-  - Supplier onboarding (supply-resources)
+  - Supplier onboarding (strategy-direction)
   evidence: &id026
   - dea-catalog-business-capabilities/capability-workforce-management
   - APQC PCF Talent Acquisition
@@ -561,7 +561,7 @@ l1_candidates:
   process_context: dea:pc-po-retire
   in_scope: Redundancy, offboarding, unit decommission
   out_of_scope: &id031
-  - Asset retirement (supply-resources)
+  - Asset retirement (strategy-direction)
   evidence: &id032
   - dea-catalog-business-capabilities/capability-workforce-management
   - APQC PCF Workforce退出
@@ -587,12 +587,12 @@ l1_candidates:
   deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated
     wind-down (e.g. mass layoff) requires a dedicated L1 group.
 - name: Customer Strategy Conception
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Conceive
-  process_context: dea:pc-cd-conceive
+  process_context: dea:pc-pr-conceive
   in_scope: Customer strategy, market segmentation, demand thesis
   out_of_scope: &id033
-  - Offering strategy (product-offering)
+  - Offering strategy (product-value)
   evidence: &id034
   - CR-DEA-BC-04 R-002 Marketing placement
   - dea-catalog-business-capabilities/capability-marketing
@@ -602,9 +602,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Market and Demand Conception
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Conceive
-  process_context: dea:pc-cd-conceive
+  process_context: dea:pc-pr-conceive
   in_scope: Customer strategy, market segmentation, demand thesis
   out_of_scope: *id033
   evidence: *id034
@@ -613,12 +613,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Experience Design
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Design
-  process_context: dea:pc-cd-design
+  process_context: dea:pc-pr-design
   in_scope: CX, journey, segmentation design
   out_of_scope: &id035
-  - Offering design (product-offering)
+  - Offering design (product-value)
   evidence: &id036
   - CR-DEA-BC-04 N-002 Marketing distinct
   - TM Forum eTOM Customer Journey Management
@@ -627,9 +627,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Demand Design
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Design
-  process_context: dea:pc-cd-design
+  process_context: dea:pc-pr-design
   in_scope: CX, journey, segmentation design
   out_of_scope: *id035
   evidence: *id036
@@ -638,9 +638,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Journey Design
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Design
-  process_context: dea:pc-cd-design
+  process_context: dea:pc-pr-design
   in_scope: CX, journey, segmentation design
   out_of_scope: *id035
   evidence: *id036
@@ -649,9 +649,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Channel and Acquisition Build
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Build
-  process_context: dea:pc-cd-build
+  process_context: dea:pc-pr-build
   in_scope: Channel, data, marketing automation build
   out_of_scope: &id037
   - Sales pipeline build (Operate)
@@ -662,9 +662,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Demand Generation Build
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Build
-  process_context: dea:pc-cd-build
+  process_context: dea:pc-pr-build
   in_scope: Channel, data, marketing automation build
   out_of_scope: *id037
   evidence: *id038
@@ -673,9 +673,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Activation
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Activate
-  process_context: dea:pc-cd-activate
+  process_context: dea:pc-pr-activate
   in_scope: First-time customer activation
   out_of_scope:
   - Customer relationship sustainment (Operate)
@@ -689,9 +689,9 @@ l1_candidates:
   deferral_reason: First-time activation is mostly handled inside the L1 group Operate in practice; defer
     until a regulated onboarding (e.g. KYC for financial services) requires a distinct group.
 - name: Customer Relationship Management
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Operate
-  process_context: dea:pc-cd-operate
+  process_context: dea:pc-pr-operate
   in_scope: Active customer relationship, service, demand fulfillment
   out_of_scope: &id039
   - Marketing campaign execution (Build/Operate boundary)
@@ -704,9 +704,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Service Operation
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Operate
-  process_context: dea:pc-cd-operate
+  process_context: dea:pc-pr-operate
   in_scope: Active customer relationship, service, demand fulfillment
   out_of_scope: *id039
   evidence: *id040
@@ -715,9 +715,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Demand Fulfillment
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Operate
-  process_context: dea:pc-cd-operate
+  process_context: dea:pc-pr-operate
   in_scope: Active customer relationship, service, demand fulfillment
   out_of_scope: *id039
   evidence: *id040
@@ -726,9 +726,9 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Insight and Retention
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Improve
-  process_context: dea:pc-cd-improve
+  process_context: dea:pc-pr-improve
   in_scope: Satisfaction, churn, win-back
   out_of_scope:
   - Continuous capability improvement
@@ -740,12 +740,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Customer Exit
-  domain: CustomerAndDemand
+  domain: PartyAndRelationship
   stage: Retire
-  process_context: dea:pc-cd-retire
+  process_context: dea:pc-pr-retire
   in_scope: Offboarding, contract termination
   out_of_scope:
-  - Asset retirement (supply-resources)
+  - Asset retirement (strategy-direction)
   evidence:
   - TM Forum eTOM Service Retirement
   disposition: backlog-deferred
@@ -756,7 +756,7 @@ l1_candidates:
   deferral_reason: Customer exit is often handled within customer-relationship operations; defer until
     a regulated offboarding (e.g. GDPR-driven erasure) requires a distinct group.
 - name: Offering Strategy Conception
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Conceive
   process_context: dea:pc-po2-conceive
   in_scope: Portfolio, innovation, partnership thesis
@@ -771,7 +771,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Innovation Conception
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Conceive
   process_context: dea:pc-po2-conceive
   in_scope: Portfolio, innovation, partnership thesis
@@ -782,7 +782,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Design
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Design
   process_context: dea:pc-po2-design
   in_scope: Offering, service, and innovation design
@@ -796,7 +796,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Service Design
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Design
   process_context: dea:pc-po2-design
   in_scope: Offering, service, and innovation design
@@ -807,7 +807,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Innovation Design
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Design
   process_context: dea:pc-po2-design
   in_scope: Offering, service, and innovation design
@@ -818,7 +818,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Build
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Build
   process_context: dea:pc-po2-build
   in_scope: Construct offerings and prototypes
@@ -832,7 +832,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Innovation Build
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Build
   process_context: dea:pc-po2-build
   in_scope: Construct offerings and prototypes
@@ -843,12 +843,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Activation
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Activate
   process_context: dea:pc-po2-activate
   in_scope: Market launch and service activation
   out_of_scope:
-  - Customer onboarding (customer-demand)
+  - Customer onboarding (party-relationship)
   evidence:
   - TM Forum eTOM Service Activation
   - APQC PCF Market and Sell Launch
@@ -857,7 +857,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Operation
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Operate
   process_context: dea:pc-po2-operate
   in_scope: Catalogue, service delivery, partner programme
@@ -872,7 +872,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Service Operation
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Operate
   process_context: dea:pc-po2-operate
   in_scope: Catalogue, service delivery, partner programme
@@ -883,7 +883,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Improvement
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Improve
   process_context: dea:pc-po2-improve
   in_scope: Offering and service performance
@@ -896,7 +896,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Service Improvement
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Improve
   process_context: dea:pc-po2-improve
   in_scope: Offering and service performance
@@ -907,7 +907,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Offering Retirement
-  domain: ProductAndOffering
+  domain: ProductAndValue
   stage: Retire
   process_context: dea:pc-po2-retire
   in_scope:
@@ -925,12 +925,12 @@ l1_candidates:
   deferral_reason: Offering retirement often overlaps with customer exit and asset retirement; defer until
     an L2 example (e.g. product end-of-life) requires a standalone group.
 - name: Operations Strategy Conception
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Conceive
   process_context: dea:pc-od-conceive
   in_scope: Operations and delivery strategy
   out_of_scope: &id051
-  - Customer strategy (customer-demand)
+  - Customer strategy (party-relationship)
   evidence: &id052
   - dea-catalog-business-capabilities/capability-operations
   - SCOR Plan
@@ -939,7 +939,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Strategy Conception
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Conceive
   process_context: dea:pc-od-conceive
   in_scope: Operations and delivery strategy
@@ -950,7 +950,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Design
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Design
   process_context: dea:pc-od-design
   in_scope: Operations model, delivery model
@@ -964,7 +964,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Design
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Design
   process_context: dea:pc-od-design
   in_scope: Operations model, delivery model
@@ -975,7 +975,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Build
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -989,7 +989,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Build
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -1000,7 +1000,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Manufacturing Build
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -1011,12 +1011,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Activation
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Activate
   process_context: dea:pc-od-activate
   in_scope: Cutover of operations and delivery
   out_of_scope: &id057
-  - Customer onboarding (customer-demand)
+  - Customer onboarding (party-relationship)
   evidence: &id058
   - ITIL 4 Service Transition
   - SCOR Plan
@@ -1025,7 +1025,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Activation
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Activate
   process_context: dea:pc-od-activate
   in_scope: Cutover of operations and delivery
@@ -1036,12 +1036,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Execution
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
   out_of_scope: &id059
-  - Customer relationship (customer-demand)
+  - Customer relationship (party-relationship)
   evidence: &id060
   - SCOR Make/Deliver
   - ITIL 4 Service Operation
@@ -1052,7 +1052,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Execution
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1063,7 +1063,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Service Delivery Execution
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1074,7 +1074,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Production Execution
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1085,7 +1085,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Improvement
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Improve
   process_context: dea:pc-od-improve
   in_scope: &id061
@@ -1101,7 +1101,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Delivery Improvement
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Improve
   process_context: dea:pc-od-improve
   in_scope: *id061
@@ -1112,12 +1112,12 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Operations Retirement
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Retire
   process_context: dea:pc-od-retire
   in_scope: Decommission operations and delivery
   out_of_scope: &id064
-  - Asset disposal (supply-resources)
+  - Asset disposal (strategy-direction)
   evidence: &id065
   - SCOR Return end-of-life
   - ITIL 4 Service退役
@@ -1129,7 +1129,7 @@ l1_candidates:
   deferral_reason: Operations retirement is often handled within the operate group with a winding-down
     workflow; defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
 - name: Delivery Retirement
-  domain: OperationsAndDelivery
+  domain: OperationsAndEnablement
   stage: Retire
   process_context: dea:pc-od-retire
   in_scope: Decommission operations and delivery
@@ -1143,7 +1143,7 @@ l1_candidates:
   deferral_reason: Operations retirement is often handled within the operate group with a winding-down
     workflow; defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
 - name: Finance Strategy Conception
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Conceive
   process_context: dea:pc-fv-conceive
   in_scope: Finance and value strategy
@@ -1157,7 +1157,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Value Strategy Conception
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Conceive
   process_context: dea:pc-fv-conceive
   in_scope: Finance and value strategy
@@ -1168,7 +1168,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Finance Architecture Design
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Design
   process_context: dea:pc-fv-design
   in_scope: &id068
@@ -1184,7 +1184,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Value Architecture Design
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Design
   process_context: dea:pc-fv-design
   in_scope: *id068
@@ -1195,7 +1195,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Financial Control Design
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Design
   process_context: dea:pc-fv-design
   in_scope: *id068
@@ -1206,7 +1206,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Finance Capability Build
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Build
   process_context: dea:pc-fv-build
   in_scope: Building finance capability and systems
@@ -1219,7 +1219,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Financial System Build
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Build
   process_context: dea:pc-fv-build
   in_scope: Building finance capability and systems
@@ -1230,7 +1230,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Finance Activation
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Activate
   process_context: dea:pc-fv-activate
   in_scope: &id073
@@ -1248,7 +1248,7 @@ l1_candidates:
   deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until
     an L2 process (e.g. new entity on boarding) requires a distinct group.
 - name: Period Activation
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Activate
   process_context: dea:pc-fv-activate
   in_scope: *id073
@@ -1262,7 +1262,7 @@ l1_candidates:
   deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until
     an L2 process (e.g. new entity on boarding) requires a distinct group.
 - name: Accounting and Reporting
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Operate
   process_context: dea:pc-fv-operate
   in_scope: &id076
@@ -1280,7 +1280,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Financial Stewardship
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Operate
   process_context: dea:pc-fv-operate
   in_scope: *id076
@@ -1291,7 +1291,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Treasury and Working Capital
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Operate
   process_context: dea:pc-fv-operate
   in_scope: *id076
@@ -1302,7 +1302,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Tax and Compliance
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Operate
   process_context: dea:pc-fv-operate
   in_scope: *id076
@@ -1313,7 +1313,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Procure-to-Pay and Order-to-Cash Operations
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Operate
   process_context: dea:pc-fv-operate
   in_scope: *id076
@@ -1324,7 +1324,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Finance Improvement
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Improve
   process_context: dea:pc-fv-improve
   in_scope: &id079
@@ -1340,7 +1340,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Value Performance
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Improve
   process_context: dea:pc-fv-improve
   in_scope: *id079
@@ -1351,14 +1351,14 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Financial Wind-down
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Retire
   process_context: dea:pc-fv-retire
   in_scope: &id082
   - Financial wind-down, impairment, divestiture
   - 'Out of scope: asset retirement'
   out_of_scope: &id083
-  - Asset retirement (supply-resources)
+  - Asset retirement (strategy-direction)
   evidence: &id084
   - IFRS 5 Non-current Assets Held for Sale
   - ASC 205-30 Liquidation Basis
@@ -1370,7 +1370,7 @@ l1_candidates:
   deferral_reason: Financial wind-down is often handled within financial stewardship; defer until a regulated
     unwind (e.g. mutual insurer run-off) requires a standalone group.
 - name: Asset and Investment Disposal
-  domain: FinanceAndValue
+  domain: FinanceAndAccounting
   stage: Retire
   process_context: dea:pc-fv-retire
   in_scope: *id082
@@ -1388,8 +1388,8 @@ cross_domain_findings:
   finding: CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004; technology
     is an L5 layer concern, not an ECF domain.
   implication: No ECF coordinate carries Technology Management; for the 49-coordinate matrix there is
-    no standalone Technology cell. Process candidates touching technology must declare their domain (operations-delivery
-    x operate for run, supply-resources x operate for build/asset).
+    no standalone Technology cell. Process candidates touching technology must declare their domain (operations-enablement
+    x operate for run, strategy-direction x operate for build/asset).
   evidence:
   - dea-catalog-business-capabilities/docs/research/ecf-overlay-v0.2.yaml R-004
   - docs/research/boundary-decision-cand-019.yaml
@@ -1403,9 +1403,9 @@ cross_domain_findings:
   - CR-DEA-BC-04 R-005
   disposition: cross_cutting_recorded
 - topic: Partner Management dual-home
-  finding: 'CR-DEA-BC-04 R-001: Partner Management initiated at customer-demand x conceive; supply-side
+  finding: 'CR-DEA-BC-04 R-001: Partner Management initiated at party-relationship x conceive; supply-side
     operation is legitimate participation.'
-  implication: Treat supply-resources x operate as legitimate participation, customer-demand x conceive
+  implication: Treat strategy-direction x operate as legitimate participation, party-relationship x conceive
     as primary.
   evidence:
   - CR-DEA-BC-04 R-001
@@ -1414,14 +1414,14 @@ cross_domain_findings:
   finding: CR-DEA-BC-04 R-006/R-007/R-008 lifted deferrals and admitted three capabilities (Resilience,
     Innovation, Analytics).
   implication: Their process surfaces are now under their primary coordinates (governance-existence x
-    improve for Resilience; product-offering x conceive for Innovation; operations-delivery x operate
+    improve for Resilience; product-value x conceive for Innovation; operations-enablement x operate
     for Analytics).
   evidence:
   - CR-DEA-BC-04 R-006, R-007, R-008
   disposition: lifted_deferrals_reflected
 - topic: Marketing placement
   finding: 'CR-DEA-BC-04 N-002: Marketing is distinct, not a child of Customer Management.'
-  implication: Customer-demand x conceive has Marketing candidate; customer-demand x operate has customer
+  implication: Customer-demand x conceive has Marketing candidate; party-relationship x operate has customer
     relationship management. Distinct groups.
   evidence:
   - CR-DEA-BC-04 N-002

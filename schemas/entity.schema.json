@@ -19,8 +19,8 @@
     "process_audience": {
       "type": "string",
       "enum": [
-        "governance-existence", "supply-resources", "people-organization",
-        "customer-demand", "product-offering", "operations-delivery", "finance-value"
+        "governance-existence", "strategy-direction", "people-organization",
+        "party-relationship", "product-value", "operations-enablement", "finance-accounting"
       ],
       "description": "Legacy catalog classification pending migration (CR-BP-14 §13, §19). Single-axis audience value (CG-004 §10); it is NOT a Process Context (Domain x Lifecycle Stage; CR-BP-02) and SHALL NOT be used as a substitute for one. For new canonical entries, contextual relationships are preferred (CR-BP-14 §13); this field remains readable as a migration alias and is removed only after all canonical entries have migrated (§19)."
     },

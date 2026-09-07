@@ -517,7 +517,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
     """Run the self-test; return (passed, summary)."""
     broken_errors: list[str] = []
     fixed_errors: list[str] = []
-    pc_ids = {"dea:pc-cd-op", "dea:pc-cd-im"}
+    pc_ids = {"dea:pc-pr-op", "dea:pc-pr-im"}
     process_ids = {"dea:process-parent-process", "dea:process-cycle-parent"}
 
     # Broken catalog fixture
@@ -535,7 +535,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "context": [{"ref": "dea:pc-pr-op"}],
             # Reverse-edge back to `dea:process-bad` forms a cycle.
             "relationships": [{
                 "source_id": "dea:process-cycle-parent",
@@ -554,7 +554,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "version": "1.0.0",
             "process_intent": "harmonise",        # BP-SEM-001
             "process_type": "essential",          # BP-SEM-002
-            "process_audience": "customer-demand",
+            "process_audience": "party-relationship",
             "context": [{"ref": "dea:pc-unknown"}],  # BP-SEM-008
             "process_specialization": ["dea:process-nope"],  # BP-SEM-005
             "specialization_pattern": "by-magic",  # no basis -> BP-SEM-006
@@ -593,8 +593,8 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "version": "1.0.0",
             "process_intent": "support",   # collision with process_type
             "process_type": "support",     # for BP-SEM-011 advisory
-            "process_audience": "customer-demand",  # legacy alias only
-            "context": [{"ref": "dea:pc-cd-op"}],
+            "process_audience": "party-relationship",  # legacy alias only
+            "context": [{"ref": "dea:pc-pr-op"}],
             "process_specialization": ["dea:process-parent-process"],
             "specialization_pattern": "by-customer-segment",
         }
@@ -605,7 +605,7 @@ def _self_test(catalog_root: Path) -> tuple[bool, str]:
             "version": "1.0.0",
             "process_intent": "manage",
             "process_type": "core",
-            "context": [{"ref": "dea:pc-cd-op"}, {"ref": "dea:pc-cd-im"}],
+            "context": [{"ref": "dea:pc-pr-op"}, {"ref": "dea:pc-pr-im"}],
             "process_specialization": ["dea:process-not-yet-canonical"],
             "specialization_basis": "by-customer-segment",
             # BP-SEM-013 valid specializes: approved basis + valid target.

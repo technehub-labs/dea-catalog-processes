@@ -70,7 +70,7 @@ The L1 Process Group discovery addresses:
 
 The ECF matrix is the 7-domain by 7-stage Cartesian product.
 
-Domains (canonical order): GovernanceAndExistence, SupplyAndResources, PeopleAndOrganization, CustomerAndDemand, ProductAndOffering, OperationsAndDelivery, FinanceAndValue.
+Domains (canonical order): GovernanceAndExistence, StrategyAndDirection, PeopleAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
 
 Stages (canonical order): Conceive, Design, Build, Activate, Operate, Improve, Retire.
 
@@ -148,8 +148,8 @@ L1 Process Groups must be MECE within their Process Context. The boundary discip
 1. Two L1 candidates in the same Process Context SHALL NOT have overlapping `in_scope` summaries.
 2. The `out_of_scope` list for an L1 candidate SHALL reference peer groups or other contexts whose work it disclaims.
 3. Cross-domain processes (Change Management, Partner Management, Resilience, Innovation, Analytics) are recorded once at their earliest-legitimate-initiation coordinate and referenced from peer coordinates; they are not duplicated as separate L1 cells.
-4. Technology Management carries no ECF coordinate per CR-DEA-BC-04 N-006 / R-004; L1 candidates that touch technology must declare a domain (operations-delivery x operate for runtime; supply-resources x operate for build/asset) and a technology-bearing relationship, not a standalone cell.
-6. Customer-facing operations (which have already been adopted as `dea:scope-customer-facing-operations` in the L2 sample) continue to be referenced from customer-demand x operate; the existing L0 scope is honoured.
+4. Technology Management carries no ECF coordinate per CR-DEA-BC-04 N-006 / R-004; L1 candidates that touch technology must declare a domain (operations-enablement x operate for runtime; strategy-direction x operate for build/asset) and a technology-bearing relationship, not a standalone cell.
+6. Customer-facing operations (which have already been adopted as `dea:scope-customer-facing-operations` in the L2 sample) continue to be referenced from party-relationship x operate; the existing L0 scope is honoured.
 
 ---
 
@@ -160,12 +160,12 @@ The disposition register totals 49 coordinates with the following distribution:
 | Domain | Accepted | Deferred | Total |
 |---|---:|---:|---:|
 | GovernanceAndExistence | 5 | 2 | 7 |
-| SupplyAndResources | 6 | 1 | 7 |
+| StrategyAndDirection | 6 | 1 | 7 |
 | PeopleAndOrganization | 5 | 2 | 7 |
-| CustomerAndDemand | 5 | 2 | 7 |
-| ProductAndOffering | 6 | 1 | 7 |
-| OperationsAndDelivery | 6 | 1 | 7 |
-| FinanceAndValue | 5 | 2 | 7 |
+| PartyAndRelationship | 5 | 2 | 7 |
+| ProductAndValue | 6 | 1 | 7 |
+| OperationsAndEnablement | 6 | 1 | 7 |
+| FinanceAndAccounting | 5 | 2 | 7 |
 | **Total** | **38** | **11** | **49** |
 
 Coordinate-level entries live in `01_plan/research-register/l1-register.yaml`. The flattened L1 candidate universe lives in `01_plan/research-register/l1-candidate-universe.yaml` (102 L1 candidates across 49 coordinates). The persona-readable summary lives in `01_plan/research-register/REGISTER-v0.1.md`.
@@ -178,29 +178,29 @@ Five cross-domain findings are recorded alongside the disposition register.
 
 ### Finding C1: Technology Management
 
-CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004. Technology is an L5 layer concern, not an ECF domain. No ECF coordinate carries Technology Management. The 49-coordinate register does not include a Technology cell; process candidates touching technology declare their domain (operations-delivery x operate for runtime; supply-resources x operate for build/asset) and a technology-bearing relationship. (CR-DEA-BC-04 R-004.)
+CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004. Technology is an L5 layer concern, not an ECF domain. No ECF coordinate carries Technology Management. The 49-coordinate register does not include a Technology cell; process candidates touching technology declare their domain (operations-enablement x operate for runtime; strategy-direction x operate for build/asset) and a technology-bearing relationship. (CR-DEA-BC-04 R-004.)
 
 ### Finding C2: Change Management is cross-cutting
 
-CR-DEA-BC-04 R-005: earliest legitimate initiation is governance-existence x improve. The 49-coordinate matrix lists Change Management as the cross-cutting pattern at governance-existence x improve and references it from peer coordinates that carry change-execution work (operations-delivery x improve, supply-resources x build, customer-demand x improve, finance-and-value x improve). Not duplicated as separate L1 cells.
+CR-DEA-BC-04 R-005: earliest legitimate initiation is governance-existence x improve. The 49-coordinate matrix lists Change Management as the cross-cutting pattern at governance-existence x improve and references it from peer coordinates that carry change-execution work (operations-enablement x improve, strategy-direction x build, party-relationship x improve, finance-and-value x improve). Not duplicated as separate L1 cells.
 
 ### Finding C3: Partner Management dual-home
 
-CR-DEA-BC-04 R-001: Partner Management initiated at customer-demand x conceive (where partner engagement is initiated); supply-side operation is legitimate participation. Treated as one L1 candidate at customer-demand x conceive with a cross-reference to supply-resources x operate for partner operations.
+CR-DEA-BC-04 R-001: Partner Management initiated at party-relationship x conceive (where partner engagement is initiated); supply-side operation is legitimate participation. Treated as one L1 candidate at party-relationship x conceive with a cross-reference to strategy-direction x operate for partner operations.
 
 ### Finding C4: Resilience, Innovation, Analytics
 
 CR-DEA-BC-04 R-006, R-007, R-008 lifted three deferrals. Their process surfaces now sit under:
 
 - governance-existence x improve for Resilience;
-- product-offering x conceive for Innovation;
-- operations-delivery x operate for Analytics.
+- product-value x conceive for Innovation;
+- operations-enablement x operate for Analytics.
 
 Recorded once at the primary coordinate; not duplicated.
 
 ### Finding C5: Marketing placement
 
-CR-DEA-BC-04 N-002: Marketing is distinct from Customer Management. Customer-demand x conceive carries the Marketing candidate; customer-demand x operate carries the Customer Relationship Management candidate. Distinct L1 groups.
+CR-DEA-BC-04 N-002: Marketing is distinct from Customer Management. Customer-demand x conceive carries the Marketing candidate; party-relationship x operate carries the Customer Relationship Management candidate. Distinct L1 groups.
 
 ---
 
@@ -289,7 +289,7 @@ This CR is accepted when:
 5. The CHANGELOG records the CR.
 6. The existing local validators continue to pass (`check_process_identity.py`, `check_process_specialization.py`, `check_process_context.py`, `check_legacy_migration.py`, `check_ecf_conformance.py`).
 7. The ECF drift detector reports zero new hard failures.
-8. The dea-catalog-processes `main` branch state remains: 0 open PRs, 1 canonical L2 entry (`dea:process-manage-customer-relationship`), 1 Process Context (`dea:pc-cd-op`).
+8. The dea-catalog-processes `main` branch state remains: 0 open PRs, 1 canonical L2 entry (`dea:process-manage-customer-relationship`), 1 Process Context (`dea:pc-pr-op`).
 
 ---
 
@@ -311,7 +311,7 @@ This CR is accepted when:
 - The existing `metadata.group` label on the L2 sample remains ungoverned until BP-12.
 - The `dea:bp-*` versus `dea:process-*` ID-family drift is still latent in the repo and will block BP-12 if not reconciled first; a separate CR-BP-04 reconciliation CR is required.
 - External-framework evidence remains Tier 3 and is not authoritative; this is a deliberate restraint, but it lengthens the research register because each disposition must defend against foreign assumptions.
-- Some L1 candidates (e.g. governance-existence x activate, people-organization x activate, customer-demand x activate) carry weak or overlapping evidence and remain deferred; downstream work may revisit them.
+- Some L1 candidates (e.g. governance-existence x activate, people-organization x activate, party-relationship x activate) carry weak or overlapping evidence and remain deferred; downstream work may revisit them.
 
 ### Forecloses
 
@@ -414,7 +414,7 @@ This CR does NOT decide:
 - CR-BP-04 (ID-family reconciliation): resolve `dea:bp-*` versus `dea:process-*` drift before BP-12 lands.
 - CR-BP-12 (L1 Process Group profile + schema + validator): catalog-owned records, MECE validation, contribution flow.
 - CR-BP-13 (Domain admission tranche 1 of 7): GovernanceAndExistence.
-- CR-BP-14..BP-19 (Domain admission tranches 2..7): SupplyAndResources, PeopleAndOrganization, CustomerAndDemand, ProductAndOffering, OperationsAndDelivery, FinanceAndValue.
+- CR-BP-14..BP-19 (Domain admission tranches 2..7): StrategyAndDirection, PeopleAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
 - CR-BP-20 (conditional): promotion of Process Group to OpenDEA Core if two independent downstream consumers require it.
 
 The chain closes at BP-19 under the current scoping; BP-20 is conditional and not part of the locked tranche.

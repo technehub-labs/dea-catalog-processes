@@ -290,56 +290,6 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
-- id: dea:pc-cd-b
-  kind: Unknown
-  path: contexts/v1-alpha/dea-pc-cd-b.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
-- id: dea:pc-cd-c
-  kind: Unknown
-  path: contexts/v1-alpha/dea-pc-cd-c.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
-- id: dea:pc-cd-d
-  kind: Unknown
-  path: contexts/v1-alpha/dea-pc-cd-d.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
-- id: dea:pc-cd-im
-  kind: Unknown
-  path: contexts/v1-alpha/dea-pc-cd-im.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
-- id: dea:pc-cd-op
-  kind: Unknown
-  path: contexts/v1-alpha/dea-pc-cd-op.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
 - id: dea:pc-ge-b
   kind: Unknown
   path: contexts/v1-alpha/dea-pc-ge-b.yaml
@@ -383,6 +333,56 @@ records:
 - id: dea:pc-ge-op
   kind: Unknown
   path: contexts/v1-alpha/dea-pc-ge-op.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-pr-b
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-pr-b.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-pr-c
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-pr-c.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-pr-d
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-pr-d.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-pr-im
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-pr-im.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-pr-op
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-pr-op.yaml
   level: 4
   level_breakdown:
     L1_structural: true

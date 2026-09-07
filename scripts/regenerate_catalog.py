@@ -77,7 +77,7 @@ CROSS_CUTTING_PATHS: dict[str, str] = {
 }
 
 # Entity id pattern: dea:<family>-<name>(:<sub>)*; accepts single-segment
-# (dea:process-foo) and multi-segment (dea:pc-cd-op) ids. Matches the
+# (dea:process-foo) and multi-segment (dea:pc-pr-op) ids. Matches the
 # schema's entity_entry.id pattern.
 import re
 ENTITY_ID_PATTERN = re.compile(r"^dea:[a-z0-9-]+(:[a-z0-9-]+)*$")

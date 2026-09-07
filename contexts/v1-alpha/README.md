@@ -30,8 +30,8 @@ Process Context record at this canonical location:
 ```
 contexts/
 └── v1-alpha/
-    ├── cd-op.yaml           # example: CustomerAndDemand x Operate
-    ├── cd-dsgn.yaml         # example: CustomerAndDemand x Design
+    ├── cd-op.yaml           # example: PartyAndRelationship x Operate
+    ├── cd-dsgn.yaml         # example: PartyAndRelationship x Design
     └── ...                  # 49 cells maximum; populated deliberately
 ```
 
@@ -48,10 +48,10 @@ dea:pc-<domain-abbrev>-<stage-abbrev>
 ```
 
 Where `<domain-abbrev>` is a two-letter abbreviation of the canonical
-ECF Domain (e.g. `cd` for CustomerAndDemand) and `<stage-abbrev>` is
+ECF Domain (e.g. `cd` for PartyAndRelationship) and `<stage-abbrev>` is
 the lowercase Lifecycle Stage name (`conceive`, `design`, `build`,
 `activate`, `operate`, `improve`, `retire`). Example:
-`dea:pc-cd-op` = CustomerAndDemand × Operate.
+`dea:pc-pr-op` = PartyAndRelationship × Operate.
 
 The convention is for human readability; the validator does not
 enforce a specific abbreviation (only the regex

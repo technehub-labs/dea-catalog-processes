@@ -16,4 +16,4 @@ Established by CR-BP-13a on 2026-09-05.
 ## Governing CR
 
 - **CR-BP-13a**: admission of the Process Group into
-  the CustomerAndDemand value stream.
+  the PartyAndRelationship value stream.

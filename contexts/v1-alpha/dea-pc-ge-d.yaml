@@ -1,8 +1,8 @@
 # Process Context Cell Charter: GovernanceAndExistence x Design.
 #
-# Lands as part of CR-BP-13a (CustomerAndDemand admission tranche).
+# Lands as part of CR-BP-13a (PartyAndRelationship admission tranche).
 # This is the N-th Process Context cell in the catalog; the first
-# was dea:pc-cd-op (CustomerAndDemand x Operate; CR-BP-03C).
+# was dea:pc-pr-op (PartyAndRelationship x Operate; CR-BP-03C).
 #
 # Each cell carries the full Cell Charter (CR-BP-02 §7):
 #   enterprise_concern, lifecycle_concern, combined_semantic_meaning,
