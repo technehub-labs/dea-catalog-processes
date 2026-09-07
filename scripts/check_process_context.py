@@ -52,7 +52,7 @@ BASE = Path(__file__).parent.parent
 ECF_DOMAINS = {
     "GovernanceAndExistence",
     "StrategyAndDirection",
-    "PeopleAndOrganization",
+    "AgencyAndOrganization",
     "PartyAndRelationship",
     "ProductAndValue",
     "OperationsAndEnablement",

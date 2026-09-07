@@ -37,7 +37,7 @@ A research-only, evidence-bound register of candidate L1 Process Groups across t
 |---|---:|---:|---:|
 | GovernanceAndExistence | 5 | 2 | 7 |
 | StrategyAndDirection | 6 | 1 | 7 |
-| PeopleAndOrganization | 5 | 2 | 7 |
+| AgencyAndOrganization | 5 | 2 | 7 |
 | PartyAndRelationship | 5 | 2 | 7 |
 | ProductAndValue | 6 | 1 | 7 |
 | OperationsAndEnablement | 6 | 1 | 7 |
@@ -76,7 +76,7 @@ Evidence: `dea-metaframework/REPORT.md` §5; `dea-catalog-business-capabilities/
 
 Evidence: `CR-DEA-BC-04 N-004`, `R-001`; `APQC PCF Sourcing`; `SCOR Plan/Source`; `ITIL 4 Service Configuration`; `IFRS 16 Leases`.
 
-### 4.3 PeopleAndOrganization
+### 4.3 AgencyAndOrganization
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -163,8 +163,8 @@ Evidence: `dea-catalog-business-capabilities/capability-financial-management`, `
 - governance-existence x activate: activation is typically modelled under operations-enablement x activate; governance activation is an attribute of governance operate.
 - governance-existence x retire: governance retirement is rare and largely an attribute of operating-model retirement.
 - strategy-direction x retire: retirement of supply and asset base is typically modelled under operations-enablement x retire with cross-reference.
-- people-organization x activate: workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment).
-- people-organization x retire: workforce transition is often handled within HR operations.
+- agency-organization x activate: workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment).
+- agency-organization x retire: workforce transition is often handled within HR operations.
 - party-relationship x activate: first-time activation is mostly handled inside the L1 group Operate in practice.
 - party-relationship x retire: customer exit is often handled within customer-relationship operations.
 - product-value x retire: offering retirement often overlaps with customer exit and asset retirement.

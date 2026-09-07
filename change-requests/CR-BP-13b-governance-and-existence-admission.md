@@ -107,6 +107,6 @@ This CR does NOT:
 
 After this CR lands, **2 of the 7 ECF domains are fully populated**
 (PartyAndRelationship + GovernanceAndExistence). The 5 remaining
-domains (StrategyAndDirection, PeopleAndOrganization,
+domains (StrategyAndDirection, AgencyAndOrganization,
 ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) follow
 in CR-BP-13c..BP-13g.

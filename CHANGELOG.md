@@ -4,6 +4,19 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
+## [2.4.0-migration] - 2026-09-07
+
+CR-BP-18 implementation: ECF Domain enum migration to the v2.4.0
+canonical Domain set (carried by `technehub-labs/dea-metaframework` v2.4.0;
+CR-ECF-007 + ADR-ECF-002). One of seven Domains renamed: Domain 3
+`PeopleAndOrganization` -> `AgencyAndOrganization` (kebab-case
+`people-organization` -> `agency-organization`), driven by the Substrate
+Independence Stress Test. 16 files re-keyed (3 schemas, 3 check scripts,
+1 contribution template, 3 research files, 1 docs file, 5 CR records);
+reconciliation artifacts regenerated. The DOMAIN_NAMES abbreviation key
+`po` -> `ag` in `tools/build_bp13a_tranche.py`. No content redistribution
+required (CR-ECF-007 §6.3).
+
 ## [2.3.0-migration] - 2026-09-07
 
 CR-BP-17 (a.k.a. CR-BP-ECF-01) implementation: ECF Domain enum migration to the v2.3.0
