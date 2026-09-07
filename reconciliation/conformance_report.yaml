@@ -70,6 +70,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-governance-conception
+  kind: Entity
+  path: entities/v1-alpha/dea:group-governance-conception/dea:group-governance-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-governance-oversight
   kind: Entity
   path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
@@ -93,16 +103,6 @@ records:
 - id: dea:group-governance-system-design
   kind: Entity
   path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
-  level: 4
-  level_breakdown:
-    L1_structural: true
-    L2_semantic: true
-    L3_architectural: true
-    L4_canonical: true
-  findings: []
-- id: dea:group-strategy-and-governance-conception
-  kind: Entity
-  path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
   level: 4
   level_breakdown:
     L1_structural: true

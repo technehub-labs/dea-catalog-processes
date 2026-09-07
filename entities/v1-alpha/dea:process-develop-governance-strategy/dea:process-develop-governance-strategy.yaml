@@ -71,6 +71,15 @@ metadata:
       legacy scalar `process_context` migrated to canonical `context:` block; legacy
       `process_audience` removed (CR-BP-14 /13); canonical `serves` relationship toward
       the ECF coordinate added.'
+  - cr: CR-BP-20
+    date: '2026-09-07'
+    change: 'CR-BP-20 Option A GE/SD split (user-approved 2026-09-07, grounded in
+      domain-grounding.md §3.1 and §3.2): Develop corporate strategy is excluded
+      from GovernanceAndExistence per v2.4.0 (GE authorises but does not direct).
+      This process is scheduled for migration to StrategyAndDirection × Conceive
+      (dea:pc-sd-conceive) in CR-BP-21a (planned landing tranche). Until that
+      cell lands, this process remains affiliated with GE × Conceive and composed
+      by dea:group-governance-conception (formerly dea:group-strategy-and-governance-conception).'
 links:
 - rel: change-request
   href: change-requests/cr-bp-13a-customer-and-demand-admission.md

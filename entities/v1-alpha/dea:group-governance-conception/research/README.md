@@ -1,4 +1,4 @@
-# Research register: `dea:group-strategy-and-governance-conception`
+# Research register: `dea:group-governance-conception`
 
 This directory holds research artifacts specific to
 this Process Group. No L1-specific research has

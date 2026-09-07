@@ -1,7 +1,7 @@
-# Canonical Process Group: `dea:group-strategy-and-governance-conception`
+# Canonical Process Group: `dea:group-governance-conception`
 
 This directory hosts the canonical Process Group record
-for `dea:group-strategy-and-governance-conception`. The Process Group is a catalog-owned
+for `dea:group-governance-conception`. The Process Group is a catalog-owned
 record (not an OpenDEA metamodel entity) that organises
 the L2 Business Process entries composing into it within
 the dea:pc-ge-c Process Context.

@@ -70,6 +70,10 @@ records:
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
     sha256: e7abe062666588fd7cd13bb7dd748516f49420a34acbcad82a8809b60fdac380
+  - id: dea:group-governance-conception
+    type: ProcessGroup
+    path: entities/v1-alpha/dea:group-governance-conception/dea:group-governance-conception.yaml
+    sha256: 57948630e0d58f725181628bb3b425a8c3e384aaadb875996d5750885b03ea34
   - id: dea:group-governance-oversight
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
@@ -82,10 +86,6 @@ records:
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
     sha256: 73182025ca25cae490b0993b1dcf4eb63dff8a9449209e65f1645f7c2c7d3d26
-  - id: dea:group-strategy-and-governance-conception
-    type: ProcessGroup
-    path: entities/v1-alpha/dea:group-strategy-and-governance-conception/dea:group-strategy-and-governance-conception.yaml
-    sha256: 29016b402ed147b451ecd1974a2f1a428151e5ec0b7f5d3af3b708bbc294229d
   - id: dea:pc-ge-b
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-b.yaml
@@ -137,11 +137,11 @@ records:
   - id: dea:process-customer-channel-and-acquisition-build
     type: Process
     path: entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/dea:process-customer-channel-and-acquisition-build.yaml
-    sha256: 22430a5a82a0dd7838ade45ad7c5961bde43b389618b89a46d32cc64e792eab2
+    sha256: a090abc0bc4970ed0d36c12946166693669bf0f0664c4d1cfa223992ca4a06fd
   - id: dea:process-customer-experience-design
     type: Process
     path: entities/v1-alpha/dea:process-customer-experience-design/dea:process-customer-experience-design.yaml
-    sha256: 2a0a7ebdca284c44bc4d72484e9cba468dbbdbe5c3391f6387e9bd99852e8433
+    sha256: fdc2a7cf3b75dce442ec20d81203187d5a46bfef2a2dc8db6ba129977fd6abab
   - id: dea:process-customer-insight-and-retention
     type: Process
     path: entities/v1-alpha/dea:process-customer-insight-and-retention/dea:process-customer-insight-and-retention.yaml
@@ -173,7 +173,7 @@ records:
   - id: dea:process-develop-governance-strategy
     type: Process
     path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
-    sha256: d09e3fad5e7acfaedb58d9d67baf6ecb8efd116c88a1d11ec026805297299e6b
+    sha256: 2a689cb272c7eaaa162959064f8c2aa2f55d7c84b1a0b278335421640dfa0767
   - id: dea:process-establish-governance-bodies
     type: Process
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
@@ -189,7 +189,7 @@ records:
   - id: dea:process-market-and-demand-conception
     type: Process
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
-    sha256: 051403b710d8305cf5f559634c8de21251f3b9cafe41847d48eb0ecc122a90f9
+    sha256: 4dcdab840c411c6dc8db3241e22b92a5445f3a80366031a65aee1260923135a5
   - id: dea:process-operate-governance-oversight
     type: Process
     path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
