@@ -56,7 +56,7 @@ DOMAIN_NAMES = {
     "pr": "PartyAndRelationship",
     "ge": "GovernanceAndExistence",
     "sd": "StrategyAndDirection",
-    "po": "PeopleAndOrganization",
+    "ag": "AgencyAndOrganization",
     "pv": "ProductAndValue",
     "oe": "OperationsAndEnablement",
     "fa": "FinanceAndAccounting",

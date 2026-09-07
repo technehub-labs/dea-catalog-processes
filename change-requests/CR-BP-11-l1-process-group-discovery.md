@@ -1,6 +1,8 @@
 # CR-BP-11: L1 Process Group Discovery Across the 49 ECF Coordinates
 
-Status: Baseline
+**Status**: Accepted (baseline ratified by CR-BP-13)
+**Layer**: Process Catalog
+**Owner**: Coder (for eaojnr)
 Program: Business Process Catalog
 Parent: CR-BP-03-business-process-architecture
 Related: CR-BP-03-business-process-architecture; CR-BP-02; CR-BP-03C-sample-process-contribution; CR-DEA-BC-04 (Business Capability Catalog ECF Overlay v0.2)
@@ -70,7 +72,7 @@ The L1 Process Group discovery addresses:
 
 The ECF matrix is the 7-domain by 7-stage Cartesian product.
 
-Domains (canonical order): GovernanceAndExistence, StrategyAndDirection, PeopleAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
+Domains (canonical order): GovernanceAndExistence, StrategyAndDirection, AgencyAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
 
 Stages (canonical order): Conceive, Design, Build, Activate, Operate, Improve, Retire.
 
@@ -101,7 +103,7 @@ Every coordinate receives exactly one disposition. The disposition is set by the
 In v0.1, no coordinate carries `unresolved` or `no-candidate`. Coordinates in the deferred bucket carry one of two deferral patterns:
 
 - rare-event coordinates (e.g. governance-existence x retire, finance-and-value x retire, supply-and-resources x retire) where the event exists in some industries but is not enterprise-generality-strong;
-- operational-overlap coordinates (e.g. people-organization x activate) where the candidate group is an attribute of an adjacent group rather than a standalone L1.
+- operational-overlap coordinates (e.g. agency-organization x activate) where the candidate group is an attribute of an adjacent group rather than a standalone L1.
 
 ---
 
@@ -161,7 +163,7 @@ The disposition register totals 49 coordinates with the following distribution:
 |---|---:|---:|---:|
 | GovernanceAndExistence | 5 | 2 | 7 |
 | StrategyAndDirection | 6 | 1 | 7 |
-| PeopleAndOrganization | 5 | 2 | 7 |
+| AgencyAndOrganization | 5 | 2 | 7 |
 | PartyAndRelationship | 5 | 2 | 7 |
 | ProductAndValue | 6 | 1 | 7 |
 | OperationsAndEnablement | 6 | 1 | 7 |
@@ -311,7 +313,7 @@ This CR is accepted when:
 - The existing `metadata.group` label on the L2 sample remains ungoverned until BP-12.
 - The `dea:bp-*` versus `dea:process-*` ID-family drift is still latent in the repo and will block BP-12 if not reconciled first; a separate CR-BP-04 reconciliation CR is required.
 - External-framework evidence remains Tier 3 and is not authoritative; this is a deliberate restraint, but it lengthens the research register because each disposition must defend against foreign assumptions.
-- Some L1 candidates (e.g. governance-existence x activate, people-organization x activate, party-relationship x activate) carry weak or overlapping evidence and remain deferred; downstream work may revisit them.
+- Some L1 candidates (e.g. governance-existence x activate, agency-organization x activate, party-relationship x activate) carry weak or overlapping evidence and remain deferred; downstream work may revisit them.
 
 ### Forecloses
 
@@ -414,7 +416,7 @@ This CR does NOT decide:
 - CR-BP-04 (ID-family reconciliation): resolve `dea:bp-*` versus `dea:process-*` drift before BP-12 lands.
 - CR-BP-12 (L1 Process Group profile + schema + validator): catalog-owned records, MECE validation, contribution flow.
 - CR-BP-13 (Domain admission tranche 1 of 7): GovernanceAndExistence.
-- CR-BP-14..BP-19 (Domain admission tranches 2..7): StrategyAndDirection, PeopleAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
+- CR-BP-14..BP-19 (Domain admission tranches 2..7): StrategyAndDirection, AgencyAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting.
 - CR-BP-20 (conditional): promotion of Process Group to OpenDEA Core if two independent downstream consumers require it.
 
 The chain closes at BP-19 under the current scoping; BP-20 is conditional and not part of the locked tranche.

@@ -31,7 +31,7 @@ CONTRACT_VERSION = '1.0.0'
 PROFILE = 'dea:ecf@1.0.0'
 FRAMEWORK = 'EnterpriseConceptFramework'
 CANON_DOMAINS = {
-    'GovernanceAndExistence', 'StrategyAndDirection', 'PeopleAndOrganization',
+    'GovernanceAndExistence', 'StrategyAndDirection', 'AgencyAndOrganization',
     'PartyAndRelationship', 'ProductAndValue', 'OperationsAndEnablement',
     'FinanceAndAccounting',
 }
@@ -39,7 +39,7 @@ CANON_STAGES = {'Conceive', 'Design', 'Build', 'Activate', 'Operate', 'Improve',
 ID_PATTERN = re.compile(r'^ecf:[a-z][a-zA-Z0-9]*\.[a-z][a-zA-Z0-9]*$')
 STATUSES = {'conformant', 'conformant-with-extension', 'non-conformant', 'not-yet-assessed'}
 KABAB_DOMAINS = {
-    'governance-existence', 'strategy-direction', 'people-organization',
+    'governance-existence', 'strategy-direction', 'agency-organization',
     'party-relationship', 'product-value', 'operations-enablement', 'finance-accounting',
 }
 

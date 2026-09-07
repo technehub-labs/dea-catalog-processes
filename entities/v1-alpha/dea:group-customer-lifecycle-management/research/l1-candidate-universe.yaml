@@ -28,7 +28,7 @@ disposition_counts_per_domain:
   StrategyAndDirection:
     accepted: 6
     deferred: 1
-  PeopleAndOrganization:
+  AgencyAndOrganization:
     accepted: 5
     deferred: 2
   PartyAndRelationship:
@@ -199,7 +199,7 @@ l1_candidates:
   process_context: dea:pc-sr-conceive
   in_scope: Strategy-level sourcing, supply-base, and asset conception
   out_of_scope: &id009
-  - Workforce planning (people-organization)
+  - Workforce planning (agency-organization)
   - Operational sourcing execution
   evidence: &id010
   - dea-catalog-business-capabilities/capability-sourcing-and-procurement
@@ -263,7 +263,7 @@ l1_candidates:
   process_context: dea:pc-sr-build
   in_scope: Onboarding, acquisition, provisioning
   out_of_scope: &id013
-  - Capability build for human workforce (people-organization)
+  - Capability build for human workforce (agency-organization)
   evidence: &id014
   - CR-DEA-BC-04 R-001 dual-home
   - APQC PCF Sourcing Build
@@ -324,7 +324,7 @@ l1_candidates:
   process_context: dea:pc-sr-operate
   in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
   out_of_scope: &id017
-  - Workforce execution (people-organization)
+  - Workforce execution (agency-organization)
   - Manufacturing line operation (operations-enablement)
   evidence: &id018
   - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management,
@@ -401,7 +401,7 @@ l1_candidates:
   deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement
     x retire with cross-reference; defer a standalone group until at least one L2 process has stabilized.
 - name: Workforce Strategy Conception
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Conceive
   process_context: dea:pc-po-conceive
   in_scope: Workforce and organization conception
@@ -415,7 +415,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Organization Conception
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Conceive
   process_context: dea:pc-po-conceive
   in_scope: Workforce and organization conception
@@ -426,7 +426,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Organization and Role Design
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Design
   process_context: dea:pc-po-design
   in_scope: Org design, role design, competency design
@@ -440,7 +440,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Design
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Design
   process_context: dea:pc-po-design
   in_scope: Org design, role design, competency design
@@ -451,7 +451,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Talent Acquisition
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Build
   process_context: dea:pc-po-build
   in_scope: Sourcing, recruiting, onboarding, contractor pool
@@ -465,7 +465,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Onboarding
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Build
   process_context: dea:pc-po-build
   in_scope: Sourcing, recruiting, onboarding, contractor pool
@@ -476,7 +476,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Activation
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Activate
   process_context: dea:pc-po-activate
   in_scope: Cutover, mobilization, role assignment
@@ -492,7 +492,7 @@ l1_candidates:
   deferral_reason: Workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
     defer until organizational-mobilization becomes a recurring programme.
 - name: Organization Mobilization
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Activate
   process_context: dea:pc-po-activate
   in_scope: Cutover, mobilization, role assignment
@@ -506,7 +506,7 @@ l1_candidates:
   deferral_reason: Workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
     defer until organizational-mobilization becomes a recurring programme.
 - name: HR Operations
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Operate
   process_context: dea:pc-po-operate
   in_scope: HR service delivery, performance, learning
@@ -521,7 +521,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Operations
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Operate
   process_context: dea:pc-po-operate
   in_scope: HR service delivery, performance, learning
@@ -532,7 +532,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Performance and Reward
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Operate
   process_context: dea:pc-po-operate
   in_scope: HR service delivery, performance, learning
@@ -543,7 +543,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Improvement
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Improve
   process_context: dea:pc-po-improve
   in_scope: Engagement, skills, retention analysis
@@ -556,7 +556,7 @@ l1_candidates:
   ratified_by: CR-BP-13
   deferral_reason: ''
 - name: Workforce Transition
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Retire
   process_context: dea:pc-po-retire
   in_scope: Redundancy, offboarding, unit decommission
@@ -573,7 +573,7 @@ l1_candidates:
   deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated
     wind-down (e.g. mass layoff) requires a dedicated L1 group.
 - name: Organization Wind-down
-  domain: PeopleAndOrganization
+  domain: AgencyAndOrganization
   stage: Retire
   process_context: dea:pc-po-retire
   in_scope: Redundancy, offboarding, unit decommission
@@ -862,7 +862,7 @@ l1_candidates:
   process_context: dea:pc-po2-operate
   in_scope: Catalogue, service delivery, partner programme
   out_of_scope: &id047
-  - Workforce operation (people-organization)
+  - Workforce operation (agency-organization)
   evidence: &id048
   - dea-catalog-business-capabilities/capability-offering-management, capability-partner-management
   - ITIL 4 Service Operation

@@ -1,7 +1,7 @@
 domains:
 - GovernanceAndExistence
 - StrategyAndDirection
-- PeopleAndOrganization
+- AgencyAndOrganization
 - PartyAndRelationship
 - ProductAndValue
 - OperationsAndEnablement
@@ -164,7 +164,7 @@ register:
       - Frame workforce capacity strategy (cross-ref)
       in_scope: Strategy-level sourcing, supply-base, and asset conception
       out_of_scope:
-      - Workforce planning (people-organization)
+      - Workforce planning (agency-organization)
       - Operational sourcing execution
       evidence:
       - dea-catalog-business-capabilities/capability-sourcing-and-procurement
@@ -207,7 +207,7 @@ register:
       - Stand up resource pools
       in_scope: Onboarding, acquisition, provisioning
       out_of_scope:
-      - Capability build for human workforce (people-organization)
+      - Capability build for human workforce (agency-organization)
       evidence:
       - CR-DEA-BC-04 R-001 dual-home
       - APQC PCF Sourcing Build
@@ -245,7 +245,7 @@ register:
       - Operate asset maintenance
       in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
       out_of_scope:
-      - Workforce execution (people-organization)
+      - Workforce execution (agency-organization)
       - Manufacturing line operation (operations-enablement)
       evidence:
       - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management,
@@ -295,7 +295,7 @@ register:
         Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
       deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement
         x retire with cross-reference; defer a standalone group until at least one L2 process has stabilized.
-  PeopleAndOrganization:
+  AgencyAndOrganization:
     Conceive:
       process_context: dea:pc-po-conceive
       l1_candidates:
@@ -645,7 +645,7 @@ register:
       - Operate partner and alliance programme (cross-ref)
       in_scope: Catalogue, service delivery, partner programme
       out_of_scope:
-      - Workforce operation (people-organization)
+      - Workforce operation (agency-organization)
       evidence:
       - dea-catalog-business-capabilities/capability-offering-management, capability-partner-management
       - ITIL 4 Service Operation

@@ -29,11 +29,11 @@ records:
   - id: <cr:CR-BP-13a-party-and-relationship-admission.md>
     type: ChangeRequest
     path: change-requests/CR-BP-13a-party-and-relationship-admission.md
-    sha256: 7724125c09772db01e2385f46f58eaf8d931e1c0e0eb39e539f2498bbc4e12c2
+    sha256: 5791f4ca34c85da6d843b87de51a3810168ed5c1aadc000b17368e10e9697278
   - id: <cr:CR-BP-13b-governance-and-existence-admission.md>
     type: ChangeRequest
     path: change-requests/CR-BP-13b-governance-and-existence-admission.md
-    sha256: 6b5ff41f64bb5f6dab854d48f79d835be47faee6e7b001b54f9aec2e159985c3
+    sha256: 49305227c0884a146fcb9fcece71d66e4dccede13171010123b91e0f399d129e
   - id: <cr:CR-BP-14-process-semantic-reconciliation.md>
     type: ChangeRequest
     path: change-requests/CR-BP-14-process-semantic-reconciliation.md

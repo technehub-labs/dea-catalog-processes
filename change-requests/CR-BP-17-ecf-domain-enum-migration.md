@@ -37,7 +37,7 @@ this repo to the v2.3.0 set:
 | `OperationsAndDelivery` | `OperationsAndEnablement` |
 | `FinanceAndValue` | `FinanceAndAccounting` |
 | `GovernanceAndExistence` | `GovernanceAndExistence` (unchanged) |
-| `PeopleAndOrganization` | `PeopleAndOrganization` (unchanged) |
+| `AgencyAndOrganization` | `AgencyAndOrganization` (unchanged) |
 
 Plus the kebab-case restatement used in `process_audience` and
 `domain` values:
@@ -110,7 +110,7 @@ tests, dispositions).
   - `scripts/apply_phase_5_tranche.py` (the migration tool itself)
   - `tools/build_bp13a_tranche.py` (DOMAIN_NAMES key flipped from `cd` to `pr`,
     and the other 4 abbreviations to their new v2.3.0 keys: `sd`, `pv`,
-    `oe`, `fa`; `po` for PeopleAndOrganization is unchanged)
+    `oe`, `fa`; `po` for AgencyAndOrganization is unchanged)
 - **4 test files** in `tests/` (test fixtures updated)
 - **2 reconciliation artifacts** regenerated:
   - `reconciliation/inventory.yaml`

@@ -130,6 +130,6 @@ This CR does NOT:
 
 After this CR lands, the **PartyAndRelationship value stream is fully
 populated** across the 5 accepted lifecycle stages. The 6 remaining
-domains (GovernanceAndExistence, StrategyAndDirection, PeopleAndOrganization,
+domains (GovernanceAndExistence, StrategyAndDirection, AgencyAndOrganization,
 ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) follow in
 CR-BP-13b..BP-13g using the same pattern.
