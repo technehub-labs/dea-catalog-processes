@@ -222,3 +222,153 @@ def test_adm_json_shape():
     assert "findings" in data
     assert "candidate_count" in data
     assert data["candidate_count"] == 18  # 18 canonical BPs
+
+
+# CR-BP-16 §17 Step 8: provenance blocking policy
+# (--strict-provenance flag and metadata.change_history path).
+
+
+def test_adm_strict_provenance_passes_on_locked_population():
+    """The 18 LOCKED records all carry proper metadata.change_history
+    with a CR-BP-13* or CR-BP-03C admission reference. --strict-provenance
+    MUST therefore return CONFORMANT-WITH-WARNINGS (zero blocking
+    findings). Exit code 0."""
+    r = _run([str(SCRIPT_ADM), "--strict-provenance"])
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "NON-CONFORMANT" not in r.stdout
+    # No provenance-specific FINDINGS should appear. The header
+    # always contains 'ADM-001..008', so we match the per-finding
+    # '[ADM-NNN]' marker:
+    assert "[ADM-008]" not in r.stdout
+    assert "[ADM-001]" not in r.stdout
+    # Boundary (ADM-005) findings are advisory and expected to remain:
+    assert "CONFORMANT-WITH-WARNINGS" in r.stdout
+
+
+def test_adm_strict_provenance_blocks_missing_provenance(tmp_path):
+    """A record whose metadata.change_history is missing MUST fail
+    --strict-provenance on ADM-008. ADM-001 only fires when
+    change_history is present but lacks an admission CR (covered
+    by the no-admission-cr test below)."""
+    import json
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    bad_dir = sandbox / "entities" / "v1-alpha" / "dea:process-no-provenance"
+    bad_dir.mkdir()
+    (bad_dir / "dea:process-no-provenance.yaml").write_text(
+        "id: dea:process-no-provenance\n"
+        "name: No Provenance\n"
+        "type: Process\n"
+        "version: '1.0.0'\n"
+        "process_intent: manage\n"
+        "process_type: core\n"
+        "context: [{ref: dea:pc-cd-op}]\n"
+        # NOTE: no change_history; no metadata.change_history.
+        # This MUST trigger ADM-008 (provenance missing).
+    )
+    r = _run([str(SCRIPT_ADM), "--strict-provenance", "--json",
+              "--catalog-root", str(sandbox)])
+    assert r.returncode != 0, r.stdout + r.stderr
+    data = json.loads(r.stdout)
+    rules = [f["rule"] for f in data["findings"]
+             if "dea:process-no-provenance" in f["path"]]
+    assert "ADM-008" in rules
+    # Provenance rules are the BLOCKING ones; boundary findings remain advisory.
+    blocking_rules = {f["rule"] for f in data["blocking_findings"]}
+    assert "ADM-008" in blocking_rules
+
+
+def test_adm_strict_provenance_blocks_no_admission_cr(tmp_path):
+    """A record whose change_history has only non-admission CRs
+    (e.g. CR-BP-15-IMP migration entries but no CR-BP-13* /
+    CR-BP-03C reference) MUST fail --strict-provenance on ADM-001
+    only (the entry is structurally fine for ADM-008)."""
+    import json
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    bad_dir = sandbox / "entities" / "v1-alpha" / "dea:process-no-admission-cr"
+    bad_dir.mkdir()
+    (bad_dir / "dea:process-no-admission-cr.yaml").write_text(
+        "id: dea:process-no-admission-cr\n"
+        "name: No Admission CR\n"
+        "type: Process\n"
+        "version: '1.0.0'\n"
+        "process_intent: manage\n"
+        "process_type: core\n"
+        "context: [{ref: dea:pc-cd-op}]\n"
+        "metadata:\n"
+        "  change_history:\n"
+        "    - cr: CR-BP-15-IMP\n"
+        "      date: '2026-09-06'\n"
+        "      change: Phase 5 migration only; never admitted.\n"
+    )
+    r = _run([str(SCRIPT_ADM), "--strict-provenance", "--json",
+              "--catalog-root", str(sandbox)])
+    assert r.returncode != 0, r.stdout + r.stderr
+    data = json.loads(r.stdout)
+    target_rules = [f["rule"] for f in data["findings"]
+                    if "dea:process-no-admission-cr" in f["path"]]
+    blocking_target_rules = [f["rule"] for f in data["blocking_findings"]
+                             if "dea:process-no-admission-cr" in f["path"]]
+    # ADM-001 fires (no admission CR); ADM-008 does NOT fire
+    # (the entry is structurally valid).
+    assert "ADM-001" in target_rules
+    assert "ADM-001" in blocking_target_rules
+    assert "ADM-008" not in target_rules
+    assert "ADM-008" not in blocking_target_rules
+
+
+def test_adm_strict_provenance_accepts_cr_bp_03c_as_admission(tmp_path):
+    """CR-BP-03C is the canonical sample-process-contribution CR.
+    It predates the formal CR-BP-13 admission programme but is
+    functionally equivalent for ADM-001 (it admitted the first
+    canonical sample process). A record whose change_history
+    references ONLY CR-BP-03C MUST pass --strict-provenance."""
+    import json
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    ok_dir = sandbox / "entities" / "v1-alpha" / "dea:process-via-03c"
+    ok_dir.mkdir()
+    (ok_dir / "dea:process-via-03c.yaml").write_text(
+        "id: dea:process-via-03c\n"
+        "name: Via 03C\n"
+        "type: Process\n"
+        "version: '1.0.0'\n"
+        "process_intent: manage\n"
+        "process_type: core\n"
+        "context: [{ref: dea:pc-cd-op}]\n"
+        "metadata:\n"
+        "  change_history:\n"
+        "    - cr: CR-BP-03C\n"
+        "      date: '2026-09-03'\n"
+        "      change: Sample-process-contribution admission.\n"
+    )
+    r = _run([str(SCRIPT_ADM), "--strict-provenance", "--json",
+              "--catalog-root", str(sandbox)])
+    data = json.loads(r.stdout)
+    target_rules = [f["rule"] for f in data["findings"]
+                    if "dea:process-via-03c" in f["path"]]
+    # CR-BP-03C is accepted: no ADM-001 finding; no ADM-008 finding.
+    assert "ADM-001" not in target_rules, r.stdout
+    assert "ADM-008" not in target_rules, r.stdout
+
+
+def test_adm_reads_change_history_from_metadata_block(tmp_path):
+    """Regression test: the validator previously queried
+    top-level `change_history`, missing records that stored
+    their provenance under `metadata.change_history`. All 18
+    LOCKED records use the canonical metadata path; the
+    validator MUST read it."""
+    sandbox = tmp_path / "sandbox"
+    shutil.copytree(ROOT / "entities", sandbox / "entities")
+    shutil.copytree(ROOT / "contexts", sandbox / "contexts")
+    r = _run([str(SCRIPT_ADM), "--strict-provenance",
+              "--catalog-root", str(sandbox)])
+    # No ADM-008 firing on any of the 18 LOCKED records:
+    assert "[ADM-008]" not in r.stdout, r.stdout
+    # And no ADM-001 firing either (every record has CR-BP-13a/b
+    # or CR-BP-03C in change_history):
+    assert "[ADM-001]" not in r.stdout, r.stdout

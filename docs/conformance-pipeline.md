@@ -47,7 +47,8 @@ Pull Request
      │
      ▼
 [8] Provenance              (ADM-008: change_history date/cr/change;
-                              scripts/check_admission_gate.py ADM-001..008)
+                              scripts/check_admission_gate.py
+                              ADM-001 + ADM-008 strict)
      │
      ▼
 [9] CR Validation           (CR-META-001..006: Status, Layer, Owner,
@@ -72,7 +73,7 @@ Pull Request
 | [5] Hierarchy | yes | BP-AR-001..007 |
 | [6] Specialization Graph | yes | BP-SEM-013 + BP-SEM-014 + BP-SPEC-01-001..007 |
 | [7] MECE Findings | yes (BP-AR-007 only) | BP-AR-007 + PC-001..008 + PG-001..008 |
-| [8] Provenance | advisory | ADM-008 (recommendation, not requirement) |
+| [8] Provenance | yes | ADM-008 (change_history date+cr+change); ADM-001 (admission-CR in change_history); scripts/check_admission_gate.py --strict-provenance |
 | [9] CR Validation | yes (new CRs only) | CR-META-001..006 (legacy CRs: advisory) |
 | [10] Conformance Result | yes | conformance_report.yaml Levels 1-4 |
 
@@ -97,6 +98,36 @@ bold). Both are valid; the validator normalises the key by
 stripping a trailing colon. Parenthetical qualifiers on `Layer`
 (e.g. `L1 (Process Catalog)`) and `Status` (e.g. `Proposed
 (2026-09-03)`) are also normalised.
+
+### Provenance (Step 8): blocking policy
+
+Step 8 (Provenance) runs the admission gate in
+`--strict-provenance` mode in CI. Only two rules block:
+
+- **ADM-008** every `change_history` entry MUST carry
+  `date` + `cr` + `change` fields. Process records carry
+  their provenance under the canonical
+  `metadata.change_history` block; legacy top-level
+  `change_history` is also accepted.
+- **ADM-001** at least one `change_history` entry MUST
+  reference an admission CR. Accepted patterns:
+  - `CR-BP-13[a-z]` (formal admission programme;
+    CR-BP-13a CustomerAndDemand, CR-BP-13b GovernanceAndExistence,
+    CR-BP-13c+ future admission tranches);
+  - `CR-BP-03C` (sample-process-contribution walk-the-flow;
+    admitted the first canonical sample process before the
+    formal CR-BP-13 programme).
+
+The rest of the admission gate (ADM-002 Identity, ADM-003
+Context, ADM-004 Group Fit, ADM-005 Boundary, ADM-006 Intent,
+ADM-007 Specialization) remains advisory. They will be
+promoted to blocking individually as the corresponding §15
+subsections are ratified.
+
+The locked population (18 records admitted under CR-BP-13a,
+CR-BP-13b, and CR-BP-03C; migrated through CR-BP-15-IMP
+Phase 5) carries full provenance and is ADM-001 + ADM-008
+conformant. No legacy cutoff is required for Step 8.
 
 ## Continuous conformance (CR-BP-16 §25)
 

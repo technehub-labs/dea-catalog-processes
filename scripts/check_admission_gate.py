@@ -32,7 +32,14 @@ eight blocking checks (ADM-001..008):
 
 Usage::
 
-    python3 scripts/check_admission_gate.py [--strict] [--self-test]
+    python3 scripts/check_admission_gate.py
+        [--strict]                # all ADM-001..008 findings are blocking
+        [--strict-provenance]     # only ADM-001 + ADM-008 are blocking
+                                  # (advisory for the rest). Used in CI
+                                  # to enforce §17 Step 8 (provenance)
+                                  # without flipping the §15 boundary
+                                  # recommendation to a hard rule.
+        [--json] [--self-test]
 """
 from __future__ import annotations
 
@@ -210,12 +217,20 @@ def check_admission(path: Path, root: Path,
                 f"resolve to a canonical Process",
             ))
 
-    # ADM-008: provenance
-    change_history = data.get("change_history") or []
+    # ADM-008: provenance. Process records carry their provenance
+    # under `metadata.change_history` (canonical schema; see
+    # CR-BP-15-IMP Phase 2). Top-level `change_history` is also
+    # accepted as a legacy location so the gate stays robust
+    # against ad-hoc record shapes.
+    change_history = (
+        data.get("change_history")
+        or data.get("metadata", {}).get("change_history")
+        or []
+    )
     if not isinstance(change_history, list) or not change_history:
         findings.append((
             "ADM-008",
-            f"{rec_id}: change_history missing or empty (provenance)",
+            f"{rec_id}: metadata.change_history missing or empty (provenance)",
         ))
     else:
         # Every change_history entry must have date + cr + change.
@@ -242,10 +257,19 @@ def check_admission(path: Path, root: Path,
                     f"{rec_id}: change_history[{j}] missing change",
                 ))
         # ADM-001: at least one entry must reference an admission CR.
-        # We treat the pattern "CR-BP-13" (a/b/c/d) as admission.
+        # We treat CR-BP-13[a-z] (a/b/c/d admission tranches) and
+        # CR-BP-03C (sample-process-contribution walk-the-flow) as
+        # admission authorities. CR-BP-03C predates the formal
+        # CR-BP-13 admission programme but is functionally equivalent
+        # (it admitted the first canonical sample process, see
+        # change-requests/CR-BP-03C-sample-process-contribution.md).
+        _ADMISSION_CR_RE = re.compile(
+            r"^(?:CR-BP-13[a-z]?|CR-BP-03C)(?:\.\d+)*$"
+        )
         has_admission = any(
-            isinstance(e, dict) and re.match(r"^CR-BP-13[a-z]?(?:\.\d+)*$",
-                                              (e.get("cr") or ""))
+            isinstance(e, dict) and _ADMISSION_CR_RE.match(
+                (e.get("cr") or "")
+            )
             for e in change_history
         )
         if not has_admission:
@@ -261,7 +285,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--catalog-root", default=".")
     parser.add_argument("--strict", action="store_true",
-                        help="Treat warnings as errors")
+                        help="Treat all ADM-001..008 findings as errors")
+    parser.add_argument("--strict-provenance", action="store_true",
+                        help="Treat only ADM-001 + ADM-008 findings as "
+                             "errors (provenance/evidence coverage). "
+                             "Used by CI for CR-BP-16 §17 Step 8 "
+                             "(blocking).")
     parser.add_argument("--json", action="store_true",
                         help="Emit JSON output")
     parser.add_argument("--self-test", action="store_true",
@@ -298,8 +327,18 @@ def main(argv: list[str] | None = None) -> int:
                 "message": msg,
             })
 
+    # Decide which findings are blocking. --strict blocks everything;
+    # --strict-provenance blocks only ADM-001 + ADM-008 (the
+    # provenance/evidence rules that §17 Step 8 enforces).
+    if args.strict:
+        blocking = list(findings)
+    elif args.strict_provenance:
+        blocking = [f for f in findings if f["rule"] in ("ADM-001", "ADM-008")]
+    else:
+        blocking = []
+
     verdict = (
-        "NON-CONFORMANT" if (findings and args.strict) else
+        "NON-CONFORMANT" if blocking else
         "CONFORMANT-WITH-WARNINGS" if findings else
         "CONFORMANT"
     )
@@ -307,20 +346,31 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps({
             "verdict": verdict,
             "findings": findings,
+            "blocking_findings": blocking,
+            "blocking_rules": (
+                "all" if args.strict else
+                "ADM-001+ADM-008" if args.strict_provenance else
+                "none"
+            ),
             "candidate_count": len(candidates),
             "locked_count": len(locked),
         }, indent=2))
     else:
         print(f"Admission Gate (CR-BP-16 S15; ADM-001..008): {verdict}")
         if findings:
-            print(f"  {len(findings)} findings across {len(candidates)} Process records")
+            blocking_msg = (
+                f" ({len(blocking)} blocking)" if blocking else ""
+            )
+            print(f"  {len(findings)} findings{blocking_msg} across "
+                  f"{len(candidates)} Process records")
             for f in findings[:10]:
-                print(f"    [{f['rule']}] {f['path']}: {f['message']}")
+                marker = "[BLOCKING] " if f in blocking else ""
+                print(f"    {marker}[{f['rule']}] {f['path']}: {f['message']}")
             if len(findings) > 10:
                 print(f"    ... and {len(findings) - 10} more")
         else:
             print(f"  {len(candidates)} Process records, all admission-gate compliant")
-    return 1 if (findings and args.strict) else 0
+    return 1 if blocking else 0
 
 
 def _self_test() -> int:
@@ -395,6 +445,67 @@ def _self_test() -> int:
             good_findings.append(code)
         if good_findings:
             failed.append(f"good fixture fired: {good_findings}")
+
+        # CR-BP-16 §17 Step 8 path regression: provenance stored
+        # under metadata.change_history MUST be read.
+        (entities / "dea:process-meta-path-good").mkdir(parents=True)
+        (entities / "dea:process-meta-path-good" /
+         "dea:process-meta-path-good.yaml").write_text(yaml.safe_dump({
+            "id": "dea:process-meta-path-good",
+            "name": "Meta Path Good",
+            "type": "Process",
+            "version": "1.0.0",
+            "process_intent": "manage",
+            "process_type": "core",
+            "context": [{"ref": "dea:pc-cd-op"}],
+            "metadata": {
+                "change_history": [
+                    {"date": "2026-09-03", "cr": "CR-BP-03C",
+                     "change": "Sample-process-contribution admission."},
+                ],
+            },
+        }, sort_keys=False))
+        meta_file = next((entities / "dea:process-meta-path-good").glob(
+            "dea:process-*.yaml"))
+        meta_findings = []
+        for code, msg in check_admission(meta_file, root, pc_ids,
+                                        pg_ids, process_ids):
+            meta_findings.append(code)
+        if "ADM-008" in meta_findings or "ADM-001" in meta_findings:
+            failed.append(
+                "metadata.change_history path not read: "
+                f"got findings {meta_findings}"
+            )
+
+        # CR-BP-03C admission CR acceptance (legacy sample CR).
+        (entities / "dea:process-bp-15-only").mkdir(parents=True)
+        (entities / "dea:process-bp-15-only" /
+         "dea:process-bp-15-only.yaml").write_text(yaml.safe_dump({
+            "id": "dea:process-bp-15-only",
+            "name": "Migration Only",
+            "type": "Process",
+            "version": "1.0.0",
+            "process_intent": "manage",
+            "process_type": "core",
+            "context": [{"ref": "dea:pc-cd-op"}],
+            "metadata": {
+                "change_history": [
+                    {"date": "2026-09-06", "cr": "CR-BP-15-IMP",
+                     "change": "Phase 5 migration only."},
+                ],
+            },
+        }, sort_keys=False))
+        mig_file = next((entities / "dea:process-bp-15-only").glob(
+            "dea:process-*.yaml"))
+        mig_findings = []
+        for code, msg in check_admission(mig_file, root, pc_ids,
+                                        pg_ids, process_ids):
+            mig_findings.append(code)
+        if "ADM-001" not in mig_findings:
+            failed.append(
+                "expected ADM-001 (no admission CR) on CR-BP-15-IMP-only "
+                f"fixture; got {mig_findings}"
+            )
 
     if failed:
         print("self-test FAIL:", failed)
