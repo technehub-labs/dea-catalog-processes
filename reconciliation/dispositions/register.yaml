@@ -599,3 +599,74 @@ dispositions:
       The previous record id (dea:process-develop-governance-strategy)
       is deprecated; new canonical id is
       dea:process-develop-corporate-strategy.
+
+  # ----- CR-BP-21b: AgencyAndOrganization landing -----
+  # 5 fresh L2 landings on AO cells (Conceive/Design/Build/Operate/
+  # Improve). All substrate-neutral per ADR-ECF-002 §5 / CR-ECF-007.
+  # Composes the L1 group dea:group-organization-and-agent-conception.
+
+  - record_id: dea:process-frame-organization-and-agent-strategy
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b
+    rationale: |
+      Fresh L2 landing for the AgencyAndOrganization x Conceive
+      cell, per CR-BP-21b and CR-BP-19 register v2. Substrate-
+      neutral per ADR-ECF-002 §5 / CR-ECF-007.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.conceive;
+      CR-BP-21b-agency-organization-landing.md.
+    note: null
+
+  - record_id: dea:process-design-organization-structure
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b
+    rationale: |
+      Fresh L2 landing for the AgencyAndOrganization x Design
+      cell, per CR-BP-21b and CR-BP-19 register v2. Substrate-
+      neutral per ADR-ECF-002 §5 / CR-ECF-007.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.design;
+      CR-BP-21b-agency-organization-landing.md.
+    note: null
+
+  - record_id: dea:process-acquire-and-onboard-agents
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b
+    rationale: |
+      Fresh L2 landing for the AgencyAndOrganization x Build
+      cell, per CR-BP-21b and CR-BP-19 register v2. Substrate-
+      neutral: covers recruitment (biological), model deployment
+      and API integration (artificial), and hybrid provisioning.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.build;
+      CR-BP-21b-agency-organization-landing.md.
+    note: null
+
+  - record_id: dea:process-operate-agent-performance
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b
+    rationale: |
+      Fresh L2 landing for the AgencyAndOrganization x Operate
+      cell, per CR-BP-21b and CR-BP-19 register v2. Substrate-
+      neutral.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.operate;
+      CR-BP-21b-agency-organization-landing.md.
+    note: null
+
+  - record_id: dea:process-develop-agents-and-organization
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b
+    rationale: |
+      Fresh L2 landing for the AgencyAndOrganization x Improve
+      cell, per CR-BP-21b and CR-BP-19 register v2. Substrate-
+      neutral.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.improve;
+      CR-BP-21b-agency-organization-landing.md.
+    note: null

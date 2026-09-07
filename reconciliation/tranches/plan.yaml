@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 15
-  total_records: 23
+  total_tranches: 20
+  total_records: 28
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -36,6 +36,11 @@ summary:
     sd-b: 1
     sd-op: 1
     sd-im: 1
+    ao-c: 1
+    ao-d: 1
+    ao-b: 1
+    ao-op: 1
+    ao-im: 1
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -320,6 +325,71 @@ tranches:
   - dea:process-adapt-strategic-direction
   rationale: Fresh L2 landing for the Improve cell. Objectives refresh and effectiveness
     review L2s land in CR-BP-21a.1.
+- tranche_id: ao-c
+  context_ref: dea:pc-ao-conceive
+  context_name: agency-organization / conceive
+  owner: CR-BP-21b (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-49 (CR-BP-21b landing)
+  records:
+  - dea:process-frame-organization-and-agent-strategy
+  rationale: "Substrate-neutral framing of agent capacity strategy, organization model,\
+    \ and workforce/agent mix per ADR-ECF-002 \xA75 / CR-ECF-007. Other 2 register\
+    \ v2 L2 candidates for Conceive land in CR-BP-21b.1."
+- tranche_id: ao-d
+  context_ref: dea:pc-ao-design
+  context_name: agency-organization / design
+  owner: CR-BP-21b (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-49 (CR-BP-21b landing)
+  records:
+  - dea:process-design-organization-structure
+  rationale: Substrate-neutral design of organization structure. Other 3 register
+    v2 L2 candidates (role catalogue, competency framework, agent topology) land in
+    CR-BP-21b.1.
+- tranche_id: ao-b
+  context_ref: dea:pc-ao-build
+  context_name: agency-organization / build
+  owner: CR-BP-21b (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-49 (CR-BP-21b landing)
+  records:
+  - dea:process-acquire-and-onboard-agents
+  rationale: Substrate-neutral acquisition and onboarding. The register v2 lists 4
+    L2 candidates; this landing consolidates them into one Acquire and Onboard Agents
+    process (biological recruitment + artificial model deployment + hybrid provisioning
+    as substrate-neutral expressions of the same identity).
+- tranche_id: ao-op
+  context_ref: dea:pc-ao-operate
+  context_name: agency-organization / operate
+  owner: CR-BP-21b (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-49 (CR-BP-21b landing)
+  records:
+  - dea:process-operate-agent-performance
+  rationale: Substrate-neutral performance operation. Other 4 register v2 L2 candidates
+    (time and attendance, learning and development, etc.) land in CR-BP-21b.1 or are
+    folded into this identity if MECE-equivalent.
+- tranche_id: ao-im
+  context_ref: dea:pc-ao-improve
+  context_name: agency-organization / improve
+  owner: CR-BP-21b (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-49 (CR-BP-21b landing)
+  records:
+  - dea:process-develop-agents-and-organization
+  rationale: Substrate-neutral development of agents and organization. Other 3 register
+    v2 L2 candidates land in CR-BP-21b.1.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -337,3 +407,8 @@ review_checkpoints:
   sd-b: 1
   sd-op: 1
   sd-im: 1
+  ao-c: 1
+  ao-d: 1
+  ao-b: 1
+  ao-op: 1
+  ao-im: 1

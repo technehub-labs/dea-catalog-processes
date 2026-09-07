@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 33
-    entities: 34
-    open_change_requests: 21
+    canonical: 39
+    entities: 40
+    open_change_requests: 22
     research_files: 57
     retired: 1
   cross_cutting:
@@ -131,6 +131,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-organization-and-agent-conception
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-organization-and-agent-conception/dea:group-organization-and-agent-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-strategy-direction-conception
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -139,6 +150,17 @@ catalog:
     retired_count: 0
     state: canonical
     type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-acquire-and-onboard-agents
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-acquire-and-onboard-agents/dea:process-acquire-and-onboard-agents.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
@@ -272,6 +294,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-organization-structure
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-organization-structure/dea:process-design-organization-structure.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-design-policies-and-controls
@@ -289,6 +322,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-strategic-options/dea:process-design-strategic-options.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-develop-agents-and-organization
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-develop-agents-and-organization/dea:process-develop-agents-and-organization.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -324,6 +368,17 @@ catalog:
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-frame-organization-and-agent-strategy
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -366,6 +421,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-monitor-strategic-performance/dea:process-monitor-strategic-performance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-agent-performance
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-agent-performance/dea:process-operate-agent-performance.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -451,9 +517,15 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-governance-system-design/research/
+  - entity_id: dea:group-organization-and-agent-conception
+    files: []
+    path: entities/v1-alpha/dea:group-organization-and-agent-conception/research/
   - entity_id: dea:group-strategy-direction-conception
     files: []
     path: entities/v1-alpha/dea:group-strategy-direction-conception/research/
+  - entity_id: dea:process-acquire-and-onboard-agents
+    files: []
+    path: entities/v1-alpha/dea:process-acquire-and-onboard-agents/research/
   - entity_id: dea:process-adapt-strategic-direction
     files: []
     path: entities/v1-alpha/dea:process-adapt-strategic-direction/research/
@@ -510,6 +582,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-design-governance-system/research/
+  - entity_id: dea:process-design-organization-structure
+    files: []
+    path: entities/v1-alpha/dea:process-design-organization-structure/research/
   - entity_id: dea:process-design-policies-and-controls
     files:
     - .gitkeep
@@ -518,6 +593,9 @@ catalog:
   - entity_id: dea:process-design-strategic-options
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-options/research/
+  - entity_id: dea:process-develop-agents-and-organization
+    files: []
+    path: entities/v1-alpha/dea:process-develop-agents-and-organization/research/
   - entity_id: dea:process-develop-corporate-strategy
     files: []
     path: entities/v1-alpha/dea:process-develop-corporate-strategy/research/
@@ -531,6 +609,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-establish-governance-bodies/research/
+  - entity_id: dea:process-frame-organization-and-agent-strategy
+    files: []
+    path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/research/
   - entity_id: dea:process-initiate-policy-and-charter
     files:
     - .gitkeep
@@ -548,6 +629,9 @@ catalog:
   - entity_id: dea:process-monitor-strategic-performance
     files: []
     path: entities/v1-alpha/dea:process-monitor-strategic-performance/research/
+  - entity_id: dea:process-operate-agent-performance
+    files: []
+    path: entities/v1-alpha/dea:process-operate-agent-performance/research/
   - entity_id: dea:process-operate-governance-oversight
     files:
     - .gitkeep
