@@ -2,11 +2,11 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 28
-    entities: 28
-    open_change_requests: 20
+    canonical: 33
+    entities: 34
+    open_change_requests: 21
     research_files: 57
-    retired: 0
+    retired: 1
   cross_cutting:
     change_requests: change-requests/
     classifications: classifications/
@@ -129,6 +129,28 @@ catalog:
     state: canonical
     type: ProcessGroup
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-strategy-direction-conception
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategy-direction-conception/dea:group-strategy-direction-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-adapt-strategic-direction
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-adapt-strategic-direction/dea:process-adapt-strategic-direction.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-audit-policy-compliance
@@ -137,6 +159,17 @@ catalog:
     path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-build-strategic-plan
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-strategic-plan/dea:process-build-strategic-plan.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -250,15 +283,37 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-strategic-options
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-strategic-options/dea:process-design-strategic-options.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-develop-corporate-strategy
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-develop-corporate-strategy/dea:process-develop-corporate-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 2.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-develop-governance-strategy
     last_modified: '2026-09-07'
-    lifecycle_status: candidate
+    lifecycle_status: deprecated
     path: entities/v1-alpha/dea:process-develop-governance-strategy/dea:process-develop-governance-strategy.yaml
     research_count: 2
     retired_count: 1
-    state: canonical
+    state: retired
     type: Process
     version: 1.0.0
   - candidate_count: 1
@@ -302,6 +357,17 @@ catalog:
     path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-monitor-strategic-performance
+    last_modified: '2026-09-07'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-monitor-strategic-performance/dea:process-monitor-strategic-performance.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -385,11 +451,20 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-governance-system-design/research/
+  - entity_id: dea:group-strategy-direction-conception
+    files: []
+    path: entities/v1-alpha/dea:group-strategy-direction-conception/research/
+  - entity_id: dea:process-adapt-strategic-direction
+    files: []
+    path: entities/v1-alpha/dea:process-adapt-strategic-direction/research/
   - entity_id: dea:process-audit-policy-compliance
     files:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-audit-policy-compliance/research/
+  - entity_id: dea:process-build-strategic-plan
+    files: []
+    path: entities/v1-alpha/dea:process-build-strategic-plan/research/
   - entity_id: dea:process-codify-charters-and-policies
     files:
     - .gitkeep
@@ -440,6 +515,12 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-design-policies-and-controls/research/
+  - entity_id: dea:process-design-strategic-options
+    files: []
+    path: entities/v1-alpha/dea:process-design-strategic-options/research/
+  - entity_id: dea:process-develop-corporate-strategy
+    files: []
+    path: entities/v1-alpha/dea:process-develop-corporate-strategy/research/
   - entity_id: dea:process-develop-governance-strategy
     files:
     - .gitkeep
@@ -464,6 +545,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-market-and-demand-conception/research/
+  - entity_id: dea:process-monitor-strategic-performance
+    files: []
+    path: entities/v1-alpha/dea:process-monitor-strategic-performance/research/
   - entity_id: dea:process-operate-governance-oversight
     files:
     - .gitkeep
