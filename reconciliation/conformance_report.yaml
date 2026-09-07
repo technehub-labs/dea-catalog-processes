@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 49
+total_records: 60
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 49
+  4: 60
 records:
 - id: dea:group-customer-channel-and-acquisition-build
   kind: Entity
@@ -110,9 +110,29 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-organization-and-agent-conception
+  kind: Entity
+  path: entities/v1-alpha/dea:group-organization-and-agent-conception/dea:group-organization-and-agent-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-strategy-direction-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-strategy-direction-conception/dea:group-strategy-direction-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-acquire-and-onboard-agents
+  kind: Entity
+  path: entities/v1-alpha/dea:process-acquire-and-onboard-agents/dea:process-acquire-and-onboard-agents.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -240,6 +260,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-organization-structure
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-organization-structure/dea:process-design-organization-structure.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-policies-and-controls
   kind: Entity
   path: entities/v1-alpha/dea:process-design-policies-and-controls/dea:process-design-policies-and-controls.yaml
@@ -253,6 +283,16 @@ records:
 - id: dea:process-design-strategic-options
   kind: Entity
   path: entities/v1-alpha/dea:process-design-strategic-options/dea:process-design-strategic-options.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-develop-agents-and-organization
+  kind: Entity
+  path: entities/v1-alpha/dea:process-develop-agents-and-organization/dea:process-develop-agents-and-organization.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -283,6 +323,16 @@ records:
 - id: dea:process-establish-governance-bodies
   kind: Entity
   path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-frame-organization-and-agent-strategy
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -330,6 +380,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-operate-agent-performance
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-agent-performance/dea:process-operate-agent-performance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-operate-governance-oversight
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
@@ -343,6 +403,56 @@ records:
 - id: dea:process-review-governance-effectiveness
   kind: Entity
   path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-ao-build
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-ao-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-ao-conceive
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-ao-conceive.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-ao-design
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-ao-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-ao-improve
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-ao-improve.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-ao-operate
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-ao-operate.yaml
   level: 4
   level_breakdown:
     L1_structural: true
