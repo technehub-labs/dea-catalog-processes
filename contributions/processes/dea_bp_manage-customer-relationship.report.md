@@ -13,9 +13,9 @@ Target entry: `dea:process-manage-customer-relationship`
 - **Version**: 1.0.0
 - **Process intent**: management
 - **Process type**: management
-- **Process audience**: customer-demand
+- **Process audience**: party-relationship
 - **Process specialization**: []
-- **Process context**: dea:pc-cd-op
+- **Process context**: dea:pc-pr-op
 
 ## Identity sub-block
 

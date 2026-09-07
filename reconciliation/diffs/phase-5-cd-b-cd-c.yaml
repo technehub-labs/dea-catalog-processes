@@ -35,9 +35,9 @@ diffs:
     disposition: RECLASSIFY
     changes_applied:
       - "process_intent: operational -> operate"
-      - "process_audience: customer-demand REMOVED"
-      - "process_context: scalar 'dea:pc-cd-b' REMOVED"
-      - "context: [{ref: dea:pc-cd-b}] ADDED"
+      - "process_audience: party-relationship REMOVED"
+      - "process_context: scalar 'dea:pc-pr-b' REMOVED"
+      - "context: [{ref: dea:pc-pr-b}] ADDED"
       - "relationships[0]: {source_id, relationship_type: serves, target_id: ecf:customerAndDemand.build} ADDED"
       - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
 
@@ -48,9 +48,9 @@ diffs:
     disposition: RECLASSIFY
     changes_applied:
       - "process_intent: operational -> operate"
-      - "process_audience: customer-demand REMOVED"
-      - "process_context: scalar 'dea:pc-cd-b' REMOVED"
-      - "context: [{ref: dea:pc-cd-b}] ADDED"
+      - "process_audience: party-relationship REMOVED"
+      - "process_context: scalar 'dea:pc-pr-b' REMOVED"
+      - "context: [{ref: dea:pc-pr-b}] ADDED"
       - "relationships[0]: {source_id, relationship_type: serves, target_id: ecf:customerAndDemand.build} ADDED"
       - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
 
@@ -61,9 +61,9 @@ diffs:
     disposition: RECLASSIFY
     changes_applied:
       - "process_intent: management -> develop"
-      - "process_audience: customer-demand REMOVED"
-      - "process_context: scalar 'dea:pc-cd-c' REMOVED"
-      - "context: [{ref: dea:pc-cd-c}] ADDED"
+      - "process_audience: party-relationship REMOVED"
+      - "process_context: scalar 'dea:pc-pr-c' REMOVED"
+      - "context: [{ref: dea:pc-pr-c}] ADDED"
       - "relationships[0]: {source_id, relationship_type: serves, target_id: ecf:customerAndDemand.conceive} ADDED"
       - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
 
@@ -74,9 +74,9 @@ diffs:
     disposition: RECLASSIFY
     changes_applied:
       - "process_intent: management -> develop"
-      - "process_audience: customer-demand REMOVED"
-      - "process_context: scalar 'dea:pc-cd-c' REMOVED"
-      - "context: [{ref: dea:pc-cd-c}] ADDED"
+      - "process_audience: party-relationship REMOVED"
+      - "process_context: scalar 'dea:pc-pr-c' REMOVED"
+      - "context: [{ref: dea:pc-pr-c}] ADDED"
       - "relationships[0]: {source_id, relationship_type: serves, target_id: ecf:customerAndDemand.conceive} ADDED"
       - "metadata.change_history: CR-BP-15-IMP Phase 5 entry APPENDED"
 

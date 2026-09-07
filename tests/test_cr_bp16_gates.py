@@ -263,7 +263,7 @@ def test_adm_strict_provenance_blocks_missing_provenance(tmp_path):
         "version: '1.0.0'\n"
         "process_intent: manage\n"
         "process_type: core\n"
-        "context: [{ref: dea:pc-cd-op}]\n"
+        "context: [{ref: dea:pc-pr-op}]\n"
         # NOTE: no change_history; no metadata.change_history.
         # This MUST trigger ADM-008 (provenance missing).
     )
@@ -297,7 +297,7 @@ def test_adm_strict_provenance_blocks_no_admission_cr(tmp_path):
         "version: '1.0.0'\n"
         "process_intent: manage\n"
         "process_type: core\n"
-        "context: [{ref: dea:pc-cd-op}]\n"
+        "context: [{ref: dea:pc-pr-op}]\n"
         "metadata:\n"
         "  change_history:\n"
         "    - cr: CR-BP-15-IMP\n"
@@ -339,7 +339,7 @@ def test_adm_strict_provenance_accepts_cr_bp_03c_as_admission(tmp_path):
         "version: '1.0.0'\n"
         "process_intent: manage\n"
         "process_type: core\n"
-        "context: [{ref: dea:pc-cd-op}]\n"
+        "context: [{ref: dea:pc-pr-op}]\n"
         "metadata:\n"
         "  change_history:\n"
         "    - cr: CR-BP-03C\n"

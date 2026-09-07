@@ -112,7 +112,7 @@ Step 8 (Provenance) runs the admission gate in
 - **ADM-001** at least one `change_history` entry MUST
   reference an admission CR. Accepted patterns:
   - `CR-BP-13[a-z]` (formal admission programme;
-    CR-BP-13a CustomerAndDemand, CR-BP-13b GovernanceAndExistence,
+    CR-BP-13a PartyAndRelationship, CR-BP-13b GovernanceAndExistence,
     CR-BP-13c+ future admission tranches);
   - `CR-BP-03C` (sample-process-contribution walk-the-flow;
     admitted the first canonical sample process before the

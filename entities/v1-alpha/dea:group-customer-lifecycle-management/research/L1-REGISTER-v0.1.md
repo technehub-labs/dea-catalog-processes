@@ -36,12 +36,12 @@ A research-only, evidence-bound register of candidate L1 Process Groups across t
 | Domain | Accepted | Deferred | Total |
 |---|---:|---:|---:|
 | GovernanceAndExistence | 5 | 2 | 7 |
-| SupplyAndResources | 6 | 1 | 7 |
+| StrategyAndDirection | 6 | 1 | 7 |
 | PeopleAndOrganization | 5 | 2 | 7 |
-| CustomerAndDemand | 5 | 2 | 7 |
-| ProductAndOffering | 6 | 1 | 7 |
-| OperationsAndDelivery | 6 | 1 | 7 |
-| FinanceAndValue | 5 | 2 | 7 |
+| PartyAndRelationship | 5 | 2 | 7 |
+| ProductAndValue | 6 | 1 | 7 |
+| OperationsAndEnablement | 6 | 1 | 7 |
+| FinanceAndAccounting | 5 | 2 | 7 |
 | **Total** | **38** | **11** | **49** |
 
 No coordinate carries `unresolved` or `no-candidate` in v0.1; technology is held unmapped across the matrix (cross-domain finding C1), not as a `no-candidate` cell.
@@ -62,7 +62,7 @@ No coordinate carries `unresolved` or `no-candidate` in v0.1; technology is held
 
 Evidence: `dea-metaframework/REPORT.md` §5; `dea-catalog-business-capabilities/capability-strategy`; `APQC PCF 7.0 Strategy Management`; `TOGAF ADM Phase G`; `ISO 37000:2021`.
 
-### 4.2 SupplyAndResources
+### 4.2 StrategyAndDirection
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -90,23 +90,23 @@ Evidence: `CR-DEA-BC-04 N-004`, `R-001`; `APQC PCF Sourcing`; `SCOR Plan/Source`
 
 Evidence: `CR-DEA-BC-04 N-001`; `dea-catalog-business-capabilities/capability-workforce-management`, `capability-workforce-planning`; `O*NET`; `SFIA 8`; `SHRM Body of Competency`; `APQC PCF Talent Acquisition`; `Workday HCM`.
 
-### 4.4 CustomerAndDemand
+### 4.4 PartyAndRelationship
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
-| Conceive | `dea:pc-cd-conceive` | Customer Strategy Conception; Market and Demand Conception | Frame customer strategy; Frame market segmentation; Frame demand thesis | accepted |
-| Design | `dea:pc-cd-design` | Customer Experience Design; Demand Design; Customer Journey Design | Design customer journey; Design demand forecast model; Design customer experience blueprint | accepted |
-| Build | `dea:pc-cd-build` | Customer Channel and Acquisition Build; Demand Generation Build | Build customer acquisition channels; Build customer data platform; Build marketing automation | accepted |
-| Activate | `dea:pc-cd-activate` | Customer Activation | Activate new customer onboarding; Activate customer journeys | deferred |
-| Operate | `dea:pc-cd-operate` | Customer Relationship Management; Customer Service Operation; Demand Fulfillment | Manage customer relationship; Operate customer service; Operate demand fulfillment | accepted (canonical L2 present) |
-| Improve | `dea:pc-cd-improve` | Customer Insight and Retention | Conduct NPS and satisfaction review; Operate churn analysis; Operate win-back programme | accepted |
-| Retire | `dea:pc-cd-retire` | Customer Exit | Manage customer offboarding; Manage contract termination | deferred |
+| Conceive | `dea:pc-pr-conceive` | Customer Strategy Conception; Market and Demand Conception | Frame customer strategy; Frame market segmentation; Frame demand thesis | accepted |
+| Design | `dea:pc-pr-design` | Customer Experience Design; Demand Design; Customer Journey Design | Design customer journey; Design demand forecast model; Design customer experience blueprint | accepted |
+| Build | `dea:pc-pr-build` | Customer Channel and Acquisition Build; Demand Generation Build | Build customer acquisition channels; Build customer data platform; Build marketing automation | accepted |
+| Activate | `dea:pc-pr-activate` | Customer Activation | Activate new customer onboarding; Activate customer journeys | deferred |
+| Operate | `dea:pc-pr-operate` | Customer Relationship Management; Customer Service Operation; Demand Fulfillment | Manage customer relationship; Operate customer service; Operate demand fulfillment | accepted (canonical L2 present) |
+| Improve | `dea:pc-pr-improve` | Customer Insight and Retention | Conduct NPS and satisfaction review; Operate churn analysis; Operate win-back programme | accepted |
+| Retire | `dea:pc-pr-retire` | Customer Exit | Manage customer offboarding; Manage contract termination | deferred |
 
 Evidence: `CR-DEA-BC-04 N-002`, `R-002`; `dea-catalog-business-capabilities/capability-marketing`, `capability-customer-management`; `APQC PCF Market and Sell`; `TM Forum eTOM Customer Journey Management`; `NICE Satmetrix NPS`; `Bain Net Promoter System`.
 
 Canonical L2 present: `dea:process-manage-customer-relationship` (CR-BP-03C).
 
-### 4.5 ProductAndOffering
+### 4.5 ProductAndValue
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -120,7 +120,7 @@ Canonical L2 present: `dea:process-manage-customer-relationship` (CR-BP-03C).
 
 Evidence: `CR-DEA-BC-04 R-007`; `dea-catalog-business-capabilities/capability-offering-management`, `capability-innovation-management`, `capability-partner-management`; `SAFe Product Development Flow`; `ITIL 4 Service Design/Operation`; `BIAN Service Design/Operations`.
 
-### 4.6 OperationsAndDelivery
+### 4.6 OperationsAndEnablement
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -134,7 +134,7 @@ Evidence: `CR-DEA-BC-04 R-007`; `dea-catalog-business-capabilities/capability-of
 
 Evidence: `CR-DEA-BC-04 R-008`; `dea-catalog-business-capabilities/capability-operations`; `SCOR Plan/Source/Make/Deliver/Return`; `ITIL 4 Service Transition/Operation`; `TM Forum eTOM Operations`; `APQC PCF Deliver Products and Services`; `APQC PCF Continuous Improvement`.
 
-### 4.7 FinanceAndValue
+### 4.7 FinanceAndAccounting
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -154,23 +154,23 @@ Evidence: `dea-catalog-business-capabilities/capability-financial-management`, `
 |---|---|---|---|
 | C1 | Technology Management | Held unmapped across the matrix; technology is an L5 layer concern, not an ECF domain. No standalone Technology cell. | `CR-DEA-BC-04 N-006`, `R-004`; `boundary-decision-cand-019.yaml` |
 | C2 | Change Management | Cross-cutting pattern at governance-existence x improve; referenced from peer coordinates. Not duplicated as separate L1 cells. | `CR-DEA-BC-04 R-005` |
-| C3 | Partner Management dual-home | Primary at customer-demand x conceive; supply-side operation is legitimate participation. | `CR-DEA-BC-04 R-001` |
-| C4 | Resilience, Innovation, Analytics | Resilience at governance-existence x improve; Innovation at product-offering x conceive; Analytics at operations-delivery x operate. Recorded once at primary coordinate. | `CR-DEA-BC-04 R-006`, `R-007`, `R-008` |
-| C5 | Marketing placement | Marketing is distinct from Customer Management. Customer-demand x conceive carries Marketing; customer-demand x operate carries Customer Relationship Management. | `CR-DEA-BC-04 N-002` |
+| C3 | Partner Management dual-home | Primary at party-relationship x conceive; supply-side operation is legitimate participation. | `CR-DEA-BC-04 R-001` |
+| C4 | Resilience, Innovation, Analytics | Resilience at governance-existence x improve; Innovation at product-value x conceive; Analytics at operations-enablement x operate. Recorded once at primary coordinate. | `CR-DEA-BC-04 R-006`, `R-007`, `R-008` |
+| C5 | Marketing placement | Marketing is distinct from Customer Management. Customer-demand x conceive carries Marketing; party-relationship x operate carries Customer Relationship Management. | `CR-DEA-BC-04 N-002` |
 
 ## 6. Deferral Reasons (full list)
 
-- governance-existence x activate: activation is typically modelled under operations-delivery x activate; governance activation is an attribute of governance operate.
+- governance-existence x activate: activation is typically modelled under operations-enablement x activate; governance activation is an attribute of governance operate.
 - governance-existence x retire: governance retirement is rare and largely an attribute of operating-model retirement.
-- supply-resources x retire: retirement of supply and asset base is typically modelled under operations-delivery x retire with cross-reference.
+- strategy-direction x retire: retirement of supply and asset base is typically modelled under operations-enablement x retire with cross-reference.
 - people-organization x activate: workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment).
 - people-organization x retire: workforce transition is often handled within HR operations.
-- customer-demand x activate: first-time activation is mostly handled inside the L1 group Operate in practice.
-- customer-demand x retire: customer exit is often handled within customer-relationship operations.
-- product-offering x retire: offering retirement often overlaps with customer exit and asset retirement.
-- operations-delivery x retire: operations retirement is often handled within the operate group with a winding-down workflow.
-- finance-value x activate: period opening and finance cutovers are usually handled within Operate.
-- finance-value x retire: financial wind-down is often handled within financial stewardship.
+- party-relationship x activate: first-time activation is mostly handled inside the L1 group Operate in practice.
+- party-relationship x retire: customer exit is often handled within customer-relationship operations.
+- product-value x retire: offering retirement often overlaps with customer exit and asset retirement.
+- operations-enablement x retire: operations retirement is often handled within the operate group with a winding-down workflow.
+- finance-accounting x activate: period opening and finance cutovers are usually handled within Operate.
+- finance-accounting x retire: financial wind-down is often handled within financial stewardship.
 
 ## 7. Process Group vs Business Function
 

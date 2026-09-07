@@ -1,4 +1,4 @@
-# CR-BP-13a: CustomerAndDemand Admission Tranche (Conceive / Design / Build / Improve)
+# CR-BP-13a: PartyAndRelationship Admission Tranche (Conceive / Design / Build / Improve)
 
 **Status**: Proposed
 **Layer**: L1 (Process Catalog)
@@ -11,7 +11,7 @@ separate scope)
 
 ## What this CR is
 
-Promotes 4 of the 5 accepted CustomerAndDemand coordinates from the
+Promotes 4 of the 5 accepted PartyAndRelationship coordinates from the
 ratified research register (CR-BP-13) into canonical Process Group
 records with their composing L2 Business Process specialization entries.
 
@@ -36,10 +36,10 @@ relationship` + `dea:group-customer-lifecycle-management` covers it.
 
 | ID | Stage | L2 count |
 |---|---|---|
-| `dea:pc-cd-c` | Conceive | 2 |
-| `dea:pc-cd-d` | Design | 3 |
-| `dea:pc-cd-b` | Build | 2 |
-| `dea:pc-cd-im` | Improve | 1 |
+| `dea:pc-pr-c` | Conceive | 2 |
+| `dea:pc-pr-d` | Design | 3 |
+| `dea:pc-pr-b` | Build | 2 |
+| `dea:pc-pr-im` | Improve | 1 |
 
 Each cell carries the full Cell Charter (CR-BP-02 §7): enterprise
 concern, lifecycle concern, combined semantic meaning, inclusions,
@@ -52,10 +52,10 @@ per coordinate (CR-BP-11 §4 verbatim):
 
 | Process Group | Coordinate |
 |---|---|
-| `dea:group-customer-strategy-conception` | ecf:customerDemand.conceive |
-| `dea:group-customer-experience-design` | ecf:customerDemand.design |
-| `dea:group-customer-channel-and-acquisition-build` | ecf:customerDemand.build |
-| `dea:group-customer-insight-and-retention` | ecf:customerDemand.improve |
+| `dea:group-customer-strategy-conception` | ecf:partyRelationship.conceive |
+| `dea:group-customer-experience-design` | ecf:partyRelationship.design |
+| `dea:group-customer-channel-and-acquisition-build` | ecf:partyRelationship.build |
+| `dea:group-customer-insight-and-retention` | ecf:partyRelationship.improve |
 
 Each Process Group's `composes:` array points to its L2 entries. Each
 L2 entry's `relationships:` carries a `part_of` inverse reference back
@@ -128,8 +128,8 @@ This CR does NOT:
 | **CR-BP-13a (this CR)** | **Proposed** |
 | CR-BP-13b..BP-13h (other six domains) | future |
 
-After this CR lands, the **CustomerAndDemand value stream is fully
+After this CR lands, the **PartyAndRelationship value stream is fully
 populated** across the 5 accepted lifecycle stages. The 6 remaining
-domains (GovernanceAndExistence, SupplyAndResources, PeopleAndOrganization,
-ProductAndOffering, OperationsAndDelivery, FinanceAndValue) follow in
+domains (GovernanceAndExistence, StrategyAndDirection, PeopleAndOrganization,
+ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) follow in
 CR-BP-13b..BP-13g using the same pattern.

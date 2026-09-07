@@ -9,7 +9,7 @@ id: dea:process-order-management
 type: Process
 name: Order Management
 process_intent: operational
-process_audience: customer-demand
+process_audience: party-relationship
 description: End-to-end order capture, fulfilment, and settlement.
 version: 1.0.0
 stakeholders:

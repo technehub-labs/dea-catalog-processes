@@ -23,7 +23,7 @@ plan_lock_target: CR-BP-15-IMP Phase 5 (PR-6 onward)
 ordering_rationale: |
   The 10 Process Contexts map to the ECF matrix
   (CR-ECF-CG-004). Tranches are independent; the canonical order
-  groups by ECF Domain (cd = customer-demand; ge = governance)
+  groups by ECF Domain (cd = party-relationship; ge = governance)
   and within domain by Lifecycle Stage (b < c < d < im < op).
   This ordering is a presentation convention; the per-tranche
   migrations (CR-BP-15-IMP Phases 5-7) MAY be executed in any
@@ -48,8 +48,8 @@ summary:
 tranches:
 
   - tranche_id: cd-b
-    context_ref: dea:pc-cd-b
-    context_name: customer-demand / build
+    context_ref: dea:pc-pr-b
+    context_name: party-relationship / build
     owner: TBD (CR-BP-15-IMP Phase 5 sign-off)
     risk: low
     expected_dispositions: [RECLASSIFY]
@@ -66,8 +66,8 @@ tranches:
       text-only and self-contained.
 
   - tranche_id: cd-c
-    context_ref: dea:pc-cd-c
-    context_name: customer-demand / conceive
+    context_ref: dea:pc-pr-c
+    context_name: party-relationship / conceive
     owner: TBD
     risk: medium
     expected_dispositions: [RECLASSIFY]
@@ -83,8 +83,8 @@ tranches:
       is a legacy artifact NOT a RENAME target (Phase 4).
 
   - tranche_id: cd-d
-    context_ref: dea:pc-cd-d
-    context_name: customer-demand / design
+    context_ref: dea:pc-pr-d
+    context_name: party-relationship / design
     owner: TBD
     risk: medium
     expected_dispositions: [RECLASSIFY]
@@ -97,12 +97,12 @@ tranches:
       Three design records; all RECLASSIFY. One record
       (dea:process-customer-experience-design) carries a typo in
       its `process_context` scalar ("dea:pc-d-cd-d" instead of
-      "dea:pc-cd-d"); the disposition register records the
+      "dea:pc-pr-d"); the disposition register records the
       correction. The RECLASSIFY pattern is identical to cd-b.
 
   - tranche_id: cd-im
-    context_ref: dea:pc-cd-im
-    context_name: customer-demand / improve
+    context_ref: dea:pc-pr-im
+    context_name: party-relationship / improve
     owner: TBD
     risk: low
     expected_dispositions: [RECLASSIFY]
@@ -115,8 +115,8 @@ tranches:
       "Operate Customer Retention Programs").
 
   - tranche_id: cd-op
-    context_ref: dea:pc-cd-op
-    context_name: customer-demand / operate
+    context_ref: dea:pc-pr-op
+    context_name: party-relationship / operate
     owner: TBD
     risk: low
     expected_dispositions: [RECLASSIFY]
@@ -141,7 +141,7 @@ tranches:
       - dea:process-establish-governance-bodies
     rationale: |
       The two records carry a 13b-generator artifact
-      (`process_audience: customer-demand`) that contradicts their
+      (`process_audience: party-relationship`) that contradicts their
       canonical context (`dea:pc-ge-b` = governance / build). The
       RECLASSIFY migrates the legacy audience to the canonical
       `context:` block and resolves the contradiction.

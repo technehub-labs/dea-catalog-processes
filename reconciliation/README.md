@@ -92,11 +92,11 @@ tranches, one per Process Context (ECF Domain x Lifecycle Stage):
 
 | Tranche | Context | Records |
 |---|---|---|
-| cd-b | customer-demand / build | 2 |
-| cd-c | customer-demand / conceive | 2 |
-| cd-d | customer-demand / design | 3 |
-| cd-im | customer-demand / improve | 1 |
-| cd-op | customer-demand / operate | 1 |
+| cd-b | party-relationship / build | 2 |
+| cd-c | party-relationship / conceive | 2 |
+| cd-d | party-relationship / design | 3 |
+| cd-im | party-relationship / improve | 1 |
+| cd-op | party-relationship / operate | 1 |
 | ge-b | governance / build | 2 (high-risk: audience-vs-context) |
 | ge-c | governance / conceive | 2 |
 | ge-d | governance / design | 2 |

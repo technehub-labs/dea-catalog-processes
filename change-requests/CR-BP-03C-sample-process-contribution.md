@@ -26,7 +26,7 @@ end-to-end. This CR:
 4. validates the metamodel-aligned relationship-instance
    shape (composes + realizes);
 5. validates the cell charter with a real Process Context
-   cell (CustomerAndDemand × Operate);
+   cell (PartyAndRelationship × Operate);
 6. provides the **canonical example** that future
    contributors can pattern-match against.
 
@@ -56,7 +56,7 @@ portfolio.
 | `process_intent` | `management` | Coordinates, monitors, plans, controls (CR-BP-SPEC-BP-01 §3). Not operational (no direct value-delivery work) and not support (not an internal enabler). |
 | `process_type` | `management` | Mintzberg Middle Line (CR-BP-03 §2.1; `classifications/process-types.yaml`). Plan, monitor, and control allocation of resources to achieve strategic goals. |
 | `process_specialization` | `[]` | This BP is the **root** of the customer-relationship specialization; it has no parent processes. Future specializations (e.g. `dea:bp:manage-enterprise-customer`, `dea:bp:manage-retail-customer`) will declare this id in their `process_specialization` list. |
-| `process_audience` | `customer-demand` | The ECF Domain `CustomerAndDemand` is the principal audience. The BP's outcomes serve customers and the demand they bring. |
+| `process_audience` | `party-relationship` | The ECF Domain `PartyAndRelationship` is the principal audience. The BP's outcomes serve customers and the demand they bring. |
 
 ### 2.2 The Process Identity contract
 
@@ -96,11 +96,11 @@ relationships:
 
 ### 2.4 The Process Context
 
-The BP operates in the **CustomerAndDemand × Operate**
+The BP operates in the **PartyAndRelationship × Operate**
 context: an active customer relationship is in the
 "operate" lifecycle stage, and the audience is the
 "customer and demand" domain. A Cell Charter entry
-(`dea:pc-cd-op`) is provided alongside the BP entry.
+(`dea:pc-pr-op`) is provided alongside the BP entry.
 
 The Cell Charter entry's `processes` array references the
 BP via `dea:process-manage-customer-relationship`.
@@ -114,7 +114,7 @@ model — not separate top-level directories. For this sample:
 
 | Level | Construct | Sample |
 |---|---|---|
-| **Context** | `dea:pc-cd-op` (Cell Charter) | `CustomerAndDemand × Operate` |
+| **Context** | `dea:pc-pr-op` (Cell Charter) | `PartyAndRelationship × Operate` |
 | **Scope (L0)** | The bounded enterprise context | Customer-facing operations |
 | **Group (L1)** | A loose grouping of related BPs | Customer lifecycle management group |
 | **Business Process (L2)** | `dea:process-manage-customer-relationship` | Manage Customer Relationship (this entry) |
@@ -132,7 +132,7 @@ ontology).
 ```
 change-requests/CR-BP-03C-sample-process-contribution.md  [NEW] (this file)
 entities/v1-alpha/dea_bp_manage-customer-relationship.yaml  [NEW] (canonical entry)
-contexts/v1-alpha/dea-pc-cd-op.yaml                        [NEW] (cell charter)
+contexts/v1-alpha/dea-pc-pr-op.yaml                        [NEW] (cell charter)
 contributions/processes/dea_bp_manage-customer-relationship.yaml  [NEW] (contribution record)
 docs/examples/manage-customer-relationship.md              [NEW] (worked example)
 ```
@@ -151,9 +151,9 @@ md5:  d6a3c1f8...  (refined during implementation)
 |---|---|
 | `check_process_identity.py` | PASS (BP-ARC-ID-001..005) |
 | `check_process_specialization.py` | PASS (BP-SPEC-01-001..007) |
-| `check_process_context.py` | PASS (PC-001..PC-008) — the new `dea:pc-cd-op` cell is well-formed |
+| `check_process_context.py` | PASS (PC-001..PC-008) — the new `dea:pc-pr-op` cell is well-formed |
 | `check_legacy_migration.py` | PASS (BP-MIG-001..005) — the entry uses canonical form; no migration recommendation |
-| `check_ecf_conformance.py` | PASS — `process_audience: customer-demand` is one of the allowed values |
+| `check_ecf_conformance.py` | PASS — `process_audience: party-relationship` is one of the allowed values |
 | `validate_consumer.py` against `dea-architecture-framework@v0.6.0` | PASS — pointer drift = 0 |
 | Process Contribution Report workflow | Generates a reclassification report showing the entry is well-formed and a candidate for promotion to the next stage |
 
@@ -198,7 +198,7 @@ md5:  d6a3c1f8...  (refined during implementation)
 - [ ] Canonical entry lands at
       `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`.
 - [ ] Cell charter lands at
-      `contexts/v1-alpha/dea-pc-cd-op.yaml`.
+      `contexts/v1-alpha/dea-pc-pr-op.yaml`.
 - [ ] Contribution record lands at
       `contributions/processes/dea_bp_manage-customer-relationship.yaml`.
 - [ ] Worked example lands at

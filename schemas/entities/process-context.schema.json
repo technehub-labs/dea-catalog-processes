@@ -20,19 +20,19 @@
     "id": {
       "type": "string",
       "pattern": "^dea:pc-[a-z0-9-]+$",
-      "description": "Stable identity. Convention: dea:pc-<domain-abbrev>-<stage-abbrev> (e.g. dea:pc-cd-op = CustomerAndDemand x Operate). The id must be stable across renames of name/definition; renames go through the CR-programme."
+      "description": "Stable identity. Convention: dea:pc-<domain-abbrev>-<stage-abbrev> (e.g. dea:pc-pr-op = PartyAndRelationship x Operate). The id must be stable across renames of name/definition; renames go through the CR-programme."
     },
     "domain": {
       "type": "string",
-      "description": "Canonical ECF Domain. Must resolve to one of seven values (GovernanceAndExistence, SupplyAndResources, PeopleAndOrganization, CustomerAndDemand, ProductAndOffering, OperationsAndDelivery, FinanceAndValue). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-domain.schema.json (CR-ECF-003, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-001).",
+      "description": "Canonical ECF Domain. Must resolve to one of seven values (GovernanceAndExistence, StrategyAndDirection, PeopleAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-domain.schema.json (CR-ECF-003, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-001).",
       "enum": [
         "GovernanceAndExistence",
-        "SupplyAndResources",
+        "StrategyAndDirection",
         "PeopleAndOrganization",
-        "CustomerAndDemand",
-        "ProductAndOffering",
-        "OperationsAndDelivery",
-        "FinanceAndValue"
+        "PartyAndRelationship",
+        "ProductAndValue",
+        "OperationsAndEnablement",
+        "FinanceAndAccounting"
       ]
     },
     "lifecycle_stage": {

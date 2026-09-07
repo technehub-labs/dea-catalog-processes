@@ -73,7 +73,7 @@ def test_cd_c_records_migrated() -> None:
         assert "process_audience" not in data
         assert "process_context" not in data
         ctx = data.get("context")
-        assert isinstance(ctx, list) and ctx[0].get("ref") == "dea:pc-cd-c"
+        assert isinstance(ctx, list) and ctx[0].get("ref") == "dea:pc-pr-c"
         rels = data.get("relationships", [])
         assert any(r.get("relationship_type") == "serves"
                    and r.get("target_id") == "ecf:customerAndDemand.conceive"

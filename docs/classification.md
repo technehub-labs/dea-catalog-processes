@@ -66,7 +66,7 @@ this section, this section and the CR govern.
 | **Intent** | `process_intent` (existing; preserved) | operational / support / management | **What is the process doing?** Describes the nature of the work. |
 | **Type** | `process_type` (new; CR-BP-03) | strategic / management / core / support / standardization | **Where does the process sit in the enterprise process landscape?** The 5-component classification (Mintzberg). |
 | **Specialization** | `process_specialization` (new; CR-BP-03) | list of parent process ids | **What is this process a specialization of?** Inheritance / pattern-based refinement. |
-| **Audience** | `process_audience` (existing; preserved; confirmed to be the ECF domain) | governance-existence / supply-resources / people-organization / customer-demand / product-offering / operations-delivery / finance-value | **Which ECF domain does the process serve?** |
+| **Audience** | `process_audience` (existing; preserved; confirmed to be the ECF domain) | governance-existence / strategy-direction / people-organization / party-relationship / product-value / operations-enablement / finance-accounting | **Which ECF domain does the process serve?** |
 
 ## Axis 1: Intent (existing; preserved)
 
@@ -141,12 +141,12 @@ serves**. Confirmed to be the ECF domain per the user's
 clarification. The vocabulary is the 7-value ECF domain enum:
 
 - `governance-existence`
-- `supply-resources`
+- `strategy-direction`
 - `people-organization`
-- `customer-demand`
-- `product-offering`
-- `operations-delivery`
-- `finance-value`
+- `party-relationship`
+- `product-value`
+- `operations-enablement`
+- `finance-accounting`
 
 `process_audience` is a **single-axis audience classification**.
 It is **not** a full ECF coordinate (Domain × Lifecycle Stage) —
@@ -158,7 +158,7 @@ A single Business Process can have any combination of the four
 axes. Consider:
 
 - A `core` process that is also `operational` in intent and
-  serves the `customer-demand` audience and is a specialization
+  serves the `party-relationship` audience and is a specialization
   of `Manage Customer` is normal and expected.
 - A `support` process that is `management` in intent (e.g.
   "Manage Internal Tooling") is a coherent combination.

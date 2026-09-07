@@ -239,31 +239,6 @@ records:
         - no-context-block
 
   process_contexts:
-    - id: dea:pc-cd-b
-      name: "Customer Channel and Acquisition Build"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea-pc-cd-b.yaml
-      legacy_findings: []
-    - id: dea:pc-cd-c
-      name: "Customer Strategy Conception"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea-pc-cd-c.yaml
-      legacy_findings: []
-    - id: dea:pc-cd-d
-      name: "Customer Experience Design"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea-pc-cd-d.yaml
-      legacy_findings: []
-    - id: dea:pc-cd-im
-      name: "Customer Insight and Retention"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea-pc-cd-im.yaml
-      legacy_findings: []
-    - id: dea:pc-cd-op
-      name: "Customer Relationship Operations"
-      type: ProcessContext
-      path: contexts/v1-alpha/dea-pc-cd-op.yaml
-      legacy_findings: []
     - id: dea:pc-ge-b
       name: "Governance Body Establishment"
       type: ProcessContext
@@ -288,5 +263,30 @@ records:
       name: "Governance Oversight"
       type: ProcessContext
       path: contexts/v1-alpha/dea-pc-ge-op.yaml
+      legacy_findings: []
+    - id: dea:pc-pr-b
+      name: "Customer Channel and Acquisition Build"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-pr-b.yaml
+      legacy_findings: []
+    - id: dea:pc-pr-c
+      name: "Customer Strategy Conception"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-pr-c.yaml
+      legacy_findings: []
+    - id: dea:pc-pr-d
+      name: "Customer Experience Design"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-pr-d.yaml
+      legacy_findings: []
+    - id: dea:pc-pr-im
+      name: "Customer Insight and Retention"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-pr-im.yaml
+      legacy_findings: []
+    - id: dea:pc-pr-op
+      name: "Customer Relationship Operations"
+      type: ProcessContext
+      path: contexts/v1-alpha/dea-pc-pr-op.yaml
       legacy_findings: []
 

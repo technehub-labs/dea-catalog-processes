@@ -42,7 +42,7 @@ def base_entry() -> dict:
         "type": "Process",
         "version": "1.0.0",
         "process_intent": "manage",
-        "process_audience": "customer-demand",
+        "process_audience": "party-relationship",
     }
 
 
@@ -89,7 +89,7 @@ def test_ecf_target_identifiers_validate():
     entry["relationships"] = [
         relationship("ecf:customerAndDemand.operate", "serves"),
         relationship("ecf:governanceAndExistence", "contributes-to"),
-        relationship("dea:pc-cd-op", "serves"),
+        relationship("dea:pc-pr-op", "serves"),
     ]
     validate(entry, schema)  # must not raise
 
@@ -97,13 +97,13 @@ def test_ecf_target_identifiers_validate():
 def test_context_block_with_multiple_refs_validates():
     schema = load_entity_schema()
     entry = base_entry()
-    entry["context"] = [{"ref": "dea:pc-cd-op"}, {"ref": "dea:pc-cd-im"}]
+    entry["context"] = [{"ref": "dea:pc-pr-op"}, {"ref": "dea:pc-pr-im"}]
     validate(entry, schema)  # must not raise
 
 
 @pytest.mark.parametrize(
     "bad_ref",
-    ["dea_pc-cd-op", "dea:pc_cd_op", "customer-demand", "dea:group-x", ""],
+    ["dea_pc-pr-op", "dea:pc_cd_op", "party-relationship", "dea:group-x", ""],
 )
 def test_malformed_context_ref_rejected(bad_ref):
     schema = load_entity_schema()
@@ -115,7 +115,7 @@ def test_malformed_context_ref_rejected(bad_ref):
 
 @pytest.mark.parametrize(
     "bad_target",
-    ["ecf:customer-demand", "ecf:CustomerAndDemand.operate", "ecf:", "ECF:customerAndDemand.operate"],
+    ["ecf:party-relationship", "ecf:PartyAndRelationship.operate", "ecf:", "ECF:customerAndDemand.operate"],
 )
 def test_malformed_ecf_target_rejected(bad_target):
     schema = load_entity_schema()

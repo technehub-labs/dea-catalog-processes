@@ -25,7 +25,7 @@ name: Customer Lifecycle Management
 definition: |
   The bounded Process Group that organizes the Business Process
   responsibilities of operating the customer lifecycle within the
-  CustomerAndDemand x Operate context. This group captures the
+  PartyAndRelationship x Operate context. This group captures the
   end-to-end work of sustaining an active customer relationship:
   ongoing management, escalation handling, renewal coordination,
   win-back, and portfolio allocation. The group is the canonical
@@ -35,7 +35,7 @@ definition: |
   group itself.
 
 # Process Context reference (PG-003 enforces resolution).
-process_context: dea:pc-cd-op
+process_context: dea:pc-pr-op
 
 # Scope (MECE boundary; PG-006 depends on excludes).
 scope:
@@ -73,7 +73,7 @@ composes:
     rationale: |
       The Manage Customer Relationship L2 process is the principal
       responsibility of the customer-lifecycle value stream within
-      CustomerAndDemand x Operate; this composition is the canonical
+      PartyAndRelationship x Operate; this composition is the canonical
       starting point.
     evidence: docs/examples/manage-customer-relationship.md
     provenance:
@@ -98,7 +98,7 @@ lifecycle_status: candidate
 # scripts/check_ecf_conformance.py on every catalog entry).
 # The Process Group entry inherits the catalog's conformance
 # posture (dea:ecf@1.0.0); the canonical references resolve to
-# the ECF Domain (CustomerAndDemand) and Stage (Operate) of the
+# the ECF Domain (PartyAndRelationship) and Stage (Operate) of the
 # Process Context the Process Group belongs to. The Process Group
 # does not introduce new ECF extensions; it is a catalog-owned
 # grouping construct that exists to organize Business Process
@@ -111,9 +111,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: CustomerAndDemand
+      domain: PartyAndRelationship
       stage: Operate
-      identifier: ecf:customerDemand.operate
+      identifier: ecf:partyRelationship.operate
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:
@@ -126,7 +126,7 @@ evidence:
     url: https://www.apqc.org/resource-library/resource-listing/apqc-process-classification-framework-pcf-cross-industry-pdf-13
   - source: CR-BP-11 (49-coordinate discovery register)
     claim: |
-      The customer-demand x operate coordinate carries 5 accepted L1
+      The party-relationship x operate coordinate carries 5 accepted L1
       candidates; this record is the first to be promoted from the
       register.
     strength: E4

@@ -4,7 +4,7 @@ This directory hosts the canonical Process Group record
 for `dea:group-customer-experience-design`. The Process Group is a catalog-owned
 record (not an OpenDEA metamodel entity) that organises
 the L2 Business Process entries composing into it within
-the dea:pc-cd-d Process Context.
+the dea:pc-pr-d Process Context.
 
 ## Composition
 
@@ -21,4 +21,4 @@ See the canonical YAML's `metadata.change_history` for the per-CR history.
 
 ## Governing CR
 
-- **CR-BP-13a** (this tranche): admission of the Process Group into the CustomerAndDemand value stream.
+- **CR-BP-13a** (this tranche): admission of the Process Group into the PartyAndRelationship value stream.

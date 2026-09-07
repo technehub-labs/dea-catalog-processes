@@ -10,11 +10,11 @@ treat this as the **reference example**.
 |---|---|
 | **Id** | `dea:process-manage-customer-relationship` |
 | **Name** | Manage Customer Relationship |
-| **Process context** | `dea:pc-cd-op` (CustomerAndDemand × Operate) |
+| **Process context** | `dea:pc-pr-op` (PartyAndRelationship × Operate) |
 | **Process intent** | `management` |
 | **Process type** | `management` (Mintzberg Middle Line) |
 | **Process specialization** | `[]` (root; no parent) |
-| **Process audience** | `customer-demand` |
+| **Process audience** | `party-relationship` |
 | **Realizes** | `dea:entity-capability:manage-customer-relationship` |
 | **ECF conformance** | `conformant-with-extension`; inherits-catalog |
 | **Evidence** | [APQC PCF](https://www.apqc.org/resource-library/resource-collections/56391) |
@@ -29,7 +29,7 @@ classification axes (CR-BP-03 §2.1; CR-BP-03A §3.2):
 | **`process_intent`** (existing; CR-BP-SPEC-BP-01) | `management` | Coordinates, monitors, plans, controls. Not operational (no direct value-delivery work) and not support (not an internal enabler). |
 | **`process_type`** (NEW in CR-BP-03) | `management` | Mintzberg Middle Line — plan, monitor, and control allocation of resources. See [`classifications/process-types.yaml`](../../classifications/process-types.yaml). |
 | **`process_specialization`** (NEW in CR-BP-03) | `[]` | Root of the customer-relationship specialization. Future BPs (e.g. `dea:bp:manage-enterprise-customer`) will declare THIS id in their `process_specialization` list. |
-| **`process_audience`** (existing; CR-ECF-CG-004 §10) | `customer-demand` | The ECF Domain `CustomerAndDemand` is the principal audience. Note: `process_audience` is a kebab-case audience axis, NOT a canonical ECF coordinate (CR-ECF-CG-004 §10). |
+| **`process_audience`** (existing; CR-ECF-CG-004 §10) | `party-relationship` | The ECF Domain `PartyAndRelationship` is the principal audience. Note: `process_audience` is a kebab-case audience axis, NOT a canonical ECF coordinate (CR-ECF-CG-004 §10). |
 
 ## The Process Identity contract
 
@@ -96,7 +96,7 @@ For this entry:
 
 | Level | Construct | Sample |
 |---|---|---|
-| **Context** | `dea:pc-cd-op` (Cell Charter) | `CustomerAndDemand × Operate` |
+| **Context** | `dea:pc-pr-op` (Cell Charter) | `PartyAndRelationship × Operate` |
 | **Scope (L0)** | The bounded enterprise context | Customer-facing operations |
 | **Group (L1)** | A loose grouping of related BPs | Customer Lifecycle Management |
 | **Business Process (L2)** | `dea:process-manage-customer-relationship` | Manage Customer Relationship (this entry) |
@@ -108,7 +108,7 @@ catalog entities (per CR-BP-03 §3: classification ≠ ontology).
 ## The Process Context reference
 
 The entry's `process_context` field references the Cell
-Charter at `contexts/v1-alpha/dea-pc-cd-op.yaml`. The Cell
+Charter at `contexts/v1-alpha/dea-pc-pr-op.yaml`. The Cell
 Charter's `processes` array references this entry back,
 forming a bidirectional reference (PC-008).
 
@@ -127,9 +127,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: CustomerAndDemand
+      domain: PartyAndRelationship
       stage: Operate
-      identifier: ecf:customerDemand.operate
+      identifier: ecf:partyRelationship.operate
   extensions:
     - name: process_intent
       doesNotRedefine: true
@@ -161,7 +161,7 @@ vocabulary.
 | Path | Purpose |
 |---|---|
 | [`entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`](../../entities/v1-alpha/dea_bp_manage-customer-relationship.yaml) | The canonical BP entry |
-| [`contexts/v1-alpha/dea-pc-cd-op.yaml`](../../contexts/v1-alpha/dea-pc-cd-op.yaml) | The Cell Charter (Process Context) |
+| [`contexts/v1-alpha/dea-pc-pr-op.yaml`](../../contexts/v1-alpha/dea-pc-pr-op.yaml) | The Cell Charter (Process Context) |
 | [`contributions/processes/dea_bp_manage-customer-relationship.yaml`](../../contributions/processes/dea_bp_manage-customer-relationship.yaml) | The contribution record |
 | [`change-requests/CR-BP-03C-sample-process-contribution.md`](../../change-requests/CR-BP-03C-sample-process-contribution.md) | The CR that landed the entry |
 

@@ -61,7 +61,7 @@ metadata:
     date: '2026-09-05'
     change: 'Initial L2 Process entry; lands as part of the CR-BP-13a
 
-      CustomerAndDemand admission tranche.
+      PartyAndRelationship admission tranche.
 
       '
   - cr: CR-BP-15-IMP

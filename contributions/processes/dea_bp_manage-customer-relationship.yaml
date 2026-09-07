@@ -22,8 +22,8 @@ target_path: entities/v1-alpha/dea_bp_manage-customer-relationship.yaml
 
 # Reference to the Process Context the entry belongs to.
 context_reference:
-  context_id: dea:pc-cd-op
-  domain: CustomerAndDemand
+  context_id: dea:pc-pr-op
+  domain: PartyAndRelationship
   lifecycle_stage: Operate
 
 # The proposed entry as it stands in this contribution.
@@ -39,7 +39,7 @@ proposed_entry:
 
   # 4-axis classification
   process_intent: management
-  process_audience: customer-demand
+  process_audience: party-relationship
   process_type: management
   process_specialization: []
 
@@ -68,7 +68,7 @@ proposed_entry:
     handling, and renewal coordination.
 
   # Process Context
-  process_context: dea:pc-cd-op
+  process_context: dea:pc-pr-op
 
   # Identity contract
   identity:
@@ -124,9 +124,9 @@ proposed_entry:
     affiliation: inherits-catalog
     canonicalReferences:
       - kind: coordinate
-        domain: CustomerAndDemand
+        domain: PartyAndRelationship
         stage: Operate
-        identifier: ecf:customerDemand.operate
+        identifier: ecf:partyRelationship.operate
     extensions:
       - name: process_intent
         doesNotRedefine: true
@@ -154,7 +154,7 @@ justification: |
     - L0/L1/L2 conceptual hierarchy (Scope + Group recorded in
       metadata; not promoted to entities)
     - Process Context reference (the entry belongs to the
-      CustomerAndDemand x Operate cell)
+      PartyAndRelationship x Operate cell)
 
   Future contributors should treat this entry as the
   CANONICAL PATTERN for new BPs.

@@ -4,6 +4,80 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
+## [2.3.0-migration] - 2026-09-07
+
+CR-BP-17 (a.k.a. CR-BP-ECF-01) implementation: ECF Domain enum migration to the v2.3.0
+canonical Domain set (carried by `technehub-labs/dea-metaframework` v2.3.0;
+CR-ECF-006 + ADR-ECF-001). Five of seven Domains renamed; one Domain
+replaced (Supply & Resources -> Strategy & Direction). 109 files modified;
+5 context YAMLs + 1 CR file renamed; 2 reconciliation artifacts regenerated.
+
+This is the 3rd landing in the v2.3.0 wave (after metaframework + metamodel);
+the next is `dea-catalog-business-capabilities` (CR-BC-ECF-01).
+
+### Changed
+
+- **Process Context ID abbreviations** (CR-BP-17 (a.k.a. CR-BP-ECF-01) §1.1, v2.3.0):
+
+  | # | Before (v2.2.0) | After (v2.3.0) |
+  |---|------------------|------------------|
+  | 1 | `cd` (CustomerAndDemand) | `pr` (PartyAndRelationship) |
+  | 2 | `sr` (SupplyAndResources) | `sd` (StrategyAndDirection) |
+  | 5 | `po` (ProductAndOffering) | `pv` (ProductAndValue) |
+  | 6 | `od` (OperationsAndDelivery) | `oe` (OperationsAndEnablement) |
+  | 7 | `fv` (FinanceAndValue) | `fa` (FinanceAndAccounting) |
+
+- **5 Process Context YAMLs renamed + content migrated**:
+  - `dea-pc-cd-b.yaml` -> `dea-pc-pr-b.yaml` (Party & Relationship x Build)
+  - `dea-pc-cd-c.yaml` -> `dea-pc-pr-c.yaml` (Party & Relationship x Conceive)
+  - `dea-pc-cd-d.yaml` -> `dea-pc-pr-d.yaml` (Party & Relationship x Design)
+  - `dea-pc-cd-im.yaml` -> `dea-pc-pr-im.yaml` (Party & Relationship x Improve)
+  - `dea-pc-cd-op.yaml` -> `dea-pc-pr-op.yaml` (Party & Relationship x Operate)
+- **1 CR file renamed**: `CR-BP-13a-customer-and-demand-admission.md` ->
+  `CR-BP-13a-party-and-relationship-admission.md` (the CustomerAndDemand
+  tranche is now the PartyAndRelationship tranche).
+- **3 JSON schemas** (`process-context.schema.json`, `entity.schema.json`,
+  `contribution.schema.json`): Domain enums migrated to v2.3.0.
+- **8 conformance scripts** in `scripts/`: CANON enum, lowercase mapping,
+  test fixtures, and disposition records migrated.
+- **1 build script** in `tools/build_bp13a_tranche.py`: `DOMAIN_NAMES`
+  keys flipped from `cd/sr/pd/od/fv` to `pr/sd/pv/oe/fa`.
+- **4 test files** in `tests/`: fixtures migrated.
+- **2 reconciliation artifacts regenerated**: `inventory.yaml` and
+  `baseline/v1.yaml` (they round-trip byte-identically under the new
+  identifiers; `scripts/build_inventory.py --self-test --strict` passes).
+- **11 CR files in `change-requests/`**: every narrative reference to
+  the v2.2.0 Domain names updated.
+- **6 docs files in `docs/`**: narrative updated.
+- **README.md** + **change-requests/README.md**: pointers updated.
+- All CR/programme references to the renamed Domains re-keyed.
+
+### Not changed (out of scope for the v2.3.0 migration)
+
+- **No new Process Contexts admitted.** The v2.3.0 wave is a pure
+  rename; no new coordinates are admitted in this PR.
+- **The L1 process discovery work for the renamed Domains** (Strategy
+  & Direction, Product & Value, Operations & Enablement, Finance &
+  Accounting, Party & Relationship deepening) is parked as a separate
+  task that follows this PR — not in scope.
+- **The `test_check_struct_clean_repo_passes` pre-existing failure**
+  (`STRUCT-OK` is in stdout but the test asserts in stderr) — pre-existing,
+  not introduced by this PR.
+
+### Verification
+
+- `tests/conformance/`: 8/8 conformance suites pass.
+- `tests/runtime/`: all runtime tests pass.
+- `tests/test_build_bp13a_tranche.py`: **15/15 pass**.
+- `tests/test_apply_phase_5_tranche.py`: all pass (idempotency holds).
+- `tests/test_reconciliation_baseline.py`: 11/12 pass (1 pre-existing
+  failure unrelated to this PR).
+- `scripts/check_ecf_conformance.py`: **PASS** (28 entries conform).
+- `scripts/check_process_context.py`: **PASS** (PC-001..PC-008).
+- `scripts/check_process_semantics.py`: **CONFORMANT** (BP-SEM S21).
+- `scripts/build_inventory.py --self-test --strict`: **PASS**
+  (inventory + baseline round-trip byte-identically under v2.3.0 IDs).
+
 ## [Unreleased]
 
 ### CR-BP-16 §16 enforcement promotion (CR-META strict mode)
@@ -315,8 +389,8 @@ is complete.**
 - `entities/v1-alpha/dea:process-operate-governance-oversight/`
   (ge-op): legacy `management` intent -> canonical `operate`;
   same ge-op migration pattern.
-- `contexts/v1-alpha/dea_pc-cd-op.yaml` -> `dea-pc-cd-op.yaml`
-  (filename typo fixed; canonical id `dea:pc-cd-op` was always
+- `contexts/v1-alpha/dea_pc-pr-op.yaml` -> `dea-pc-pr-op.yaml`
+  (filename typo fixed; canonical id `dea:pc-pr-op` was always
   correct inside the file). Updated 4 documentation references
   (CR-BP-03C + CR-BP-12 + manage-customer-relationship.md +
   CHANGELOG). The BP-SEM-008 context-reference-integrity check
@@ -397,7 +471,7 @@ ge-op records remain.
 
 ### CR-BP-15-IMP Phase 5 second tranche (cd-d + cd-im + cd-op)
 
-Five additional customer-demand records have been reconciled to
+Five additional party-relationship records have been reconciled to
 the CR-BP-14 canonical contract. The disposition register is now
 9-of-18 locked.
 
@@ -430,24 +504,24 @@ the CR-BP-14 canonical contract. The disposition register is now
   not 14).
 
 BP-SEM live verdict: 9 errors (down from 14). Half of the
-customer-demand records now conform to the canonical contract.
+party-relationship records now conform to the canonical contract.
 
 ### CR-BP-15-IMP Phase 5 first tranche (cd-b + cd-c)
 
-The first two customer-demand tranches (4 records: 2 build + 2
+The first two party-relationship tranches (4 records: 2 build + 2
 conceive) have been reconciled to the CR-BP-14 canonical contract.
 The disposition register is now PARTIALLY_LOCKED with 4 records
 locked.
 
 - `entities/v1-alpha/dea:process-customer-channel-and-acquisition-build/`:
   legacy `operational` intent -> canonical `operate`; legacy
-  scalar `process_context: dea:pc-cd-b` -> canonical
-  `context: [{ref: dea:pc-cd-b}]` block; legacy
-  `process_audience: customer-demand` removed; canonical `serves`
+  scalar `process_context: dea:pc-pr-b` -> canonical
+  `context: [{ref: dea:pc-pr-b}]` block; legacy
+  `process_audience: party-relationship` removed; canonical `serves`
   relationship toward `ecf:customerAndDemand.build` added;
   change_history entry appended.
 - `entities/v1-alpha/dea:process-demand-generation-build/`: same
-  migration as the cd-b peer (operate + dea:pc-cd-b + serves).
+  migration as the cd-b peer (operate + dea:pc-pr-b + serves).
 - `entities/v1-alpha/dea:process-customer-strategy-conception/`:
   legacy `management` intent -> canonical `develop`; cd-c
   context; serves toward `ecf:customerAndDemand.conceive`.
@@ -773,7 +847,7 @@ Lands the first-class Process Group record type. Process Group remains a catalog
 
 #### Not changed
 
-- Existing Process Context (`dea:pc-cd-op`), classifications, contribution template, and contribution report workflow remain as PR #17 + #18 + #19 landed them.
+- Existing Process Context (`dea:pc-pr-op`), classifications, contribution template, and contribution report workflow remain as PR #17 + #18 + #19 landed them.
 - No Process Group promotion to the OpenDEA Core metamodel (CR-BP-14, future, conditional).
 - Process Group kinds vocabulary is closed; additions require a CR-BP-12 minor revision.
 
@@ -817,7 +891,7 @@ disposition per coordinate: 38 `accepted`, 11 `deferred`. Five cross-domain
 findings are recorded once at their primary coordinate and referenced from
 peer coordinates (Technology Management held unmapped; Change Management
 cross-cutting at governance-existence x improve; Partner Management
-dual-home at customer-demand x conceive; Resilience/Innovation/Analytics
+dual-home at party-relationship x conceive; Resilience/Innovation/Analytics
 at their primary coordinates; Marketing distinct from Customer Management).
 
 The register is the input gate for CR-BP-12 (L1 Process Group profile +
@@ -873,10 +947,10 @@ the machinery:
     in metadata; NOT promoted to separate catalog entities
     per CR-BP-03 §3).
   - Process Context reference (the entry belongs to the
-    CustomerAndDemand × Operate cell at
-    `dea:pc-cd-op`).
+    PartyAndRelationship × Operate cell at
+    `dea:pc-pr-op`).
   - ECF Conformance Gate (inherits-catalog; canonical
-    references resolve to `ecf:customerDemand.operate`;
+    references resolve to `ecf:partyRelationship.operate`;
     extensions declare `doesNotRedefine: true`).
   - Process Identity validator: case-insensitive + doubled-
     parentheses-tolerant fuzzy match (`_fuzzy_name_match`).
@@ -889,8 +963,8 @@ the machinery:
 - `entities/v1-alpha/dea_bp_manage-customer-relationship.yaml`
   (the canonical BP entry; first entry in the catalog;
   id `dea:process-manage-customer-relationship`).
-- `contexts/v1-alpha/dea-pc-cd-op.yaml` (the Cell Charter for
-  CustomerAndDemand × Operate; first Cell Charter in the
+- `contexts/v1-alpha/dea-pc-pr-op.yaml` (the Cell Charter for
+  PartyAndRelationship × Operate; first Cell Charter in the
   catalog).
 - `contributions/processes/dea_bp_manage-customer-relationship.yaml`
   (the contribution record; first contribution in the catalog).

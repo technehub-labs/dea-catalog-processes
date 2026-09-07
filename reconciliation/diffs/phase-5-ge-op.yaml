@@ -25,7 +25,7 @@ summary:
     context: 2
     serves_relationship: 2
   data_corrections:
-    - "contexts/v1-alpha/dea_pc-cd-op.yaml renamed to dea-pc-cd-op.yaml (filename typo fixed; canonical id was dea:pc-cd-op)"
+    - "contexts/v1-alpha/dea_pc-pr-op.yaml renamed to dea-pc-pr-op.yaml (filename typo fixed; canonical id was dea:pc-pr-op)"
 
 # Per-record diff
 diffs:
@@ -34,7 +34,7 @@ diffs:
     disposition: RECLASSIFY
     changes_applied:
       - "process_intent: support -> govern (audit-and-oversight is governance activity)"
-      - "process_audience: customer-demand REMOVED (audience-vs-context high-risk flag resolved)"
+      - "process_audience: party-relationship REMOVED (audience-vs-context high-risk flag resolved)"
       - "process_context: scalar 'dea:pc-ge-op' REMOVED"
       - "context: [{ref: dea:pc-ge-op}] ADDED"
       - "relationships[0]: serves -> ecf:governanceAndExistence.operate ADDED"
@@ -62,17 +62,17 @@ observations:
     The audit-policy-compliance record carried the
     audience-vs-context conflict flagged as high-risk
     in the Phase 4 tranche plan: process_audience =
-    customer-demand AND process_context = dea:pc-ge-op.
+    party-relationship AND process_context = dea:pc-ge-op.
     The migration resolves the conflict by removing
     process_audience entirely (the canonical context:
     block replaces it as the authoritative placement).
     The disposition register records this resolution.
   - |
-    The contexts/v1-alpha/dea_pc-cd-op.yaml filename
+    The contexts/v1-alpha/dea_pc-pr-op.yaml filename
     had an underscore typo (dea_pc vs dea-pc). The
-    canonical id inside the file (dea:pc-cd-op) was
+    canonical id inside the file (dea:pc-pr-op) was
     always correct. PR-9 renames the file to
-    dea-pc-cd-op.yaml and updates four documentation
+    dea-pc-pr-op.yaml and updates four documentation
     references (3 CR docs + CHANGELOG). The BP-SEM-008
     context-reference-integrity check now passes.
   - |

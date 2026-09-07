@@ -1,15 +1,15 @@
-# Process Context Cell Charter: CustomerAndDemand x Improve.
+# Process Context Cell Charter: PartyAndRelationship x Improve.
 #
-# Lands as part of CR-BP-13a (CustomerAndDemand admission tranche).
+# Lands as part of CR-BP-13a (PartyAndRelationship admission tranche).
 # This is the N-th Process Context cell in the catalog; the first
-# was dea:pc-cd-op (CustomerAndDemand x Operate; CR-BP-03C).
+# was dea:pc-pr-op (PartyAndRelationship x Operate; CR-BP-03C).
 #
 # Each cell carries the full Cell Charter (CR-BP-02 §7):
 #   enterprise_concern, lifecycle_concern, combined_semantic_meaning,
 #   inclusions / exclusions, adjacent_boundaries.
 
-id: dea:pc-cd-im
-domain: CustomerAndDemand
+id: dea:pc-pr-im
+domain: PartyAndRelationship
 lifecycle_stage: Improve
 name: Customer Insight and Retention
 
@@ -37,10 +37,10 @@ outcomes:
 
 # Adjacent contexts (CR-BP-02 §11).
 adjacent_contexts:
-  - dea:pc-cd-c
-  - dea:pc-cd-d
-  - dea:pc-cd-b
-  - dea:pc-cd-op
+  - dea:pc-pr-c
+  - dea:pc-pr-d
+  - dea:pc-pr-b
+  - dea:pc-pr-op
 
 # Business Processes belonging to this context (PC-008).
 processes:
@@ -65,10 +65,10 @@ cell_charter:
     - Customer strategy framing (Conceive stage)
     - Customer experience design (Design stage)
   adjacent_boundaries:
-    - "dea:pc-cd-c (Conceive): insights shape strategy framing."
-    - "dea:pc-cd-d (Design): insights sharpen experience design."
-    - "dea:pc-cd-b (Build): insights reveal channel gaps."
-    - "dea:pc-cd-op (Operate): insights refine day-to-day relationship operation."
+    - "dea:pc-pr-c (Conceive): insights shape strategy framing."
+    - "dea:pc-pr-d (Design): insights sharpen experience design."
+    - "dea:pc-pr-b (Build): insights reveal channel gaps."
+    - "dea:pc-pr-op (Operate): insights refine day-to-day relationship operation."
 
 # Lifecycle status (CR-BP-02 §17).
 lifecycle_status: candidate

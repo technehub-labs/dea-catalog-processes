@@ -113,8 +113,8 @@ def test_strict_mode_fails_on_legacy_fixture(tmp_path):
     # scalar alongside a legacy process_audience to manufacture
     # findings.
     data.pop("context", None)
-    data["process_context"] = "dea:pc-cd-b"
-    data["process_audience"] = "customer-demand"
+    data["process_context"] = "dea:pc-pr-b"
+    data["process_audience"] = "party-relationship"
     legacy_file.write_text(yaml.safe_dump(data, sort_keys=False))
     result = subprocess.run(
         [sys.executable, str(SCRIPT), "--strict", "--catalog-root", str(sandbox)],
