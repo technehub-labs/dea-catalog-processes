@@ -1,6 +1,8 @@
 # CR-BP-11: L1 Process Group Discovery Across the 49 ECF Coordinates
 
-Status: Baseline
+**Status**: Accepted (baseline ratified by CR-BP-13)
+**Layer**: Process Catalog
+**Owner**: Coder (for eaojnr)
 Program: Business Process Catalog
 Parent: CR-BP-03-business-process-architecture
 Related: CR-BP-03-business-process-architecture; CR-BP-02; CR-BP-03C-sample-process-contribution; CR-DEA-BC-04 (Business Capability Catalog ECF Overlay v0.2)

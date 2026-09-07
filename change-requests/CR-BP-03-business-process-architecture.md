@@ -1,6 +1,8 @@
 # CR-BP-03 — Business Process Architecture
 
 **Status:** Proposed (refined 2026-09-03)
+**Layer**: Process Catalog
+**Owner**: Coder (for eaojnr)
 **Type:** Architecture / Semantic / Catalog
 **Priority:** High
 **Repository:** `technehub-labs/dea-catalog-processes`

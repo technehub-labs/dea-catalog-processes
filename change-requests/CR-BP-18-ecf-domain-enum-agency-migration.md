@@ -1,7 +1,7 @@
 # CR-BP-18: ECF Domain Enum v2.4.0 Migration (Agency & Organization)
 
 **Status**: Accepted
-**Layer**: Catalog (processes)
+**Layer**: Process Catalog
 **Owner**: Coder (for eaojnr)
 **Date**: 2026-09-07
 **Depends on**: CR-BP-17 (v2.3.0 migration carrier); dea-metaframework CR-ECF-007; dea-metamodel CR-MM-ECF-02
