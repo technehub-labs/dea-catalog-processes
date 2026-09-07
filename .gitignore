@@ -1,2 +1,9 @@
 __pycache__/
 *.pyc
+
+# PR design scratch goes outside the repo going forward. The `archive/`
+# subdirectory remains tracked as historical PR design history (see
+# commits that moved the original 21 design notes under `01_plan/archive/`).
+# New `pr-*.md` files at `01_plan/` are local-only design notes.
+/01_plan/*.md
+!/01_plan/archive/
