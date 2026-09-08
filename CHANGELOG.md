@@ -4,6 +4,20 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
+## [Unreleased] - 2026-09-08
+
+CR-BP-22 implementation: register audit-status reconciliation. Adds
+`audit_status` axis orthogonal to `disposition`, naming the gap between
+research-register acceptance and catalog landing reality. As of 2026-09-08:
+12 `landed` / 23 `ratified-pending-landing` / 14 `backlog-deferred` across
+the 49 ECF coordinates. Each `ratified-pending-landing` coordinate carries
+a `planned_tranche` pointer (CR-BP-21a.1, CR-BP-21b.1, CR-BP-21c,
+CR-BP-21d, CR-BP-21e). Register ratification bumped v2 -> v3. New
+`scripts/check_register_audit.py` (non-blocking tool, runs after each
+landing tranche). No canonical entity, no schema, no CI gate change. The
+`L1-REGISTER-v0.1.md` persona summary updated with v2 register counts
+(35/14) and v3 audit counts (12/23/14).
+
 ## [2.4.0-migration] - 2026-09-07
 
 CR-BP-18 implementation: ECF Domain enum migration to the v2.4.0

@@ -1,20 +1,35 @@
 # L1 Process Group Discovery Register v0.1
 
-Status: ratified-canonical-2026-09-05 (CR-BP-13)
-Programme: CR-BP-11 (research) -> CR-BP-13 (ratification)
+Status: audit-reconciled-2026-09-08 (CR-BP-22)
+Programme: CR-BP-11 (research) -> CR-BP-13 (ratification) -> CR-BP-19 (v2.4.0 re-derivation) -> CR-BP-22 (register audit)
 Repository: `technehub-labs/dea-catalog-processes`
-Date: 2026-09-04 (research); 2026-09-05 (ratification)
+Date: 2026-09-04 (research); 2026-09-05 (ratification v1); 2026-09-07 (ratification v2 / ECF v2.4.0); 2026-09-08 (audit reconciliation)
 Scope: 49 ECF coordinates (7 domains x 7 lifecycle stages)
-Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `change-requests/CR-BP-13-research-ratification.md`; `01_plan/research-register/l1-register.yaml`; `01_plan/research-register/l1-candidate-universe.yaml`.
+Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `change-requests/CR-BP-13-research-ratification.md`; `change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md`; `change-requests/CR-BP-22-register-audit-status.md`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-register.yaml`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-candidate-universe.yaml`.
 
-Ratification summary:
-- 38 coordinates ratified-accepted (disposition: ratified-accepted)
-- 11 coordinates backlog-deferred (Activate/Retire stages)
-- 86 L1 candidates ratified; 16 L1 candidates backlog-deferred
+## Register-side counts (research disposition, ratified v2)
 
-See CR-BP-13 §4 for the rationale on the 11 backlog-deferred
-coordinates (lifecycle transition stages; not stable Process
-Group scopes).
+- 35 coordinates ratified-accepted (register v2; ECF v2.4.0; Activate normalized to backlog-deferred across all 7 domains)
+- 14 coordinates backlog-deferred (Activate + Retire across all 7 domains)
+- 49 total
+
+## Audit-side counts (catalog landing reality, audited 2026-09-08)
+
+| audit_status | Coordinates | Description |
+|---:|---:|---|
+| `landed` | 12 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 23 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
+| **Total** | **49** | |
+
+The gap (23 `ratified-pending-landing`) is the L1 process discovery
+work-in-flight: those cells are accepted in principle but have no
+landing yet. The planned tranches (CR-BP-21a.1, CR-BP-21b.1, CR-BP-21c,
+CR-BP-21d, CR-BP-21e) close this gap.
+
+See CR-BP-19 for the v2 deferred_rationale (Activate and Retire are
+lifecycle transition stages, not stable Process Group operating
+scopes) and CR-BP-22 for the audit_status axis design.
 
 ---
 
@@ -44,7 +59,28 @@ A research-only, evidence-bound register of candidate L1 Process Groups across t
 | FinanceAndAccounting | 5 | 2 | 7 |
 | **Total** | **38** | **11** | **49** |
 
-No coordinate carries `unresolved` or `no-candidate` in v0.1; technology is held unmapped across the matrix (cross-domain finding C1), not as a `no-candidate` cell.
+The v1 totals (38/11) shown above are the original CR-BP-13 ratification
+counts. They have been updated by:
+
+- **CR-BP-17 / CR-BP-18** (Domain enum migrations): Domain renames + ID-family reconciliation; no count change.
+- **CR-BP-19** (register v2 re-derivation against ECF v2.4.0): 35 ratified-accepted / 14 backlog-deferred (Activate normalized to backlog-deferred across all 7 domains; previously only 3 Activate cells were deferred). See the register's `ratification.version=2` block.
+
+The **v2 register counts** (authoritative as of 2026-09-07):
+
+| Domain | Accepted | Deferred | Total |
+|---|---:|---:|---:|
+| GovernanceAndExistence | 5 | 2 | 7 |
+| StrategyAndDirection | 5 | 2 | 7 |
+| AgencyAndOrganization | 5 | 2 | 7 |
+| PartyAndRelationship | 5 | 2 | 7 |
+| ProductAndValue | 5 | 2 | 7 |
+| OperationsAndEnablement | 5 | 2 | 7 |
+| FinanceAndAccounting | 5 | 2 | 7 |
+| **Total** | **35** | **14** | **49** |
+
+No coordinate carries `unresolved` or `no-candidate` in v2; technology is held unmapped across the matrix (cross-domain finding C1), not as a `no-candidate` cell.
+
+Per-coordinate `audit_status` (added by CR-BP-22) is recorded in `l1-register.yaml` and not duplicated here in full (49 cells); see `audit_counts` block in `l1-register.yaml` for the current landing reality.
 
 ## 4. Coordinate-Level Entries
 
@@ -183,6 +219,46 @@ Process Group and Business Function are distinct catalog-topology constructs. Pr
 - the L2 admission waves for the seven domains (BP-13+);
 - the ID-family reconciliation between `dea:bp-*` and `dea:process-*` (CR-BP-04, separate);
 - the promotion of Process Group to OpenDEA Core (BP-14, future, conditional).
+
+---
+
+## 9. Register v3 Audit Status (CR-BP-22; added 2026-09-08)
+
+CR-BP-22 introduces an `audit_status` axis orthogonal to `disposition`.
+The axis reconciles the research register's disposition (acceptance
+decision) with the catalog's landing reality (canonical L1 Process
+Group existence):
+
+| audit_status | Count | Description |
+|---:|---:|---|
+| `landed` | 12 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 23 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
+| **Total** | **49** | |
+
+### Per-Domain audit_status (2026-09-08)
+
+| Domain | Conceive | Design | Build | Activate | Operate | Improve | Retire | L1 landed |
+|---|---|---|---|---|---|---|---|---:|
+| GovernanceAndExistence | landed | landed | landed | deferred | landed | landed | deferred | 5 |
+| StrategyAndDirection | landed | pending | pending | deferred | pending | pending | deferred | 1 |
+| AgencyAndOrganization | landed | pending | pending | deferred | pending | pending | deferred | 1 |
+| PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
+| ProductAndValue | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+| OperationsAndEnablement | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+| FinanceAndAccounting | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+
+### Planned tranches closing the gap
+
+- `StrategyAndDirection` Design/Build/Operate/Improve → CR-BP-21a.1 (planned)
+- `AgencyAndOrganization` Design/Build/Operate/Improve → CR-BP-21b.1 (planned)
+- `ProductAndValue` Conceive/Design/Build/Operate/Improve → CR-BP-21c (planned)
+- `OperationsAndEnablement` Conceive/Design/Build/Operate/Improve → CR-BP-21d (planned)
+- `FinanceAndAccounting` Conceive/Design/Build/Operate/Improve → CR-BP-21e (planned)
+
+The audit script (`scripts/check_register_audit.py`) re-runs the
+reconciliation and can be invoked after each landing tranche to
+confirm the register did not drift.
 
 ---
 
