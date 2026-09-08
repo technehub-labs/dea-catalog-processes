@@ -285,3 +285,20 @@ confirm the register did not drift.
 [20] ISO 37000:2021 Governance of Organizations
 [21] ISO 22301:2019 Security and Resilience
 [22] ISO 56002:2019 Innovation Management
+
+---
+
+## Note on cross-catalog references (added 2026-09-08)
+
+The evidence line on this register includes a now-stale cross-catalog path
+reference: `dea-catalog-business-capabilities/capability-financial-management`.
+The pre-`CR-CATALOG-STRUCT-03a` flat layout has been retired; the current
+canonical id is `dea:capability-financial-resource-management` (renamed at
+`CR-DEA-BC-09` / `v1-alpha.3`; the former `dea:capability-financial-management`
+is recorded in that entry's `aliases` field). The other names cited here
+(ISO 37000, ISO 22301, ISO 56002, APQC PCF Financial Management Improvement,
+SAP S/4HANA, COSO, IFRS, etc.) are external-standard citations and stay as
+recorded.
+
+The audit-reconciled content above is preserved for provenance. A
+regenerated successor will cite the current canonical ids.
