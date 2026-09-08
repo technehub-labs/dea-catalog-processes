@@ -56,6 +56,101 @@ composes:
       reference: CR-BP-21e
       asserted_by: dea-team
       asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-frame-financial-policy-thesis
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the financial-policy thesis used to
+      govern the finance model. Lands under CR-BP-21e (FinanceAndAccounting
+      landing tranche).
+    evidence: docs/examples/frame-financial-policy-thesis.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-frame-physical-asset-approach
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the physical-asset approach that
+      informs the financial model's asset accounting posture.
+      Lands under CR-BP-21e (FinanceAndAccounting landing tranche).
+    evidence: docs/examples/frame-physical-asset-approach.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-design-financial-plan-structure
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process designs the financial plan structure (one
+      per non-Conceive cell seeded by CR-BP-21e). Extended by
+      CR-BP-21e.1.
+    evidence: docs/examples/design-financial-plan-structure.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-audit-policy-compliance
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process audits policy compliance (one per non-Conceive
+      cell seeded by CR-BP-21e). Extended by CR-BP-21e.1.
+    evidence: docs/examples/audit-policy-compliance.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-operate-general-ledger
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process operates the general ledger (one per
+      non-Conceive cell seeded by CR-BP-21e). Extended by
+      CR-BP-21e.1.
+    evidence: docs/examples/operate-general-ledger.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-model-conception
+    target_id: dea:process-conduct-cost-optimization-review
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process conducts cost-optimization reviews (one per
+      non-Conceive cell seeded by CR-BP-21e). Extended by
+      CR-BP-21e.1.
+    evidence: docs/examples/conduct-cost-optimization-review.md
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21e.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -102,6 +197,18 @@ metadata:
         v2 (ratified against ECF v2.4.0) as part of the
         FinanceAndAccounting landing tranche. Composes the L2
         dea:process-frame-finance-strategy.
+    - cr: CR-BP-21e.1
+      date: '2026-09-08'
+      change: |
+        Composes edges added for the 4 non-Conceive-cell L2s
+        already landed under CR-BP-21e (one per cell): Design
+        (dea:process-design-financial-plan-structure), Operate
+        (dea:process-operate-general-ledger), Improve
+        (dea:process-audit-policy-compliance, dea:process-conduct-
+        cost-optimization-review). The completion tranche 21e.1
+        extends the 4 non-Conceive Process Groups and 5 FA
+        Process Contexts; this change_history records the
+        upstream group's composes-edge expansion.
 
 links:
   - rel: change-request

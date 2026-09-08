@@ -6,6 +6,25 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21e.1 implementation: FinanceAndAccounting completion (fifth
+and final domain-completion tranche; closes the v2.4.0 register
+scope). Lands the 4 remaining FA Process Groups
+(`dea:group-financial-design`, `-financial-build`, `-financial-operate`,
+`-financial-improve`) and the 15 remaining register v2 FA L2
+candidates (Conceive 0, Design 3, Build 3, Operate 7, Improve 2);
+extends `dea:group-financial-model-conception` with composes edges
+for the 4 already-landed 21e L2s (one per non-Conceive cell); extends
+the 5 FA Process Contexts' processes lists. Register v3 audit final
+state: **35 `landed` / 0 `ratified-pending-landing` / 14
+`backlog-deferred`**. FA D/B/O/Im audit_status flipped to `landed`.
+Disposition register +15 RETAIN; tranche plan 55 to 60.
+
+Two L2s needed `process_type` flips driven by BP-ARC-ID-004 keyword
+density (`operate-financial-reporting-and-disclosure` to core;
+`onboard-tax-and-compliance-capability` to management). One L2 was
+reworded for the same reason (`tax-and-compliance-capability`
+outcome now supervised by the tax policy review).
+
 CR-BP-21d.1 implementation: OperationsAndEnablement completion
 (fourth domain-completion tranche; the largest, reflecting OE's
 execution-core position). Lands the 4 remaining OE Process Groups

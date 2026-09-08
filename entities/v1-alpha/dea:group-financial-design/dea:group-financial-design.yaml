@@ -1,0 +1,44 @@
+id: dea:group-financial-design
+name: Financial Design
+type: ProcessGroup
+version: '1.0.0'
+process_context: dea:pc-fa-design
+description: |
+  Financial Design Process Group (FinanceAndAccounting/design). Lands
+  the 4 L2 Business Processes that realise the
+  design cell of the FinanceAndAccounting ECF coordinate.
+relationships:
+- source_id: dea:group-financial-design
+  relationship_type: composes
+  target_id: dea:process-design-financial-plan-structure
+  rationale: landed CR-BP-21e
+- source_id: dea:group-financial-design
+  relationship_type: composes
+  target_id: dea:process-design-financial-controls-and-policies
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-design
+  relationship_type: composes
+  target_id: dea:process-design-tax-position-and-strategy
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-design
+  relationship_type: composes
+  target_id: dea:process-design-treasury-and-funding-model
+  rationale: CR-BP-21e.1
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Design
+    identifier: ecf:financeAccounting.design
+  target_id: ecf:financeAccounting.design
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 134
-    entities: 135
-    open_change_requests: 30
+    canonical: 153
+    entities: 154
+    open_change_requests: 31
     research_files: 57
     retired: 1
   cross_cutting:
@@ -120,10 +120,54 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-financial-build
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-financial-design
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:group-financial-design/dea:group-financial-design.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-financial-improve
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:group-financial-improve/dea:group-financial-improve.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-financial-model-conception
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-model-conception/dea:group-financial-model-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-financial-operate
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:group-financial-operate/dea:group-financial-operate.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -401,6 +445,17 @@ catalog:
     path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-build-budgeting-and-forecasting-systems
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-build-budgeting-and-forecasting-systems/dea:process-build-budgeting-and-forecasting-systems.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -747,6 +802,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-financial-controls-and-policies
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-design-financial-controls-and-policies/dea:process-design-financial-controls-and-policies.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-financial-plan-structure
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -890,10 +956,32 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-tax-position-and-strategy
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-design-tax-position-and-strategy/dea:process-design-tax-position-and-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-technology-platform-architecture
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-technology-platform-architecture/dea:process-design-technology-platform-architecture.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-treasury-and-funding-model
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-design-treasury-and-funding-model/dea:process-design-treasury-and-funding-model.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -971,6 +1059,28 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-evolve-products-and-services/dea:process-evolve-products-and-services.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-evolve-treasury-and-funding-model
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-evolve-treasury-and-funding-model/dea:process-evolve-treasury-and-funding-model.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-execute-payroll
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-execute-payroll/dea:process-execute-payroll.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1099,6 +1209,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-implement-financial-systems-and-ledger
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/dea:process-implement-financial-systems-and-ledger.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-improve-technology-platforms
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1116,6 +1237,17 @@ catalog:
     path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-manage-cash-and-liquidity
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-manage-cash-and-liquidity/dea:process-manage-cash-and-liquidity.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -1152,6 +1284,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-manage-tax-compliance-and-filings
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-manage-tax-compliance-and-filings/dea:process-manage-tax-compliance-and-filings.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-market-and-demand-conception
@@ -1169,6 +1312,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-monitor-strategic-performance/dea:process-monitor-strategic-performance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-onboard-tax-and-compliance-capability
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-onboard-tax-and-compliance-capability/dea:process-onboard-tax-and-compliance-capability.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1202,6 +1356,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-operate-facility-management/dea:process-operate-facility-management.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-financial-reporting-and-disclosure
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-operate-financial-reporting-and-disclosure/dea:process-operate-financial-reporting-and-disclosure.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1363,6 +1528,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-perform-financial-close
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-perform-financial-close/dea:process-perform-financial-close.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-prepare-market-readiness
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1389,6 +1565,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-rationalize-portfolio/dea:process-rationalize-portfolio.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-refine-financial-controls-and-policies
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-refine-financial-controls-and-policies/dea:process-refine-financial-controls-and-policies.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1433,6 +1620,28 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-review-strategy-effectiveness/dea:process-review-strategy-effectiveness.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-run-accounts-payable
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-run-accounts-payable/dea:process-run-accounts-payable.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-run-accounts-receivable
+    last_modified: '2026-09-08'
+    lifecycle_status: unknown
+    path: entities/v1-alpha/dea:process-run-accounts-receivable/dea:process-run-accounts-receivable.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1549,9 +1758,21 @@ catalog:
   - entity_id: dea:group-execution-and-fulfillment
     files: []
     path: entities/v1-alpha/dea:group-execution-and-fulfillment/research/
+  - entity_id: dea:group-financial-build
+    files: []
+    path: entities/v1-alpha/dea:group-financial-build/research/
+  - entity_id: dea:group-financial-design
+    files: []
+    path: entities/v1-alpha/dea:group-financial-design/research/
+  - entity_id: dea:group-financial-improve
+    files: []
+    path: entities/v1-alpha/dea:group-financial-improve/research/
   - entity_id: dea:group-financial-model-conception
     files: []
     path: entities/v1-alpha/dea:group-financial-model-conception/research/
+  - entity_id: dea:group-financial-operate
+    files: []
+    path: entities/v1-alpha/dea:group-financial-operate/research/
   - entity_id: dea:group-governance-body-establishment
     files:
     - .gitkeep
@@ -1639,6 +1860,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-audit-policy-compliance/research/
+  - entity_id: dea:process-build-budgeting-and-forecasting-systems
+    files: []
+    path: entities/v1-alpha/dea:process-build-budgeting-and-forecasting-systems/research/
   - entity_id: dea:process-build-contractor-and-partner-agent-pool
     files: []
     path: entities/v1-alpha/dea:process-build-contractor-and-partner-agent-pool/research/
@@ -1748,6 +1972,9 @@ catalog:
   - entity_id: dea:process-design-facility-and-asset-blueprint
     files: []
     path: entities/v1-alpha/dea:process-design-facility-and-asset-blueprint/research/
+  - entity_id: dea:process-design-financial-controls-and-policies
+    files: []
+    path: entities/v1-alpha/dea:process-design-financial-controls-and-policies/research/
   - entity_id: dea:process-design-financial-plan-structure
     files: []
     path: entities/v1-alpha/dea:process-design-financial-plan-structure/research/
@@ -1791,9 +2018,15 @@ catalog:
   - entity_id: dea:process-design-strategic-scenarios
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-scenarios/research/
+  - entity_id: dea:process-design-tax-position-and-strategy
+    files: []
+    path: entities/v1-alpha/dea:process-design-tax-position-and-strategy/research/
   - entity_id: dea:process-design-technology-platform-architecture
     files: []
     path: entities/v1-alpha/dea:process-design-technology-platform-architecture/research/
+  - entity_id: dea:process-design-treasury-and-funding-model
+    files: []
+    path: entities/v1-alpha/dea:process-design-treasury-and-funding-model/research/
   - entity_id: dea:process-develop-agents-and-organization
     files: []
     path: entities/v1-alpha/dea:process-develop-agents-and-organization/research/
@@ -1819,6 +2052,12 @@ catalog:
   - entity_id: dea:process-evolve-products-and-services
     files: []
     path: entities/v1-alpha/dea:process-evolve-products-and-services/research/
+  - entity_id: dea:process-evolve-treasury-and-funding-model
+    files: []
+    path: entities/v1-alpha/dea:process-evolve-treasury-and-funding-model/research/
+  - entity_id: dea:process-execute-payroll
+    files: []
+    path: entities/v1-alpha/dea:process-execute-payroll/research/
   - entity_id: dea:process-frame-delivery-model-conception
     files: []
     path: entities/v1-alpha/dea:process-frame-delivery-model-conception/research/
@@ -1852,6 +2091,9 @@ catalog:
   - entity_id: dea:process-frame-value-proposition-thesis
     files: []
     path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/research/
+  - entity_id: dea:process-implement-financial-systems-and-ledger
+    files: []
+    path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/research/
   - entity_id: dea:process-improve-technology-platforms
     files: []
     path: entities/v1-alpha/dea:process-improve-technology-platforms/research/
@@ -1860,6 +2102,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-initiate-policy-and-charter/research/
+  - entity_id: dea:process-manage-cash-and-liquidity
+    files: []
+    path: entities/v1-alpha/dea:process-manage-cash-and-liquidity/research/
   - entity_id: dea:process-manage-customer-relationship
     files:
     - README.md
@@ -1870,6 +2115,9 @@ catalog:
   - entity_id: dea:process-manage-proposition-lifecycle
     files: []
     path: entities/v1-alpha/dea:process-manage-proposition-lifecycle/research/
+  - entity_id: dea:process-manage-tax-compliance-and-filings
+    files: []
+    path: entities/v1-alpha/dea:process-manage-tax-compliance-and-filings/research/
   - entity_id: dea:process-market-and-demand-conception
     files:
     - .gitkeep
@@ -1878,6 +2126,9 @@ catalog:
   - entity_id: dea:process-monitor-strategic-performance
     files: []
     path: entities/v1-alpha/dea:process-monitor-strategic-performance/research/
+  - entity_id: dea:process-onboard-tax-and-compliance-capability
+    files: []
+    path: entities/v1-alpha/dea:process-onboard-tax-and-compliance-capability/research/
   - entity_id: dea:process-operate-agent-performance
     files: []
     path: entities/v1-alpha/dea:process-operate-agent-performance/research/
@@ -1887,6 +2138,9 @@ catalog:
   - entity_id: dea:process-operate-facility-management
     files: []
     path: entities/v1-alpha/dea:process-operate-facility-management/research/
+  - entity_id: dea:process-operate-financial-reporting-and-disclosure
+    files: []
+    path: entities/v1-alpha/dea:process-operate-financial-reporting-and-disclosure/research/
   - entity_id: dea:process-operate-general-ledger
     files: []
     path: entities/v1-alpha/dea:process-operate-general-ledger/research/
@@ -1931,6 +2185,9 @@ catalog:
   - entity_id: dea:process-optimize-asset-utilization
     files: []
     path: entities/v1-alpha/dea:process-optimize-asset-utilization/research/
+  - entity_id: dea:process-perform-financial-close
+    files: []
+    path: entities/v1-alpha/dea:process-perform-financial-close/research/
   - entity_id: dea:process-prepare-market-readiness
     files: []
     path: entities/v1-alpha/dea:process-prepare-market-readiness/research/
@@ -1940,6 +2197,9 @@ catalog:
   - entity_id: dea:process-rationalize-portfolio
     files: []
     path: entities/v1-alpha/dea:process-rationalize-portfolio/research/
+  - entity_id: dea:process-refine-financial-controls-and-policies
+    files: []
+    path: entities/v1-alpha/dea:process-refine-financial-controls-and-policies/research/
   - entity_id: dea:process-refresh-objectives-and-targets
     files: []
     path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/research/
@@ -1954,6 +2214,12 @@ catalog:
   - entity_id: dea:process-review-strategy-effectiveness
     files: []
     path: entities/v1-alpha/dea:process-review-strategy-effectiveness/research/
+  - entity_id: dea:process-run-accounts-payable
+    files: []
+    path: entities/v1-alpha/dea:process-run-accounts-payable/research/
+  - entity_id: dea:process-run-accounts-receivable
+    files: []
+    path: entities/v1-alpha/dea:process-run-accounts-receivable/research/
   - entity_id: dea:process-run-production-line
     files: []
     path: entities/v1-alpha/dea:process-run-production-line/research/

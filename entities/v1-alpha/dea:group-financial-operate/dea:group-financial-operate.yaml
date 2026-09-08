@@ -1,0 +1,60 @@
+id: dea:group-financial-operate
+name: Financial Operate
+type: ProcessGroup
+version: '1.0.0'
+process_context: dea:pc-fa-operate
+description: |
+  Financial Operate Process Group (FinanceAndAccounting/operate). Lands
+  the 8 L2 Business Processes that realise the
+  operate cell of the FinanceAndAccounting ECF coordinate.
+relationships:
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-operate-general-ledger
+  rationale: landed CR-BP-21e
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-run-accounts-payable
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-run-accounts-receivable
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-execute-payroll
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-manage-cash-and-liquidity
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-perform-financial-close
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-manage-tax-compliance-and-filings
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-operate
+  relationship_type: composes
+  target_id: dea:process-operate-financial-reporting-and-disclosure
+  rationale: CR-BP-21e.1
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Operate
+    identifier: ecf:financeAccounting.operate
+  target_id: ecf:financeAccounting.operate
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

@@ -1,0 +1,40 @@
+id: dea:group-financial-improve
+name: Financial Improve
+type: ProcessGroup
+version: '1.0.0'
+process_context: dea:pc-fa-improve
+description: |
+  Financial Improve Process Group (FinanceAndAccounting/improve). Lands
+  the 3 L2 Business Processes that realise the
+  improve cell of the FinanceAndAccounting ECF coordinate.
+relationships:
+- source_id: dea:group-financial-improve
+  relationship_type: composes
+  target_id: dea:process-audit-policy-compliance
+  rationale: landed CR-BP-21e
+- source_id: dea:group-financial-improve
+  relationship_type: composes
+  target_id: dea:process-refine-financial-controls-and-policies
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-improve
+  relationship_type: composes
+  target_id: dea:process-evolve-treasury-and-funding-model
+  rationale: CR-BP-21e.1
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Improve
+    identifier: ecf:financeAccounting.improve
+  target_id: ecf:financeAccounting.improve
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

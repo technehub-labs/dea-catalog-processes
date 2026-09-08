@@ -1,0 +1,40 @@
+id: dea:group-financial-build
+name: Financial Build
+type: ProcessGroup
+version: '1.0.0'
+process_context: dea:pc-fa-build
+description: |
+  Financial Build Process Group (FinanceAndAccounting/build). Lands
+  the 3 L2 Business Processes that realise the
+  build cell of the FinanceAndAccounting ECF coordinate.
+relationships:
+- source_id: dea:group-financial-build
+  relationship_type: composes
+  target_id: dea:process-implement-financial-systems-and-ledger
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-build
+  relationship_type: composes
+  target_id: dea:process-build-budgeting-and-forecasting-systems
+  rationale: CR-BP-21e.1
+- source_id: dea:group-financial-build
+  relationship_type: composes
+  target_id: dea:process-onboard-tax-and-compliance-capability
+  rationale: CR-BP-21e.1
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Build
+    identifier: ecf:financeAccounting.build
+  target_id: ecf:financeAccounting.build
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

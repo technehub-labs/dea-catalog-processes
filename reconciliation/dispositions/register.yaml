@@ -1629,3 +1629,183 @@ dispositions:
       CR-BP-19 /l1-register.yaml operationsAndEnablement.improve;
       CR-BP-21d.1-operations-enablement-completion.md.
     note: null
+
+  - record_id: dea:process-design-financial-controls-and-policies
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Design cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.design;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-design-tax-position-and-strategy
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Design cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.design;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-design-treasury-and-funding-model
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Design cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.design;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-implement-financial-systems-and-ledger
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Build cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.build;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-build-budgeting-and-forecasting-systems
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Build cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.build;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-onboard-tax-and-compliance-capability
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Build cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.build;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-run-accounts-payable
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-run-accounts-receivable
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-execute-payroll
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-manage-cash-and-liquidity
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-perform-financial-close
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-manage-tax-compliance-and-filings
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-operate-financial-reporting-and-disclosure
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Operate cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-refine-financial-controls-and-policies
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Improve cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.improve;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
+
+  - record_id: dea:process-evolve-treasury-and-funding-model
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e.1
+    rationale: |
+      Register v2 L2 completion landing for the FinanceAndAccounting
+      x Improve cell, per CR-BP-21e.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.improve;
+      CR-BP-21e.1-finance-accounting-completion.md.
+    note: null
