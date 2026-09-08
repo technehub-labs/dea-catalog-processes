@@ -17,8 +17,8 @@ Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md
 
 | audit_status | Coordinates | Description |
 |---:|---:|---|
-| `landed` | 12 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 23 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 13 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 22 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
@@ -231,8 +231,8 @@ Group existence):
 
 | audit_status | Count | Description |
 |---:|---:|---|
-| `landed` | 12 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 23 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 13 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 22 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
@@ -244,7 +244,7 @@ Group existence):
 | StrategyAndDirection | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | AgencyAndOrganization | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
-| ProductAndValue | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+| ProductAndValue | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | OperationsAndEnablement | pending | pending | pending | deferred | pending | pending | deferred | 0 |
 | FinanceAndAccounting | pending | pending | pending | deferred | pending | pending | deferred | 0 |
 
@@ -252,7 +252,7 @@ Group existence):
 
 - `StrategyAndDirection` Design/Build/Operate/Improve → CR-BP-21a.1 (planned)
 - `AgencyAndOrganization` Design/Build/Operate/Improve → CR-BP-21b.1 (planned)
-- `ProductAndValue` Conceive/Design/Build/Operate/Improve → CR-BP-21c (planned)
+- `ProductAndValue` Conceive (landed CR-BP-21c); Design/Build/Operate/Improve → CR-BP-21c.1 (planned)
 - `OperationsAndEnablement` Conceive/Design/Build/Operate/Improve → CR-BP-21d (planned)
 - `FinanceAndAccounting` Conceive/Design/Build/Operate/Improve → CR-BP-21e (planned)
 

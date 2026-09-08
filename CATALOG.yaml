@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 39
-    entities: 40
-    open_change_requests: 23
+    canonical: 45
+    entities: 46
+    open_change_requests: 24
     research_files: 57
     retired: 1
   cross_cutting:
@@ -142,6 +142,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-proposition-conception
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-proposition-conception/dea:group-proposition-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-strategy-direction-conception
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -203,6 +214,17 @@ catalog:
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conduct-proposition-performance-review
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/dea:process-conduct-proposition-performance-review.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -318,6 +340,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-product-and-service-propositions
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-product-and-service-propositions/dea:process-design-product-and-service-propositions.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-strategic-options
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -360,6 +393,17 @@ catalog:
     state: retired
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-develop-product-variants
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-develop-product-variants/dea:process-develop-product-variants.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-establish-governance-bodies
@@ -377,6 +421,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-frame-value-proposition-thesis
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/dea:process-frame-value-proposition-thesis.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -445,6 +500,17 @@ catalog:
     path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-product-catalogue
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-product-catalogue/dea:process-operate-product-catalogue.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -520,6 +586,9 @@ catalog:
   - entity_id: dea:group-organization-and-agent-conception
     files: []
     path: entities/v1-alpha/dea:group-organization-and-agent-conception/research/
+  - entity_id: dea:group-proposition-conception
+    files: []
+    path: entities/v1-alpha/dea:group-proposition-conception/research/
   - entity_id: dea:group-strategy-direction-conception
     files: []
     path: entities/v1-alpha/dea:group-strategy-direction-conception/research/
@@ -542,6 +611,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/research/
+  - entity_id: dea:process-conduct-proposition-performance-review
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/research/
   - entity_id: dea:process-customer-channel-and-acquisition-build
     files:
     - .gitkeep
@@ -590,6 +662,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-design-policies-and-controls/research/
+  - entity_id: dea:process-design-product-and-service-propositions
+    files: []
+    path: entities/v1-alpha/dea:process-design-product-and-service-propositions/research/
   - entity_id: dea:process-design-strategic-options
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-options/research/
@@ -604,6 +679,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-develop-governance-strategy/research/
+  - entity_id: dea:process-develop-product-variants
+    files: []
+    path: entities/v1-alpha/dea:process-develop-product-variants/research/
   - entity_id: dea:process-establish-governance-bodies
     files:
     - .gitkeep
@@ -612,6 +690,9 @@ catalog:
   - entity_id: dea:process-frame-organization-and-agent-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/research/
+  - entity_id: dea:process-frame-value-proposition-thesis
+    files: []
+    path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/research/
   - entity_id: dea:process-initiate-policy-and-charter
     files:
     - .gitkeep
@@ -637,6 +718,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-operate-governance-oversight/research/
+  - entity_id: dea:process-operate-product-catalogue
+    files: []
+    path: entities/v1-alpha/dea:process-operate-product-catalogue/research/
   - entity_id: dea:process-review-governance-effectiveness
     files:
     - .gitkeep

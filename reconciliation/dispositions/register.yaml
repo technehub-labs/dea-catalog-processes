@@ -670,3 +670,65 @@ dispositions:
       CR-BP-19 /l1-register.yaml agencyOrganization.improve;
       CR-BP-21b-agency-organization-landing.md.
     note: null
+
+  # ----- CR-BP-21c: ProductAndValue landing -----
+
+  - record_id: dea:process-frame-value-proposition-thesis
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c
+    rationale: |
+      Fresh L2 landing for the ProductAndValue x Conceive
+      cell, per CR-BP-21c and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productValue.conceive;
+      CR-BP-21c-product-value-landing.md.
+    note: null
+
+  - record_id: dea:process-design-product-and-service-propositions
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c
+    rationale: |
+      Fresh L2 landing for the ProductAndValue x Design
+      cell, per CR-BP-21c and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productValue.design;
+      CR-BP-21c-product-value-landing.md.
+    note: null
+
+  - record_id: dea:process-develop-product-variants
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c
+    rationale: |
+      Fresh L2 landing for the ProductAndValue x Build
+      cell, per CR-BP-21c and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productValue.build;
+      CR-BP-21c-product-value-landing.md.
+    note: null
+
+  - record_id: dea:process-operate-product-catalogue
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c
+    rationale: |
+      Fresh L2 landing for the ProductAndValue x Operate
+      cell, per CR-BP-21c and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productValue.operate;
+      CR-BP-21c-product-value-landing.md.
+    note: null
+
+  - record_id: dea:process-conduct-proposition-performance-review
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c
+    rationale: |
+      Fresh L2 landing for the ProductAndValue x Improve
+      cell, per CR-BP-21c and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productValue.improve;
+      CR-BP-21c-product-value-landing.md.
+    note: null
