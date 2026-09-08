@@ -122,7 +122,7 @@ catalog:
     canonical_count: 1
     id: dea:group-financial-build
     last_modified: '2026-09-08'
-    lifecycle_status: unknown
+    lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
     research_count: 0
     retired_count: 0
@@ -133,7 +133,7 @@ catalog:
     canonical_count: 1
     id: dea:group-financial-design
     last_modified: '2026-09-08'
-    lifecycle_status: unknown
+    lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-design/dea:group-financial-design.yaml
     research_count: 0
     retired_count: 0
@@ -144,7 +144,7 @@ catalog:
     canonical_count: 1
     id: dea:group-financial-improve
     last_modified: '2026-09-08'
-    lifecycle_status: unknown
+    lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-improve/dea:group-financial-improve.yaml
     research_count: 0
     retired_count: 0
@@ -166,7 +166,7 @@ catalog:
     canonical_count: 1
     id: dea:group-financial-operate
     last_modified: '2026-09-08'
-    lifecycle_status: unknown
+    lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-operate/dea:group-financial-operate.yaml
     research_count: 0
     retired_count: 0

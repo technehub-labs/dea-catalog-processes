@@ -85,15 +85,15 @@ records:
   - id: dea:group-financial-build
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
-    sha256: fe78802d977eb848d67cd88acf8dd4531eb6b21cbd251669a91d1826bad9286f
+    sha256: 5e7a36aaff57812a178a0ff1ddb735f22e90e996ff5ba84416d45aba55d640bc
   - id: dea:group-financial-design
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-design/dea:group-financial-design.yaml
-    sha256: 10fbdfea8585d1c5e97e6d4269f5826acc361e5ba445300c8e923b98e159286a
+    sha256: 30406d221dc89ec8cbd62369e4f3106899b61622d5d8bc986ee5918183610e96
   - id: dea:group-financial-improve
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-improve/dea:group-financial-improve.yaml
-    sha256: 2bab3b4861ea71bbf34d0129167e1cfc3610224413f2ee51f105a6a9e474152f
+    sha256: 76c261c91c48e61f8706ba015555d72f14fcc503e86b6a91b942bf963bfeb35d
   - id: dea:group-financial-model-conception
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-model-conception/dea:group-financial-model-conception.yaml
@@ -101,7 +101,7 @@ records:
   - id: dea:group-financial-operate
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-operate/dea:group-financial-operate.yaml
-    sha256: 8dbcd0ffc42589c84afb24baf97fb7c507332b4b35e6a04916e0904fdeaaf679
+    sha256: afcd77f34dc9e9aef6db312438171c9579fa14c1af17a0caa78c0c2419adbbdf
   - id: dea:group-governance-body-establishment
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
