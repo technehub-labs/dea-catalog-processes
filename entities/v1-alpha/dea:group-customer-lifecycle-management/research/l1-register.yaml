@@ -21,7 +21,8 @@ ratification:
   supersedes: version 2 (CR-BP-19, ratified 2026-09-07)
   ratified_accepted: 35
   backlog_deferred: 14
-  rederivation_basis: 'Re-derived against dea-metaframework framework/domain-grounding.md at ECF
+  rederivation_basis: 'Re-derived against dea-metaframework framework/domain-grounding.md
+    at ECF
 
     v2.4.0 (CR-ECF-006, CR-ECF-007; ADR-ECF-001, ADR-ECF-002). The v2.3.0 and
 
@@ -44,12 +45,15 @@ ratification:
     artificial agents).
 
     '
-  deferred_rationale: 'Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1
-    Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover
-    from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior
-    Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete
-    Activate/Retire process identity is later identified (separate CR). Applied uniformly across all 7 domains in register
-    v2 (v1 had 3 Activate cells ratified; normalized to deferred for consistency).
+  deferred_rationale: 'Activate and Retire are lifecycle transition stages, not stable
+    Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded
+    operating scope of a process domain; the Activate stage is the handover from Build
+    to Operate (a sub-step of the receiving Process Group), and the Retire stage is
+    the wind-down of the prior Process Group (a sub-step of the ending Process Group).
+    Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire
+    process identity is later identified (separate CR). Applied uniformly across all
+    7 domains in register v2 (v1 had 3 Activate cells ratified; normalized to deferred
+    for consistency).
 
     '
 register:
@@ -64,10 +68,12 @@ register:
       - Frame mandate and authority model
       - Conceive policy direction
       - Frame risk framework direction
-      in_scope: Charter, mandate, authority, policy direction; entity formation and constitution conception
+      in_scope: Charter, mandate, authority, policy direction; entity formation and
+        constitution conception
       out_of_scope:
       - Strategic direction choices (strategy-direction)
-      - Corporate strategy development (strategy-direction x conceive; CR-BP-19 Option A split)
+      - Corporate strategy development (strategy-direction x conceive; CR-BP-19 Option
+        A split)
       - Capability build
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.1
@@ -76,10 +82,11 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Develop corporate strategy migrated to strategy-direction x conceive per the user-approved Option A
-        split; v2.4.0 excludes strategic choices from Governance & Existence (governance authorizes but does not direct; Strategy
-        & Direction directs within the authorized frame). The landed group dea:group-strategy-and-governance-conception is
-        renamed in CR-BP-20 alignment.
+      migration_note: Develop corporate strategy migrated to strategy-direction x
+        conceive per the user-approved Option A split; v2.4.0 excludes strategic choices
+        from Governance & Existence (governance authorizes but does not direct; Strategy
+        & Direction directs within the authorized frame). The landed group dea:group-strategy-and-governance-conception
+        is renamed in CR-BP-20 alignment.
       audit_status: landed
     Design:
       process_context: dea:pc-ge-design
@@ -137,8 +144,9 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Governance activation is an attribute of governance operate, not a standalone group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Governance
+        activation is an attribute of governance operate, not a standalone group.
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-ge-operate
@@ -197,9 +205,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Retirement of governance is rare and largely an attribute of operating-model retirement; defer
-        until a sector example (e.g. regulator-mandated unwind) requires it.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Retirement
+        of governance is rare and largely an attribute of operating-model retirement;
+        defer until a sector example (e.g. regulator-mandated unwind) requires it.
       audit_status: backlog-deferred
   StrategyAndDirection:
     Conceive:
@@ -223,9 +232,11 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Full re-derivation. Prior cell held dissolved Supply & Resources content (sourcing/asset strategy);
-        that content migrated to operations-enablement (execution-side conception) and party-relationship (supplier relationship
-        conception). Develop corporate strategy migrated in from governance-existence x conceive (CR-BP-19 Option A split).
+      migration_note: Full re-derivation. Prior cell held dissolved Supply & Resources
+        content (sourcing/asset strategy); that content migrated to operations-enablement
+        (execution-side conception) and party-relationship (supplier relationship
+        conception). Develop corporate strategy migrated in from governance-existence
+        x conceive (CR-BP-19 Option A split).
       audit_status: landed
     Design:
       process_context: dea:pc-sd-design
@@ -247,8 +258,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Full re-derivation; prior cell held sourcing/asset design content, migrated to operations-enablement
-        x design.
+      migration_note: Full re-derivation; prior cell held sourcing/asset design content,
+        migrated to operations-enablement x design.
       audit_status: landed
     Build:
       process_context: dea:pc-sd-build
@@ -260,7 +271,8 @@ register:
       - Build strategic roadmap
       - Translate strategic choices into initiatives
       - Set resource allocation priorities
-      in_scope: Strategic plan and roadmap construction, initiative translation, allocation priorities
+      in_scope: Strategic plan and roadmap construction, initiative translation, allocation
+        priorities
       out_of_scope:
       - Budget construction (finance-accounting)
       - Capability build (owning domains)
@@ -270,8 +282,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Full re-derivation; prior cell held supply-base/asset build content, migrated to operations-enablement
-        x build.
+      migration_note: Full re-derivation; prior cell held supply-base/asset build
+        content, migrated to operations-enablement x build.
       audit_status: landed
     Activate:
       process_context: dea:pc-sd-activate
@@ -287,9 +299,11 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Strategy rollout is a sub-step of the receiving Operate group (strategic steering). v1 ratified
-        this cell under the dissolved Supply & Resources content; normalized to deferred in v2.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Strategy
+        rollout is a sub-step of the receiving Operate group (strategic steering).
+        v1 ratified this cell under the dissolved Supply & Resources content; normalized
+        to deferred in v2.
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-sd-operate
@@ -301,7 +315,8 @@ register:
       - Sense environmental signals
       - Steer initiative portfolio
       - Operate strategic review cycle
-      in_scope: Strategic performance monitoring, environmental sensing, steering, review cycle
+      in_scope: Strategic performance monitoring, environmental sensing, steering,
+        review cycle
       out_of_scope:
       - Operational performance management (operations-enablement)
       - Initiative execution (operations-enablement)
@@ -311,8 +326,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Full re-derivation; prior cell held sourcing/procurement/asset operation content, migrated to operations-enablement
-        x operate and party-relationship x operate.
+      migration_note: Full re-derivation; prior cell held sourcing/procurement/asset
+        operation content, migrated to operations-enablement x operate and party-relationship
+        x operate.
       audit_status: landed
     Improve:
       process_context: dea:pc-sd-improve
@@ -330,8 +346,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Full re-derivation; prior cell held supply-base/asset improvement content, migrated to operations-enablement
-        x improve and party-relationship x improve.
+      migration_note: Full re-derivation; prior cell held supply-base/asset improvement
+        content, migrated to operations-enablement x improve and party-relationship
+        x improve.
       audit_status: landed
     Retire:
       process_context: dea:pc-sd-retire
@@ -348,8 +365,8 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale).
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale).
       audit_status: backlog-deferred
   AgencyAndOrganization:
     Conceive:
@@ -372,8 +389,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Reframed substrate-independently per v2.4.0 (CR-ECF-007); workforce becomes agent capacity covering
-        human and artificial agents.
+      migration_note: Reframed substrate-independently per v2.4.0 (CR-ECF-007); workforce
+        becomes agent capacity covering human and artificial agents.
       audit_status: landed
     Design:
       process_context: dea:pc-ao-design
@@ -385,7 +402,8 @@ register:
       - Design role catalogue
       - Design competency framework
       - Design agent topology
-      in_scope: Org design, role design, competency design, human/AI/hybrid agent topology
+      in_scope: Org design, role design, competency design, human/AI/hybrid agent
+        topology
       out_of_scope:
       - Specific job description authoring (Build)
       evidence:
@@ -406,7 +424,8 @@ register:
       - Provision artificial agents
       - Onboard and integrate agents
       - Build contractor and partner-agent pool
-      in_scope: Sourcing, recruiting, provisioning, onboarding, integration of agents (all substrates)
+      in_scope: Sourcing, recruiting, provisioning, onboarding, integration of agents
+        (all substrates)
       out_of_scope:
       - Supplier relationship onboarding (party-relationship)
       evidence:
@@ -416,8 +435,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Provision artificial agents covers model deployment and API integration per domain-grounding §3.3 (Acquisition
-        & Onboarding sub-concern).
+      migration_note: Provision artificial agents covers model deployment and API
+        integration per domain-grounding §3.3 (Acquisition & Onboarding sub-concern).
       audit_status: landed
     Activate:
       process_context: dea:pc-ao-activate
@@ -434,8 +453,9 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Workforce
+        activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
         defer until organizational mobilization becomes a recurring programme.
       audit_status: backlog-deferred
     Operate:
@@ -461,8 +481,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: HR Operations and Workforce Operations renamed to substrate-independent Agent Operations; performance
-        and learning cover training (human) and fine-tuning (artificial) per domain-grounding §3.3.
+      migration_note: HR Operations and Workforce Operations renamed to substrate-independent
+        Agent Operations; performance and learning cover training (human) and fine-tuning
+        (artificial) per domain-grounding §3.3.
       audit_status: landed
     Improve:
       process_context: dea:pc-ao-improve
@@ -493,7 +514,8 @@ register:
       - Offboard departing agents
       - Decommission artificial agents
       - Decommission organizational unit
-      in_scope: Redundancy, offboarding, agent decommission, unit wind-down, knowledge archival
+      in_scope: Redundancy, offboarding, agent decommission, unit wind-down, knowledge
+        archival
       out_of_scope:
       - Asset retirement (operations-enablement)
       evidence:
@@ -502,8 +524,9 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Agent transition is often handled within agent operations; defer until a regulated wind-down
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Agent transition
+        is often handled within agent operations; defer until a regulated wind-down
         (e.g. mass layoff) requires a dedicated L1 group.
       audit_status: backlog-deferred
   PartyAndRelationship:
@@ -517,8 +540,8 @@ register:
       - Frame supplier and partner strategy
       - Identify and segment parties
       - Frame demand thesis
-      in_scope: Party identification, segmentation, and relationship strategy across all external party roles (customer, supplier,
-        partner, regulator, community)
+      in_scope: Party identification, segmentation, and relationship strategy across
+        all external party roles (customer, supplier, partner, regulator, community)
       out_of_scope:
       - Proposition strategy (product-value)
       - Strategic targeting decisions (strategy-direction)
@@ -530,8 +553,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Broadened from customer-only scope per v2.4.0 (a single party may be customer, supplier, and partner
-        simultaneously; one party, one bond, multiple facets). Supplier and partner relationship conception absorbed from
+      migration_note: Broadened from customer-only scope per v2.4.0 (a single party
+        may be customer, supplier, and partner simultaneously; one party, one bond,
+        multiple facets). Supplier and partner relationship conception absorbed from
         the dissolved Supply & Resources domain.
       audit_status: landed
     Design:
@@ -544,7 +568,8 @@ register:
       - Design customer experience blueprint
       - Design supplier engagement model
       - Design partner alliance model
-      in_scope: Relationship and engagement design across party roles; CX, journey, segmentation design
+      in_scope: Relationship and engagement design across party roles; CX, journey,
+        segmentation design
       out_of_scope:
       - Proposition design (product-value)
       evidence:
@@ -554,8 +579,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Landed groups dea:group-customer-experience-design and dea:process-customer-journey-design remain as
-        customer-role specializations under the broadened Relationship Design grouping; CR-BP-20 alignment records the mapping.
+      migration_note: Landed groups dea:group-customer-experience-design and dea:process-customer-journey-design
+        remain as customer-role specializations under the broadened Relationship Design
+        grouping; CR-BP-20 alignment records the mapping.
       audit_status: landed
     Build:
       process_context: dea:pc-pr-build
@@ -568,7 +594,8 @@ register:
       - Build customer data platform
       - Build marketing automation
       - Establish partner agreements
-      in_scope: Channel, data, marketing automation build; supplier onboarding flows; partner agreement establishment
+      in_scope: Channel, data, marketing automation build; supplier onboarding flows;
+        partner agreement establishment
       out_of_scope:
       - Sales pipeline build (Operate)
       - Contract execution mechanics (operations-enablement)
@@ -594,9 +621,11 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). First-time activation is mostly handled inside the L1 group Operate in practice; defer until
-        a regulated onboarding (e.g. KYC for financial services) requires a distinct group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). First-time
+        activation is mostly handled inside the L1 group Operate in practice; defer
+        until a regulated onboarding (e.g. KYC for financial services) requires a
+        distinct group.
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-pr-operate
@@ -610,8 +639,8 @@ register:
       - Operate supplier relationship management
       - Operate partner alliance programme
       - Manage regulator engagement
-      in_scope: Active relationship operation across all party roles (customer service, supplier relationship, partner alliance,
-        regulator engagement)
+      in_scope: Active relationship operation across all party roles (customer service,
+        supplier relationship, partner alliance, regulator engagement)
       out_of_scope:
       - Marketing campaign execution (Build/Operate boundary)
       - Procurement transaction execution (operations-enablement)
@@ -626,9 +655,11 @@ register:
       ratified_by: CR-BP-19
       canonical_l2_present:
       - dea:process-manage-customer-relationship
-      migration_note: Supplier relationship operation absorbed from the dissolved Supply & Resources domain (v1 strategy-direction
-        x operate); partner alliance programme absorbed from v1 product-offering x operate cross-ref. Demand fulfillment execution
-        moved to operations-enablement x operate (fulfillment is execution, not relationship).
+      migration_note: Supplier relationship operation absorbed from the dissolved
+        Supply & Resources domain (v1 strategy-direction x operate); partner alliance
+        programme absorbed from v1 product-offering x operate cross-ref. Demand fulfillment
+        execution moved to operations-enablement x operate (fulfillment is execution,
+        not relationship).
       audit_status: landed
     Improve:
       process_context: dea:pc-pr-improve
@@ -640,7 +671,8 @@ register:
       - Operate churn analysis
       - Operate win-back programme
       - Develop supplier relationships
-      in_scope: Satisfaction, churn, win-back, relationship deepening across party roles
+      in_scope: Satisfaction, churn, win-back, relationship deepening across party
+        roles
       out_of_scope:
       - Continuous capability improvement
       evidence:
@@ -659,7 +691,8 @@ register:
       - Manage customer offboarding
       - Manage contract termination
       - Manage supplier exit
-      in_scope: Relationship termination across party roles (offboarding, contract termination, exit)
+      in_scope: Relationship termination across party roles (offboarding, contract
+        termination, exit)
       out_of_scope:
       - Asset retirement (operations-enablement)
       evidence:
@@ -668,9 +701,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Relationship termination is often handled within relationship operations; defer until a regulated
-        offboarding (e.g. GDPR-driven erasure) requires a distinct group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Relationship
+        termination is often handled within relationship operations; defer until a
+        regulated offboarding (e.g. GDPR-driven erasure) requires a distinct group.
       audit_status: backlog-deferred
   ProductAndValue:
     Conceive:
@@ -694,8 +728,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Offering naming replaced by Proposition per v2.4.0 (domain-grounding §3.5 dropped Offering as vague).
-        Alliance/partnership thesis moved to party-relationship x conceive.
+      migration_note: Offering naming replaced by Proposition per v2.4.0 (domain-grounding
+        §3.5 dropped Offering as vague). Alliance/partnership thesis moved to party-relationship
+        x conceive.
       audit_status: landed
     Design:
       process_context: dea:pc-pv-design
@@ -754,9 +789,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). v1 ratified this cell; normalized to deferred in v2. Market launch is a sub-step of the receiving
-        Operate group (portfolio management).
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). v1 ratified
+        this cell; normalized to deferred in v2. Market launch is a sub-step of the
+        receiving Operate group (portfolio management).
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-pv-operate
@@ -779,8 +815,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Service delivery management moved to operations-enablement x operate (delivery is execution); partner
-        and alliance programme moved to party-relationship x operate.
+      migration_note: Service delivery management moved to operations-enablement x
+        operate (delivery is execution); partner and alliance programme moved to party-relationship
+        x operate.
       audit_status: landed
     Improve:
       process_context: dea:pc-pv-improve
@@ -816,9 +853,11 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Proposition retirement often overlaps with relationship termination and asset retirement; defer
-        until an L2 example (e.g. product end-of-life) requires a standalone group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Proposition
+        retirement often overlaps with relationship termination and asset retirement;
+        defer until an L2 example (e.g. product end-of-life) requires a standalone
+        group.
       audit_status: backlog-deferred
   OperationsAndEnablement:
     Conceive:
@@ -831,7 +870,8 @@ register:
       - Frame delivery model conception
       - Frame technology enablement approach
       - Frame physical asset approach
-      in_scope: Operations model, delivery model, technology and physical enablement conception
+      in_scope: Operations model, delivery model, technology and physical enablement
+        conception
       out_of_scope:
       - Customer strategy (party-relationship)
       - Strategic direction for operations (strategy-direction)
@@ -842,8 +882,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Absorbs execution-side sourcing/asset conception from the dissolved Supply & Resources domain (physical
-        resources are enablers of execution per domain-grounding §3.6). Supplier relationship conception lives in party-relationship.
+      migration_note: Absorbs execution-side sourcing/asset conception from the dissolved
+        Supply & Resources domain (physical resources are enablers of execution per
+        domain-grounding §3.6). Supplier relationship conception lives in party-relationship.
       audit_status: landed
     Design:
       process_context: dea:pc-oe-design
@@ -856,7 +897,8 @@ register:
       - Design technology platform architecture
       - Design facility and asset blueprint
       - Design logistics and routing
-      in_scope: Process design, operations/delivery model, technology and physical enablement design
+      in_scope: Process design, operations/delivery model, technology and physical
+        enablement design
       out_of_scope:
       - Capability design (their domain)
       evidence:
@@ -866,8 +908,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Absorbs asset/facility blueprint design from the dissolved Supply & Resources domain (v1 strategy-direction
-        x design).
+      migration_note: Absorbs asset/facility blueprint design from the dissolved Supply
+        & Resources domain (v1 strategy-direction x design).
       audit_status: landed
     Build:
       process_context: dea:pc-oe-build
@@ -880,7 +922,8 @@ register:
       - Build logistics network
       - Acquire and install technology assets
       - Acquire and provision facilities
-      in_scope: Production, delivery, logistics build; technology asset and facility provisioning
+      in_scope: Production, delivery, logistics build; technology asset and facility
+        provisioning
       out_of_scope:
       - Agent provisioning (agency-organization)
       evidence:
@@ -890,8 +933,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Absorbs asset acquisition and facility provisioning from the dissolved Supply & Resources domain (v1
-        strategy-direction x build). Supplier onboarding moved to party-relationship x build (relationship establishment).
+      migration_note: Absorbs asset acquisition and facility provisioning from the
+        dissolved Supply & Resources domain (v1 strategy-direction x build). Supplier
+        onboarding moved to party-relationship x build (relationship establishment).
       audit_status: landed
     Activate:
       process_context: dea:pc-oe-activate
@@ -909,9 +953,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). v1 ratified this cell; normalized to deferred in v2. Operations cutover is a sub-step of the
-        receiving Operate group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). v1 ratified
+        this cell; normalized to deferred in v2. Operations cutover is a sub-step
+        of the receiving Operate group.
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-oe-operate
@@ -930,8 +975,8 @@ register:
       - Operate facility management
       - Operate asset maintenance
       - Operate procurement cycle
-      in_scope: Day-to-day operations, delivery, production, technology operation, facility and asset operation, procurement
-        execution
+      in_scope: Day-to-day operations, delivery, production, technology operation,
+        facility and asset operation, procurement execution
       out_of_scope:
       - Supplier relationship management (party-relationship)
       - Customer relationship (party-relationship)
@@ -944,10 +989,11 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Absorbs procurement execution, facility operation, and asset maintenance from the dissolved Supply &
-        Resources domain (v1 strategy-direction x operate); supplier performance relationship moved to party-relationship.
-        Information technology coverage asserted per domain-grounding §3.6 (Technology Enablement sub-concern; technology
-        positioned as enabler of execution).
+      migration_note: Absorbs procurement execution, facility operation, and asset
+        maintenance from the dissolved Supply & Resources domain (v1 strategy-direction
+        x operate); supplier performance relationship moved to party-relationship.
+        Information technology coverage asserted per domain-grounding §3.6 (Technology
+        Enablement sub-concern; technology positioned as enabler of execution).
       audit_status: landed
     Improve:
       process_context: dea:pc-oe-improve
@@ -970,8 +1016,9 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Absorbs asset utilization improvement from the dissolved Supply & Resources domain; supplier consolidation
-        moved to party-relationship x improve (relationship development).
+      migration_note: Absorbs asset utilization improvement from the dissolved Supply
+        & Resources domain; supplier consolidation moved to party-relationship x improve
+        (relationship development).
       audit_status: landed
     Retire:
       process_context: dea:pc-oe-retire
@@ -992,11 +1039,13 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Operations retirement is often handled within the operate group with a winding-down workflow;
-        defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
-      migration_note: Absorbs asset disposal and facility decommission from the dissolved Supply & Resources domain (v1 strategy-direction
-        x retire).
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Operations
+        retirement is often handled within the operate group with a winding-down workflow;
+        defer until a regulated decommission (e.g. nuclear-grade) requires a standalone
+        group.
+      migration_note: Absorbs asset disposal and facility decommission from the dissolved
+        Supply & Resources domain (v1 strategy-direction x retire).
       audit_status: backlog-deferred
   FinanceAndAccounting:
     Conceive:
@@ -1018,8 +1067,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Value Strategy Conception removed per v2.4.0 (domain-grounding §3.7 scopes the domain to monetary consequence,
-        not abstract value).
+      migration_note: Value Strategy Conception removed per v2.4.0 (domain-grounding
+        §3.7 scopes the domain to monetary consequence, not abstract value).
       audit_status: landed
     Design:
       process_context: dea:pc-fa-design
@@ -1031,7 +1080,8 @@ register:
       - Design cost allocation model
       - Design financial plan structure
       - Design financial controls
-      in_scope: Finance architecture, planning structure, accounting architecture, financial control design
+      in_scope: Finance architecture, planning structure, accounting architecture,
+        financial control design
       out_of_scope:
       - Investment design (strategy-direction)
       evidence:
@@ -1041,9 +1091,10 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Value Architecture Design and value measurement framework removed per v2.4.0 monetary scoping.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21e
+      migration_note: Value Architecture Design and value measurement framework removed
+        per v2.4.0 monetary scoping.
+      audit_status: landed
+      planned_tranche: null
       planned_at: '2026-09-08'
     Build:
       process_context: dea:pc-fa-build
@@ -1063,8 +1114,8 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21e
+      audit_status: landed
+      planned_tranche: null
       planned_at: '2026-09-08'
     Activate:
       process_context: dea:pc-fa-activate
@@ -1081,9 +1132,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Period opening and finance cutovers are usually handled within Operate; defer until an L2 process
-        (e.g. new entity onboarding) requires a distinct group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Period
+        opening and finance cutovers are usually handled within Operate; defer until
+        an L2 process (e.g. new entity onboarding) requires a distinct group.
       audit_status: backlog-deferred
     Operate:
       process_context: dea:pc-fa-operate
@@ -1101,7 +1153,8 @@ register:
       - Operate financial close
       - Operate financial planning and analysis
       - Operate financial reporting and disclosure
-      in_scope: Day-to-day accounting, reporting, FP&A, treasury, tax (monetary recording and reporting)
+      in_scope: Day-to-day accounting, reporting, FP&A, treasury, tax (monetary recording
+        and reporting)
       out_of_scope:
       - Procurement transaction execution (operations-enablement)
       - Capability execution (their domain)
@@ -1114,11 +1167,12 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Financial Stewardship folded into Accounting and Reporting per the monetary-measurement scoping. Procure-to-pay
-        and order-to-cash operational execution moved to operations-enablement x operate; the monetary recording of those
-        cycles remains here.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21e
+      migration_note: Financial Stewardship folded into Accounting and Reporting per
+        the monetary-measurement scoping. Procure-to-pay and order-to-cash operational
+        execution moved to operations-enablement x operate; the monetary recording
+        of those cycles remains here.
+      audit_status: landed
+      planned_tranche: null
       planned_at: '2026-09-08'
     Improve:
       process_context: dea:pc-fa-improve
@@ -1139,10 +1193,10 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Value Performance removed per v2.4.0 monetary scoping; margin and value analysis retained only in the
-        monetary-consequence sense (cost optimization).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21e
+      migration_note: Value Performance removed per v2.4.0 monetary scoping; margin
+        and value analysis retained only in the monetary-consequence sense (cost optimization).
+      audit_status: landed
+      planned_tranche: null
       planned_at: '2026-09-08'
     Retire:
       process_context: dea:pc-fa-retire
@@ -1162,9 +1216,10 @@ register:
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      deferral_reason: Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes (register-wide
-        deferred_rationale). Financial wind-down is often handled within financial stewardship; defer until a regulated unwind
-        (e.g. mutual insurer run-off) requires a standalone group.
+      deferral_reason: Activate and Retire are lifecycle transition stages, not stable
+        Process Group operating scopes (register-wide deferred_rationale). Financial
+        wind-down is often handled within financial stewardship; defer until a regulated
+        unwind (e.g. mutual insurer run-off) requires a standalone group.
       audit_status: backlog-deferred
 audit_counts:
   landed: 12

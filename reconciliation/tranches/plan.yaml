@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 55
-  total_records: 104
+  total_tranches: 60
+  total_records: 119
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -76,6 +76,11 @@ summary:
     oe-b.1: 4
     oe-op.1: 8
     oe-im.1: 4
+    fa-c.1: 3
+    fa-d.1: 3
+    fa-b.1: 3
+    fa-op.1: 7
+    fa-im.1: 2
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -913,6 +918,118 @@ tranches:
   - dea:process-improve-technology-platforms
   rationale: Register v2 L2 completion for the OE Improve cell; composed
     by the new dea:group-operations-and-enablement-improvement.
+- tranche_id: fa-c.1
+  context_ref: dea:pc-fa-conceive
+  context_name: financial-and-accounting / conceive
+  group_ref: dea:group-financial-model-conception
+  cell: FinanceAndAccounting.Conceive
+  l2_candidates: []
+  records: []
+  status: proposed
+  rationale: |
+    Conceive cell already landed by CR-BP-21e. No additional L2
+    candidates in the FA Conceive register v2 cell beyond the 3
+    already in dea:group-financial-model-conception.
+- tranche_id: fa-d.1
+  context_ref: dea:pc-fa-design
+  context_name: financial-and-accounting / design
+  group_ref: dea:group-financial-design
+  cell: FinanceAndAccounting.Design
+  l2_candidates:
+    - id: dea:process-design-financial-controls-and-policies
+      name: Design Financial Controls and Policies
+      process_type: management
+    - id: dea:process-design-tax-position-and-strategy
+      name: Design Tax Position and Strategy
+      process_type: management
+    - id: dea:process-design-treasury-and-funding-model
+      name: Design Treasury and Funding Model
+      process_type: management
+  records:
+    - dea:process-design-financial-controls-and-policies
+    - dea:process-design-tax-position-and-strategy
+    - dea:process-design-treasury-and-funding-model
+  status: proposed
+  rationale: Register v2 L2 completion for the FA Design cell; composed
+    by the new dea:group-financial-design.
+- tranche_id: fa-b.1
+  context_ref: dea:pc-fa-build
+  context_name: financial-and-accounting / build
+  group_ref: dea:group-financial-build
+  cell: FinanceAndAccounting.Build
+  l2_candidates:
+    - id: dea:process-implement-financial-systems-and-ledger
+      name: Implement Financial Systems and Ledger
+      process_type: core
+    - id: dea:process-build-budgeting-and-forecasting-systems
+      name: Build Budgeting and Forecasting Systems
+      process_type: core
+    - id: dea:process-onboard-tax-and-compliance-capability
+      name: Onboard Tax and Compliance Capability
+      process_type: management
+  records:
+    - dea:process-implement-financial-systems-and-ledger
+    - dea:process-build-budgeting-and-forecasting-systems
+    - dea:process-onboard-tax-and-compliance-capability
+  status: proposed
+  rationale: Register v2 L2 completion for the FA Build cell; composed
+    by the new dea:group-financial-build.
+- tranche_id: fa-op.1
+  context_ref: dea:pc-fa-operate
+  context_name: financial-and-accounting / operate
+  group_ref: dea:group-financial-operate
+  cell: FinanceAndAccounting.Operate
+  l2_candidates:
+    - id: dea:process-run-accounts-payable
+      name: Run Accounts Payable
+      process_type: core
+    - id: dea:process-run-accounts-receivable
+      name: Run Accounts Receivable
+      process_type: core
+    - id: dea:process-execute-payroll
+      name: Execute Payroll
+      process_type: core
+    - id: dea:process-manage-cash-and-liquidity
+      name: Manage Cash and Liquidity
+      process_type: management
+    - id: dea:process-perform-financial-close
+      name: Perform Financial Close
+      process_type: core
+    - id: dea:process-manage-tax-compliance-and-filings
+      name: Manage Tax Compliance and Filings
+      process_type: management
+    - id: dea:process-operate-financial-reporting-and-disclosure
+      name: Operate Financial Reporting and Disclosure
+      process_type: core
+  records:
+    - dea:process-run-accounts-payable
+    - dea:process-run-accounts-receivable
+    - dea:process-execute-payroll
+    - dea:process-manage-cash-and-liquidity
+    - dea:process-perform-financial-close
+    - dea:process-manage-tax-compliance-and-filings
+    - dea:process-operate-financial-reporting-and-disclosure
+  status: proposed
+  rationale: Register v2 L2 completion for the FA Operate cell; composed
+    by the new dea:group-financial-operate.
+- tranche_id: fa-im.1
+  context_ref: dea:pc-fa-improve
+  context_name: financial-and-accounting / improve
+  group_ref: dea:group-financial-improve
+  cell: FinanceAndAccounting.Improve
+  l2_candidates:
+    - id: dea:process-refine-financial-controls-and-policies
+      name: Refine Financial Controls and Policies
+      process_type: management
+    - id: dea:process-evolve-treasury-and-funding-model
+      name: Evolve Treasury and Funding Model
+      process_type: management
+  records:
+    - dea:process-refine-financial-controls-and-policies
+    - dea:process-evolve-treasury-and-funding-model
+  status: proposed
+  rationale: Register v2 L2 completion for the FA Improve cell; composed
+    by the new dea:group-financial-improve.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -970,3 +1087,8 @@ review_checkpoints:
   oe-b.1: 1
   oe-op.1: 1
   oe-im.1: 1
+  fa-c.1: 1
+  fa-d.1: 1
+  fa-b.1: 1
+  fa-op.1: 1
+  fa-im.1: 1

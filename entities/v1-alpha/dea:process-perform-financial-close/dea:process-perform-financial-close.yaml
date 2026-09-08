@@ -1,0 +1,48 @@
+id: dea:process-perform-financial-close
+name: Perform Financial Close
+type: Process
+version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
+process_intent: operate
+process_type: core
+context:
+- ref: dea:pc-fa-operate
+description: |
+  Perform Financial Close (operate stage, core process). Landed by CR-BP-21e.1
+  from the FinanceAndAccounting register v2.
+trigger: A period close boundary is reached.
+outcome: Financial close is performed with period-end entries, reconciliations, and management reports produced for reporting.
+triggers:
+  - A period close boundary is reached.
+outcomes:
+  - Financial close is performed with period-end entries, reconciliations, and management reports produced for reporting.
+identity:
+  verb: Perform
+  object: Financial Close
+  outcome_statement: Financial close is performed with period-end entries, reconciliations, and management reports produced for reporting.
+  evidence_links:
+    - type: documentation
+      ref: change-requests/CR-BP-21e.1.md
+relationships:
+- source_id: dea:process-perform-financial-close
+  relationship_type: serves
+  target_id: ecf:financeAccounting.operate
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Operate
+    identifier: ecf:financeAccounting.operate
+  target_id: ecf:financeAccounting.operate
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

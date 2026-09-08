@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 170
+total_records: 189
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 170
+  4: 189
 records:
 - id: dea:group-agent-acquisition-and-onboarding
   kind: Entity
@@ -100,9 +100,49 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-financial-build
+  kind: Entity
+  path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-financial-design
+  kind: Entity
+  path: entities/v1-alpha/dea:group-financial-design/dea:group-financial-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-financial-improve
+  kind: Entity
+  path: entities/v1-alpha/dea:group-financial-improve/dea:group-financial-improve.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-financial-model-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-financial-model-conception/dea:group-financial-model-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-financial-operate
+  kind: Entity
+  path: entities/v1-alpha/dea:group-financial-operate/dea:group-financial-operate.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -353,6 +393,16 @@ records:
 - id: dea:process-audit-policy-compliance
   kind: Entity
   path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-build-budgeting-and-forecasting-systems
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-budgeting-and-forecasting-systems/dea:process-build-budgeting-and-forecasting-systems.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -670,6 +720,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-financial-controls-and-policies
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-financial-controls-and-policies/dea:process-design-financial-controls-and-policies.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-financial-plan-structure
   kind: Entity
   path: entities/v1-alpha/dea:process-design-financial-plan-structure/dea:process-design-financial-plan-structure.yaml
@@ -800,9 +860,29 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-tax-position-and-strategy
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-tax-position-and-strategy/dea:process-design-tax-position-and-strategy.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-technology-platform-architecture
   kind: Entity
   path: entities/v1-alpha/dea:process-design-technology-platform-architecture/dea:process-design-technology-platform-architecture.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-treasury-and-funding-model
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-treasury-and-funding-model/dea:process-design-treasury-and-funding-model.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -873,6 +953,26 @@ records:
 - id: dea:process-evolve-products-and-services
   kind: Entity
   path: entities/v1-alpha/dea:process-evolve-products-and-services/dea:process-evolve-products-and-services.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-evolve-treasury-and-funding-model
+  kind: Entity
+  path: entities/v1-alpha/dea:process-evolve-treasury-and-funding-model/dea:process-evolve-treasury-and-funding-model.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-execute-payroll
+  kind: Entity
+  path: entities/v1-alpha/dea:process-execute-payroll/dea:process-execute-payroll.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -990,6 +1090,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-implement-financial-systems-and-ledger
+  kind: Entity
+  path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/dea:process-implement-financial-systems-and-ledger.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-improve-technology-platforms
   kind: Entity
   path: entities/v1-alpha/dea:process-improve-technology-platforms/dea:process-improve-technology-platforms.yaml
@@ -1003,6 +1113,16 @@ records:
 - id: dea:process-initiate-policy-and-charter
   kind: Entity
   path: entities/v1-alpha/dea:process-initiate-policy-and-charter/dea:process-initiate-policy-and-charter.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-manage-cash-and-liquidity
+  kind: Entity
+  path: entities/v1-alpha/dea:process-manage-cash-and-liquidity/dea:process-manage-cash-and-liquidity.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1040,6 +1160,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-manage-tax-compliance-and-filings
+  kind: Entity
+  path: entities/v1-alpha/dea:process-manage-tax-compliance-and-filings/dea:process-manage-tax-compliance-and-filings.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-market-and-demand-conception
   kind: Entity
   path: entities/v1-alpha/dea:process-market-and-demand-conception/dea:process-market-and-demand-conception.yaml
@@ -1053,6 +1183,16 @@ records:
 - id: dea:process-monitor-strategic-performance
   kind: Entity
   path: entities/v1-alpha/dea:process-monitor-strategic-performance/dea:process-monitor-strategic-performance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-onboard-tax-and-compliance-capability
+  kind: Entity
+  path: entities/v1-alpha/dea:process-onboard-tax-and-compliance-capability/dea:process-onboard-tax-and-compliance-capability.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1083,6 +1223,16 @@ records:
 - id: dea:process-operate-facility-management
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-facility-management/dea:process-operate-facility-management.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-operate-financial-reporting-and-disclosure
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-financial-reporting-and-disclosure/dea:process-operate-financial-reporting-and-disclosure.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1230,6 +1380,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-perform-financial-close
+  kind: Entity
+  path: entities/v1-alpha/dea:process-perform-financial-close/dea:process-perform-financial-close.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-prepare-market-readiness
   kind: Entity
   path: entities/v1-alpha/dea:process-prepare-market-readiness/dea:process-prepare-market-readiness.yaml
@@ -1253,6 +1413,16 @@ records:
 - id: dea:process-rationalize-portfolio
   kind: Entity
   path: entities/v1-alpha/dea:process-rationalize-portfolio/dea:process-rationalize-portfolio.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-refine-financial-controls-and-policies
+  kind: Entity
+  path: entities/v1-alpha/dea:process-refine-financial-controls-and-policies/dea:process-refine-financial-controls-and-policies.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1293,6 +1463,26 @@ records:
 - id: dea:process-review-strategy-effectiveness
   kind: Entity
   path: entities/v1-alpha/dea:process-review-strategy-effectiveness/dea:process-review-strategy-effectiveness.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-run-accounts-payable
+  kind: Entity
+  path: entities/v1-alpha/dea:process-run-accounts-payable/dea:process-run-accounts-payable.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-run-accounts-receivable
+  kind: Entity
+  path: entities/v1-alpha/dea:process-run-accounts-receivable/dea:process-run-accounts-receivable.yaml
   level: 4
   level_breakdown:
     L1_structural: true

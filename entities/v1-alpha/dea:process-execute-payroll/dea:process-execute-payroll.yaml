@@ -1,0 +1,48 @@
+id: dea:process-execute-payroll
+name: Execute Payroll
+type: Process
+version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
+process_intent: operate
+process_type: core
+context:
+- ref: dea:pc-fa-operate
+description: |
+  Execute Payroll (operate stage, core process). Landed by CR-BP-21e.1
+  from the FinanceAndAccounting register v2.
+trigger: A payroll cycle boundary is reached.
+outcome: Payroll is executed with compensation, withholdings, and statutory filings produced for each cycle.
+triggers:
+  - A payroll cycle boundary is reached.
+outcomes:
+  - Payroll is executed with compensation, withholdings, and statutory filings produced for each cycle.
+identity:
+  verb: Execute
+  object: Payroll
+  outcome_statement: Payroll is executed with compensation, withholdings, and statutory filings produced for each cycle.
+  evidence_links:
+    - type: documentation
+      ref: change-requests/CR-BP-21e.1.md
+relationships:
+- source_id: dea:process-execute-payroll
+  relationship_type: serves
+  target_id: ecf:financeAccounting.operate
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: FinanceAndAccounting
+    stage: Operate
+    identifier: ecf:financeAccounting.operate
+  target_id: ecf:financeAccounting.operate
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21e.1
+  change: |
+    Initial landing under CR-BP-21e.1 (FinanceAndAccounting completion).

@@ -17,14 +17,17 @@ Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md
 
 | audit_status | Coordinates | Description |
 |---:|---:|---|
-| `landed` | 31 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 4 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 35 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 0 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
-The gap (4 `ratified-pending-landing`) is the L1 process discovery
-work-in-flight: those cells are accepted in principle but have no
-landing yet. The planned tranche (CR-BP-21e.1) closes this gap.
+The gap (0 `ratified-pending-landing`) is closed. **Register v2.4.0
+scope is fully landed** — all 35 ratified cells have canonical L1
+groups and all register v2 L2 candidates. The remaining
+14 `backlog-deferred` cells are the Activate/Retire lifecycle
+transitions (CR-BP-19 doctrine: lifecycle transitions are not stable
+Process Group operating states).
 
 See CR-BP-19 for the v2 deferred_rationale (Activate and Retire are
 lifecycle transition stages, not stable Process Group operating
@@ -230,8 +233,8 @@ Group existence):
 
 | audit_status | Count | Description |
 |---:|---:|---|
-| `landed` | 31 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 4 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 35 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 0 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
@@ -245,7 +248,7 @@ Group existence):
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | ProductAndValue | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | OperationsAndEnablement | landed | landed | landed | deferred | landed | landed | deferred | 5 |
-| FinanceAndAccounting | landed | pending | pending | deferred | pending | pending | deferred | 1 |
+| FinanceAndAccounting | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 
 ### Planned tranches closing the gap
 
@@ -253,7 +256,7 @@ Group existence):
 - `AgencyAndOrganization` Design/Build/Operate/Improve (landed CR-BP-21b.1)
 - `ProductAndValue` Conceive (landed CR-BP-21c); Design/Build/Operate/Improve (landed CR-BP-21c.1)
 - `OperationsAndEnablement` Conceive (landed CR-BP-21d); Design/Build/Operate/Improve (landed CR-BP-21d.1)
-- `FinanceAndAccounting` Conceive (landed CR-BP-21e); Design/Build/Operate/Improve → CR-BP-21e.1 (planned)
+- `FinanceAndAccounting` Conceive (landed CR-BP-21e); Design/Build/Operate/Improve (landed CR-BP-21e.1)
 
 The audit script (`scripts/check_register_audit.py`) re-runs the
 reconciliation and can be invoked after each landing tranche to
