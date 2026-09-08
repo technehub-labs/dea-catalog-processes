@@ -6,6 +6,18 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21a.1 implementation: StrategyAndDirection completion (first
+domain-completion tranche). Lands the 4 remaining SD Process Groups
+(`dea:group-strategic-choices-design`, `-strategic-plan-build`,
+`-strategic-steering-operation`, `-strategic-adaptation`) and the 14
+remaining register v2 SD L2 candidates; extends
+`dea:group-strategy-direction-conception` with composes edges for the
+3 new Conceive-cell L2s; extends the 5 SD Process Contexts' processes
+lists. Register v3 audit counts updated: 19 `landed` / 16
+`ratified-pending-landing` / 14 `backlog-deferred`. SD is the first
+fully-landed v2.4.0 domain at register v2 scope. Disposition register
++14 RETAIN; tranche plan 35 -> 40.
+
 CR-BP-21e implementation: FinanceAndAccounting landing (fifth and final
 v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
 Process Group (`dea:group-financial-model-conception`), and 5 L2

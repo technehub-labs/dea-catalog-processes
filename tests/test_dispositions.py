@@ -139,19 +139,20 @@ def test_tranche_plan_covers_all_records() -> None:
 
 
 def test_tranche_count_is_ten() -> None:
-    """Plan contains the 35 canonical Process Context tranches.
+    """Plan contains the 40 canonical Process Context tranches.
 
-    35 = 10 pre-existing (cd-b/c/d/im/op + ge-b/c/d/im/op) +
+    40 = 10 pre-existing (cd-b/c/d/im/op + ge-b/c/d/im/op) +
     5 CR-BP-21a SD landings (sd-b/c/d/im/op) +
     5 CR-BP-21b AO landings (ao-b/c/d/im/op) +
     5 CR-BP-21c PV landings (pv-b/c/d/im/op) +
     5 CR-BP-21d OE landings (oe-b/c/d/im/op) +
-    5 CR-BP-21e FA landings (fa-b/c/d/im/op).
+    5 CR-BP-21e FA landings (fa-b/c/d/im/op) +
+    5 CR-BP-21a.1 SD completion (sd-c.1/d.1/b.1/op.1/im.1).
     """
     plan = yaml.safe_load(
         (REPO_ROOT / "reconciliation/tranches/plan.yaml").read_text()
     )
-    assert len(plan["tranches"]) == 35
+    assert len(plan["tranches"]) == 40
 
 
 def test_live_check_dispositions_passes() -> None:

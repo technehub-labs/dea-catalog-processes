@@ -249,9 +249,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held sourcing/asset design content, migrated to operations-enablement
         x design.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21a.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Build:
       process_context: dea:pc-sd-build
       l1_candidates:
@@ -274,9 +272,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held supply-base/asset build content, migrated to operations-enablement
         x build.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21a.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Activate:
       process_context: dea:pc-sd-activate
       l1_candidates:
@@ -317,9 +313,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held sourcing/procurement/asset operation content, migrated to operations-enablement
         x operate and party-relationship x operate.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21a.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Improve:
       process_context: dea:pc-sd-improve
       l1_candidates:
@@ -338,9 +332,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held supply-base/asset improvement content, migrated to operations-enablement
         x improve and party-relationship x improve.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21a.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Retire:
       process_context: dea:pc-sd-retire
       l1_candidates:

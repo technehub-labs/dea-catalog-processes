@@ -872,3 +872,174 @@ dispositions:
       CR-BP-19 /l1-register.yaml financeAccounting.improve;
       CR-BP-21e-finance-accounting-landing.md.
     note: null
+
+  # ----- CR-BP-21a.1: StrategyAndDirection completion -----
+
+
+  - record_id: dea:process-define-enterprise-purpose-and-ambition
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Conceive cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.conceive;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-conceive-strategic-intent
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Conceive cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.conceive;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-frame-strategic-horizons
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Conceive cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.conceive;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-evaluate-strategic-alternatives
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Design cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.design;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-design-objectives-and-targets
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Design cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.design;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-design-strategic-scenarios
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Design cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.design;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-build-strategic-roadmap
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Build cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.build;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-translate-strategic-choices-into-initiatives
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Build cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.build;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-set-resource-allocation-priorities
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Build cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.build;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-sense-environmental-signals
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Operate cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.operate;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-steer-initiative-portfolio
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Operate cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.operate;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-operate-strategic-review-cycle
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Operate cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.operate;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-refresh-objectives-and-targets
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Improve cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.improve;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null
+
+  - record_id: dea:process-review-strategy-effectiveness
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21a.1
+    rationale: |
+      Register v2 L2 completion landing for the StrategyAndDirection
+      x Improve cell, per CR-BP-21a.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml strategyDirection.improve;
+      CR-BP-21a.1-strategy-direction-completion.md.
+    note: null

@@ -46,6 +46,9 @@ adjacent_contexts:
 # Business Processes belonging to this context (PC-008).
 processes:
     - dea:process-design-strategic-options
+    - dea:process-evaluate-strategic-alternatives
+    - dea:process-design-objectives-and-targets
+    - dea:process-design-strategic-scenarios
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
@@ -84,6 +87,11 @@ established_at: '2026-09-07'
 
 # Change history.
 change_history:
+  - cr: CR-BP-21a.1
+    date: '2026-09-08'
+    change: |
+      Processes list extended with the remaining register v2 L2
+      candidates for this cell under CR-BP-21a.1.
   - cr: CR-BP-21a
     date: '2026-09-07'
     change: |
