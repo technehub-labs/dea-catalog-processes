@@ -2,6 +2,8 @@ id: dea:process-evolve-treasury-and-funding-model
 name: Evolve Treasury and Funding Model
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: develop
 process_type: management
 context:

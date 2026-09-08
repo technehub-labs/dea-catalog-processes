@@ -2,6 +2,8 @@ id: dea:process-onboard-tax-and-compliance-capability
 name: Onboard Tax and Compliance Capability
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: manage
 process_type: management
 context:

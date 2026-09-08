@@ -2,6 +2,8 @@ id: dea:process-refine-financial-controls-and-policies
 name: Refine Financial Controls and Policies
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: develop
 process_type: management
 context:

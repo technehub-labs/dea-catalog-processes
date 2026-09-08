@@ -2,6 +2,8 @@ id: dea:process-run-accounts-receivable
 name: Run Accounts Receivable
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: operate
 process_type: core
 context:

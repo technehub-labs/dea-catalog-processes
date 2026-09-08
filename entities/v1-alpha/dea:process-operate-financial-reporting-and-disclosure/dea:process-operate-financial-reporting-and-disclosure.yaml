@@ -2,6 +2,8 @@ id: dea:process-operate-financial-reporting-and-disclosure
 name: Operate Financial Reporting and Disclosure
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: operate
 process_type: core
 context:

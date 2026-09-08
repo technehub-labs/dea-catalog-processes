@@ -2,6 +2,8 @@ id: dea:process-manage-cash-and-liquidity
 name: Manage Cash and Liquidity
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: operate
 process_type: management
 context:

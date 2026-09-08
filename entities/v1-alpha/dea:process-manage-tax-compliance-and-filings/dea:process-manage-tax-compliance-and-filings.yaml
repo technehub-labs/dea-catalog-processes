@@ -2,6 +2,8 @@ id: dea:process-manage-tax-compliance-and-filings
 name: Manage Tax Compliance and Filings
 type: Process
 version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
 process_intent: operate
 process_type: management
 context:
