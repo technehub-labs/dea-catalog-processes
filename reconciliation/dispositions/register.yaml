@@ -732,3 +732,75 @@ dispositions:
       CR-BP-19 /l1-register.yaml productValue.improve;
       CR-BP-21c-product-value-landing.md.
     note: null
+
+  # ----- CR-BP-21d: OperationsAndEnablement landing -----
+
+  - record_id: dea:process-frame-operations-strategy
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21d
+    rationale: |
+      Fresh L2 landing for the OperationsAndEnablement x Conceive
+      cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
+      execution-side sourcing/asset conception from the dissolved
+      Supply & Resources domain.
+    evidence: |
+      CR-BP-19 /l1-register.yaml operationsEnablement.conceive;
+      CR-BP-21d-operations-enablement-landing.md.
+    note: null
+
+  - record_id: dea:process-design-operations-model
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21d
+    rationale: |
+      Fresh L2 landing for the OperationsAndEnablement x Design
+      cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
+      asset/facility blueprint design from the dissolved Supply &
+      Resources domain.
+    evidence: |
+      CR-BP-19 /l1-register.yaml operationsEnablement.design;
+      CR-BP-21d-operations-enablement-landing.md.
+    note: null
+
+  - record_id: dea:process-build-delivery-capability
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21d
+    rationale: |
+      Fresh L2 landing for the OperationsAndEnablement x Build
+      cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs asset
+      acquisition and facility provisioning from the dissolved
+      Supply & Resources domain.
+    evidence: |
+      CR-BP-19 /l1-register.yaml operationsEnablement.build;
+      CR-BP-21d-operations-enablement-landing.md.
+    note: null
+
+  - record_id: dea:process-operate-service-delivery
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21d
+    rationale: |
+      Fresh L2 landing for the OperationsAndEnablement x Operate
+      cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
+      procurement execution, facility operation, and asset
+      maintenance from the dissolved Supply & Resources domain.
+    evidence: |
+      CR-BP-19 /l1-register.yaml operationsEnablement.operate;
+      CR-BP-21d-operations-enablement-landing.md.
+    note: null
+
+  - record_id: dea:process-conduct-operations-performance-review
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21d
+    rationale: |
+      Fresh L2 landing for the OperationsAndEnablement x Improve
+      cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs asset
+      utilization improvement from the dissolved Supply & Resources
+      domain.
+    evidence: |
+      CR-BP-19 /l1-register.yaml operationsEnablement.improve;
+      CR-BP-21d-operations-enablement-landing.md.
+    note: null

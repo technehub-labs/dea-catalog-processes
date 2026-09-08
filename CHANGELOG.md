@@ -6,6 +6,17 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21d implementation: OperationsAndEnablement landing (fourth
+v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
+Process Group (`dea:group-operations-model-conception`), and 5 L2
+Business Processes across the OE x {Conceive, Design, Build, Operate,
+Improve} cells. Absorbs execution-side sourcing/asset concerns from the
+dissolved v2.3.0 Supply & Resources domain per register v2
+migration_notes. Register v3 audit counts updated: 14 `landed` / 21
+`ratified-pending-landing` / 14 `backlog-deferred`. OE/Conceive
+audit_status flipped to `landed`. Disposition register +5 RETAIN;
+tranche plan 25 -> 30.
+
 CR-BP-21c implementation: ProductAndValue landing (third v2.4.0
 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1 Process Group
 (`dea:group-proposition-conception`), and 5 L2 Business Processes across

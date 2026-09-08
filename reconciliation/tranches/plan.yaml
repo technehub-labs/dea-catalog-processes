@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 25
-  total_records: 33
+  total_tranches: 30
+  total_records: 38
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -46,6 +46,11 @@ summary:
     pv-b: 1
     pv-op: 1
     pv-im: 1
+    oe-c: 1
+    oe-d: 1
+    oe-b: 1
+    oe-op: 1
+    oe-im: 1
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -460,6 +465,74 @@ tranches:
   rationale: Fresh L2 landing for the Improve cell. The other 2 register
     v2 L2 candidates (product evolution, portfolio rationalization) land
     in CR-BP-21c.1.
+- tranche_id: oe-c
+  context_ref: dea:pc-oe-conceive
+  context_name: operations-enablement / conceive
+  owner: CR-BP-21d (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-52 (CR-BP-21d landing)
+  records:
+  - dea:process-frame-operations-strategy
+  rationale: Fresh L2 landing for the Conceive cell. The other 3 register
+    v2 L2 candidates (delivery model conception, technology enablement
+    approach, physical asset approach) land in CR-BP-21d.1.
+- tranche_id: oe-d
+  context_ref: dea:pc-oe-design
+  context_name: operations-enablement / design
+  owner: CR-BP-21d (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-52 (CR-BP-21d landing)
+  records:
+  - dea:process-design-operations-model
+  rationale: Fresh L2 landing for the Design cell. The other 4 register
+    v2 L2 candidates (delivery model, technology platform architecture,
+    facility and asset blueprint, logistics and routing) land in
+    CR-BP-21d.1.
+- tranche_id: oe-b
+  context_ref: dea:pc-oe-build
+  context_name: operations-enablement / build
+  owner: CR-BP-21d (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-52 (CR-BP-21d landing)
+  records:
+  - dea:process-build-delivery-capability
+  rationale: Fresh L2 landing for the Build cell. The other 4 register
+    v2 L2 candidates (production line stand-up, logistics network,
+    technology asset acquisition, facility provisioning) land in
+    CR-BP-21d.1.
+- tranche_id: oe-op
+  context_ref: dea:pc-oe-operate
+  context_name: operations-enablement / operate
+  owner: CR-BP-21d (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-52 (CR-BP-21d landing)
+  records:
+  - dea:process-operate-service-delivery
+  rationale: Fresh L2 landing for the Operate cell. The other 8 register
+    v2 L2 candidates (production line, logistics, warehouse, quality
+    control, technology platforms, facility management, asset
+    maintenance, procurement cycle) land in CR-BP-21d.1.
+- tranche_id: oe-im
+  context_ref: dea:pc-oe-improve
+  context_name: operations-enablement / improve
+  owner: CR-BP-21d (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-52 (CR-BP-21d landing)
+  records:
+  - dea:process-conduct-operations-performance-review
+  rationale: Fresh L2 landing for the Improve cell. The other 4 register
+    v2 L2 candidates (logistics optimization, lean programme, asset
+    utilization, technology platforms) land in CR-BP-21d.1.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -487,3 +560,8 @@ review_checkpoints:
   pv-b: 1
   pv-op: 1
   pv-im: 1
+  oe-c: 1
+  oe-d: 1
+  oe-b: 1
+  oe-op: 1
+  oe-im: 1

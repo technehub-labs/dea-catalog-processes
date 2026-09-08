@@ -868,9 +868,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Absorbs execution-side sourcing/asset conception from the dissolved Supply & Resources domain (physical
         resources are enablers of execution per domain-grounding §3.6). Supplier relationship conception lives in party-relationship.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21d
-      planned_at: '2026-09-08'
+      audit_status: landed
     Design:
       process_context: dea:pc-oe-design
       l1_candidates:
