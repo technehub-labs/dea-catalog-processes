@@ -54,13 +54,14 @@ l1_candidates:
   - Operational strategy execution
   - Capability build
   evidence: &id002
-  - dea-metaframework/REPORT.md §5
+  - "dea-metaframework/REPORT.md \xA75"
   - dea-catalog-business-capabilities/capability-strategy
   - APQC PCF 7.0 Strategy Management
   disposition: ratified-accepted
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Policy and Charter Initiation
   domain: GovernanceAndExistence
   stage: Conceive
@@ -72,6 +73,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Governance System Design
   domain: GovernanceAndExistence
   stage: Design
@@ -80,12 +82,13 @@ l1_candidates:
   out_of_scope: &id003
   - Operational control execution
   evidence: &id004
-  - dea-metaframework/framework/lifecycle-grounding.md §3
+  - "dea-metaframework/framework/lifecycle-grounding.md \xA73"
   - TOGAF ADM Phase G
   disposition: ratified-accepted
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Policy and Control Design
   domain: GovernanceAndExistence
   stage: Design
@@ -97,6 +100,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Governance Body Establishment
   domain: GovernanceAndExistence
   stage: Build
@@ -111,6 +115,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Charter and Policy Codification
   domain: GovernanceAndExistence
   stage: Build
@@ -122,6 +127,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Governance Onboarding
   domain: GovernanceAndExistence
   stage: Activate
@@ -134,10 +140,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Activation is operational and is typically modelled under operations-enablement x activate;
-    governance activation is an attribute of governance operate, not a standalone group.
+  deferral_reason: Activation is operational and is typically modelled under operations-enablement x activate; governance
+    activation is an attribute of governance operate, not a standalone group.
+  audit_status: backlog-deferred
 - name: Governance Oversight
   domain: GovernanceAndExistence
   stage: Operate
@@ -146,12 +151,13 @@ l1_candidates:
   out_of_scope: &id007
   - Frontline compliance execution
   evidence: &id008
-  - ISO 37000:2021 §6
+  - "ISO 37000:2021 \xA76"
   - dea-catalog-business-capabilities/capability-compliance-management
   disposition: ratified-accepted
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Policy Compliance and Audit
   domain: GovernanceAndExistence
   stage: Operate
@@ -163,6 +169,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Governance Review and Learning
   domain: GovernanceAndExistence
   stage: Improve
@@ -177,6 +184,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Governance Sunset
   domain: GovernanceAndExistence
   stage: Retire
@@ -185,14 +193,13 @@ l1_candidates:
   out_of_scope:
   - Asset and capability retirement
   evidence:
-  - dea-metaframework/framework/lifecycle-grounding.md §1 Retire
+  - "dea-metaframework/framework/lifecycle-grounding.md \xA71 Retire"
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Retirement of governance is rare and largely an attribute of operating-model retirement;
-    defer until a sector example (e.g. regulator-mandated unwind) requires it.
+  deferral_reason: Retirement of governance is rare and largely an attribute of operating-model retirement; defer until a
+    sector example (e.g. regulator-mandated unwind) requires it.
+  audit_status: backlog-deferred
 - name: Sourcing Strategy Conception
   domain: StrategyAndDirection
   stage: Conceive
@@ -209,6 +216,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Resource Strategy Conception
   domain: StrategyAndDirection
   stage: Conceive
@@ -220,6 +228,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Sourcing and Supply Design
   domain: StrategyAndDirection
   stage: Design
@@ -235,6 +244,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Asset and Property Design
   domain: StrategyAndDirection
   stage: Design
@@ -246,6 +256,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Resource Architecture Design
   domain: StrategyAndDirection
   stage: Design
@@ -257,6 +268,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Supply Base Build
   domain: StrategyAndDirection
   stage: Build
@@ -271,6 +283,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Asset Acquisition
   domain: StrategyAndDirection
   stage: Build
@@ -282,6 +295,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Resource Stand-up
   domain: StrategyAndDirection
   stage: Build
@@ -293,6 +307,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Sourcing Activation
   domain: StrategyAndDirection
   stage: Activate
@@ -301,12 +316,13 @@ l1_candidates:
   out_of_scope: &id015
   - Capability activation
   evidence: &id016
-  - dea-metaframework/lifecycle-grounding.md §1 Activate
+  - "dea-metaframework/lifecycle-grounding.md \xA71 Activate"
   - ITIL 4 Service Configuration
   disposition: ratified-accepted
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Asset Activation
   domain: StrategyAndDirection
   stage: Activate
@@ -318,6 +334,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Sourcing and Procurement Operation
   domain: StrategyAndDirection
   stage: Operate
@@ -327,14 +344,14 @@ l1_candidates:
   - Workforce execution (agency-organization)
   - Manufacturing line operation (operations-enablement)
   evidence: &id018
-  - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management,
-    capability-asset-management
+  - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management, capability-asset-management
   - SCOR Plan/Source (Supply Chain Operations Reference)
   - ITIL 4 Service Operation
   disposition: ratified-accepted
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Asset and Facility Operation
   domain: StrategyAndDirection
   stage: Operate
@@ -346,6 +363,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Supplier Management Operation
   domain: StrategyAndDirection
   stage: Operate
@@ -357,6 +375,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Supply Base Improvement
   domain: StrategyAndDirection
   stage: Improve
@@ -371,6 +390,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Asset Performance Improvement
   domain: StrategyAndDirection
   stage: Improve
@@ -382,6 +402,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Supply and Asset Retirement
   domain: StrategyAndDirection
   stage: Retire
@@ -392,14 +413,13 @@ l1_candidates:
   - Capability retirement
   evidence:
   - IFRS 16 retirement
-  - ITIL 4 Service退役
+  - "ITIL 4 Service\u9000\u5F79"
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement
-    x retire with cross-reference; defer a standalone group until at least one L2 process has stabilized.
+  deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement x retire with cross-reference;
+    defer a standalone group until at least one L2 process has stabilized.
+  audit_status: backlog-deferred
 - name: Workforce Strategy Conception
   domain: AgencyAndOrganization
   stage: Conceive
@@ -414,6 +434,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Organization Conception
   domain: AgencyAndOrganization
   stage: Conceive
@@ -425,6 +446,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Organization and Role Design
   domain: AgencyAndOrganization
   stage: Design
@@ -439,6 +461,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Design
   domain: AgencyAndOrganization
   stage: Design
@@ -450,6 +473,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Talent Acquisition
   domain: AgencyAndOrganization
   stage: Build
@@ -464,6 +488,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Onboarding
   domain: AgencyAndOrganization
   stage: Build
@@ -475,6 +500,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Activation
   domain: AgencyAndOrganization
   stage: Activate
@@ -487,10 +513,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
   deferral_reason: Workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
     defer until organizational-mobilization becomes a recurring programme.
+  audit_status: backlog-deferred
 - name: Organization Mobilization
   domain: AgencyAndOrganization
   stage: Activate
@@ -501,10 +526,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
   deferral_reason: Workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment);
     defer until organizational-mobilization becomes a recurring programme.
+  audit_status: backlog-deferred
 - name: HR Operations
   domain: AgencyAndOrganization
   stage: Operate
@@ -520,6 +544,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Operations
   domain: AgencyAndOrganization
   stage: Operate
@@ -531,6 +556,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Performance and Reward
   domain: AgencyAndOrganization
   stage: Operate
@@ -542,6 +568,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Improvement
   domain: AgencyAndOrganization
   stage: Improve
@@ -555,6 +582,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Workforce Transition
   domain: AgencyAndOrganization
   stage: Retire
@@ -564,14 +592,13 @@ l1_candidates:
   - Asset retirement (strategy-direction)
   evidence: &id032
   - dea-catalog-business-capabilities/capability-workforce-management
-  - APQC PCF Workforce退出
+  - "APQC PCF Workforce\u9000\u51FA"
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated
-    wind-down (e.g. mass layoff) requires a dedicated L1 group.
+  deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated wind-down (e.g. mass
+    layoff) requires a dedicated L1 group.
+  audit_status: backlog-deferred
 - name: Organization Wind-down
   domain: AgencyAndOrganization
   stage: Retire
@@ -582,10 +609,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated
-    wind-down (e.g. mass layoff) requires a dedicated L1 group.
+  deferral_reason: Workforce transition is often handled within HR operations; defer until a regulated wind-down (e.g. mass
+    layoff) requires a dedicated L1 group.
+  audit_status: backlog-deferred
 - name: Customer Strategy Conception
   domain: PartyAndRelationship
   stage: Conceive
@@ -601,6 +627,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Market and Demand Conception
   domain: PartyAndRelationship
   stage: Conceive
@@ -612,6 +639,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Experience Design
   domain: PartyAndRelationship
   stage: Design
@@ -626,6 +654,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Demand Design
   domain: PartyAndRelationship
   stage: Design
@@ -637,6 +666,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Journey Design
   domain: PartyAndRelationship
   stage: Design
@@ -648,6 +678,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Channel and Acquisition Build
   domain: PartyAndRelationship
   stage: Build
@@ -661,6 +692,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Demand Generation Build
   domain: PartyAndRelationship
   stage: Build
@@ -672,6 +704,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Activation
   domain: PartyAndRelationship
   stage: Activate
@@ -684,10 +717,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: First-time activation is mostly handled inside the L1 group Operate in practice; defer
-    until a regulated onboarding (e.g. KYC for financial services) requires a distinct group.
+  deferral_reason: First-time activation is mostly handled inside the L1 group Operate in practice; defer until a regulated
+    onboarding (e.g. KYC for financial services) requires a distinct group.
+  audit_status: backlog-deferred
 - name: Customer Relationship Management
   domain: PartyAndRelationship
   stage: Operate
@@ -703,6 +735,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Service Operation
   domain: PartyAndRelationship
   stage: Operate
@@ -714,6 +747,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Demand Fulfillment
   domain: PartyAndRelationship
   stage: Operate
@@ -725,6 +759,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Insight and Retention
   domain: PartyAndRelationship
   stage: Improve
@@ -739,6 +774,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: landed
 - name: Customer Exit
   domain: PartyAndRelationship
   stage: Retire
@@ -751,10 +787,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Customer exit is often handled within customer-relationship operations; defer until
-    a regulated offboarding (e.g. GDPR-driven erasure) requires a distinct group.
+  deferral_reason: Customer exit is often handled within customer-relationship operations; defer until a regulated offboarding
+    (e.g. GDPR-driven erasure) requires a distinct group.
+  audit_status: backlog-deferred
 - name: Offering Strategy Conception
   domain: ProductAndValue
   stage: Conceive
@@ -770,6 +805,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Innovation Conception
   domain: ProductAndValue
   stage: Conceive
@@ -781,6 +817,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Design
   domain: ProductAndValue
   stage: Design
@@ -795,6 +832,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Service Design
   domain: ProductAndValue
   stage: Design
@@ -806,6 +844,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Innovation Design
   domain: ProductAndValue
   stage: Design
@@ -817,6 +856,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Build
   domain: ProductAndValue
   stage: Build
@@ -831,6 +871,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Innovation Build
   domain: ProductAndValue
   stage: Build
@@ -842,6 +883,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Activation
   domain: ProductAndValue
   stage: Activate
@@ -856,6 +898,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Operation
   domain: ProductAndValue
   stage: Operate
@@ -871,6 +914,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Service Operation
   domain: ProductAndValue
   stage: Operate
@@ -882,6 +926,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Improvement
   domain: ProductAndValue
   stage: Improve
@@ -895,6 +940,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Service Improvement
   domain: ProductAndValue
   stage: Improve
@@ -906,6 +952,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Offering Retirement
   domain: ProductAndValue
   stage: Retire
@@ -920,10 +967,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Offering retirement often overlaps with customer exit and asset retirement; defer until
-    an L2 example (e.g. product end-of-life) requires a standalone group.
+  deferral_reason: Offering retirement often overlaps with customer exit and asset retirement; defer until an L2 example (e.g.
+    product end-of-life) requires a standalone group.
+  audit_status: backlog-deferred
 - name: Operations Strategy Conception
   domain: OperationsAndEnablement
   stage: Conceive
@@ -938,6 +984,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Strategy Conception
   domain: OperationsAndEnablement
   stage: Conceive
@@ -949,6 +996,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Design
   domain: OperationsAndEnablement
   stage: Design
@@ -963,6 +1011,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Design
   domain: OperationsAndEnablement
   stage: Design
@@ -974,6 +1023,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Build
   domain: OperationsAndEnablement
   stage: Build
@@ -988,6 +1038,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Build
   domain: OperationsAndEnablement
   stage: Build
@@ -999,6 +1050,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Manufacturing Build
   domain: OperationsAndEnablement
   stage: Build
@@ -1010,6 +1062,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Activation
   domain: OperationsAndEnablement
   stage: Activate
@@ -1024,6 +1077,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Activation
   domain: OperationsAndEnablement
   stage: Activate
@@ -1035,6 +1089,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Execution
   domain: OperationsAndEnablement
   stage: Operate
@@ -1051,6 +1106,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Execution
   domain: OperationsAndEnablement
   stage: Operate
@@ -1062,6 +1118,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Service Delivery Execution
   domain: OperationsAndEnablement
   stage: Operate
@@ -1073,6 +1130,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Production Execution
   domain: OperationsAndEnablement
   stage: Operate
@@ -1084,6 +1142,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Improvement
   domain: OperationsAndEnablement
   stage: Improve
@@ -1100,6 +1159,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Delivery Improvement
   domain: OperationsAndEnablement
   stage: Improve
@@ -1111,6 +1171,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Operations Retirement
   domain: OperationsAndEnablement
   stage: Retire
@@ -1120,14 +1181,13 @@ l1_candidates:
   - Asset disposal (strategy-direction)
   evidence: &id065
   - SCOR Return end-of-life
-  - ITIL 4 Service退役
+  - "ITIL 4 Service\u9000\u5F79"
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Operations retirement is often handled within the operate group with a winding-down
-    workflow; defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
+  deferral_reason: Operations retirement is often handled within the operate group with a winding-down workflow; defer until
+    a regulated decommission (e.g. nuclear-grade) requires a standalone group.
+  audit_status: backlog-deferred
 - name: Delivery Retirement
   domain: OperationsAndEnablement
   stage: Retire
@@ -1138,10 +1198,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Operations retirement is often handled within the operate group with a winding-down
-    workflow; defer until a regulated decommission (e.g. nuclear-grade) requires a standalone group.
+  deferral_reason: Operations retirement is often handled within the operate group with a winding-down workflow; defer until
+    a regulated decommission (e.g. nuclear-grade) requires a standalone group.
+  audit_status: backlog-deferred
 - name: Finance Strategy Conception
   domain: FinanceAndAccounting
   stage: Conceive
@@ -1156,6 +1215,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Value Strategy Conception
   domain: FinanceAndAccounting
   stage: Conceive
@@ -1167,6 +1227,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Finance Architecture Design
   domain: FinanceAndAccounting
   stage: Design
@@ -1183,6 +1244,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Value Architecture Design
   domain: FinanceAndAccounting
   stage: Design
@@ -1194,6 +1256,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Financial Control Design
   domain: FinanceAndAccounting
   stage: Design
@@ -1205,6 +1268,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Finance Capability Build
   domain: FinanceAndAccounting
   stage: Build
@@ -1218,6 +1282,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Financial System Build
   domain: FinanceAndAccounting
   stage: Build
@@ -1229,6 +1294,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Finance Activation
   domain: FinanceAndAccounting
   stage: Activate
@@ -1243,10 +1309,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until
-    an L2 process (e.g. new entity on boarding) requires a distinct group.
+  deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until an L2 process (e.g.
+    new entity on boarding) requires a distinct group.
+  audit_status: backlog-deferred
 - name: Period Activation
   domain: FinanceAndAccounting
   stage: Activate
@@ -1257,10 +1322,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until
-    an L2 process (e.g. new entity on boarding) requires a distinct group.
+  deferral_reason: Period opening and finance cutovers are usually handled within Operate; defer until an L2 process (e.g.
+    new entity on boarding) requires a distinct group.
+  audit_status: backlog-deferred
 - name: Accounting and Reporting
   domain: FinanceAndAccounting
   stage: Operate
@@ -1279,6 +1343,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Financial Stewardship
   domain: FinanceAndAccounting
   stage: Operate
@@ -1290,6 +1355,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Treasury and Working Capital
   domain: FinanceAndAccounting
   stage: Operate
@@ -1301,6 +1367,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Tax and Compliance
   domain: FinanceAndAccounting
   stage: Operate
@@ -1312,6 +1379,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Procure-to-Pay and Order-to-Cash Operations
   domain: FinanceAndAccounting
   stage: Operate
@@ -1323,6 +1391,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Finance Improvement
   domain: FinanceAndAccounting
   stage: Improve
@@ -1339,6 +1408,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Value Performance
   domain: FinanceAndAccounting
   stage: Improve
@@ -1350,6 +1420,7 @@ l1_candidates:
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
   deferral_reason: ''
+  audit_status: ratified-pending-landing
 - name: Financial Wind-down
   domain: FinanceAndAccounting
   stage: Retire
@@ -1365,10 +1436,9 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Financial wind-down is often handled within financial stewardship; defer until a regulated
-    unwind (e.g. mutual insurer run-off) requires a standalone group.
+  deferral_reason: Financial wind-down is often handled within financial stewardship; defer until a regulated unwind (e.g.
+    mutual insurer run-off) requires a standalone group.
+  audit_status: backlog-deferred
 - name: Asset and Investment Disposal
   domain: FinanceAndAccounting
   stage: Retire
@@ -1379,17 +1449,16 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
-  deferral_reason: Financial wind-down is often handled within financial stewardship; defer until a regulated
-    unwind (e.g. mutual insurer run-off) requires a standalone group.
+  deferral_reason: Financial wind-down is often handled within financial stewardship; defer until a regulated unwind (e.g.
+    mutual insurer run-off) requires a standalone group.
+  audit_status: backlog-deferred
 cross_domain_findings:
 - topic: Technology Management
-  finding: CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004; technology
-    is an L5 layer concern, not an ECF domain.
-  implication: No ECF coordinate carries Technology Management; for the 49-coordinate matrix there is
-    no standalone Technology cell. Process candidates touching technology must declare their domain (operations-enablement
-    x operate for run, strategy-direction x operate for build/asset).
+  finding: CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004; technology is an L5 layer concern,
+    not an ECF domain.
+  implication: No ECF coordinate carries Technology Management; for the 49-coordinate matrix there is no standalone Technology
+    cell. Process candidates touching technology must declare their domain (operations-enablement x operate for run, strategy-direction
+    x operate for build/asset).
   evidence:
   - dea-catalog-business-capabilities/docs/research/ecf-overlay-v0.2.yaml R-004
   - docs/research/boundary-decision-cand-019.yaml
@@ -1397,40 +1466,43 @@ cross_domain_findings:
 - topic: Change Management
   finding: 'CR-DEA-BC-04 R-005: Change Management is cross-domain; earliest legitimate initiation is governance-existence
     x improve.'
-  implication: A Change Management process may legitimately appear at governance-existence x improve;
-    the 49-coordinate matrix lists it as the cross-cutting pattern, not as a duplicate cell.
+  implication: A Change Management process may legitimately appear at governance-existence x improve; the 49-coordinate matrix
+    lists it as the cross-cutting pattern, not as a duplicate cell.
   evidence:
   - CR-DEA-BC-04 R-005
   disposition: cross_cutting_recorded
 - topic: Partner Management dual-home
-  finding: 'CR-DEA-BC-04 R-001: Partner Management initiated at party-relationship x conceive; supply-side
-    operation is legitimate participation.'
-  implication: Treat strategy-direction x operate as legitimate participation, party-relationship x conceive
-    as primary.
+  finding: 'CR-DEA-BC-04 R-001: Partner Management initiated at party-relationship x conceive; supply-side operation is legitimate
+    participation.'
+  implication: Treat strategy-direction x operate as legitimate participation, party-relationship x conceive as primary.
   evidence:
   - CR-DEA-BC-04 R-001
   disposition: dual_home_recorded
 - topic: Resilience, Innovation, Analytics
-  finding: CR-DEA-BC-04 R-006/R-007/R-008 lifted deferrals and admitted three capabilities (Resilience,
-    Innovation, Analytics).
-  implication: Their process surfaces are now under their primary coordinates (governance-existence x
-    improve for Resilience; product-value x conceive for Innovation; operations-enablement x operate
-    for Analytics).
+  finding: CR-DEA-BC-04 R-006/R-007/R-008 lifted deferrals and admitted three capabilities (Resilience, Innovation, Analytics).
+  implication: Their process surfaces are now under their primary coordinates (governance-existence x improve for Resilience;
+    product-value x conceive for Innovation; operations-enablement x operate for Analytics).
   evidence:
   - CR-DEA-BC-04 R-006, R-007, R-008
   disposition: lifted_deferrals_reflected
 - topic: Marketing placement
   finding: 'CR-DEA-BC-04 N-002: Marketing is distinct, not a child of Customer Management.'
-  implication: Customer-demand x conceive has Marketing candidate; party-relationship x operate has customer
-    relationship management. Distinct groups.
+  implication: Customer-demand x conceive has Marketing candidate; party-relationship x operate has customer relationship
+    management. Distinct groups.
   evidence:
   - CR-DEA-BC-04 N-002
   disposition: boundary_clarified
 ratification:
-  version: 1
-  cr: CR-BP-13
-  ratified_at: '2026-09-05'
+  version: 3
+  cr: CR-BP-22
+  ratified_at: '2026-09-08'
   ratified_accepted: 86
   backlog_deferred: 16
-  deferred_rationale: |
-    Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete Activate/Retire process identity is later identified (separate CR).
+  deferred_rationale: 'Activate and Retire are lifecycle transition stages, not stable Process Group operating scopes. L1
+    Process Groups (CR-BP-12) catalogue the bounded operating scope of a process domain; the Activate stage is the handover
+    from Build to Operate (a sub-step of the receiving Process Group), and the Retire stage is the wind-down of the prior
+    Process Group (a sub-step of the ending Process Group). Neither forms a stable L1 group on its own. Reconsider if a discrete
+    Activate/Retire process identity is later identified (separate CR).
+
+    '
+  supersedes: version 2 (CR-BP-19, ratified 2026-09-07)
