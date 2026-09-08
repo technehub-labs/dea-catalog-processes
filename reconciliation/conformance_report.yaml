@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 82
+total_records: 93
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 82
+  4: 93
 records:
 - id: dea:group-customer-channel-and-acquisition-build
   kind: Entity
@@ -53,6 +53,16 @@ records:
 - id: dea:group-customer-strategy-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-customer-strategy-conception/dea:group-customer-strategy-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-financial-model-conception
+  kind: Entity
+  path: entities/v1-alpha/dea:group-financial-model-conception/dea:group-financial-model-conception.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -210,6 +220,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-conduct-cost-optimization-review
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/dea:process-conduct-cost-optimization-review.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-conduct-operations-performance-review
   kind: Entity
   path: entities/v1-alpha/dea:process-conduct-operations-performance-review/dea:process-conduct-operations-performance-review.yaml
@@ -293,6 +313,16 @@ records:
 - id: dea:process-demand-generation-build
   kind: Entity
   path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-financial-plan-structure
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-financial-plan-structure/dea:process-design-financial-plan-structure.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -410,6 +440,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-frame-finance-strategy
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-finance-strategy/dea:process-frame-finance-strategy.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-frame-operations-strategy
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-operations-strategy/dea:process-frame-operations-strategy.yaml
@@ -490,6 +530,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-operate-general-ledger
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-general-ledger/dea:process-operate-general-ledger.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-operate-governance-oversight
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-governance-oversight/dea:process-operate-governance-oversight.yaml
@@ -523,6 +573,16 @@ records:
 - id: dea:process-review-governance-effectiveness
   kind: Entity
   path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-secure-funding-facilities
+  kind: Entity
+  path: entities/v1-alpha/dea:process-secure-funding-facilities/dea:process-secure-funding-facilities.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -573,6 +633,56 @@ records:
 - id: dea:pc-ao-operate
   kind: Unknown
   path: contexts/v1-alpha/dea-pc-ao-operate.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-fa-build
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-fa-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-fa-conceive
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-fa-conceive.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-fa-design
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-fa-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-fa-improve
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-fa-improve.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:pc-fa-operate
+  kind: Unknown
+  path: contexts/v1-alpha/dea-pc-fa-operate.yaml
   level: 4
   level_breakdown:
     L1_structural: true

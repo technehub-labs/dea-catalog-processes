@@ -17,15 +17,15 @@ Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md
 
 | audit_status | Coordinates | Description |
 |---:|---:|---|
-| `landed` | 14 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 21 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 15 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 20 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
-The gap (21 `ratified-pending-landing`) is the L1 process discovery
+The gap (20 `ratified-pending-landing`) is the L1 process discovery
 work-in-flight: those cells are accepted in principle but have no
-landing yet. The planned tranches (CR-BP-21a.1, CR-BP-21b.1, CR-BP-21c,
-CR-BP-21d, CR-BP-21e) close this gap.
+landing yet. The planned tranches (CR-BP-21a.1, CR-BP-21b.1, CR-BP-21c.1,
+CR-BP-21d.1, CR-BP-21e.1) close this gap.
 
 See CR-BP-19 for the v2 deferred_rationale (Activate and Retire are
 lifecycle transition stages, not stable Process Group operating
@@ -231,8 +231,8 @@ Group existence):
 
 | audit_status | Count | Description |
 |---:|---:|---|
-| `landed` | 14 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 21 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 15 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 20 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
@@ -246,7 +246,7 @@ Group existence):
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | ProductAndValue | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | OperationsAndEnablement | landed | pending | pending | deferred | pending | pending | deferred | 1 |
-| FinanceAndAccounting | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+| FinanceAndAccounting | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 
 ### Planned tranches closing the gap
 
@@ -254,7 +254,7 @@ Group existence):
 - `AgencyAndOrganization` Design/Build/Operate/Improve → CR-BP-21b.1 (planned)
 - `ProductAndValue` Conceive (landed CR-BP-21c); Design/Build/Operate/Improve → CR-BP-21c.1 (planned)
 - `OperationsAndEnablement` Conceive (landed CR-BP-21d); Design/Build/Operate/Improve → CR-BP-21d.1 (planned)
-- `FinanceAndAccounting` Conceive/Design/Build/Operate/Improve → CR-BP-21e (planned)
+- `FinanceAndAccounting` Conceive (landed CR-BP-21e); Design/Build/Operate/Improve → CR-BP-21e.1 (planned)
 
 The audit script (`scripts/check_register_audit.py`) re-runs the
 reconciliation and can be invoked after each landing tranche to
