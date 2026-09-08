@@ -244,7 +244,7 @@ GROUPS = [
             "Innovation experiment design",
         ],
         "excludes": [
-            "Technology platform architecture (operations-enablement)",
+            "Technology platform architecture (enablement-operations)",
             "Value proposition thesis conception (Conceive stage; adjacent context)",
             "Product variant development (Build stage; adjacent context)",
         ],
@@ -279,7 +279,7 @@ GROUPS = [
             "Market readiness preparation",
         ],
         "excludes": [
-            "Technology build (operations-enablement)",
+            "Technology build (enablement-operations)",
             "Proposition design (Design stage; adjacent context)",
             "Catalogue operation (Operate stage; adjacent context)",
         ],
@@ -314,7 +314,7 @@ GROUPS = [
             "Proposition lifecycle management",
         ],
         "excludes": [
-            "Operational delivery of the product (operations-enablement)",
+            "Operational delivery of the product (enablement-operations)",
             "Partner alliance programme (party-relationship)",
             "Workforce operation (agency-organization)",
         ],

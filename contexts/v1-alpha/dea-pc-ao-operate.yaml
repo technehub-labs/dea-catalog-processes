@@ -31,7 +31,7 @@ scope:
   excludes:
     - Agent acquisition (Build stage; adjacent context)
     - Agent development (Improve stage; adjacent context)
-    - Operational execution (operations-enablement x operate; adjacent domain)
+    - Operational execution (enablement-operations x operate; adjacent domain)
     - Compensation accounting (finance-accounting x operate; adjacent domain)
 
 # Intended outcomes.
@@ -78,7 +78,7 @@ cell_charter:
   exclusions:
     - Agent acquisition (Build stage; adjacent context)
     - Agent development (Improve stage; adjacent context)
-    - Operational execution (operations-enablement x operate; adjacent domain)
+    - Operational execution (enablement-operations x operate; adjacent domain)
     - Compensation accounting (finance-accounting x operate; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-ao-conceive (adjacent context): agentive flow between Operate and the adjacent cell."

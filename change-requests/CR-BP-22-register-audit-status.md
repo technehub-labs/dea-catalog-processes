@@ -23,7 +23,7 @@ Mixing them as a single `disposition` field hides the gap. CR-BP-22 keeps both: 
 Without the audit axis:
 
 1. The register's `38 accepted` claim in `L1-REGISTER-v0.1.md` (CR-BP-13 ratification language) is **inconsistent with the actual catalog state** (12 L1 Process Groups landed). The persona-readable summary still cites the v1 numbers; the YAML register v2 says 35. A consumer reading either is misled about reality.
-2. The 3 unadmitted Domains (ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) carry zero L1 records. Until CR-BP-21c..e land, the gap is invisible to anyone reading the register alone.
+2. The 3 unadmitted Domains (ProductAndValue, EnablementAndOperations, FinanceAndAccounting) carry zero L1 records. Until CR-BP-21c..e land, the gap is invisible to anyone reading the register alone.
 3. There is no machine-readable cross-check between `entities/v1-alpha/` and `research/l1-register.yaml`. The conformance pipeline (`scripts/check_process_group.py`) validates L1 records but does not cross-reference the register.
 4. The audit axis is required by the user's standing convention *"L1 process discovery is completed"* — discoverability is complete when the register is self-consistent with the catalog. Today it is not.
 
@@ -59,7 +59,7 @@ Counts computed by reading every canonical L1 record in `entities/v1-alpha/`, jo
 | AgencyAndOrganization | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | ProductAndValue | pending | pending | pending | deferred | pending | pending | deferred | 0 |
-| OperationsAndEnablement | pending | pending | pending | deferred | pending | pending | deferred | 0 |
+| EnablementAndOperations | pending | pending | pending | deferred | pending | pending | deferred | 0 |
 | FinanceAndAccounting | pending | pending | pending | deferred | pending | pending | deferred | 0 |
 | **Totals** | 7 | 7 | 7 | 7 | 7 | 7 | 7 | **12** |
 
@@ -67,7 +67,7 @@ Pending tranche pointers:
 - StrategyAndDirection Design/Build/Operate/Improve → **CR-BP-21c.1** (sub-slice of D2; planned) or part of a refreshed 21a landing if scope permits
 - AgencyAndOrganization Design/Build/Operate/Improve → **CR-BP-21b.1** (sub-slice of D3; planned) or part of a refreshed 21b landing
 - ProductAndValue Conceive/Design/Build/Operate/Improve → **CR-BP-21c** (D5 full landing; planned)
-- OperationsAndEnablement Conceive/Design/Build/Operate/Improve → **CR-BP-21d** (D6 full landing; planned; may sub-slice into 21d.1 + 21d.2)
+- EnablementAndOperations Conceive/Design/Build/Operate/Improve → **CR-BP-21d** (D6 full landing; planned; may sub-slice into 21d.1 + 21d.2)
 - FinanceAndAccounting Conceive/Design/Build/Operate/Improve → **CR-BP-21e** (D7 full landing; planned; may sub-slice into 21e.1 + 21e.2)
 
 ## 5. The deliverable shape
@@ -156,7 +156,7 @@ This CR does NOT decide:
 ## 11. Required follow-on CRs
 
 - **CR-BP-21c** (planned): ProductAndValue full-domain landing; closes 5 of the 23 pending coordinates.
-- **CR-BP-21d** (planned): OperationsAndEnablement full-domain landing; closes 5 of the remaining 18 pending coordinates.
+- **CR-BP-21d** (planned): EnablementAndOperations full-domain landing; closes 5 of the remaining 18 pending coordinates.
 - **CR-BP-21e** (planned): FinanceAndAccounting full-domain landing; closes 5 of the remaining 13 pending coordinates.
 - **CR-BP-21a.1 + CR-BP-21b.1** (optional): completion of StrategyAndDirection and AgencyAndOrganization landing — they currently carry only the Conceive cell each. The audit exposes this gap; closing it would reduce the pending count by 8 (4 cells × 2 domains).
 - **CR-BP-23** (future, conditional): promote `check_register_audit.py` from tool to blocking CI gate, if and when the audit has been stable across ≥3 landing tranches.

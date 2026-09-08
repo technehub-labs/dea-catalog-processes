@@ -55,7 +55,7 @@ ECF_DOMAINS = {
     "AgencyAndOrganization",
     "PartyAndRelationship",
     "ProductAndValue",
-    "OperationsAndEnablement",
+    "EnablementAndOperations",
     "FinanceAndAccounting",
 }
 ECF_STAGES = {

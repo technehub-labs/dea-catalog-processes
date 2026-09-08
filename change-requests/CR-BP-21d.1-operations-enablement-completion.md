@@ -1,10 +1,10 @@
-# CR-BP-21d.1: OperationsAndEnablement Completion (ECF v2.4.0 — Register Gap Closure)
+# CR-BP-21d.1: EnablementAndOperations Completion (ECF v2.4.0 — Register Gap Closure)
 
 **Status**: Accepted
 **Layer**: Process Catalog
 **Owner**: Coder (for eaojnr)
 **Date**: 2026-09-08
-**Depends on**: CR-BP-19 (register v2); CR-BP-20 (alignment); CR-BP-21d (OperationsAndEnablement landing); CR-BP-21a.1 (completion-tranche pattern); CR-BP-22 (register audit-status)
+**Depends on**: CR-BP-19 (register v2); CR-BP-20 (alignment); CR-BP-21d (EnablementAndOperations landing); CR-BP-21a.1 (completion-tranche pattern); CR-BP-22 (register audit-status)
 **Related**: dea-metaframework/framework/domain-grounding.md §3.6; CR-BP-21e.1 (final completion tranche, planned)
 
 ## 1. What this CR is

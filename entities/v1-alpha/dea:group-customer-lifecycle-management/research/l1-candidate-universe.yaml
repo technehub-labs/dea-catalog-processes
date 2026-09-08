@@ -37,7 +37,7 @@ disposition_counts_per_domain:
   ProductAndValue:
     accepted: 6
     deferred: 1
-  OperationsAndEnablement:
+  EnablementAndOperations:
     accepted: 6
     deferred: 1
   FinanceAndAccounting:
@@ -140,7 +140,7 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: Activation is operational and is typically modelled under operations-enablement x activate; governance
+  deferral_reason: Activation is operational and is typically modelled under enablement-operations x activate; governance
     activation is an attribute of governance operate, not a standalone group.
   audit_status: backlog-deferred
 - name: Governance Oversight
@@ -342,7 +342,7 @@ l1_candidates:
   in_scope: Day-to-day sourcing, supplier performance, facility operations, asset maintenance
   out_of_scope: &id017
   - Workforce execution (agency-organization)
-  - Manufacturing line operation (operations-enablement)
+  - Manufacturing line operation (enablement-operations)
   evidence: &id018
   - dea-catalog-business-capabilities/capability-sourcing-and-procurement, capability-facility-management, capability-asset-management
   - SCOR Plan/Source (Supply Chain Operations Reference)
@@ -417,7 +417,7 @@ l1_candidates:
   disposition: backlog-deferred
   ratified_at: '2026-09-05'
   ratified_by: CR-BP-13
-  deferral_reason: Retirement of supply and asset base is typically modelled under operations-enablement x retire with cross-reference;
+  deferral_reason: Retirement of supply and asset base is typically modelled under enablement-operations x retire with cross-reference;
     defer a standalone group until at least one L2 process has stabilized.
   audit_status: backlog-deferred
 - name: Workforce Strategy Conception
@@ -971,7 +971,7 @@ l1_candidates:
     product end-of-life) requires a standalone group.
   audit_status: backlog-deferred
 - name: Operations Strategy Conception
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Conceive
   process_context: dea:pc-od-conceive
   in_scope: Operations and delivery strategy
@@ -986,7 +986,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Strategy Conception
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Conceive
   process_context: dea:pc-od-conceive
   in_scope: Operations and delivery strategy
@@ -998,7 +998,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Design
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Design
   process_context: dea:pc-od-design
   in_scope: Operations model, delivery model
@@ -1013,7 +1013,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Design
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Design
   process_context: dea:pc-od-design
   in_scope: Operations model, delivery model
@@ -1025,7 +1025,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Build
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -1040,7 +1040,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Build
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -1052,7 +1052,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Manufacturing Build
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Build
   process_context: dea:pc-od-build
   in_scope: Production, delivery, logistics build
@@ -1064,7 +1064,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Activation
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Activate
   process_context: dea:pc-od-activate
   in_scope: Cutover of operations and delivery
@@ -1079,7 +1079,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Activation
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Activate
   process_context: dea:pc-od-activate
   in_scope: Cutover of operations and delivery
@@ -1091,7 +1091,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Execution
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1108,7 +1108,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Execution
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1120,7 +1120,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Service Delivery Execution
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1132,7 +1132,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Production Execution
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Operate
   process_context: dea:pc-od-operate
   in_scope: Day-to-day operations, delivery, and production
@@ -1144,7 +1144,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Improvement
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Improve
   process_context: dea:pc-od-improve
   in_scope: &id061
@@ -1161,7 +1161,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Delivery Improvement
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Improve
   process_context: dea:pc-od-improve
   in_scope: *id061
@@ -1173,7 +1173,7 @@ l1_candidates:
   deferral_reason: ''
   audit_status: ratified-pending-landing
 - name: Operations Retirement
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Retire
   process_context: dea:pc-od-retire
   in_scope: Decommission operations and delivery
@@ -1189,7 +1189,7 @@ l1_candidates:
     a regulated decommission (e.g. nuclear-grade) requires a standalone group.
   audit_status: backlog-deferred
 - name: Delivery Retirement
-  domain: OperationsAndEnablement
+  domain: EnablementAndOperations
   stage: Retire
   process_context: dea:pc-od-retire
   in_scope: Decommission operations and delivery
@@ -1457,7 +1457,7 @@ cross_domain_findings:
   finding: CAND-019 (dea-catalog-business-capabilities) is held unmapped per N-006 / R-004; technology is an L5 layer concern,
     not an ECF domain.
   implication: No ECF coordinate carries Technology Management; for the 49-coordinate matrix there is no standalone Technology
-    cell. Process candidates touching technology must declare their domain (operations-enablement x operate for run, strategy-direction
+    cell. Process candidates touching technology must declare their domain (enablement-operations x operate for run, strategy-direction
     x operate for build/asset).
   evidence:
   - dea-catalog-business-capabilities/docs/research/ecf-overlay-v0.2.yaml R-004
@@ -1481,7 +1481,7 @@ cross_domain_findings:
 - topic: Resilience, Innovation, Analytics
   finding: CR-DEA-BC-04 R-006/R-007/R-008 lifted deferrals and admitted three capabilities (Resilience, Innovation, Analytics).
   implication: Their process surfaces are now under their primary coordinates (governance-existence x improve for Resilience;
-    product-value x conceive for Innovation; operations-enablement x operate for Analytics).
+    product-value x conceive for Innovation; enablement-operations x operate for Analytics).
   evidence:
   - CR-DEA-BC-04 R-006, R-007, R-008
   disposition: lifted_deferrals_reflected

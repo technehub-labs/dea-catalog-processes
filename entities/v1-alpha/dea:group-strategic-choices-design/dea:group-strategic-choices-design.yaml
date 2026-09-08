@@ -19,7 +19,7 @@ scope:
     - Objectives and targets design
     - Strategic scenarios design
   excludes:
-    - Operational planning (operations-enablement x design)
+    - Operational planning (enablement-operations x design)
     - Financial plan design (finance-accounting x design)
     - Strategic intent conception (Conceive stage; adjacent context)
 

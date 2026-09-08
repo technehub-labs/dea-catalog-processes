@@ -6,6 +6,32 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-23 implementation: ECF Domain Enum v2.5.0 migration. ECF Domain 6
+is renamed from `OperationsAndEnablement` (v2.4.0) to
+`EnablementAndOperations` (v2.5.0), driven by the Domain/Stage
+Orthogonality Stress Test (`dea-metaframework` ADR-ECF-003 §5;
+CR-ECF-008). The Domain 6 name shared a lexical root with Stage 5
+`Operate`, obscuring the orthogonality that the ECF requires between
+the Domain axis and the Stage axis. The rename swaps the two nouns:
+`Enablement` now leads (lexically distinct from any Stage name) and
+`Operations` trails (the sustained day-to-day concern, not the
+lifecycle Stage).
+
+**Files touched**: 129 files + 1 new CR carrier + reconciliation
+regeneration. See `change-requests/CR-BP-23.md` for the full mapping
+table and validation evidence.
+
+**Unchanged**: Domain number (6), matrix position, semantic anchor
+(`Execution`), seven-Domain partition, seven lifecycle Stages, Stage 5
+name (`Operate`), catalog ID abbreviation `oe` (stable; not re-keyed),
+group ids (`dea:group-operations-and-enablement-*` are stable
+identifiers per CR-ECF-008 §18 non-goal "no content redistribution").
+
+**Verification**: ECF conformance PASS (161 entries); PC PASS
+(PC-001..PC-008); BP-SPEC PASS (BP-SPEC-01-001..007); PG PASS
+(PG-001..008); register audit PASS (35 landed / 0 pending / 14
+deferred); CATALOG.yaml no drift.
+
 CR-BP-21f.1 implementation: GovernanceAndExistence completion
 (retroactive completion for the pre-register-v2-discipline domain).
 GE's register v2 candidate list was never fully populated when the
@@ -38,7 +64,7 @@ density (`operate-financial-reporting-and-disclosure` to core;
 reworded for the same reason (`tax-and-compliance-capability`
 outcome now supervised by the tax policy review).
 
-CR-BP-21d.1 implementation: OperationsAndEnablement completion
+CR-BP-21d.1 implementation: EnablementAndOperations completion
 (fourth domain-completion tranche; the largest, reflecting OE's
 execution-core position). Lands the 4 remaining OE Process Groups
 (`dea:group-process-and-enablement-design`,
@@ -96,14 +122,14 @@ Process Group (`dea:group-financial-model-conception`), and 5 L2
 Business Processes across the FA x {Conceive, Design, Build, Operate,
 Improve} cells. v2.4.0 monetary scoping: abstract value removed;
 procure-to-pay and order-to-cash operational execution live in
-operations-enablement while monetary recording remains here. Register
+enablement-operations while monetary recording remains here. Register
 v3 audit counts updated: 15 `landed` / 20 `ratified-pending-landing` /
 14 `backlog-deferred`. FA/Conceive audit_status flipped to `landed`.
 With this landing, every v2.4.0 domain has its Conceive-cell L1
 Process Group landed. Disposition register +5 RETAIN; tranche plan
 30 -> 35.
 
-CR-BP-21d implementation: OperationsAndEnablement landing (fourth
+CR-BP-21d implementation: EnablementAndOperations landing (fourth
 v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
 Process Group (`dea:group-operations-model-conception`), and 5 L2
 Business Processes across the OE x {Conceive, Design, Build, Operate,
@@ -168,7 +194,7 @@ the next is `dea-catalog-business-capabilities` (CR-BC-ECF-01).
   | 1 | `cd` (CustomerAndDemand) | `pr` (PartyAndRelationship) |
   | 2 | `sr` (SupplyAndResources) | `sd` (StrategyAndDirection) |
   | 5 | `po` (ProductAndOffering) | `pv` (ProductAndValue) |
-  | 6 | `od` (OperationsAndDelivery) | `oe` (OperationsAndEnablement) |
+  | 6 | `od` (OperationsAndDelivery) | `oe` (EnablementAndOperations) |
   | 7 | `fv` (FinanceAndValue) | `fa` (FinanceAndAccounting) |
 
 - **5 Process Context YAMLs renamed + content migrated**:
@@ -201,7 +227,7 @@ the next is `dea-catalog-business-capabilities` (CR-BC-ECF-01).
 - **No new Process Contexts admitted.** The v2.3.0 wave is a pure
   rename; no new coordinates are admitted in this PR.
 - **The L1 process discovery work for the renamed Domains** (Strategy
-  & Direction, Product & Value, Operations & Enablement, Finance &
+  & Direction, Product & Value, Enablement & Operations, Finance &
   Accounting, Party & Relationship deepening) is parked as a separate
   task that follows this PR — not in scope.
 - **The `test_check_struct_clean_repo_passes` pre-existing failure**

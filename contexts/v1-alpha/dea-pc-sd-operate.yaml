@@ -14,7 +14,7 @@ name: Strategic Steering Operation
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **operating** the strategic steering, environmental sensing, and strategic review cycle of the enterprise in the **Strategy & Direction** domain. This context addresses the steady-state work of monitoring strategic performance, sensing environmental signals, steering the initiative portfolio, and operating the strategic review cycle. v2.4.0: monitoring and steering the strategy as a stable subject; operational performance management lives in Operations & Enablement.
+  The bounded enterprise context for **operating** the strategic steering, environmental sensing, and strategic review cycle of the enterprise in the **Strategy & Direction** domain. This context addresses the steady-state work of monitoring strategic performance, sensing environmental signals, steering the initiative portfolio, and operating the strategic review cycle. v2.4.0: monitoring and steering the strategy as a stable subject; operational performance management lives in Enablement & Operations.
 
 # Scope (PC-005).
 scope:
@@ -24,8 +24,8 @@ scope:
     - Initiative portfolio steering
     - Strategic review cycle operation
   excludes:
-    - Operational performance management (operations-enablement x operate)
-    - Initiative execution (operations-enablement x operate)
+    - Operational performance management (enablement-operations x operate)
+    - Initiative execution (enablement-operations x operate)
     - Strategic adaptation (Improve stage; adjacent context)
 
 # Intended outcomes.
@@ -66,8 +66,8 @@ cell_charter:
     - Initiative portfolio steering
     - Strategic review cycle operation
   exclusions:
-    - Operational performance management (operations-enablement x operate)
-    - Initiative execution (operations-enablement x operate)
+    - Operational performance management (enablement-operations x operate)
+    - Initiative execution (enablement-operations x operate)
     - Strategic adaptation (Improve stage; adjacent context)
   adjacent_boundaries:
     - "dea:pc-sd-conceive (adjacent context): strategy flows between Operate and the adjacent cell."

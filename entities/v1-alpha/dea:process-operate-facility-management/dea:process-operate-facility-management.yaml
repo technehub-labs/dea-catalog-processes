@@ -25,7 +25,7 @@ identity:
 relationships:
 - source_id: dea:process-operate-facility-management
   relationship_type: serves
-  target_id: ecf:operationsEnablement.operate
+  target_id: ecf:enablementAndOperations.operate
 ecfConformance:
   framework: EnterpriseConceptFramework
   contractVersion: 1.0.0
@@ -34,9 +34,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
   - kind: coordinate
-    domain: OperationsAndEnablement
+    domain: EnablementAndOperations
     stage: Operate
-    identifier: ecf:operationsEnablement.operate
+    identifier: ecf:enablementAndOperations.operate
 metadata:
   established_by: CR-BP-21d.1
   established_at: '2026-09-08'
@@ -45,12 +45,12 @@ metadata:
     date: '2026-09-08'
     change: |
       Initial L2 Process entry; lands as part of the CR-BP-21d.1
-      OperationsAndEnablement completion tranche under ECF v2.4.0
+      EnablementAndOperations completion tranche under ECF v2.4.0
       register v2 (CR-BP-19). Closes the remaining register v2 L2
       candidates for this cell.
 links:
 - rel: change-request
-  href: change-requests/CR-BP-21d.1-operations-enablement-completion.md
+  href: change-requests/CR-BP-21d.1-enablement-operations-completion.md
 - rel: process-context
   href: contexts/v1-alpha/pc-oe-operate.yaml
 context:

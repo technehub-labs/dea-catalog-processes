@@ -19,7 +19,7 @@ scope:
     - Innovation prototype build
     - Market readiness preparation
   excludes:
-    - Technology build (operations-enablement)
+    - Technology build (enablement-operations)
     - Proposition design (Design stage; adjacent context)
     - Catalogue operation (Operate stage; adjacent context)
 

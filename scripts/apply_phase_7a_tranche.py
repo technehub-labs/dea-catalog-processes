@@ -46,7 +46,7 @@ CONTEXTS = [
         "excludes": [
             "Strategic intent conception (Conceive stage; adjacent context)",
             "Strategic plan and roadmap build (Build stage; adjacent context)",
-            "Operational planning (operations-enablement x design)",
+            "Operational planning (enablement-operations x design)",
             "Financial plan design (finance-accounting x design)",
         ],
         "outcomes": [
@@ -120,7 +120,7 @@ CONTEXTS = [
             "work of monitoring strategic performance, sensing environmental signals, "
             "steering the initiative portfolio, and operating the strategic review cycle. "
             "v2.4.0: monitoring and steering the strategy as a stable subject; "
-            "operational performance management lives in Operations & Enablement."
+            "operational performance management lives in Enablement & Operations."
         ),
         "includes": [
             "Strategic performance monitoring",
@@ -129,8 +129,8 @@ CONTEXTS = [
             "Strategic review cycle operation",
         ],
         "excludes": [
-            "Operational performance management (operations-enablement x operate)",
-            "Initiative execution (operations-enablement x operate)",
+            "Operational performance management (enablement-operations x operate)",
+            "Initiative execution (enablement-operations x operate)",
             "Strategic adaptation (Improve stage; adjacent context)",
         ],
         "outcomes": [
@@ -371,7 +371,7 @@ scope:
     - Charter and policy conception (governance-existence x conceive)
     - Strategic option design (Design stage; adjacent context)
     - Strategic plan and roadmap build (Build stage; adjacent context)
-    - Initiative execution (operations-enablement)
+    - Initiative execution (enablement-operations)
 
 # Intended enterprise outcomes.
 outcomes:

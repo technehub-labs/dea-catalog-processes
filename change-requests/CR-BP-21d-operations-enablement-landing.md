@@ -1,4 +1,4 @@
-# CR-BP-21d: OperationsAndEnablement Landing (ECF v2.4.0 — Fourth Unadmitted Domain)
+# CR-BP-21d: EnablementAndOperations Landing (ECF v2.4.0 — Fourth Unadmitted Domain)
 
 **Status**: Accepted
 **Layer**: Process Catalog
@@ -10,13 +10,13 @@
 ## 1. What this CR is
 
 Fourth landing tranche of the CR-BP-21 series. Lands
-OperationsAndEnablement against the rediscovered register v2 cells
+EnablementAndOperations against the rediscovered register v2 cells
 (Conceive / Design / Build / Operate / Improve). The Activate / Retire
 cells remain deferred register-wide per CR-BP-19.
 
 v2.4.0 (CR-ECF-006) dissolved the v2.3.0 "Supply & Resources" domain
 and redistributed its concerns: physical and virtual resources moved to
-Operations & Enablement as enablers of execution; supplier
+Enablement & Operations as enablers of execution; supplier
 relationships moved to Party & Relationship; financial resources moved
 to Finance & Accounting. This landing therefore absorbs execution-side
 sourcing/asset conception, asset/facility blueprint design, asset
@@ -28,17 +28,17 @@ migration_notes, grounded in domain-grounding.md §3.6).
 ## 2. The 5 process contexts
 
 - `dea:pc-oe-conceive` — Operations Model & Enablement Conception
-- `dea:pc-oe-design` — Operations & Enablement Design
-- `dea:pc-oe-build` — Operations & Enablement Build
+- `dea:pc-oe-design` — Enablement & Operations Design
+- `dea:pc-oe-build` — Enablement & Operations Build
 - `dea:pc-oe-operate` — Execution, Technology & Asset Operation
-- `dea:pc-oe-improve` — Operations & Enablement Improvement
+- `dea:pc-oe-improve` — Enablement & Operations Improvement
 
 The Activate / Retire cells (per register v2) remain deferred.
 
 ## 3. The 1 Process Group (L1)
 
 - `dea:group-operations-model-conception` — Process Group for
-  OperationsAndEnablement x Conceive. Composes the 4 L2s of the
+  EnablementAndOperations x Conceive. Composes the 4 L2s of the
   Conceive cell (Frame operations strategy, Frame delivery model
   conception, Frame technology enablement approach, Frame physical
   asset approach).

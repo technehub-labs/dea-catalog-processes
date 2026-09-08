@@ -31,7 +31,7 @@ scope:
   excludes:
     - Constitutional mandate and authority (governance-existence x conceive)
     - Strategic direction conception (strategy-direction x conceive)
-    - Operational execution (operations-enablement)
+    - Operational execution (enablement-operations)
     - Compensation decisions (finance-accounting x conceive)
     - Organizational architecture design (Design stage; adjacent context)
     - Agent acquisition (Build stage; adjacent context)

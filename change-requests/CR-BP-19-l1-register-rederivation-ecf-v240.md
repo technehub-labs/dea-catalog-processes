@@ -27,12 +27,12 @@ records), with explicit migration notes where content moves between cells.
 
 | Domain (v2.4.0) | Semantic shift vs register v1 content |
 |---|---|
-| StrategyAndDirection | **Full replacement.** Former Supply & Resources dissolved: physical/virtual resources → Operations & Enablement (as enablers); supplier relationships → Party & Relationship; financial resources → Finance & Accounting (grounding §3.2 evidence). The vacated axiom slot ("persists" as deliberate steering) now holds purpose, ambition, strategic choices, objectives, planning, adaptation. All 6 previously-ratified cells held dissolved-domain content. |
+| StrategyAndDirection | **Full replacement.** Former Supply & Resources dissolved: physical/virtual resources → Enablement & Operations (as enablers); supplier relationships → Party & Relationship; financial resources → Finance & Accounting (grounding §3.2 evidence). The vacated axiom slot ("persists" as deliberate steering) now holds purpose, ambition, strategic choices, objectives, planning, adaptation. All 6 previously-ratified cells held dissolved-domain content. |
 | PartyAndRelationship | **Broadened.** Customer-only → all external parties (customer, supplier, partner, regulator, community). One party, one bond, multiple facets (grounding §3.4). |
 | FinanceAndAccounting | **Narrowed to monetary reality.** "Value" in the abstract explicitly excluded (grounding §3.7). "Value Strategy Conception" / "Value Architecture Design" / "Value Performance" candidates removed. |
 | AgencyAndOrganization | **Substrate-independence.** Human "workforce" reframed as agent capacity covering human + artificial + hybrid agents (grounding §3.3; ADR-ECF-002). |
 | ProductAndValue | **Renamed concerns.** "Offering" dropped as vague; Proposition/Portfolio/Evolution naming per grounding §3.5. Service delivery execution and partner programmes moved out (to OE and PR respectively). |
-| OperationsAndEnablement | **Absorbs enablement.** Takes physical + technology assets as enablers of execution from dissolved Supply & Resources (grounding §3.6). Technology/IT coverage asserted here. |
+| EnablementAndOperations | **Absorbs enablement.** Takes physical + technology assets as enablers of execution from dissolved Supply & Resources (grounding §3.6). Technology/IT coverage asserted here. |
 | GovernanceAndExistence | **Boundary clarified.** Strategic choices excluded — "Governance authorizes but does not direct; Strategy & Direction directs within the authorized frame" (grounding §3.1). Corporate strategy conception moves out. |
 
 ## 3. The split decision (user-approved Option A)
@@ -52,19 +52,19 @@ to Strategy & Direction.
 
 | v1 cell (content) | v2 home |
 |---|---|
-| strategy-direction x conceive/design/build (sourcing, supply-base, asset strategy/blueprint/acquisition) | operations-enablement x conceive/design/build (execution-side); supplier relationship conception → party-relationship x conceive |
-| strategy-direction x operate (Sourcing and Procurement Operation; Asset and Facility Operation) | operations-enablement x operate (procurement execution, facility, asset maintenance); Supplier Management Operation → party-relationship x operate |
-| strategy-direction x improve (supplier review/consolidation; asset utilization) | supplier side → party-relationship x improve; asset side → operations-enablement x improve |
-| strategy-direction x retire (supply and asset retirement) | operations-enablement x retire (deferred) |
+| strategy-direction x conceive/design/build (sourcing, supply-base, asset strategy/blueprint/acquisition) | enablement-operations x conceive/design/build (execution-side); supplier relationship conception → party-relationship x conceive |
+| strategy-direction x operate (Sourcing and Procurement Operation; Asset and Facility Operation) | enablement-operations x operate (procurement execution, facility, asset maintenance); Supplier Management Operation → party-relationship x operate |
+| strategy-direction x improve (supplier review/consolidation; asset utilization) | supplier side → party-relationship x improve; asset side → enablement-operations x improve |
+| strategy-direction x retire (supply and asset retirement) | enablement-operations x retire (deferred) |
 | governance-existence x conceive (Develop corporate strategy) | strategy-direction x conceive (Option A split) |
-| party-relationship x operate (Demand Fulfillment) | operations-enablement x operate (fulfillment is execution) |
-| product-value x operate (service delivery management; partner and alliance programme) | operations-enablement x operate; party-relationship x operate |
-| finance-accounting x operate (Procure-to-Pay / Order-to-Cash *execution*) | operations-enablement x operate; the monetary recording of those cycles remains in finance-accounting |
+| party-relationship x operate (Demand Fulfillment) | enablement-operations x operate (fulfillment is execution) |
+| product-value x operate (service delivery management; partner and alliance programme) | enablement-operations x operate; party-relationship x operate |
+| finance-accounting x operate (Procure-to-Pay / Order-to-Cash *execution*) | enablement-operations x operate; the monetary recording of those cycles remains in finance-accounting |
 
 ## 5. Disposition normalization
 
 v1 ratified 38 cells and deferred 11 — inconsistently: 3 Activate cells
-(strategy-direction, product-value, operations-enablement) were
+(strategy-direction, product-value, enablement-operations) were
 ratified-accepted while the other 11 Activate/Retire cells were deferred under
 a rationale that applies to all of them.
 

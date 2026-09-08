@@ -1,24 +1,24 @@
-# Process Context Cell Charter: OperationsAndEnablement x Conceive.
+# Process Context Cell Charter: EnablementAndOperations x Conceive.
 #
-# Lands as part of CR-BP-21d (OperationsAndEnablement landing, fourth
+# Lands as part of CR-BP-21d (EnablementAndOperations landing, fourth
 # unadmitted-domain tranche under ECF v2.4.0 register v2 / CR-BP-19).
 # Carries the full Cell Charter (CR-BP-02 §7).
 #
 # v2.4.0 grounding: dea-metaframework/framework/domain-grounding.md §3.6
-# (Operations & Enablement: conception of operations model, delivery model, technology enablement, and physical asset approach).
+# (Enablement & Operations: conception of operations model, delivery model, technology enablement, and physical asset approach).
 #
 # Substrate independence (ADR-ECF-002 §5, CR-ECF-007): this context
 # applies to biological, artificial, and hybrid agents without
 # reclassification.
 
 id: dea:pc-oe-conceive
-domain: OperationsAndEnablement
+domain: EnablementAndOperations
 lifecycle_stage: Conceive
 name: Operations Model and Enablement Conception
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **conceiving** the enterprise's operations model and enablement approach in the **Operations & Enablement** domain. This context addresses the front-end work of framing the operations strategy, the delivery model, the technology enablement approach, and the physical asset approach. v2.4.0: absorbs execution-side sourcing and asset conception from the dissolved Supply & Resources domain; physical and virtual resources are enablers of execution (domain-grounding.md §3.6).
+  The bounded enterprise context for **conceiving** the enterprise's operations model and enablement approach in the **Enablement & Operations** domain. This context addresses the front-end work of framing the operations strategy, the delivery model, the technology enablement approach, and the physical asset approach. v2.4.0: absorbs execution-side sourcing and asset conception from the dissolved Supply & Resources domain; physical and virtual resources are enablers of execution (domain-grounding.md §3.6).
 
 # Scope (PC-005).
 scope:
@@ -57,7 +57,7 @@ processes:
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
-  enterprise_concern: "Operations & Enablement: the conception of the enterprise's operations model and enablement approach."
+  enterprise_concern: "Enablement & Operations: the conception of the enterprise's operations model and enablement approach."
   lifecycle_concern: "Conceive: framing operations strategy, delivery model, technology enablement approach, and physical asset approach."
   combined_semantic_meaning: |
     The front-end work of framing the operations strategy, the delivery model, the technology enablement approach, and the physical asset approach.
@@ -103,12 +103,12 @@ change_history:
     change: |
       Initial Process Context record; promoted from the CR-BP-19
       register v2 (ratified against ECF v2.4.0) as part of the
-      OperationsAndEnablement landing tranche. Substrate-neutral
+      EnablementAndOperations landing tranche. Substrate-neutral
       per ADR-ECF-002 §5 / CR-ECF-007.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register

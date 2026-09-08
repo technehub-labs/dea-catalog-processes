@@ -733,20 +733,20 @@ dispositions:
       CR-BP-21c-product-value-landing.md.
     note: null
 
-  # ----- CR-BP-21d: OperationsAndEnablement landing -----
+  # ----- CR-BP-21d: EnablementAndOperations landing -----
 
   - record_id: dea:process-frame-operations-strategy
     disposition: RETAIN
     changes: []
     tranche: cr-bp-21d
     rationale: |
-      Fresh L2 landing for the OperationsAndEnablement x Conceive
+      Fresh L2 landing for the EnablementAndOperations x Conceive
       cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
       execution-side sourcing/asset conception from the dissolved
       Supply & Resources domain.
     evidence: |
       CR-BP-19 /l1-register.yaml operationsEnablement.conceive;
-      CR-BP-21d-operations-enablement-landing.md.
+      CR-BP-21d-enablement-operations-landing.md.
     note: null
 
   - record_id: dea:process-design-operations-model
@@ -754,13 +754,13 @@ dispositions:
     changes: []
     tranche: cr-bp-21d
     rationale: |
-      Fresh L2 landing for the OperationsAndEnablement x Design
+      Fresh L2 landing for the EnablementAndOperations x Design
       cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
       asset/facility blueprint design from the dissolved Supply &
       Resources domain.
     evidence: |
       CR-BP-19 /l1-register.yaml operationsEnablement.design;
-      CR-BP-21d-operations-enablement-landing.md.
+      CR-BP-21d-enablement-operations-landing.md.
     note: null
 
   - record_id: dea:process-build-delivery-capability
@@ -768,13 +768,13 @@ dispositions:
     changes: []
     tranche: cr-bp-21d
     rationale: |
-      Fresh L2 landing for the OperationsAndEnablement x Build
+      Fresh L2 landing for the EnablementAndOperations x Build
       cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs asset
       acquisition and facility provisioning from the dissolved
       Supply & Resources domain.
     evidence: |
       CR-BP-19 /l1-register.yaml operationsEnablement.build;
-      CR-BP-21d-operations-enablement-landing.md.
+      CR-BP-21d-enablement-operations-landing.md.
     note: null
 
   - record_id: dea:process-operate-service-delivery
@@ -782,13 +782,13 @@ dispositions:
     changes: []
     tranche: cr-bp-21d
     rationale: |
-      Fresh L2 landing for the OperationsAndEnablement x Operate
+      Fresh L2 landing for the EnablementAndOperations x Operate
       cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs
       procurement execution, facility operation, and asset
       maintenance from the dissolved Supply & Resources domain.
     evidence: |
       CR-BP-19 /l1-register.yaml operationsEnablement.operate;
-      CR-BP-21d-operations-enablement-landing.md.
+      CR-BP-21d-enablement-operations-landing.md.
     note: null
 
   - record_id: dea:process-conduct-operations-performance-review
@@ -796,13 +796,13 @@ dispositions:
     changes: []
     tranche: cr-bp-21d
     rationale: |
-      Fresh L2 landing for the OperationsAndEnablement x Improve
+      Fresh L2 landing for the EnablementAndOperations x Improve
       cell, per CR-BP-21d and CR-BP-19 register v2. Absorbs asset
       utilization improvement from the dissolved Supply & Resources
       domain.
     evidence: |
       CR-BP-19 /l1-register.yaml operationsEnablement.improve;
-      CR-BP-21d-operations-enablement-landing.md.
+      CR-BP-21d-enablement-operations-landing.md.
     note: null
 
   # ----- CR-BP-21e: FinanceAndAccounting landing -----
@@ -853,7 +853,7 @@ dispositions:
       Fresh L2 landing for the FinanceAndAccounting x Operate
       cell, per CR-BP-21e and CR-BP-19 register v2. Monetary
       recording of procure-to-pay and order-to-cash remains here;
-      operational execution lives in operations-enablement.
+      operational execution lives in enablement-operations.
     evidence: |
       CR-BP-19 /l1-register.yaml financeAccounting.operate;
       CR-BP-21e-finance-accounting-landing.md.
@@ -1351,7 +1351,7 @@ dispositions:
       CR-BP-21c.1-product-value-completion.md.
     note: null
 
-  # ----- CR-BP-21d.1: OperationsAndEnablement completion -----
+  # ----- CR-BP-21d.1: EnablementAndOperations completion -----
 
 
   - record_id: dea:process-frame-delivery-model-conception
@@ -1359,11 +1359,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Conceive cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.conceive;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.conceive;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-frame-technology-enablement-approach
@@ -1371,11 +1371,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Conceive cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.conceive;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.conceive;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-frame-physical-asset-approach
@@ -1383,11 +1383,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Conceive cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.conceive;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.conceive;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-design-delivery-model
@@ -1395,11 +1395,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Design cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.design;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.design;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-design-technology-platform-architecture
@@ -1407,11 +1407,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Design cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.design;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.design;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-design-facility-and-asset-blueprint
@@ -1419,11 +1419,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Design cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.design;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.design;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-design-logistics-and-routing
@@ -1431,11 +1431,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Design cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.design;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.design;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-commission-production-line
@@ -1443,11 +1443,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Build cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.build;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.build;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-build-logistics-network
@@ -1455,11 +1455,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Build cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.build;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.build;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-acquire-technology-assets
@@ -1467,11 +1467,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Build cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.build;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.build;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-provision-facilities
@@ -1479,11 +1479,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Build cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.build;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.build;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-run-production-line
@@ -1491,11 +1491,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-logistics
@@ -1503,11 +1503,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-warehouse-and-inventory
@@ -1515,11 +1515,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-quality-control
@@ -1527,11 +1527,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-technology-platforms
@@ -1539,11 +1539,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-facility-management
@@ -1551,11 +1551,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-asset-maintenance
@@ -1563,11 +1563,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-operate-procurement-cycle
@@ -1575,11 +1575,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Operate cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.operate;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.operate;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-conduct-logistics-optimization
@@ -1587,11 +1587,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Improve cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.improve;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.improve;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-conduct-lean-six-sigma-programme
@@ -1599,11 +1599,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Improve cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.improve;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.improve;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-optimize-asset-utilization
@@ -1611,11 +1611,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Improve cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.improve;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.improve;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-improve-technology-platforms
@@ -1623,11 +1623,11 @@ dispositions:
     changes: []
     tranche: cr-bp-21d.1
     rationale: |
-      Register v2 L2 completion landing for the OperationsAndEnablement
+      Register v2 L2 completion landing for the EnablementAndOperations
       x Improve cell, per CR-BP-21d.1 and CR-BP-19 register v2.
     evidence: |
-      CR-BP-19 /l1-register.yaml operationsAndEnablement.improve;
-      CR-BP-21d.1-operations-enablement-completion.md.
+      CR-BP-19 /l1-register.yaml enablementAndOperations.improve;
+      CR-BP-21d.1-enablement-operations-completion.md.
     note: null
 
   - record_id: dea:process-design-financial-controls-and-policies

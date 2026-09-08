@@ -30,7 +30,7 @@ scope:
   excludes:
     - Organization structure design (Design stage; adjacent context)
     - External party engagement (party-relationship x build; adjacent domain)
-    - Operational execution (operations-enablement x build; adjacent domain)
+    - Operational execution (enablement-operations x build; adjacent domain)
 
 # Intended outcomes.
 outcomes:
@@ -70,7 +70,7 @@ cell_charter:
   exclusions:
     - Organization structure design (Design stage; adjacent context)
     - External party engagement (party-relationship x build; adjacent domain)
-    - Operational execution (operations-enablement x build; adjacent domain)
+    - Operational execution (enablement-operations x build; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-ao-conceive (adjacent context): agentive flow between Build and the adjacent cell."
     - "dea:pc-ao-design (adjacent context): agentive flow between Build and the adjacent cell."

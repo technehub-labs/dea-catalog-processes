@@ -18,7 +18,7 @@ name: Accounting, Reporting, and Treasury Operation
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **operating** the general ledger, accounts payable and receivable, treasury, tax compliance, financial close, financial planning and analysis, and financial reporting and disclosure of the enterprise in the **Finance & Accounting** domain. This context addresses the steady-state work of monetary recording and reporting. v2.4.0: procure-to-pay and order-to-cash operational execution moved to operations-enablement x operate; the monetary recording of those cycles remains here (domain-grounding.md §3.7).
+  The bounded enterprise context for **operating** the general ledger, accounts payable and receivable, treasury, tax compliance, financial close, financial planning and analysis, and financial reporting and disclosure of the enterprise in the **Finance & Accounting** domain. This context addresses the steady-state work of monetary recording and reporting. v2.4.0: procure-to-pay and order-to-cash operational execution moved to enablement-operations x operate; the monetary recording of those cycles remains here (domain-grounding.md §3.7).
 
 # Scope (PC-005).
 scope:
@@ -32,7 +32,7 @@ scope:
     - Financial reporting and disclosure operation
   excludes:
     - Finance capability build (Build stage; adjacent context)
-    - Procurement transaction execution (operations-enablement x operate; adjacent domain)
+    - Procurement transaction execution (enablement-operations x operate; adjacent domain)
     - Agent compensation operation (agency-organization x operate; adjacent domain)
 
 # Intended outcomes.
@@ -85,7 +85,7 @@ cell_charter:
     - Financial reporting and disclosure operation
   exclusions:
     - Finance capability build (Build stage; adjacent context)
-    - Procurement transaction execution (operations-enablement x operate; adjacent domain)
+    - Procurement transaction execution (enablement-operations x operate; adjacent domain)
     - Agent compensation operation (agency-organization x operate; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-fa-conceive (adjacent context): monetary flow between Operate and the adjacent cell."

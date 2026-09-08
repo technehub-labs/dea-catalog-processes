@@ -117,7 +117,7 @@ the following substrate-neutral vocabulary:
 ## 8. What this CR does NOT do
 
 - The remaining 3 unadmitted v2.4.0 domains (ProductAndValue,
-  OperationsAndEnablement, FinanceAndAccounting) — each gets its
+  EnablementAndOperations, FinanceAndAccounting) — each gets its
   own CR-BP-21c..e landing tranche.
 - The remaining L2s of the AO/Conceive cell (Frame organization
   model; Conceive workforce and agent mix), AO/Design cell (Role

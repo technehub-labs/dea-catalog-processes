@@ -8,7 +8,7 @@ name: Operations Model Conception
 definition: |
   The bounded Process Group that organises the Business Process
   responsibilities of conceiving the enterprise's operations model and
-  enablement approach in the OperationsAndEnablement x Conceive
+  enablement approach in the EnablementAndOperations x Conceive
   context. This group covers the front-end work of framing the
   operations strategy, the delivery model, the technology enablement
   approach, and the physical asset approach. v2.4.0 grounding
@@ -52,7 +52,7 @@ composes:
     rationale: |
       The L2 process frames the enterprise's operations strategy,
       which is the v2.4.0 principal responsibility of the
-      OperationsAndEnablement x Conceive cell. Lands under CR-BP-21d.
+      EnablementAndOperations x Conceive cell. Lands under CR-BP-21d.
     evidence: docs/examples/frame-operations-strategy.md
     provenance:
       type: architecture-review
@@ -67,7 +67,7 @@ composes:
     asserted_by: dea-team
     rationale: |
       The L2 process frames the delivery model conception, a register
-      v2 candidate for the OperationsAndEnablement x Conceive cell,
+      v2 candidate for the EnablementAndOperations x Conceive cell,
       landed under CR-BP-21d.1.
     provenance:
       type: architecture-review
@@ -82,7 +82,7 @@ composes:
     asserted_by: dea-team
     rationale: |
       The L2 process frames the technology enablement approach, a
-      register v2 candidate for the OperationsAndEnablement x Conceive
+      register v2 candidate for the EnablementAndOperations x Conceive
       cell, landed under CR-BP-21d.1.
     provenance:
       type: architecture-review
@@ -97,7 +97,7 @@ composes:
     asserted_by: dea-team
     rationale: |
       The L2 process frames the physical asset approach, a register
-      v2 candidate for the OperationsAndEnablement x Conceive cell,
+      v2 candidate for the EnablementAndOperations x Conceive cell,
       landed under CR-BP-21d.1.
     provenance:
       type: architecture-review
@@ -123,9 +123,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: OperationsAndEnablement
+      domain: EnablementAndOperations
       stage: Conceive
-      identifier: ecf:operationsEnablement.conceive
+      identifier: ecf:enablementAndOperations.conceive
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:
@@ -148,7 +148,7 @@ metadata:
       change: |
         Initial Process Group record; promoted from the CR-BP-19 register
         v2 (ratified against ECF v2.4.0) as part of the
-        OperationsAndEnablement landing tranche. Composes the L2
+        EnablementAndOperations landing tranche. Composes the L2
         dea:process-frame-operations-strategy.
     - cr: CR-BP-21d.1
       date: '2026-09-08'
@@ -161,7 +161,7 @@ metadata:
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register

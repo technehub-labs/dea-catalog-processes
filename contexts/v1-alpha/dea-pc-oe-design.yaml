@@ -1,24 +1,24 @@
-# Process Context Cell Charter: OperationsAndEnablement x Design.
+# Process Context Cell Charter: EnablementAndOperations x Design.
 #
-# Lands as part of CR-BP-21d (OperationsAndEnablement landing, fourth
+# Lands as part of CR-BP-21d (EnablementAndOperations landing, fourth
 # unadmitted-domain tranche under ECF v2.4.0 register v2 / CR-BP-19).
 # Carries the full Cell Charter (CR-BP-02 §7).
 #
 # v2.4.0 grounding: dea-metaframework/framework/domain-grounding.md §3.6
-# (Operations & Enablement: design of operations model, delivery model, technology platforms, facilities, and logistics).
+# (Enablement & Operations: design of operations model, delivery model, technology platforms, facilities, and logistics).
 #
 # Substrate independence (ADR-ECF-002 §5, CR-ECF-007): this context
 # applies to biological, artificial, and hybrid agents without
 # reclassification.
 
 id: dea:pc-oe-design
-domain: OperationsAndEnablement
+domain: EnablementAndOperations
 lifecycle_stage: Design
 name: Operations and Enablement Design
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **designing** the operations model, delivery model, technology platform architecture, facility and asset blueprint, and logistics and routing of the enterprise in the **Operations & Enablement** domain. This context addresses the analytical work of producing designs for the execution engine and its enabling infrastructure. v2.4.0: absorbs asset and facility blueprint design from the dissolved Supply & Resources domain (domain-grounding.md §3.6).
+  The bounded enterprise context for **designing** the operations model, delivery model, technology platform architecture, facility and asset blueprint, and logistics and routing of the enterprise in the **Enablement & Operations** domain. This context addresses the analytical work of producing designs for the execution engine and its enabling infrastructure. v2.4.0: absorbs asset and facility blueprint design from the dissolved Supply & Resources domain (domain-grounding.md §3.6).
 
 # Scope (PC-005).
 scope:
@@ -59,7 +59,7 @@ processes:
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
-  enterprise_concern: "Operations & Enablement: the design of the enterprise's execution engine and enabling infrastructure."
+  enterprise_concern: "Enablement & Operations: the design of the enterprise's execution engine and enabling infrastructure."
   lifecycle_concern: "Design: designing the operations model, delivery model, technology platforms, facilities, and logistics."
   combined_semantic_meaning: |
     The analytical work of producing designs for the operations model, delivery model, technology platform architecture, facility and asset blueprint, and logistics and routing.
@@ -106,12 +106,12 @@ change_history:
     change: |
       Initial Process Context record; promoted from the CR-BP-19
       register v2 (ratified against ECF v2.4.0) as part of the
-      OperationsAndEnablement landing tranche. Substrate-neutral
+      EnablementAndOperations landing tranche. Substrate-neutral
       per ADR-ECF-002 §5 / CR-ECF-007.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register

@@ -1,24 +1,24 @@
-# Process Context Cell Charter: OperationsAndEnablement x Improve.
+# Process Context Cell Charter: EnablementAndOperations x Improve.
 #
-# Lands as part of CR-BP-21d (OperationsAndEnablement landing, fourth
+# Lands as part of CR-BP-21d (EnablementAndOperations landing, fourth
 # unadmitted-domain tranche under ECF v2.4.0 register v2 / CR-BP-19).
 # Carries the full Cell Charter (CR-BP-02 §7).
 #
 # v2.4.0 grounding: dea-metaframework/framework/domain-grounding.md §3.6
-# (Operations & Enablement: improvement of operations performance, logistics, asset utilization, and technology platforms).
+# (Enablement & Operations: improvement of operations performance, logistics, asset utilization, and technology platforms).
 #
 # Substrate independence (ADR-ECF-002 §5, CR-ECF-007): this context
 # applies to biological, artificial, and hybrid agents without
 # reclassification.
 
 id: dea:pc-oe-improve
-domain: OperationsAndEnablement
+domain: EnablementAndOperations
 lifecycle_stage: Improve
 name: Operations and Enablement Improvement
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **improving** the operations and enablement assets of the enterprise in the **Operations & Enablement** domain. This context addresses the learning and adaptation work of conducting operations performance reviews, logistics optimization, lean programmes, asset utilization optimization, and technology platform evolution. v2.4.0: absorbs asset utilization improvement from the dissolved Supply & Resources domain; supplier consolidation lives in party-relationship x improve (domain-grounding.md §3.6).
+  The bounded enterprise context for **improving** the operations and enablement assets of the enterprise in the **Enablement & Operations** domain. This context addresses the learning and adaptation work of conducting operations performance reviews, logistics optimization, lean programmes, asset utilization optimization, and technology platform evolution. v2.4.0: absorbs asset utilization improvement from the dissolved Supply & Resources domain; supplier consolidation lives in party-relationship x improve (domain-grounding.md §3.6).
 
 # Scope (PC-005).
 scope:
@@ -59,7 +59,7 @@ processes:
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
-  enterprise_concern: "Operations & Enablement: the improvement of the enterprise's execution engine and enabling assets."
+  enterprise_concern: "Enablement & Operations: the improvement of the enterprise's execution engine and enabling assets."
   lifecycle_concern: "Improve: improving operations performance, logistics, asset utilization, and technology platforms."
   combined_semantic_meaning: |
     The learning and adaptation work of conducting operations performance reviews, logistics optimization, lean programmes, asset utilization optimization, and technology platform evolution.
@@ -106,12 +106,12 @@ change_history:
     change: |
       Initial Process Context record; promoted from the CR-BP-19
       register v2 (ratified against ECF v2.4.0) as part of the
-      OperationsAndEnablement landing tranche. Substrate-neutral
+      EnablementAndOperations landing tranche. Substrate-neutral
       per ADR-ECF-002 §5 / CR-ECF-007.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register

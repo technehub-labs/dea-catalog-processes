@@ -76,7 +76,7 @@
           "type": "string",
           "enum": [
             "governance-existence", "strategy-direction", "agency-organization",
-            "party-relationship", "product-value", "operations-enablement", "finance-accounting"
+            "party-relationship", "product-value", "enablement-operations", "finance-accounting"
           ],
           "description": "Legacy migration alias (CR-BP-14 §13, §19). New contributions should prefer contextual relationships over this single-axis audience value."
         },

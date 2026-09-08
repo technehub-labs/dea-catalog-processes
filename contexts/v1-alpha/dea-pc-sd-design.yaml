@@ -26,7 +26,7 @@ scope:
   excludes:
     - Strategic intent conception (Conceive stage; adjacent context)
     - Strategic plan and roadmap build (Build stage; adjacent context)
-    - Operational planning (operations-enablement x design)
+    - Operational planning (enablement-operations x design)
     - Financial plan design (finance-accounting x design)
 
 # Intended outcomes.
@@ -69,7 +69,7 @@ cell_charter:
   exclusions:
     - Strategic intent conception (Conceive stage; adjacent context)
     - Strategic plan and roadmap build (Build stage; adjacent context)
-    - Operational planning (operations-enablement x design)
+    - Operational planning (enablement-operations x design)
     - Financial plan design (finance-accounting x design)
   adjacent_boundaries:
     - "dea:pc-sd-conceive (adjacent context): strategy flows between Design and the adjacent cell."

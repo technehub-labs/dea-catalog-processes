@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate CR-BP-21e artifacts (FinanceAndAccounting landing):
 5 process contexts, 1 L1 group, 5 L2 processes. Mirrors the
-CR-BP-21d (OperationsAndEnablement) pattern. Substrate-neutral
+CR-BP-21d (EnablementAndOperations) pattern. Substrate-neutral
 per ADR-ECF-002 §5 / CR-ECF-007.
 
 Run: python scripts/apply_phase_7e_tranche.py
@@ -123,7 +123,7 @@ CONTEXTS = [
         "excludes": [
             "Financial planning design (Design stage; adjacent context)",
             "Building non-finance capabilities (owning domains; adjacent domains)",
-            "Technology platform build (operations-enablement x build; adjacent domain)",
+            "Technology platform build (enablement-operations x build; adjacent domain)",
         ],
         "outcomes": [
             "Finance function is stood up and staffed.",
@@ -153,7 +153,7 @@ CONTEXTS = [
             "reporting and disclosure of the enterprise in the **Finance & "
             "Accounting** domain. This context addresses the steady-state work "
             "of monetary recording and reporting. v2.4.0: procure-to-pay and "
-            "order-to-cash operational execution moved to operations-enablement "
+            "order-to-cash operational execution moved to enablement-operations "
             "x operate; the monetary recording of those cycles remains here "
             "(domain-grounding.md §3.7)."
         ),
@@ -168,7 +168,7 @@ CONTEXTS = [
         ],
         "excludes": [
             "Finance capability build (Build stage; adjacent context)",
-            "Procurement transaction execution (operations-enablement x operate; adjacent domain)",
+            "Procurement transaction execution (enablement-operations x operate; adjacent domain)",
             "Agent compensation operation (agency-organization x operate; adjacent domain)",
         ],
         "outcomes": [

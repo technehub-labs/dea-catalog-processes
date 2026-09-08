@@ -58,7 +58,7 @@ DOMAIN_NAMES = {
     "sd": "StrategyAndDirection",
     "ag": "AgencyAndOrganization",
     "pv": "ProductAndValue",
-    "oe": "OperationsAndEnablement",
+    "oe": "EnablementAndOperations",
     "fa": "FinanceAndAccounting",
 }
 

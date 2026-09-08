@@ -57,7 +57,7 @@ A research-only, evidence-bound register of candidate L1 Process Groups across t
 | AgencyAndOrganization | 5 | 2 | 7 |
 | PartyAndRelationship | 5 | 2 | 7 |
 | ProductAndValue | 6 | 1 | 7 |
-| OperationsAndEnablement | 6 | 1 | 7 |
+| EnablementAndOperations | 6 | 1 | 7 |
 | FinanceAndAccounting | 5 | 2 | 7 |
 | **Total** | **38** | **11** | **49** |
 
@@ -76,7 +76,7 @@ The **v2 register counts** (authoritative as of 2026-09-07):
 | AgencyAndOrganization | 5 | 2 | 7 |
 | PartyAndRelationship | 5 | 2 | 7 |
 | ProductAndValue | 5 | 2 | 7 |
-| OperationsAndEnablement | 5 | 2 | 7 |
+| EnablementAndOperations | 5 | 2 | 7 |
 | FinanceAndAccounting | 5 | 2 | 7 |
 | **Total** | **35** | **14** | **49** |
 
@@ -158,7 +158,7 @@ Canonical L2 present: `dea:process-manage-customer-relationship` (CR-BP-03C).
 
 Evidence: `CR-DEA-BC-04 R-007`; `dea-catalog-business-capabilities/capability-offering-management`, `capability-innovation-management`, `capability-partner-management`; `SAFe Product Development Flow`; `ITIL 4 Service Design/Operation`; `BIAN Service Design/Operations`.
 
-### 4.6 OperationsAndEnablement
+### 4.6 EnablementAndOperations
 
 | Stage | Process Context | L1 Candidates | L2 Candidates | Disposition |
 |---|---|---|---|---|
@@ -193,20 +193,20 @@ Evidence: `dea-catalog-business-capabilities/capability-financial-management`, `
 | C1 | Technology Management | Held unmapped across the matrix; technology is an L5 layer concern, not an ECF domain. No standalone Technology cell. | `CR-DEA-BC-04 N-006`, `R-004`; `boundary-decision-cand-019.yaml` |
 | C2 | Change Management | Cross-cutting pattern at governance-existence x improve; referenced from peer coordinates. Not duplicated as separate L1 cells. | `CR-DEA-BC-04 R-005` |
 | C3 | Partner Management dual-home | Primary at party-relationship x conceive; supply-side operation is legitimate participation. | `CR-DEA-BC-04 R-001` |
-| C4 | Resilience, Innovation, Analytics | Resilience at governance-existence x improve; Innovation at product-value x conceive; Analytics at operations-enablement x operate. Recorded once at primary coordinate. | `CR-DEA-BC-04 R-006`, `R-007`, `R-008` |
+| C4 | Resilience, Innovation, Analytics | Resilience at governance-existence x improve; Innovation at product-value x conceive; Analytics at enablement-operations x operate. Recorded once at primary coordinate. | `CR-DEA-BC-04 R-006`, `R-007`, `R-008` |
 | C5 | Marketing placement | Marketing is distinct from Customer Management. Customer-demand x conceive carries Marketing; party-relationship x operate carries Customer Relationship Management. | `CR-DEA-BC-04 N-002` |
 
 ## 6. Deferral Reasons (full list)
 
-- governance-existence x activate: activation is typically modelled under operations-enablement x activate; governance activation is an attribute of governance operate.
+- governance-existence x activate: activation is typically modelled under enablement-operations x activate; governance activation is an attribute of governance operate.
 - governance-existence x retire: governance retirement is rare and largely an attribute of operating-model retirement.
-- strategy-direction x retire: retirement of supply and asset base is typically modelled under operations-enablement x retire with cross-reference.
+- strategy-direction x retire: retirement of supply and asset base is typically modelled under enablement-operations x retire with cross-reference.
 - agency-organization x activate: workforce activation is often an attribute of build (hire-and-onboard) or operate (deploy-on-assignment).
 - agency-organization x retire: workforce transition is often handled within HR operations.
 - party-relationship x activate: first-time activation is mostly handled inside the L1 group Operate in practice.
 - party-relationship x retire: customer exit is often handled within customer-relationship operations.
 - product-value x retire: offering retirement often overlaps with customer exit and asset retirement.
-- operations-enablement x retire: operations retirement is often handled within the operate group with a winding-down workflow.
+- enablement-operations x retire: operations retirement is often handled within the operate group with a winding-down workflow.
 - finance-accounting x activate: period opening and finance cutovers are usually handled within Operate.
 - finance-accounting x retire: financial wind-down is often handled within financial stewardship.
 
@@ -247,7 +247,7 @@ Group existence):
 | AgencyAndOrganization | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | ProductAndValue | landed | landed | landed | deferred | landed | landed | deferred | 5 |
-| OperationsAndEnablement | landed | landed | landed | deferred | landed | landed | deferred | 5 |
+| EnablementAndOperations | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | FinanceAndAccounting | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 
 ### Planned tranches closing the gap
@@ -255,7 +255,7 @@ Group existence):
 - `StrategyAndDirection` Design/Build/Operate/Improve (landed CR-BP-21a.1)
 - `AgencyAndOrganization` Design/Build/Operate/Improve (landed CR-BP-21b.1)
 - `ProductAndValue` Conceive (landed CR-BP-21c); Design/Build/Operate/Improve (landed CR-BP-21c.1)
-- `OperationsAndEnablement` Conceive (landed CR-BP-21d); Design/Build/Operate/Improve (landed CR-BP-21d.1)
+- `EnablementAndOperations` Conceive (landed CR-BP-21d); Design/Build/Operate/Improve (landed CR-BP-21d.1)
 - `FinanceAndAccounting` Conceive (landed CR-BP-21e); Design/Build/Operate/Improve (landed CR-BP-21e.1)
 
 The audit script (`scripts/check_register_audit.py`) re-runs the
