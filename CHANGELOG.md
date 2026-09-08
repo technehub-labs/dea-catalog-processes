@@ -6,6 +6,20 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21b.1 implementation: AgencyAndOrganization completion (second
+domain-completion tranche). Lands the 4 remaining AO Process Groups
+(`dea:group-organization-and-role-design`,
+`-agent-acquisition-and-onboarding`, `-agent-operations`,
+`-agent-and-organization-improvement`) and the 13 remaining register
+v2 AO L2 candidates; extends
+`dea:group-organization-and-agent-conception` with composes edges for
+the 2 new Conceive-cell L2s; extends the 5 AO Process Contexts'
+processes lists. Substrate-neutral per CR-BP-21b §5 / ADR-ECF-002.
+Register v3 audit counts updated: 23 `landed` / 12
+`ratified-pending-landing` / 14 `backlog-deferred`. AO is the second
+fully-landed v2.4.0 domain at register v2 scope. Disposition register
++13 RETAIN; tranche plan 40 -> 45.
+
 CR-BP-21a.1 implementation: StrategyAndDirection completion (first
 domain-completion tranche). Lands the 4 remaining SD Process Groups
 (`dea:group-strategic-choices-design`, `-strategic-plan-build`,

@@ -62,6 +62,36 @@ composes:
       reference: CR-BP-21b
       asserted_by: dea-team
       asserted_at: '2026-09-07'
+  - source_id: dea:group-organization-and-agent-conception
+    target_id: dea:process-frame-organization-model
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the organization model, a register v2
+      candidate for the AgencyAndOrganization x Conceive cell, landed
+      under CR-BP-21b.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21b.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-organization-and-agent-conception
+    target_id: dea:process-conceive-workforce-and-agent-mix
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process conceives the workforce and agent mix, a
+      register v2 candidate for the AgencyAndOrganization x Conceive
+      cell, landed under CR-BP-21b.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21b.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -110,6 +140,13 @@ metadata:
         AgencyAndOrganization landing tranche. Substrate-neutral per
         ADR-ECF-002 §5 / CR-ECF-007. Composes the L2
         dea:process-frame-organization-and-agent-strategy.
+    - cr: CR-BP-21b.1
+      date: '2026-09-08'
+      change: |
+        Composes edges added for the 2 remaining register v2 Conceive-cell
+        L2 candidates (frame-organization-model,
+        conceive-workforce-and-agent-mix), completing the cell's L2
+        landing.
 
 links:
   - rel: change-request

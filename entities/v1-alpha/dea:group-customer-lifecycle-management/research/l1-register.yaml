@@ -395,9 +395,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21b.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Build:
       process_context: dea:pc-ao-build
       l1_candidates:
@@ -420,9 +418,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Provision artificial agents covers model deployment and API integration per domain-grounding §3.3 (Acquisition
         & Onboarding sub-concern).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21b.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Activate:
       process_context: dea:pc-ao-activate
       l1_candidates:
@@ -467,9 +463,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: HR Operations and Workforce Operations renamed to substrate-independent Agent Operations; performance
         and learning cover training (human) and fine-tuning (artificial) per domain-grounding §3.3.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21b.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Improve:
       process_context: dea:pc-ao-improve
       l1_candidates:
@@ -489,9 +483,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21b.1
-      planned_at: '2026-09-08'
+      audit_status: landed
     Retire:
       process_context: dea:pc-ao-retire
       l1_candidates:

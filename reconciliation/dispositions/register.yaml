@@ -1043,3 +1043,175 @@ dispositions:
       CR-BP-19 /l1-register.yaml strategyDirection.improve;
       CR-BP-21a.1-strategy-direction-completion.md.
     note: null
+
+  # ----- CR-BP-21b.1: AgencyAndOrganization completion -----
+
+
+  - record_id: dea:process-frame-organization-model
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Conceive cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.conceive;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-conceive-workforce-and-agent-mix
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Conceive cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.conceive;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-design-role-catalogue
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Design cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.design;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-design-competency-framework
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Design cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.design;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-design-agent-topology
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Design cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.design;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-build-contractor-and-partner-agent-pool
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Build cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.build;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-operate-payroll-and-benefits
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Operate cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.operate;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-operate-time-and-attendance
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Operate cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.operate;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-operate-learning-and-development
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Operate cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.operate;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-coordinate-collaboration
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Operate cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.operate;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-conduct-engagement-and-alignment-review
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Improve cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.improve;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-conduct-capability-gap-analysis
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Improve cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.improve;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
+
+  - record_id: dea:process-reorganize-structures
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21b.1
+    rationale: |
+      Register v2 L2 completion landing for the AgencyAndOrganization
+      x Improve cell, per CR-BP-21b.1 and CR-BP-19 register v2.
+      Substrate-neutral naming per CR-BP-21b §5.
+    evidence: |
+      CR-BP-19 /l1-register.yaml agencyOrganization.improve;
+      CR-BP-21b.1-agency-organization-completion.md.
+    note: null
