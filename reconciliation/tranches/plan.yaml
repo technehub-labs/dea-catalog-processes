@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 50
-  total_records: 81
+  total_tranches: 55
+  total_records: 104
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -71,6 +71,11 @@ summary:
     pv-b.1: 3
     pv-op.1: 2
     pv-im.1: 2
+    oe-c.1: 3
+    oe-d.1: 4
+    oe-b.1: 4
+    oe-op.1: 8
+    oe-im.1: 4
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -828,6 +833,86 @@ tranches:
   - dea:process-rationalize-portfolio
   rationale: Register v2 L2 completion for the PV Improve cell; composed
     by the new dea:group-product-evolution.
+- tranche_id: oe-c.1
+  context_ref: dea:pc-oe-conceive
+  context_name: operations-enablement / conceive
+  owner: CR-BP-21d.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-57 (CR-BP-21d.1 completion)
+  records:
+  - dea:process-frame-delivery-model-conception
+  - dea:process-frame-technology-enablement-approach
+  - dea:process-frame-physical-asset-approach
+  rationale: Register v2 L2 completion for the OE Conceive cell; the 3
+    remaining candidates join the landed
+    dea:group-operations-model-conception via new composes edges.
+- tranche_id: oe-d.1
+  context_ref: dea:pc-oe-design
+  context_name: operations-enablement / design
+  owner: CR-BP-21d.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-57 (CR-BP-21d.1 completion)
+  records:
+  - dea:process-design-delivery-model
+  - dea:process-design-technology-platform-architecture
+  - dea:process-design-facility-and-asset-blueprint
+  - dea:process-design-logistics-and-routing
+  rationale: Register v2 L2 completion for the OE Design cell; composed
+    by the new dea:group-process-and-enablement-design.
+- tranche_id: oe-b.1
+  context_ref: dea:pc-oe-build
+  context_name: operations-enablement / build
+  owner: CR-BP-21d.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-57 (CR-BP-21d.1 completion)
+  records:
+  - dea:process-commission-production-line
+  - dea:process-build-logistics-network
+  - dea:process-acquire-technology-assets
+  - dea:process-provision-facilities
+  rationale: Register v2 L2 completion for the OE Build cell; composed
+    by the new dea:group-operations-and-enablement-build.
+- tranche_id: oe-op.1
+  context_ref: dea:pc-oe-operate
+  context_name: operations-enablement / operate
+  owner: CR-BP-21d.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-57 (CR-BP-21d.1 completion)
+  records:
+  - dea:process-run-production-line
+  - dea:process-operate-logistics
+  - dea:process-operate-warehouse-and-inventory
+  - dea:process-operate-quality-control
+  - dea:process-operate-technology-platforms
+  - dea:process-operate-facility-management
+  - dea:process-operate-asset-maintenance
+  - dea:process-operate-procurement-cycle
+  rationale: Register v2 L2 completion for the OE Operate cell (largest
+    cell; 8 remaining candidates); composed by the new
+    dea:group-execution-and-fulfillment.
+- tranche_id: oe-im.1
+  context_ref: dea:pc-oe-improve
+  context_name: operations-enablement / improve
+  owner: CR-BP-21d.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-57 (CR-BP-21d.1 completion)
+  records:
+  - dea:process-conduct-logistics-optimization
+  - dea:process-conduct-lean-six-sigma-programme
+  - dea:process-optimize-asset-utilization
+  - dea:process-improve-technology-platforms
+  rationale: Register v2 L2 completion for the OE Improve cell; composed
+    by the new dea:group-operations-and-enablement-improvement.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -880,3 +965,8 @@ review_checkpoints:
   pv-b.1: 1
   pv-op.1: 1
   pv-im.1: 1
+  oe-c.1: 1
+  oe-d.1: 1
+  oe-b.1: 1
+  oe-op.1: 1
+  oe-im.1: 1

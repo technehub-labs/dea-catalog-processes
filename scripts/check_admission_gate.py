@@ -367,6 +367,13 @@ def main(argv: list[str] | None = None) -> int:
             )
             print(f"  {len(findings)} findings{blocking_msg} across "
                   f"{len(candidates)} Process records")
+            # Per-rule breakdown is never truncated so that specific
+            # ADM codes remain greppable even when the first-10 window
+            # is saturated by one rule class.
+            from collections import Counter
+            code_counts = Counter(f["rule"] for f in findings)
+            for code in sorted(code_counts):
+                print(f"    {code}: {code_counts[code]} finding(s)")
             for f in findings[:10]:
                 marker = "[BLOCKING] " if f in blocking else ""
                 print(f"    {marker}[{f['rule']}] {f['path']}: {f['message']}")
