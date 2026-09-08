@@ -4,7 +4,7 @@ domains:
 - AgencyAndOrganization
 - PartyAndRelationship
 - ProductAndValue
-- OperationsAndEnablement
+- EnablementAndOperations
 - FinanceAndAccounting
 stages:
 - Conceive
@@ -30,7 +30,7 @@ ratification:
 
     former Supply & Resources domain was dissolved (physical/virtual resources
 
-    moved to Operations & Enablement as enablers; supplier relationships moved
+    moved to Enablement & Operations as enablers; supplier relationships moved
 
     to Party & Relationship; financial resources moved to Finance & Accounting)
 
@@ -233,7 +233,7 @@ register:
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
       migration_note: Full re-derivation. Prior cell held dissolved Supply & Resources
-        content (sourcing/asset strategy); that content migrated to operations-enablement
+        content (sourcing/asset strategy); that content migrated to enablement-operations
         (execution-side conception) and party-relationship (supplier relationship
         conception). Develop corporate strategy migrated in from governance-existence
         x conceive (CR-BP-19 Option A split).
@@ -250,7 +250,7 @@ register:
       - Design strategic scenarios
       in_scope: Strategic option design, alternative evaluation, objectives and targets
       out_of_scope:
-      - Operational planning (operations-enablement)
+      - Operational planning (enablement-operations)
       - Financial plan design (finance-accounting)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.2
@@ -259,7 +259,7 @@ register:
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held sourcing/asset design content,
-        migrated to operations-enablement x design.
+        migrated to enablement-operations x design.
       audit_status: landed
     Build:
       process_context: dea:pc-sd-build
@@ -283,7 +283,7 @@ register:
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held supply-base/asset build
-        content, migrated to operations-enablement x build.
+        content, migrated to enablement-operations x build.
       audit_status: landed
     Activate:
       process_context: dea:pc-sd-activate
@@ -293,7 +293,7 @@ register:
       - Activate strategic plan rollout
       in_scope: Cutting over a new strategic plan
       out_of_scope:
-      - Initiative execution (operations-enablement)
+      - Initiative execution (enablement-operations)
       evidence:
       - dea-metaframework/framework/lifecycle-grounding.md §1 Activate
       disposition: backlog-deferred
@@ -318,8 +318,8 @@ register:
       in_scope: Strategic performance monitoring, environmental sensing, steering,
         review cycle
       out_of_scope:
-      - Operational performance management (operations-enablement)
-      - Initiative execution (operations-enablement)
+      - Operational performance management (enablement-operations)
+      - Initiative execution (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.2
       - APQC PCF 1.3 Execute and Monitor Strategy
@@ -327,7 +327,7 @@ register:
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held sourcing/procurement/asset
-        operation content, migrated to operations-enablement x operate and party-relationship
+        operation content, migrated to enablement-operations x operate and party-relationship
         x operate.
       audit_status: landed
     Improve:
@@ -347,7 +347,7 @@ register:
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
       migration_note: Full re-derivation; prior cell held supply-base/asset improvement
-        content, migrated to operations-enablement x improve and party-relationship
+        content, migrated to enablement-operations x improve and party-relationship
         x improve.
       audit_status: landed
     Retire:
@@ -359,7 +359,7 @@ register:
       - Archive strategic record
       in_scope: Sunset of superseded strategic directions
       out_of_scope:
-      - Asset disposal (operations-enablement x retire, deferred)
+      - Asset disposal (enablement-operations x retire, deferred)
       evidence:
       - dea-metaframework/framework/lifecycle-grounding.md §1 Retire
       disposition: backlog-deferred
@@ -517,7 +517,7 @@ register:
       in_scope: Redundancy, offboarding, agent decommission, unit wind-down, knowledge
         archival
       out_of_scope:
-      - Asset retirement (operations-enablement)
+      - Asset retirement (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.3
       - dea-catalog-business-capabilities/capability-workforce-management
@@ -598,7 +598,7 @@ register:
         partner agreement establishment
       out_of_scope:
       - Sales pipeline build (Operate)
-      - Contract execution mechanics (operations-enablement)
+      - Contract execution mechanics (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.4
       - dea-catalog-business-capabilities/capability-marketing, capability-customer-management
@@ -643,7 +643,7 @@ register:
         supplier relationship, partner alliance, regulator engagement)
       out_of_scope:
       - Marketing campaign execution (Build/Operate boundary)
-      - Procurement transaction execution (operations-enablement)
+      - Procurement transaction execution (enablement-operations)
       - Receivables/payables accounting (finance-accounting)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.4
@@ -658,7 +658,7 @@ register:
       migration_note: Supplier relationship operation absorbed from the dissolved
         Supply & Resources domain (v1 strategy-direction x operate); partner alliance
         programme absorbed from v1 product-offering x operate cross-ref. Demand fulfillment
-        execution moved to operations-enablement x operate (fulfillment is execution,
+        execution moved to enablement-operations x operate (fulfillment is execution,
         not relationship).
       audit_status: landed
     Improve:
@@ -694,7 +694,7 @@ register:
       in_scope: Relationship termination across party roles (offboarding, contract
         termination, exit)
       out_of_scope:
-      - Asset retirement (operations-enablement)
+      - Asset retirement (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.4
       - TM Forum eTOM Service Retirement
@@ -743,7 +743,7 @@ register:
       - Design innovation experiment
       in_scope: Proposition, packaging, configuration, and innovation design
       out_of_scope:
-      - Technology platform architecture (operations-enablement)
+      - Technology platform architecture (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.5
       - ITIL 4 Service Design
@@ -764,7 +764,7 @@ register:
       - Prepare market readiness
       in_scope: Construct propositions, prototypes, and market readiness
       out_of_scope:
-      - Technology build (operations-enablement)
+      - Technology build (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.5
       - dea-catalog-business-capabilities/capability-offering-management
@@ -805,7 +805,7 @@ register:
       - Manage proposition lifecycle
       in_scope: Catalogue, portfolio performance, proposition lifecycle
       out_of_scope:
-      - Operational delivery of the product (operations-enablement)
+      - Operational delivery of the product (enablement-operations)
       - Partner alliance programme (party-relationship)
       - Workforce operation (agency-organization)
       evidence:
@@ -815,7 +815,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: Service delivery management moved to operations-enablement x
+      migration_note: Service delivery management moved to enablement-operations x
         operate (delivery is execution); partner and alliance programme moved to party-relationship
         x operate.
       audit_status: landed
@@ -846,7 +846,7 @@ register:
       - Decommission service
       in_scope: Product end-of-life and service decommission
       out_of_scope:
-      - Asset retirement (operations-enablement)
+      - Asset retirement (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.5
       - ITIL 4 Service Transition to retirement
@@ -859,7 +859,7 @@ register:
         defer until an L2 example (e.g. product end-of-life) requires a standalone
         group.
       audit_status: backlog-deferred
-  OperationsAndEnablement:
+  EnablementAndOperations:
     Conceive:
       process_context: dea:pc-oe-conceive
       l1_candidates:
@@ -1156,7 +1156,7 @@ register:
       in_scope: Day-to-day accounting, reporting, FP&A, treasury, tax (monetary recording
         and reporting)
       out_of_scope:
-      - Procurement transaction execution (operations-enablement)
+      - Procurement transaction execution (enablement-operations)
       - Capability execution (their domain)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.7
@@ -1169,7 +1169,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Financial Stewardship folded into Accounting and Reporting per
         the monetary-measurement scoping. Procure-to-pay and order-to-cash operational
-        execution moved to operations-enablement x operate; the monetary recording
+        execution moved to enablement-operations x operate; the monetary recording
         of those cycles remains here.
       audit_status: landed
       planned_tranche: null
@@ -1208,7 +1208,7 @@ register:
       - Recognize impairment and exit liabilities
       in_scope: Financial wind-down, impairment, divestiture
       out_of_scope:
-      - Physical asset retirement (operations-enablement)
+      - Physical asset retirement (enablement-operations)
       evidence:
       - dea-metaframework/framework/domain-grounding.md §3.7
       - IFRS 5 Non-current Assets Held for Sale

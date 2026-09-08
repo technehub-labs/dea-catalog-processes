@@ -39,7 +39,7 @@ CONTEXTS = [
         ],
         "excludes": [
             "Strategy and direction (strategy-direction x conceive; adjacent domain)",
-            "Operational execution (operations-enablement x conceive; adjacent domain)",
+            "Operational execution (enablement-operations x conceive; adjacent domain)",
             "Compensation decisions (finance-accounting x conceive; adjacent domain)",
             "Organizational architecture design (Design stage; adjacent context)",
             "Agent acquisition (Build stage; adjacent context)",
@@ -127,7 +127,7 @@ CONTEXTS = [
         "excludes": [
             "Organization structure design (Design stage; adjacent context)",
             "External party engagement (party-relationship x build; adjacent domain)",
-            "Operational execution (operations-enablement x build; adjacent domain)",
+            "Operational execution (enablement-operations x build; adjacent domain)",
         ],
         "outcomes": [
             "Agents are acquired for the enterprise.",
@@ -170,7 +170,7 @@ CONTEXTS = [
         "excludes": [
             "Agent acquisition (Build stage; adjacent context)",
             "Agent development (Improve stage; adjacent context)",
-            "Operational execution (operations-enablement x operate; adjacent domain)",
+            "Operational execution (enablement-operations x operate; adjacent domain)",
             "Compensation accounting (finance-accounting x operate; adjacent domain)",
         ],
         "outcomes": [
@@ -423,7 +423,7 @@ scope:
   excludes:
     - Constitutional mandate and authority (governance-existence x conceive)
     - Strategic direction conception (strategy-direction x conceive)
-    - Operational execution (operations-enablement)
+    - Operational execution (enablement-operations)
     - Compensation decisions (finance-accounting x conceive)
     - Organizational architecture design (Design stage; adjacent context)
     - Agent acquisition (Build stage; adjacent context)

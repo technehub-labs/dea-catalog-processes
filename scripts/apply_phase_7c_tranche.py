@@ -85,7 +85,7 @@ CONTEXTS = [
         "excludes": [
             "Proposition conception (Conceive stage; adjacent context)",
             "Product development (Build stage; adjacent context)",
-            "Technology platform architecture (operations-enablement x design; adjacent domain)",
+            "Technology platform architecture (enablement-operations x design; adjacent domain)",
             "Strategic direction design (strategy-direction x design; adjacent domain)",
         ],
         "outcomes": [
@@ -116,7 +116,7 @@ CONTEXTS = [
             "**Product & Value** domain. This context addresses the "
             "constructive work of developing product variants, building service "
             "capability, building innovation prototypes, and preparing market "
-            "readiness. v2.4.0: technology build is Operations & Enablement; "
+            "readiness. v2.4.0: technology build is Enablement & Operations; "
             "this cell covers the proposition-side construction "
             "(domain-grounding.md §3.5)."
         ),
@@ -128,8 +128,8 @@ CONTEXTS = [
         ],
         "excludes": [
             "Proposition design (Design stage; adjacent context)",
-            "Technology platform build (operations-enablement x build; adjacent domain)",
-            "Operational delivery build (operations-enablement x build; adjacent domain)",
+            "Technology platform build (enablement-operations x build; adjacent domain)",
+            "Operational delivery build (enablement-operations x build; adjacent domain)",
         ],
         "outcomes": [
             "Product variants are developed and ready for market.",
@@ -160,7 +160,7 @@ CONTEXTS = [
             "addresses the steady-state work of operating the product catalogue, "
             "managing portfolio performance, and managing the proposition "
             "lifecycle. v2.4.0: operational delivery of the product is "
-            "Operations & Enablement; this cell covers the proposition-side "
+            "Enablement & Operations; this cell covers the proposition-side "
             "operation (domain-grounding.md §3.5)."
         ),
         "includes": [
@@ -171,7 +171,7 @@ CONTEXTS = [
         ],
         "excludes": [
             "Product development (Build stage; adjacent context)",
-            "Operational delivery of the product (operations-enablement x operate; adjacent domain)",
+            "Operational delivery of the product (enablement-operations x operate; adjacent domain)",
             "Partner alliance programme (party-relationship x operate; adjacent domain)",
             "Workforce operation (agency-organization x operate; adjacent domain)",
         ],

@@ -30,7 +30,7 @@ scope:
   excludes:
     - Proposition conception (Conceive stage; adjacent context)
     - Product development (Build stage; adjacent context)
-    - Technology platform architecture (operations-enablement x design; adjacent domain)
+    - Technology platform architecture (enablement-operations x design; adjacent domain)
     - Strategic direction design (strategy-direction x design; adjacent domain)
 
 # Intended outcomes.
@@ -72,7 +72,7 @@ cell_charter:
   exclusions:
     - Proposition conception (Conceive stage; adjacent context)
     - Product development (Build stage; adjacent context)
-    - Technology platform architecture (operations-enablement x design; adjacent domain)
+    - Technology platform architecture (enablement-operations x design; adjacent domain)
     - Strategic direction design (strategy-direction x design; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-pv-conceive (adjacent context): proposition flow between Design and the adjacent cell."

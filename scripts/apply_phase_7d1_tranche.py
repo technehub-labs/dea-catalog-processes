@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate CR-BP-21d.1 artifacts (OperationsAndEnablement completion):
+"""Generate CR-BP-21d.1 artifacts (EnablementAndOperations completion):
 4 non-Conceive L1 groups + 23 remaining register v2 L2 processes.
 Mirrors scripts/apply_phase_7a1_tranche.py (CR-BP-21a.1) with OE data.
-Canonical ECF identifiers: ecf:operationsEnablement.<stage> (short
+Canonical ECF identifiers: ecf:enablementAndOperations.<stage> (short
 form; see CR-BP-21c.1 repair for the namespace lesson).
 
 Existing-record edits (Conceive group composes edges; OE context
@@ -19,7 +19,7 @@ CTX = ROOT / "contexts/v1-alpha"
 ENT = ROOT / "entities/v1-alpha"
 CHANGE_DATE = "2026-09-08"
 CR = "CR-BP-21d.1"
-CR_FILE = "change-requests/CR-BP-21d.1-operations-enablement-completion.md"
+CR_FILE = "change-requests/CR-BP-21d.1-enablement-operations-completion.md"
 
 # ----- 23 L2 processes (remaining register v2 candidates) -----
 
@@ -242,7 +242,7 @@ identity:
 relationships:
 - source_id: {eid}
   relationship_type: serves
-  target_id: ecf:operationsEnablement.{ecf_stage}
+  target_id: ecf:enablementAndOperations.{ecf_stage}
 ecfConformance:
   framework: EnterpriseConceptFramework
   contractVersion: 1.0.0
@@ -251,9 +251,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
   - kind: coordinate
-    domain: OperationsAndEnablement
+    domain: EnablementAndOperations
     stage: {stage}
-    identifier: ecf:operationsEnablement.{ecf_stage}
+    identifier: ecf:enablementAndOperations.{ecf_stage}
 metadata:
   established_by: {CR}
   established_at: '{CHANGE_DATE}'
@@ -262,7 +262,7 @@ metadata:
     date: '{CHANGE_DATE}'
     change: |
       Initial L2 Process entry; lands as part of the {CR}
-      OperationsAndEnablement completion tranche under ECF v2.4.0
+      EnablementAndOperations completion tranche under ECF v2.4.0
       register v2 (CR-BP-19). Closes the remaining register v2 L2
       candidates for this cell.
 links:
@@ -287,7 +287,7 @@ for t in L2S:
         f"""# Canonical L2 Business Process: `{eid}`
 
 This directory hosts the canonical L2 Business Process record
-for `{eid}`. Lands as part of {CR} (OperationsAndEnablement
+for `{eid}`. Lands as part of {CR} (EnablementAndOperations
 completion). Process Context: `{context_id}`.
 """
     )
@@ -334,7 +334,7 @@ GROUPS = [
             "responsibilities of designing the operations model, delivery "
             "model, technology platform architecture, facility and asset "
             "blueprint, and logistics and routing in the "
-            "OperationsAndEnablement x Design context. v2.4.0 grounding "
+            "EnablementAndOperations x Design context. v2.4.0 grounding "
             "(domain-grounding.md §3.6)."
         ),
         "includes": [
@@ -372,7 +372,7 @@ GROUPS = [
             "The bounded Process Group that organises the Business Process "
             "responsibilities of building production lines, delivery "
             "capability, logistics networks, technology assets, and "
-            "facilities in the OperationsAndEnablement x Build context. "
+            "facilities in the EnablementAndOperations x Build context. "
             "v2.4.0 grounding (domain-grounding.md §3.6)."
         ),
         "includes": [
@@ -412,7 +412,7 @@ GROUPS = [
             "service delivery, logistics, warehousing, quality control, "
             "technology platform operation, facility management, asset "
             "maintenance, and procurement execution in the "
-            "OperationsAndEnablement x Operate context. v2.4.0 grounding "
+            "EnablementAndOperations x Operate context. v2.4.0 grounding "
             "(domain-grounding.md §3.6)."
         ),
         "includes": [
@@ -458,7 +458,7 @@ GROUPS = [
             "responsibilities of reviewing operations performance, optimizing "
             "logistics and asset utilization, conducting lean programmes, "
             "and improving technology platforms in the "
-            "OperationsAndEnablement x Improve context. v2.4.0 grounding "
+            "EnablementAndOperations x Improve context. v2.4.0 grounding "
             "(domain-grounding.md §3.6)."
         ),
         "includes": [
@@ -555,9 +555,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: OperationsAndEnablement
+      domain: EnablementAndOperations
       stage: {stage}
-      identifier: ecf:operationsEnablement.{ecf_stage}
+      identifier: ecf:enablementAndOperations.{ecf_stage}
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:
@@ -565,7 +565,7 @@ evidence:
     claim: |
       This Process Group's coordinate is ratified-accepted in register
       v2. {CR} lands the corresponding L1 group as part of the
-      OperationsAndEnablement completion tranche.
+      EnablementAndOperations completion tranche.
     strength: E4
     reference: entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-register.yaml
 
@@ -580,7 +580,7 @@ metadata:
       change: |
         Initial Process Group record; promoted from the CR-BP-19 register
         v2 (ratified against ECF v2.4.0) as part of the {CR}
-        OperationsAndEnablement completion tranche.
+        EnablementAndOperations completion tranche.
 
 links:
   - rel: change-request
@@ -606,8 +606,8 @@ for g in GROUPS:
         f"""# Canonical Process Group: `{gid}`
 
 This directory hosts the canonical Process Group record for `{gid}`
-(OperationsAndEnablement x {g['stage']}). Lands as part of {CR}
-(OperationsAndEnablement completion). Composes the L2 Business
+(EnablementAndOperations x {g['stage']}). Lands as part of {CR}
+(EnablementAndOperations completion). Composes the L2 Business
 Processes of the {g['stage']} cell.
 """
     )

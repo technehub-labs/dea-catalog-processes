@@ -104,7 +104,7 @@ Options) and the others in CR-BP-21a.1.
 ## 7. What this CR does NOT do
 
 - The remaining 4 unadmitted v2.4.0 domains (AgencyAndOrganization,
-  ProductAndValue, OperationsAndEnablement, FinanceAndAccounting) —
+  ProductAndValue, EnablementAndOperations, FinanceAndAccounting) —
   each gets its own CR-BP-21b..e landing tranche.
 - The remaining 3 L2s of the SD/Conceive cell (Purpose, Intent, Horizons)
   and 3 of the SD/Design cell (Alternatives, Objectives, Scenarios) —

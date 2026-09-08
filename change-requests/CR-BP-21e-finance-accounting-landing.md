@@ -4,7 +4,7 @@
 **Layer**: Process Catalog
 **Owner**: Coder (for eaojnr)
 **Date**: 2026-09-08
-**Depends on**: CR-BP-19 (register v2); CR-BP-20 (alignment); CR-BP-21a (StrategyAndDirection landing); CR-BP-21b (AgencyAndOrganization landing); CR-BP-21c (ProductAndValue landing); CR-BP-21d (OperationsAndEnablement landing)
+**Depends on**: CR-BP-19 (register v2); CR-BP-20 (alignment); CR-BP-21a (StrategyAndDirection landing); CR-BP-21b (AgencyAndOrganization landing); CR-BP-21c (ProductAndValue landing); CR-BP-21d (EnablementAndOperations landing)
 **Related**: dea-metaframework/framework/domain-grounding.md §3.7
 
 ## 1. What this CR is
@@ -79,7 +79,7 @@ remaining 2 in CR-BP-21e.1).
 - Financial Stewardship is folded into Accounting and Reporting per
   the monetary-measurement scoping (register v2 migration_note).
 - Procure-to-pay and order-to-cash operational *execution* live in
-  operations-enablement x operate; the monetary *recording* of those
+  enablement-operations x operate; the monetary *recording* of those
   cycles remains here (domain-grounding.md §3.7 boundary rule).
 - Strategic investment choices live in strategy-direction; investment
   strategy governance lives in governance-existence. This domain owns

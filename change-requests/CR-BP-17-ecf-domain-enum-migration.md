@@ -34,7 +34,7 @@ this repo to the v2.3.0 set:
 | `CustomerAndDemand` | `PartyAndRelationship` |
 | `SupplyAndResources` | `StrategyAndDirection` |
 | `ProductAndOffering` | `ProductAndValue` |
-| `OperationsAndDelivery` | `OperationsAndEnablement` |
+| `OperationsAndDelivery` | `EnablementAndOperations` |
 | `FinanceAndValue` | `FinanceAndAccounting` |
 | `GovernanceAndExistence` | `GovernanceAndExistence` (unchanged) |
 | `AgencyAndOrganization` | `AgencyAndOrganization` (unchanged) |
@@ -47,7 +47,7 @@ Plus the kebab-case restatement used in `process_audience` and
 | `customer-demand` | `party-relationship` |
 | `supply-resources` | `strategy-direction` |
 | `product-offering` | `product-value` |
-| `operations-delivery` | `operations-enablement` |
+| `operations-delivery` | `enablement-operations` |
 | `finance-value` | `finance-accounting` |
 
 Plus the **Process Context ID abbreviations** (the `dea:pc-<domain>-<stage>`
@@ -58,7 +58,7 @@ middle segment):
 | `cd` (CustomerAndDemand) | `pr` (PartyAndRelationship) |
 | `sr` (SupplyAndResources) | `sd` (StrategyAndDirection) |
 | `po` (ProductAndOffering) | `pv` (ProductAndValue) |
-| `od` (OperationsAndDelivery) | `oe` (OperationsAndEnablement) |
+| `od` (OperationsAndDelivery) | `oe` (EnablementAndOperations) |
 | `fv` (FinanceAndValue) | `fa` (FinanceAndAccounting) |
 
 The Process Context ID rename affects **5 context YAMLs** (the admitted

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate CR-BP-21d artifacts (OperationsAndEnablement landing):
+"""Generate CR-BP-21d artifacts (EnablementAndOperations landing):
 5 process contexts, 1 L1 group, 5 L2 processes. Mirrors the
 CR-BP-21c (ProductAndValue) pattern. Substrate-neutral
 per ADR-ECF-002 §5 / CR-ECF-007.
@@ -19,7 +19,7 @@ CONTEXTS = [
     {
         "filename": "dea-pc-oe-conceive",
         "id": "dea:pc-oe-conceive",
-        "domain": "OperationsAndEnablement",
+        "domain": "EnablementAndOperations",
         "stage": "Conceive",
         "name": "Operations Model and Enablement Conception",
         "definition": (
@@ -64,14 +64,14 @@ CONTEXTS = [
     {
         "filename": "dea-pc-oe-design",
         "id": "dea:pc-oe-design",
-        "domain": "OperationsAndEnablement",
+        "domain": "EnablementAndOperations",
         "stage": "Design",
         "name": "Operations and Enablement Design",
         "definition": (
             "The bounded enterprise context for **designing** the operations "
             "model, delivery model, technology platform architecture, facility "
             "and asset blueprint, and logistics and routing of the enterprise in "
-            "the **Operations & Enablement** domain. This context addresses the "
+            "the **Enablement & Operations** domain. This context addresses the "
             "analytical work of producing designs for the execution engine and "
             "its enabling infrastructure. v2.4.0: absorbs asset and facility "
             "blueprint design from the dissolved Supply & Resources domain "
@@ -110,13 +110,13 @@ CONTEXTS = [
     {
         "filename": "dea-pc-oe-build",
         "id": "dea:pc-oe-build",
-        "domain": "OperationsAndEnablement",
+        "domain": "EnablementAndOperations",
         "stage": "Build",
         "name": "Operations and Enablement Build",
         "definition": (
             "The bounded enterprise context for **building** the production "
             "lines, delivery capability, logistics network, technology assets, "
-            "and facilities of the enterprise in the **Operations & Enablement** "
+            "and facilities of the enterprise in the **Enablement & Operations** "
             "domain. This context addresses the constructive work of standing up "
             "the execution engine and provisioning its enabling assets. "
             "v2.4.0: absorbs asset acquisition and facility provisioning from "
@@ -156,7 +156,7 @@ CONTEXTS = [
     {
         "filename": "dea-pc-oe-operate",
         "id": "dea:pc-oe-operate",
-        "domain": "OperationsAndEnablement",
+        "domain": "EnablementAndOperations",
         "stage": "Operate",
         "name": "Execution, Technology, and Asset Operation",
         "definition": (
@@ -164,7 +164,7 @@ CONTEXTS = [
             "lines, service delivery, logistics, warehouse and inventory, "
             "quality control, technology platforms, facilities, asset "
             "maintenance, and procurement cycle of the enterprise in the "
-            "**Operations & Enablement** domain. This context addresses the "
+            "**Enablement & Operations** domain. This context addresses the "
             "steady-state work of running the execution engine. v2.4.0: absorbs "
             "procurement execution, facility operation, and asset maintenance "
             "from the dissolved Supply & Resources domain; supplier performance "
@@ -207,7 +207,7 @@ CONTEXTS = [
     {
         "filename": "dea-pc-oe-improve",
         "id": "dea:pc-oe-improve",
-        "domain": "OperationsAndEnablement",
+        "domain": "EnablementAndOperations",
         "stage": "Improve",
         "name": "Operations and Enablement Improvement",
         "definition": (
@@ -268,12 +268,12 @@ def render_adjacent_boundaries(stage, adjacent):
 
 CONTEXT_TEMPLATE = """# Process Context Cell Charter: {domain} x {stage}.
 #
-# Lands as part of CR-BP-21d (OperationsAndEnablement landing, fourth
+# Lands as part of CR-BP-21d (EnablementAndOperations landing, fourth
 # unadmitted-domain tranche under ECF v2.4.0 register v2 / CR-BP-19).
 # Carries the full Cell Charter (CR-BP-02 §7).
 #
 # v2.4.0 grounding: dea-metaframework/framework/domain-grounding.md §3.6
-# (Operations & Enablement: {grounding_phrase}).
+# (Enablement & Operations: {grounding_phrase}).
 #
 # Substrate independence (ADR-ECF-002 §5, CR-ECF-007): this context
 # applies to biological, artificial, and hybrid agents without
@@ -309,7 +309,7 @@ processes:
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
-  enterprise_concern: "Operations & Enablement: {enterprise_concern}"
+  enterprise_concern: "Enablement & Operations: {enterprise_concern}"
   lifecycle_concern: "{stage}: {lifecycle_concern}"
   combined_semantic_meaning: |
     {combined_meaning}
@@ -337,12 +337,12 @@ change_history:
     change: |
       Initial Process Context record; promoted from the CR-BP-19
       register v2 (ratified against ECF v2.4.0) as part of the
-      OperationsAndEnablement landing tranche. Substrate-neutral
+      EnablementAndOperations landing tranche. Substrate-neutral
       per ADR-ECF-002 §5 / CR-ECF-007.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register
@@ -390,16 +390,16 @@ This directory hosts the canonical Process Group record
 for `dea:group-operations-model-conception`. The Process Group is a
 catalog-owned record (not an OpenDEA metamodel entity) that organises
 the Business Process responsibilities of conceiving the enterprise's
-operations model and enablement approach in the **OperationsAndEnablement
+operations model and enablement approach in the **EnablementAndOperations
 x Conceive** context (per ECF v2.4.0,
 dea-metaframework/framework/domain-grounding.md §3.6).
 
-Lands as part of CR-BP-21d (OperationsAndEnablement landing).
+Lands as part of CR-BP-21d (EnablementAndOperations landing).
 Substrate-neutral: applies to biological, artificial, and hybrid agents
 without reclassification (ADR-ECF-002 §5, CR-ECF-007).
 
 Composes the L2 Business Processes assigned to the Conceive cell of
-OperationsAndEnablement:
+EnablementAndOperations:
 
 - `dea:process-frame-operations-strategy` (lands under
   CR-BP-21d; remaining 3 Conceive L2s land in CR-BP-21d.1)
@@ -417,7 +417,7 @@ name: Operations Model Conception
 definition: |
   The bounded Process Group that organises the Business Process
   responsibilities of conceiving the enterprise's operations model and
-  enablement approach in the OperationsAndEnablement x Conceive
+  enablement approach in the EnablementAndOperations x Conceive
   context. This group covers the front-end work of framing the
   operations strategy, the delivery model, the technology enablement
   approach, and the physical asset approach. v2.4.0 grounding
@@ -461,7 +461,7 @@ composes:
     rationale: |
       The L2 process frames the enterprise's operations strategy,
       which is the v2.4.0 principal responsibility of the
-      OperationsAndEnablement x Conceive cell. Lands under CR-BP-21d.
+      EnablementAndOperations x Conceive cell. Lands under CR-BP-21d.
     evidence: docs/examples/frame-operations-strategy.md
     provenance:
       type: architecture-review
@@ -487,9 +487,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: OperationsAndEnablement
+      domain: EnablementAndOperations
       stage: Conceive
-      identifier: ecf:operationsEnablement.conceive
+      identifier: ecf:enablementAndOperations.conceive
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:
@@ -512,12 +512,12 @@ metadata:
       change: |
         Initial Process Group record; promoted from the CR-BP-19 register
         v2 (ratified against ECF v2.4.0) as part of the
-        OperationsAndEnablement landing tranche. Composes the L2
+        EnablementAndOperations landing tranche. Composes the L2
         dea:process-frame-operations-strategy.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d-operations-enablement-landing.md
+    href: change-requests/CR-BP-21d-enablement-operations-landing.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register
@@ -659,15 +659,15 @@ metadata:
     date: '{CHANGE_DATE}'
     change: |
       Initial L2 Process entry; lands as part of the CR-BP-21d
-      OperationsAndEnablement landing tranche under ECF v2.4.0
+      EnablementAndOperations landing tranche under ECF v2.4.0
       register v2 (CR-BP-19). Substrate-neutral per ADR-ECF-002
       §5 / CR-ECF-007: applies to biological, artificial, and
       hybrid agents without reclassification. One of the 5 L2
       landings targeting the 5 ratified cells of the
-      OperationsAndEnablement domain.
+      EnablementAndOperations domain.
 links:
 - rel: change-request
-  href: change-requests/CR-BP-21d-operations-enablement-landing.md
+  href: change-requests/CR-BP-21d-enablement-operations-landing.md
 - rel: process-context
   href: contexts/v1-alpha/{context_file}.yaml
 context:
@@ -680,7 +680,7 @@ def render_evidence(links):
 
 
 ECF_DOMAIN_MAP = {
-    "OperationsAndEnablement": "operationsEnablement",
+    "EnablementAndOperations": "operationsEnablement",
 }
 
 
@@ -692,7 +692,7 @@ for eid, t in L2_TEMPLATES.items():
     (pdir / "research").mkdir(exist_ok=True)
     context_id = t["context"]
     context_file = context_id.replace("dea:", "").replace(":", "-")
-    domain = "OperationsAndEnablement"
+    domain = "EnablementAndOperations"
     stage = context_id.split("-")[-1]
     stage_title = stage.capitalize()
     ecf_domain = ECF_DOMAIN_MAP[domain]
@@ -701,7 +701,7 @@ for eid, t in L2_TEMPLATES.items():
         f"""# Canonical L2 Business Process: `{eid}`
 
 This directory hosts the canonical L2 Business Process record
-for `{eid}`. Lands as part of CR-BP-21d (OperationsAndEnablement
+for `{eid}`. Lands as part of CR-BP-21d (EnablementAndOperations
 landing). Process Context: `{context_id}`. Substrate-neutral
 (ADR-ECF-002 §5 / CR-ECF-007): applies to biological, artificial,
 and hybrid agents without reclassification.

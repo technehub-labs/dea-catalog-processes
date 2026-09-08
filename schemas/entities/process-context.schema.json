@@ -24,14 +24,14 @@
     },
     "domain": {
       "type": "string",
-      "description": "Canonical ECF Domain. Must resolve to one of seven values (GovernanceAndExistence, StrategyAndDirection, AgencyAndOrganization, PartyAndRelationship, ProductAndValue, OperationsAndEnablement, FinanceAndAccounting). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-domain.schema.json (CR-ECF-003, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-001).",
+      "description": "Canonical ECF Domain. Must resolve to one of seven values (GovernanceAndExistence, StrategyAndDirection, AgencyAndOrganization, PartyAndRelationship, ProductAndValue, EnablementAndOperations, FinanceAndAccounting). The authoritative vocabulary lives in dea-metaframework/schemas/ecf-domain.schema.json (CR-ECF-003, CR-ECF-005); the catalog must NOT redefine it. Runtime enforcement: scripts/check_process_context.py (PC-001).",
       "enum": [
         "GovernanceAndExistence",
         "StrategyAndDirection",
         "AgencyAndOrganization",
         "PartyAndRelationship",
         "ProductAndValue",
-        "OperationsAndEnablement",
+        "EnablementAndOperations",
         "FinanceAndAccounting"
       ]
     },

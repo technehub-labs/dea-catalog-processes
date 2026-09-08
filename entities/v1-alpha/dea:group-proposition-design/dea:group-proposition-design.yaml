@@ -18,7 +18,7 @@ scope:
     - Packaging and configuration design
     - Innovation experiment design
   excludes:
-    - Technology platform architecture (operations-enablement)
+    - Technology platform architecture (enablement-operations)
     - Value proposition thesis conception (Conceive stage; adjacent context)
     - Product variant development (Build stage; adjacent context)
 

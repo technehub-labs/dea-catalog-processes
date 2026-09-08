@@ -18,7 +18,7 @@ scope:
     - Portfolio performance management
     - Proposition lifecycle management
   excludes:
-    - Operational delivery of the product (operations-enablement)
+    - Operational delivery of the product (enablement-operations)
     - Partner alliance programme (party-relationship)
     - Workforce operation (agency-organization)
 

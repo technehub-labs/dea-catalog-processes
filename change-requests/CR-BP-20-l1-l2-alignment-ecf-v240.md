@@ -47,7 +47,7 @@ grounding records, with the user-approved Option A GE/SD split executed.
   10 existing context files would touch every L2 reference and yield zero
   compliance benefit; deferred.
 - **L1 Process Group landings for unadmitted domains** (StrategyAndDirection,
-  AgencyAndOrganization, ProductAndValue, OperationsAndEnablement,
+  AgencyAndOrganization, ProductAndValue, EnablementAndOperations,
   FinanceAndAccounting): the 5 unadmitted v2.4.0 domains. Planned tranches
   CR-BP-21a..e.
 - **BP-AR / DOC-001 advisory findings**: pre-existing, not introduced by

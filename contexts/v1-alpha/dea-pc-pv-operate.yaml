@@ -18,7 +18,7 @@ name: Portfolio Management and Proposition Lifecycle Operation
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **operating** the product catalogue, portfolio performance, and proposition lifecycle of the enterprise in the **Product & Value** domain. This context addresses the steady-state work of operating the product catalogue, managing portfolio performance, and managing the proposition lifecycle. v2.4.0: operational delivery of the product is Operations & Enablement; this cell covers the proposition-side operation (domain-grounding.md §3.5).
+  The bounded enterprise context for **operating** the product catalogue, portfolio performance, and proposition lifecycle of the enterprise in the **Product & Value** domain. This context addresses the steady-state work of operating the product catalogue, managing portfolio performance, and managing the proposition lifecycle. v2.4.0: operational delivery of the product is Enablement & Operations; this cell covers the proposition-side operation (domain-grounding.md §3.5).
 
 # Scope (PC-005).
 scope:
@@ -29,7 +29,7 @@ scope:
     - Proposition performance monitoring
   excludes:
     - Product development (Build stage; adjacent context)
-    - Operational delivery of the product (operations-enablement x operate; adjacent domain)
+    - Operational delivery of the product (enablement-operations x operate; adjacent domain)
     - Partner alliance programme (party-relationship x operate; adjacent domain)
     - Workforce operation (agency-organization x operate; adjacent domain)
 
@@ -71,7 +71,7 @@ cell_charter:
     - Proposition performance monitoring
   exclusions:
     - Product development (Build stage; adjacent context)
-    - Operational delivery of the product (operations-enablement x operate; adjacent domain)
+    - Operational delivery of the product (enablement-operations x operate; adjacent domain)
     - Partner alliance programme (party-relationship x operate; adjacent domain)
     - Workforce operation (agency-organization x operate; adjacent domain)
   adjacent_boundaries:

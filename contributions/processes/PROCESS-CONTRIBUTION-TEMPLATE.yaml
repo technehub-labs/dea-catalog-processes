@@ -114,7 +114,7 @@ proposed_entry:
     affiliation: inherits-catalog
     canonicalReferences:
       - kind: coordinate
-        domain: <PascalCase Domain>  # GovernanceAndExistence | StrategyAndDirection | AgencyAndOrganization | PartyAndRelationship | ProductAndValue | OperationsAndEnablement | FinanceAndAccounting
+        domain: <PascalCase Domain>  # GovernanceAndExistence | StrategyAndDirection | AgencyAndOrganization | PartyAndRelationship | ProductAndValue | EnablementAndOperations | FinanceAndAccounting
         stage: <PascalCase Stage>     # Conceive | Design | Build | Activate | Operate | Improve | Retire
         identifier: ecf:<lowerCamelDomain>.<lowerCamelStage>
     extensions:

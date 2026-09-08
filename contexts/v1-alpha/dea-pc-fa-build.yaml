@@ -29,7 +29,7 @@ scope:
   excludes:
     - Financial planning design (Design stage; adjacent context)
     - Building non-finance capabilities (owning domains; adjacent domains)
-    - Technology platform build (operations-enablement x build; adjacent domain)
+    - Technology platform build (enablement-operations x build; adjacent domain)
 
 # Intended outcomes.
 outcomes:
@@ -68,7 +68,7 @@ cell_charter:
   exclusions:
     - Financial planning design (Design stage; adjacent context)
     - Building non-finance capabilities (owning domains; adjacent domains)
-    - Technology platform build (operations-enablement x build; adjacent domain)
+    - Technology platform build (enablement-operations x build; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-fa-conceive (adjacent context): monetary flow between Build and the adjacent cell."
     - "dea:pc-fa-design (adjacent context): monetary flow between Build and the adjacent cell."

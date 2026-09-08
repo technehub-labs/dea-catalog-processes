@@ -41,7 +41,7 @@ DOMAIN_ABBR = {
     "ao": "AgencyAndOrganization",
     "pr": "PartyAndRelationship",
     "pv": "ProductAndValue",
-    "oe": "OperationsAndEnablement",
+    "oe": "EnablementAndOperations",
     "fa": "FinanceAndAccounting",
 }
 

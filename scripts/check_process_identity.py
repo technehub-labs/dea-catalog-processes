@@ -295,7 +295,7 @@ def self_test() -> int:
                 "type": "Process",
                 "version": "1.0.0",
                 "process_intent": "operational",
-                "process_audience": "operations-enablement",
+                "process_audience": "enablement-operations",
                 "process_type": "core",
                 "description": "Order management process for testing.",
                 "outcome": "Order is fulfilled.",

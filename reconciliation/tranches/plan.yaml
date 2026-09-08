@@ -502,7 +502,7 @@ tranches:
     in CR-BP-21c.1.
 - tranche_id: oe-c
   context_ref: dea:pc-oe-conceive
-  context_name: operations-enablement / conceive
+  context_name: enablement-operations / conceive
   owner: CR-BP-21d (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -515,7 +515,7 @@ tranches:
     approach, physical asset approach) land in CR-BP-21d.1.
 - tranche_id: oe-d
   context_ref: dea:pc-oe-design
-  context_name: operations-enablement / design
+  context_name: enablement-operations / design
   owner: CR-BP-21d (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -529,7 +529,7 @@ tranches:
     CR-BP-21d.1.
 - tranche_id: oe-b
   context_ref: dea:pc-oe-build
-  context_name: operations-enablement / build
+  context_name: enablement-operations / build
   owner: CR-BP-21d (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -543,7 +543,7 @@ tranches:
     CR-BP-21d.1.
 - tranche_id: oe-op
   context_ref: dea:pc-oe-operate
-  context_name: operations-enablement / operate
+  context_name: enablement-operations / operate
   owner: CR-BP-21d (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -557,7 +557,7 @@ tranches:
     maintenance, procurement cycle) land in CR-BP-21d.1.
 - tranche_id: oe-im
   context_ref: dea:pc-oe-improve
-  context_name: operations-enablement / improve
+  context_name: enablement-operations / improve
   owner: CR-BP-21d (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -845,7 +845,7 @@ tranches:
     by the new dea:group-product-evolution.
 - tranche_id: oe-c.1
   context_ref: dea:pc-oe-conceive
-  context_name: operations-enablement / conceive
+  context_name: enablement-operations / conceive
   owner: CR-BP-21d.1 (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -860,7 +860,7 @@ tranches:
     dea:group-operations-model-conception via new composes edges.
 - tranche_id: oe-d.1
   context_ref: dea:pc-oe-design
-  context_name: operations-enablement / design
+  context_name: enablement-operations / design
   owner: CR-BP-21d.1 (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -875,7 +875,7 @@ tranches:
     by the new dea:group-process-and-enablement-design.
 - tranche_id: oe-b.1
   context_ref: dea:pc-oe-build
-  context_name: operations-enablement / build
+  context_name: enablement-operations / build
   owner: CR-BP-21d.1 (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -890,7 +890,7 @@ tranches:
     by the new dea:group-operations-and-enablement-build.
 - tranche_id: oe-op.1
   context_ref: dea:pc-oe-operate
-  context_name: operations-enablement / operate
+  context_name: enablement-operations / operate
   owner: CR-BP-21d.1 (Coder for eaojnr)
   risk: low
   expected_dispositions:
@@ -910,7 +910,7 @@ tranches:
     dea:group-execution-and-fulfillment.
 - tranche_id: oe-im.1
   context_ref: dea:pc-oe-improve
-  context_name: operations-enablement / improve
+  context_name: enablement-operations / improve
   owner: CR-BP-21d.1 (Coder for eaojnr)
   risk: low
   expected_dispositions:

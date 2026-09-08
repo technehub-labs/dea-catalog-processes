@@ -256,7 +256,7 @@ GROUPS = [
             "Strategic scenarios design",
         ],
         "excludes": [
-            "Operational planning (operations-enablement x design)",
+            "Operational planning (enablement-operations x design)",
             "Financial plan design (finance-accounting x design)",
             "Strategic intent conception (Conceive stage; adjacent context)",
         ],
@@ -332,8 +332,8 @@ GROUPS = [
             "Strategic review cycle operation",
         ],
         "excludes": [
-            "Operational performance management (operations-enablement x operate)",
-            "Initiative execution (operations-enablement x operate)",
+            "Operational performance management (enablement-operations x operate)",
+            "Initiative execution (enablement-operations x operate)",
             "Strategic plan build (Build stage; adjacent context)",
         ],
         "outcomes": [

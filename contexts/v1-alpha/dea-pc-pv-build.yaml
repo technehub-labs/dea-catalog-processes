@@ -18,7 +18,7 @@ name: Product Development and Market Readiness Build
 
 # Normative definition (PC-006).
 definition: |
-  The bounded enterprise context for **building** the products, prototypes, and market readiness of the enterprise in the **Product & Value** domain. This context addresses the constructive work of developing product variants, building service capability, building innovation prototypes, and preparing market readiness. v2.4.0: technology build is Operations & Enablement; this cell covers the proposition-side construction (domain-grounding.md §3.5).
+  The bounded enterprise context for **building** the products, prototypes, and market readiness of the enterprise in the **Product & Value** domain. This context addresses the constructive work of developing product variants, building service capability, building innovation prototypes, and preparing market readiness. v2.4.0: technology build is Enablement & Operations; this cell covers the proposition-side construction (domain-grounding.md §3.5).
 
 # Scope (PC-005).
 scope:
@@ -29,8 +29,8 @@ scope:
     - Market readiness preparation
   excludes:
     - Proposition design (Design stage; adjacent context)
-    - Technology platform build (operations-enablement x build; adjacent domain)
-    - Operational delivery build (operations-enablement x build; adjacent domain)
+    - Technology platform build (enablement-operations x build; adjacent domain)
+    - Operational delivery build (enablement-operations x build; adjacent domain)
 
 # Intended outcomes.
 outcomes:
@@ -71,8 +71,8 @@ cell_charter:
     - Market readiness preparation
   exclusions:
     - Proposition design (Design stage; adjacent context)
-    - Technology platform build (operations-enablement x build; adjacent domain)
-    - Operational delivery build (operations-enablement x build; adjacent domain)
+    - Technology platform build (enablement-operations x build; adjacent domain)
+    - Operational delivery build (enablement-operations x build; adjacent domain)
   adjacent_boundaries:
     - "dea:pc-pv-conceive (adjacent context): proposition flow between Build and the adjacent cell."
     - "dea:pc-pv-design (adjacent context): proposition flow between Build and the adjacent cell."

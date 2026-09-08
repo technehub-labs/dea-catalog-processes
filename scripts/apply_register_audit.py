@@ -29,7 +29,7 @@ DOMAIN_ABBR = {
     "ao": "AgencyAndOrganization",
     "pr": "PartyAndRelationship",
     "pv": "ProductAndValue",
-    "oe": "OperationsAndEnablement",
+    "oe": "EnablementAndOperations",
     "fa": "FinanceAndAccounting",
 }
 
@@ -95,7 +95,7 @@ def apply_register(dry_run: bool = False) -> tuple[int, int, int, int]:
                         "StrategyAndDirection": "CR-BP-21a.1",
                         "AgencyAndOrganization": "CR-BP-21b.1",
                         "ProductAndValue": "CR-BP-21c",
-                        "OperationsAndEnablement": "CR-BP-21d",
+                        "EnablementAndOperations": "CR-BP-21d",
                         "FinanceAndAccounting": "CR-BP-21e",
                     }
                     payload["planned_tranche"] = dom_to_tranche.get(dom, "TBD")

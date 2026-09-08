@@ -39,7 +39,7 @@ scope:
     - Risk framework direction (governance-existence x conceive)
     - Strategic option design (Design stage; adjacent context)
     - Strategic plan and roadmap build (Build stage; adjacent context)
-    - Initiative execution (operations-enablement)
+    - Initiative execution (enablement-operations)
 
 # Intended outcomes.
 outcomes:
@@ -87,7 +87,7 @@ cell_charter:
     - Constitutional mandate and authority (governance-existence x conceive)
     - Strategic option design (Design stage)
     - Strategic plan and roadmap build (Build stage)
-    - Initiative execution (operations-enablement)
+    - Initiative execution (enablement-operations)
   adjacent_boundaries:
     - "dea:pc-ge-conceive (Governance & Existence): authority vs chosen trajectory."
     - "dea:pc-sd-design (Design): strategy flows into strategic option design."

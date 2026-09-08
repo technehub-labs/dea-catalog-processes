@@ -95,7 +95,7 @@ CR-BP-21c.1).
 ## 7. What this CR does NOT do
 
 - The remaining 2 unadmitted v2.4.0 domains
-  (OperationsAndEnablement, FinanceAndAccounting) — each gets its
+  (EnablementAndOperations, FinanceAndAccounting) — each gets its
   own CR-BP-21d..e landing tranche.
 - The remaining L2s of the PV cells — follow-up CR-BP-21c.1 when
   more L2 material is ready.

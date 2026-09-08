@@ -6,7 +6,7 @@ name: Operations and Enablement Build
 
 # Normative definition (PG-006 / MECE).
 definition: |
-  The bounded Process Group that organises the Business Process responsibilities of building production lines, delivery capability, logistics networks, technology assets, and facilities in the OperationsAndEnablement x Build context. v2.4.0 grounding (domain-grounding.md §3.6).
+  The bounded Process Group that organises the Business Process responsibilities of building production lines, delivery capability, logistics networks, technology assets, and facilities in the EnablementAndOperations x Build context. v2.4.0 grounding (domain-grounding.md §3.6).
 
 # Process Context reference (PG-003 enforces resolution).
 process_context: dea:pc-oe-build
@@ -116,9 +116,9 @@ ecfConformance:
   affiliation: inherits-catalog
   canonicalReferences:
     - kind: coordinate
-      domain: OperationsAndEnablement
+      domain: EnablementAndOperations
       stage: Build
-      identifier: ecf:operationsEnablement.build
+      identifier: ecf:enablementAndOperations.build
 
 # Evidence (CR-BP-11 register strength scale E0..E5).
 evidence:
@@ -126,7 +126,7 @@ evidence:
     claim: |
       This Process Group's coordinate is ratified-accepted in register
       v2. CR-BP-21d.1 lands the corresponding L1 group as part of the
-      OperationsAndEnablement completion tranche.
+      EnablementAndOperations completion tranche.
     strength: E4
     reference: entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-register.yaml
 
@@ -141,11 +141,11 @@ metadata:
       change: |
         Initial Process Group record; promoted from the CR-BP-19 register
         v2 (ratified against ECF v2.4.0) as part of the CR-BP-21d.1
-        OperationsAndEnablement completion tranche.
+        EnablementAndOperations completion tranche.
 
 links:
   - rel: change-request
-    href: change-requests/CR-BP-21d.1-operations-enablement-completion.md
+    href: change-requests/CR-BP-21d.1-enablement-operations-completion.md
   - rel: predecessor
     href: change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md
   - rel: research-register
