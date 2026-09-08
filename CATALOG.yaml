@@ -4,7 +4,7 @@ catalog:
     candidates: 0
     canonical: 39
     entities: 40
-    open_change_requests: 22
+    open_change_requests: 23
     research_files: 57
     retired: 1
   cross_cutting:
@@ -55,7 +55,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-lifecycle-management
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-customer-lifecycle-management/dea:group-customer-lifecycle-management.yaml
     research_count: 4
