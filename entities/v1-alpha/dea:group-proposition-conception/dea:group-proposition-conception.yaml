@@ -61,6 +61,36 @@ composes:
       reference: CR-BP-21c
       asserted_by: dea-team
       asserted_at: '2026-09-08'
+  - source_id: dea:group-proposition-conception
+    target_id: dea:process-frame-portfolio-direction
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the portfolio direction, a register v2
+      candidate for the ProductAndValue x Conceive cell, landed
+      under CR-BP-21c.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21c.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-proposition-conception
+    target_id: dea:process-frame-innovation-thesis
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the innovation thesis, a register v2
+      candidate for the ProductAndValue x Conceive cell, landed
+      under CR-BP-21c.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21c.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -107,6 +137,12 @@ metadata:
         v2 (ratified against ECF v2.4.0) as part of the
         ProductAndValue landing tranche. Composes the L2
         dea:process-frame-value-proposition-thesis.
+    - cr: CR-BP-21c.1
+      date: '2026-09-08'
+      change: |
+        Composes edges added for the 2 remaining register v2 Conceive-cell
+        L2 candidates (frame-portfolio-direction, frame-innovation-thesis),
+        completing the cell's L2 landing.
 
 links:
   - rel: change-request

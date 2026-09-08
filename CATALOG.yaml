@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 92
-    entities: 93
-    open_change_requests: 28
+    canonical: 107
+    entities: 108
+    open_change_requests: 29
     research_files: 57
     retired: 1
   cross_cutting:
@@ -208,10 +208,54 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-portfolio-management-operation
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-portfolio-management-operation/dea:group-portfolio-management-operation.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-product-development
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-product-development/dea:group-product-development.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-product-evolution
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-product-evolution/dea:group-product-evolution.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-proposition-conception
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-proposition-conception/dea:group-proposition-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-proposition-design
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-proposition-design/dea:group-proposition-design.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -322,6 +366,28 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-build-delivery-capability/dea:process-build-delivery-capability.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-build-innovation-prototype
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-innovation-prototype/dea:process-build-innovation-prototype.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-build-service-capability
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-service-capability/dea:process-build-service-capability.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -582,6 +648,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-innovation-experiment
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-innovation-experiment/dea:process-design-innovation-experiment.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-objectives-and-targets
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -608,6 +685,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-organization-structure/dea:process-design-organization-structure.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-packaging-and-configuration
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-packaging-and-configuration/dea:process-design-packaging-and-configuration.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -736,10 +824,32 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-evolve-products-and-services
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-evolve-products-and-services/dea:process-evolve-products-and-services.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-finance-strategy
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-frame-finance-strategy/dea:process-frame-finance-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-frame-innovation-thesis
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-innovation-thesis/dea:process-frame-innovation-thesis.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -773,6 +883,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-frame-organization-model/dea:process-frame-organization-model.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-frame-portfolio-direction
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-portfolio-direction/dea:process-frame-portfolio-direction.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -819,6 +940,28 @@ catalog:
     path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
     research_count: 1
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-manage-portfolio-performance
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-manage-portfolio-performance/dea:process-manage-portfolio-performance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-manage-proposition-lifecycle
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-manage-proposition-lifecycle/dea:process-manage-proposition-lifecycle.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -938,6 +1081,28 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-operate-time-and-attendance/dea:process-operate-time-and-attendance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-prepare-market-readiness
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-prepare-market-readiness/dea:process-prepare-market-readiness.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-rationalize-portfolio
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-rationalize-portfolio/dea:process-rationalize-portfolio.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1121,9 +1286,21 @@ catalog:
   - entity_id: dea:group-organization-and-role-design
     files: []
     path: entities/v1-alpha/dea:group-organization-and-role-design/research/
+  - entity_id: dea:group-portfolio-management-operation
+    files: []
+    path: entities/v1-alpha/dea:group-portfolio-management-operation/research/
+  - entity_id: dea:group-product-development
+    files: []
+    path: entities/v1-alpha/dea:group-product-development/research/
+  - entity_id: dea:group-product-evolution
+    files: []
+    path: entities/v1-alpha/dea:group-product-evolution/research/
   - entity_id: dea:group-proposition-conception
     files: []
     path: entities/v1-alpha/dea:group-proposition-conception/research/
+  - entity_id: dea:group-proposition-design
+    files: []
+    path: entities/v1-alpha/dea:group-proposition-design/research/
   - entity_id: dea:group-strategic-adaptation
     files: []
     path: entities/v1-alpha/dea:group-strategic-adaptation/research/
@@ -1156,6 +1333,12 @@ catalog:
   - entity_id: dea:process-build-delivery-capability
     files: []
     path: entities/v1-alpha/dea:process-build-delivery-capability/research/
+  - entity_id: dea:process-build-innovation-prototype
+    files: []
+    path: entities/v1-alpha/dea:process-build-innovation-prototype/research/
+  - entity_id: dea:process-build-service-capability
+    files: []
+    path: entities/v1-alpha/dea:process-build-service-capability/research/
   - entity_id: dea:process-build-strategic-plan
     files: []
     path: entities/v1-alpha/dea:process-build-strategic-plan/research/
@@ -1243,6 +1426,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-design-governance-system/research/
+  - entity_id: dea:process-design-innovation-experiment
+    files: []
+    path: entities/v1-alpha/dea:process-design-innovation-experiment/research/
   - entity_id: dea:process-design-objectives-and-targets
     files: []
     path: entities/v1-alpha/dea:process-design-objectives-and-targets/research/
@@ -1252,6 +1438,9 @@ catalog:
   - entity_id: dea:process-design-organization-structure
     files: []
     path: entities/v1-alpha/dea:process-design-organization-structure/research/
+  - entity_id: dea:process-design-packaging-and-configuration
+    files: []
+    path: entities/v1-alpha/dea:process-design-packaging-and-configuration/research/
   - entity_id: dea:process-design-policies-and-controls
     files:
     - .gitkeep
@@ -1291,9 +1480,15 @@ catalog:
   - entity_id: dea:process-evaluate-strategic-alternatives
     files: []
     path: entities/v1-alpha/dea:process-evaluate-strategic-alternatives/research/
+  - entity_id: dea:process-evolve-products-and-services
+    files: []
+    path: entities/v1-alpha/dea:process-evolve-products-and-services/research/
   - entity_id: dea:process-frame-finance-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-finance-strategy/research/
+  - entity_id: dea:process-frame-innovation-thesis
+    files: []
+    path: entities/v1-alpha/dea:process-frame-innovation-thesis/research/
   - entity_id: dea:process-frame-operations-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-operations-strategy/research/
@@ -1303,6 +1498,9 @@ catalog:
   - entity_id: dea:process-frame-organization-model
     files: []
     path: entities/v1-alpha/dea:process-frame-organization-model/research/
+  - entity_id: dea:process-frame-portfolio-direction
+    files: []
+    path: entities/v1-alpha/dea:process-frame-portfolio-direction/research/
   - entity_id: dea:process-frame-strategic-horizons
     files: []
     path: entities/v1-alpha/dea:process-frame-strategic-horizons/research/
@@ -1318,6 +1516,12 @@ catalog:
     files:
     - README.md
     path: entities/v1-alpha/dea:process-manage-customer-relationship/research/
+  - entity_id: dea:process-manage-portfolio-performance
+    files: []
+    path: entities/v1-alpha/dea:process-manage-portfolio-performance/research/
+  - entity_id: dea:process-manage-proposition-lifecycle
+    files: []
+    path: entities/v1-alpha/dea:process-manage-proposition-lifecycle/research/
   - entity_id: dea:process-market-and-demand-conception
     files:
     - .gitkeep
@@ -1355,6 +1559,12 @@ catalog:
   - entity_id: dea:process-operate-time-and-attendance
     files: []
     path: entities/v1-alpha/dea:process-operate-time-and-attendance/research/
+  - entity_id: dea:process-prepare-market-readiness
+    files: []
+    path: entities/v1-alpha/dea:process-prepare-market-readiness/research/
+  - entity_id: dea:process-rationalize-portfolio
+    files: []
+    path: entities/v1-alpha/dea:process-rationalize-portfolio/research/
   - entity_id: dea:process-refresh-objectives-and-targets
     files: []
     path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/research/

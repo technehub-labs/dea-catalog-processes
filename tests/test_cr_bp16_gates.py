@@ -221,7 +221,7 @@ def test_adm_json_shape():
     assert "verdict" in data
     assert "findings" in data
     assert "candidate_count" in data
-    assert data["candidate_count"] == 70  # 70 canonical BPs (57 + 13 CR-BP-21b.1 landings)
+    assert data["candidate_count"] == 81  # 81 canonical BPs (70 + 11 CR-BP-21c.1 landings)
 
 
 # CR-BP-16 §17 Step 8: provenance blocking policy

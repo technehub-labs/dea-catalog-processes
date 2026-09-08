@@ -1215,3 +1215,138 @@ dispositions:
       CR-BP-19 /l1-register.yaml agencyOrganization.improve;
       CR-BP-21b.1-agency-organization-completion.md.
     note: null
+
+  # ----- CR-BP-21c.1: ProductAndValue completion -----
+
+
+  - record_id: dea:process-frame-portfolio-direction
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Conceive cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.conceive;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-frame-innovation-thesis
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Conceive cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.conceive;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-design-packaging-and-configuration
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Design cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.design;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-design-innovation-experiment
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Design cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.design;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-build-service-capability
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Build cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.build;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-build-innovation-prototype
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Build cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.build;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-prepare-market-readiness
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Build cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.build;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-manage-portfolio-performance
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Operate cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.operate;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-manage-proposition-lifecycle
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Operate cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.operate;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-evolve-products-and-services
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Improve cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.improve;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
+
+  - record_id: dea:process-rationalize-portfolio
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21c.1
+    rationale: |
+      Register v2 L2 completion landing for the ProductAndValue
+      x Improve cell, per CR-BP-21c.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml productAndValue.improve;
+      CR-BP-21c.1-product-value-completion.md.
+    note: null
