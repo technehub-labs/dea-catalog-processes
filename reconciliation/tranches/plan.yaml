@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 20
-  total_records: 28
+  total_tranches: 25
+  total_records: 33
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -41,6 +41,11 @@ summary:
     ao-b: 1
     ao-op: 1
     ao-im: 1
+    pv-c: 1
+    pv-d: 1
+    pv-b: 1
+    pv-op: 1
+    pv-im: 1
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -390,6 +395,71 @@ tranches:
   - dea:process-develop-agents-and-organization
   rationale: Substrate-neutral development of agents and organization. Other 3 register
     v2 L2 candidates land in CR-BP-21b.1.
+- tranche_id: pv-c
+  context_ref: dea:pc-pv-conceive
+  context_name: product-value / conceive
+  owner: CR-BP-21c (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-51 (CR-BP-21c landing)
+  records:
+  - dea:process-frame-value-proposition-thesis
+  rationale: Fresh L2 landing for the Conceive cell. The other 2 register
+    v2 L2 candidates (portfolio direction, innovation thesis) land in
+    CR-BP-21c.1.
+- tranche_id: pv-d
+  context_ref: dea:pc-pv-design
+  context_name: product-value / design
+  owner: CR-BP-21c (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-51 (CR-BP-21c landing)
+  records:
+  - dea:process-design-product-and-service-propositions
+  rationale: Fresh L2 landing for the Design cell. The other 2 register
+    v2 L2 candidates (packaging and configuration, innovation experiment)
+    land in CR-BP-21c.1.
+- tranche_id: pv-b
+  context_ref: dea:pc-pv-build
+  context_name: product-value / build
+  owner: CR-BP-21c (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-51 (CR-BP-21c landing)
+  records:
+  - dea:process-develop-product-variants
+  rationale: Fresh L2 landing for the Build cell. The other 3 register
+    v2 L2 candidates (service capability, innovation prototype, market
+    readiness) land in CR-BP-21c.1.
+- tranche_id: pv-op
+  context_ref: dea:pc-pv-operate
+  context_name: product-value / operate
+  owner: CR-BP-21c (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-51 (CR-BP-21c landing)
+  records:
+  - dea:process-operate-product-catalogue
+  rationale: Fresh L2 landing for the Operate cell. The other 2 register
+    v2 L2 candidates (portfolio performance, proposition lifecycle) land
+    in CR-BP-21c.1.
+- tranche_id: pv-im
+  context_ref: dea:pc-pv-improve
+  context_name: product-value / improve
+  owner: CR-BP-21c (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-51 (CR-BP-21c landing)
+  records:
+  - dea:process-conduct-proposition-performance-review
+  rationale: Fresh L2 landing for the Improve cell. The other 2 register
+    v2 L2 candidates (product evolution, portfolio rationalization) land
+    in CR-BP-21c.1.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -412,3 +482,8 @@ review_checkpoints:
   ao-b: 1
   ao-op: 1
   ao-im: 1
+  pv-c: 1
+  pv-d: 1
+  pv-b: 1
+  pv-op: 1
+  pv-im: 1

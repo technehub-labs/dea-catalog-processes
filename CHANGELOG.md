@@ -6,6 +6,15 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21c implementation: ProductAndValue landing (third v2.4.0
+unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1 Process Group
+(`dea:group-proposition-conception`), and 5 L2 Business Processes across
+the PV x {Conceive, Design, Build, Operate, Improve} cells. Register v3
+audit counts updated: 13 `landed` / 22 `ratified-pending-landing` / 14
+`backlog-deferred`. PV/Conceive audit_status flipped to `landed`.
+Disposition register +5 RETAIN; tranche plan 20 -> 25. Per ADR-ECF-002
+§5 / CR-ECF-007.
+
 CR-BP-22 implementation: register audit-status reconciliation. Adds
 `audit_status` axis orthogonal to `disposition`, naming the gap between
 research-register acceptance and catalog landing reality. As of 2026-09-08:

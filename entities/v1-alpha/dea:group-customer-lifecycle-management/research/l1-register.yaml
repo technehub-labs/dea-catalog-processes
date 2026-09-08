@@ -70,9 +70,9 @@ register:
       - Corporate strategy development (strategy-direction x conceive; CR-BP-19 Option A split)
       - Capability build
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
+      - dea-metaframework/framework/domain-grounding.md §3.1
       - ISO 37000:2021
-      - "dea-metaframework/REPORT.md \xA75"
+      - dea-metaframework/REPORT.md §5
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
@@ -95,8 +95,8 @@ register:
       out_of_scope:
       - Operational control execution
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
-      - "dea-metaframework/framework/lifecycle-grounding.md \xA73"
+      - dea-metaframework/framework/domain-grounding.md §3.1
+      - dea-metaframework/framework/lifecycle-grounding.md §3
       - TOGAF ADM Phase G
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -115,7 +115,7 @@ register:
       out_of_scope:
       - Hiring and capability build
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
+      - dea-metaframework/framework/domain-grounding.md §3.1
       - ISO 37000:2021
       - dea-catalog-business-capabilities/capability-enterprise-governance
       disposition: ratified-accepted
@@ -154,8 +154,8 @@ register:
       out_of_scope:
       - Frontline compliance execution
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
-      - "ISO 37000:2021 \xA76"
+      - dea-metaframework/framework/domain-grounding.md §3.1
+      - ISO 37000:2021 §6
       - dea-catalog-business-capabilities/capability-compliance-management
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -173,7 +173,7 @@ register:
       out_of_scope:
       - Capability-specific improvement (lives in their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
+      - dea-metaframework/framework/domain-grounding.md §3.1
       - TOGAF ADM Requirements Management
       - CR-DEA-BC-04 R-005
       disposition: ratified-accepted
@@ -192,8 +192,8 @@ register:
       out_of_scope:
       - Asset and capability retirement
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.1"
-      - "dea-metaframework/framework/lifecycle-grounding.md \xA71 Retire"
+      - dea-metaframework/framework/domain-grounding.md §3.1
+      - dea-metaframework/framework/lifecycle-grounding.md §1 Retire
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
@@ -217,8 +217,8 @@ register:
       - Constitutional mandate and authority (governance-existence)
       - Strategic planning mechanics (Design/Build)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.2"
-      - "dea-metaframework/REPORT.md \xA75.1"
+      - dea-metaframework/framework/domain-grounding.md §3.2
+      - dea-metaframework/REPORT.md §5.1
       - APQC PCF 1.0 Develop Vision and Strategy
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -242,7 +242,7 @@ register:
       - Operational planning (operations-enablement)
       - Financial plan design (finance-accounting)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.2"
+      - dea-metaframework/framework/domain-grounding.md §3.2
       - APQC PCF 1.2 Develop Business Strategy
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -267,7 +267,7 @@ register:
       - Budget construction (finance-accounting)
       - Capability build (owning domains)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.2"
+      - dea-metaframework/framework/domain-grounding.md §3.2
       - APQC PCF 1.2.3 Develop Strategic Plan
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -287,7 +287,7 @@ register:
       out_of_scope:
       - Initiative execution (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/lifecycle-grounding.md \xA71 Activate"
+      - dea-metaframework/framework/lifecycle-grounding.md §1 Activate
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
@@ -310,7 +310,7 @@ register:
       - Operational performance management (operations-enablement)
       - Initiative execution (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.2"
+      - dea-metaframework/framework/domain-grounding.md §3.2
       - APQC PCF 1.3 Execute and Monitor Strategy
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -332,7 +332,7 @@ register:
       out_of_scope:
       - Capability improvement (owning domains)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.2"
+      - dea-metaframework/framework/domain-grounding.md §3.2
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
@@ -352,7 +352,7 @@ register:
       out_of_scope:
       - Asset disposal (operations-enablement x retire, deferred)
       evidence:
-      - "dea-metaframework/framework/lifecycle-grounding.md \xA71 Retire"
+      - dea-metaframework/framework/lifecycle-grounding.md §1 Retire
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
@@ -373,7 +373,7 @@ register:
       out_of_scope:
       - Strategic corporate strategy (strategy-direction)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - dea-metaframework ADR-ECF-002 (substrate independence)
       - CR-DEA-BC-04 N-001 People cluster consolidation
       - dea-catalog-business-capabilities/capability-workforce-planning
@@ -397,7 +397,7 @@ register:
       out_of_scope:
       - Specific job description authoring (Build)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - O*NET
       - SFIA 8
       disposition: ratified-accepted
@@ -420,14 +420,14 @@ register:
       out_of_scope:
       - Supplier relationship onboarding (party-relationship)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - dea-catalog-business-capabilities/capability-workforce-management
       - APQC PCF Talent Acquisition
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "Provision artificial agents covers model deployment and API integration per domain-grounding \xA73.3\
-        \ (Acquisition & Onboarding sub-concern)."
+      migration_note: Provision artificial agents covers model deployment and API integration per domain-grounding §3.3 (Acquisition
+        & Onboarding sub-concern).
       audit_status: ratified-pending-landing
       planned_tranche: CR-BP-21b.1
       planned_at: '2026-09-08'
@@ -466,15 +466,15 @@ register:
       out_of_scope:
       - Agent capacity planning (Conceive/Design)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - dea-catalog-business-capabilities/capability-workforce-management
       - SAP SuccessFactors process taxonomy
       - Workday HCM process reference
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "HR Operations and Workforce Operations renamed to substrate-independent Agent Operations; performance\
-        \ and learning cover training (human) and fine-tuning (artificial) per domain-grounding \xA73.3."
+      migration_note: HR Operations and Workforce Operations renamed to substrate-independent Agent Operations; performance
+        and learning cover training (human) and fine-tuning (artificial) per domain-grounding §3.3.
       audit_status: ratified-pending-landing
       planned_tranche: CR-BP-21b.1
       planned_at: '2026-09-08'
@@ -492,7 +492,7 @@ register:
       out_of_scope:
       - Continuous improvement of business capabilities (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - SHRM Body of Competency
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -513,7 +513,7 @@ register:
       out_of_scope:
       - Asset retirement (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.3"
+      - dea-metaframework/framework/domain-grounding.md §3.3
       - dea-catalog-business-capabilities/capability-workforce-management
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
@@ -539,7 +539,7 @@ register:
       - Proposition strategy (product-value)
       - Strategic targeting decisions (strategy-direction)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - CR-DEA-BC-04 R-002 Marketing placement
       - dea-catalog-business-capabilities/capability-marketing
       - APQC PCF Market and Sell
@@ -564,7 +564,7 @@ register:
       out_of_scope:
       - Proposition design (product-value)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - CR-DEA-BC-04 N-002 Marketing distinct
       - TM Forum eTOM Customer Journey Management
       disposition: ratified-accepted
@@ -589,7 +589,7 @@ register:
       - Sales pipeline build (Operate)
       - Contract execution mechanics (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - dea-catalog-business-capabilities/capability-marketing, capability-customer-management
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -633,7 +633,7 @@ register:
       - Procurement transaction execution (operations-enablement)
       - Receivables/payables accounting (finance-accounting)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - dea-catalog-processes/entities/v1-alpha/dea_bp_manage-customer-relationship.yaml
       - CR-BP-03C
       - dea-catalog-business-capabilities/capability-customer-management
@@ -660,7 +660,7 @@ register:
       out_of_scope:
       - Continuous capability improvement
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - NICE Satmetrix NPS
       - Bain Net Promoter System
       disposition: ratified-accepted
@@ -679,7 +679,7 @@ register:
       out_of_scope:
       - Asset retirement (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.4"
+      - dea-metaframework/framework/domain-grounding.md §3.4
       - TM Forum eTOM Service Retirement
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
@@ -703,18 +703,16 @@ register:
       - Strategic portfolio investment decisions (strategy-direction)
       - Capability strategy (governance-existence)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - dea-catalog-business-capabilities/capability-offering-management, capability-innovation-management
       - CR-DEA-BC-04 R-007 Innovation boundary
       - APQC PCF Develop and Manage Products/Services
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "Offering naming replaced by Proposition per v2.4.0 (domain-grounding \xA73.5 dropped Offering as vague).\
-        \ Alliance/partnership thesis moved to party-relationship x conceive."
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21c
-      planned_at: '2026-09-08'
+      migration_note: Offering naming replaced by Proposition per v2.4.0 (domain-grounding §3.5 dropped Offering as vague).
+        Alliance/partnership thesis moved to party-relationship x conceive.
+      audit_status: landed
     Design:
       process_context: dea:pc-pv-design
       l1_candidates:
@@ -728,7 +726,7 @@ register:
       out_of_scope:
       - Technology platform architecture (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - ITIL 4 Service Design
       - BIAN Service Design
       disposition: ratified-accepted
@@ -751,7 +749,7 @@ register:
       out_of_scope:
       - Technology build (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - dea-catalog-business-capabilities/capability-offering-management
       - SAFe Product Development Flow
       disposition: ratified-accepted
@@ -795,7 +793,7 @@ register:
       - Partner alliance programme (party-relationship)
       - Workforce operation (agency-organization)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - dea-catalog-business-capabilities/capability-offering-management
       - BIAN Service Operations
       disposition: ratified-accepted
@@ -818,7 +816,7 @@ register:
       out_of_scope:
       - Capability improvement (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - ITIL 4 CSI
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -837,7 +835,7 @@ register:
       out_of_scope:
       - Asset retirement (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.5"
+      - dea-metaframework/framework/domain-grounding.md §3.5
       - ITIL 4 Service Transition to retirement
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
@@ -862,14 +860,14 @@ register:
       - Customer strategy (party-relationship)
       - Strategic direction for operations (strategy-direction)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - dea-catalog-business-capabilities/capability-operations
       - SCOR Plan
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "Absorbs execution-side sourcing/asset conception from the dissolved Supply & Resources domain (physical\
-        \ resources are enablers of execution per domain-grounding \xA73.6). Supplier relationship conception lives in party-relationship."
+      migration_note: Absorbs execution-side sourcing/asset conception from the dissolved Supply & Resources domain (physical
+        resources are enablers of execution per domain-grounding §3.6). Supplier relationship conception lives in party-relationship.
       audit_status: ratified-pending-landing
       planned_tranche: CR-BP-21d
       planned_at: '2026-09-08'
@@ -888,7 +886,7 @@ register:
       out_of_scope:
       - Capability design (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - SCOR Plan
       - TM Forum eTOM Operations Support & Readiness
       disposition: ratified-accepted
@@ -914,7 +912,7 @@ register:
       out_of_scope:
       - Agent provisioning (agency-organization)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - SCOR Source
       - dea-catalog-business-capabilities/capability-operations
       disposition: ratified-accepted
@@ -968,7 +966,7 @@ register:
       - Supplier relationship management (party-relationship)
       - Customer relationship (party-relationship)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - SCOR Make/Deliver
       - ITIL 4 Service Operation
       - TM Forum eTOM Operations
@@ -976,10 +974,10 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "Absorbs procurement execution, facility operation, and asset maintenance from the dissolved Supply\
-        \ & Resources domain (v1 strategy-direction x operate); supplier performance relationship moved to party-relationship.\
-        \ Information technology coverage asserted per domain-grounding \xA73.6 (Technology Enablement sub-concern; technology\
-        \ positioned as enabler of execution)."
+      migration_note: Absorbs procurement execution, facility operation, and asset maintenance from the dissolved Supply &
+        Resources domain (v1 strategy-direction x operate); supplier performance relationship moved to party-relationship.
+        Information technology coverage asserted per domain-grounding §3.6 (Technology Enablement sub-concern; technology
+        positioned as enabler of execution).
       audit_status: ratified-pending-landing
       planned_tranche: CR-BP-21d
       planned_at: '2026-09-08'
@@ -998,7 +996,7 @@ register:
       out_of_scope:
       - Capability improvement (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - SCOR Return
       - APQC PCF Continuous Improvement
       disposition: ratified-accepted
@@ -1023,7 +1021,7 @@ register:
       out_of_scope:
       - Governance sunset (governance-existence x retire)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.6"
+      - dea-metaframework/framework/domain-grounding.md §3.6
       - SCOR Return end-of-life
       disposition: backlog-deferred
       ratified_at: '2026-09-07'
@@ -1049,13 +1047,13 @@ register:
       - Strategic investment choices (strategy-direction)
       - Investment strategy governance (governance-existence)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - dea-catalog-business-capabilities/capability-financial-management
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      migration_note: "Value Strategy Conception removed per v2.4.0 (domain-grounding \xA73.7 scopes the domain to monetary\
-        \ consequence, not abstract value)."
+      migration_note: Value Strategy Conception removed per v2.4.0 (domain-grounding §3.7 scopes the domain to monetary consequence,
+        not abstract value).
       audit_status: ratified-pending-landing
       planned_tranche: CR-BP-21e
       planned_at: '2026-09-08'
@@ -1073,7 +1071,7 @@ register:
       out_of_scope:
       - Investment design (strategy-direction)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - COSO Internal Control
       - IFRS conceptual framework
       disposition: ratified-accepted
@@ -1096,7 +1094,7 @@ register:
       out_of_scope:
       - Building non-finance capabilities
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - dea-catalog-business-capabilities/capability-financial-management, capability-financial-stewardship
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
@@ -1144,7 +1142,7 @@ register:
       - Procurement transaction execution (operations-enablement)
       - Capability execution (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - dea-catalog-business-capabilities/capability-financial-management, capability-financial-stewardship
       - COSO Internal Control
       - IFRS
@@ -1171,7 +1169,7 @@ register:
       out_of_scope:
       - Capability improvement (their domain)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - Gartner Finance Benchmark
       - APQC PCF Financial Management Improvement
       disposition: ratified-accepted
@@ -1194,7 +1192,7 @@ register:
       out_of_scope:
       - Physical asset retirement (operations-enablement)
       evidence:
-      - "dea-metaframework/framework/domain-grounding.md \xA73.7"
+      - dea-metaframework/framework/domain-grounding.md §3.7
       - IFRS 5 Non-current Assets Held for Sale
       - ASC 205-30 Liquidation Basis
       disposition: backlog-deferred
