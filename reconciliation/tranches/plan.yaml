@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 60
-  total_records: 119
+  total_tranches: 65
+  total_records: 126
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -81,6 +81,11 @@ summary:
     fa-b.1: 3
     fa-op.1: 7
     fa-im.1: 2
+    ge-c.1: 1
+    ge-d.1: 1
+    ge-b.1: 1
+    ge-op.1: 2
+    ge-im.1: 2
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -1030,6 +1035,53 @@ tranches:
   status: proposed
   rationale: Register v2 L2 completion for the FA Improve cell; composed
     by the new dea:group-financial-improve.
+- tranche_id: ge-c.1
+  context_ref: dea:pc-ge-c
+  context_name: governance-and-existence / conceive
+  group_ref: dea:group-governance-conception
+  cell: GovernanceAndExistence.Conceive
+  records:
+  - dea:process-frame-risk-framework-direction
+  status: proposed
+  rationale: Register v2 L2 completion for the GE Conceive cell; composed by the existing dea:group-governance-conception.
+- tranche_id: ge-d.1
+  context_ref: dea:pc-ge-d
+  context_name: governance-and-existence / design
+  group_ref: dea:group-governance-system-design
+  cell: GovernanceAndExistence.Design
+  records:
+  - dea:process-design-risk-framework
+  status: proposed
+  rationale: Register v2 L2 completion for the GE Design cell; composed by the existing dea:group-governance-system-design.
+- tranche_id: ge-b.1
+  context_ref: dea:pc-ge-b
+  context_name: governance-and-existence / build
+  group_ref: dea:group-governance-body-establishment
+  cell: GovernanceAndExistence.Build
+  records:
+  - dea:process-establish-risk-and-control-apparatus
+  status: proposed
+  rationale: Register v2 L2 completion for the GE Build cell; composed by the existing dea:group-governance-body-establishment.
+- tranche_id: ge-op.1
+  context_ref: dea:pc-ge-op
+  context_name: governance-and-existence / operate
+  group_ref: dea:group-governance-oversight
+  cell: GovernanceAndExistence.Operate
+  records:
+  - dea:process-operate-enterprise-risk-oversight
+  - dea:process-conduct-assurance-review
+  status: proposed
+  rationale: Register v2 L2 completion for the GE Operate cell; composed by the existing dea:group-governance-oversight.
+- tranche_id: ge-im.1
+  context_ref: dea:pc-ge-im
+  context_name: governance-and-existence / improve
+  group_ref: dea:group-governance-review-and-learning
+  cell: GovernanceAndExistence.Improve
+  records:
+  - dea:process-score-audit-findings
+  - dea:process-improve-policy-and-control-framework
+  status: proposed
+  rationale: Register v2 L2 completion for the GE Improve cell; composed by the existing dea:group-governance-review-and-learning.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -1092,3 +1144,8 @@ review_checkpoints:
   fa-b.1: 1
   fa-op.1: 1
   fa-im.1: 1
+  ge-c.1: 1
+  ge-d.1: 1
+  ge-b.1: 1
+  ge-op.1: 1
+  ge-im.1: 1

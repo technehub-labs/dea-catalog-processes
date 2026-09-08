@@ -83,6 +83,35 @@ composes:
       asserted_by: dea-team
       asserted_at: '2026-09-05'
 
+  - source_id: dea:group-governance-oversight
+    target_id: dea:process-operate-enterprise-risk-oversight
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process belongs to this cell per register v2
+      (GovernanceAndExistence completion tranche CR-BP-21f.1).
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21f.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-governance-oversight
+    target_id: dea:process-conduct-assurance-review
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process belongs to this cell per register v2
+      (GovernanceAndExistence completion tranche CR-BP-21f.1).
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21f.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
 
@@ -132,6 +161,11 @@ metadata:
         Initial Process Group record; promoted from the CR-BP-11
         49-coordinate register (ratified by CR-BP-13) as part of
         the CR-BP-13a admission tranche.
+
+    - cr: CR-BP-21f.1
+      date: '2026-09-08'
+      change: |
+        Added dea:process-operate-enterprise-risk-oversight and dea:process-conduct-assurance-review composes edges (CR-BP-21f.1 GE completion).
 
 links:
   - rel: change-request

@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 153
-    entities: 154
-    open_change_requests: 31
+    canonical: 160
+    entities: 161
+    open_change_requests: 32
     research_files: 57
     retired: 1
   cross_cutting:
@@ -176,7 +176,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-body-establishment
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-body-establishment/dea:group-governance-body-establishment.yaml
     research_count: 2
@@ -187,7 +187,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-conception
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-conception/dea:group-governance-conception.yaml
     research_count: 2
@@ -198,7 +198,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-oversight
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-oversight/dea:group-governance-oversight.yaml
     research_count: 2
@@ -209,7 +209,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-review-and-learning
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-review-and-learning/dea:group-governance-review-and-learning.yaml
     research_count: 2
@@ -220,7 +220,7 @@ catalog:
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-governance-system-design
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
     research_count: 2
@@ -582,6 +582,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-conduct-assurance-review
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-assurance-review/dea:process-conduct-assurance-review.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-conduct-capability-gap-analysis
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -923,6 +934,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-risk-framework
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-risk-framework/dea:process-design-risk-framework.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-role-catalogue
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1039,6 +1061,17 @@ catalog:
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-establish-risk-and-control-apparatus
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-establish-risk-and-control-apparatus/dea:process-establish-risk-and-control-apparatus.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -1176,6 +1209,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-risk-framework-direction
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-risk-framework-direction/dea:process-frame-risk-framework-direction.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-strategic-horizons
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1213,6 +1257,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/dea:process-implement-financial-systems-and-ledger.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-improve-policy-and-control-framework
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-improve-policy-and-control-framework/dea:process-improve-policy-and-control-framework.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1345,6 +1400,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-operate-asset-maintenance/dea:process-operate-asset-maintenance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-enterprise-risk-oversight
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-enterprise-risk-oversight/dea:process-operate-enterprise-risk-oversight.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1660,6 +1726,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-score-audit-findings
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-score-audit-findings/dea:process-score-audit-findings.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-secure-funding-facilities
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1898,6 +1975,9 @@ catalog:
   - entity_id: dea:process-conceive-workforce-and-agent-mix
     files: []
     path: entities/v1-alpha/dea:process-conceive-workforce-and-agent-mix/research/
+  - entity_id: dea:process-conduct-assurance-review
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-assurance-review/research/
   - entity_id: dea:process-conduct-capability-gap-analysis
     files: []
     path: entities/v1-alpha/dea:process-conduct-capability-gap-analysis/research/
@@ -2009,6 +2089,9 @@ catalog:
   - entity_id: dea:process-design-product-and-service-propositions
     files: []
     path: entities/v1-alpha/dea:process-design-product-and-service-propositions/research/
+  - entity_id: dea:process-design-risk-framework
+    files: []
+    path: entities/v1-alpha/dea:process-design-risk-framework/research/
   - entity_id: dea:process-design-role-catalogue
     files: []
     path: entities/v1-alpha/dea:process-design-role-catalogue/research/
@@ -2046,6 +2129,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-establish-governance-bodies/research/
+  - entity_id: dea:process-establish-risk-and-control-apparatus
+    files: []
+    path: entities/v1-alpha/dea:process-establish-risk-and-control-apparatus/research/
   - entity_id: dea:process-evaluate-strategic-alternatives
     files: []
     path: entities/v1-alpha/dea:process-evaluate-strategic-alternatives/research/
@@ -2082,6 +2168,9 @@ catalog:
   - entity_id: dea:process-frame-portfolio-direction
     files: []
     path: entities/v1-alpha/dea:process-frame-portfolio-direction/research/
+  - entity_id: dea:process-frame-risk-framework-direction
+    files: []
+    path: entities/v1-alpha/dea:process-frame-risk-framework-direction/research/
   - entity_id: dea:process-frame-strategic-horizons
     files: []
     path: entities/v1-alpha/dea:process-frame-strategic-horizons/research/
@@ -2094,6 +2183,9 @@ catalog:
   - entity_id: dea:process-implement-financial-systems-and-ledger
     files: []
     path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/research/
+  - entity_id: dea:process-improve-policy-and-control-framework
+    files: []
+    path: entities/v1-alpha/dea:process-improve-policy-and-control-framework/research/
   - entity_id: dea:process-improve-technology-platforms
     files: []
     path: entities/v1-alpha/dea:process-improve-technology-platforms/research/
@@ -2135,6 +2227,9 @@ catalog:
   - entity_id: dea:process-operate-asset-maintenance
     files: []
     path: entities/v1-alpha/dea:process-operate-asset-maintenance/research/
+  - entity_id: dea:process-operate-enterprise-risk-oversight
+    files: []
+    path: entities/v1-alpha/dea:process-operate-enterprise-risk-oversight/research/
   - entity_id: dea:process-operate-facility-management
     files: []
     path: entities/v1-alpha/dea:process-operate-facility-management/research/
@@ -2223,6 +2318,9 @@ catalog:
   - entity_id: dea:process-run-production-line
     files: []
     path: entities/v1-alpha/dea:process-run-production-line/research/
+  - entity_id: dea:process-score-audit-findings
+    files: []
+    path: entities/v1-alpha/dea:process-score-audit-findings/research/
   - entity_id: dea:process-secure-funding-facilities
     files: []
     path: entities/v1-alpha/dea:process-secure-funding-facilities/research/

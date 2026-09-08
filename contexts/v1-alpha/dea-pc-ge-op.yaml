@@ -46,6 +46,8 @@ adjacent_contexts:
 processes:
   - dea:process-operate-governance-oversight
   - dea:process-audit-policy-compliance
+  - dea:process-operate-enterprise-risk-oversight
+  - dea:process-conduct-assurance-review
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:

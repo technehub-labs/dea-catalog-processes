@@ -1,0 +1,48 @@
+id: dea:process-frame-risk-framework-direction
+name: Frame Risk Framework Direction
+type: Process
+version: '1.0.0'
+lifecycle_status: candidate
+status: candidate
+process_intent: govern
+process_type: strategic
+context:
+- ref: dea:pc-ge-c
+description: |
+  Frame Risk Framework Direction (conceive stage, strategic process). Landed by CR-BP-21f.1
+  from the GovernanceAndExistence register v2.
+trigger: A governance mandate requires an enterprise risk posture.
+outcome: Risk framework direction is framed with risk appetite, tolerance bands, and governance posture defined, setting the strategic direction for risk framework design.
+triggers:
+  - A governance mandate requires an enterprise risk posture.
+outcomes:
+  - Risk framework direction is framed with risk appetite, tolerance bands, and governance posture defined, setting the strategic direction for risk framework design.
+identity:
+  verb: Frame
+  object: Risk Framework Direction
+  outcome_statement: Risk framework direction is framed with risk appetite, tolerance bands, and governance posture defined, setting the strategic direction for risk framework design.
+  evidence_links:
+    - type: documentation
+      ref: change-requests/CR-BP-21f.1.md
+relationships:
+- source_id: dea:process-frame-risk-framework-direction
+  relationship_type: serves
+  target_id: ecf:governanceExistence.conceive
+ecfConformance:
+  framework: EnterpriseConceptFramework
+  contractVersion: 1.0.0
+  profile: dea:ecf@1.0.0
+  status: conformant
+  affiliation: inherits-catalog
+  canonicalReferences:
+  - kind: coordinate
+    domain: GovernanceAndExistence
+    stage: Conceive
+    identifier: ecf:governanceExistence.conceive
+  target_id: ecf:governanceExistence.conceive
+change_history:
+- version: '1.0.0'
+  date: '2026-09-08'
+  cr: CR-BP-21f.1
+  change: |
+    Initial landing under CR-BP-21f.1 (GovernanceAndExistence completion).

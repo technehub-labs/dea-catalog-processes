@@ -6,6 +6,19 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21f.1 implementation: GovernanceAndExistence completion
+(retroactive completion for the pre-register-v2-discipline domain).
+GE's register v2 candidate list was never fully populated when the
+domain was seeded under CR-BP-13a; audit found the entire
+risk-framework track (one candidate per lifecycle stage) plus
+assurance-review, audit-findings-scoring, and policy-framework-
+improvement unlanded. Lands 7 new L2 processes (Conceive 1,
+Design 1, Build 1, Operate 2, Improve 2); extends the 5 existing
+GE Process Groups' composes edges and the 5 GE contexts' processes
+lists. All 18 register v2 GE candidates are now covered by 16 BPs
+(9 seeds + 7 new). Disposition register +7 RETAIN; tranche plan
+60 to 65; inventory 119 to 126 BPs.
+
 CR-BP-21e.1 implementation: FinanceAndAccounting completion (fifth
 and final domain-completion tranche; closes the v2.4.0 register
 scope). Lands the 4 remaining FA Process Groups
