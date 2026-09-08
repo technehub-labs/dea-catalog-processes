@@ -17,14 +17,14 @@ Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md
 
 | audit_status | Coordinates | Description |
 |---:|---:|---|
-| `landed` | 15 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 20 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 19 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 16 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
-The gap (20 `ratified-pending-landing`) is the L1 process discovery
+The gap (16 `ratified-pending-landing`) is the L1 process discovery
 work-in-flight: those cells are accepted in principle but have no
-landing yet. The planned tranches (CR-BP-21a.1, CR-BP-21b.1, CR-BP-21c.1,
+landing yet. The planned tranches (CR-BP-21b.1, CR-BP-21c.1,
 CR-BP-21d.1, CR-BP-21e.1) close this gap.
 
 See CR-BP-19 for the v2 deferred_rationale (Activate and Retire are
@@ -231,8 +231,8 @@ Group existence):
 
 | audit_status | Count | Description |
 |---:|---:|---|
-| `landed` | 15 | Canonical `dea:group-*` exists at the coordinate's Process Context |
-| `ratified-pending-landing` | 20 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
+| `landed` | 19 | Canonical `dea:group-*` exists at the coordinate's Process Context |
+| `ratified-pending-landing` | 16 | `disposition=ratified-accepted` but no canonical L1 yet; planned tranche named per coordinate |
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
@@ -241,7 +241,7 @@ Group existence):
 | Domain | Conceive | Design | Build | Activate | Operate | Improve | Retire | L1 landed |
 |---|---|---|---|---|---|---|---|---:|
 | GovernanceAndExistence | landed | landed | landed | deferred | landed | landed | deferred | 5 |
-| StrategyAndDirection | landed | pending | pending | deferred | pending | pending | deferred | 1 |
+| StrategyAndDirection | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | AgencyAndOrganization | landed | pending | pending | deferred | pending | pending | deferred | 1 |
 | PartyAndRelationship | landed | landed | landed | deferred | landed | landed | deferred | 5 |
 | ProductAndValue | landed | pending | pending | deferred | pending | pending | deferred | 1 |
@@ -250,7 +250,7 @@ Group existence):
 
 ### Planned tranches closing the gap
 
-- `StrategyAndDirection` Design/Build/Operate/Improve → CR-BP-21a.1 (planned)
+- `StrategyAndDirection` Design/Build/Operate/Improve (landed CR-BP-21a.1)
 - `AgencyAndOrganization` Design/Build/Operate/Improve → CR-BP-21b.1 (planned)
 - `ProductAndValue` Conceive (landed CR-BP-21c); Design/Build/Operate/Improve → CR-BP-21c.1 (planned)
 - `OperationsAndEnablement` Conceive (landed CR-BP-21d); Design/Build/Operate/Improve → CR-BP-21d.1 (planned)

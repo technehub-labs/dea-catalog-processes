@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 93
+total_records: 111
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 93
+  4: 111
 records:
 - id: dea:group-customer-channel-and-acquisition-build
   kind: Entity
@@ -150,6 +150,46 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-strategic-adaptation
+  kind: Entity
+  path: entities/v1-alpha/dea:group-strategic-adaptation/dea:group-strategic-adaptation.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-strategic-choices-design
+  kind: Entity
+  path: entities/v1-alpha/dea:group-strategic-choices-design/dea:group-strategic-choices-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-strategic-plan-build
+  kind: Entity
+  path: entities/v1-alpha/dea:group-strategic-plan-build/dea:group-strategic-plan-build.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-strategic-steering-operation
+  kind: Entity
+  path: entities/v1-alpha/dea:group-strategic-steering-operation/dea:group-strategic-steering-operation.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-strategy-direction-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-strategy-direction-conception/dea:group-strategy-direction-conception.yaml
@@ -210,9 +250,29 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-build-strategic-roadmap
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-strategic-roadmap/dea:process-build-strategic-roadmap.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-codify-charters-and-policies
   kind: Entity
   path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-conceive-strategic-intent
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conceive-strategic-intent/dea:process-conceive-strategic-intent.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -300,6 +360,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-define-enterprise-purpose-and-ambition
+  kind: Entity
+  path: entities/v1-alpha/dea:process-define-enterprise-purpose-and-ambition/dea:process-define-enterprise-purpose-and-ambition.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-demand-design
   kind: Entity
   path: entities/v1-alpha/dea:process-demand-design/dea:process-demand-design.yaml
@@ -333,6 +403,16 @@ records:
 - id: dea:process-design-governance-system
   kind: Entity
   path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-objectives-and-targets
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-objectives-and-targets/dea:process-design-objectives-and-targets.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -390,6 +470,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-strategic-scenarios
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-strategic-scenarios/dea:process-design-strategic-scenarios.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-develop-agents-and-organization
   kind: Entity
   path: entities/v1-alpha/dea:process-develop-agents-and-organization/dea:process-develop-agents-and-organization.yaml
@@ -440,6 +530,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-evaluate-strategic-alternatives
+  kind: Entity
+  path: entities/v1-alpha/dea:process-evaluate-strategic-alternatives/dea:process-evaluate-strategic-alternatives.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-frame-finance-strategy
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-finance-strategy/dea:process-frame-finance-strategy.yaml
@@ -463,6 +563,16 @@ records:
 - id: dea:process-frame-organization-and-agent-strategy
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-frame-strategic-horizons
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-strategic-horizons/dea:process-frame-strategic-horizons.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -570,6 +680,26 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-operate-strategic-review-cycle
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-strategic-review-cycle/dea:process-operate-strategic-review-cycle.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-refresh-objectives-and-targets
+  kind: Entity
+  path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/dea:process-refresh-objectives-and-targets.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-review-governance-effectiveness
   kind: Entity
   path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml
@@ -580,9 +710,59 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-review-strategy-effectiveness
+  kind: Entity
+  path: entities/v1-alpha/dea:process-review-strategy-effectiveness/dea:process-review-strategy-effectiveness.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-secure-funding-facilities
   kind: Entity
   path: entities/v1-alpha/dea:process-secure-funding-facilities/dea:process-secure-funding-facilities.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-sense-environmental-signals
+  kind: Entity
+  path: entities/v1-alpha/dea:process-sense-environmental-signals/dea:process-sense-environmental-signals.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-set-resource-allocation-priorities
+  kind: Entity
+  path: entities/v1-alpha/dea:process-set-resource-allocation-priorities/dea:process-set-resource-allocation-priorities.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-steer-initiative-portfolio
+  kind: Entity
+  path: entities/v1-alpha/dea:process-steer-initiative-portfolio/dea:process-steer-initiative-portfolio.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-translate-strategic-choices-into-initiatives
+  kind: Entity
+  path: entities/v1-alpha/dea:process-translate-strategic-choices-into-initiatives/dea:process-translate-strategic-choices-into-initiatives.yaml
   level: 4
   level_breakdown:
     L1_structural: true

@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 57
-    entities: 58
-    open_change_requests: 26
+    canonical: 75
+    entities: 76
+    open_change_requests: 27
     research_files: 57
     retired: 1
   cross_cutting:
@@ -175,8 +175,52 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-strategic-adaptation
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategic-adaptation/dea:group-strategic-adaptation.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-strategic-choices-design
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategic-choices-design/dea:group-strategic-choices-design.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-strategic-plan-build
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategic-plan-build/dea:group-strategic-plan-build.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-strategic-steering-operation
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-strategic-steering-operation/dea:group-strategic-steering-operation.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-strategy-direction-conception
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-strategy-direction-conception/dea:group-strategy-direction-conception.yaml
     research_count: 0
@@ -239,6 +283,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-build-strategic-roadmap
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-strategic-roadmap/dea:process-build-strategic-roadmap.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-codify-charters-and-policies
@@ -247,6 +302,17 @@ catalog:
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conceive-strategic-intent
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conceive-strategic-intent/dea:process-conceive-strategic-intent.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -338,6 +404,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-define-enterprise-purpose-and-ambition
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-define-enterprise-purpose-and-ambition/dea:process-define-enterprise-purpose-and-ambition.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-demand-design
@@ -379,6 +456,17 @@ catalog:
     path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-objectives-and-targets
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-objectives-and-targets/dea:process-design-objectives-and-targets.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -432,6 +520,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-strategic-options/dea:process-design-strategic-options.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-strategic-scenarios
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-strategic-scenarios/dea:process-design-strategic-scenarios.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -494,6 +593,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-evaluate-strategic-alternatives
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-evaluate-strategic-alternatives/dea:process-evaluate-strategic-alternatives.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-finance-strategy
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -520,6 +630,17 @@ catalog:
     last_modified: '2026-09-07'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-frame-strategic-horizons
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-strategic-horizons/dea:process-frame-strategic-horizons.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -635,6 +756,28 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-strategic-review-cycle
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-strategic-review-cycle/dea:process-operate-strategic-review-cycle.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-refresh-objectives-and-targets
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/dea:process-refresh-objectives-and-targets.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-review-governance-effectiveness
@@ -648,10 +791,65 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-review-strategy-effectiveness
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-review-strategy-effectiveness/dea:process-review-strategy-effectiveness.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-secure-funding-facilities
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-secure-funding-facilities/dea:process-secure-funding-facilities.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-sense-environmental-signals
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-sense-environmental-signals/dea:process-sense-environmental-signals.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-set-resource-allocation-priorities
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-set-resource-allocation-priorities/dea:process-set-resource-allocation-priorities.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-steer-initiative-portfolio
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-steer-initiative-portfolio/dea:process-steer-initiative-portfolio.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-translate-strategic-choices-into-initiatives
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-translate-strategic-choices-into-initiatives/dea:process-translate-strategic-choices-into-initiatives.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -727,6 +925,18 @@ catalog:
   - entity_id: dea:group-proposition-conception
     files: []
     path: entities/v1-alpha/dea:group-proposition-conception/research/
+  - entity_id: dea:group-strategic-adaptation
+    files: []
+    path: entities/v1-alpha/dea:group-strategic-adaptation/research/
+  - entity_id: dea:group-strategic-choices-design
+    files: []
+    path: entities/v1-alpha/dea:group-strategic-choices-design/research/
+  - entity_id: dea:group-strategic-plan-build
+    files: []
+    path: entities/v1-alpha/dea:group-strategic-plan-build/research/
+  - entity_id: dea:group-strategic-steering-operation
+    files: []
+    path: entities/v1-alpha/dea:group-strategic-steering-operation/research/
   - entity_id: dea:group-strategy-direction-conception
     files: []
     path: entities/v1-alpha/dea:group-strategy-direction-conception/research/
@@ -747,11 +957,17 @@ catalog:
   - entity_id: dea:process-build-strategic-plan
     files: []
     path: entities/v1-alpha/dea:process-build-strategic-plan/research/
+  - entity_id: dea:process-build-strategic-roadmap
+    files: []
+    path: entities/v1-alpha/dea:process-build-strategic-roadmap/research/
   - entity_id: dea:process-codify-charters-and-policies
     files:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/research/
+  - entity_id: dea:process-conceive-strategic-intent
+    files: []
+    path: entities/v1-alpha/dea:process-conceive-strategic-intent/research/
   - entity_id: dea:process-conduct-cost-optimization-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/research/
@@ -786,6 +1002,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-customer-strategy-conception/research/
+  - entity_id: dea:process-define-enterprise-purpose-and-ambition
+    files: []
+    path: entities/v1-alpha/dea:process-define-enterprise-purpose-and-ambition/research/
   - entity_id: dea:process-demand-design
     files:
     - .gitkeep
@@ -804,6 +1023,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-design-governance-system/research/
+  - entity_id: dea:process-design-objectives-and-targets
+    files: []
+    path: entities/v1-alpha/dea:process-design-objectives-and-targets/research/
   - entity_id: dea:process-design-operations-model
     files: []
     path: entities/v1-alpha/dea:process-design-operations-model/research/
@@ -821,6 +1043,9 @@ catalog:
   - entity_id: dea:process-design-strategic-options
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-options/research/
+  - entity_id: dea:process-design-strategic-scenarios
+    files: []
+    path: entities/v1-alpha/dea:process-design-strategic-scenarios/research/
   - entity_id: dea:process-develop-agents-and-organization
     files: []
     path: entities/v1-alpha/dea:process-develop-agents-and-organization/research/
@@ -840,6 +1065,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-establish-governance-bodies/research/
+  - entity_id: dea:process-evaluate-strategic-alternatives
+    files: []
+    path: entities/v1-alpha/dea:process-evaluate-strategic-alternatives/research/
   - entity_id: dea:process-frame-finance-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-finance-strategy/research/
@@ -849,6 +1077,9 @@ catalog:
   - entity_id: dea:process-frame-organization-and-agent-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/research/
+  - entity_id: dea:process-frame-strategic-horizons
+    files: []
+    path: entities/v1-alpha/dea:process-frame-strategic-horizons/research/
   - entity_id: dea:process-frame-value-proposition-thesis
     files: []
     path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/research/
@@ -886,13 +1117,34 @@ catalog:
   - entity_id: dea:process-operate-service-delivery
     files: []
     path: entities/v1-alpha/dea:process-operate-service-delivery/research/
+  - entity_id: dea:process-operate-strategic-review-cycle
+    files: []
+    path: entities/v1-alpha/dea:process-operate-strategic-review-cycle/research/
+  - entity_id: dea:process-refresh-objectives-and-targets
+    files: []
+    path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/research/
   - entity_id: dea:process-review-governance-effectiveness
     files:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/research/
+  - entity_id: dea:process-review-strategy-effectiveness
+    files: []
+    path: entities/v1-alpha/dea:process-review-strategy-effectiveness/research/
   - entity_id: dea:process-secure-funding-facilities
     files: []
     path: entities/v1-alpha/dea:process-secure-funding-facilities/research/
+  - entity_id: dea:process-sense-environmental-signals
+    files: []
+    path: entities/v1-alpha/dea:process-sense-environmental-signals/research/
+  - entity_id: dea:process-set-resource-allocation-priorities
+    files: []
+    path: entities/v1-alpha/dea:process-set-resource-allocation-priorities/research/
+  - entity_id: dea:process-steer-initiative-portfolio
+    files: []
+    path: entities/v1-alpha/dea:process-steer-initiative-portfolio/research/
+  - entity_id: dea:process-translate-strategic-choices-into-initiatives
+    files: []
+    path: entities/v1-alpha/dea:process-translate-strategic-choices-into-initiatives/research/
   status: active
   version: 1.0.0

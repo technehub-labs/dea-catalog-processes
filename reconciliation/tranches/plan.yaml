@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 35
-  total_records: 43
+  total_tranches: 40
+  total_records: 57
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -56,6 +56,11 @@ summary:
     fa-b: 1
     fa-op: 1
     fa-im: 1
+    sd-c.1: 3
+    sd-d.1: 3
+    sd-b.1: 3
+    sd-op.1: 3
+    sd-im.1: 2
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -604,6 +609,76 @@ tranches:
   rationale: Fresh L2 landing for the Improve cell. The other 2 register
     v2 L2 candidates (reporting improvement, control strengthening) land
     in CR-BP-21e.1.
+- tranche_id: sd-c.1
+  context_ref: dea:pc-sd-conceive
+  context_name: strategy-direction / conceive
+  owner: CR-BP-21a.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-54 (CR-BP-21a.1 completion)
+  records:
+  - dea:process-define-enterprise-purpose-and-ambition
+  - dea:process-conceive-strategic-intent
+  - dea:process-frame-strategic-horizons
+  rationale: Register v2 L2 completion for the SD Conceive cell; the 3
+    remaining candidates join the landed dea:group-strategy-direction-conception
+    via new composes edges.
+- tranche_id: sd-d.1
+  context_ref: dea:pc-sd-design
+  context_name: strategy-direction / design
+  owner: CR-BP-21a.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-54 (CR-BP-21a.1 completion)
+  records:
+  - dea:process-evaluate-strategic-alternatives
+  - dea:process-design-objectives-and-targets
+  - dea:process-design-strategic-scenarios
+  rationale: Register v2 L2 completion for the SD Design cell; composed by
+    the new dea:group-strategic-choices-design.
+- tranche_id: sd-b.1
+  context_ref: dea:pc-sd-build
+  context_name: strategy-direction / build
+  owner: CR-BP-21a.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-54 (CR-BP-21a.1 completion)
+  records:
+  - dea:process-build-strategic-roadmap
+  - dea:process-translate-strategic-choices-into-initiatives
+  - dea:process-set-resource-allocation-priorities
+  rationale: Register v2 L2 completion for the SD Build cell; composed by
+    the new dea:group-strategic-plan-build.
+- tranche_id: sd-op.1
+  context_ref: dea:pc-sd-operate
+  context_name: strategy-direction / operate
+  owner: CR-BP-21a.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-54 (CR-BP-21a.1 completion)
+  records:
+  - dea:process-sense-environmental-signals
+  - dea:process-steer-initiative-portfolio
+  - dea:process-operate-strategic-review-cycle
+  rationale: Register v2 L2 completion for the SD Operate cell; composed by
+    the new dea:group-strategic-steering-operation.
+- tranche_id: sd-im.1
+  context_ref: dea:pc-sd-improve
+  context_name: strategy-direction / improve
+  owner: CR-BP-21a.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-54 (CR-BP-21a.1 completion)
+  records:
+  - dea:process-refresh-objectives-and-targets
+  - dea:process-review-strategy-effectiveness
+  rationale: Register v2 L2 completion for the SD Improve cell; composed by
+    the new dea:group-strategic-adaptation.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -641,3 +716,8 @@ review_checkpoints:
   fa-b: 1
   fa-op: 1
   fa-im: 1
+  sd-c.1: 1
+  sd-d.1: 1
+  sd-b.1: 1
+  sd-op.1: 1
+  sd-im.1: 1

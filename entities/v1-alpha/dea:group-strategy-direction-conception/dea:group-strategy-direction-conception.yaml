@@ -40,8 +40,8 @@ outcomes:
   - Corporate strategy is developed within the authorised frame.
 
 # Canonical containment (PG-004 / PG-005 / PG-006 enforce).
-# CR-BP-21a tranche composes 1 L2 (the corporate-strategy migration
-# target); the remaining 3 register v2 candidates land in CR-BP-21a.1.
+# CR-BP-21a tranche composed 1 L2 (the corporate-strategy migration
+# target); CR-BP-21a.1 composes the remaining 3 register v2 candidates.
 composes:
   - source_id: dea:group-strategy-direction-conception
     target_id: dea:process-develop-corporate-strategy
@@ -61,6 +61,51 @@ composes:
       reference: CR-BP-21a
       asserted_by: dea-team
       asserted_at: '2026-09-07'
+  - source_id: dea:group-strategy-direction-conception
+    target_id: dea:process-define-enterprise-purpose-and-ambition
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process defines the enterprise purpose and ambition,
+      a register v2 candidate for the StrategyAndDirection x Conceive
+      cell, landed under CR-BP-21a.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21a.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-strategy-direction-conception
+    target_id: dea:process-conceive-strategic-intent
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process conceives strategic intent, a register v2
+      candidate for the StrategyAndDirection x Conceive cell, landed
+      under CR-BP-21a.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21a.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-strategy-direction-conception
+    target_id: dea:process-frame-strategic-horizons
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames strategic horizons, a register v2
+      candidate for the StrategyAndDirection x Conceive cell, landed
+      under CR-BP-21a.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21a.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -108,6 +153,13 @@ metadata:
         landing tranche. Composes the migrated L2
         dea:process-develop-corporate-strategy (formerly
         dea:process-develop-governance-strategy; CR-BP-20 Option A split).
+    - cr: CR-BP-21a.1
+      date: '2026-09-08'
+      change: |
+        Composes edges added for the 3 remaining register v2 Conceive-cell
+        L2 candidates (define-enterprise-purpose-and-ambition,
+        conceive-strategic-intent, frame-strategic-horizons), completing
+        the cell's L2 landing.
 
 links:
   - rel: change-request
