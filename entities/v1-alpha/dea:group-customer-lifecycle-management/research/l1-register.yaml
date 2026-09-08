@@ -1052,9 +1052,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Value Strategy Conception removed per v2.4.0 (domain-grounding §3.7 scopes the domain to monetary consequence,
         not abstract value).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21e
-      planned_at: '2026-09-08'
+      audit_status: landed
     Design:
       process_context: dea:pc-fa-design
       l1_candidates:

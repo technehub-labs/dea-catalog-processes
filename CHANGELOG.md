@@ -6,6 +6,19 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21e implementation: FinanceAndAccounting landing (fifth and final
+v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
+Process Group (`dea:group-financial-model-conception`), and 5 L2
+Business Processes across the FA x {Conceive, Design, Build, Operate,
+Improve} cells. v2.4.0 monetary scoping: abstract value removed;
+procure-to-pay and order-to-cash operational execution live in
+operations-enablement while monetary recording remains here. Register
+v3 audit counts updated: 15 `landed` / 20 `ratified-pending-landing` /
+14 `backlog-deferred`. FA/Conceive audit_status flipped to `landed`.
+With this landing, every v2.4.0 domain has its Conceive-cell L1
+Process Group landed. Disposition register +5 RETAIN; tranche plan
+30 -> 35.
+
 CR-BP-21d implementation: OperationsAndEnablement landing (fourth
 v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
 Process Group (`dea:group-operations-model-conception`), and 5 L2

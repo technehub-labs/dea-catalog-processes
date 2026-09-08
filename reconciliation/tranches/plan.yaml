@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 30
-  total_records: 38
+  total_tranches: 35
+  total_records: 43
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -51,6 +51,11 @@ summary:
     oe-b: 1
     oe-op: 1
     oe-im: 1
+    fa-c: 1
+    fa-d: 1
+    fa-b: 1
+    fa-op: 1
+    fa-im: 1
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -533,6 +538,72 @@ tranches:
   rationale: Fresh L2 landing for the Improve cell. The other 4 register
     v2 L2 candidates (logistics optimization, lean programme, asset
     utilization, technology platforms) land in CR-BP-21d.1.
+- tranche_id: fa-c
+  context_ref: dea:pc-fa-conceive
+  context_name: finance-accounting / conceive
+  owner: CR-BP-21e (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-53 (CR-BP-21e landing)
+  records:
+  - dea:process-frame-finance-strategy
+  rationale: Fresh L2 landing for the Conceive cell. The other 2 register
+    v2 L2 candidates (monetary model, funding and capital approach) land
+    in CR-BP-21e.1.
+- tranche_id: fa-d
+  context_ref: dea:pc-fa-design
+  context_name: finance-accounting / design
+  owner: CR-BP-21e (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-53 (CR-BP-21e landing)
+  records:
+  - dea:process-design-financial-plan-structure
+  rationale: Fresh L2 landing for the Design cell. The other 3 register
+    v2 L2 candidates (chart of accounts, cost allocation model, financial
+    controls) land in CR-BP-21e.1.
+- tranche_id: fa-b
+  context_ref: dea:pc-fa-build
+  context_name: finance-accounting / build
+  owner: CR-BP-21e (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-53 (CR-BP-21e landing)
+  records:
+  - dea:process-secure-funding-facilities
+  rationale: Fresh L2 landing for the Build cell. The other 2 register
+    v2 L2 candidates (finance function stand-up, ERP finance module)
+    land in CR-BP-21e.1.
+- tranche_id: fa-op
+  context_ref: dea:pc-fa-operate
+  context_name: finance-accounting / operate
+  owner: CR-BP-21e (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-53 (CR-BP-21e landing)
+  records:
+  - dea:process-operate-general-ledger
+  rationale: Fresh L2 landing for the Operate cell. The other 7 register
+    v2 L2 candidates (payables, receivables, treasury, tax compliance,
+    financial close, FP&A, reporting and disclosure) land in
+    CR-BP-21e.1.
+- tranche_id: fa-im
+  context_ref: dea:pc-fa-improve
+  context_name: finance-accounting / improve
+  owner: CR-BP-21e (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-53 (CR-BP-21e landing)
+  records:
+  - dea:process-conduct-cost-optimization-review
+  rationale: Fresh L2 landing for the Improve cell. The other 2 register
+    v2 L2 candidates (reporting improvement, control strengthening) land
+    in CR-BP-21e.1.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -565,3 +636,8 @@ review_checkpoints:
   oe-b: 1
   oe-op: 1
   oe-im: 1
+  fa-c: 1
+  fa-d: 1
+  fa-b: 1
+  fa-op: 1
+  fa-im: 1

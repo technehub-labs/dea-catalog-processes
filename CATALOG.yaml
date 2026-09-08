@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 51
-    entities: 52
-    open_change_requests: 25
+    canonical: 57
+    entities: 58
+    open_change_requests: 26
     research_files: 57
     retired: 1
   cross_cutting:
@@ -71,6 +71,17 @@ catalog:
     path: entities/v1-alpha/dea:group-customer-strategy-conception/dea:group-customer-strategy-conception.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-financial-model-conception
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-financial-model-conception/dea:group-financial-model-conception.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: ProcessGroup
     version: 1.0.0
@@ -241,6 +252,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-conduct-cost-optimization-review
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/dea:process-conduct-cost-optimization-review.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-conduct-operations-performance-review
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -335,6 +357,17 @@ catalog:
     path: entities/v1-alpha/dea:process-demand-generation-build/dea:process-demand-generation-build.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-financial-plan-structure
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-financial-plan-structure/dea:process-design-financial-plan-structure.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -461,6 +494,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-finance-strategy
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-finance-strategy/dea:process-frame-finance-strategy.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-operations-strategy
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -547,6 +591,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-general-ledger
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-general-ledger/dea:process-operate-general-ledger.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:process-operate-governance-oversight
@@ -591,6 +646,17 @@ catalog:
     state: canonical
     type: Process
     version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-secure-funding-facilities
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-secure-funding-facilities/dea:process-secure-funding-facilities.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
   id: dea:catalog-processes
   metamodel_version: 1.0.0
   name: Business Process
@@ -624,6 +690,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-customer-strategy-conception/research/
+  - entity_id: dea:group-financial-model-conception
+    files: []
+    path: entities/v1-alpha/dea:group-financial-model-conception/research/
   - entity_id: dea:group-governance-body-establishment
     files:
     - .gitkeep
@@ -683,6 +752,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/research/
+  - entity_id: dea:process-conduct-cost-optimization-review
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/research/
   - entity_id: dea:process-conduct-operations-performance-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-operations-performance-review/research/
@@ -724,6 +796,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-demand-generation-build/research/
+  - entity_id: dea:process-design-financial-plan-structure
+    files: []
+    path: entities/v1-alpha/dea:process-design-financial-plan-structure/research/
   - entity_id: dea:process-design-governance-system
     files:
     - .gitkeep
@@ -765,6 +840,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-establish-governance-bodies/research/
+  - entity_id: dea:process-frame-finance-strategy
+    files: []
+    path: entities/v1-alpha/dea:process-frame-finance-strategy/research/
   - entity_id: dea:process-frame-operations-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-operations-strategy/research/
@@ -794,6 +872,9 @@ catalog:
   - entity_id: dea:process-operate-agent-performance
     files: []
     path: entities/v1-alpha/dea:process-operate-agent-performance/research/
+  - entity_id: dea:process-operate-general-ledger
+    files: []
+    path: entities/v1-alpha/dea:process-operate-general-ledger/research/
   - entity_id: dea:process-operate-governance-oversight
     files:
     - .gitkeep
@@ -810,5 +891,8 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/research/
+  - entity_id: dea:process-secure-funding-facilities
+    files: []
+    path: entities/v1-alpha/dea:process-secure-funding-facilities/research/
   status: active
   version: 1.0.0

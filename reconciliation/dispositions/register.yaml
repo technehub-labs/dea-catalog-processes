@@ -804,3 +804,71 @@ dispositions:
       CR-BP-19 /l1-register.yaml operationsEnablement.improve;
       CR-BP-21d-operations-enablement-landing.md.
     note: null
+
+  # ----- CR-BP-21e: FinanceAndAccounting landing -----
+
+  - record_id: dea:process-frame-finance-strategy
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e
+    rationale: |
+      Fresh L2 landing for the FinanceAndAccounting x Conceive
+      cell, per CR-BP-21e and CR-BP-19 register v2. v2.4.0 monetary
+      scoping: abstract value removed (domain-grounding §3.7).
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.conceive;
+      CR-BP-21e-finance-accounting-landing.md.
+    note: null
+
+  - record_id: dea:process-design-financial-plan-structure
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e
+    rationale: |
+      Fresh L2 landing for the FinanceAndAccounting x Design
+      cell, per CR-BP-21e and CR-BP-19 register v2. Value
+      architecture design removed per v2.4.0 monetary scoping.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.design;
+      CR-BP-21e-finance-accounting-landing.md.
+    note: null
+
+  - record_id: dea:process-secure-funding-facilities
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e
+    rationale: |
+      Fresh L2 landing for the FinanceAndAccounting x Build
+      cell, per CR-BP-21e and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.build;
+      CR-BP-21e-finance-accounting-landing.md.
+    note: null
+
+  - record_id: dea:process-operate-general-ledger
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e
+    rationale: |
+      Fresh L2 landing for the FinanceAndAccounting x Operate
+      cell, per CR-BP-21e and CR-BP-19 register v2. Monetary
+      recording of procure-to-pay and order-to-cash remains here;
+      operational execution lives in operations-enablement.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.operate;
+      CR-BP-21e-finance-accounting-landing.md.
+    note: null
+
+  - record_id: dea:process-conduct-cost-optimization-review
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21e
+    rationale: |
+      Fresh L2 landing for the FinanceAndAccounting x Improve
+      cell, per CR-BP-21e and CR-BP-19 register v2. Margin and
+      value analysis retained only in the monetary-consequence
+      sense.
+    evidence: |
+      CR-BP-19 /l1-register.yaml financeAccounting.improve;
+      CR-BP-21e-finance-accounting-landing.md.
+    note: null
