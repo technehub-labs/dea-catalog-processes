@@ -6,6 +6,18 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21c.1 implementation: ProductAndValue completion (third
+domain-completion tranche). Lands the 4 remaining PV Process Groups
+(`dea:group-proposition-design`, `-product-development`,
+`-portfolio-management-operation`, `-product-evolution`) and the 11
+remaining register v2 PV L2 candidates; extends
+`dea:group-proposition-conception` with composes edges for the 2 new
+Conceive-cell L2s; extends the 5 PV Process Contexts' processes
+lists. Register v3 audit counts updated: 27 `landed` / 8
+`ratified-pending-landing` / 14 `backlog-deferred`. PV is the third
+fully-landed v2.4.0 domain at register v2 scope. Disposition register
++11 RETAIN; tranche plan 45 -> 50.
+
 CR-BP-21b.1 implementation: AgencyAndOrganization completion (second
 domain-completion tranche). Lands the 4 remaining AO Process Groups
 (`dea:group-organization-and-role-design`,

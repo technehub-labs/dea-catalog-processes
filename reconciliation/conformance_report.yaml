@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 128
+total_records: 143
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 128
+  4: 143
 records:
 - id: dea:group-agent-acquisition-and-onboarding
   kind: Entity
@@ -180,9 +180,49 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-portfolio-management-operation
+  kind: Entity
+  path: entities/v1-alpha/dea:group-portfolio-management-operation/dea:group-portfolio-management-operation.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-product-development
+  kind: Entity
+  path: entities/v1-alpha/dea:group-product-development/dea:group-product-development.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-product-evolution
+  kind: Entity
+  path: entities/v1-alpha/dea:group-product-evolution/dea:group-product-evolution.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-proposition-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-proposition-conception/dea:group-proposition-conception.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-proposition-design
+  kind: Entity
+  path: entities/v1-alpha/dea:group-proposition-design/dea:group-proposition-design.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -283,6 +323,26 @@ records:
 - id: dea:process-build-delivery-capability
   kind: Entity
   path: entities/v1-alpha/dea:process-build-delivery-capability/dea:process-build-delivery-capability.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-build-innovation-prototype
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-innovation-prototype/dea:process-build-innovation-prototype.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-build-service-capability
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-service-capability/dea:process-build-service-capability.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -520,6 +580,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-innovation-experiment
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-innovation-experiment/dea:process-design-innovation-experiment.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-objectives-and-targets
   kind: Entity
   path: entities/v1-alpha/dea:process-design-objectives-and-targets/dea:process-design-objectives-and-targets.yaml
@@ -543,6 +613,16 @@ records:
 - id: dea:process-design-organization-structure
   kind: Entity
   path: entities/v1-alpha/dea:process-design-organization-structure/dea:process-design-organization-structure.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-packaging-and-configuration
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-packaging-and-configuration/dea:process-design-packaging-and-configuration.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -660,9 +740,29 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-evolve-products-and-services
+  kind: Entity
+  path: entities/v1-alpha/dea:process-evolve-products-and-services/dea:process-evolve-products-and-services.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-frame-finance-strategy
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-finance-strategy/dea:process-frame-finance-strategy.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-frame-innovation-thesis
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-innovation-thesis/dea:process-frame-innovation-thesis.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -693,6 +793,16 @@ records:
 - id: dea:process-frame-organization-model
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-organization-model/dea:process-frame-organization-model.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-frame-portfolio-direction
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-portfolio-direction/dea:process-frame-portfolio-direction.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -733,6 +843,26 @@ records:
 - id: dea:process-manage-customer-relationship
   kind: Entity
   path: entities/v1-alpha/dea:process-manage-customer-relationship/dea:process-manage-customer-relationship.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-manage-portfolio-performance
+  kind: Entity
+  path: entities/v1-alpha/dea:process-manage-portfolio-performance/dea:process-manage-portfolio-performance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-manage-proposition-lifecycle
+  kind: Entity
+  path: entities/v1-alpha/dea:process-manage-proposition-lifecycle/dea:process-manage-proposition-lifecycle.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -843,6 +973,26 @@ records:
 - id: dea:process-operate-time-and-attendance
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-time-and-attendance/dea:process-operate-time-and-attendance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-prepare-market-readiness
+  kind: Entity
+  path: entities/v1-alpha/dea:process-prepare-market-readiness/dea:process-prepare-market-readiness.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-rationalize-portfolio
+  kind: Entity
+  path: entities/v1-alpha/dea:process-rationalize-portfolio/dea:process-rationalize-portfolio.yaml
   level: 4
   level_breakdown:
     L1_structural: true

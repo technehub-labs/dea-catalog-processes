@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 45
-  total_records: 70
+  total_tranches: 50
+  total_records: 81
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -66,6 +66,11 @@ summary:
     ao-b.1: 1
     ao-op.1: 4
     ao-im.1: 3
+    pv-c.1: 2
+    pv-d.1: 2
+    pv-b.1: 3
+    pv-op.1: 2
+    pv-im.1: 2
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -756,6 +761,73 @@ tranches:
   - dea:process-reorganize-structures
   rationale: Register v2 L2 completion for the AO Improve cell; composed
     by the new dea:group-agent-and-organization-improvement.
+- tranche_id: pv-c.1
+  context_ref: dea:pc-pv-conceive
+  context_name: product-value / conceive
+  owner: CR-BP-21c.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-56 (CR-BP-21c.1 completion)
+  records:
+  - dea:process-frame-portfolio-direction
+  - dea:process-frame-innovation-thesis
+  rationale: Register v2 L2 completion for the PV Conceive cell; the 2
+    remaining candidates join the landed
+    dea:group-proposition-conception via new composes edges.
+- tranche_id: pv-d.1
+  context_ref: dea:pc-pv-design
+  context_name: product-value / design
+  owner: CR-BP-21c.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-56 (CR-BP-21c.1 completion)
+  records:
+  - dea:process-design-packaging-and-configuration
+  - dea:process-design-innovation-experiment
+  rationale: Register v2 L2 completion for the PV Design cell; composed by
+    the new dea:group-proposition-design.
+- tranche_id: pv-b.1
+  context_ref: dea:pc-pv-build
+  context_name: product-value / build
+  owner: CR-BP-21c.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-56 (CR-BP-21c.1 completion)
+  records:
+  - dea:process-build-service-capability
+  - dea:process-build-innovation-prototype
+  - dea:process-prepare-market-readiness
+  rationale: Register v2 L2 completion for the PV Build cell; composed by
+    the new dea:group-product-development.
+- tranche_id: pv-op.1
+  context_ref: dea:pc-pv-operate
+  context_name: product-value / operate
+  owner: CR-BP-21c.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-56 (CR-BP-21c.1 completion)
+  records:
+  - dea:process-manage-portfolio-performance
+  - dea:process-manage-proposition-lifecycle
+  rationale: Register v2 L2 completion for the PV Operate cell; composed
+    by the new dea:group-portfolio-management-operation.
+- tranche_id: pv-im.1
+  context_ref: dea:pc-pv-improve
+  context_name: product-value / improve
+  owner: CR-BP-21c.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-56 (CR-BP-21c.1 completion)
+  records:
+  - dea:process-evolve-products-and-services
+  - dea:process-rationalize-portfolio
+  rationale: Register v2 L2 completion for the PV Improve cell; composed
+    by the new dea:group-product-evolution.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -803,3 +875,8 @@ review_checkpoints:
   ao-b.1: 1
   ao-op.1: 1
   ao-im.1: 1
+  pv-c.1: 1
+  pv-d.1: 1
+  pv-b.1: 1
+  pv-op.1: 1
+  pv-im.1: 1

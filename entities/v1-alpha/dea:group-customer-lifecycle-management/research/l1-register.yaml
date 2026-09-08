@@ -716,9 +716,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21c
-      planned_at: '2026-09-08'
+      audit_status: landed
     Build:
       process_context: dea:pc-pv-build
       l1_candidates:
@@ -739,9 +737,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21c
-      planned_at: '2026-09-08'
+      audit_status: landed
     Activate:
       process_context: dea:pc-pv-activate
       l1_candidates:
@@ -785,9 +781,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Service delivery management moved to operations-enablement x operate (delivery is execution); partner
         and alliance programme moved to party-relationship x operate.
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21c
-      planned_at: '2026-09-08'
+      audit_status: landed
     Improve:
       process_context: dea:pc-pv-improve
       l1_candidates:
@@ -805,9 +799,7 @@ register:
       disposition: ratified-accepted
       ratified_at: '2026-09-07'
       ratified_by: CR-BP-19
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21c
-      planned_at: '2026-09-08'
+      audit_status: landed
     Retire:
       process_context: dea:pc-pv-retire
       l1_candidates:

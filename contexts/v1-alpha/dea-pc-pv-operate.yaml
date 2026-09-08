@@ -50,6 +50,8 @@ adjacent_contexts:
 # Business Processes belonging to this context (PC-008).
 processes:
     - dea:process-operate-product-catalogue
+    - dea:process-manage-portfolio-performance
+    - dea:process-manage-proposition-lifecycle
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
@@ -88,6 +90,11 @@ established_at: '2026-09-08'
 
 # Change history.
 change_history:
+  - cr: CR-BP-21c.1
+    date: '2026-09-08'
+    change: |
+      Processes list extended with the remaining register v2 L2
+      candidates for this cell under CR-BP-21c.1.
   - cr: CR-BP-21c
     date: '2026-09-08'
     change: |
