@@ -86,6 +86,10 @@ records:
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-governance-system-design/dea:group-governance-system-design.yaml
     sha256: 73182025ca25cae490b0993b1dcf4eb63dff8a9449209e65f1645f7c2c7d3d26
+  - id: dea:group-operations-model-conception
+    type: ProcessGroup
+    path: entities/v1-alpha/dea:group-operations-model-conception/dea:group-operations-model-conception.yaml
+    sha256: b85f1a11b694aa52b75eab02c5c1273f5b1b7cc7321bfd484b92a8032ebf68f6
   - id: dea:group-organization-and-agent-conception
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-organization-and-agent-conception/dea:group-organization-and-agent-conception.yaml
@@ -138,6 +142,26 @@ records:
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-ge-op.yaml
     sha256: 24e155e98e5c578571f8a637fd1040eabd0ad8c192c46976cac3aaa129ca2489
+  - id: dea:pc-oe-build
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-oe-build.yaml
+    sha256: 43e194f6449df78cbf7b359831bb4917188cf777143b83998fba28b3b1b07d54
+  - id: dea:pc-oe-conceive
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-oe-conceive.yaml
+    sha256: 36fc6612d5cd02ee2e29bfbfcdc53b6e2ebbd35ab82e72d6344d9f6f5a1db713
+  - id: dea:pc-oe-design
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-oe-design.yaml
+    sha256: 2ee8e52f4d9b180aa3a9ac5e86380c193a64aa58068177c1c577c13fd3dcf995
+  - id: dea:pc-oe-improve
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-oe-improve.yaml
+    sha256: 9b7ee80156b620c1a201f09726f5c64858c11516862140c7727e419755882f48
+  - id: dea:pc-oe-operate
+    type: ProcessContext
+    path: contexts/v1-alpha/dea-pc-oe-operate.yaml
+    sha256: 7a9c8040201ac09429cca48b127b52318d20532c85f9abe02baa30e66246bdff
   - id: dea:pc-pr-b
     type: ProcessContext
     path: contexts/v1-alpha/dea-pc-pr-b.yaml
@@ -210,6 +234,10 @@ records:
     type: Process
     path: entities/v1-alpha/dea:process-audit-policy-compliance/dea:process-audit-policy-compliance.yaml
     sha256: 659c016f3e2b75ec4cf24d64d194e8b7652e850e3aa649ec09c4440e1c0eabff
+  - id: dea:process-build-delivery-capability
+    type: Process
+    path: entities/v1-alpha/dea:process-build-delivery-capability/dea:process-build-delivery-capability.yaml
+    sha256: d4797c5b43f254e3f36a38f24fee69d7f4197ba894f43b50d28d69978bcd4001
   - id: dea:process-build-strategic-plan
     type: Process
     path: entities/v1-alpha/dea:process-build-strategic-plan/dea:process-build-strategic-plan.yaml
@@ -218,6 +246,10 @@ records:
     type: Process
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
     sha256: ae4a29404aa08a356e8376eefb2b620526a18fdfa747550113bc94bc4b7d91df
+  - id: dea:process-conduct-operations-performance-review
+    type: Process
+    path: entities/v1-alpha/dea:process-conduct-operations-performance-review/dea:process-conduct-operations-performance-review.yaml
+    sha256: 70b7dfa85bb524498421091f546df7c1dc777cfc8941d8bafc8e2611e0465e48
   - id: dea:process-conduct-proposition-performance-review
     type: Process
     path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/dea:process-conduct-proposition-performance-review.yaml
@@ -254,6 +286,10 @@ records:
     type: Process
     path: entities/v1-alpha/dea:process-design-governance-system/dea:process-design-governance-system.yaml
     sha256: fbde918776f3b26ac4967faaaf765322e2fe81c5e8f2aee6f7a873276711c858
+  - id: dea:process-design-operations-model
+    type: Process
+    path: entities/v1-alpha/dea:process-design-operations-model/dea:process-design-operations-model.yaml
+    sha256: 9c85a2a9d6ff50c1d7f882b35f1250242f51499df0e87067eb519f49e7574292
   - id: dea:process-design-organization-structure
     type: Process
     path: entities/v1-alpha/dea:process-design-organization-structure/dea:process-design-organization-structure.yaml
@@ -290,6 +326,10 @@ records:
     type: Process
     path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
     sha256: 4b15a2b05c4dca7e4097b6fc69e2d848a591370ab41a246f70fb6d7ae1519712
+  - id: dea:process-frame-operations-strategy
+    type: Process
+    path: entities/v1-alpha/dea:process-frame-operations-strategy/dea:process-frame-operations-strategy.yaml
+    sha256: 5a3d2b359aa3d07379b2d19c0d9851abc2ee011948411150b36beeb766aaa373
   - id: dea:process-frame-organization-and-agent-strategy
     type: Process
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/dea:process-frame-organization-and-agent-strategy.yaml
@@ -326,6 +366,10 @@ records:
     type: Process
     path: entities/v1-alpha/dea:process-operate-product-catalogue/dea:process-operate-product-catalogue.yaml
     sha256: 1772df43ca1f684d2c063dc30b558ff0f37d1cd1abf988c2c15f3a32111d43f6
+  - id: dea:process-operate-service-delivery
+    type: Process
+    path: entities/v1-alpha/dea:process-operate-service-delivery/dea:process-operate-service-delivery.yaml
+    sha256: 737e8bc1e05a2a6ea45f295e7b57c844ae89b654975164e1e6a7a056f5cf5416
   - id: dea:process-review-governance-effectiveness
     type: Process
     path: entities/v1-alpha/dea:process-review-governance-effectiveness/dea:process-review-governance-effectiveness.yaml

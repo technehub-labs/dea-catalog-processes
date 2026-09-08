@@ -47,18 +47,18 @@ def test_build_inventory_outputs_exist() -> None:
 def test_build_inventory_records_match_canonical_population() -> None:
     """Counts must match the 28 + 12 + 20 canonical population.
 
-    33 = 28 pre-existing BPs (23 + 5 CR-BP-21a/b) + 5 CR-BP-21c.
-    13 = 12 pre-existing groups (10 + 1 CR-BP-21a + 1 CR-BP-21b) + 1 new PV group.
-    25 = 20 pre-existing contexts (10 + 5 CR-BP-21a + 5 CR-BP-21b) + 5 new PV contexts.
+    38 = 33 pre-existing BPs (23 + 5 CR-BP-21a/b/c) + 5 CR-BP-21d.
+    14 = 13 pre-existing groups (10 + 1 CR-BP-21a + 1 CR-BP-21b + 1 CR-BP-21c) + 1 new OE group.
+    30 = 25 pre-existing contexts (10 + 5 CR-BP-21a + 5 CR-BP-21b + 5 CR-BP-21c) + 5 new OE contexts.
     """
     import yaml
     inv = yaml.safe_load(
         (REPO_ROOT / "reconciliation/inventory.yaml").read_text()
     )
     recs = inv["records"]
-    assert len(recs["business_processes"]) == 33
-    assert len(recs["process_groups"]) == 13
-    assert len(recs["process_contexts"]) == 25
+    assert len(recs["business_processes"]) == 38
+    assert len(recs["process_groups"]) == 14
+    assert len(recs["process_contexts"]) == 30
 
 
 def test_build_inventory_legacy_findings_present() -> None:
