@@ -6,6 +6,20 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-21d.1 implementation: OperationsAndEnablement completion
+(fourth domain-completion tranche; the largest, reflecting OE's
+execution-core position). Lands the 4 remaining OE Process Groups
+(`dea:group-process-and-enablement-design`,
+`-operations-and-enablement-build`, `-execution-and-fulfillment`,
+`-operations-and-enablement-improvement`) and the 23 remaining
+register v2 OE L2 candidates (Conceive 3, Design 4, Build 4, Operate
+8, Improve 4); extends `dea:group-operations-model-conception` with
+composes edges for the 3 new Conceive-cell L2s; extends the 5 OE
+Process Contexts' processes lists. Register v3 audit counts updated:
+31 `landed` / 4 `ratified-pending-landing` / 14 `backlog-deferred`.
+OE is the fourth fully-landed v2.4.0 domain. Disposition register
++23 RETAIN; tranche plan 50 -> 55.
+
 CR-BP-21c.1 implementation: ProductAndValue completion (third
 domain-completion tranche). Lands the 4 remaining PV Process Groups
 (`dea:group-proposition-design`, `-product-development`,

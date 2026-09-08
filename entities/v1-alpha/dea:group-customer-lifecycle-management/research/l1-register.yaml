@@ -868,9 +868,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Absorbs asset/facility blueprint design from the dissolved Supply & Resources domain (v1 strategy-direction
         x design).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21d
-      planned_at: '2026-09-08'
+      audit_status: landed
     Build:
       process_context: dea:pc-oe-build
       l1_candidates:
@@ -894,9 +892,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Absorbs asset acquisition and facility provisioning from the dissolved Supply & Resources domain (v1
         strategy-direction x build). Supplier onboarding moved to party-relationship x build (relationship establishment).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21d
-      planned_at: '2026-09-08'
+      audit_status: landed
     Activate:
       process_context: dea:pc-oe-activate
       l1_candidates:
@@ -952,9 +948,7 @@ register:
         Resources domain (v1 strategy-direction x operate); supplier performance relationship moved to party-relationship.
         Information technology coverage asserted per domain-grounding §3.6 (Technology Enablement sub-concern; technology
         positioned as enabler of execution).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21d
-      planned_at: '2026-09-08'
+      audit_status: landed
     Improve:
       process_context: dea:pc-oe-improve
       l1_candidates:
@@ -978,9 +972,7 @@ register:
       ratified_by: CR-BP-19
       migration_note: Absorbs asset utilization improvement from the dissolved Supply & Resources domain; supplier consolidation
         moved to party-relationship x improve (relationship development).
-      audit_status: ratified-pending-landing
-      planned_tranche: CR-BP-21d
-      planned_at: '2026-09-08'
+      audit_status: landed
     Retire:
       process_context: dea:pc-oe-retire
       l1_candidates:

@@ -59,6 +59,51 @@ composes:
       reference: CR-BP-21d
       asserted_by: dea-team
       asserted_at: '2026-09-08'
+  - source_id: dea:group-operations-model-conception
+    target_id: dea:process-frame-delivery-model-conception
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the delivery model conception, a register
+      v2 candidate for the OperationsAndEnablement x Conceive cell,
+      landed under CR-BP-21d.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21d.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-operations-model-conception
+    target_id: dea:process-frame-technology-enablement-approach
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the technology enablement approach, a
+      register v2 candidate for the OperationsAndEnablement x Conceive
+      cell, landed under CR-BP-21d.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21d.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
+  - source_id: dea:group-operations-model-conception
+    target_id: dea:process-frame-physical-asset-approach
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process frames the physical asset approach, a register
+      v2 candidate for the OperationsAndEnablement x Conceive cell,
+      landed under CR-BP-21d.1.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-21d.1
+      asserted_by: dea-team
+      asserted_at: '2026-09-08'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -105,6 +150,14 @@ metadata:
         v2 (ratified against ECF v2.4.0) as part of the
         OperationsAndEnablement landing tranche. Composes the L2
         dea:process-frame-operations-strategy.
+    - cr: CR-BP-21d.1
+      date: '2026-09-08'
+      change: |
+        Composes edges added for the 3 remaining register v2
+        Conceive-cell L2 candidates (frame-delivery-model-conception,
+        frame-technology-enablement-approach,
+        frame-physical-asset-approach), completing the cell's L2
+        landing.
 
 links:
   - rel: change-request

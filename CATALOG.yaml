@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 107
-    entities: 108
-    open_change_requests: 29
+    canonical: 134
+    entities: 135
+    open_change_requests: 30
     research_files: 57
     retired: 1
   cross_cutting:
@@ -109,6 +109,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-execution-and-fulfillment
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-execution-and-fulfillment/dea:group-execution-and-fulfillment.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-financial-model-conception
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -175,6 +186,28 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:group-operations-and-enablement-build
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-operations-and-enablement-build/dea:group-operations-and-enablement-build.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-operations-and-enablement-improvement
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-operations-and-enablement-improvement/dea:group-operations-and-enablement-improvement.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:group-operations-model-conception
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -212,6 +245,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-portfolio-management-operation/dea:group-portfolio-management-operation.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-process-and-enablement-design
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-process-and-enablement-design/dea:group-process-and-enablement-design.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -329,6 +373,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-acquire-technology-assets
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-acquire-technology-assets/dea:process-acquire-technology-assets.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-adapt-strategic-direction
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -384,6 +439,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-build-logistics-network
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-logistics-network/dea:process-build-logistics-network.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-build-service-capability
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -423,6 +489,17 @@ catalog:
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/dea:process-codify-charters-and-policies.yaml
     research_count: 2
     retired_count: 1
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-commission-production-line
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-commission-production-line/dea:process-commission-production-line.yaml
+    research_count: 0
+    retired_count: 0
     state: canonical
     type: Process
     version: 1.0.0
@@ -476,6 +553,28 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-conduct-engagement-and-alignment-review/dea:process-conduct-engagement-and-alignment-review.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conduct-lean-six-sigma-programme
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-lean-six-sigma-programme/dea:process-conduct-lean-six-sigma-programme.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conduct-logistics-optimization
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-logistics-optimization/dea:process-conduct-logistics-optimization.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -626,6 +725,28 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-delivery-model
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-delivery-model/dea:process-design-delivery-model.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-facility-and-asset-blueprint
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-facility-and-asset-blueprint/dea:process-design-facility-and-asset-blueprint.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-financial-plan-structure
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -652,6 +773,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-innovation-experiment/dea:process-design-innovation-experiment.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-logistics-and-routing
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-logistics-and-routing/dea:process-design-logistics-and-routing.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -758,6 +890,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-technology-platform-architecture
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-technology-platform-architecture/dea:process-design-technology-platform-architecture.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-develop-agents-and-organization
     last_modified: '2026-09-07'
     lifecycle_status: candidate
@@ -835,6 +978,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-delivery-model-conception
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-delivery-model-conception/dea:process-frame-delivery-model-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-finance-strategy
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -890,6 +1044,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-physical-asset-approach
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-physical-asset-approach/dea:process-frame-physical-asset-approach.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-portfolio-direction
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -912,10 +1077,32 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-technology-enablement-approach
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-technology-enablement-approach/dea:process-frame-technology-enablement-approach.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-value-proposition-thesis
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/dea:process-frame-value-proposition-thesis.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-improve-technology-platforms
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-improve-technology-platforms/dea:process-improve-technology-platforms.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1000,6 +1187,28 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-asset-maintenance
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-asset-maintenance/dea:process-operate-asset-maintenance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-facility-management
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-facility-management/dea:process-operate-facility-management.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-operate-general-ledger
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1033,6 +1242,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-logistics
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-logistics/dea:process-operate-logistics.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-operate-payroll-and-benefits
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1044,10 +1264,32 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-procurement-cycle
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-procurement-cycle/dea:process-operate-procurement-cycle.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-operate-product-catalogue
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-operate-product-catalogue/dea:process-operate-product-catalogue.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-quality-control
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-quality-control/dea:process-operate-quality-control.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1077,6 +1319,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-technology-platforms
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-technology-platforms/dea:process-operate-technology-platforms.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-operate-time-and-attendance
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -1088,10 +1341,43 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-warehouse-and-inventory
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-warehouse-and-inventory/dea:process-operate-warehouse-and-inventory.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-optimize-asset-utilization
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-optimize-asset-utilization/dea:process-optimize-asset-utilization.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-prepare-market-readiness
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-prepare-market-readiness/dea:process-prepare-market-readiness.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-provision-facilities
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-provision-facilities/dea:process-provision-facilities.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1147,6 +1433,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-review-strategy-effectiveness/dea:process-review-strategy-effectiveness.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-run-production-line
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-run-production-line/dea:process-run-production-line.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -1249,6 +1546,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-customer-strategy-conception/research/
+  - entity_id: dea:group-execution-and-fulfillment
+    files: []
+    path: entities/v1-alpha/dea:group-execution-and-fulfillment/research/
   - entity_id: dea:group-financial-model-conception
     files: []
     path: entities/v1-alpha/dea:group-financial-model-conception/research/
@@ -1277,6 +1577,12 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:group-governance-system-design/research/
+  - entity_id: dea:group-operations-and-enablement-build
+    files: []
+    path: entities/v1-alpha/dea:group-operations-and-enablement-build/research/
+  - entity_id: dea:group-operations-and-enablement-improvement
+    files: []
+    path: entities/v1-alpha/dea:group-operations-and-enablement-improvement/research/
   - entity_id: dea:group-operations-model-conception
     files: []
     path: entities/v1-alpha/dea:group-operations-model-conception/research/
@@ -1289,6 +1595,9 @@ catalog:
   - entity_id: dea:group-portfolio-management-operation
     files: []
     path: entities/v1-alpha/dea:group-portfolio-management-operation/research/
+  - entity_id: dea:group-process-and-enablement-design
+    files: []
+    path: entities/v1-alpha/dea:group-process-and-enablement-design/research/
   - entity_id: dea:group-product-development
     files: []
     path: entities/v1-alpha/dea:group-product-development/research/
@@ -1319,6 +1628,9 @@ catalog:
   - entity_id: dea:process-acquire-and-onboard-agents
     files: []
     path: entities/v1-alpha/dea:process-acquire-and-onboard-agents/research/
+  - entity_id: dea:process-acquire-technology-assets
+    files: []
+    path: entities/v1-alpha/dea:process-acquire-technology-assets/research/
   - entity_id: dea:process-adapt-strategic-direction
     files: []
     path: entities/v1-alpha/dea:process-adapt-strategic-direction/research/
@@ -1336,6 +1648,9 @@ catalog:
   - entity_id: dea:process-build-innovation-prototype
     files: []
     path: entities/v1-alpha/dea:process-build-innovation-prototype/research/
+  - entity_id: dea:process-build-logistics-network
+    files: []
+    path: entities/v1-alpha/dea:process-build-logistics-network/research/
   - entity_id: dea:process-build-service-capability
     files: []
     path: entities/v1-alpha/dea:process-build-service-capability/research/
@@ -1350,6 +1665,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-codify-charters-and-policies/research/
+  - entity_id: dea:process-commission-production-line
+    files: []
+    path: entities/v1-alpha/dea:process-commission-production-line/research/
   - entity_id: dea:process-conceive-strategic-intent
     files: []
     path: entities/v1-alpha/dea:process-conceive-strategic-intent/research/
@@ -1365,6 +1683,12 @@ catalog:
   - entity_id: dea:process-conduct-engagement-and-alignment-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-engagement-and-alignment-review/research/
+  - entity_id: dea:process-conduct-lean-six-sigma-programme
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-lean-six-sigma-programme/research/
+  - entity_id: dea:process-conduct-logistics-optimization
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-logistics-optimization/research/
   - entity_id: dea:process-conduct-operations-performance-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-operations-performance-review/research/
@@ -1418,6 +1742,12 @@ catalog:
   - entity_id: dea:process-design-competency-framework
     files: []
     path: entities/v1-alpha/dea:process-design-competency-framework/research/
+  - entity_id: dea:process-design-delivery-model
+    files: []
+    path: entities/v1-alpha/dea:process-design-delivery-model/research/
+  - entity_id: dea:process-design-facility-and-asset-blueprint
+    files: []
+    path: entities/v1-alpha/dea:process-design-facility-and-asset-blueprint/research/
   - entity_id: dea:process-design-financial-plan-structure
     files: []
     path: entities/v1-alpha/dea:process-design-financial-plan-structure/research/
@@ -1429,6 +1759,9 @@ catalog:
   - entity_id: dea:process-design-innovation-experiment
     files: []
     path: entities/v1-alpha/dea:process-design-innovation-experiment/research/
+  - entity_id: dea:process-design-logistics-and-routing
+    files: []
+    path: entities/v1-alpha/dea:process-design-logistics-and-routing/research/
   - entity_id: dea:process-design-objectives-and-targets
     files: []
     path: entities/v1-alpha/dea:process-design-objectives-and-targets/research/
@@ -1458,6 +1791,9 @@ catalog:
   - entity_id: dea:process-design-strategic-scenarios
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-scenarios/research/
+  - entity_id: dea:process-design-technology-platform-architecture
+    files: []
+    path: entities/v1-alpha/dea:process-design-technology-platform-architecture/research/
   - entity_id: dea:process-develop-agents-and-organization
     files: []
     path: entities/v1-alpha/dea:process-develop-agents-and-organization/research/
@@ -1483,6 +1819,9 @@ catalog:
   - entity_id: dea:process-evolve-products-and-services
     files: []
     path: entities/v1-alpha/dea:process-evolve-products-and-services/research/
+  - entity_id: dea:process-frame-delivery-model-conception
+    files: []
+    path: entities/v1-alpha/dea:process-frame-delivery-model-conception/research/
   - entity_id: dea:process-frame-finance-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-finance-strategy/research/
@@ -1498,15 +1837,24 @@ catalog:
   - entity_id: dea:process-frame-organization-model
     files: []
     path: entities/v1-alpha/dea:process-frame-organization-model/research/
+  - entity_id: dea:process-frame-physical-asset-approach
+    files: []
+    path: entities/v1-alpha/dea:process-frame-physical-asset-approach/research/
   - entity_id: dea:process-frame-portfolio-direction
     files: []
     path: entities/v1-alpha/dea:process-frame-portfolio-direction/research/
   - entity_id: dea:process-frame-strategic-horizons
     files: []
     path: entities/v1-alpha/dea:process-frame-strategic-horizons/research/
+  - entity_id: dea:process-frame-technology-enablement-approach
+    files: []
+    path: entities/v1-alpha/dea:process-frame-technology-enablement-approach/research/
   - entity_id: dea:process-frame-value-proposition-thesis
     files: []
     path: entities/v1-alpha/dea:process-frame-value-proposition-thesis/research/
+  - entity_id: dea:process-improve-technology-platforms
+    files: []
+    path: entities/v1-alpha/dea:process-improve-technology-platforms/research/
   - entity_id: dea:process-initiate-policy-and-charter
     files:
     - .gitkeep
@@ -1533,6 +1881,12 @@ catalog:
   - entity_id: dea:process-operate-agent-performance
     files: []
     path: entities/v1-alpha/dea:process-operate-agent-performance/research/
+  - entity_id: dea:process-operate-asset-maintenance
+    files: []
+    path: entities/v1-alpha/dea:process-operate-asset-maintenance/research/
+  - entity_id: dea:process-operate-facility-management
+    files: []
+    path: entities/v1-alpha/dea:process-operate-facility-management/research/
   - entity_id: dea:process-operate-general-ledger
     files: []
     path: entities/v1-alpha/dea:process-operate-general-ledger/research/
@@ -1544,24 +1898,45 @@ catalog:
   - entity_id: dea:process-operate-learning-and-development
     files: []
     path: entities/v1-alpha/dea:process-operate-learning-and-development/research/
+  - entity_id: dea:process-operate-logistics
+    files: []
+    path: entities/v1-alpha/dea:process-operate-logistics/research/
   - entity_id: dea:process-operate-payroll-and-benefits
     files: []
     path: entities/v1-alpha/dea:process-operate-payroll-and-benefits/research/
+  - entity_id: dea:process-operate-procurement-cycle
+    files: []
+    path: entities/v1-alpha/dea:process-operate-procurement-cycle/research/
   - entity_id: dea:process-operate-product-catalogue
     files: []
     path: entities/v1-alpha/dea:process-operate-product-catalogue/research/
+  - entity_id: dea:process-operate-quality-control
+    files: []
+    path: entities/v1-alpha/dea:process-operate-quality-control/research/
   - entity_id: dea:process-operate-service-delivery
     files: []
     path: entities/v1-alpha/dea:process-operate-service-delivery/research/
   - entity_id: dea:process-operate-strategic-review-cycle
     files: []
     path: entities/v1-alpha/dea:process-operate-strategic-review-cycle/research/
+  - entity_id: dea:process-operate-technology-platforms
+    files: []
+    path: entities/v1-alpha/dea:process-operate-technology-platforms/research/
   - entity_id: dea:process-operate-time-and-attendance
     files: []
     path: entities/v1-alpha/dea:process-operate-time-and-attendance/research/
+  - entity_id: dea:process-operate-warehouse-and-inventory
+    files: []
+    path: entities/v1-alpha/dea:process-operate-warehouse-and-inventory/research/
+  - entity_id: dea:process-optimize-asset-utilization
+    files: []
+    path: entities/v1-alpha/dea:process-optimize-asset-utilization/research/
   - entity_id: dea:process-prepare-market-readiness
     files: []
     path: entities/v1-alpha/dea:process-prepare-market-readiness/research/
+  - entity_id: dea:process-provision-facilities
+    files: []
+    path: entities/v1-alpha/dea:process-provision-facilities/research/
   - entity_id: dea:process-rationalize-portfolio
     files: []
     path: entities/v1-alpha/dea:process-rationalize-portfolio/research/
@@ -1579,6 +1954,9 @@ catalog:
   - entity_id: dea:process-review-strategy-effectiveness
     files: []
     path: entities/v1-alpha/dea:process-review-strategy-effectiveness/research/
+  - entity_id: dea:process-run-production-line
+    files: []
+    path: entities/v1-alpha/dea:process-run-production-line/research/
   - entity_id: dea:process-secure-funding-facilities
     files: []
     path: entities/v1-alpha/dea:process-secure-funding-facilities/research/

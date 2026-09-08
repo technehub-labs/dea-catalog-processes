@@ -56,6 +56,14 @@ adjacent_contexts:
 # Business Processes belonging to this context (PC-008).
 processes:
     - dea:process-operate-service-delivery
+    - dea:process-run-production-line
+    - dea:process-operate-logistics
+    - dea:process-operate-warehouse-and-inventory
+    - dea:process-operate-quality-control
+    - dea:process-operate-technology-platforms
+    - dea:process-operate-facility-management
+    - dea:process-operate-asset-maintenance
+    - dea:process-operate-procurement-cycle
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
@@ -100,6 +108,11 @@ established_at: '2026-09-08'
 
 # Change history.
 change_history:
+  - cr: CR-BP-21d.1
+    date: '2026-09-08'
+    change: |
+      Processes list extended with the remaining register v2 L2
+      candidates for this cell under CR-BP-21d.1.
   - cr: CR-BP-21d
     date: '2026-09-08'
     change: |
