@@ -2,14 +2,44 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 111
+total_records: 128
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 111
+  4: 128
 records:
+- id: dea:group-agent-acquisition-and-onboarding
+  kind: Entity
+  path: entities/v1-alpha/dea:group-agent-acquisition-and-onboarding/dea:group-agent-acquisition-and-onboarding.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-agent-and-organization-improvement
+  kind: Entity
+  path: entities/v1-alpha/dea:group-agent-and-organization-improvement/dea:group-agent-and-organization-improvement.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:group-agent-operations
+  kind: Entity
+  path: entities/v1-alpha/dea:group-agent-operations/dea:group-agent-operations.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-customer-channel-and-acquisition-build
   kind: Entity
   path: entities/v1-alpha/dea:group-customer-channel-and-acquisition-build/dea:group-customer-channel-and-acquisition-build.yaml
@@ -140,6 +170,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:group-organization-and-role-design
+  kind: Entity
+  path: entities/v1-alpha/dea:group-organization-and-role-design/dea:group-organization-and-role-design.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:group-proposition-conception
   kind: Entity
   path: entities/v1-alpha/dea:group-proposition-conception/dea:group-proposition-conception.yaml
@@ -230,6 +270,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-build-contractor-and-partner-agent-pool
+  kind: Entity
+  path: entities/v1-alpha/dea:process-build-contractor-and-partner-agent-pool/dea:process-build-contractor-and-partner-agent-pool.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-build-delivery-capability
   kind: Entity
   path: entities/v1-alpha/dea:process-build-delivery-capability/dea:process-build-delivery-capability.yaml
@@ -280,9 +330,39 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-conceive-workforce-and-agent-mix
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conceive-workforce-and-agent-mix/dea:process-conceive-workforce-and-agent-mix.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-conduct-capability-gap-analysis
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conduct-capability-gap-analysis/dea:process-conduct-capability-gap-analysis.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-conduct-cost-optimization-review
   kind: Entity
   path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/dea:process-conduct-cost-optimization-review.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-conduct-engagement-and-alignment-review
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conduct-engagement-and-alignment-review/dea:process-conduct-engagement-and-alignment-review.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -303,6 +383,16 @@ records:
 - id: dea:process-conduct-proposition-performance-review
   kind: Entity
   path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/dea:process-conduct-proposition-performance-review.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-coordinate-collaboration
+  kind: Entity
+  path: entities/v1-alpha/dea:process-coordinate-collaboration/dea:process-coordinate-collaboration.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -390,6 +480,26 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-agent-topology
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-agent-topology/dea:process-design-agent-topology.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-competency-framework
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-competency-framework/dea:process-design-competency-framework.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-financial-plan-structure
   kind: Entity
   path: entities/v1-alpha/dea:process-design-financial-plan-structure/dea:process-design-financial-plan-structure.yaml
@@ -453,6 +563,16 @@ records:
 - id: dea:process-design-product-and-service-propositions
   kind: Entity
   path: entities/v1-alpha/dea:process-design-product-and-service-propositions/dea:process-design-product-and-service-propositions.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-design-role-catalogue
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-role-catalogue/dea:process-design-role-catalogue.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -570,6 +690,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-frame-organization-model
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-organization-model/dea:process-frame-organization-model.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-frame-strategic-horizons
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-strategic-horizons/dea:process-frame-strategic-horizons.yaml
@@ -660,6 +790,26 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-operate-learning-and-development
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-learning-and-development/dea:process-operate-learning-and-development.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-operate-payroll-and-benefits
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-payroll-and-benefits/dea:process-operate-payroll-and-benefits.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-operate-product-catalogue
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-product-catalogue/dea:process-operate-product-catalogue.yaml
@@ -690,9 +840,29 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-operate-time-and-attendance
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-time-and-attendance/dea:process-operate-time-and-attendance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-refresh-objectives-and-targets
   kind: Entity
   path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/dea:process-refresh-objectives-and-targets.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-reorganize-structures
+  kind: Entity
+  path: entities/v1-alpha/dea:process-reorganize-structures/dea:process-reorganize-structures.yaml
   level: 4
   level_breakdown:
     L1_structural: true

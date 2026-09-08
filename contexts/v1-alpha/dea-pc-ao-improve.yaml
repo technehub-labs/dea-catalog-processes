@@ -49,6 +49,9 @@ adjacent_contexts:
 # Business Processes belonging to this context (PC-008).
 processes:
     - dea:process-develop-agents-and-organization
+    - dea:process-conduct-engagement-and-alignment-review
+    - dea:process-conduct-capability-gap-analysis
+    - dea:process-reorganize-structures
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
@@ -86,6 +89,11 @@ established_at: '2026-09-07'
 
 # Change history.
 change_history:
+  - cr: CR-BP-21b.1
+    date: '2026-09-08'
+    change: |
+      Processes list extended with the remaining register v2 L2
+      candidates for this cell under CR-BP-21b.1.
   - cr: CR-BP-21b
     date: '2026-09-07'
     change: |

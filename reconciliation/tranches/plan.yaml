@@ -18,8 +18,8 @@ ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
   '
 summary:
-  total_tranches: 40
-  total_records: 57
+  total_tranches: 45
+  total_records: 70
   records_per_tranche:
     cd-b: 2
     cd-c: 2
@@ -61,6 +61,11 @@ summary:
     sd-b.1: 3
     sd-op.1: 3
     sd-im.1: 2
+    ao-c.1: 2
+    ao-d.1: 3
+    ao-b.1: 1
+    ao-op.1: 4
+    ao-im.1: 3
 tranches:
 - tranche_id: cd-b
   context_ref: dea:pc-pr-b
@@ -679,6 +684,78 @@ tranches:
   - dea:process-review-strategy-effectiveness
   rationale: Register v2 L2 completion for the SD Improve cell; composed by
     the new dea:group-strategic-adaptation.
+- tranche_id: ao-c.1
+  context_ref: dea:pc-ao-conceive
+  context_name: agency-organization / conceive
+  owner: CR-BP-21b.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-55 (CR-BP-21b.1 completion)
+  records:
+  - dea:process-frame-organization-model
+  - dea:process-conceive-workforce-and-agent-mix
+  rationale: Register v2 L2 completion for the AO Conceive cell; the 2
+    remaining candidates join the landed
+    dea:group-organization-and-agent-conception via new composes edges.
+- tranche_id: ao-d.1
+  context_ref: dea:pc-ao-design
+  context_name: agency-organization / design
+  owner: CR-BP-21b.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-55 (CR-BP-21b.1 completion)
+  records:
+  - dea:process-design-role-catalogue
+  - dea:process-design-competency-framework
+  - dea:process-design-agent-topology
+  rationale: Register v2 L2 completion for the AO Design cell; composed by
+    the new dea:group-organization-and-role-design.
+- tranche_id: ao-b.1
+  context_ref: dea:pc-ao-build
+  context_name: agency-organization / build
+  owner: CR-BP-21b.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-55 (CR-BP-21b.1 completion)
+  records:
+  - dea:process-build-contractor-and-partner-agent-pool
+  rationale: Register v2 L2 completion for the AO Build cell; the landed
+    acquire-and-onboard-agents subsumes the recruit/provision/onboard
+    candidates per CR-BP-21b section 5, leaving the contractor and
+    partner-agent pool as the remaining candidate. Composed by the new
+    dea:group-agent-acquisition-and-onboarding.
+- tranche_id: ao-op.1
+  context_ref: dea:pc-ao-operate
+  context_name: agency-organization / operate
+  owner: CR-BP-21b.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-55 (CR-BP-21b.1 completion)
+  records:
+  - dea:process-operate-payroll-and-benefits
+  - dea:process-operate-time-and-attendance
+  - dea:process-operate-learning-and-development
+  - dea:process-coordinate-collaboration
+  rationale: Register v2 L2 completion for the AO Operate cell; composed
+    by the new dea:group-agent-operations.
+- tranche_id: ao-im.1
+  context_ref: dea:pc-ao-improve
+  context_name: agency-organization / improve
+  owner: CR-BP-21b.1 (Coder for eaojnr)
+  risk: low
+  expected_dispositions:
+  - RETAIN
+  pr_target: PR-55 (CR-BP-21b.1 completion)
+  records:
+  - dea:process-conduct-engagement-and-alignment-review
+  - dea:process-conduct-capability-gap-analysis
+  - dea:process-reorganize-structures
+  rationale: Register v2 L2 completion for the AO Improve cell; composed
+    by the new dea:group-agent-and-organization-improvement.
 cross_tranche_dependencies: none
 review_checkpoints:
   cd-b: 1
@@ -721,3 +798,8 @@ review_checkpoints:
   sd-b.1: 1
   sd-op.1: 1
   sd-im.1: 1
+  ao-c.1: 1
+  ao-d.1: 1
+  ao-b.1: 1
+  ao-op.1: 1
+  ao-im.1: 1

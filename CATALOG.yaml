@@ -2,9 +2,9 @@ catalog:
   abbreviation: BP
   counts:
     candidates: 0
-    canonical: 75
-    entities: 76
-    open_change_requests: 27
+    canonical: 92
+    entities: 93
+    open_change_requests: 28
     research_files: 57
     retired: 1
   cross_cutting:
@@ -19,6 +19,39 @@ catalog:
 
     '
   entities:
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-agent-acquisition-and-onboarding
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-agent-acquisition-and-onboarding/dea:group-agent-acquisition-and-onboarding.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-agent-and-organization-improvement
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-agent-and-organization-improvement/dea:group-agent-and-organization-improvement.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-agent-operations
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-agent-operations/dea:group-agent-operations.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
   - candidate_count: 1
     canonical_count: 1
     id: dea:group-customer-channel-and-acquisition-build
@@ -154,9 +187,20 @@ catalog:
   - candidate_count: 0
     canonical_count: 1
     id: dea:group-organization-and-agent-conception
-    last_modified: '2026-09-07'
+    last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-organization-and-agent-conception/dea:group-organization-and-agent-conception.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: ProcessGroup
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:group-organization-and-role-design
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:group-organization-and-role-design/dea:group-organization-and-role-design.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -263,6 +307,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-build-contractor-and-partner-agent-pool
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-build-contractor-and-partner-agent-pool/dea:process-build-contractor-and-partner-agent-pool.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-build-delivery-capability
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -318,10 +373,43 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-conceive-workforce-and-agent-mix
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conceive-workforce-and-agent-mix/dea:process-conceive-workforce-and-agent-mix.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conduct-capability-gap-analysis
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-capability-gap-analysis/dea:process-conduct-capability-gap-analysis.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-conduct-cost-optimization-review
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/dea:process-conduct-cost-optimization-review.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-conduct-engagement-and-alignment-review
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-conduct-engagement-and-alignment-review/dea:process-conduct-engagement-and-alignment-review.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -344,6 +432,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/dea:process-conduct-proposition-performance-review.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-coordinate-collaboration
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-coordinate-collaboration/dea:process-coordinate-collaboration.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -439,6 +538,28 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-design-agent-topology
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-agent-topology/dea:process-design-agent-topology.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-competency-framework
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-competency-framework/dea:process-design-competency-framework.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-design-financial-plan-structure
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -509,6 +630,17 @@ catalog:
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-design-product-and-service-propositions/dea:process-design-product-and-service-propositions.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-design-role-catalogue
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-design-role-catalogue/dea:process-design-role-catalogue.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -637,6 +769,17 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-frame-organization-model
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-frame-organization-model/dea:process-frame-organization-model.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-frame-strategic-horizons
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -736,6 +879,28 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-learning-and-development
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-learning-and-development/dea:process-operate-learning-and-development.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-operate-payroll-and-benefits
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-payroll-and-benefits/dea:process-operate-payroll-and-benefits.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-operate-product-catalogue
     last_modified: '2026-09-08'
     lifecycle_status: candidate
@@ -769,10 +934,32 @@ catalog:
     version: 1.0.0
   - candidate_count: 0
     canonical_count: 1
+    id: dea:process-operate-time-and-attendance
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-operate-time-and-attendance/dea:process-operate-time-and-attendance.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
     id: dea:process-refresh-objectives-and-targets
     last_modified: '2026-09-08'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/dea:process-refresh-objectives-and-targets.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: Process
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:process-reorganize-structures
+    last_modified: '2026-09-08'
+    lifecycle_status: candidate
+    path: entities/v1-alpha/dea:process-reorganize-structures/dea:process-reorganize-structures.yaml
     research_count: 0
     retired_count: 0
     state: canonical
@@ -861,6 +1048,15 @@ catalog:
   owner: TechNeHub Labs
   repository: https://github.com/technehub-labs/dea-catalog-processes.git
   research_registers:
+  - entity_id: dea:group-agent-acquisition-and-onboarding
+    files: []
+    path: entities/v1-alpha/dea:group-agent-acquisition-and-onboarding/research/
+  - entity_id: dea:group-agent-and-organization-improvement
+    files: []
+    path: entities/v1-alpha/dea:group-agent-and-organization-improvement/research/
+  - entity_id: dea:group-agent-operations
+    files: []
+    path: entities/v1-alpha/dea:group-agent-operations/research/
   - entity_id: dea:group-customer-channel-and-acquisition-build
     files:
     - .gitkeep
@@ -922,6 +1118,9 @@ catalog:
   - entity_id: dea:group-organization-and-agent-conception
     files: []
     path: entities/v1-alpha/dea:group-organization-and-agent-conception/research/
+  - entity_id: dea:group-organization-and-role-design
+    files: []
+    path: entities/v1-alpha/dea:group-organization-and-role-design/research/
   - entity_id: dea:group-proposition-conception
     files: []
     path: entities/v1-alpha/dea:group-proposition-conception/research/
@@ -951,6 +1150,9 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-audit-policy-compliance/research/
+  - entity_id: dea:process-build-contractor-and-partner-agent-pool
+    files: []
+    path: entities/v1-alpha/dea:process-build-contractor-and-partner-agent-pool/research/
   - entity_id: dea:process-build-delivery-capability
     files: []
     path: entities/v1-alpha/dea:process-build-delivery-capability/research/
@@ -968,15 +1170,27 @@ catalog:
   - entity_id: dea:process-conceive-strategic-intent
     files: []
     path: entities/v1-alpha/dea:process-conceive-strategic-intent/research/
+  - entity_id: dea:process-conceive-workforce-and-agent-mix
+    files: []
+    path: entities/v1-alpha/dea:process-conceive-workforce-and-agent-mix/research/
+  - entity_id: dea:process-conduct-capability-gap-analysis
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-capability-gap-analysis/research/
   - entity_id: dea:process-conduct-cost-optimization-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-cost-optimization-review/research/
+  - entity_id: dea:process-conduct-engagement-and-alignment-review
+    files: []
+    path: entities/v1-alpha/dea:process-conduct-engagement-and-alignment-review/research/
   - entity_id: dea:process-conduct-operations-performance-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-operations-performance-review/research/
   - entity_id: dea:process-conduct-proposition-performance-review
     files: []
     path: entities/v1-alpha/dea:process-conduct-proposition-performance-review/research/
+  - entity_id: dea:process-coordinate-collaboration
+    files: []
+    path: entities/v1-alpha/dea:process-coordinate-collaboration/research/
   - entity_id: dea:process-customer-channel-and-acquisition-build
     files:
     - .gitkeep
@@ -1015,6 +1229,12 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-demand-generation-build/research/
+  - entity_id: dea:process-design-agent-topology
+    files: []
+    path: entities/v1-alpha/dea:process-design-agent-topology/research/
+  - entity_id: dea:process-design-competency-framework
+    files: []
+    path: entities/v1-alpha/dea:process-design-competency-framework/research/
   - entity_id: dea:process-design-financial-plan-structure
     files: []
     path: entities/v1-alpha/dea:process-design-financial-plan-structure/research/
@@ -1040,6 +1260,9 @@ catalog:
   - entity_id: dea:process-design-product-and-service-propositions
     files: []
     path: entities/v1-alpha/dea:process-design-product-and-service-propositions/research/
+  - entity_id: dea:process-design-role-catalogue
+    files: []
+    path: entities/v1-alpha/dea:process-design-role-catalogue/research/
   - entity_id: dea:process-design-strategic-options
     files: []
     path: entities/v1-alpha/dea:process-design-strategic-options/research/
@@ -1077,6 +1300,9 @@ catalog:
   - entity_id: dea:process-frame-organization-and-agent-strategy
     files: []
     path: entities/v1-alpha/dea:process-frame-organization-and-agent-strategy/research/
+  - entity_id: dea:process-frame-organization-model
+    files: []
+    path: entities/v1-alpha/dea:process-frame-organization-model/research/
   - entity_id: dea:process-frame-strategic-horizons
     files: []
     path: entities/v1-alpha/dea:process-frame-strategic-horizons/research/
@@ -1111,6 +1337,12 @@ catalog:
     - .gitkeep
     - README.md
     path: entities/v1-alpha/dea:process-operate-governance-oversight/research/
+  - entity_id: dea:process-operate-learning-and-development
+    files: []
+    path: entities/v1-alpha/dea:process-operate-learning-and-development/research/
+  - entity_id: dea:process-operate-payroll-and-benefits
+    files: []
+    path: entities/v1-alpha/dea:process-operate-payroll-and-benefits/research/
   - entity_id: dea:process-operate-product-catalogue
     files: []
     path: entities/v1-alpha/dea:process-operate-product-catalogue/research/
@@ -1120,9 +1352,15 @@ catalog:
   - entity_id: dea:process-operate-strategic-review-cycle
     files: []
     path: entities/v1-alpha/dea:process-operate-strategic-review-cycle/research/
+  - entity_id: dea:process-operate-time-and-attendance
+    files: []
+    path: entities/v1-alpha/dea:process-operate-time-and-attendance/research/
   - entity_id: dea:process-refresh-objectives-and-targets
     files: []
     path: entities/v1-alpha/dea:process-refresh-objectives-and-targets/research/
+  - entity_id: dea:process-reorganize-structures
+    files: []
+    path: entities/v1-alpha/dea:process-reorganize-structures/research/
   - entity_id: dea:process-review-governance-effectiveness
     files:
     - .gitkeep
