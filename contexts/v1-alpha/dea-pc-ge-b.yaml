@@ -46,6 +46,7 @@ adjacent_contexts:
 processes:
   - dea:process-establish-governance-bodies
   - dea:process-codify-charters-and-policies
+  - dea:process-establish-risk-and-control-apparatus
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:

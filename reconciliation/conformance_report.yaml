@@ -2,13 +2,13 @@ schema_version: 1
 report_at_run: CR-BP-16 S23
 report_at_source: scripts/build_conformance_report.py
 catalog_root: /home/hermes/dea-work/dea-catalog-processes
-total_records: 189
+total_records: 196
 conformance_levels:
   0: 0
   1: 0
   2: 0
   3: 0
-  4: 189
+  4: 196
 records:
 - id: dea:group-agent-acquisition-and-onboarding
   kind: Entity
@@ -520,6 +520,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-conduct-assurance-review
+  kind: Entity
+  path: entities/v1-alpha/dea:process-conduct-assurance-review/dea:process-conduct-assurance-review.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-conduct-capability-gap-analysis
   kind: Entity
   path: entities/v1-alpha/dea:process-conduct-capability-gap-analysis/dea:process-conduct-capability-gap-analysis.yaml
@@ -830,6 +840,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-design-risk-framework
+  kind: Entity
+  path: entities/v1-alpha/dea:process-design-risk-framework/dea:process-design-risk-framework.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-design-role-catalogue
   kind: Entity
   path: entities/v1-alpha/dea:process-design-role-catalogue/dea:process-design-role-catalogue.yaml
@@ -933,6 +953,16 @@ records:
 - id: dea:process-establish-governance-bodies
   kind: Entity
   path: entities/v1-alpha/dea:process-establish-governance-bodies/dea:process-establish-governance-bodies.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-establish-risk-and-control-apparatus
+  kind: Entity
+  path: entities/v1-alpha/dea:process-establish-risk-and-control-apparatus/dea:process-establish-risk-and-control-apparatus.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1060,6 +1090,16 @@ records:
     L3_architectural: true
     L4_canonical: true
   findings: []
+- id: dea:process-frame-risk-framework-direction
+  kind: Entity
+  path: entities/v1-alpha/dea:process-frame-risk-framework-direction/dea:process-frame-risk-framework-direction.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
 - id: dea:process-frame-strategic-horizons
   kind: Entity
   path: entities/v1-alpha/dea:process-frame-strategic-horizons/dea:process-frame-strategic-horizons.yaml
@@ -1093,6 +1133,16 @@ records:
 - id: dea:process-implement-financial-systems-and-ledger
   kind: Entity
   path: entities/v1-alpha/dea:process-implement-financial-systems-and-ledger/dea:process-implement-financial-systems-and-ledger.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-improve-policy-and-control-framework
+  kind: Entity
+  path: entities/v1-alpha/dea:process-improve-policy-and-control-framework/dea:process-improve-policy-and-control-framework.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1213,6 +1263,16 @@ records:
 - id: dea:process-operate-asset-maintenance
   kind: Entity
   path: entities/v1-alpha/dea:process-operate-asset-maintenance/dea:process-operate-asset-maintenance.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-operate-enterprise-risk-oversight
+  kind: Entity
+  path: entities/v1-alpha/dea:process-operate-enterprise-risk-oversight/dea:process-operate-enterprise-risk-oversight.yaml
   level: 4
   level_breakdown:
     L1_structural: true
@@ -1493,6 +1553,16 @@ records:
 - id: dea:process-run-production-line
   kind: Entity
   path: entities/v1-alpha/dea:process-run-production-line/dea:process-run-production-line.yaml
+  level: 4
+  level_breakdown:
+    L1_structural: true
+    L2_semantic: true
+    L3_architectural: true
+    L4_canonical: true
+  findings: []
+- id: dea:process-score-audit-findings
+  kind: Entity
+  path: entities/v1-alpha/dea:process-score-audit-findings/dea:process-score-audit-findings.yaml
   level: 4
   level_breakdown:
     L1_structural: true

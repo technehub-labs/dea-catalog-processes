@@ -1809,3 +1809,80 @@ dispositions:
       CR-BP-19 /l1-register.yaml financeAccounting.improve;
       CR-BP-21e.1-finance-accounting-completion.md.
     note: null
+  - record_id: dea:process-frame-risk-framework-direction
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Conceive cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.conceive;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-design-risk-framework
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Design cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.design;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-establish-risk-and-control-apparatus
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Build cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.build;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-operate-enterprise-risk-oversight
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Operate cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.operate;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-conduct-assurance-review
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Operate cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.operate;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-score-audit-findings
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Improve cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.improve;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null
+  - record_id: dea:process-improve-policy-and-control-framework
+    disposition: RETAIN
+    changes: []
+    tranche: cr-bp-21f.1
+    rationale: |
+      Register v2 L2 completion landing for the GovernanceAndExistence
+      x Improve cell, per CR-BP-21f.1 and CR-BP-19 register v2.
+    evidence: |
+      CR-BP-19 /l1-register.yaml governanceExistence.improve;
+      CR-BP-21f.1-governance-existence-completion.md.
+    note: null

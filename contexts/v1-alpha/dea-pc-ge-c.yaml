@@ -46,6 +46,7 @@ adjacent_contexts:
 processes:
   - dea:process-develop-governance-strategy
   - dea:process-initiate-policy-and-charter
+  - dea:process-frame-risk-framework-direction
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:

@@ -46,6 +46,7 @@ adjacent_contexts:
 processes:
   - dea:process-design-governance-system
   - dea:process-design-policies-and-controls
+  - dea:process-design-risk-framework
 
 # Cell Charter (CR-BP-02 §7; PC-006).
 cell_charter:
