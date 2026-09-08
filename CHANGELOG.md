@@ -6,6 +6,21 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased] - 2026-09-08
 
+CR-BP-24 implementation: programme closure reconciliation. Reconciles
+tracking artifacts with catalog reality now that the seven-domain
+landing series is complete (register audit 35 landed / 0 pending / 14
+backlog-deferred; CR-BP-16 conformance report scores all 196 records
+at level L4). Closes the 10 stale `proposed` tranches in
+`reconciliation/tranches/plan.yaml` (`status: applied` with
+`applied_by` / `applied_pr`; `plan_status` PRELIMINARY -> EXECUTED);
+corrects stale CR index statuses (CR-BP-15/16 Implemented, CR-BP-21f.1
+Merged PR #60, CR-BP-23 Merged PR #61); extends the root README CR
+table through CR-BP-24; authors `docs/versioning.md` so the
+CHANGELOG reference resolves. No entity, schema, validator-rule, or
+CI pipeline change. Phase 20 governance approval for CR-BP-15 is
+explicitly NOT claimed by this CR; that gate is the trigger for the
+first release cut per `docs/versioning.md`.
+
 CR-BP-23 implementation: ECF Domain Enum v2.5.0 migration. ECF Domain 6
 is renamed from `OperationsAndEnablement` (v2.4.0) to
 `EnablementAndOperations` (v2.5.0), driven by the Domain/Stage
