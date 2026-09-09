@@ -4,10 +4,24 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
-## [Unreleased] - 2026-09-09
+## [Unreleased]
 
-CR-BP-25 implementation: Phase 20 governance review closes CR-BP-15
-§22. Records the Phase 20 decision at
+## [v0.1.0] - 2026-09-09
+
+First tagged release. Closes the CR-BP-15 Phase 20 governance gate
+(CR-BP-25, 2026-09-09) and freezes the post-landing-programme
+snapshot. The catalogue at this tag is the artefact downstream may
+pin to: 196/196 records at CR-BP-16 conformance level L4; 0 findings
+(blocking and advisory); register audit 35 landed / 0
+ratified-pending-landing / 14 backlog-deferred; dispositions 107
+RETAIN / 18 RECLASSIFY / 1 MOVE.
+
+Carrier: CR-BP-26. The four sub-programmes accumulated under this
+release, in landing order:
+
+### CR-BP-25 implementation: Phase 20 governance review closes CR-BP-15 §22
+
+Records the Phase 20 decision at
 `docs/governance/phase-20-review-crbp15.md` against the five
 CR-BP-15 §22 criteria (no semantic regressions; no lost provenance;
 no unresolved canonical ambiguity; no accidental ontology expansion;
@@ -20,7 +34,7 @@ approval pending" to "closed by CR-BP-25, 2026-09-09";
 `docs/versioning.md` becomes Active; the first release cut is
 actionable. No entity, schema, validator-rule, or CI-pipeline change.
 
-CR-BP-24 implementation: programme closure reconciliation. Reconciles
+### CR-BP-24 implementation: programme closure reconciliation. Reconciles
 tracking artifacts with catalog reality now that the seven-domain
 landing series is complete (register audit 35 landed / 0 pending / 14
 backlog-deferred; CR-BP-16 conformance report scores all 196 records
@@ -35,7 +49,7 @@ CI pipeline change. Phase 20 governance approval for CR-BP-15 is
 explicitly NOT claimed by this CR; that gate is the trigger for the
 first release cut per `docs/versioning.md`.
 
-CR-BP-23 implementation: ECF Domain Enum v2.5.0 migration. ECF Domain 6
+### CR-BP-23 implementation: ECF Domain Enum v2.5.0 migration. ECF Domain 6
 is renamed from `OperationsAndEnablement` (v2.4.0) to
 `EnablementAndOperations` (v2.5.0), driven by the Domain/Stage
 Orthogonality Stress Test (`dea-metaframework` ADR-ECF-003 §5;
@@ -61,7 +75,7 @@ identifiers per CR-ECF-008 §18 non-goal "no content redistribution").
 (PG-001..008); register audit PASS (35 landed / 0 pending / 14
 deferred); CATALOG.yaml no drift.
 
-CR-BP-21f.1 implementation: GovernanceAndExistence completion
+### CR-BP-21f.1 implementation: GovernanceAndExistence completion
 (retroactive completion for the pre-register-v2-discipline domain).
 GE's register v2 candidate list was never fully populated when the
 domain was seeded under CR-BP-13a; audit found the entire
@@ -74,7 +88,7 @@ lists. All 18 register v2 GE candidates are now covered by 16 BPs
 (9 seeds + 7 new). Disposition register +7 RETAIN; tranche plan
 60 to 65; inventory 119 to 126 BPs.
 
-CR-BP-21e.1 implementation: FinanceAndAccounting completion (fifth
+### CR-BP-21e.1 implementation: FinanceAndAccounting completion (fifth
 and final domain-completion tranche; closes the v2.4.0 register
 scope). Lands the 4 remaining FA Process Groups
 (`dea:group-financial-design`, `-financial-build`, `-financial-operate`,
@@ -93,7 +107,7 @@ density (`operate-financial-reporting-and-disclosure` to core;
 reworded for the same reason (`tax-and-compliance-capability`
 outcome now supervised by the tax policy review).
 
-CR-BP-21d.1 implementation: EnablementAndOperations completion
+### CR-BP-21d.1 implementation: EnablementAndOperations completion
 (fourth domain-completion tranche; the largest, reflecting OE's
 execution-core position). Lands the 4 remaining OE Process Groups
 (`dea:group-process-and-enablement-design`,
@@ -107,7 +121,7 @@ Process Contexts' processes lists. Register v3 audit counts updated:
 OE is the fourth fully-landed v2.4.0 domain. Disposition register
 +23 RETAIN; tranche plan 50 -> 55.
 
-CR-BP-21c.1 implementation: ProductAndValue completion (third
+### CR-BP-21c.1 implementation: ProductAndValue completion (third
 domain-completion tranche). Lands the 4 remaining PV Process Groups
 (`dea:group-proposition-design`, `-product-development`,
 `-portfolio-management-operation`, `-product-evolution`) and the 11
@@ -119,7 +133,7 @@ lists. Register v3 audit counts updated: 27 `landed` / 8
 fully-landed v2.4.0 domain at register v2 scope. Disposition register
 +11 RETAIN; tranche plan 45 -> 50.
 
-CR-BP-21b.1 implementation: AgencyAndOrganization completion (second
+### CR-BP-21b.1 implementation: AgencyAndOrganization completion (second
 domain-completion tranche). Lands the 4 remaining AO Process Groups
 (`dea:group-organization-and-role-design`,
 `-agent-acquisition-and-onboarding`, `-agent-operations`,
@@ -133,7 +147,7 @@ Register v3 audit counts updated: 23 `landed` / 12
 fully-landed v2.4.0 domain at register v2 scope. Disposition register
 +13 RETAIN; tranche plan 40 -> 45.
 
-CR-BP-21a.1 implementation: StrategyAndDirection completion (first
+### CR-BP-21a.1 implementation: StrategyAndDirection completion (first
 domain-completion tranche). Lands the 4 remaining SD Process Groups
 (`dea:group-strategic-choices-design`, `-strategic-plan-build`,
 `-strategic-steering-operation`, `-strategic-adaptation`) and the 14
@@ -145,7 +159,7 @@ lists. Register v3 audit counts updated: 19 `landed` / 16
 fully-landed v2.4.0 domain at register v2 scope. Disposition register
 +14 RETAIN; tranche plan 35 -> 40.
 
-CR-BP-21e implementation: FinanceAndAccounting landing (fifth and final
+### CR-BP-21e implementation: FinanceAndAccounting landing (fifth and final
 v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
 Process Group (`dea:group-financial-model-conception`), and 5 L2
 Business Processes across the FA x {Conceive, Design, Build, Operate,
@@ -158,7 +172,7 @@ With this landing, every v2.4.0 domain has its Conceive-cell L1
 Process Group landed. Disposition register +5 RETAIN; tranche plan
 30 -> 35.
 
-CR-BP-21d implementation: EnablementAndOperations landing (fourth
+### CR-BP-21d implementation: EnablementAndOperations landing (fourth
 v2.4.0 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1
 Process Group (`dea:group-operations-model-conception`), and 5 L2
 Business Processes across the OE x {Conceive, Design, Build, Operate,
@@ -169,7 +183,7 @@ migration_notes. Register v3 audit counts updated: 14 `landed` / 21
 audit_status flipped to `landed`. Disposition register +5 RETAIN;
 tranche plan 25 -> 30.
 
-CR-BP-21c implementation: ProductAndValue landing (third v2.4.0
+### CR-BP-21c implementation: ProductAndValue landing (third v2.4.0
 unadmitted-domain tranche). Lands 5 Process Contexts, 1 L1 Process Group
 (`dea:group-proposition-conception`), and 5 L2 Business Processes across
 the PV x {Conceive, Design, Build, Operate, Improve} cells. Register v3
@@ -178,7 +192,7 @@ audit counts updated: 13 `landed` / 22 `ratified-pending-landing` / 14
 Disposition register +5 RETAIN; tranche plan 20 -> 25. Per ADR-ECF-002
 §5 / CR-ECF-007.
 
-CR-BP-22 implementation: register audit-status reconciliation. Adds
+### CR-BP-22 implementation: register audit-status reconciliation. Adds
 `audit_status` axis orthogonal to `disposition`, naming the gap between
 research-register acceptance and catalog landing reality. As of 2026-09-08:
 12 `landed` / 23 `ratified-pending-landing` / 14 `backlog-deferred` across
@@ -192,7 +206,7 @@ landing tranche). No canonical entity, no schema, no CI gate change. The
 
 ## [2.4.0-migration] - 2026-09-07
 
-CR-BP-18 implementation: ECF Domain enum migration to the v2.4.0
+### CR-BP-18 implementation: ECF Domain enum migration to the v2.4.0
 canonical Domain set (carried by `technehub-labs/dea-metaframework` v2.4.0;
 CR-ECF-007 + ADR-ECF-002). One of seven Domains renamed: Domain 3
 `PeopleAndOrganization` -> `AgencyAndOrganization` (kebab-case
@@ -205,7 +219,7 @@ required (CR-ECF-007 §6.3).
 
 ## [2.3.0-migration] - 2026-09-07
 
-CR-BP-17 (a.k.a. CR-BP-ECF-01) implementation: ECF Domain enum migration to the v2.3.0
+### CR-BP-17 (a.k.a. CR-BP-ECF-01) implementation: ECF Domain enum migration to the v2.3.0
 canonical Domain set (carried by `technehub-labs/dea-metaframework` v2.3.0;
 CR-ECF-006 + ADR-ECF-001). Five of seven Domains renamed; one Domain
 replaced (Supply & Resources -> Strategy & Direction). 109 files modified;
@@ -277,7 +291,14 @@ the next is `dea-catalog-business-capabilities` (CR-BC-ECF-01).
 - `scripts/build_inventory.py --self-test --strict`: **PASS**
   (inventory + baseline round-trip byte-identically under v2.3.0 IDs).
 
-## [Unreleased]
+## [2.5.0-conformance-gate] - 2026-09-08
+
+The CR-BP-16 conformance gate machinery (S10 / S15 / S16 / S17 / S18 /
+S22 / S25; CR-META strict mode; unified Conformance Result) is now
+live in CI. Landed across PRs #38-#42; the second `[Unreleased]`
+block that this section replaces predated the CR-BP-22 audit / CR-BP-24
+discipline. Date-stamped retroactively per the existing
+`[2.4.0-migration]` / `[2.3.0-migration]` pattern.
 
 ### CR-BP-16 §16 enforcement promotion (CR-META strict mode)
 

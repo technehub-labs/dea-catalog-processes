@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use the dea-catalog-processes artifact (the canonical
+  Enterprise Business Process Architecture catalogue for the
+  OpenDEA federation) in academic or commercial work, please cite
+  it using the metadata below. The Enterprise Concept Framework
+  itself is cited separately via technehub-labs/dea-metaframework
+  CITATION.cff; this file cites the process catalogue artifact
+  specifically.
+title: "dea-catalog-processes"
+type: software
+version: 0.1.0
+date-released: 2026-09-09
+license: Apache-2.0
+authors:
+  - name: TechNeHub Labs
+    alias: technehub-labs
+repository-code: "https://github.com/technehub-labs/dea-catalog-processes"
+url: "https://github.com/technehub-labs/dea-catalog-processes/releases/tag/v0.1.0"
+keywords:
+  - enterprise-architecture
+  - business-process
+  - open-dea
+  - enterprise-concept-framework
+  - ecf
+  - 7x7-matrix
+  - canonical-catalog
