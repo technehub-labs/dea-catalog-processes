@@ -1,6 +1,15 @@
 # Versioning Policy
 
-## Status: Draft (CR-BP-24)
+## Status: Active (CR-BP-25, 2026-09-09)
+
+Phase 20 governance approval for CR-BP-15 was closed on 2026-09-09
+by CR-BP-25 (governance review at `docs/governance/phase-20-review-crbp15.md`).
+The first release cut is now actionable.
+
+This document was introduced by CR-BP-24 to state the deliberate-untagged
+policy until Phase 20 governance approval closed. The gate is now closed;
+the policy below remains the operative versioning discipline for the first
+release cut and for `0.x` evolution.
 
 The catalog is **pre-1.0** and **untagged by deliberate decision** until the
 Phase 20 governance approval gate of CR-BP-15 closes. CR-BP-24 introduces
@@ -34,10 +43,10 @@ The repository has no git tags as of 2026-09-08. That is intentional:
 1. The catalogue is at the `0.x` stage. A `0.x` tag would advertise a
    release-grade artifact and the catalogue is explicitly an
    architecture-inception product (see `README.md` Current Status).
-2. Phase 20 governance approval (CR-BP-15 §22; CR-BP-16 §22) is a
-   human decision gate. Cutting a tag before that gate closes would
-   publish a version whose canonical status has not been governance-
-   approved.
+2. Phase 20 governance approval (CR-BP-15 §22; CR-BP-16 §22) **closed
+   on 2026-09-09 by CR-BP-25** (see `docs/governance/phase-20-review-crbp15.md`).
+   The first release cut is the next slice; it is not blocked by any
+   further governance gate.
 3. The ECF Domain enum is at v2.5.0 in the `dea-metaframework` repo
    (the source of truth). The Process Catalog carries the same
    vocabulary and should not be tagged independently of upstream.

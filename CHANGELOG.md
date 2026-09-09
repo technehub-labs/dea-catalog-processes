@@ -4,7 +4,21 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
-## [Unreleased] - 2026-09-08
+## [Unreleased] - 2026-09-09
+
+CR-BP-25 implementation: Phase 20 governance review closes CR-BP-15
+§22. Records the Phase 20 decision at
+`docs/governance/phase-20-review-crbp15.md` against the five
+CR-BP-15 §22 criteria (no semantic regressions; no lost provenance;
+no unresolved canonical ambiguity; no accidental ontology expansion;
+no ECF-driven artificial processes). Evidence: 196/196 records at
+CR-BP-16 conformance level L4; 0 findings (blocking and advisory);
+register audit 35 landed / 0 ratified-pending-landing / 14
+backlog-deferred; dispositions 107 RETAIN / 18 RECLASSIFY / 1 MOVE.
+The CR-BP-15 and CR-BP-16 index rows move from "Phase 20 governance
+approval pending" to "closed by CR-BP-25, 2026-09-09";
+`docs/versioning.md` becomes Active; the first release cut is
+actionable. No entity, schema, validator-rule, or CI-pipeline change.
 
 CR-BP-24 implementation: programme closure reconciliation. Reconciles
 tracking artifacts with catalog reality now that the seven-domain
