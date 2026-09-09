@@ -4,19 +4,38 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
-## [Unreleased] - 2026-09-09
+## [Unreleased]
 
-CR-BP-28 implementation: register v4 re-derived against ECF v2.5.0
-(no-op for the disposition axis). The v2.4.0 -> v2.5.0 transition
-(CR-ECF-008 + ADR-ECF-003; Domain 6 `OperationsAndEnablement` ->
-`EnablementAndOperations`) was a label-only rename; no coordinate
-was added, removed, or re-scoped. Register audit remains
-35 / 0 / 14. `l1-register.yaml` and `l1-candidate-universe.yaml`
-bump `ratification.version` 3 -> 4 and `ratification.cr` CR-BP-22
--> CR-BP-28; `L1-REGISTER-v0.1.md` updates its status line and
-adds a v3 -> v4 note. The re-derivation is the formal v4
-ratification; the next release cut (v0.2.0) is its own separate
-slice. No entity, schema, validator-rule, or CI-pipeline change.
+## [v0.2.0] - 2026-09-09
+
+Second tagged release. Carries the formal L1 register v4
+re-derivation against the upstream ECF v2.5.0 vocabulary (CR-BP-28,
+PR #65). The catalogue at this tag is functionally identical to
+v0.1.0: 196/196 records at CR-BP-16 conformance level L4; 0
+findings (blocking and advisory); register audit 35 landed / 0
+ratified-pending-landing / 14 backlog-deferred; dispositions 107
+RETAIN / 18 RECLASSIFY / 1 MOVE. The bump (0.1.0 -> 0.2.0) is the
+register-version stamp, not a content change. Downstream consumers
+of the L1 register itself should pin to this tag for register-v4
+fidelity.
+
+Carrier: CR-BP-29. The single CR that accumulated under
+`[Unreleased]` since v0.1.0:
+
+### CR-BP-28 implementation: register v4 re-derived against ECF v2.5.0
+
+Re-derives the L1 register against ECF v2.5.0 as
+`ratification.version: 4` (was `v3` under CR-BP-22). The v2.4.0 ->
+v2.5.0 transition (CR-ECF-008 + ADR-ECF-003; Domain 6
+`OperationsAndEnablement` -> `EnablementAndOperations`) was a
+label-only rename; no coordinate was added, removed, or
+re-scoped. Register audit remains 35 / 0 / 14. `l1-register.yaml`
+and `l1-candidate-universe.yaml` bump `ratification.version` 3 ->
+4 and `ratification.cr` CR-BP-22 -> CR-BP-28; `L1-REGISTER-v0.1.md`
+updates its status line and adds a v3 -> v4 note. The
+re-derivation is the formal v4 ratification; the release cut
+(v0.2.0) is its own separate slice. No entity, schema,
+validator-rule, or CI-pipeline change.
 
 ## [v0.1.0] - 2026-09-09
 
