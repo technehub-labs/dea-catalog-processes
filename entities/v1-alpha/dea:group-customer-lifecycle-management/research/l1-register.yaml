@@ -15,16 +15,16 @@ stages:
 - Improve
 - Retire
 ratification:
-  version: 3
-  cr: CR-BP-22
+  version: 4
+  cr: CR-BP-28
   ratified_at: '2026-09-08'
-  supersedes: version 2 (CR-BP-19, ratified 2026-09-07)
+  supersedes: version 3 (CR-BP-22, ratified 2026-09-08)
   ratified_accepted: 35
   backlog_deferred: 14
   rederivation_basis: 'Re-derived against dea-metaframework framework/domain-grounding.md
     at ECF
 
-    v2.4.0 (CR-ECF-006, CR-ECF-007; ADR-ECF-001, ADR-ECF-002). The v2.3.0 and
+    v2.5.0 (CR-ECF-006, CR-ECF-007, CR-ECF-008; ADR-ECF-001, ADR-ECF-002, ADR-ECF-003). The v2.3.0 and
 
     v2.4.0 domain renames were semantic re-scopings, not pure renames: the
 
@@ -45,6 +45,14 @@ ratification:
     artificial agents).
 
     '
+  v2_to_v250_note: >-
+    The v2.4.0 -> v2.5.0 transition was a label-only rename of Domain 6
+    (OperationsAndEnablement -> EnablementAndOperations, CR-ECF-008 +
+    ADR-ECF-003). No coordinate was added, removed, or re-scoped. The
+    v3 disposition register (35 ratified-accepted / 14 backlog-deferred
+    / 49 total) is unchanged at v4; this is a no-op re-derivation. The
+    ECF v2.5.0 cascade landed on the catalog in PR #61 (CR-BP-23); the
+    register re-derivation is recorded here as the formal v4 ratification.
   deferred_rationale: 'Activate and Retire are lifecycle transition stages, not stable
     Process Group operating scopes. L1 Process Groups (CR-BP-12) catalogue the bounded
     operating scope of a process domain; the Activate stage is the handover from Build
