@@ -1,6 +1,10 @@
 schema_version: 1
 plan_at: 2026-09-06
-plan_status: PRELIMINARY
+plan_status: EXECUTED
+plan_closure_note: >-
+  All 65 tranches executed. Final 10 closed by CR-BP-21e.1
+  (PR 59, FinanceAndAccounting) and CR-BP-21f.1 (PR 60, GovernanceAndExistence);
+  closure reconciled by CR-BP-24.
 plan_lock_target: CR-BP-15-IMP Phase 5 (PR-6 onward)
 ordering_rationale: 'The 10 Process Contexts map to the ECF matrix
 
@@ -930,7 +934,9 @@ tranches:
   cell: FinanceAndAccounting.Conceive
   l2_candidates: []
   records: []
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21e.1
+  applied_pr: 59
   rationale: |
     Conceive cell already landed by CR-BP-21e. No additional L2
     candidates in the FA Conceive register v2 cell beyond the 3
@@ -954,7 +960,9 @@ tranches:
     - dea:process-design-financial-controls-and-policies
     - dea:process-design-tax-position-and-strategy
     - dea:process-design-treasury-and-funding-model
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21e.1
+  applied_pr: 59
   rationale: Register v2 L2 completion for the FA Design cell; composed
     by the new dea:group-financial-design.
 - tranche_id: fa-b.1
@@ -976,7 +984,9 @@ tranches:
     - dea:process-implement-financial-systems-and-ledger
     - dea:process-build-budgeting-and-forecasting-systems
     - dea:process-onboard-tax-and-compliance-capability
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21e.1
+  applied_pr: 59
   rationale: Register v2 L2 completion for the FA Build cell; composed
     by the new dea:group-financial-build.
 - tranche_id: fa-op.1
@@ -1014,7 +1024,9 @@ tranches:
     - dea:process-perform-financial-close
     - dea:process-manage-tax-compliance-and-filings
     - dea:process-operate-financial-reporting-and-disclosure
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21e.1
+  applied_pr: 59
   rationale: Register v2 L2 completion for the FA Operate cell; composed
     by the new dea:group-financial-operate.
 - tranche_id: fa-im.1
@@ -1032,7 +1044,9 @@ tranches:
   records:
     - dea:process-refine-financial-controls-and-policies
     - dea:process-evolve-treasury-and-funding-model
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21e.1
+  applied_pr: 59
   rationale: Register v2 L2 completion for the FA Improve cell; composed
     by the new dea:group-financial-improve.
 - tranche_id: ge-c.1
@@ -1042,7 +1056,9 @@ tranches:
   cell: GovernanceAndExistence.Conceive
   records:
   - dea:process-frame-risk-framework-direction
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21f.1
+  applied_pr: 60
   rationale: Register v2 L2 completion for the GE Conceive cell; composed by the existing dea:group-governance-conception.
 - tranche_id: ge-d.1
   context_ref: dea:pc-ge-d
@@ -1051,7 +1067,9 @@ tranches:
   cell: GovernanceAndExistence.Design
   records:
   - dea:process-design-risk-framework
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21f.1
+  applied_pr: 60
   rationale: Register v2 L2 completion for the GE Design cell; composed by the existing dea:group-governance-system-design.
 - tranche_id: ge-b.1
   context_ref: dea:pc-ge-b
@@ -1060,7 +1078,9 @@ tranches:
   cell: GovernanceAndExistence.Build
   records:
   - dea:process-establish-risk-and-control-apparatus
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21f.1
+  applied_pr: 60
   rationale: Register v2 L2 completion for the GE Build cell; composed by the existing dea:group-governance-body-establishment.
 - tranche_id: ge-op.1
   context_ref: dea:pc-ge-op
@@ -1070,7 +1090,9 @@ tranches:
   records:
   - dea:process-operate-enterprise-risk-oversight
   - dea:process-conduct-assurance-review
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21f.1
+  applied_pr: 60
   rationale: Register v2 L2 completion for the GE Operate cell; composed by the existing dea:group-governance-oversight.
 - tranche_id: ge-im.1
   context_ref: dea:pc-ge-im
@@ -1080,7 +1102,9 @@ tranches:
   records:
   - dea:process-score-audit-findings
   - dea:process-improve-policy-and-control-framework
-  status: proposed
+  status: applied
+  applied_by: CR-BP-21f.1
+  applied_pr: 60
   rationale: Register v2 L2 completion for the GE Improve cell; composed by the existing dea:group-governance-review-and-learning.
 cross_tranche_dependencies: none
 review_checkpoints:
