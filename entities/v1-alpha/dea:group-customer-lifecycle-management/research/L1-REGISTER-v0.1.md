@@ -1,15 +1,15 @@
 # L1 Process Group Discovery Register v0.1
 
-Status: audit-reconciled-2026-09-08 (CR-BP-22)
-Programme: CR-BP-11 (research) -> CR-BP-13 (ratification) -> CR-BP-19 (v2.4.0 re-derivation) -> CR-BP-22 (register audit)
+Status: re-derived-against-ECF-v2.5.0-2026-09-09 (CR-BP-28)
+Programme: CR-BP-11 (research) -> CR-BP-13 (ratification) -> CR-BP-19 (v2.4.0 re-derivation) -> CR-BP-22 (register audit) -> CR-BP-28 (v2.5.0 re-derivation, no-op)
 Repository: `technehub-labs/dea-catalog-processes`
-Date: 2026-09-04 (research); 2026-09-05 (ratification v1); 2026-09-07 (ratification v2 / ECF v2.4.0); 2026-09-08 (audit reconciliation)
+Date: 2026-09-04 (research); 2026-09-05 (ratification v1); 2026-09-07 (ratification v2 / ECF v2.4.0); 2026-09-08 (audit reconciliation); 2026-09-09 (re-derivation v4 / ECF v2.5.0)
 Scope: 49 ECF coordinates (7 domains x 7 lifecycle stages)
-Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `change-requests/CR-BP-13-research-ratification.md`; `change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md`; `change-requests/CR-BP-22-register-audit-status.md`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-register.yaml`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-candidate-universe.yaml`.
+Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md`; `change-requests/CR-BP-13-research-ratification.md`; `change-requests/CR-BP-19-l1-register-rederivation-ecf-v240.md`; `change-requests/CR-BP-22-register-audit-status.md`; `change-requests/CR-BP-28.md`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-register.yaml`; `entities/v1-alpha/dea:group-customer-lifecycle-management/research/l1-candidate-universe.yaml`.
 
-## Register-side counts (research disposition, ratified v2)
+## Register-side counts (research disposition, ratified v4)
 
-- 35 coordinates ratified-accepted (register v2; ECF v2.4.0; Activate normalized to backlog-deferred across all 7 domains)
+- 35 coordinates ratified-accepted (register v4; ECF v2.5.0; Activate normalized to backlog-deferred across all 7 domains)
 - 14 coordinates backlog-deferred (Activate + Retire across all 7 domains)
 - 49 total
 
@@ -22,16 +22,23 @@ Authoritative artefacts: `change-requests/CR-BP-11-l1-process-group-discovery.md
 | `backlog-deferred` | 14 | `disposition=backlog-deferred` (Activate + Retire; transition scopes, not stable L1) |
 | **Total** | **49** | |
 
-The gap (0 `ratified-pending-landing`) is closed. **Register v2.4.0
+The gap (0 `ratified-pending-landing`) is closed. **Register v2.5.0
 scope is fully landed** — all 35 ratified cells have canonical L1
-groups and all register v2 L2 candidates. The remaining
+groups and all register L2 candidates. The remaining
 14 `backlog-deferred` cells are the Activate/Retire lifecycle
 transitions (CR-BP-19 doctrine: lifecycle transitions are not stable
 Process Group operating states).
 
+The v3 -> v4 re-derivation (CR-BP-28, 2026-09-09) is a no-op for the
+disposition axis: the ECF v2.5.0 transition (CR-ECF-008 +
+ADR-ECF-003, Domain 6 `OperationsAndEnablement` -> `EnablementAndOperations`)
+was a label-only rename. No coordinate was added, removed, or
+re-scoped. Register audit remains 35 / 0 / 14.
+
 See CR-BP-19 for the v2 deferred_rationale (Activate and Retire are
 lifecycle transition stages, not stable Process Group operating
-scopes) and CR-BP-22 for the audit_status axis design.
+scopes), CR-BP-22 for the audit_status axis design, and CR-BP-28
+for the v2.5.0 re-derivation.
 
 ---
 

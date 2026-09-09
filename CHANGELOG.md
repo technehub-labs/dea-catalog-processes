@@ -4,7 +4,19 @@ All notable changes to this repository are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 `docs/versioning.md`.
 
-## [Unreleased]
+## [Unreleased] - 2026-09-09
+
+CR-BP-28 implementation: register v4 re-derived against ECF v2.5.0
+(no-op for the disposition axis). The v2.4.0 -> v2.5.0 transition
+(CR-ECF-008 + ADR-ECF-003; Domain 6 `OperationsAndEnablement` ->
+`EnablementAndOperations`) was a label-only rename; no coordinate
+was added, removed, or re-scoped. Register audit remains
+35 / 0 / 14. `l1-register.yaml` and `l1-candidate-universe.yaml`
+bump `ratification.version` 3 -> 4 and `ratification.cr` CR-BP-22
+-> CR-BP-28; `L1-REGISTER-v0.1.md` updates its status line and
+adds a v3 -> v4 note. The re-derivation is the formal v4
+ratification; the next release cut (v0.2.0) is its own separate
+slice. No entity, schema, validator-rule, or CI-pipeline change.
 
 ## [v0.1.0] - 2026-09-09
 
