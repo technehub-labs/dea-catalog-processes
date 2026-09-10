@@ -80,6 +80,8 @@ GATES: list[tuple[str, bool, list[str]]] = [
      False, ["python", "scripts/check_documentation_conformance.py"]),  # advisory
     ("[11] L2 Qualification (BP-C1..C4)",
      False, ["python", "scripts/check_l2_qualification.py", "--strict"]),  # CR-BP-34a; advisory
+    ("[12] Intent Purposive (PSP-001..003)",
+     False, ["python", "scripts/check_intent_purposive.py", "--strict"]),  # CR-BP-34b; advisory
 ]
 
 
