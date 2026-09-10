@@ -6,6 +6,36 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-32/33/34 introduced (carrier PRs — knowledge harvest + positioning only)
+
+Three foundational CRs authored by eaojnr (2026-09-10) that extend
+the catalog into L3 (Activity) and L4 (Task / Workflow / Execution
+Boundary), plus a four-level conformance profile. Renumbered from
+the user's CR-BP-04/05/06 because the canonical IDs are already
+allocated (CR-BP-04 is MERGED as ID-Family Reconciliation).
+
+**This is a documentation carrier only.** No code, no schema, no
+validator change. The renumbering decisions and the additive
+harvest plan are in `01_plan/CR-BP-32-33-34-foundation/POSITIONING.md`.
+
+Six genuinely novel insights identified in the harvest:
+
+1. L2 qualification becomes a validator (BP-C1..C4).
+2. Lifecycle status becomes a state machine (6-state lifecycle).
+3. Semantic-identity-vs-version becomes an explicit rule.
+4. Intent cannot be substituted for organizational component (PSP-001..003).
+5. The Activity / Task / Workflow layer is genuinely missing (the single largest gap).
+6. MECE validation is real work not yet attempted (CR-BP-36).
+
+**Execution plan:** Phase 2 lands additive conformance validators
+(CR-BP-34a/b/c/d — no entity mutation). Phase 3 lands the L3
+Activity record type (CR-BP-32). Phase 4 lands the L4 Execution
+Boundary (CR-BP-33). Phase 5 documents the closure (CR-BP-35..38).
+
+The 196 canonical records stay at conformance level L4 throughout.
+
+Carrier PR pending; awaiting user direction on execution order.
+
 ### CR-BP-30 introduced: Release Package for `dea-catalog-processes` (carrier CR — discussion only)
 
 Defines the artifact family and the CI shape that will produce the
