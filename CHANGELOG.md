@@ -6,6 +6,23 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-34b: Intent Purposive Validators (PSP-001..003) — second execution slice of CR-BP-34
+
+Codifies the three Intent purposive rules from CR-BP-34 §7 as a
+standalone, machine-testable validator. PSP-001 (Intent shall be
+purposive) + PSP-002 (approved vocabulary) + PSP-003 (shall not
+encode organizational ownership). New script
+`scripts/check_intent_purposive.py` plus new test
+`tests/test_check_intent_purposive.py` (20 tests). Wired into
+`scripts/conformance_result.py` as gate **[12] Intent Purposive
+(PSP-001..003)** (advisory; non-blocking).
+
+**Coverage on the live catalog:** all 126 canonical Business Process
+records pass all three rules; validator emits 0 findings today.
+The validator is a pure regression guard. Additive-only; no entity,
+schema, validator-rule, or governance-decision change.
+Carrier: [CR-BP-34b](change-requests/CR-BP-34b-intent-purposive-validators.md).
+
 ### CR-BP-34a: L2 Qualification Validators (BP-C1..C4) — first execution slice of CR-BP-34
 
 Codifies the four mandatory L2 qualification criteria from CR-BP-34
