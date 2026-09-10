@@ -42,6 +42,15 @@ relationships:
 - source_id: dea:process-demand-design
   relationship_type: serves
   target_id: ecf:customerAndDemand.design
+- source_id: dea:process-demand-design
+  relationship_type: serves
+  target_id: ecf:partyRelationship.design
+  added_by: CR-BP-31
+  added_at: '2026-09-10'
+  rationale: 'Canonical v2.5.0 serves relationship added alongside v2.3.0
+    historical entry per CR-BP-31 (migration-pair completion). The v2.3.0
+    `customerAndDemand` entry is preserved as provenance.
+    '
 ecfConformance:
   framework: EnterpriseConceptFramework
   contractVersion: 1.0.0
@@ -71,6 +80,13 @@ metadata:
       legacy scalar `process_context` migrated to canonical `context:` block; legacy
       `process_audience` removed (CR-BP-14 /13); canonical `serves` relationship toward
       the ECF coordinate added.'
+  - cr: CR-BP-31
+    date: '2026-09-10'
+    change: 'Added canonical v2.5.0 `serves` relationship alongside v2.3.0 historical
+      entry (migration-pair completion per CR-BP-31). The legacy `customerAndDemand`
+      entry is preserved as provenance; canonical `ecf:partyRelationship.<stage>` is
+      now the conformance-resolving reference.
+      '
 links:
 - rel: change-request
   href: change-requests/cr-bp-13a-customer-and-demand-admission.md
