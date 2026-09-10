@@ -6,6 +6,17 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-30 introduced: Release Package for `dea-catalog-processes` (carrier CR — discussion only)
+
+Defines the artifact family and the CI shape that will produce the
+`v0.3.0` (or later) release zip. **No code, no schema, no validator
+change in this PR.** Six design decisions (§3 of the CR body) are
+tabled for user lock-in at merge time; defaults are listed in the
+CR's §0 TL;DR table. Implementation slices CR-BP-30a..30h are
+sequenced in the CR's §5 and land in independent, revertable PRs
+once D1–D6 are resolved.
+Carrier: [CR-BP-30](change-requests/CR-BP-30-release-package.md).
+
 ### CR-BP-31 implementation: PartyAndRelationship canonical `serves` migration-pair
 
 Paperwork-only normalization. Appends the canonical v2.5.0
