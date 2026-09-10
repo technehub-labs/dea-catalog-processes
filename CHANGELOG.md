@@ -6,6 +6,27 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-34a: L2 Qualification Validators (BP-C1..C4) — first execution slice of CR-BP-34
+
+Codifies the four mandatory L2 qualification criteria from CR-BP-34
+§11 (BP-C1 Input–Output Transformation, BP-C2 Objective Contribution,
+BP-C3 Standalone Executability, BP-C4 Resource Dedication) as a
+standalone, machine-testable validator. New script
+`scripts/check_l2_qualification.py` plus new test
+`tests/test_check_l2_qualification.py` (17 tests). Wired into
+`scripts/conformance_result.py` as gate **[11] L2 Qualification
+(BP-C1..C4)** (advisory; non-blocking).
+
+**Coverage on the live catalog:** all 126 canonical Business Process
+records pass all four criteria; validator emits 0 findings today.
+The validator is a **regression guard** — it catches any future BP
+that violates one or more criteria at admission time, without
+disrupting any existing record.
+
+No entity, schema, validator-rule, governance-decision, or
+conformance-gate change to existing behaviour. Additive-only.
+Carrier: [CR-BP-34a](change-requests/CR-BP-34a-l2-qualification-validators.md).
+
 ### CR-BP-32/33/34 introduced (carrier PRs — knowledge harvest + positioning only)
 
 Three foundational CRs authored by eaojnr (2026-09-10) that extend
