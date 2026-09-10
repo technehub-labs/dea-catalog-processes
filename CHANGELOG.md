@@ -6,6 +6,20 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-31 implementation: PartyAndRelationship canonical `serves` migration-pair
+
+Paperwork-only normalization. Appends the canonical v2.5.0
+`ecf:partyRelationship.<stage>` `serves` relationship alongside the
+preserved v2.3.0 `ecf:customerAndDemand.<stage>` entry on 7
+PartyAndRelationship L2 records (Conceive 2 / Design 3 / Operate 1
+/ Improve 1). No entity ID or name change, no register change, no
+L1 group change, no schema change, no disposition change. Adds a
+new regression guard `scripts/check_canonical_serves.py` so future
+migration-pair drift is caught at CI time. Closes the last v2.3.0
+-> v2.5.0 migration-pair debt in the catalog; the six other ECF
+Domains already carried canonical serves pairs. Carrier:
+[CR-BP-31](change-requests/CR-BP-31-pr-canonical-serves-migration.md).
+
 ## [v0.2.0] - 2026-09-09
 
 Second tagged release. Carries the formal L1 register v4
