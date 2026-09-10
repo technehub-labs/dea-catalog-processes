@@ -82,6 +82,8 @@ GATES: list[tuple[str, bool, list[str]]] = [
      False, ["python", "scripts/check_l2_qualification.py", "--strict"]),  # CR-BP-34a; advisory
     ("[12] Intent Purposive (PSP-001..003)",
      False, ["python", "scripts/check_intent_purposive.py", "--strict"]),  # CR-BP-34b; advisory
+    ("[13] Lifecycle State-Machine (LCM-001..005)",
+     False, ["python", "scripts/check_lifecycle_state.py", "--strict"]),  # CR-BP-34c; advisory
 ]
 
 

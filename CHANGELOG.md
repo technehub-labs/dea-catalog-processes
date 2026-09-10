@@ -6,6 +6,37 @@ All notable changes to this repository are documented here. Format follows
 
 ## [Unreleased]
 
+### CR-BP-34c: Lifecycle State-Machine Validators (LCM-001..005) — third execution slice of CR-BP-34
+
+Codifies the lifecycle state-machine rules from CR-BP-34 §10 as a
+standalone, machine-testable validator. LCM-001 (lifecycle_status
+vocabulary) + LCM-002 (status ↔ lifecycle_status consistency) +
+LCM-003 (deprecated must carry DEPRECATED transition marker) +
+LCM-004 (non-deprecated must NOT carry DEPRECATED marker) +
+LCM-005 (retired records must live in entities/_retired/, forward-
+only). New script `scripts/check_lifecycle_state.py` plus new test
+`tests/test_check_lifecycle_state.py` (27 tests). Wired into
+`scripts/conformance_result.py` as gate **[13] Lifecycle State-
+Machine (LCM-001..005)** (advisory; non-blocking).
+
+**Coverage on the live catalog:** all 126 canonical Business Process
+records satisfy all five rules; validator emits 0 findings today.
+The validator is a pure regression guard.
+
+**Important finding during design:** narrative mentions of
+"lifecycle_status=deprecated" in `change_history` (camelCase,
+lowercase) had to be distinguished from transition-event mentions
+of "DEPRECATED" (UPPERCASE). The 6-state machine lives at the
+record level; case-sensitive marker match cleanly separates the
+two patterns. The 1 live deprecated record (`dea:process-develop-
+governance-strategy`) carries both DEPRECATED markers in its
+`change_history` and passes LCM-003.
+
+**Forward-only LCM-005** — no retired records exist today; the rule
+catches future records marked `lifecycle_status=retired` that
+haven't been moved into the archive directory. Additive-only.
+Carrier: [CR-BP-34c](change-requests/CR-BP-34c-lifecycle-state-machine.md).
+
 ### CR-BP-34b: Intent Purposive Validators (PSP-001..003) — second execution slice of CR-BP-34
 
 Codifies the three Intent purposive rules from CR-BP-34 §7 as a
