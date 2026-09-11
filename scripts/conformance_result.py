@@ -84,6 +84,8 @@ GATES: list[tuple[str, bool, list[str]]] = [
      False, ["python", "scripts/check_intent_purposive.py", "--strict"]),  # CR-BP-34b; advisory
     ("[13] Lifecycle State-Machine (LCM-001..005)",
      False, ["python", "scripts/check_lifecycle_state.py", "--strict"]),  # CR-BP-34c; advisory
+    ("[14] Semantic Identity vs Version (SIV-001..004)",
+     False, ["python", "scripts/check_semantic_identity_version.py", "--strict"]),  # CR-BP-34d; advisory
 ]
 
 
