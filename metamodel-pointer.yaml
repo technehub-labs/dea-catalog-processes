@@ -75,6 +75,19 @@ metamodel:
     # CR-BP-33. Schema: schemas/entities/activity.schema.json.
     # Validator: scripts/check_activity_model.py (ACT-001..010;
     # gate [15]; CR-BP-32).
+    # Workflow / Task references (CR-BP-33) — these entities exist in
+    # the dea-metamodel registry (`metamodel/registry/entities.yaml`)
+    # with `lifecycle: proposed` and `catalog_repo: null`. This
+    # catalog does NOT instantiate them; it references them as
+    # opt-in execution-semantics targets for records that explicitly
+    # declare `workflow_references[]` (a Business Process may have
+    # zero / one / multiple Workflow realizations per CR-BP-33 §11).
+    # The canonical composition shape remains
+    # `L2 BP --[dea:composes]--> L3 Activity --[dea:composes]--> L4 Task`.
+    # Composition is structural only; Workflow / Task references
+    # NEVER imply execution order (CR-BP-33 §6, §14).
+    # Validator: scripts/check_execution_boundary.py (EXE-001..010;
+    # gate [16]; CR-BP-33).
     # future Process specializations (dea:entity-operational-process;
     # dea:entity-engineering-process; ...) land here as additional
     # entries with their own class_alias + discriminator.
