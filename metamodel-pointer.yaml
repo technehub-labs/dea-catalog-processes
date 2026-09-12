@@ -64,6 +64,17 @@ metamodel:
     - entity_id: dea:entity-process
       class_alias: PRC
       discriminator: process-kernel
+    # Activity (CR-BP-32) — catalog-owned L3 record type that
+    # decomposes an L2 Business Process into cohesive logical
+    # groupings of work. Activity is NOT a metamodel entity; it is
+    # registered here as `lifecycle: proposed` for cross-repo
+    # discoverability (mirrors how `dea:BusinessProcess` and
+    # `dea:ProcessGroup` are declared). The canonical composition
+    # shape is `L2 BP --[dea:composes]--> L3 Activity --[dea:composes]--> L4 Task`.
+    # Composition is structural only; execution semantics live in
+    # CR-BP-33. Schema: schemas/entities/activity.schema.json.
+    # Validator: scripts/check_activity_model.py (ACT-001..010;
+    # gate [15]; CR-BP-32).
     # future Process specializations (dea:entity-operational-process;
     # dea:entity-engineering-process; ...) land here as additional
     # entries with their own class_alias + discriminator.
