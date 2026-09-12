@@ -413,6 +413,57 @@ BP-32/33/34 tranche plan.
 Carrier:
 [CR-BP-38](change-requests/CR-BP-38-ecf-matrix-population-retrospective.md).
 
+### CR-BP-40 implementation: Cross-Repository Integrity Gate Promotion (XRI-001..005 → Gate [18])
+
+Promotes `scripts/check_cross_repo_integrity.py` from a runtime
+asset (landed in CR-BP-37, PR #78) to a conformance gate wired
+into `scripts/conformance_result.py` as gate **[18] Cross-
+Repository Integrity (XRI-001..005)** (advisory; non-blocking).
+Follows up on the explicit deferral in CR-BP-37 §3.
+
+**Wiring:** adds one entry to the GATES list, immediately after
+gate [17] MECE Validation:
+
+```python
+("[18] Cross-Repository Integrity (XRI-001..005)",
+ False, ["python", "scripts/check_cross_repo_integrity.py",
+         "--strict"]),  # CR-BP-40; advisory
+```
+
+The runtime asset is unchanged. Its `--strict` mode already returns
+exit code 1 on any finding (`scripts/check_cross_repo_integrity.py:402`),
+matching the contract used by gates [11]–[17] for their respective
+validators.
+
+**Promotion rationale:**
+
+1. The runtime asset has run 0 findings across XRI-001..005 on
+   every CI invocation since PR #78 merged (PRs #79, #80, and the
+   CR-BP-40 PR). Stable.
+2. The tranche plan is closed; the next CI-driven drift is more
+   likely to come from a sibling-repo CR addition than from a
+   local pointer edit. XRI-005 is the explicit regression guard
+   for that case.
+
+**Promotion decision:** advisory (non-blocking). XRI-005 is
+forward-looking; making it blocking would either be a no-op today
+(all rules pass) or would block the first PR that adds an
+ungrounded companion CR. The advisory status lets CI surface the
+finding while the catalog maintainer decides.
+
+**Coverage on the live catalog:** gate [18] reports CONFORMANT
+with 0 findings across XRI-001..005. The promotion adds zero
+new noise; it converts a maintainer-run check into a CI check.
+
+**Repo totals post-slice:** 23 conformance gates (was 22); 10
+blocking + 13 advisory.
+
+**No entity, schema, validator-rule, or canonical-record change.**
+Pure additive wiring slice; ~10 LOC of code + paperwork.
+
+Carrier:
+[CR-BP-40](change-requests/CR-BP-40-xri-gate-promotion.md).
+
 ## [v0.2.0] - 2026-09-09
 
 Second tagged release. Carries the formal L1 register v4
