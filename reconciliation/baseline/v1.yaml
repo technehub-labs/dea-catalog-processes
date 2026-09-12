@@ -85,7 +85,7 @@ records:
   - id: dea:group-financial-build
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
-    sha256: 5e7a36aaff57812a178a0ff1ddb735f22e90e996ff5ba84416d45aba55d640bc
+    sha256: 06b209d9739e391d336313909a5162534b82a20fe2347a8617b049b1beb6bdd5
   - id: dea:group-financial-design
     type: ProcessGroup
     path: entities/v1-alpha/dea:group-financial-design/dea:group-financial-design.yaml

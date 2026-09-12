@@ -67,6 +67,22 @@ composes:
       reference: CR-BP-21e.1
       asserted_by: dea-team
       asserted_at: '2026-09-08'
+  - source_id: dea:group-financial-build
+    target_id: dea:process-secure-funding-facilities
+    relationship_type: composes
+    direction: source-to-target
+    status: active
+    asserted_by: dea-team
+    rationale: |
+      The L2 process belongs to this cell per register v2 (CR-BP-21e.1).
+      The PC record (dea:pc-fa-build) lists this process in its
+      `processes:` list but the PG composes[] was missing the entry.
+      Added per CR-BP-36 MECE-008 remediation.
+    provenance:
+      type: architecture-review
+      reference: CR-BP-36
+      asserted_by: dea-team
+      asserted_at: '2026-09-12'
 
 # Process Group kind (PG-007 enforces controlled vocabulary).
 process_group_kind: end-to-end
@@ -112,6 +128,12 @@ metadata:
         Initial Process Group record; promoted from the CR-BP-19 register
         v2 (ratified against ECF v2.4.0) as part of the CR-BP-21e.1
         FinanceAndAccounting completion tranche. Composes 3 L2 processes.
+    - cr: CR-BP-36
+      date: '2026-09-12'
+      change: |
+        MECE-008 remediation: added dea:process-secure-funding-facilities
+        to composes[] (was listed in dea:pc-fa-build processes: but missing
+        from this PG's composes[]). Composes 4 L2 processes.
 
 links:
   - rel: change-request

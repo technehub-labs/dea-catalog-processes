@@ -4,7 +4,7 @@ catalog:
     candidates: 0
     canonical: 160
     entities: 161
-    open_change_requests: 46
+    open_change_requests: 47
     research_files: 57
     retired: 1
   cross_cutting:
@@ -121,7 +121,7 @@ catalog:
   - candidate_count: 0
     canonical_count: 1
     id: dea:group-financial-build
-    last_modified: '2026-09-08'
+    last_modified: '2026-09-12'
     lifecycle_status: candidate
     path: entities/v1-alpha/dea:group-financial-build/dea:group-financial-build.yaml
     research_count: 0
