@@ -130,6 +130,289 @@ migration-pair drift is caught at CI time. Closes the last v2.3.0
 Domains already carried canonical serves pairs. Carrier:
 [CR-BP-31](change-requests/CR-BP-31-pr-canonical-serves-migration.md).
 
+### CR-BP-34d implementation: Semantic-Identity-vs-Version Validators (SIV-001..004) — fourth execution slice of CR-BP-34
+
+Codifies CR-BP-34 §19 as four machine-testable rules:
+SIV-001 (every record's version follows SemVer), SIV-002 (every
+version bump carries `change_history` evidence), SIV-003 (a MAJOR
+bump requires a semantic-change marker from the controlled
+vocabulary: `BREAKING` / `SEMANTIC` / `RENAME` / `REC-` /
+`DEPRECATED` / `SUPERSEDED` / `CR-BP-` / `CR-ECF-` / `CR-AR-` /
+`CR-MM-` / `CR-OU-` / `CR-BC-` / `CR-BO-`), SIV-004 (a MINOR / PATCH
+bump shall not silently alter `identity.verb` or `identity.object`;
+advisory only). New script `scripts/check_semantic_identity_version.py`
+plus new test `tests/test_check_semantic_identity_version.py`
+(43 tests). Wired into `scripts/conformance_result.py` as gate
+**[14] Semantic Identity vs Version** (advisory; non-blocking).
+
+**Coverage on the live catalog:** all 126 canonical Business
+Process records satisfy all four rules; validator emits 0
+findings today. The single v2.0.0 record
+(`dea:process-develop-corporate-strategy`) carries a `CR-BP-21a`
+marker in its `metadata.change_history` and passes SIV-002 +
+SIV-003 cleanly. The SIV-004 advisory does not block; the bare
+MINOR/PATCH semantics are otherwise enforced by SIV-001..003
+combined.
+
+**Forward-only SIV-004** — the rule is advisory (does not block);
+the other three rules are sufficient to catch every major-bump
+without a semantic marker. The 43-case test suite establishes the
+advisory semantics independently.
+
+Carrier:
+[CR-BP-34d](change-requests/CR-BP-34d-semantic-identity-vs-version.md).
+
+### CR-BP-32 implementation: Activity Model Validators (ACT-001..010) — first execution slice of Phase 3
+
+Codifies the CR-BP-32 §15 Activity Model rules as ten
+machine-testable invariants: ACT-001 (every Activity belongs to a
+Business Process), ACT-002 (Activity is not a Business Process),
+ACT-003 (cohesion rationale ≥ 20 chars), ACT-004 (composed Task OR
+`decomposition_boundary: l4-reached` marker), ACT-005 (composition
+uses `dea:composes`; forbidden fields: `parent_activity` /
+`child_activities` / `decomposes` / `contains_activity`), ACT-006
+(no execution-ordering fields), ACT-007 (Activity id ≠ Business
+Function id family), ACT-008 (no implementation-detail marker
+fields — L4 is the decomposition boundary), ACT-009 (no
+execution-model fields — CR-BP-33 owns execution), ACT-010
+(bidirectional traceability: parent BP declares the Activity in
+`metadata.activity_references[]` or `composes[]`). New script
+`scripts/check_activity_model.py` plus new test
+`tests/test_check_activity_model.py` (34 tests); new schema
+`schemas/entities/activity.schema.json` (JSON Schema draft-07,
+`additionalProperties: false`); `metamodel-pointer.yaml` registers
+`dea:Activity` additively as `lifecycle: proposed`,
+`catalog_repo: dea-catalog-processes`. Wired into
+`scripts/conformance_result.py` as gate **[15] Activity Model**
+(advisory; non-blocking).
+
+**Coverage on the live catalog:** 0 Activity records today;
+validator emits 0 findings by construction (type-discriminator
+filter never inspects BP records). The validator is a pure
+forward-looking regression guard for the first Activity
+contribution. Activity is registered as a catalog-owned record
+type (mirrors how `dea:ProcessGroup` is declared under
+CR-BP-SPEC-BP-01).
+
+Carrier:
+[CR-BP-32](change-requests/CR-BP-32-activity-model.md).
+
+### CR-BP-33 implementation: Execution Boundary Validators (EXE-001..010) — first execution slice of Phase 4
+
+Codifies the CR-BP-33 §15 Execution Boundary rules as ten
+machine-testable invariants: EXE-001 (structural decomposition does
+not encode execution sequence), EXE-002 (`dea:composes` does not
+imply execution ordering), EXE-003 (Workflow remains distinct from
+Business Process — no BP classification on Workflow records),
+EXE-004 (multiple execution Workflows require `workflow_references[]`
+list, not a singleton field), EXE-005 (multiple Workflow
+realizations do not split the BP — singular `process_intent` /
+`process_type` axes), EXE-006 (execution actors reference
+`dea:actor-*` semantics, not inline strings), EXE-007 (execution
+systems reference `dea:system-*` semantics), EXE-008 (execution
+logic does not redefine process identity — Workflow records carry
+no `identity.verb` / `identity.object`), EXE-009 (no
+implementation-detail fields — `api_sequence`, `script`,
+`code_ref`, etc. forbidden), EXE-010 (every `workflow_references[]`
+entry declares `relationship_kind` from the controlled vocabulary:
+`reference` / `operational` / `scenario` / `implementation`). New
+script `scripts/check_execution_boundary.py` plus new test
+`tests/test_check_execution_boundary.py` (32 tests).
+`metamodel-pointer.yaml` references `dea:Workflow` / `dea:Task`
+additively from the dea-metamodel registry
+(`lifecycle: proposed`, `catalog_repo: null`; metamodel-owned). Wired
+into gate **[16] Execution Boundary** (advisory).
+
+**Coverage on the live catalog:** 161 records checked, 0 opted-in,
+0 findings. Pure forward-looking regression guard for the first
+Workflow / Execution contribution. The Workflow / Task record
+types remain metamodel-owned; the catalog does not define local
+Workflow records.
+
+Carrier:
+[CR-BP-33](change-requests/CR-BP-33-execution-boundary.md).
+
+### CR-BP-36 implementation: MECE Validation (MECE-001..008) — first execution slice of Phase 5
+
+Codifies catalog-wide MECE (CR-BP-34 §4 distinguishes Conformance
+from MECE) as eight machine-testable invariants: MECE-001
+(coordinate coverage — every register-landed coordinate has a PC
+record), MECE-002 (group coverage per context), MECE-003 (BP
+coverage per group), MECE-004 (BP semantic uniqueness via
+`(identity.verb, identity.object)`), MECE-005 (group coordinate
+uniqueness via `(process_context, name)`), MECE-006
+(register-to-catalog alignment), MECE-007 (orphan detection
+PG → PC), MECE-008 (orphan detection BP → PG; deprecated records
+exempt). Coordinate matching uses `(domain, lifecycle_stage)` to
+bridge the legacy full-word vs abbreviated PC id convention drift
+(`dea:pc-ge-conceive` vs `dea:pc-ge-c`). New script
+`scripts/check_mece.py` plus new test `tests/test_check_mece.py`
+(23 tests). Wired into gate **[17] MECE Validation** (advisory).
+
+**Real finding caught in-slice:** pre-slice live run found 1
+MECE-008 violation (`dea:process-secure-funding-facilities` listed
+in `dea:pc-fa-build.processes` but missing from
+`dea:group-financial-build.composes[]`). Remediated in-slice: the
+PG record's `composes[]` block was extended with the missing entry
+plus a `change_history` entry bumping `v1.2.0` → `v1.3.0`; the
+baseline SHA256 in `reconciliation/baseline/v1.yaml` was updated
+to match.
+
+**Important design decision:** MECE-008 exempts records with
+`lifecycle_status: deprecated` from the orphan check. The
+deprecated `dea:process-develop-governance-strategy` (superseded
+by `dea:process-develop-corporate-strategy` per CR-BP-21a) is
+correctly exempt. This is the register-wide policy from
+`l1-register.yaml` (CR-BP-19 §3; Activate/Retire and superseded
+records are intentionally not composed by any Process Group).
+
+**Coverage post-remediation:** 161 records evaluated; 0 findings
+across MECE-001..008. Validator emits a clean
+CONFORMANT result.
+
+Carrier:
+[CR-BP-36](change-requests/CR-BP-36-mece-validation.md).
+
+### CR-BP-35 implementation: Process Catalog Architecture Retrospective
+
+Documentation-only slice that closes the loop between the
+user's original CR-BP-07 (the "what would the BP-07 architecture
+look like?" framing) and the architecture that has actually landed
+in `main` after Phase 1..4 harvest tranches plus Phase 5 slice 1
+(CR-BP-36 MECE).
+
+**Surfaces four deltas from the original CR-BP-07 framing:**
+
+1. Landing order was inverted: the catalog was populated before
+   the BP-32/33/34 foundation carrier landed. CR-BP-11 → CR-BP-19
+   → CR-BP-21 tranches ran 2026-09-04 to 2026-09-08; CR-BP-32/33/34
+   foundation landed 2026-09-09 (PR #69).
+2. L0..L4 conformance levels were introduced by CR-BP-15-IMP and
+   CR-BP-16 (PRs #38–42), not in the original CR-BP-07 framing.
+3. Kernel + specialization discipline was introduced by
+   CR-MM-PROC-01 / CR-AR-FMWK-01 / CR-BP-SPEC-BP-01
+   (PRs #12, #163 metamodel, #10 architecture-framework).
+4. The validator library (now 22 gates in
+   `scripts/conformance_result.py`) was established as a
+   first-class artifact, not a side-effect of conformance work.
+
+**Documents:** eight-slot decomposition (Process Context → Scope →
+Process Group → Business Process → Activity → Workflow / Task);
+six characterization dimensions (CR-BP-14); cross-repo contracts
+(dea-metamodel, dea-architecture-framework, WSF, ECF); ECF
+version history (v2.3.0 / v2.4.0 / v2.5.0 with companion catalog
+CRs CR-BP-17 / -18 / -23).
+
+**No validator, no schema, no record mutation, no gate wiring.**
+Paperwork-only slice; ~180 LOC equivalent (single CR doc).
+
+Carrier:
+[CR-BP-35](change-requests/CR-BP-35-process-catalog-architecture.md).
+
+### CR-BP-37 implementation: Cross-Repository Integrity Validators (XRI-001..005)
+
+Documents the catalog's cross-repo reference surface and
+codifies five invariants about `metamodel-pointer.yaml` +
+`change-requests/README.md` `## Cross-repo context`: XRI-001
+(metamodel-pointer.yaml structure), XRI-002 (entity entry
+completeness), XRI-003 (federation mapping + canonical CR
+lineage references), XRI-004 (entity_id uniqueness), XRI-005
+(companion CR lineage references resolve).
+
+**Cross-repo surface documented:**
+
+- **Canonical lineage** (load-bearing): `CR-MM-PROC-01`
+  (dea-metamodel PR #163, commit `1665209`) declares `dea:Process`
+  (abstract kernel) + `dea:BusinessProcess` (specialization);
+  `CR-AR-FMWK-01` (dea-architecture-framework PR #10, commit
+  `76463b2`; tag `v0.6.0`) declares `dea:entity-process` (root-model
+  kernel; `discriminator: process-kernel`) +
+  `dea:entity-business-process` (specialization; `class_alias: BP`).
+  Federation mapping: **1:1 LOSSLESS** (kernel ↔ kernel;
+  specialization ↔ specialization).
+- **ECF conformance lineage** (dea-metaframework): `CR-ECF-CG-001..004`
+  (gate; catalog companion: gate [8]); `CR-ECF-006 + ADR-ECF-001`
+  (v2.3.0; catalog: CR-BP-17 PR #44); `CR-ECF-007 + ADR-ECF-002`
+  (v2.4.0; catalog: CR-BP-18 PR #45); `CR-ECF-008 + ADR-ECF-003`
+  (v2.5.0; catalog: CR-BP-23 PR #61).
+- **Companion catalog CRs** (sibling repos): `CR-BC-ECF-03`
+  (dea-catalog-business-capabilities); `CR-BO-02`
+  (dea-catalog-business-objects); `CR-OU-02`
+  (dea-catalog-organizational-units).
+- **WSF lineage:** `wsf:Process` (Tier-3 derived).
+
+**Implementation:** new script
+`scripts/check_cross_repo_integrity.py` plus new test
+`tests/test_check_cross_repo_integrity.py` (23 tests). Runtime
+asset (NOT a CI gate — promotion to gate [18] deferred to a
+future CR).
+
+**Coverage on the live catalog:** 0 findings across XRI-001..005.
+The validator is a forward-looking regression guard for the first
+sibling-repo CR added without proper lineage references.
+
+Carrier:
+[CR-BP-37](change-requests/CR-BP-37-cross-repo-integrity.md).
+
+### CR-BP-38 implementation: ECF Matrix Population Retrospective
+
+Documentation-only retrospective of how the catalog's ECF matrix
+(7 domains × 7 stages = 49 coordinates) was discovered, ratified,
+and populated with Process Group (PG), Process Context (PC), and
+Business Process (BP) records from CR-BP-11 (L1 discovery) through
+CR-BP-28 (register v4 re-derivation under ECF v2.5.0), including
+the seven admission tranches (CR-BP-21a/b/c/d/e/f +
+21a.1/b.1/c.1/d.1/e.1) that closed every register gap.
+
+**Lineage walk-through (11 CRs):**
+
+1. CR-BP-11 — L1 Process Group Discovery (research methodology;
+   49 candidate coordinates).
+2. CR-BP-12 — Process Group Profile (structural shape; PG entity
+   in `metamodel-pointer.yaml`).
+3. CR-BP-13 — Research Ratification (v1 register; partial).
+4. CR-BP-14 — Process Semantic Reconciliation (six dimensions).
+5. CR-BP-17 — ECF v2.3.0 Domain enum migration (PR #44).
+6. CR-BP-18 — ECF v2.4.0 Domain enum migration (PR #45).
+7. CR-BP-19 — L1 Register Re-derivation (v2.4.0; 35 ratified).
+8. CR-BP-21a-f + 21a.1/b.1/c.1/d.1/e.1 — Domain admission tranches
+   (7 domains; 10 PRs #51–60).
+9. CR-BP-22 — Register `audit_status` axis (4-value enum).
+10. CR-BP-23 — ECF v2.5.0 Domain 6 rename
+    (`OperationsAndEnablement` → `EnablementAndOperations`)
+    (PR #61).
+11. CR-BP-28 — Register v4 re-derivation (ECF v2.5.0; 35 ratified +
+    14 backlog-deferred; ratified 2026-09-08) (PR #65).
+
+**Current matrix state** (2026-09-12, register v4):
+
+- 7 domains: `GovernanceAndExistence`, `StrategyAndDirection`,
+  `AgencyAndOrganization`, `PartyAndRelationship`, `ProductAndValue`,
+  `EnablementAndOperations`, `FinanceAndAccounting`.
+- 7 stages: `Conceive` → `Design` → `Build` → `Activate` → `Operate`
+  → `Improve` → `Retire`.
+- 49 coordinates: 35 ratified + 14 backlog-deferred.
+- Population: 162 PGs, 36 PCs, 161 BPs at L4 conformance.
+
+**Per-domain ratification status:**
+
+| Domain | Ratified | Backlog |
+|---|---|---|
+| GovernanceAndExistence | 7/7 | 0 |
+| StrategyAndDirection | 7/7 | 0 |
+| AgencyAndOrganization | 7/7 | 0 |
+| PartyAndRelationship | 6/7 | 1 (Retire) |
+| ProductAndValue | 7/7 | 0 |
+| EnablementAndOperations | 6/7 | 1 (Retire; v2.5.0 rename) |
+| FinanceAndAccounting | 5/7 | 2 (Improve + Retire) |
+
+**No validator, no schema, no record mutation, no gate wiring.**
+Paperwork-only slice; ~180 LOC equivalent. Closes Phase 5 and the
+BP-32/33/34 tranche plan.
+
+Carrier:
+[CR-BP-38](change-requests/CR-BP-38-ecf-matrix-population-retrospective.md).
+
 ## [v0.2.0] - 2026-09-09
 
 Second tagged release. Carries the formal L1 register v4
