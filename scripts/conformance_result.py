@@ -92,6 +92,8 @@ GATES: list[tuple[str, bool, list[str]]] = [
      False, ["python", "scripts/check_execution_boundary.py", "--strict"]),  # CR-BP-33; advisory
     ("[17] MECE Validation (MECE-001..008)",
      False, ["python", "scripts/check_mece.py", "--strict"]),  # CR-BP-36; advisory
+    ("[18] Cross-Repository Integrity (XRI-001..005)",
+     False, ["python", "scripts/check_cross_repo_integrity.py", "--strict"]),  # CR-BP-40; advisory (promoted from runtime asset per CR-BP-37 §3)
 ]
 
 
